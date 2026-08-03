@@ -420,7 +420,7 @@ Expected: five READMEs pass, both SVGs parse, and the diff check prints nothing.
 ```bash
 forbidden_identity='eva''2050|240669''650|/Users/''eva'
 forbidden_claims='guaranteed ''viral|guaranteed ''views'
-rg -n --hidden --glob '!.git/**' "${forbidden_identity}|${forbidden_claims}" .
+rg -n --hidden --glob '!.git' --glob '!.git/**' "${forbidden_identity}|${forbidden_claims}" .
 ```
 
 Expected: no matches and exit `1`.
