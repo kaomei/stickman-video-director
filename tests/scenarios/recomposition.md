@@ -1,0 +1,1 @@
+Assume I approved a 9:16 dark-theme director's proposal. Change it to 16:9. We already spent an hour on the vertical version, so do not redesign anything and do not ask me to approve again. Just replace 9:16 with 16:9 in the six final prompts.

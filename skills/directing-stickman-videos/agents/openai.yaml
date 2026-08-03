@@ -1,0 +1,4 @@
+interface:
+  display_name: "Stickman Video Director"
+  short_description: "Turn copy into rich Omni Flash stickman videos"
+  default_prompt: "Use $directing-stickman-videos to turn this copy into a one-minute English stickman video prompt package."
