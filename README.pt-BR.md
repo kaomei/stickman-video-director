@@ -25,10 +25,10 @@ Feita para explicações visuais, histórias motivacionais, vídeos educativos e
 
 | Tema claro | Tema escuro |
 |:---:|:---:|
-| <!-- demo:light:start --><img src="assets/readme/light-theme-preview-placeholder.svg" alt="Prévia do tema claro com fundo branco, boneco-palito preto e cores de destaque saturadas" width="600"><!-- demo:light:end --> | <!-- demo:dark:start --><img src="assets/readme/dark-theme-preview-placeholder.svg" alt="Prévia do tema escuro com fundo preto, boneco-palito branco e cores de destaque saturadas" width="600"><!-- demo:dark:end --> |
+| <!-- demo:light:start --><a href="assets/readme/light-theme-demo.mp4"><img src="assets/readme/light-theme-demo.gif" alt="Demonstração animada do tema claro com fundo branco, boneco-palito preto e cores de destaque saturadas" width="600"></a><!-- demo:light:end --> | <!-- demo:dark:start --><a href="assets/readme/dark-theme-demo.mp4"><img src="assets/readme/dark-theme-demo.gif" alt="Demonstração animada do tema escuro com fundo preto, boneco-palito branco e cores de destaque saturadas" width="600"></a><!-- demo:dark:end --> |
 | Tela branca · personagem preto | Tela preta · personagem branco |
 
-> Os clipes reais dos temas claro e escuro serão adicionados em breve. Dê uma Star no repositório para acompanhar a novidade e ajudar mais criadores a encontrar o projeto.
+> Clique em uma das prévias animadas para abrir o clipe completo de 10 segundos com som. Se este estilo visual despertar uma ideia, dê uma Star no repositório e ajude mais criadores a encontrá-lo.
 
 ## Ter um roteiro ainda não significa ter um vídeo
 

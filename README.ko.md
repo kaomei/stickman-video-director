@@ -25,10 +25,10 @@
 
 | 라이트 테마 | 다크 테마 |
 |:---:|:---:|
-| <!-- demo:light:start --><img src="assets/readme/light-theme-preview-placeholder.svg" alt="흰 배경, 검은 스틱맨, 고채도 포인트 컬러의 라이트 테마 미리보기" width="600"><!-- demo:light:end --> | <!-- demo:dark:start --><img src="assets/readme/dark-theme-preview-placeholder.svg" alt="검은 배경, 흰 스틱맨, 고채도 포인트 컬러의 다크 테마 미리보기" width="600"><!-- demo:dark:end --> |
+| <!-- demo:light:start --><a href="assets/readme/light-theme-demo.mp4"><img src="assets/readme/light-theme-demo.gif" alt="흰 배경, 검은 스틱맨, 고채도 포인트 컬러의 라이트 테마 애니메이션 데모" width="600"></a><!-- demo:light:end --> | <!-- demo:dark:start --><a href="assets/readme/dark-theme-demo.mp4"><img src="assets/readme/dark-theme-demo.gif" alt="검은 배경, 흰 스틱맨, 고채도 포인트 컬러의 다크 테마 애니메이션 데모" width="600"></a><!-- demo:dark:end --> |
 | 흰 캔버스 · 검은 인물 | 검은 캔버스 · 흰 인물 |
 
-> 라이트·다크 테마의 실제 영상 클립은 곧 추가됩니다. 업데이트를 계속 보고 싶거나 더 많은 크리에이터가 이 프로젝트를 발견하길 바란다면 Star를 눌러 주세요.
+> 움직이는 미리보기를 클릭하면 사운드가 포함된 10초 전체 클립을 볼 수 있습니다. 이 영상 스타일이 새로운 아이디어를 떠올리게 했다면 Star를 눌러 더 많은 크리에이터에게 알려 주세요.
 
 ## 대본이 있다고 해서 영상이 완성된 것은 아닙니다
 

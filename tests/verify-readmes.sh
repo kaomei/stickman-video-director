@@ -9,9 +9,11 @@ default_readmes=(
   README.ko.md
   README.pt-BR.md
 )
-preview_assets=(
-  assets/readme/light-theme-preview-placeholder.svg
-  assets/readme/dark-theme-preview-placeholder.svg
+demo_assets=(
+  assets/readme/light-theme-demo.gif
+  assets/readme/light-theme-demo.mp4
+  assets/readme/dark-theme-demo.gif
+  assets/readme/dark-theme-demo.mp4
 )
 section_markers=(
   '<!-- readme:hero -->'
@@ -30,8 +32,10 @@ shared_tokens=(
   'README.ja.md'
   'README.ko.md'
   'README.pt-BR.md'
-  'assets/readme/light-theme-preview-placeholder.svg'
-  'assets/readme/dark-theme-preview-placeholder.svg'
+  'assets/readme/light-theme-demo.gif'
+  'assets/readme/light-theme-demo.mp4'
+  'assets/readme/dark-theme-demo.gif'
+  'assets/readme/dark-theme-demo.mp4'
   'YouTube Shorts'
   'TikTok'
   'Instagram Reels'
@@ -51,9 +55,9 @@ else
   readmes=("${default_readmes[@]}")
 fi
 
-for asset in "${preview_assets[@]}"; do
+for asset in "${demo_assets[@]}"; do
   [[ -f "$readme_root/$asset" ]] || {
-    printf 'missing preview asset: %s\n' "$asset" >&2
+    printf 'missing demo asset: %s\n' "$asset" >&2
     exit 1
   }
 done

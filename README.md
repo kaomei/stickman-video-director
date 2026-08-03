@@ -25,10 +25,10 @@ Built for visual explainers, motivational stories, educational shorts, and fast-
 
 | Light theme | Dark theme |
 |:---:|:---:|
-| <!-- demo:light:start --><img src="assets/readme/light-theme-preview-placeholder.svg" alt="Light theme preview: white background with a black stick figure and saturated accents" width="600"><!-- demo:light:end --> | <!-- demo:dark:start --><img src="assets/readme/dark-theme-preview-placeholder.svg" alt="Dark theme preview: black background with a white stick figure and saturated accents" width="600"><!-- demo:dark:end --> |
+| <!-- demo:light:start --><a href="assets/readme/light-theme-demo.mp4"><img src="assets/readme/light-theme-demo.gif" alt="Animated light-theme demo: white background with a black stick figure and saturated accents" width="600"></a><!-- demo:light:end --> | <!-- demo:dark:start --><a href="assets/readme/dark-theme-demo.mp4"><img src="assets/readme/dark-theme-demo.gif" alt="Animated dark-theme demo: black background with a white stick figure and saturated accents" width="600"></a><!-- demo:dark:end --> |
 | White canvas · black figure | Black canvas · white figure |
 
-> The real light- and dark-theme clips are coming next. Star the repository if you want to follow the release—and help more creators discover the project.
+> Click either animated preview to open the full 10-second clip with sound. If this visual style sparks an idea, Star the repository—and help more creators discover the project.
 
 ## A script is not yet a video
 

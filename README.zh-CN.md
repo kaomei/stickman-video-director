@@ -25,10 +25,10 @@
 
 | 白底黑火柴人 | 黑底白火柴人 |
 |:---:|:---:|
-| <!-- demo:light:start --><img src="assets/readme/light-theme-preview-placeholder.svg" alt="白底黑火柴人和高饱和强调色的浅色主题预览" width="600"><!-- demo:light:end --> | <!-- demo:dark:start --><img src="assets/readme/dark-theme-preview-placeholder.svg" alt="黑底白火柴人和高饱和强调色的深色主题预览" width="600"><!-- demo:dark:end --> |
+| <!-- demo:light:start --><a href="assets/readme/light-theme-demo.mp4"><img src="assets/readme/light-theme-demo.gif" alt="白底黑火柴人和高饱和强调色的动态效果演示" width="600"></a><!-- demo:light:end --> | <!-- demo:dark:start --><a href="assets/readme/dark-theme-demo.mp4"><img src="assets/readme/dark-theme-demo.gif" alt="黑底白火柴人和高饱和强调色的动态效果演示" width="600"></a><!-- demo:dark:end --> |
 | 白色画布 · 黑色人物 | 黑色画布 · 白色人物 |
 
-> 两种主题的真实效果片段即将补上。如果你想关注后续更新，也愿意让更多创作者发现它，欢迎给仓库点一个 Star。
+> 点击任一动态预览，即可打开带声音的完整 10 秒视频。如果这种视觉风格也让你有了创作灵感，欢迎给仓库点一个 Star，让更多创作者发现它。
 
 ## 有文案，不等于已经有了视频
 

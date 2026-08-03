@@ -25,10 +25,10 @@
 
 | ライトテーマ | ダークテーマ |
 |:---:|:---:|
-| <!-- demo:light:start --><img src="assets/readme/light-theme-preview-placeholder.svg" alt="白背景、黒い棒人間、高彩度アクセントのライトテーマプレビュー" width="600"><!-- demo:light:end --> | <!-- demo:dark:start --><img src="assets/readme/dark-theme-preview-placeholder.svg" alt="黒背景、白い棒人間、高彩度アクセントのダークテーマプレビュー" width="600"><!-- demo:dark:end --> |
+| <!-- demo:light:start --><a href="assets/readme/light-theme-demo.mp4"><img src="assets/readme/light-theme-demo.gif" alt="白背景、黒い棒人間、高彩度アクセントによるライトテーマの動画デモ" width="600"></a><!-- demo:light:end --> | <!-- demo:dark:start --><a href="assets/readme/dark-theme-demo.mp4"><img src="assets/readme/dark-theme-demo.gif" alt="黒背景、白い棒人間、高彩度アクセントによるダークテーマの動画デモ" width="600"></a><!-- demo:dark:end --> |
 | 白いキャンバス · 黒い人物 | 黒いキャンバス · 白い人物 |
 
-> ライト版とダーク版の実際のクリップは近日追加予定です。更新を追いかけたい方、より多くのクリエイターに届けたい方は、ぜひ Star をお願いします。
+> 動くプレビューをクリックすると、音声付きの10秒版を再生できます。この映像表現に創作意欲を感じたら、ぜひ Star で応援し、より多くのクリエイターに届けてください。
 
 ## 台本があるだけでは、まだ動画ではありません
 
