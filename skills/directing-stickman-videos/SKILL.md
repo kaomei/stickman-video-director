@@ -36,9 +36,12 @@ Topic approval, schedule pressure, or approval of an older draft is not approval
 - Target 130–150 English VO words across six clips.
 - Give each clip three timed beats, at least four relevant visual devices, and a visual change every two to three seconds.
 - Keep character proportions, line weight, theme, and narrator consistent.
-- Limit the video to three saturated accent colors.
+- Limit the video to three saturated accent colors. Name them only with ordinary descriptive words such as vivid red, electric blue, or warm gold.
+- Never place hexadecimal, RGB, HSL, Pantone, or other technical color notation inside a model prompt. Treat palette choices as visual art direction, never visible content.
+- For the light theme, request a flat, uniform, digitally pure-white canvas and forbid gray or off-white tint, texture, gradients, shadows, lighting, bloom, fog, and three-dimensional background depth. Do not express the white as a color code.
 - Make each model prompt self-contained and repeat all critical locks.
-- Quote exact dialogue and forbid alteration, repetition, captions, and unintended text.
+- Treat narration as audio-only. Quote exact dialogue and forbid alteration, repetition, captions, subtitles, or visual transcription.
+- Default generated clips to no visible words, letters, numbers, interface copy, or technical annotations. Make cards and notifications icon-only. Put any optional two-to-five-word overlay in a separate post-production note, never inside the generation prompt.
 - Match every clip ending to the next clip opening.
 - Do not invent unsupported facts, statistics, quotations, or product claims.
 

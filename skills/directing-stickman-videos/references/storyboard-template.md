@@ -24,7 +24,7 @@ Present these items in order:
 2. Core message and opening hook
 3. Chosen aspect ratio and light/dark theme
 4. Narrator identity, speaking pace, English word count, and estimated duration
-5. Up to three saturated accent colors and what each represents
+5. Up to three saturated accent colors, named in ordinary language, and what each represents
 6. BGM direction, emotional turn, tone, and narrative arc
 
 Default the narrator only after required setup is complete: a bright, energetic adult female voice speaking natural American English. Infer tone and accent colors from the source when the user did not specify them.
@@ -59,7 +59,7 @@ Use at least four relevant devices per row:
 - expressive stick-figure action
 - environmental transformation
 - concrete visual metaphor
-- diagram, arrow, symbol, or brief keyword
+- diagram, arrow, or icon-only symbol
 - particles, energy, fluid, explosion, or light
 - camera push, pull, pan, orbit, shake, or tracking move
 - foreground wipe or object crossing the lens
@@ -72,15 +72,17 @@ Require a perceptible visual change every two to three seconds. Make every effec
 
 Keep the background and stick figure monochrome according to the selected theme. Use no more than three saturated accent colors across the video. Assign semantic meaning such as anxiety, danger, energy, discovery, or success.
 
-Limit each on-screen phrase to two to five English words. State exact text; avoid paragraph-like captions and avoid repeating the narration as screen text.
+Name colors only with ordinary descriptive language. Do not use hexadecimal, RGB, HSL, Pantone, or other technical color notation anywhere in the proposal or production prompts.
+
+Default the generated video to no visible words, letters, numbers, captions, subtitles, interface copy, or technical annotations. Make message bubbles, content cards, meters, clocks, and notifications icon-only. After the storyboard, optionally list concise two-to-five-word English overlays for post-production, including their target clips and safe placement; never carry those overlays into the video-generation prompts.
 
 ## Composition by aspect ratio
 
-- `16:9`: use left-center-right staging, lateral tracking, horizontal match cuts, and deliberate negative space. Place action and text side by side when useful.
-- `9:16`: use foreground/background depth, vertical reveals, stacked motion, foreground passes, and interface-safe text placement.
+- `16:9`: use left-center-right staging, lateral tracking, horizontal match cuts, and deliberate negative space. Reserve clean space for optional post-production overlays when useful.
+- `9:16`: use foreground/background depth, vertical reveals, stacked motion, foreground passes, and interface-safe overlay space.
 - `1:1`: keep action compact and center-weighted. Use short travel paths and avoid crucial events at extreme edges.
 
-Changing ratio requires new staging, camera paths, transition geometry, and text placement. Changing theme requires inverted base colors and a fresh contrast check.
+Changing ratio requires new staging, camera paths, transition geometry, and overlay-safe negative space. Changing theme requires inverted base colors and a fresh contrast check.
 
 ## Continuity
 
@@ -104,6 +106,8 @@ Do not include final model prompts. A global change invalidates approval and req
 - Every row has three beats, at least four visual devices, audio, and a transition.
 - Visual change occurs approximately every two to three seconds.
 - No more than three saturated accent colors are used.
+- No technical color notation is present.
+- Any proposed text is clearly separated as a post-production overlay and absent from generated scenes.
 - Every adjacent pair has a named continuity connection.
 - The ending returns to the central message.
 - No unsupported factual detail was added.
