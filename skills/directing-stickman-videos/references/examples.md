@@ -182,7 +182,7 @@ Do not generate photorealism, unwanted 3D rendering, faces, hair, clothing, fill
 ```text
 Create an approximately 10-second 16:9 horizontal 2D kinetic motion-graphics clip targeting 720p at 24 FPS with synchronized audio.
 
-Use a pure black background and the identical white Stick Figure A with a hollow circular head, no face, no hair, no clothing, no filled body, fixed proportions, and uniform medium line weight. Use warm action gold for movement, stars, and growth; use small saturated anxiety-violet remnants only before they dissolve. Treat these ordinary color names as visual art direction only. Compose progress from lower-left to upper-right and reserve clean center-right negative space for a post-production overlay. Generate no visible words, letters, numbers, technical annotations, captions, subtitles, or interface text; keep every graphic icon-only.
+Use a pure black background and the identical white Stick Figure A with a hollow circular head, no face, no hair, no clothing, no filled body, fixed proportions, and uniform medium line weight. Use warm action gold for movement, stars, and growth; use small saturated anxiety violet remnants only before they dissolve. Treat these ordinary color names as visual art direction only. Compose progress from lower-left to upper-right and reserve clean center-right negative space for a post-production overlay. Generate no visible words, letters, numbers, technical annotations, captions, subtitles, or interface text; keep every graphic icon-only.
 
 First frame: inherit A’s raised right foot in the same lower-right foreground position from Clip 5.
 
