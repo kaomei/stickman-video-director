@@ -6,6 +6,8 @@ Style 3 (Prehistoric Hand-Drawn / Dark Comedy): read `prehistoric-dark-comedy.md
 
 Style 4 (Cozy Storytelling / 治愈故事风): read `cozy-storytelling.md`. Repeat full character and voice anchors, but give each segment its approved new setting. Describe each scene opening as a recognizable new location, then connect action/prop/screen direction or a named time cut. Do not repeat one global room layout, inherit Style 1's no-face/filled-body bans, or require hand-drawn/paper aesthetics. Keep movable-object appearance separate from initial positions and timed state changes.
 
+Style 6 (History Stickman): read `history-stickman.md` and apply its override rules. Repeat the verbatim drawing-style anchor, the era palette and setting, and the full approved cast cards for all visible roles in every prompt. Describe background crowds as uniform repeated ranks and keep named characters few. Do not apply generic face/hair/costume bans or idle bans to its deliberate reaction beats. Use era-appropriate music instead of mandatory piano, keep violence non-graphic, and forbid text on shields and banners. Explicitly identify intended time jumps; otherwise match adjacent states.
+
 ## Production package order
 
 Deliver these sections in order:
@@ -17,7 +19,7 @@ Deliver these sections in order:
 
 ## Global continuity block
 
-State the chosen aspect ratio (`16:9` or `9:16`), target duration, selected visual style (Style 1 Classic, Style 2A Studio Tech, Style 2B Cinematic Story, Style 3 Prehistoric, or Style 4 Cozy Storytelling), character anchor design, palette or environment definition, narrator identity, audio arc, and continuity strategy. Treat this block as a review summary; each prompt still repeats all critical locks.
+State the chosen aspect ratio (`16:9` or `9:16`), target duration, selected visual style (Style 1 Classic, Style 2A Studio Tech, Style 2B Cinematic Story, Style 3 Prehistoric, Style 4 Cozy Storytelling, or Style 6 History Stickman with its era pack), character anchor design, palette or environment definition, narrator identity, audio arc, and continuity strategy. Treat this block as a review summary; each prompt still repeats all critical locks.
 
 ## Standalone prompt order
 
@@ -46,7 +48,7 @@ Write every prompt in this order:
 11. Final-frame transition state inherited by the next clip
 12. Negative constraints (including style-specific clutter/deformation bans)
 
-Make each prompt self-contained and usable without any external context.
+Make each prompt self-contained and usable without any external context. Keep every standalone prompt under 3,600 characters (count the finished text, including anchor, cast cards, voice block, music and negatives); shorten beats, cast cards and SFX lists before touching the frozen voice block, drawing anchor or negatives.
 
 ## Style language
 
@@ -85,7 +87,7 @@ Use ordinary descriptive color names such as vivid red, electric blue, or warm g
 
 ## Audio continuity contract
 
-Use the shared contract in `voice-continuity.md` for Style 1 Light/Dark, Style 2A, Style 2B, Style 3 and Style 4. Choose voices per video, not per clip. Every standalone prompt carries its own full voice and music instructions:
+Use the shared contract in `voice-continuity.md` for Style 1 Light/Dark, Style 2A, Style 2B, Style 3, Style 4 and Style 6. Choose voices per video, not per clip. Every standalone prompt carries its own full voice and music instructions:
 
 1. **Narrator Lock**: Resolve one complete approved profile, then repeat its frozen English block verbatim across all N prompts. Use the accepted male block or build another coherent profile; do not force all videos into one voice. "Same narrator" and "continue the voice from clip 1" alone are insufficient. Separate voice identity/delivery/recording treatment from the emotional and musical arc; no scene-specific timbre changes or switches into character dialogue unless explicitly approved.
 2. **BGM Lock**:
@@ -108,6 +110,7 @@ Forbid:
 - speech bubbles, comic dialog balloons, or visual text boxes
 - **For Style 2A specifically**: `strictly minimalist studio aesthetic, no circuit board textures, no sci-fi wall panels, no spaceship corridors, no cracked concrete, no grunge textures`
 - **For Style 2B specifically**: `no photorealistic human skin, no 3D humanoid CGI models, no chaotic line glitches`
+- **For Style 6 specifically**: `no blood or gore, no photorealistic faces or skin, no glossy 3D CGI characters, no paper texture, no text or letters on shields or banners, no fused or duplicated heads in crowds, no changing costumes between shots`
 
 ## Stitching guide
 

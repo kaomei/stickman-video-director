@@ -23,6 +23,7 @@ Require these before planning:
     - `Style 2B (Cinematic Story)`: full-color narrative environments, cinematic lighting & depth
   - `Style 3 (Prehistoric Hand-Drawn / Dark Comedy)`: expressive white filled heads, black stick limbs, animal-hide costumes and earthy prehistoric settings; story-specific casting
   - `Style 4 (Cozy Storytelling / 治愈故事风)`: expressive minimalist white-filled characters with dark stick limbs in full-color 2D cartoon environments; varied story locations and cinematic shot changes
+  - `Style 6 (History Stickman)`: cel-shaded cartoon with white filled heads, black stick limbs and historical costume; Rome is the first era pack, and the user names the era for other periods
 
 If aspect ratio or visual style is missing, ask for all missing items in one concise message and stop. If duration is omitted, default to 60 seconds (6 clips). If a user provides a duration not divisible by 10, round to the nearest 10-second multiple. If a user specifies only light or dark theme, default to Style 1. Never select an aspect ratio or style silently. Do not re-ask choices already supplied.
 
@@ -43,6 +44,8 @@ Topic approval, schedule pressure, or approval of an older draft is not approval
 For Style 3, read `references/prehistoric-dark-comedy.md` before planning. Its casting, story rhythm, palette and continuity rules override the generic no-idle, device-count and five-stage discussion-ending rules below. Use setup → escalation → ironic payoff for narrative shorts; do not force a discussion question into a visual punchline. This is a visual storytelling style, not a claim about actual prehistory.
 
 For Style 4, read `references/cozy-storytelling.md` before planning and prompt assembly. Default each new ten-second segment to a different recognizable story setting, unless the user explicitly requests one location or approves a deliberate return. Preserve characters, drawing grammar, important props, movement direction and narrator—not an identical table or background across the whole video. Name the location cuts and any time jumps in Phase A. This is full-color cartoon storytelling, not a hand-drawn/sketchbook mode and not a claim of photorealistic 3D backgrounds.
+
+For Style 6, read `references/history-stickman.md` before planning. If the era is missing, ask for it with the other setup items; Rome is available as a ready pack, and any other era gets a drafted era pack in Phase A for approval. Its cast, tone, era-pack, crowd and non-graphic-violence rules override the generic no-idle, device-count and mandatory discussion-ending rules below; use the five-stage flow for explainers and setup → escalation → turning point for narrative shorts. History is stylized, so do not present invented scenes or details as fact.
 
 - Structure every script using the 5-stage high-completion flow:
   1. **Golden Hook**: Instant curiosity trigger via a counter-intuitive question or visual paradox. Timing is flexible based on duration (e.g. within the first 2–5 seconds in short videos, up to 10–15s in long videos); never open with generic platitudes.
