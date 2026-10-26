@@ -27,6 +27,7 @@ stickverse/
 │   ├── watermark-150.png               video watermark (transparent)
 │   ├── endscreen-1920x1080.png         end-screen background with reserved zones
 │   ├── brand-guide.png                 one-page identity sheet (mark, poses, palette, type, rules)
+│   ├── about-section.md                channel description, paste-ready (3 versions)
 │   └── fonts/                          Anton, Bebas Neue, Archivo Black, Caveat, Noto Sans (OFL)
 │
 ├── thumbnails/                 1280x720 thumbnails + 1080x1920 Shorts covers
