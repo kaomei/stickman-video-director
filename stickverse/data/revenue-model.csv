@@ -1,0 +1,13 @@
+month,longform_views,shorts_views,cumulative_watch_hours,cumulative_subs,est_ad_revenue_inr,note
+1,1200,6000,80,40,0,no YPP yet; services/affiliates are the income
+2,2500,20000,250,120,0,no YPP yet; services/affiliates are the income
+3,5000,60000,580,260,0,no YPP yet; services/affiliates are the income
+4,9000,120000,1180,430,0,no YPP yet; services/affiliates are the income
+5,14000,220000,2110,640,0,no YPP yet; services/affiliates are the income
+6,20000,350000,3440,900,1200,fan funding tier possible at 500 subs
+7,30000,500000,5440,1250,1800,YPP active; INR 60 RPM assumption
+8,40000,700000,8110,1700,2400,YPP active; INR 60 RPM assumption
+9,55000,900000,11780,2300,3300,YPP active; INR 60 RPM assumption
+10,70000,1200000,16450,3000,4200,YPP active; INR 60 RPM assumption
+11,90000,1600000,22450,4000,5400,YPP active; INR 60 RPM assumption
+12,120000,2000000,30450,5200,7200,YPP active; INR 60 RPM assumption
