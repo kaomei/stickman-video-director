@@ -18,6 +18,8 @@ channel layer around it.
 ```
 stickverse/
 ├── brand/                      Channel artwork, ready to upload
+│   ├── options/                        THREE banner + profile looks (start at preview-banners.png)
+│   ├── final/                          the recommended pair, upload these two files and you're done
 │   ├── banner-2560x1440.png            channel banner (safe-area tested)
 │   ├── banner-safe-guide.png           same banner with the crop zones drawn on
 │   ├── banner-mobile-crop-1546x423.png what phones actually show
