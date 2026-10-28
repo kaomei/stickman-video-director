@@ -17,8 +17,8 @@ assert "**将任何脚本变成适合不露脸 YouTube 频道的多画风爆款�
 assert "给一个话题、一篇文章或链接，自动制作画面、旁白、字幕、音效与微动画，交付完整火柴人视频。**不出镜，也能做出有辨识度的 YouTube 频道。**" in hero_copy
 assert "汇总全网热门的火柴人画风，持续更新与开源——适用于 **知识科普、心理励志、教育宣传、情感治愈、流行故事等多赛道。**" in hero_copy
 assert "本系列持续更新，欢迎点个 Star，更多热门画风陆续上线。" in cn
-assert "想做不露脸的 YouTube 频道，探索内容变现？" in cn
-assert "获取不出镜 YouTube 视频的自动化工作流与实用工具" in cn
+assert "**每一颗 Star，都为下一次更新添一把火！**" in cn
+assert "100% 免费、开源的工作室" in cn
 assert "我是烤妹儿" not in cn, "Keep the follow CTA focused on reader value, not self-introduction"
 readable_cn = re.sub(r'<[^>]+>|\]\([^)]+\)|https?://[^\s<>)"]+', "", cn.replace("# 🎬 Stickman Video Director\n", "", 1))
 assert not re.search(r"\b(?:Director|Autopilot)\b", readable_cn, re.I), "Use Chinese mode names throughout the Chinese README; preserve technical paths and anchors"
@@ -28,14 +28,16 @@ assert "### A · 导演模式：逐段生成分镜提示词" in cn
 assert "### B · 全自动模式：一句话生成长片" in cn
 
 sections = ("## 两种视频制作模式", "## 开始使用", "## A · 导演模式画风一览",
-            "## B · 全自动模式画风一览", "## 常见问题", "## 更多画风，更多创作可能", "## 许可证")
+            "## B · 全自动模式画风一览", "## 常见问题", "## 迈向 10,000 Stars 与创作者生态",
+            "## 计划中的画风", "## 社区与投稿", "## 许可证")
 assert [cn.index(s) for s in sections] == sorted(cn.index(s) for s in sections)
 assert "## 接下来做什么" not in cn, "Keep the removed next-steps heading out of the footer"
 assert "## Star 增长曲线" not in cn, "Use a reader-focused footer heading; retain the chart itself"
-footer = cn.split("## 更多画风，更多创作可能", 1)[1].split("## 许可证", 1)[0]
-footer_items = ("⭐ **想做不露脸的 YouTube 频道", "🔔 **关注", '<a id="whats-next"></a>',
-                "🎨 **更多画风（计划中）**：", "💬 **建议与投稿**：", '<div align="center">')
-assert [footer.index(s) for s in footer_items] == sorted(footer.index(s) for s in footer_items), "Place icon-led contribution paragraphs after the follow CTA and before the Star chart"
+footer = cn.split("## 迈向 10,000 Stars 与创作者生态", 1)[1].split("## 许可证", 1)[0]
+footer_items = ("**每一颗 Star", "- [x] **1,000 Stars**", "- [ ] **10,000 Stars**",
+                '<div align="center">', '<a id="whats-next"></a>', "## 计划中的画风",
+                "## 社区与投稿", "🔔 *在 X 上关注")
+assert [footer.index(s) for s in footer_items] == sorted(footer.index(s) for s in footer_items), "Place roadmap before the unchanged chart, then styles, submissions and the X follow link"
 mode_comparison = cn.split('<a id="creation-modes"></a>', 1)[1].split('<a id="quick-start"></a>', 1)[0]
 mode_rows = [line for line in mode_comparison.splitlines() if line.startswith("|")]
 assert not any(row.startswith(("| **操作** |", "| **用途** |")) for row in mode_rows), "Keep the comparison concise without the removed operation and use-case rows"

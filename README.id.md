@@ -335,17 +335,19 @@ Proyek ini memakai lisensi MIT yang mengizinkan penggunaan komersial. Gambar, mu
 
 <!-- readme:contribute -->
 
-## Lebih banyak gaya, lebih banyak ruang berkarya
+## Menuju 10,000 Stars dan ekosistem kreator
 
-⭐ **Ingin membangun channel YouTube tanpa tampil di kamera dan mengeksplorasi monetisasi konten?** Beri Star untuk mengikuti gaya stickman, prompt video, dan alur produksi otomatis, supaya ide channel Anda tidak berhenti di pertanyaan “videonya dibuat bagaimana?”
+**Setiap Star mendukung rilisan berikutnya!** Bersama-sama, kita membangun studio 100% gratis dan open source untuk membantu kreator solo mengelola channel tanpa tampil di kamera, tanpa langganan SaaS seharga US$ 50/bulan.
 
-🔔 **Ikuti [@CrazyKaomei](https://x.com/CrazyKaomei)** untuk alur otomatisasi dan alat praktis bagi video YouTube tanpa tampil di kamera: menghubungkan naskah, narasi, gambar, dan editing agar pekerjaan berulang berkurang dan kreator solo bisa terus berkarya. Ide topik, pertumbuhan channel, dan pendekatan monetisasi juga terus dibagikan.
-
-<a id="whats-next"></a>
-
-🎨 **Gaya yang direncanakan:** buku cerita bergambar, aksi grafiti, sitkom dua karakter, petualangan permainan kartu, perpaduan latar nyata dan ilustrasi, serta penjelasan dengan papan tulis atau presentasi.
-
-💬 **Saran dan karya komunitas:** ingin mengusulkan gaya, membagikan karya, atau melaporkan masalah? Hubungi [@CrazyKaomei](https://t.me/CrazyKaomei) di Telegram. Usulan gaya sebaiknya menyertakan referensi dan topik yang ingin dicoba. Untuk kiriman karya, sertakan video, gaya yang digunakan, dan tautan kreator agar bisa ditampilkan dengan kredit yang sesuai.
+- [x] **1,000 Stars**: Director Mode + 5 gaya visual inti telah dirilis
+- [x] **3,000 Stars**: AutoPilot Mode untuk membuat video dalam satu klik telah dirilis
+- [ ] **🔥 5,000 Stars**:
+  - Rilis 5–10 gaya visual baru
+  - Editor massal satu klik untuk YouTube Shorts dan TikTok
+- [ ] **7,500 Stars**:
+  - Koleksi 1,000+ prompt naskah YouTube viral
+  - 200+ efek suara dan transisi bebas royalti serta aman dari Content ID
+- [ ] **10,000 Stars**: peluncuran Web Studio resmi serba lengkap
 
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
@@ -356,6 +358,28 @@ Proyek ini memakai lisensi MIT yang mengizinkan penggunaan komersial. Gambar, mu
   </picture>
 </a>
 </div>
+
+<a id="whats-next"></a>
+
+## Gaya visual yang direncanakan
+
+Kami sedang melatih mesin khusus baru untuk niche YouTube tanpa tampil di kamera yang paling banyak diminta:
+
+- **Sejarah dan legenda ala OverSimplified** — Tokoh sejarah mungil, panah penaklukan, dan peta pertempuran satiris
+- **Pertarungan stickman dan garis kecepatan** — Pertarungan dinamis ala Alan Becker, bela diri, dan frame benturan
+- **Psikologi gelap dan noir stoik** — Siluet penuh suasana, mata bercahaya, dan cerita ala The 48 Laws of Power
+- **Parodi Wall Street dan Silicon Valley** — Stickman berjas dan berdasi, grafik anjlok, dan sindiran korporat
+- **Podcast dua mikrofon dan stand-up** — Komedi dialog cepat, pengolahan ulang wawancara, dan saling ledek antarkarakter
+- **Misteri internet dan legenda urban** — Sketsa pensil menyeramkan, gangguan analog, dan kisah misteri Reddit
+
+## Komunitas dan kiriman karya
+
+Ingin mengusulkan gaya atau menampilkan channel Anda? Kirim pesan ke **[@CrazyKaomei](https://t.me/CrazyKaomei)** di Telegram:
+
+- **Minta gaya**: kirim tautan referensi visual + niche yang ingin Anda bahas.
+- **Tampilkan karya**: sudah membuat video dengan alat ini? Kirim tautannya untuk ditampilkan di README ini dan channel YouTube resmi kami!
+
+🔔 *Ikuti **[@CrazyKaomei](https://x.com/CrazyKaomei)** di X untuk alur produksi video harian, alat otomatisasi, dan SOP pertumbuhan channel.*
 
 ## Lisensi
 

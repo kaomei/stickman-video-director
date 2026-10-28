@@ -86,9 +86,28 @@ for name in selected:
     assert anchors(text) == expected_anchors, (name, "shared anchors and section order")
     for link in shared_links:
         assert link in text, (name, link)
-    feedback = next(line for line in text.splitlines() if line.startswith("💬 **"))
-    assert "Telegram" in feedback and "[@CrazyKaomei](https://t.me/CrazyKaomei)" in feedback, (name, "Telegram feedback contact")
-    assert "https://github.com/kaomei/stickman-video-director/issues" not in feedback, (name, "Do not require a GitHub Issue for feedback")
+    ecosystem = text.split("<!-- readme:contribute -->", 1)[1]
+    ecosystem_sections = re.split(r"^## ", ecosystem, flags=re.M)
+    assert len(ecosystem_sections) == 5, (name, "roadmap, planned styles, community, license use H2")
+    roadmap, planned, community = ecosystem_sections[1:4]
+    assert not re.search(r"^(?:### |---\s*$)", ecosystem, re.M), (name, "consistent section headings, no extra thick rules")
+    assert not any(heading.startswith(("🎨", "💬")) for heading in (planned, community)), (name, "plain section headings")
+    milestones = re.findall(r"^- \[([x ])\] \*\*(?:🔥 )?([0-9,]+) Stars\*\*", roadmap, re.M)
+    assert milestones == [("x", "1,000"), ("x", "3,000"), (" ", "5,000"), (" ", "7,500"), (" ", "10,000")], (name, "approved milestone states")
+    assert len(re.findall(r"^  - ", roadmap, re.M)) == 4, (name, "four nested milestone deliverables")
+    mode_names = ("导演模式", "全自动模式") if name == "README.zh-CN.md" else ("Director", "AutoPilot")
+    for token in (*mode_names, "5–10", "1,000", "200", "YouTube Shorts", "TikTok", "Content", "Web Studio"):
+        assert token in roadmap, (name, "roadmap deliverable", token)
+    assert "api.star-history.com/svg" in roadmap, (name, "chart after roadmap and before styles")
+    assert '<a id="whats-next"></a>' in roadmap, (name, "retained navigation anchor before planned styles")
+    assert len(re.findall(r"^- \*\*.*?\*\* — ", planned, re.M)) == 6, (name, "six planned visual styles")
+    for token in ("OverSimplified", "Alan", "Reddit"):
+        assert token in planned, (name, "style reference", token)
+    assert len(re.findall(r"^- \*\*", community, re.M)) == 2, (name, "style requests and creator submissions")
+    assert "Telegram" in community and "**[@CrazyKaomei](https://t.me/CrazyKaomei)**" in community, (name, "Telegram contact")
+    assert "README" in community and "YouTube" in community, (name, "creator showcase destinations")
+    assert "https://github.com/kaomei/stickman-video-director/issues" not in community, (name, "Do not require a GitHub Issue for feedback")
+    assert re.search(r"^🔔 \*.*\*\*\[@CrazyKaomei\]\(https://x\.com/CrazyKaomei\)\*\*.*\*$", community, re.M), (name, "italic X follow line with bold profile link")
     assert "recent-updates" not in text, (name, "removed updates section")
     assert not re.search(r"monixin888|2109651037850325112", text, re.I), name
     assert not re.search(r"guaranteed (viral|views|income)|/Users/|eva2050|240669650", text, re.I), name

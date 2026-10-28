@@ -326,17 +326,19 @@ The project uses the MIT license, which permits commercial use. Third-party imag
 
 <!-- readme:contribute -->
 
-## More styles. More ways to create.
+## Road to 10,000 Stars & Creator Ecosystem
 
-⭐ **Building a faceless YouTube channel and exploring content monetization?** Star this project for new stickman styles, video prompts, and automated workflows—so figuring out how to make the video stops holding your channel back.
+**Every star fuels the next drop!** Together, we’re building a 100% free, open-source studio to help solo creators run faceless channels without $50/mo SaaS subscriptions.
 
-🔔 **Follow [@CrazyKaomei](https://x.com/CrazyKaomei)** for faceless YouTube workflows and practical tools that connect scripting, voiceover, image generation, and editing. Spend less time on repetitive tasks and make consistent production more manageable as a solo creator, with more ideas on topics, channel growth, and monetization along the way.
-
-<a id="whats-next"></a>
-
-🎨 **Planned styles**: illustrated storybooks, doodle fights, two-character sitcoms, card-based adventures, live-action/animation hybrids, and classroom explainers.
-
-💬 **Ideas and submissions**: suggest a style, share your work, or report a problem by messaging [@CrazyKaomei](https://t.me/CrazyKaomei) on Telegram. For style requests, include a reference and the topic you want to cover. For submissions, include your video, the style used, and your creator link so your work can be showcased and credited.
+- [x] **1,000 Stars**: Shipped Director Mode + 5 core visual styles
+- [x] **3,000 Stars**: Shipped AutoPilot Mode for 1-click video generation
+- [ ] **🔥 5,000 Stars**:
+  - 5–10 new visual styles drop
+  - 1-click batch editor for YouTube Shorts & TikTok
+- [ ] **7,500 Stars**:
+  - 1,000+ viral YouTube script prompt vault
+  - 200+ royalty-free, Content-ID safe SFX and transitions
+- [ ] **10,000 Stars**: Launch the official all-in-one Web Studio
 
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
@@ -347,6 +349,28 @@ The project uses the MIT license, which permits commercial use. Third-party imag
   </picture>
 </a>
 </div>
+
+<a id="whats-next"></a>
+
+## Planned Visual Styles
+
+We are actively training new specialized engines for the most requested faceless YouTube niches:
+
+- **OverSimplified History & Lore** — Tiny historical figures, conquest arrows & satirical battle maps
+- **Stickman Combat & Speedlines** — Alan-Becker-style dynamic combat, martial arts & impact frames
+- **Dark Psychology & Stoic Noir** — Moody silhouettes, glowing eyes & 48-Laws-of-Power storytelling
+- **Wall Street & Silicon Valley Parody** — Suit-and-tie stickmen, crashing charts & corporate roasts
+- **Two-Mic Podcast & Stand-Up** — Snappy dialogue comedy, interview repurposing & character banter
+- **Internet Mysteries & Urban Legends** — Eerie pencil sketches, analog glitch & Reddit mystery lore
+
+## Community & Submissions
+
+Want to suggest a style or get your channel featured? Message **[@CrazyKaomei](https://t.me/CrazyKaomei)** on Telegram:
+
+- **Request a Style**: Send a visual reference link + the niche you want to cover.
+- **Get Featured**: Made a video with this tool? Send your link to be showcased in this README and on our official YouTube channel!
+
+🔔 *Follow **[@CrazyKaomei](https://x.com/CrazyKaomei)** on X for daily video workflows, automation tools, and channel growth SOPs.*
 
 ## License
 

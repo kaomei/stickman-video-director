@@ -330,17 +330,19 @@ Le projet est sous licence MIT, qui autorise l’usage commercial. Les images, m
 
 <!-- readme:contribute -->
 
-## Plus de styles, plus de possibilités créatives
+## En route vers 10,000 Stars et un écosystème de créateurs
 
-⭐ **Vous voulez lancer une chaîne YouTube sans montrer votre visage et explorer la monétisation de vos contenus ?** Ajoutez une étoile au projet pour retrouver les styles stickman, les prompts vidéo et les workflows automatisés à mesure qu’ils évoluent — et passer moins de temps à vous demander comment produire vos vidéos.
+**Chaque étoile alimente la prochaine nouveauté !** Ensemble, nous construisons un studio 100 % gratuit et open source pour aider les créateurs solo à gérer des chaînes sans montrer leur visage, sans abonnement SaaS à 50 $/mois.
 
-🔔 **Suivez [@CrazyKaomei](https://x.com/CrazyKaomei)** pour découvrir des workflows et des outils de création YouTube sans caméra : reliez scénario, voix off, images et montage, réduisez les tâches répétitives et produisez plus régulièrement en solo. Idées de sujets, développement de chaîne et pistes de monétisation sont aussi au programme.
-
-<a id="whats-next"></a>
-
-🎨 **Styles prévus** : livre illustré, combats façon graffiti, sitcom à deux personnages, aventures en cartes, univers mêlant réel et dessin, et présentations au tableau.
-
-💬 **Suggestions et contributions** : pour proposer un style, partager votre création ou signaler un problème, contactez [@CrazyKaomei](https://t.me/CrazyKaomei) sur Telegram. Pour un nouveau style, joignez une référence et le sujet que vous souhaitez traiter. Pour une création, ajoutez la vidéo, le style utilisé et un lien vers son auteur pour faciliter la présentation et l’attribution.
+- [x] **1,000 Stars** : lancement du mode Director + 5 styles visuels de base
+- [x] **3,000 Stars** : lancement du mode AutoPilot pour générer des vidéos en un clic
+- [ ] **🔥 5,000 Stars** :
+  - 5–10 nouveaux styles visuels
+  - Éditeur par lots en un clic pour YouTube Shorts et TikTok
+- [ ] **7,500 Stars** :
+  - Bibliothèque de plus de 1,000 prompts de scripts YouTube viraux
+  - Plus de 200 effets sonores et transitions libres de redevances et sans risque Content ID
+- [ ] **10,000 Stars** : lancement du Web Studio officiel tout-en-un
 
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
@@ -351,6 +353,28 @@ Le projet est sous licence MIT, qui autorise l’usage commercial. Les images, m
   </picture>
 </a>
 </div>
+
+<a id="whats-next"></a>
+
+## Styles visuels prévus
+
+Nous entraînons de nouveaux moteurs spécialisés pour les niches YouTube sans visage les plus demandées :
+
+- **Histoire et légendes façon OverSimplified** — Petits personnages historiques, flèches de conquête et cartes de bataille satiriques
+- **Combats de stickmen et lignes de vitesse** — Combats dynamiques façon Alan Becker, arts martiaux et images d’impact
+- **Psychologie sombre et noir stoïcien** — Silhouettes sombres, yeux lumineux et récits façon Les 48 lois du pouvoir
+- **Parodies de Wall Street et de la Silicon Valley** — Stickmen en costume-cravate, graphiques en chute libre et satire d’entreprise
+- **Podcast à deux micros et stand-up** — Comédie dialoguée rythmée, réutilisation d’interviews et échanges entre personnages
+- **Mystères d’Internet et légendes urbaines** — Croquis au crayon inquiétants, parasites analogiques et récits mystérieux de Reddit
+
+## Communauté et contributions
+
+Vous voulez proposer un style ou faire découvrir votre chaîne ? Contactez **[@CrazyKaomei](https://t.me/CrazyKaomei)** sur Telegram :
+
+- **Proposer un style** : envoyez un lien de référence visuelle + la niche que vous souhaitez traiter.
+- **Présenter votre travail** : vous avez créé une vidéo avec cet outil ? Envoyez votre lien pour la présenter dans ce README et sur notre chaîne YouTube officielle !
+
+🔔 *Suivez **[@CrazyKaomei](https://x.com/CrazyKaomei)** sur X pour des workflows vidéo quotidiens, des outils d’automatisation et des procédures de croissance de chaîne.*
 
 ## Licence
 

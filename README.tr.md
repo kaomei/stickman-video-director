@@ -329,17 +329,19 @@ Proje MIT lisanslıdır ve ticari kullanıma izin verir. Videoda kullanılan ü�
 
 <!-- readme:contribute -->
 
-## Daha çok stil, daha çok yaratıcı olasılık
+## 10,000 Stars’a doğru ve içerik üreticisi ekosistemi
 
-⭐ **Yüzünüzü göstermeden bir YouTube kanalı kurmak ve içerikten gelir elde etme yollarını keşfetmek mi istiyorsunuz?** Projeye yıldız ekleyin; yeni çöp adam stillerini, video istemlerini ve otomatik üretim akışlarını takip edin. Kanalınız “Videoyu nasıl yapacağım?” aşamasında takılı kalmasın.
+**Her yıldız bir sonraki yeniliğe güç verir!** Tek başına içerik üretenlerin aylık 50 dolarlık SaaS abonelikleri olmadan yüzlerini göstermedikleri kanallar yönetebilmesi için birlikte %100 ücretsiz, açık kaynaklı bir stüdyo kuruyoruz.
 
-🔔 **[@CrazyKaomei](https://x.com/CrazyKaomei)’yi takip edin**: yüzünüzü göstermeden YouTube içeriği üretmek için otomasyon akışları ve pratik araçlar keşfedin. Senaryo, seslendirme, görsel üretim ve kurguyu birbirine bağlayın; tekrar eden işleri azaltıp tek başınıza daha düzenli içerik üretin. Konu bulma, kanal büyütme ve içerikten gelir elde etme fikirleri de paylaşılmaya devam ediyor.
-
-<a id="whats-next"></a>
-
-🎨 **Planlanan stiller**: resimli hikâye kitabı, grafiti dövüş, iki kişilik sitcom, kart oyunu macerası, gerçek ve çizimin birleştiği dünyalar, tahta başında anlatım.
-
-💬 **Öneri ve katkılar**: yeni bir stil önermek, çalışmanızı paylaşmak veya sorun bildirmek için Telegram üzerinden [@CrazyKaomei](https://t.me/CrazyKaomei) ile iletişime geçin. Stil önerirken bir referans ve işlemek istediğiniz konuyu ekleyin. Çalışmanızı paylaşırken videoyu, kullandığınız stili ve sunumda adınızı belirtmek için bir yazar bağlantısını gönderin.
+- [x] **1,000 Stars**: Director Mode + 5 temel görsel stil yayımlandı
+- [x] **3,000 Stars**: tek tıkla video üreten AutoPilot Mode yayımlandı
+- [ ] **🔥 5,000 Stars**:
+  - 5–10 yeni görsel stil
+  - YouTube Shorts ve TikTok için tek tıkla toplu düzenleyici
+- [ ] **7,500 Stars**:
+  - 1,000’den fazla viral YouTube senaryosu isteminden oluşan arşiv
+  - 200’den fazla telifsiz, Content ID açısından güvenli ses efekti ve geçiş
+- [ ] **10,000 Stars**: resmî hepsi bir arada Web Studio’nun açılışı
 
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
@@ -350,6 +352,28 @@ Proje MIT lisanslıdır ve ticari kullanıma izin verir. Videoda kullanılan ü�
   </picture>
 </a>
 </div>
+
+<a id="whats-next"></a>
+
+## Planlanan görsel stiller
+
+Yüz göstermeyen YouTube kanallarında en çok talep edilen nişler için yeni uzmanlaşmış motorlar eğitiyoruz:
+
+- **OverSimplified tarzı tarih ve efsaneler** — Küçük tarihî figürler, fetih okları ve hicivli savaş haritaları
+- **Çöp adam dövüşü ve hız çizgileri** — Alan Becker tarzı dinamik dövüş, dövüş sanatları ve darbe kareleri
+- **Karanlık psikoloji ve stoacı noir** — Kasvetli siluetler, parlayan gözler ve İktidarın 48 Yasası tarzı anlatılar
+- **Wall Street ve Silikon Vadisi parodisi** — Takım elbiseli, kravatlı çöp adamlar, çöken grafikler ve kurumsal taşlama
+- **İki mikrofonlu podcast ve stand-up** — Hızlı diyalog komedisi, röportajları yeniden işleme ve karakter atışmaları
+- **İnternet gizemleri ve şehir efsaneleri** — Ürkütücü kurşun kalem çizimleri, analog bozulmalar ve Reddit gizem hikâyeleri
+
+## Topluluk ve eser gönderimi
+
+Bir stil önermek veya kanalınızın tanıtılmasını mı istiyorsunuz? Telegram’da **[@CrazyKaomei](https://t.me/CrazyKaomei)** hesabına mesaj gönderin:
+
+- **Stil isteyin**: görsel referans bağlantısını + ele almak istediğiniz nişi gönderin.
+- **Eserinizi tanıtalım**: bu araçla video mu yaptınız? Bu README’de ve resmî YouTube kanalımızda sergilenmesi için bağlantısını gönderin!
+
+🔔 *Günlük video iş akışları, otomasyon araçları ve kanal büyütme prosedürleri için X’te **[@CrazyKaomei](https://x.com/CrazyKaomei)** hesabını takip edin.*
 
 ## Lisans
 

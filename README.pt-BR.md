@@ -334,17 +334,19 @@ O projeto usa a licença MIT, que permite uso comercial. Imagens, músicas, efei
 
 <!-- readme:contribute -->
 
-## Mais estilos, mais possibilidades de criar
+## Rumo a 10,000 Stars e a um ecossistema de criadores
 
-⭐ **Quer criar um canal no YouTube sem aparecer e explorar a monetização de conteúdo?** Deixe um Star para acompanhar estilos de bonecos de palito, prompts de vídeo e fluxos de produção automatizados — e tirar o “como vou produzir?” do caminho.
+**Cada Star impulsiona a próxima novidade!** Juntos, estamos construindo um estúdio 100% gratuito e de código aberto para ajudar criadores solo a tocar canais sem aparecer, sem assinaturas SaaS de US$ 50/mês.
 
-🔔 **Siga [@CrazyKaomei](https://x.com/CrazyKaomei)** para conhecer ferramentas e fluxos de automação para vídeos no YouTube sem aparecer: roteiro, narração, imagens e edição conectados para reduzir tarefas repetitivas e facilitar a produção solo. Também tem ideias de conteúdo, crescimento de canal e caminhos para monetização.
-
-<a id="whats-next"></a>
-
-🎨 **Estilos planejados:** livro ilustrado, lutas em grafite, sitcom de dois personagens, aventura com cartas, mistura de cenários reais e ilustrados e explicações com quadro ou apresentação.
-
-💬 **Sugestões e trabalhos da comunidade:** quer propor um estilo, mostrar um vídeo ou relatar um problema? Fale com [@CrazyKaomei](https://t.me/CrazyKaomei) no Telegram. Para sugerir um estilo, inclua referências e o tema que quer explorar. Para enviar um trabalho, inclua o vídeo, o estilo usado e o link do autor para exibição e créditos.
+- [x] **1,000 Stars**: lançamento do modo Director + 5 estilos visuais principais
+- [x] **3,000 Stars**: lançamento do modo AutoPilot para gerar vídeos em um clique
+- [ ] **🔥 5,000 Stars**:
+  - Lançamento de 5–10 novos estilos visuais
+  - Editor em lote com um clique para YouTube Shorts e TikTok
+- [ ] **7,500 Stars**:
+  - Biblioteca com mais de 1,000 prompts de roteiros virais para YouTube
+  - Mais de 200 efeitos sonoros e transições livres de royalties e seguros para Content ID
+- [ ] **10,000 Stars**: lançamento do Web Studio oficial completo e integrado
 
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
@@ -355,6 +357,28 @@ O projeto usa a licença MIT, que permite uso comercial. Imagens, músicas, efei
   </picture>
 </a>
 </div>
+
+<a id="whats-next"></a>
+
+## Estilos visuais planejados
+
+Estamos treinando novos motores especializados para os nichos mais pedidos de canais do YouTube sem aparecer:
+
+- **História e lendas no estilo OverSimplified** — Pequenas figuras históricas, setas de conquista e mapas de batalha satíricos
+- **Combate stickman e linhas de velocidade** — Lutas dinâmicas no estilo Alan Becker, artes marciais e quadros de impacto
+- **Psicologia sombria e noir estoico** — Silhuetas marcantes, olhos brilhantes e narrativas no estilo As 48 Leis do Poder
+- **Paródias de Wall Street e do Vale do Silício** — Stickmen de terno e gravata, gráficos despencando e sátira corporativa
+- **Podcast com dois microfones e stand-up** — Comédia de diálogo ágil, reaproveitamento de entrevistas e troca de provocações entre personagens
+- **Mistérios da internet e lendas urbanas** — Esboços a lápis sinistros, falhas analógicas e histórias de mistério do Reddit
+
+## Comunidade e envios
+
+Quer sugerir um estilo ou ter seu canal em destaque? Mande uma mensagem para **[@CrazyKaomei](https://t.me/CrazyKaomei)** no Telegram:
+
+- **Pedir um estilo**: envie um link de referência visual + o nicho que você quer abordar.
+- **Aparecer em destaque**: fez um vídeo com esta ferramenta? Envie o link para exibição neste README e no nosso canal oficial do YouTube!
+
+🔔 *Siga **[@CrazyKaomei](https://x.com/CrazyKaomei)** no X para fluxos diários de produção de vídeo, ferramentas de automação e procedimentos de crescimento de canal.*
 
 ## Licença
 
