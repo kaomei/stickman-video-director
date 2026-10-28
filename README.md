@@ -2,9 +2,9 @@
 
 [**🇺🇸 EN**](README.en.md) · [🇨🇳 简中](README.zh-CN.md) · [🇯🇵 日本語](README.ja.md) · [🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md) · [🇧🇷 PT-BR](README.pt-BR.md) · [🇹🇷 TR](README.tr.md) · [🇮🇩 ID](README.id.md)
 
-# AI Stickman Video Generator for Faceless YouTube Channels
+# 🎬 Stickman Video Director
 
-**Turn any idea into a high-quality stickman video with a consistent visual style.**
+**Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels. Fully open-source.**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)

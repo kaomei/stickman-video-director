@@ -8,19 +8,19 @@ import struct
 root = Path(__file__).resolve().parents[1]
 cn = (root / "README.zh-CN.md").read_text()
 assert (root / "README.md").read_bytes() == (root / "README.en.md").read_bytes()
-assert "# AI 火柴人视频生成器" in cn
+assert "# 🎬 Stickman Video Director" in cn
 assert "[**🇨🇳 简中**](README.zh-CN.md)" in cn
 assert "[🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md)" in cn, "French follows Korean in the shared navigation"
 assert (root / "README.fr.md").is_file(), "French navigation must open a complete README"
 hero_copy = cn.split("</div>", 1)[0]
-assert "**将任何想法变成一部高质量的、稳定画风火柴人视频。**" in hero_copy
+assert "**将任何脚本变成适合不露脸 YouTube 频道的多画风爆款火柴人动画视频。完全开源。**" in hero_copy
 assert "给一个话题、一篇文章或链接，自动制作画面、旁白、字幕、音效与微动画，交付完整火柴人视频。**不出镜，也能做出有辨识度的 YouTube 频道。**" in hero_copy
 assert "汇总全网热门的火柴人画风，持续更新与开源——适用于 **知识科普、心理励志、教育宣传、情感治愈、流行故事等多赛道。**" in hero_copy
 assert "本系列持续更新，欢迎点个 Star，更多热门画风陆续上线。" in cn
 assert "想做不露脸的 YouTube 频道，探索内容变现？" in cn
 assert "获取不出镜 YouTube 视频的自动化工作流与实用工具" in cn
 assert "我是烤妹儿" not in cn, "Keep the follow CTA focused on reader value, not self-introduction"
-readable_cn = re.sub(r'<[^>]+>|\]\([^)]+\)|https?://[^\s<>)"]+', "", cn)
+readable_cn = re.sub(r'<[^>]+>|\]\([^)]+\)|https?://[^\s<>)"]+', "", cn.replace("# 🎬 Stickman Video Director\n", "", 1))
 assert not re.search(r"\b(?:Director|Autopilot)\b", readable_cn, re.I), "Use Chinese mode names throughout the Chinese README; preserve technical paths and anchors"
 assert "自动成片" not in readable_cn, "Use 全自动模式 consistently for mode B"
 assert not re.search(r"(?<!AI )助手|(?<=[\u4e00-\u9fff])AI 助手", readable_cn), "Use AI 助手 consistently, with spaces between English and Chinese"

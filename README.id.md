@@ -2,9 +2,9 @@
 
 [🇺🇸 EN](README.en.md) · [🇨🇳 简中](README.zh-CN.md) · [🇯🇵 日本語](README.ja.md) · [🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md) · [🇧🇷 PT-BR](README.pt-BR.md) · [🇹🇷 TR](README.tr.md) · [**🇮🇩 ID**](README.id.md)
 
-# Pembuat Video Stickman AI untuk YouTube Tanpa Tampil di Kamera
+# 🎬 Stickman Video Director
 
-**Ubah ide apa pun menjadi video stickman berkualitas tinggi dengan gaya visual yang konsisten.**
+**Ubah naskah apa pun menjadi video animasi stickman viral dalam berbagai gaya untuk channel YouTube tanpa tampil di kamera. Sepenuhnya open source.**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)

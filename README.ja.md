@@ -2,9 +2,9 @@
 
 [🇺🇸 EN](README.en.md) · [🇨🇳 简中](README.zh-CN.md) · [**🇯🇵 日本語**](README.ja.md) · [🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md) · [🇧🇷 PT-BR](README.pt-BR.md) · [🇹🇷 TR](README.tr.md) · [🇮🇩 ID](README.id.md)
 
-# 顔出しなしのYouTube向け AI棒人間動画生成ツール
+# 🎬 Stickman Video Director
 
-**どんなアイデアも、統一感のある画風で高品質な棒人間動画に。**
+**どんな脚本も、顔出しなしのYouTubeチャンネルでバズる、多彩な画風の棒人間アニメ動画に。完全オープンソース。**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)

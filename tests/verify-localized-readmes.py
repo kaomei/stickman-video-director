@@ -19,9 +19,9 @@ navigation = (
 expected_files = {"README.md", *(f"README.{locale}.md" for locale, _ in navigation)}
 assert {p.name for p in root.glob("README*.md")} == expected_files
 assert source == (root / "README.en.md").read_text(), "Default homepage must match English"
-assert "# AI Stickman Video Generator for Faceless YouTube Channels" in source
+assert "# 🎬 Stickman Video Director" in source
 english_hero = source.split("</div>", 1)[0]
-assert "**Turn any idea into a high-quality stickman video with a consistent visual style.**" in english_hero
+assert "**Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels. Fully open-source.**" in english_hero
 for phrase in ("a topic, an article, or a link", "visuals, voiceover, captions, sound effects, and subtle animation",
                "complete stickman video", "distinctive YouTube channel without ever appearing on camera",
                "open-source collection", "continually updated", "science and knowledge explainers",
@@ -69,9 +69,10 @@ for name in selected:
     top = text.split("</div>", 1)[0]
     hero_blocks = [block.strip() for block in top.split("\n\n") if block.strip()]
     assert len(hero_blocks) == 7, (name, "title, subtitle, badges and exactly two introduction paragraphs")
+    assert hero_blocks[2] == "# 🎬 Stickman Video Director", (name, "shared product title")
     subtitle = hero_blocks[3]
     assert subtitle.startswith("**") and subtitle.endswith("**"), (name, "bold subtitle")
-    assert "YouTube" not in subtitle, (name, "subtitle focuses on quality and visual consistency")
+    assert "🎬" not in subtitle and "YouTube" in subtitle, (name, "localized script-to-video subtitle for faceless YouTube channels")
     assert "YouTube" in hero_blocks[5], (name, "faceless-channel value in first introduction paragraph")
     active = "en" if name == "README.md" else name[7:-3]
     expected_nav = " · ".join(

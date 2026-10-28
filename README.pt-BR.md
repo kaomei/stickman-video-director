@@ -2,9 +2,9 @@
 
 [🇺🇸 EN](README.en.md) · [🇨🇳 简中](README.zh-CN.md) · [🇯🇵 日本語](README.ja.md) · [🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md) · [**🇧🇷 PT-BR**](README.pt-BR.md) · [🇹🇷 TR](README.tr.md) · [🇮🇩 ID](README.id.md)
 
-# Gerador de vídeos de bonecos de palito com IA para o YouTube
+# 🎬 Stickman Video Director
 
-**Transforme qualquer ideia em um vídeo de bonecos de palito de alta qualidade, com um estilo visual consistente.**
+**Transforme qualquer roteiro em vídeos animados de bonecos de palito virais, em vários estilos, para canais do YouTube sem aparecer na câmera. Totalmente de código aberto.**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)

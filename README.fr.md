@@ -2,9 +2,9 @@
 
 [🇺🇸 EN](README.en.md) · [🇨🇳 简中](README.zh-CN.md) · [🇯🇵 日本語](README.ja.md) · [🇰🇷 한국어](README.ko.md) · [**🇫🇷 FR**](README.fr.md) · [🇧🇷 PT-BR](README.pt-BR.md) · [🇹🇷 TR](README.tr.md) · [🇮🇩 ID](README.id.md)
 
-# Générateur de vidéos stickman par IA pour YouTube sans montrer son visage
+# 🎬 Stickman Video Director
 
-**Transformez n’importe quelle idée en une vidéo stickman de haute qualité, au style visuel cohérent.**
+**Transformez n’importe quel script en vidéos d’animation stickman virales, dans des styles variés, pour les chaînes YouTube sans visage. Entièrement open source.**
 
 [![Étoiles GitHub](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![Licence MIT](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)

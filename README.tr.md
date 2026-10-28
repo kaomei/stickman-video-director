@@ -2,9 +2,9 @@
 
 [🇺🇸 EN](README.en.md) · [🇨🇳 简中](README.zh-CN.md) · [🇯🇵 日本語](README.ja.md) · [🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md) · [🇧🇷 PT-BR](README.pt-BR.md) · [**🇹🇷 TR**](README.tr.md) · [🇮🇩 ID](README.id.md)
 
-# YouTube için Yapay Zekâ ile Çöp Adam Videosu Oluşturun
+# 🎬 Stickman Video Director
 
-**Her fikri, tutarlı bir görsel stile sahip yüksek kaliteli bir çöp adam videosuna dönüştürün.**
+**Her senaryoyu, yüzünüzü göstermeden içerik ürettiğiniz YouTube kanalları için farklı tarzlarda viral çöp adam animasyon videolarına dönüştürün. Tamamen açık kaynak.**
 
 [![GitHub Yıldızları](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT Lisansı](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
