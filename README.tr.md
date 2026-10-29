@@ -9,9 +9,11 @@
 [![GitHub Yıldızları](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT Lisansı](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Bir konu, makale veya bağlantı paylaşın; görseller, seslendirme, altyazılar, ses efektleri ve mikro animasyonlar otomatik hazırlansın, eksiksiz bir çöp adam videosu ortaya çıksın. **Kameraya çıkmadan da kendine özgü bir YouTube kanalı oluşturun.**
+Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altyazıları ve ses efektlerini otomatik olarak düzenleyerek yayına hazır bir çöp adam videosu oluşturun.
 
-İnternette popüler olan çöp adam animasyon stillerini bir araya getirir; açık kaynak olarak sürekli güncellenir. **Bilim ve bilgi içerikleri, psikoloji ve motivasyon, eğitim ve farkındalık, duygusal destek, popüler hikâyeler ve daha pek çok içerik alanı** için uygundur.
+**⚡ %100 ücretsiz ve açık kaynak. Kamera yok, aylık 50 dolarlık abonelik yok; günler değil, dakikalar içinde hazır.**
+
+**Bilim anlatıları, karanlık psikoloji, teknoloji meselleri, viral hikâyeler ve hikâye anlatımı kanalları** için sürekli güncellenen görsel stiller.
 
 </div>
 
@@ -52,36 +54,41 @@ Bir konu, makale veya bağlantı paylaşın; görseller, seslendirme, altyazıla
 
 **6 stil · 8 görsel seçenek · Denenmiş örnekler · Ücretsiz ve açık kaynak**
 
-⭐ **Kütüphane gelişmeye devam ediyor. Yeni stilleri takip etmek ve projeyi kolayca bulmak için yıldız ekleyin.**
+⭐ **Bir sonraki stil paketini ve yeni özellikleri kaçırmamak için projeye yıldız verin.**
 
-[Başlayın](#quick-start) · [A stilleri](#a-styles) · [B stilleri](#b-styles) · [Sık sorulan sorular](#faq)
+[Başlayın](#quick-start) · [Director Stilleri](#a-styles) · [Autopilot Stilleri](#b-styles) · [Sık sorulan sorular](#faq)
 
 </div>
 
 <a id="creation-modes"></a>
 
-## Video üretmek için iki ayrı mod
+## 🎬 Video üretmek için iki ayrı mod
 
-**Her planı kendiniz yönetmek için A · Director Mode’u; uzun videoları klip klip birleştirmeden üretmek için B · Autopilot Mode’u seçin.** Tek proje, iki farklı üretim yolu.
+**Her planı kontrol etmek mi istiyorsunuz? A · Director Mode’u seçin. Sahneleri kendiniz birleştirmeden bitmiş bir video mu istiyorsunuz? B · Autopilot Mode’u seçin.** Tek proje, iki iş akışı.
 
 |  | <div align="center">A · Director Mode</div> | <div align="center">B · Autopilot Mode</div> |
 |:---:|:---|:---|
 | **Temel yaklaşım** | **Kontrol sizde, yönetmenlik planı yapay zekâda**: sahne planı ve istemler hazırlanır; klip üretimini ve kurguyu siz yönetirsiniz. | **Bir konu veya ihtiyaç verin, bitmiş videoyu alın**: çizimler, seslendirme, altyazı, mikro animasyonlar ve video birleştirme otomatik tamamlanır. |
 | **Süre** | **Kısa videolar için ideal**; örneğin 30 saniye–3 dakika. Daha uzun içerikler de bölüm bölüm hazırlanabilir. | **Uzun videolar öncelikli**; özellikle **10 dakika ve üzeri** seslendirmeli içeriklere uygun. Kısa videolar ve bölümlü hikâyeler de yapılabilir. |
-| **Araçlar** | Öneriyi Skill destekleyen bir yapay zekâ asistanıyla hazırlayın, klipleri **Google Flow** gibi bir platformda üretin, **CapCut** gibi bir araçta kurgulayın. | **Codex veya Claude Code** gibi dosya okuyup yazabilen, araç kullanabilen ve komut çalıştırabilen bir yapay zekâ kodlama ajanı; medya üretimini yerel video birleştirmeyle buluşturur. |
+| **Araçlar** | Skill uyumlu bir yapay zekâ asistanıyla planlayın, klipleri tercih ettiğiniz video üreticisinde (Google Flow, Runway, Luma, Kling vb.) oluşturun, ardından CapCut veya Premiere’de birleştirin. | **Codex veya Claude Code** gibi dosya okuyup yazabilen, araç kullanabilen ve komut çalıştırabilen bir yapay zekâ kodlama ajanı; medya üretimini yerel video birleştirmeyle buluşturur. |
 | **Görsel anlatım** | **Bölüm bölüm üretilen animasyonlar**: karakter hareketleri, kamera düzeni ve karakterler arası etkileşim ön plandadır. | **Çizimli sahne planı + mikro animasyon**: kesmeler, yakınlaşmalar ve kaydırmalar anlatıcıyı takip eder; her bölüm için baştan sona hareketli video üretmek gerekmez. |
 | **Çıktı** | Yönetmen önerisi, sahne planı, bölüm bazında video istemleri ve ses tasarımı. | **Seslendirme, altyazı ve mikro animasyon içeren eksiksiz video dosyası.** |
 | **Başlangıç** | <div align="center"><a href="#director-start">Director ile başlayın</a></div> | <div align="center"><a href="#autopilot-start">Autopilot ile başlayın</a></div> |
 
-İki mod da **bir konu, metin veya tamamlanmış senaryoyla** başlayabilir. **A ve B stillerinin numaraları ve görselleri ayrıdır; yeni stiller ve örnekler kendi serilerinde güncellenir.** En-boy oranını, anlatım dilini ve sesi ihtiyacınıza göre seçin. Yukarıdaki süreler öneridir, kesin sınır değildir.
+Her iki iş akışı da ham bir konu, web bağlantısı veya tam bir senaryoyla başlayabilir. En-boy oranını (9:16, 16:9, 1:1), anlatım dilini ve seslendirmeyi özgürce seçin. Yukarıdaki süreler öneridir, kesin sınırlar değildir.
 
-Autopilot için kullanılabilir görsel üretim ve seslendirme hizmetleri ile yerel video birleştirme ortamı gerekir. Sıradan bir sohbet penceresi bu ortamın yerini tutmaz. Skill ücretsiz ve açık kaynaklıdır; bağladığınız hizmetler ayrıca ücretli olabilir.
+💡 **Hızlı Kurulum Notu**:
+
+- **Director Mode**, standart sohbet tabanlı yapay zekâ pencerelerinde çalışır.
+- **Autopilot Mode**, dosya ve terminal erişimi olan yapay zekâ kodlama ajanları (**Claude Code, OpenAI Codex veya Cursor** gibi) içinde çalışarak render işleminden dosya teslimine kadar tüm süreci otomatik yürütür.
 
 <a id="quick-start"></a>
 
-## Başlayın
+## 🚀 Başlayın
 
-Aşağıdaki mesajı Skill destekleyen bir yapay zekâ asistanına gönderin. Kurulumdan sonra asistan, **iki modun neler sunduğunu ve nasıl başlayacağınızı** anlatır; doğrudan kullanabileceğiniz örnek istekler verir.
+Claude Code, Codex, Cursor, Antigravity veya dosya ve terminal erişimi olan her türlü ajan ortamıyla uyumludur.
+
+Aşağıdaki mesajı yapay zekâ asistanınıza gönderin:
 
 ```text
 Bu Skill’i benim için kur:
@@ -144,7 +151,7 @@ Yapay zekâ asistanı içeriğe uygun sahneleri tasarlar, görselleri ve seslend
 
 <a id="a-styles"></a>
 
-## A · Director Mode stil galerisi
+## 🎬 A · Director Mode stil galerisi
 
 Stiller A1, A2, A3… olarak güncellenir. Her stilin altında ilgili animasyon örnekleri yer alır.
 
@@ -236,9 +243,17 @@ Stil ve istem katkısı: [Lawal Ridwan / @leksautomate](https://github.com/leksa
 
 ---
 
+<a id="a6"></a>
+
+### A6: Yakında…
+
+Daha fazla tam otomatik stil şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
+
+---
+
 <a id="b-styles"></a>
 
-## B · Autopilot Mode stil galerisi
+## 🤖 B · Autopilot Mode stil galerisi
 
 Stiller B1, B2, B3… olarak güncellenir. Her stilin altında çizimli sahneler ve mikro animasyonlarla hazırlanmış videolar yer alır; A serisinden ayrı tutulur.
 
@@ -275,61 +290,63 @@ Sesli örneği izlemek veya indirmek için hareketli ön izlemeye tıklayın.
 
 ### B2: Yakında…
 
-Stil tanıtımı, bu stile özel örnekler ve kullanım örnekleri buraya eklenecek.
+Daha fazla tam otomatik stil şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
 
 <!-- readme:reliability -->
 
 <a id="faq"></a>
 
-## Sık sorulan sorular
+## ❓ Sık sorulan sorular
 
-### Q1. Senaryom olmadan da video yapabilir miyim?
+### Q1. Gerçekten %100 ücretsiz mi? Gizli ücretler var mı?
 
-Evet. Bir konu, makale, bağlantı veya somut ihtiyaç verin; yapay zekâ asistanı önce bunu video senaryosuna dönüştürür. Hazır senaryonuzu da doğrudan kullanabilirsiniz. Hedef izleyiciyi, yayın platformunu ve istediğiniz süreyi de belirtmeniz faydalı olur.
+Evet. Stickman Video Director, MIT lisansıyla %100 ücretsiz ve açık kaynaklıdır. Kişisel ve ticari projelerinizde özgürce kullanabilirsiniz. Aylık 30–60 dolar isteyen kapalı SaaS platformlarının aksine bu projede abonelik ücreti yoktur. Yalnızca bağlamayı seçtiğiniz modellere göre Google Gemini, Claude veya ElevenLabs gibi üçüncü taraf API kullanımınızı ödersiniz.
 
-### Q2. Director stilleri tamamen otomatik üretilebilir mi? Bu mod neden var?
+### Q2. Bu videolardan YouTube ve TikTok’ta para kazanabilir miyim?
 
-Şu anda A serisi stillerin üretim akışları nispeten bağımsızdır. Ancak sevdiğiniz bir A serisi stili B serisinin üretim akışıyla birleştirip kendi DIY çözümünüzü oluşturmak için yapay zekâ asistanından yardım isteyebilirsiniz.
+Evet, kesinlikle. Yüzünü göstermeyen içerik üreticilerinin önemli bir kaygısı, YouTube’un “Reused Content” veya düşük emekli yapay zekâ içeriklerine yönelik para kazanmayı kapatma politikasıdır. Stickman Video Director özel hikâye örgüleri, benzersiz anlatım temposu ve özgün görsel sahneleme yazdığı için çıktınız tamamen özgündür. Yüzlerce kanal, YouTube Partner Program (YPP) kapsamında çöp adam anlatı videolarından başarıyla gelir elde ediyor.
 
-Director modunu korumanın temel amacı, video üretimi ve deneme-yanılma maliyetlerini kontrol altında tutmaktır. On küsur dakikalık bir videonun tek seferlik tam üretimi **onlarca ABD dolarına** mal olabilir; tekrar tekrar üretmek bu maliyeti artırır. Bu nedenle Director modu, sahne sahne üretim ve kontrol ile elle kurguyu korur. Böylece her planı siz yönetir, sonucu gördükten sonra devam edip etmeyeceğinize karar verebilirsiniz.
+### Q3. Programlama bilgisine veya pahalı bir GPU’ya ihtiyacım var mı?
 
-### Q3. Director modunda karakterler klipler arasında değişiyorsa ne yapmalıyım?
+Hayır. Üst düzey bir RTX ekran kartına veya kodlama bilgisine ihtiyacınız yok.
 
-Yapay zekâ asistanına şöyle söyleyebilirsiniz: “Önce seçtiğim stile uygun bir çöp adam tasarla. Önden, yandan ve arkadan görünüşünü onaylayalım; sonra sahne istemlerini hazırla.” Kendinize özgü bir karakterle video yapmak için de bu şekilde başlayabilirsiniz. Daha önce onayladığınız karakter referanslarını yeniden kullanın; özel tasarıma ihtiyacınız yoksa bu adımı atlayabilirsiniz.
+- **Director Mode**, Skill uyumlu herhangi bir yapay zekâ asistanında sohbet yoluyla çalışır.
+- **Autopilot Mode**, Claude Code, Codex veya Cursor gibi yapay zekâ kodlama ajanlarında basit İngilizce taleplerle çalışır. Ağır görsel üretim işlemleri yerel donanımınızda değil, hafif bulut API’leri veya prosedürel render ile yürütülür.
 
-Referans görsel destekleyen video araçlarında, **her klibi üretirken onaylanan karakter görsellerini de ekleyin**. Referans görseller ek destektir; mevcut sahne istemlerinin yerini almaz ve seçilen stilin kurallarını değiştirmez. Sonuçta klipler arasındaki karakter tutarlılığını yine kontrol edin.
+### Q4. Hazır bir senaryo olmadan video yapabilir miyim?
 
-### Q4. Mutlaka Codex mi kullanmalıyım?
-
-Hayır. Director modu, Skill kurulumunu ve kullanımını destekleyen yapay zekâ asistanlarında çalışır.
-
-Autopilot modu için Codex veya Claude Code gibi dosya okuyup yazabilen ve komut çalıştırabilen bir ortam; ayrıca görsel üretim, seslendirme hizmetleri ve yerel bağımlılıklar gerekir.
+Evet. Ham bir fikri, aklınıza gelen bir düşünceyi, haber bağlantısını veya tam bir blog yazısını yapıştırabilirsiniz. Yapay zekâ yönetmen ana çatışmayı çıkarır, etkileyici bir 3 saniyelik açılış yazar ve konuyu komedi zamanlaması ile seslendirme ipuçları içeren sıkı bir 6 sahnelik anlatı örgüsüne dönüştürür.
 
 <!-- readme:platforms -->
 
-### Q5. Bir makaleyi veya referans içeriği nasıl daha ilgi çekici videoya dönüştürebilirim?
+### Q5. Director Mode ile Autopilot Mode arasında nasıl seçim yapmalıyım?
 
-Yapay zekâ asistanına kime ulaşmak istediğinizi, asıl mesajınızı ve izleyicinin video sonunda ne yapmasını beklediğinizi söyleyin. Asistan buna göre konuya bir açı bulur; dikkat çeken açılışı, anlatının ilerleyişini ve kapanış çağrısını tasarlayıp sahne planına dönüştürür.
+- **Director Mode’u seçin**: Her plan, kamera açısı ve görsel metafor üzerinde tam kontrol istiyorsanız. Maliyet açısından güvenlik ağı görevi görür: tek bir video karesi üretmeden önce senaryo ve storyboard’u ücretsiz onaylarsınız.
+- **Autopilot Mode’u seçin**: Senaryo, seslendirme, altyazı ve bitmiş video dosyasını otomatik oluşturan, tek tıklamalı ve zahmetsiz bir deneyim istiyorsanız.
 
-Sevdiğiniz bir videoyu da paylaşabilir; ritmini, anlatımını veya hikâye yapısını neden beğendiğinizi açıklayabilirsiniz. Yöntemden ilham alın, kendi bakış açınızı ve ifadenizi koruyun. Tarih, iş dünyası veya bilimle ilgili bilgileri yayımlamadan önce doğrulayın.
+### Q6. Yapay zekâ videonun sıkıcı olmamasını ve izleyiciyi tutmasını nasıl sağlıyor?
 
-### Q6. Kullanmak ücretli mi?
+Geleneksel yapay zekâ araçları metni yalnızca birebir resimlere dönüştürür. Stickman Video Director gerçek **görsel hikâye anlatımı psikolojisi** uygular:
 
-Skill ücretsiz ve açık kaynaklıdır. Görsel, ses ve video üretim hizmetlerinin ücretleri seçtiğiniz platforma ve hesap planına bağlıdır. Bir platforma abonelik, o platformun API kullanım kotasını mutlaka kapsamaz.
+- **3 Saniyelik Açılış**: İlk cümleyi anında görülen bir görsel çelişkiye veya merak boşluğuna dönüştürerek izleyicinin kaydırıp gitmesini engeller.
+- **Görsel Metaforlar**: Soyut ve sıkıcı kavramları komik görsel şakalara çevirir; örneğin kaygıyı küçülen bir hamster çarkı, tükenmişliği %1 pil göstergesi olarak betimler.
+- **Tempo ve Komik Duraklamalar**: Casually Explained gibi üreticilerin komedi zamanlamasını yansıtmak için yapılandırılmış duraklamalar, tepki planları ve ses efekti ipuçları (SFX) ekler.
 
-### Q7. Bir görseli veya sesi beğenmezsem her şeyi baştan mı yapmalıyım?
+### Q7. Hangi yapay zekâ asistanları ve video editörleri destekleniyor?
 
-Hayır. Önce senaryoyu ve üretim planını onaylayın; sonra kısa bir örnekle stili, karakterleri, sesi, altyazıları ve ritmi kontrol edin. Memnun kaldığınızda tam videoya geçin.
+- **Yapay Zekâ Ortamları**: Claude Code, OpenAI Codex, Cursor, Antigravity veya dosya ve terminal erişimi olan herhangi bir ajan ortamı.
+- **Video Üreticileri**: Google Flow, Runway (Gen-3), Luma Dream Machine, Kling, Pika veya herhangi bir görselden videoya / metinden videoya modeli.
+- **Video Editörleri**: Prompt’lar ve dışa aktarılan sesler CapCut, Premiere Pro, DaVinci Resolve veya Final Cut’a sürükleyip bırakmaya hazırdır.
 
-Yalnızca bir bölüm uygun değilse önce o bölümü düzeltin; onaylanan seslendirmeyi ve medyayı yeniden kullanın. Böylece gereksiz tekrarları ve maliyeti azaltırsınız.
+### Q8. Tek bir sahneyi beğenmezsem tüm videoyu yeniden render etmem gerekir mi?
 
-### Q8. Videoları YouTube’da yayımlayabilir veya ticari projelerde kullanabilir miyim?
-
-Proje MIT lisanslıdır ve ticari kullanıma izin verir. Videoda kullanılan üçüncü taraf görselleri, müzikler, ses efektleri ve seslendirme hizmetleri kendi lisans koşullarına tabidir. YouTube’da para kazanma özelliğinin açılması ise platformun değerlendirmesine bağlıdır.
+Hayır! Modüler 6 sahnelik mimarimizin temel avantajı budur. Sahne 3’ün ayarlanması gerekiyorsa yalnızca o sahnenin prompt’unu değiştirirsiniz. Sahne 1, 2, 4, 5 ve 6 aynı kalır. Bu, kurgu süresinden %80 tasarruf sağlar ve üretim kredilerinin boşa harcanmasını önler.
 
 <!-- readme:contribute -->
 
-## 10,000 Stars’a doğru ve içerik üreticisi ekosistemi
+<a id="road-to-10000-stars--creator-ecosystem"></a>
+
+## ⭐ 10,000 Stars’a doğru ve içerik üreticisi ekosistemi
 
 **Her yıldız bir sonraki yeniliğe güç verir!** Tek başına içerik üretenlerin aylık 50 dolarlık SaaS abonelikleri olmadan yüzlerini göstermedikleri kanallar yönetebilmesi için birlikte %100 ücretsiz, açık kaynaklı bir stüdyo kuruyoruz.
 
@@ -355,7 +372,7 @@ Proje MIT lisanslıdır ve ticari kullanıma izin verir. Videoda kullanılan ü�
 
 <a id="whats-next"></a>
 
-## Planlanan görsel stiller
+## 🎨 Planlanan görsel stiller
 
 Yüz göstermeyen YouTube kanallarında en çok talep edilen nişler için yeni uzmanlaşmış motorlar eğitiyoruz:
 
@@ -366,7 +383,7 @@ Yüz göstermeyen YouTube kanallarında en çok talep edilen nişler için yeni 
 - **İki mikrofonlu podcast ve stand-up** — Hızlı diyalog komedisi, röportajları yeniden işleme ve karakter atışmaları
 - **İnternet gizemleri ve şehir efsaneleri** — Ürkütücü kurşun kalem çizimleri, analog bozulmalar ve Reddit gizem hikâyeleri
 
-## Topluluk ve eser gönderimi
+## 💬 Topluluk ve eser gönderimi
 
 Bir stil önermek veya kanalınızın tanıtılmasını mı istiyorsunuz? Telegram’da **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** hesabına mesaj gönderin:
 
@@ -375,7 +392,7 @@ Bir stil önermek veya kanalınızın tanıtılmasını mı istiyorsunuz? Telegr
 
 🔔 *Günlük video iş akışları, otomasyon araçları ve kanal büyütme prosedürleri için X’te **[@CrazyKaomei](https://x.com/CrazyKaomei)** hesabını takip edin.*
 
-## Lisans
+## 📄 Lisans
 
 Proje [MIT Lisansı](https://github.com/kaomei/stickman-video-director/blob/main/LICENSE) ile sunulur. Ücretsiz kullanabilir, değiştirebilir, dağıtabilir ve ticari amaçlarla yararlanabilirsiniz. Projeyi veya önemli bir bölümünü dağıtırken mevcut telif hakkı ve lisans bildirimini koruyun.
 

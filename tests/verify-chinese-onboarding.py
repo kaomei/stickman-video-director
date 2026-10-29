@@ -14,29 +14,32 @@ assert "[🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md)" in cn
 assert (root / "README.fr.md").is_file(), "French navigation must open a complete README"
 hero_copy = cn.split("</div>", 1)[0]
 assert "**将任何脚本变成适合不露脸 YouTube 频道的多画风爆款火柴人动画视频。完全开源。**" in hero_copy
-assert "给一个话题、一篇文章或链接，自动制作画面、旁白、字幕、音效与微动画，交付完整火柴人视频。**不出镜，也能做出有辨识度的 YouTube 频道。**" in hero_copy
-assert "汇总全网热门的火柴人画风，持续更新与开源——适用于 **知识科普、心理励志、教育宣传、情感治愈、流行故事等多赛道。**" in hero_copy
-assert "本系列持续更新，欢迎点个 Star，更多热门画风陆续上线。" in cn
+assert "从一个话题、一篇文章或一份脚本开始，自动编排画面、配音、字幕与音效，制作可直接发布的火柴人视频。" in hero_copy
+assert "**⚡ 100% 免费开源。无需出镜，无需每月 $50 的订阅，几分钟就能完成，不必等上几天。**" in hero_copy
+assert "画风持续更新，适用于 **科学科普、暗黑心理学、科技寓言、热门奇闻与故事类频道。**" in hero_copy
+assert "为项目点个 Star，及时关注下一批画风和新功能解锁。" in cn
 assert "**每一颗 Star，都为下一次更新添一把火！**" in cn
 assert "100% 免费、开源的工作室" in cn
 assert "我是烤妹儿" not in cn, "Keep the follow CTA focused on reader value, not self-introduction"
 readable_cn = re.sub(r'<[^>]+>|\]\([^)]+\)|https?://[^\s<>)"]+', "", cn.replace("# 🎬 Stickman Video Director\n", "", 1))
-assert not re.search(r"\b(?:Director|Autopilot)\b", readable_cn, re.I), "Use Chinese mode names throughout the Chinese README; preserve technical paths and anchors"
+outside_faq = cn.split('<a id="faq"></a>', 1)[0] + cn.split('<!-- readme:contribute -->', 1)[1]
+readable_outside_faq = re.sub(r'<[^>]+>|\]\([^)]+\)|https?://[^\s<>)"]+', "", outside_faq.replace("# 🎬 Stickman Video Director\n", "", 1))
+assert not re.search(r"\b(?:Director|Autopilot)\b", readable_outside_faq, re.I), "Use Chinese mode names outside the user-supplied bilingual FAQ; preserve technical paths and anchors"
 assert "自动成片" not in readable_cn, "Use 全自动模式 consistently for mode B"
 assert not re.search(r"(?<!AI )助手|(?<=[\u4e00-\u9fff])AI 助手", readable_cn), "Use AI 助手 consistently, with spaces between English and Chinese"
 assert "### A · 导演模式：逐段生成分镜提示词" in cn
 assert "### B · 全自动模式：一句话生成长片" in cn
 
-sections = ("## 两种视频制作模式", "## 开始使用", "## A · 导演模式画风一览",
-            "## B · 全自动模式画风一览", "## 常见问题", "## 迈向 10,000 Stars 与创作者生态",
-            "## 计划中的画风", "## 社区与投稿", "## 许可证")
+sections = ("## 🎬 两种视频制作模式", "## 🚀 开始使用", "## 🎬 A · 导演模式画风一览",
+            "## 🤖 B · 全自动模式画风一览", "## ❓ 常见问题解答 (FAQ)", "## ⭐ 迈向 10,000 Stars 与创作者生态",
+            "## 🎨 计划中的画风", "## 💬 社区与投稿", "## 📄 许可证")
 assert [cn.index(s) for s in sections] == sorted(cn.index(s) for s in sections)
 assert "## 接下来做什么" not in cn, "Keep the removed next-steps heading out of the footer"
 assert "## Star 增长曲线" not in cn, "Use a reader-focused footer heading; retain the chart itself"
-footer = cn.split("## 迈向 10,000 Stars 与创作者生态", 1)[1].split("## 许可证", 1)[0]
+footer = cn.split("## ⭐ 迈向 10,000 Stars 与创作者生态", 1)[1].split("## 📄 许可证", 1)[0]
 footer_items = ("**每一颗 Star", "- [x] **1,000 Stars**", "- [ ] **10,000 Stars**",
-                '<div align="center">', '<a id="whats-next"></a>', "## 计划中的画风",
-                "## 社区与投稿", "🔔 *在 X 上关注")
+                '<div align="center">', '<a id="whats-next"></a>', "## 🎨 计划中的画风",
+                "## 💬 社区与投稿", "🔔 *在 X 上关注")
 assert [footer.index(s) for s in footer_items] == sorted(footer.index(s) for s in footer_items), "Place roadmap before the unchanged chart, then styles, submissions and the X follow link"
 mode_comparison = cn.split('<a id="creation-modes"></a>', 1)[1].split('<a id="quick-start"></a>', 1)[0]
 mode_rows = [line for line in mode_comparison.splitlines() if line.startswith("|")]
@@ -48,7 +51,8 @@ assert all('align="center"' not in row for row in mode_rows[2:-1]), "Do not cent
 assert "插画分镜＋微动画" in mode_comparison and "插画轮播" not in mode_comparison, "Describe B as illustrated scenes rather than a slideshow; do not impose B1's drawing style on every B style"
 assert "一次安装，按需选择" not in cn, "Keep the removed mode-selection sentence out of the introduction"
 quick_start_intro = cn.split('<a id="quick-start"></a>', 1)[1].split('<a id="director-start"></a>', 1)[0]
-assert "并给出可以直接照着说的示例。" in quick_start_intro
+assert "兼容 Claude Code、Codex、Cursor、Antigravity，或任何具备文件和终端访问能力的智能体环境。" in quick_start_intro
+assert "把以下内容发送给你的 AI 助手：" in quick_start_intro
 install = quick_start_intro.split("```text\n", 1)[1].split("```", 1)[0]
 assert "帮我安装这个 Skill：" in install
 assert "https://github.com/kaomei/stickman-video-director" in install
@@ -64,7 +68,7 @@ assert "填写话题、粘贴文案，也可以直接描述需求" in director_e
 assert "人类的第一份工作是怎么来的" not in director_example, "Use a fill-in template rather than a hard-coded topic"
 assert "也可以直接贴已有文案或文章" not in cn
 assert "[查看画风一览 ↓]" not in cn, "Do not restore the removed per-mode shortcut links"
-assert "[A 画风](#a-styles) · [B 画风](#b-styles)" in cn, "Keep the top style navigation"
+assert "[导演模式画风](#a-styles) · [全自动模式画风](#b-styles)" in cn, "Keep the localized top style navigation"
 navigation = next(line for line in cn.splitlines() if line.startswith("[开始使用](#quick-start)"))
 assert navigation.endswith("[常见问题](#faq)"), "Replace only the tutorial shortcut with the FAQ anchor"
 assert "[最近更新]" not in navigation, "Keep the removed updates shortcut out of the navigation"
@@ -75,49 +79,41 @@ assert "[完整制作教程](https://x.com/CrazyKaomei/status/210231124104600826
 assert "## 使用小贴士" not in cn
 faq = cn.split('<a id="faq"></a>', 1)[1].split('<!-- readme:contribute -->', 1)[0]
 faq_questions = (
-    "没有脚本，也能做视频吗？",
-    "导演模式的画风可以做成全自动吗？为什么要有导演模式？",
-    "导演模式生成的人物不一致怎么办？",
-    "一定要用 Codex 吗？",
-    "怎么把文章或参考内容，变成更有吸引力的视频？",
-    "使用需要付费吗？",
-    "画面或配音不满意，需要全部重做吗？",
-    "做出来的视频可以发 YouTube、用于商业项目吗？",
+    "这真的是 100% 免费的吗？有没有隐藏收费？",
+    "生成的视频可以在 YouTube 和 TikTok 上开通收益变现吗？",
+    "我需要懂编程或者拥有昂贵的高性能显卡吗？",
+    "如果我手里没有写好的现成剧本，能直接做视频吗？",
+    "我应该如何选择“分镜导演模式”与“全自动模式”？",
+    "它是如何确保视频具有高完播率、有梗且不枯燥的？",
+    "支持哪些 AI 助手和剪辑软件？",
+    "如果成片里某个单独镜头我不满意，必须全片推倒重做吗？",
 )
 assert re.findall(r"^### Q(\d+)\. (.+)$", faq, re.M) == [
     (str(number), question) for number, question in enumerate(faq_questions, 1)
-], "Keep Q1-Q8 visible, with generation costs near the front and the removed FAQs absent"
+], "Keep the supplied Chinese Q1-Q8 wording, order and visible heading format"
 assert "<details" not in faq and "</details>" not in faq and "<summary" not in faq, "Do not collapse the FAQ answers"
-for requirement in ("目标观众、发布平台和期望时长",
-                    "不一定包含它的 API 调用额度",
-                    "复用已经确认的配音和素材",
-                    "第三方图片、音乐、音效及配音服务", "以平台审核为准"):
-    assert requirement in faq, requirement
-assert "安装好了，接下来做什么？" not in faq, "Remove the redundant post-install FAQ, not the actual onboarding"
-assert "不会画画、不会做动画，也能用吗？" not in faq
-assert "可以自定义画幅、语言和配音吗？" not in faq
-character_faq = faq.split("### Q3.", 1)[1].split("### Q4.", 1)[0]
-for requirement in ("符合所选画风的火柴人", "三视图（正面、侧面、背面）",
-                    "已有确认的角色参考图可直接复用", "不需要定制时也可跳过",
-                    "每段视频时都附上已确认的角色图", "不替代原有分镜提示词",
-                    "不改变所选画风的规则", "最终仍需检查各段人物是否一致"):
-    assert requirement in character_faq, requirement
-engagement_faq = faq.split("### Q5.", 1)[1].split("### Q6.", 1)[0]
-for requirement in ("想吸引谁、重点讲什么", "希望观众看完后做什么",
-                    "开场钩子、叙事推进和结尾引导", "节奏、表达方式或故事结构",
-                    "保留自己的观点与表达", "历史、商业和科学的事实，发布前仍需核查"):
-    assert requirement in engagement_faq, requirement
-cost_faq = faq.split("### Q2. 导演模式的画风可以做成全自动吗？为什么要有导演模式？", 1)[1].split("### Q3.", 1)[0]
-for requirement in ("视频生成和试错成本", "一轮完整生成", "几十美元左右",
-                    "逐段生成、检查和手动剪辑", "制作流程相对独立",
-                    "让 AI 助手采用喜欢的 A 系列画风", "结合 B 系列的制作流程",
-                    "自行 DIY", "掌控每个镜头", "再决定是否继续"):
-    assert requirement in cost_faq, requirement
-assert "100 美元" not in cost_faq and "还不能直接切换" not in cost_faq
-assert len(cost_faq.strip().split("\n\n")) == 2, "Keep the approved concise two-paragraph answer"
+faq_answers = re.split(r"^### Q\d+\. .+\n", faq, flags=re.M)[1:]
+# These are supplied-copy checks, not factual verification of the draft's claims.
+required_copy = (
+    ("MIT 开源协议", "$30–$60", "没有任何订阅费", "按需支付官方 API 费用"),
+    ("搬运重复内容（Reused Content）", "高价值原创内容", "YouTube 创作者收益计划（YPP）", "TikTok 创作者基金"),
+    ("专业独立显卡", "**分镜导演模式（Director Mode）**", "**全自动模式（Autopilot Mode）**", "云端 API 或轻量级渲染"),
+    ("公众号长文", "前 3 秒爆款黄金钩子", "6 幕式标准分镜"),
+    ("**选择分镜导演模式（Director Mode）**", "**选择全自动模式（Autopilot Mode）**", "生成字幕并合成完整成片"),
+    ("**视觉叙事心理学**", "**黄金 3 秒钩子**", "**爆款视觉隐喻**", "**卡点与节奏留白**", "Casually Explained"),
+    ("**支持环境**", "**视频模型**", "**剪辑软件**", "Antigravity", "DaVinci Resolve"),
+    ("6 幕式模块化架构", "第 1、2、4、5、6 镜头的音频和素材完全保留", "节省 80% 的返工剪辑时间"),
+)
+for number, (answer, phrases) in enumerate(zip(faq_answers, required_copy), 1):
+    for phrase in phrases:
+        assert phrase in answer, (number, phrase)
+assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 2, 0, 2, 3, 3, 0], "Keep the supplied FAQ bullet structure"
+assert faq.count("<!-- readme:platforms -->") == 1 and "<!-- readme:platforms -->" in faq_answers[3], "Keep the internal platform marker between Q4 and Q5"
 assert "**10 分钟及以上**" in cn and "连续故事短剧" in cn
 assert "Codex、Claude Code" in cn and "Google Flow" in cn
-assert "A、B 画风独立编号、分别展示，不共用画面" in cn
+assert "两种工作流都可以从一个初步话题、一个网页链接或一份完整脚本开始。" in mode_comparison
+assert "画幅（9:16、16:9、1:1）、旁白语言与配音均可自由选择。" in mode_comparison
+assert "💡 **快速配置说明**：" in mode_comparison and not re.search(r"^>", mode_comparison, re.M)
 assert "给出话题或需求，直接拿成片" in mode_comparison
 assert "给出话题、内容或需求 → 确认视频脚本 → 确认 20 秒有声样片 → 自动制作整片 → 拿到完整视频" in cn
 autopilot_start = cn.split('<a id="autopilot-start"></a>', 1)[1].split('<a id="style-gallery"></a>', 1)[0]
@@ -133,7 +129,7 @@ for requirement in ("AI 助手会根据内容设计分镜", "配好字幕和音�
                     "只调整对应片段，保留已经确认的部分"):
     assert requirement in autopilot_notes, requirement
 for label in ("A1：经典黑白风", "A2：现代潮酷风", "A3：史前洞穴风",
-              "A4：治愈故事风", "A5：历史卡通风", "B1：极简手绘风", "B2：待更新…"):
+              "A4：治愈故事风", "A5：历史卡通风", "A6：待更新…", "B1：极简手绘风", "B2：待更新…"):
     assert f"### {label}\n" in cn, label
 hero = cn.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
 style_names = ("经典黑白风", "现代潮酷风", "史前洞穴风", "治愈故事风", "历史卡通风")

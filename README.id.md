@@ -9,9 +9,11 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Cukup berikan topik, artikel, atau tautan untuk membuat video stickman lengkap secara otomatis, mulai dari visual, narasi, subtitle, dan efek suara hingga animasi ringan. **Bangun channel YouTube dengan ciri khas sendiri, tanpa tampil di kamera.**
+Mulai dari topik, artikel, atau naskah. Susun visual, narasi, subtitle, dan efek suara secara otomatis menjadi video stickman yang siap dipublikasikan.
 
-Menghimpun berbagai gaya animasi stickman populer di internet, terus diperbarui dan tersedia secara open source — cocok untuk **sains dan pengetahuan umum, psikologi dan motivasi, edukasi dan kampanye kesadaran, konten yang menenangkan hati, cerita populer, dan beragam niche lainnya.**
+**⚡ 100% gratis dan open source. Tanpa kamera, tanpa langganan US$50/bulan, dan siap dalam hitungan menit, bukan hari.**
+
+Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, fabel teknologi, kisah viral, dan storytelling.**
 
 </div>
 
@@ -52,36 +54,41 @@ Menghimpun berbagai gaya animasi stickman populer di internet, terus diperbarui 
 
 **6 gaya · 8 pilihan visual · Contoh yang sudah diuji · Gratis dan open source**
 
-⭐ **Koleksi ini terus bertambah. Beri Star untuk mengikuti gaya-gaya berikutnya.**
+⭐ **Beri Star pada proyek ini agar tidak ketinggalan gaya dan fitur baru berikutnya.**
 
-[Mulai di sini](#quick-start) · [Gaya A](#a-styles) · [Gaya B](#b-styles) · [Tanya jawab](#faq)
+[Mulai di sini](#quick-start) · [Gaya Director](#a-styles) · [Gaya Autopilot](#b-styles) · [Tanya jawab](#faq)
 
 </div>
 
 <a id="creation-modes"></a>
 
-## Dua mode pembuatan video
+## 🎬 Dua mode pembuatan video
 
-**Ingin mengatur setiap adegan? Pilih A · Director. Ingin video panjang tanpa merangkai klip satu per satu? Pilih B · Autopilot.** Satu proyek, dua cara produksi.
+**Ingin mengontrol setiap shot? Pilih A · Director Mode. Ingin video jadi tanpa merangkai adegan sendiri? Pilih B · Autopilot Mode.** Satu proyek, dua alur kerja.
 
 |  | <div align="center">A · Director</div> | <div align="center">B · Autopilot</div> |
 |:---:|:---|:---|
 | **Cara kerja** | **Anda mengendalikan produksi, AI menyusun arahan:** dapatkan storyboard dan prompt, lalu atur sendiri pembuatan klip dan editing. | **Berikan topik atau kebutuhan, terima video jadi:** ilustrasi, narasi, subtitle, animasi ringan, dan penggabungan video dikerjakan otomatis. |
 | **Durasi** | **Diutamakan untuk video pendek**, misalnya 30 detik–3 menit; video lebih panjang juga bisa dibuat per bagian. | **Diutamakan untuk video panjang**, terutama video bernarasi **10 menit ke atas**; juga mendukung video pendek dan cerita bersambung. |
-| **Alat** | Asisten AI yang mendukung Skill menyusun rancangan; **Google Flow** atau platform lain menghasilkan klip; **CapCut** atau editor lain merangkainya. | Dijalankan melalui agen seperti **Codex atau Claude Code** yang dapat membaca dan menulis file, memakai alat, serta menjalankan perintah untuk menghubungkan pembuatan materi dengan penggabungan video lokal. |
+| **Alat** | Rencanakan dengan asisten AI yang mendukung Skill, buat klip di generator video pilihan Anda (Google Flow, Runway, Luma, Kling, dan lainnya), lalu susun di CapCut atau Premiere. | Dijalankan melalui agen seperti **Codex atau Claude Code** yang dapat membaca dan menulis file, memakai alat, serta menjalankan perintah untuk menghubungkan pembuatan materi dengan penggabungan video lokal. |
 | **Visual** | **Animasi per adegan:** berfokus pada gerakan, arahan kamera, dan interaksi karakter. | **Storyboard ilustrasi + animasi ringan:** pergantian adegan, zoom, dan pergeseran kamera mengikuti narasi, tanpa harus menghasilkan animasi penuh untuk setiap bagian. |
 | **Hasil** | Rancangan penyutradaraan, storyboard, prompt video per bagian, dan arahan suara. | **File video lengkap dengan narasi, subtitle, dan animasi ringan.** |
 | **Mulai** | <div align="center"><a href="#director-start">Gunakan mode Director</a></div> | <div align="center"><a href="#autopilot-start">Gunakan mode Autopilot</a></div> |
 
-Keduanya bisa dimulai dari **topik, teks, atau naskah lengkap**. **Seri A dan B memiliki penomoran, gaya visual, serta contoh masing-masing; gaya baru ditambahkan di serinya sendiri.** Rasio, bahasa narasi, dan suara dapat dipilih sesuai kebutuhan. Durasi di atas adalah saran, bukan batas wajib.
+Kedua alur kerja bisa dimulai dari topik mentah, tautan web, atau naskah lengkap. Pilih rasio aspek (9:16, 16:9, 1:1), bahasa narasi, dan suara dengan bebas. Durasi di atas adalah rekomendasi, bukan batas mutlak.
 
-Autopilot memerlukan layanan gambar dan suara yang bisa digunakan, serta lingkungan lokal untuk merangkai video. Jendela chat biasa tidak menggantikan lingkungan tersebut. Skill ini gratis dan open source; layanan yang dihubungkan mungkin berbayar.
+💡 **Catatan Penyiapan Cepat**:
+
+- **Director Mode** dapat digunakan di jendela percakapan AI standar.
+- **Autopilot Mode** berjalan di agen coding AI dengan akses file dan terminal (seperti **Claude Code, OpenAI Codex, atau Cursor**) untuk menangani rendering hingga penyerahan file secara otomatis.
 
 <a id="quick-start"></a>
 
-## Mulai di sini
+## 🚀 Mulai di sini
 
-Kirim pesan di bawah ke asisten AI yang mendukung Skill. Setelah terpasang, asisten akan menjelaskan **hasil dari tiap mode dan cara memulainya**, lengkap dengan contoh permintaan yang bisa langsung Anda sesuaikan.
+Kompatibel dengan Claude Code, Codex, Cursor, Antigravity, atau lingkungan agen apa pun dengan akses file dan terminal.
+
+Kirim pesan berikut ke asisten AI Anda:
 
 ```text
 Tolong pasangkan Skill ini:
@@ -150,7 +157,7 @@ Saat pertama digunakan, asisten memeriksa konfigurasi dan menjelaskan apa yang b
 
 <a id="a-styles"></a>
 
-## Pilihan gaya A · Director
+## 🎬 Pilihan gaya A · Director
 
 Diperbarui dengan penomoran A1, A2, A3… Setiap gaya memiliki contoh animasinya sendiri.
 
@@ -242,9 +249,17 @@ Kontribusi gaya dan prompt: [Lawal Ridwan / @leksautomate](https://github.com/le
 
 ---
 
+<a id="a6"></a>
+
+### A6: Segera hadir…
+
+Lebih banyak gaya yang sepenuhnya otomatis sedang dilatih. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk membukanya saat mencapai 5,000 Stars!
+
+---
+
 <a id="b-styles"></a>
 
-## Pilihan gaya B · Autopilot
+## 🤖 Pilihan gaya B · Autopilot
 
 Diperbarui dengan penomoran B1, B2, B3… Setiap gaya memiliki contoh video dengan storyboard ilustrasi dan animasi ringan, dikelola terpisah dari seri A.
 
@@ -281,61 +296,63 @@ Klik GIF untuk menonton atau mengunduh contoh dengan audio.
 
 ### B2: Segera hadir…
 
-Penjelasan gaya, contoh video tersendiri, dan contoh penggunaan akan ditambahkan di sini.
+Lebih banyak gaya yang sepenuhnya otomatis sedang dilatih. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk membukanya saat mencapai 5,000 Stars!
 
 <!-- readme:reliability -->
 
 <a id="faq"></a>
 
-## Tanya jawab
+## ❓ Tanya jawab
 
-### Q1. Bisa membuat video tanpa punya naskah?
+### Q1. Apakah ini benar-benar 100% gratis? Ada biaya tersembunyi?
 
-Bisa. Berikan topik, artikel, tautan, atau kebutuhan yang spesifik. Asisten AI akan menyusunnya menjadi naskah video; naskah yang sudah ada juga bisa langsung digunakan. Sebaiknya jelaskan juga target penonton, platform, dan durasi yang diinginkan.
+Ya. Stickman Video Director 100% gratis dan open source dengan lisensi MIT. Anda bebas menggunakannya untuk proyek pribadi maupun komersial. Berbeda dari platform SaaS tertutup yang mengenakan US$30–60/bulan, proyek ini tidak memiliki biaya langganan. Anda hanya membayar penggunaan API pihak ketiga sendiri, seperti Google Gemini, Claude, atau ElevenLabs, sesuai model yang Anda hubungkan.
 
-### Q2. Bisakah gaya Director dibuat sepenuhnya otomatis? Mengapa mode ini tetap ada?
+### Q2. Bisakah video ini dimonetisasi di YouTube dan TikTok?
 
-Alur produksi gaya seri A saat ini masih relatif terpisah. Namun, Anda bisa meminta asisten AI membantu memadukan gaya seri A yang Anda sukai dengan alur produksi seri B untuk membuat versi DIY Anda sendiri.
+Ya, tentu saja. Salah satu kekhawatiran utama kreator tanpa wajah adalah kebijakan demonetisasi YouTube untuk “Reused Content” atau konten AI minim usaha. Karena Stickman Video Director menulis alur cerita khusus, ritme narasi unik, dan penataan visual orisinal, hasil Anda sepenuhnya orisinal. Ratusan channel berhasil memonetisasi video naratif stickman melalui YouTube Partner Program (YPP).
 
-Alasan utama mempertahankan Director adalah untuk mengendalikan biaya pembuatan video dan percobaan ulang. Untuk video berdurasi belasan menit, satu putaran pembuatan keseluruhan video bisa menghabiskan **puluhan dolar AS**, dan mengulang prosesnya akan menambah biaya. Karena itu, Director tetap menggunakan pembuatan dan pemeriksaan per adegan serta editing manual. Anda memegang kendali atas setiap shot dan bisa memastikan hasilnya sebelum memutuskan untuk melanjutkan.
+### Q3. Apakah saya perlu bisa coding atau memiliki GPU mahal?
 
-### Q3. Bagaimana jika karakter di mode Director tidak konsisten?
+Tidak. Anda tidak memerlukan kartu grafis RTX kelas atas atau pengetahuan pemrograman.
 
-Anda bisa meminta: “Bantu desain stickman yang sesuai dengan gaya pilihan saya terlebih dahulu. Saya ingin menyetujui tiga tampaknya — depan, samping, dan belakang — sebelum menerima prompt adegan.” Cara ini juga cocok untuk membuat karakter khas sendiri. Jika sudah ada referensi karakter yang disetujui, gunakan kembali; bila tidak perlu karakter khusus, langkah ini boleh dilewati.
+- **Director Mode** digunakan lewat percakapan di asisten AI apa pun yang mendukung Skill.
+- **Autopilot Mode** berjalan di agen coding AI seperti Claude Code, Codex, atau Cursor, menggunakan permintaan sederhana dalam bahasa Inggris. Seluruh proses pembuatan visual yang berat ditangani oleh API cloud ringan atau rendering prosedural, bukan perangkat keras lokal Anda.
 
-Pada alat video yang mendukung gambar referensi, **lampirkan gambar karakter yang sudah disetujui setiap kali menghasilkan klip**. Gambar referensi hanya bantuan tambahan: tidak menggantikan prompt adegan atau mengubah aturan gaya yang dipilih. Tetap periksa konsistensi karakter antarklip sebelum menyelesaikan video.
+### Q4. Bisakah saya membuat video tanpa naskah yang sudah jadi?
 
-### Q4. Harus memakai Codex?
-
-Tidak. Mode Director bisa digunakan melalui asisten AI yang mendukung pemasangan dan penggunaan Skill.
-
-Autopilot membutuhkan lingkungan seperti Codex atau Claude Code yang dapat membaca dan menulis file serta menjalankan perintah, dengan layanan gambar, suara, dan dependensi lokal yang sesuai.
+Ya. Anda bisa menempelkan ide kasar, pemikiran spontan, tautan berita, atau satu artikel blog lengkap. Sutradara AI akan mengambil konflik utama, menulis hook 3 detik yang menarik, lalu menyusun topik Anda menjadi alur cerita padat berisi 6 adegan dengan timing komedi dan arahan narasi.
 
 <!-- readme:platforms -->
 
-### Q5. Bagaimana mengubah artikel atau referensi menjadi video yang lebih menarik?
+### Q5. Kapan saya harus memilih Director Mode atau Autopilot Mode?
 
-Jelaskan siapa yang ingin Anda tarik, apa poin utamanya, dan apa yang Anda ingin penonton lakukan setelah menonton. Asisten AI akan mencari sudut bahasan, merancang pembuka yang memancing perhatian, menyusun alur, dan menyiapkan ajakan penutup sebelum membuat storyboard.
+- **Pilih Director Mode** ketika Anda ingin mengontrol sepenuhnya setiap shot, sudut kamera, dan metafora visual. Mode ini menjadi pengaman biaya: Anda menyetujui naskah dan storyboard secara gratis sebelum membuat satu frame video pun.
+- **Pilih Autopilot Mode** ketika Anda menginginkan pengalaman otomatis satu klik yang menghasilkan naskah, narasi, subtitle, dan file video jadi.
 
-Jika punya video referensi, sertakan dan jelaskan apakah Anda menyukai ritme, cara penyampaian, atau struktur ceritanya. Pelajari metodenya, tetapi pertahankan sudut pandang dan penyampaian sendiri. Fakta sejarah, bisnis, dan sains tetap perlu diperiksa sebelum dipublikasikan.
+### Q6. Bagaimana AI menjaga retensi penonton dan membuat video tidak membosankan?
 
-### Q6. Apakah berbayar?
+Alat AI tradisional hanya mengubah teks menjadi ilustrasi harfiah. Stickman Video Director menerapkan **psikologi storytelling visual** yang nyata:
 
-Skill ini gratis dan open source. Layanan gambar, suara, dan pembuatan video dapat mengenakan biaya sesuai platform dan paket akun. Berlangganan suatu platform belum tentu termasuk kuota penggunaan API.
+- **Hook 3 Detik**: mengubah kalimat pembuka menjadi kontradiksi visual langsung atau celah rasa ingin tahu agar penonton tidak melewatkan video.
+- **Metafora Visual**: mengubah konsep abstrak yang membosankan menjadi lelucon visual, misalnya kecemasan sebagai roda hamster yang menyusut atau burnout sebagai indikator baterai 1%.
+- **Ritme dan Jeda Komedi**: memasukkan jeda terstruktur, shot reaksi, dan petunjuk efek suara (SFX) untuk meniru timing komedi kreator seperti Casually Explained.
 
-### Q7. Jika gambar atau narasinya kurang cocok, harus mengulang semua?
+### Q7. Asisten AI dan editor video apa yang didukung?
 
-Tidak. Setujui naskah dan rencana produksi dahulu, lalu buat contoh singkat untuk memeriksa gaya, karakter, suara, subtitle, serta ritme. Setelah cocok, barulah lanjutkan video lengkap.
+- **Lingkungan AI**: Claude Code, OpenAI Codex, Cursor, Antigravity, atau lingkungan agen apa pun dengan akses file dan terminal.
+- **Generator Video**: Google Flow, Runway (Gen-3), Luma Dream Machine, Kling, Pika, atau model gambar-ke-video / teks-ke-video apa pun.
+- **Editor Video**: prompt dan hasil ekspor audio siap diseret ke CapCut, Premiere Pro, DaVinci Resolve, atau Final Cut.
 
-Jika hanya satu bagian yang perlu diperbaiki, ubah bagian tersebut dan gunakan kembali narasi serta materi yang sudah disetujui. Ini mengurangi pengerjaan ulang dan biaya berulang.
+### Q8. Jika satu adegan tidak saya sukai, apakah seluruh video harus dirender ulang?
 
-### Q8. Boleh dipublikasikan ke YouTube atau dipakai secara komersial?
-
-Proyek ini memakai lisensi MIT yang mengizinkan penggunaan komersial. Gambar, musik, efek suara, dan layanan narasi pihak ketiga tetap mengikuti ketentuan lisensinya masing-masing. Kelayakan monetisasi YouTube ditentukan melalui peninjauan dan kebijakan platform.
+Tidak! Itulah keunggulan utama arsitektur modular 6 adegan kami. Jika adegan 3 perlu disesuaikan, Anda cukup merevisi prompt adegan itu saja. Adegan 1, 2, 4, 5, dan 6 tetap utuh. Ini menghemat 80% waktu editing dan menghindari pemborosan kredit generasi.
 
 <!-- readme:contribute -->
 
-## Menuju 10,000 Stars dan ekosistem kreator
+<a id="road-to-10000-stars--creator-ecosystem"></a>
+
+## ⭐ Menuju 10,000 Stars dan ekosistem kreator
 
 **Setiap Star mendukung rilisan berikutnya!** Bersama-sama, kita membangun studio 100% gratis dan open source untuk membantu kreator solo mengelola channel tanpa tampil di kamera, tanpa langganan SaaS seharga US$ 50/bulan.
 
@@ -361,7 +378,7 @@ Proyek ini memakai lisensi MIT yang mengizinkan penggunaan komersial. Gambar, mu
 
 <a id="whats-next"></a>
 
-## Gaya visual yang direncanakan
+## 🎨 Gaya visual yang direncanakan
 
 Kami sedang melatih mesin khusus baru untuk niche YouTube tanpa tampil di kamera yang paling banyak diminta:
 
@@ -372,7 +389,7 @@ Kami sedang melatih mesin khusus baru untuk niche YouTube tanpa tampil di kamera
 - **Podcast dua mikrofon dan stand-up** — Komedi dialog cepat, pengolahan ulang wawancara, dan saling ledek antarkarakter
 - **Misteri internet dan legenda urban** — Sketsa pensil menyeramkan, gangguan analog, dan kisah misteri Reddit
 
-## Komunitas dan kiriman karya
+## 💬 Komunitas dan kiriman karya
 
 Ingin mengusulkan gaya atau menampilkan channel Anda? Kirim pesan ke **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** di Telegram:
 
@@ -381,7 +398,7 @@ Ingin mengusulkan gaya atau menampilkan channel Anda? Kirim pesan ke **[@CrazyKa
 
 🔔 *Ikuti **[@CrazyKaomei](https://x.com/CrazyKaomei)** di X untuk alur produksi video harian, alat otomatisasi, dan SOP pertumbuhan channel.*
 
-## Lisensi
+## 📄 Lisensi
 
 Proyek ini dirilis dengan [lisensi MIT](https://github.com/kaomei/stickman-video-director/blob/main/LICENSE). Anda boleh menggunakan, mengubah, mendistribusikan, dan memakainya secara komersial tanpa membayar Skill ini. Sertakan pemberitahuan hak cipta dan lisensi saat mendistribusikan proyek atau bagian pentingnya.
 

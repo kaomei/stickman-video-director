@@ -9,9 +9,11 @@
 [![Étoiles GitHub](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![Licence MIT](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Donnez un sujet, un article ou un lien : les visuels, la voix off, les sous-titres, les effets sonores et les micro-animations sont créés automatiquement pour livrer une vidéo stickman complète. **Créez une chaîne YouTube à l’identité reconnaissable, sans montrer votre visage.**
+Partez d’un sujet, d’un article ou d’un script. Orchestrez automatiquement les visuels, les voix off, les sous-titres et les effets sonores pour obtenir une vidéo stickman prête à publier.
 
-Retrouvez les styles stickman populaires sur le web dans une collection open source, régulièrement enrichie et mise à jour. Elle se prête à de nombreux formats : **vulgarisation, psychologie et motivation, éducation et sensibilisation, récits réconfortants, histoires du moment et bien plus encore.**
+**⚡ 100 % gratuit et open source. Pas de caméra, pas d’abonnement à 50 $/mois : prêt en quelques minutes, pas en plusieurs jours.**
+
+Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation scientifique, de psychologie sombre, de fables technologiques, de récits viraux et de storytelling.**
 
 </div>
 
@@ -52,36 +54,41 @@ Retrouvez les styles stickman populaires sur le web dans une collection open sou
 
 **6 styles · 8 variantes visuelles · Des exemples testés · Gratuit et open source**
 
-⭐ **De nouveaux styles arrivent régulièrement. Ajoutez une étoile pour retrouver le projet et suivre la suite.**
+⭐ **Ajoutez une étoile au projet pour suivre les prochains styles et les nouvelles fonctionnalités à débloquer.**
 
-[Bien démarrer](#quick-start) · [Styles A](#a-styles) · [Styles B](#b-styles) · [FAQ](#faq)
+[Bien démarrer](#quick-start) · [Styles Director](#a-styles) · [Styles Autopilot](#b-styles) · [FAQ](#faq)
 
 </div>
 
 <a id="creation-modes"></a>
 
-## Deux façons de créer vos vidéos
+## 🎬 Deux façons de créer vos vidéos
 
-**Pour maîtriser chaque plan, choisissez A · Director Mode. Pour produire une vidéo longue sans assembler les séquences à la main, choisissez B · Autopilot Mode.** Un seul projet, deux méthodes de production.
+**Vous voulez maîtriser chaque plan ? Choisissez A · Director Mode. Vous voulez une vidéo terminée sans assembler les scènes vous-même ? Choisissez B · Autopilot Mode.** Un projet, deux méthodes de production.
 
 |  | <div align="center">A · Director Mode</div> | <div align="center">B · Autopilot Mode</div> |
 |:---:|:---|:---|
 | **Principe** | **Vous gardez la main, l’IA prépare la mise en scène** : elle crée le découpage et les prompts ; vous contrôlez la génération des séquences et le montage. | **Donnez un sujet ou un objectif, récupérez une vidéo** : illustrations, voix off, sous-titres, micro-animations et assemblage sont automatisés. |
 | **Durée** | **Idéal pour les formats courts**, par exemple de 30 secondes à 3 minutes. Les formats plus longs se construisent séquence par séquence. | **Pensé pour les formats longs**, notamment les vidéos avec voix off de **10 minutes et plus**. Convient aussi aux formats courts et aux séries narratives. |
-| **Outils** | Un assistant IA compatible avec les Skills pour préparer la proposition, **Google Flow** ou un outil similaire pour générer les séquences, puis **CapCut** ou un autre logiciel pour le montage. | Un agent de développement IA comme **Codex ou Claude Code**, capable de lire et d’écrire des fichiers, d’appeler des outils et d’exécuter des commandes, pour relier génération des médias et assemblage local. |
+| **Outils** | Préparez les plans avec un assistant IA compatible avec les Skills, générez les séquences dans votre outil vidéo préféré (Google Flow, Runway, Luma, Kling, etc.), puis assemblez-les dans CapCut ou Premiere. | Un agent de développement IA comme **Codex ou Claude Code**, capable de lire et d’écrire des fichiers, d’appeler des outils et d’exécuter des commandes, pour relier génération des médias et assemblage local. |
 | **Rendu** | **Séquences animées générées une par une** : gestes, mise en scène et interactions entre personnages. | **Illustrations de storyboard + micro-animations** : changements de plan, zooms et panoramiques accompagnent la narration, sans générer une animation complète pour chaque séquence. |
 | **Livrable** | Proposition de réalisation, storyboard, prompts vidéo par séquence et indications sonores. | **Un fichier vidéo complet avec voix off, sous-titres et micro-animations.** |
 | **Démarrer** | <div align="center"><a href="#director-start">Utiliser Director</a></div> | <div align="center"><a href="#autopilot-start">Utiliser Autopilot</a></div> |
 
-Les deux modes peuvent partir d’**un sujet, d’un texte ou d’un scénario complet**. **Les séries A et B ont leur propre numérotation et leurs propres visuels ; styles et exemples sont mis à jour séparément.** Choisissez le format, la langue de narration et la voix selon vos besoins. Les durées ci-dessus sont des repères, pas des limites.
+Les deux méthodes peuvent partir d’un sujet brut, d’un lien web ou d’un script complet. Choisissez librement le format (9:16, 16:9, 1:1), la langue de narration et la voix off. Les durées ci-dessus sont des recommandations, pas des limites strictes.
 
-Autopilot nécessite des services de génération d’images et de voix disponibles, ainsi qu’un environnement local d’assemblage vidéo. Une simple fenêtre de chat ne remplace pas cet environnement. Le Skill est gratuit et open source ; les services utilisés peuvent être payants.
+💡 **Configuration rapide** :
+
+- **Director Mode** fonctionne dans les fenêtres de conversation IA classiques.
+- **Autopilot Mode** s’exécute dans un agent de développement IA ayant accès aux fichiers et au terminal (comme **Claude Code, OpenAI Codex ou Cursor**) pour gérer automatiquement le rendu et la livraison des fichiers de bout en bout.
 
 <a id="quick-start"></a>
 
-## Bien démarrer
+## 🚀 Bien démarrer
 
-Envoyez ce message à un assistant IA compatible avec les Skills. Après l’installation, il vous expliquera **ce que font les deux modes et comment démarrer**, avec des exemples à reprendre tels quels.
+Compatible avec Claude Code, Codex, Cursor, Antigravity ou tout environnement d’agent ayant accès aux fichiers et au terminal.
+
+Envoyez le message suivant à votre assistant IA :
 
 ```text
 Installe ce Skill pour moi :
@@ -145,7 +152,7 @@ Au premier lancement, il vérifie la configuration requise et vous explique éta
 
 <a id="a-styles"></a>
 
-## A · Director Mode : les styles disponibles
+## 🎬 A · Director Mode : les styles disponibles
 
 Les styles sont numérotés A1, A2, A3… Chaque fiche présente ses exemples animés.
 
@@ -237,9 +244,17 @@ Contribution au style et aux prompts : [Lawal Ridwan / @leksautomate](https://gi
 
 ---
 
+<a id="a6"></a>
+
+### A6 : Bientôt disponible…
+
+D’autres styles entièrement automatisés sont en cours d’entraînement. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
+
+---
+
 <a id="b-styles"></a>
 
-## B · Autopilot Mode : les styles disponibles
+## 🤖 B · Autopilot Mode : les styles disponibles
 
 Les styles sont numérotés B1, B2, B3… Chaque fiche présente ses vidéos à base d’illustrations et de micro-animations. Cette série est maintenue séparément des styles A.
 
@@ -274,63 +289,65 @@ Cliquez sur un aperçu animé pour regarder ou télécharger l’extrait vidéo 
 
 <a id="b2"></a>
 
-### B2 : À venir…
+### B2 : Bientôt disponible…
 
-La présentation du style, ses propres exemples et les demandes types seront ajoutés ici.
+D’autres styles entièrement automatisés sont en cours d’entraînement. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
 
 <!-- readme:reliability -->
 
 <a id="faq"></a>
 
-## Questions fréquentes
+## ❓ Questions fréquentes
 
-### Q1. Peut-on créer une vidéo sans avoir de scénario ?
+### Q1. Est-ce vraiment 100 % gratuit ? Y a-t-il des frais cachés ?
 
-Oui. Donnez un sujet, un article, un lien ou un besoin précis : l’assistant IA commencera par en faire un scénario vidéo. Vous pouvez aussi lui fournir un scénario déjà rédigé. Précisez si possible le public visé, la plateforme et la durée souhaitée.
+Oui. Stickman Video Director est 100 % gratuit et open source sous licence MIT. Vous pouvez l’utiliser librement pour vos projets personnels et commerciaux. Contrairement aux plateformes SaaS propriétaires facturées 30 à 60 $/mois, ce projet ne comporte aucun abonnement. Vous payez uniquement votre consommation d’API tierces (par exemple Google Gemini, Claude ou ElevenLabs), selon les modèles que vous choisissez de connecter.
 
-### Q2. Peut-on automatiser entièrement les styles Director ? Pourquoi conserver ce mode ?
+### Q2. Puis-je monétiser ces vidéos sur YouTube et TikTok ?
 
-Les styles de la série A suivent pour l’instant un processus de production distinct, mais vous pouvez demander à l’assistant IA de vous aider à combiner votre style A préféré avec le processus de la série B pour créer votre propre adaptation.
+Oui, tout à fait. Les créateurs de chaînes sans visage s’inquiètent souvent des règles de démonétisation de YouTube concernant le « Reused Content » ou les contenus IA à faible effort. Comme Stickman Video Director écrit des arcs narratifs sur mesure, un rythme unique et des mises en scène originales, votre résultat est entièrement original. Des centaines de chaînes monétisent avec succès des récits stickman dans le cadre du YouTube Partner Program (YPP).
 
-Conserver le mode Director permet surtout de maîtriser le coût de la génération vidéo et des essais : pour une vidéo de plus de dix minutes, une seule passe de génération complète peut coûter **quelques dizaines de dollars américains**, et les reprises alourdissent encore la facture. Director conserve donc la génération et la vérification séquence par séquence, ainsi que le montage manuel. Vous gardez la main sur chaque plan et pouvez vérifier le résultat avant de décider de poursuivre.
+### Q3. Faut-il savoir programmer ou posséder un GPU coûteux ?
 
-### Q3. Que faire si les personnages changent d’une séquence à l’autre dans Director ?
+Non. Vous n’avez besoin ni d’une carte RTX haut de gamme ni de connaissances en programmation.
 
-Demandez à l’assistant IA : « Conçois d’abord un personnage stickman adapté au style choisi. Fais-moi valider ses trois vues — face, profil et dos — avant de préparer les prompts de storyboard. » C’est aussi une bonne façon de créer un personnage propre à votre chaîne. Réutilisez vos références déjà validées ; si vous n’avez pas besoin d’un personnage personnalisé, cette étape reste facultative.
+- **Director Mode** s’utilise par conversation dans tout assistant IA compatible avec les Skills.
+- **Autopilot Mode** s’exécute dans des agents de développement IA (comme Claude Code, Codex ou Cursor), avec de simples demandes en anglais courant. La génération visuelle lourde passe par des API cloud légères ou un rendu procédural, et non par votre matériel local.
 
-Dans un outil vidéo qui accepte les images de référence, **joignez les vues validées à chaque séquence générée**. Elles servent d’aide supplémentaire : elles ne remplacent pas les prompts de storyboard et ne modifient pas les règles du style choisi. Vérifiez tout de même la cohérence des personnages entre les séquences.
+### Q4. Puis-je créer une vidéo sans script déjà rédigé ?
 
-### Q4. Faut-il obligatoirement utiliser Codex ?
-
-Non. Director fonctionne dans les assistants IA qui permettent d’installer et d’utiliser des Skills.
-
-Autopilot nécessite un environnement comme Codex ou Claude Code, capable de lire et d’écrire des fichiers et d’exécuter des commandes, ainsi que les services de génération d’images et de voix et les dépendances locales nécessaires.
+Oui. Collez une idée brute, une réflexion spontanée, un lien d’actualité ou un article de blog entier. Le réalisateur IA extrait le conflit central, écrit une accroche de 3 secondes et structure votre sujet en un arc narratif resserré de 6 scènes, avec rythme comique et indications de voix off.
 
 <!-- readme:platforms -->
 
-### Q5. Comment rendre un article ou une source plus accrocheur en vidéo ?
+### Q5. Quand choisir Director Mode plutôt qu’Autopilot Mode ?
 
-Indiquez à l’assistant IA qui vous souhaitez toucher, le message essentiel et ce que vous aimeriez que le public fasse après la vidéo. Il pourra en tirer un angle, une accroche d’ouverture, une progression narrative et un appel à l’action, puis préparer le découpage.
+- **Choisissez Director Mode** pour contrôler chaque plan, angle de caméra et métaphore visuelle. Il sert de filet de sécurité pour votre budget : vous validez gratuitement le script et le storyboard avant de générer la moindre image vidéo.
+- **Choisissez Autopilot Mode** pour une expérience autonome en un clic qui génère automatiquement le script, la voix off, les sous-titres et le fichier vidéo final.
 
-Vous pouvez également partager une vidéo de référence et préciser ce qui vous plaît : son rythme, son ton ou sa structure. Inspirez-vous de la méthode tout en gardant votre point de vue et votre expression. Vérifiez les faits historiques, économiques ou scientifiques avant publication.
+### Q6. Comment l’IA rend-elle la vidéo captivante et évite-t-elle l’ennui ?
 
-### Q6. Est-ce payant ?
+Les outils IA traditionnels se contentent d’illustrer littéralement le texte. Stickman Video Director applique une véritable **psychologie de la narration visuelle** :
 
-Le Skill est gratuit et open source. La génération d’images, de voix et de vidéos dépend des tarifs de vos plateformes et de vos offres. Un abonnement à un service n’inclut pas forcément des crédits pour son API.
+- **L’accroche des 3 secondes** : transforme la première phrase en contradiction visuelle immédiate ou en question intrigante pour empêcher le spectateur de faire défiler la page.
+- **Les métaphores visuelles** : convertissent les notions abstraites en gags visuels, comme l’anxiété représentée par une roue de hamster qui rétrécit ou l’épuisement par une batterie à 1 %.
+- **Le rythme et les pauses comiques** : insèrent des pauses structurées, des plans de réaction et des indications d’effets sonores (SFX), dans l’esprit du rythme humoristique de créateurs comme Casually Explained.
 
-### Q7. Faut-il tout refaire si une image ou une voix ne convient pas ?
+### Q7. Quels assistants IA et logiciels de montage sont compatibles ?
 
-Non. Validez d’abord le scénario et le plan de production, puis un court aperçu vidéo avec le son pour vérifier le style, les personnages, la voix, les sous-titres et le rythme, avant de lancer la vidéo complète.
+- **Environnements IA** : Claude Code, OpenAI Codex, Cursor, Antigravity ou tout environnement d’agent ayant accès aux fichiers et au terminal.
+- **Générateurs vidéo** : Google Flow, Runway (Gen-3), Luma Dream Machine, Kling, Pika ou tout modèle image-vers-vidéo ou texte-vers-vidéo.
+- **Logiciels de montage** : les prompts et les exports audio sont prêts à être glissés dans CapCut, Premiere Pro, DaVinci Resolve ou Final Cut.
 
-Si une seule séquence pose problème, retouchez-la en priorité et réutilisez les voix off et les médias déjà validés. Cela limite les reprises et les dépenses inutiles.
+### Q8. Si une scène ne me plaît pas, faut-il refaire le rendu de toute la vidéo ?
 
-### Q8. Peut-on publier les vidéos sur YouTube ou les utiliser dans un projet commercial ?
-
-Le projet est sous licence MIT, qui autorise l’usage commercial. Les images, musiques, effets sonores et services de voix tiers restent soumis à leurs propres conditions. L’accès à la monétisation YouTube dépend de l’examen de votre chaîne et de vos contenus par la plateforme.
+Non ! C’est l’avantage central de notre architecture modulaire en 6 scènes. Si la scène 3 doit être ajustée, modifiez uniquement son prompt. Les scènes 1, 2, 4, 5 et 6 restent intactes. Cela économise 80 % du temps de montage et évite de gaspiller des crédits de génération.
 
 <!-- readme:contribute -->
 
-## En route vers 10,000 Stars et un écosystème de créateurs
+<a id="road-to-10000-stars--creator-ecosystem"></a>
+
+## ⭐ En route vers 10,000 Stars et un écosystème de créateurs
 
 **Chaque étoile alimente la prochaine nouveauté !** Ensemble, nous construisons un studio 100 % gratuit et open source pour aider les créateurs solo à gérer des chaînes sans montrer leur visage, sans abonnement SaaS à 50 $/mois.
 
@@ -356,7 +373,7 @@ Le projet est sous licence MIT, qui autorise l’usage commercial. Les images, m
 
 <a id="whats-next"></a>
 
-## Styles visuels prévus
+## 🎨 Styles visuels prévus
 
 Nous entraînons de nouveaux moteurs spécialisés pour les niches YouTube sans visage les plus demandées :
 
@@ -367,7 +384,7 @@ Nous entraînons de nouveaux moteurs spécialisés pour les niches YouTube sans 
 - **Podcast à deux micros et stand-up** — Comédie dialoguée rythmée, réutilisation d’interviews et échanges entre personnages
 - **Mystères d’Internet et légendes urbaines** — Croquis au crayon inquiétants, parasites analogiques et récits mystérieux de Reddit
 
-## Communauté et contributions
+## 💬 Communauté et contributions
 
 Vous voulez proposer un style ou faire découvrir votre chaîne ? Contactez **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** sur Telegram :
 
@@ -376,7 +393,7 @@ Vous voulez proposer un style ou faire découvrir votre chaîne ? Contactez **[@
 
 🔔 *Suivez **[@CrazyKaomei](https://x.com/CrazyKaomei)** sur X pour des workflows vidéo quotidiens, des outils d’automatisation et des procédures de croissance de chaîne.*
 
-## Licence
+## 📄 Licence
 
 Ce projet est distribué sous [licence MIT](https://github.com/kaomei/stickman-video-director/blob/main/LICENSE). Vous pouvez l’utiliser, le modifier, le distribuer et l’exploiter commercialement. Conservez la mention de droit d’auteur et la licence lorsque vous distribuez le projet ou une partie substantielle de celui-ci.
 

@@ -22,11 +22,12 @@ assert source == (root / "README.en.md").read_text(), "Default homepage must mat
 assert "# 🎬 Stickman Video Director" in source
 english_hero = source.split("</div>", 1)[0]
 assert "**Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels. Fully open-source.**" in english_hero
-for phrase in ("a topic, an article, or a link", "visuals, voiceover, captions, sound effects, and subtle animation",
-               "complete stickman video", "distinctive YouTube channel without ever appearing on camera",
-               "open-source collection", "continually updated", "science and knowledge explainers",
-               "psychology and motivation", "education and awareness", "uplifting stories", "trending stories"):
-    assert phrase in english_hero, phrase
+english_intro = (
+    "Start with a topic, an article, or a script. Automatically orchestrate visuals, voiceovers, captions, and sound effects into a production-ready stickman video.",
+    "**⚡ 100% Free & Open-Source. No camera, no $50/mo subscriptions, and ready in minutes, not days.**",
+    "Continually updated visual styles for **science explainers, dark psychology, tech parables, viral lore, and storytelling channels.**",
+)
+assert "\n\n".join(english_intro) in english_hero, "Approved English introduction and bold formatting"
 
 def images(text):
     return re.findall(r'<img\b[^>]*\bsrc="([^"]+)"', text)
@@ -68,12 +69,17 @@ for name in selected:
     text = path.read_text()
     top = text.split("</div>", 1)[0]
     hero_blocks = [block.strip() for block in top.split("\n\n") if block.strip()]
-    assert len(hero_blocks) == 7, (name, "title, subtitle, badges and exactly two introduction paragraphs")
+    is_english = name in ("README.md", "README.en.md")
+    assert len(hero_blocks) == 8, (name, "three localized introduction paragraphs")
     assert hero_blocks[2] == "# 🎬 Stickman Video Director", (name, "shared product title")
     subtitle = hero_blocks[3]
     assert subtitle.startswith("**") and subtitle.endswith("**"), (name, "bold subtitle")
     assert "🎬" not in subtitle and "YouTube" in subtitle, (name, "localized script-to-video subtitle for faceless YouTube channels")
-    assert "YouTube" in hero_blocks[5], (name, "faceless-channel value in first introduction paragraph")
+    if is_english:
+        assert tuple(hero_blocks[5:]) == english_intro, (name, "approved English introduction")
+    else:
+        assert hero_blocks[6].startswith("**⚡ ") and hero_blocks[6].endswith("**"), (name, "bold free/open-source introduction")
+        assert "50" in hero_blocks[6] and "**" in hero_blocks[7], (name, "pricing comparison and emphasized topic niches")
     active = "en" if name == "README.md" else name[7:-3]
     expected_nav = " · ".join(
         f"[{'**' + label + '**' if locale == active else label}](README.{locale}.md)"
@@ -83,7 +89,13 @@ for name in selected:
     assert text.count("[**") == 1, (name, "one active language")
     assert "FR（待同步）" not in text
     assert images(text) == expected_images, (name, "pinned images and order")
-    assert anchors(text) == expected_anchors, (name, "shared anchors and section order")
+    localized_anchors = expected_anchors.copy()
+    assert anchors(text) == localized_anchors, (name, "shared anchors and section order")
+    h2_headings = re.findall(r"^## (.+)$", text, re.M)
+    heading_icons = ("🎬", "🚀", "🎬", "🤖", "❓", "⭐", "🎨", "💬", "📄")
+    assert len(h2_headings) == len(heading_icons), (name, "nine peer sections")
+    assert all(heading.startswith(icon + " ") for heading, icon in zip(h2_headings, heading_icons)), (name, "one consistent semantic icon per H2")
+    assert '<a id="road-to-10000-stars--creator-ecosystem"></a>' in text, (name, "preserve the published roadmap deep link")
     for link in shared_links:
         assert link in text, (name, link)
     ecosystem = text.split("<!-- readme:contribute -->", 1)[1]
@@ -91,7 +103,7 @@ for name in selected:
     assert len(ecosystem_sections) == 5, (name, "roadmap, planned styles, community, license use H2")
     roadmap, planned, community = ecosystem_sections[1:4]
     assert not re.search(r"^(?:### |---\s*$)", ecosystem, re.M), (name, "consistent section headings, no extra thick rules")
-    assert not any(heading.startswith(("🎨", "💬")) for heading in (planned, community)), (name, "plain section headings")
+    assert planned.startswith("🎨 ") and community.startswith("💬 "), (name, "semantic icons match peer section headings")
     milestones = re.findall(r"^- \[([x ])\] \*\*(?:🔥 )?([0-9,]+) Stars\*\*", roadmap, re.M)
     assert milestones == [("x", "1,000"), ("x", "3,000"), (" ", "5,000"), (" ", "7,500"), (" ", "10,000")], (name, "approved milestone states")
     assert len(re.findall(r"^  - ", roadmap, re.M)) == 4, (name, "four nested milestone deliverables")
@@ -121,40 +133,60 @@ for name in selected:
     assert re.findall(r'href="#([^"]+)"><img', hero) == ["a1", "a2", "a3", "a4", "style-5", "b1"], name
     assert text.count('width="90%"') == 6 and text.count('width="360"') == 12, name
     # French typography separates a heading label from its colon with a space.
-    style_ids = re.findall(r"^### (A[1-5]|B[12])\s*[:：]", text, re.M)
-    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "B1", "B2"], name
+    style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
+    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "B1", "B2"], (name, "published styles plus sequential teasers")
+    for next_id, end in (("a6", '<a id="b-styles"></a>'), ("b2", '<a id="faq"></a>')):
+        placeholder = section(text, next_id, end)
+        assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1 and "5,000" in placeholder, (name, next_id, "one roadmap CTA per series")
+    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 2, (name, "two style-unlock roadmap links")
+    if is_english:
+        teaser = "More fully automated style is currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock it at 5,000 Stars!"
+        assert text.count(teaser) == 2, (name, "one approved roadmap CTA per series")
+        for series in ("A", "B"):
+            entries = re.findall(rf"^### ({series}(\d+)): (.+)$", text, re.M)
+            assert [int(number) for _, number, _ in entries] == list(range(1, len(entries) + 1)), (name, series, "sequential styles")
+            assert [title for _, _, title in entries].count("Coming soon…") == 1, (name, series, "one next-style placeholder")
+            next_id, _, title = entries[-1]
+            assert title == "Coming soon…", (name, series, "placeholder follows the latest released style")
+            assert f"### {next_id}: Coming soon…\n\n{teaser}" in text, (name, series, "approved placeholder copy")
     for variant in ("A1.1", "A1.2", "A2.1", "A2.2"):
         assert variant in text, (name, variant)
     faq = section(text, "faq", "<!-- readme:contribute -->")
     assert re.findall(r"^### Q(\d+)\.", faq, re.M) == [str(i) for i in range(1, 9)], name
     assert all(tag not in faq for tag in ("<details", "<summary")), (name, "visible Q1-Q8")
-    character_faq = faq.split("### Q3.", 1)[1].split("### Q4.", 1)[0]
-    engagement_faq = faq.split("### Q5.", 1)[1].split("### Q6.", 1)[0]
-    for answer, label in ((character_faq, "character consistency"),
-                          (engagement_faq, "engaging article adaptation")):
-        assert len(answer.split("\n", 1)[1].strip().split("\n\n")) == 2, (name, label)
-    cost_faq = faq.split("### Q2.", 1)[1].split("### Q3.", 1)[0]
-    assert "100" not in cost_faq, (name, "Use the revised tens-of-dollars estimate, not US$100")
-    cost_answer = cost_faq.split("\n", 1)[1].strip()
-    assert len(cost_answer.split("\n\n")) == 2, (name, "Concise DIY and cost answer")
-    if name in ("README.md", "README.en.md"):
-        assert "Can Director Mode styles be fully automated? Why keep Director Mode?" in cost_faq
-        for phrase in ("one complete generation pass", "**tens of US dollars**",
-                       "your preferred A-series style", "B-series workflow", "DIY adaptation",
-                       "generation and review scene by scene", "manual editing",
-                       "control of every shot", "decide whether to continue"):
-            assert phrase in cost_faq, (name, phrase)
-        assert "I have installed it. What do I do next?" not in faq
-        assert "How do I keep characters consistent in Director Mode?" in character_faq
-        for phrase in ("front, side, and back views", "skip this optional step",
-                       "attach the approved character image to every clip you generate",
-                       "do not replace those prompts or change the selected style's rules"):
-            assert phrase in character_faq, (name, phrase)
-        assert "How do I turn an article or reference into a more engaging video?" in engagement_faq
-        for phrase in ("who you want to reach", "what you want viewers to do afterward",
-                       "opening hook, narrative progression, and call to action",
-                       "your own perspective and wording", "claims before publishing"):
-            assert phrase in engagement_faq, (name, phrase)
+    if is_english:
+        assert "## ❓ Frequently Asked Questions\n" in faq
+        questions = (
+            "Is this really 100% free? Are there any hidden fees?",
+            "Can I monetize these videos on YouTube and TikTok?",
+            "Do I need programming skills or an expensive GPU?",
+            "Can I make a video without an existing script?",
+            "When should I choose Director Mode vs. Autopilot Mode?",
+            "How does the AI ensure the video has high viewer retention and isn't boring?",
+            "What AI assistants and video editors are supported?",
+            "What if I dislike one specific scene—do I have to re-render the whole video?",
+        )
+        assert re.findall(r"^### Q\d+\. (.+)$", faq, re.M) == list(questions), (name, "approved English FAQ order")
+        faq_answers = re.split(r"^### Q\d+\. .+\n", faq, flags=re.M)[1:]
+        # Copy checks preserve the supplied draft; they do not substantiate its marketing claims.
+        required_copy = (
+            ("$30–$60/month", "zero subscription fees", "third-party API usage"),
+            ("completely original", "YouTube Partner Program (YPP)"),
+            ("RTX", "**Director Mode**", "**Autopilot Mode**", "cloud APIs or procedural rendering"),
+            ("shower thought", "3-second hook", "tight 6-scene narrative arc"),
+            ("**Choose Director Mode**", "**Choose Autopilot Mode**", "finished video file"),
+            ("**visual storytelling psychology**", "**The 3-Second Hook**", "**Visual Metaphors**", "**Pacing & Comic Pauses**"),
+            ("**AI Environments**", "**Video Generators**", "**Video Editors**", "Antigravity", "DaVinci Resolve"),
+            ("modular 6-scene architecture", "Scenes 1, 2, 4, 5, and 6 remain untouched", "80% of editing time"),
+        )
+        for number, (answer, phrases) in enumerate(zip(faq_answers, required_copy), 1):
+            for phrase in phrases:
+                assert phrase in answer, (name, number, phrase)
+        assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 2, 0, 2, 3, 3, 0], (name, "approved FAQ list formatting")
+    faq_answers = re.split(r"^### Q\d+\. .+\n", faq, flags=re.M)[1:]
+    assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 2, 0, 2, 3, 3, 0], (name, "localized FAQ bullet parity")
+    for answer, tokens in zip(faq_answers, (("MIT", "API"), ("YouTube", "YPP"), ("Codex", "Claude Code", "Cursor"), ("3", "6"), ("Director Mode", "Autopilot Mode"), ("SFX", "Casually Explained"), ("Antigravity", "Google Flow", "DaVinci Resolve"), ("80", "6"))):
+        assert all(token in answer for token in tokens), (name, "localized FAQ topic parity", tokens)
     assert "MIT" in faq and "API" in faq and "YouTube" in faq and "Codex" in faq and "Claude Code" in faq, name
     code = re.findall(r"```text\n(.*?)```", text, re.S)
     assert len(code) == 3, (name, "installation, A example, B example")
@@ -163,6 +195,31 @@ for name in selected:
     assert all(token in code[2] for token in ("B1", "5", "10", "20", "16:9", "YouTube")), name
     assert "B1" not in code[0] and "A3" not in code[0], name
     modes = section(text, "creation-modes", '<a id="quick-start"></a>')
+    setup = modes.rsplit("\n|", 1)[1].split("\n\n", 1)[1]
+    assert all(ratio in setup for ratio in ("9:16", "16:9", "1:1")), (name, "customizable aspect ratios")
+    assert len(re.findall(r"^- \*\*", setup, re.M)) == 2 and not re.search(r"^>", setup, re.M), (name, "unquoted two-item setup note")
+    assert all(agent in setup for agent in ("Claude Code", "OpenAI Codex", "Cursor")), (name, "Autopilot environment boundary")
+    quick_intro = section(text, "quick-start", "```text")
+    assert all(agent in quick_intro for agent in ("Claude Code", "Codex", "Cursor", "Antigravity")), (name, "compatible environments")
+    if is_english:
+        approved_mode_intro = (
+            '<div align="center">\n\n'
+            '**6 styles · 8 visual options · Tested examples · Free and open source**\n\n'
+            '⭐ **Star the project to catch the next style drop and feature unlocks.**\n\n'
+            '[Get started](#quick-start) · [Director Styles](#a-styles) · [Autopilot Styles](#b-styles) · [FAQ](#faq)\n\n'
+            '</div>\n\n'
+            '<a id="creation-modes"></a>\n\n'
+            '## 🎬 Two ways to make your video\n\n'
+            '**Want control over every shot? Choose A · Director Mode. Want a finished video without assembling scenes yourself? Choose B · Autopilot Mode.** One project, two workflows.\n'
+        )
+        assert approved_mode_intro in text, (name, "approved centered CTA, navigation and bold workflow introduction")
+        approved_setup_copy = (
+            'Both workflows can start with a raw topic, a web link, or a full script. Customize your aspect ratio (9:16, 16:9, 1:1), narration language, and voiceover freely. The lengths above are recommendations, not hard limits.\n\n'
+            '💡 **Quick Setup Note**:\n\n'
+            '- **Director Mode** works anywhere in standard conversational AI windows.\n'
+            '- **Autopilot Mode** runs inside AI coding agents with file/terminal access (like **Claude Code, OpenAI Codex, or Cursor**) to automatically handle end-to-end rendering and file delivery.'
+        )
+        assert modes.rstrip().endswith(approved_setup_copy), (name, "approved workflow customization and unquoted setup list")
     assert all(token in modes for token in ("Codex", "Claude Code", "Google Flow", "10")), name
     b1 = section(text, "b1", '<a id="b2"></a>')
     assert "Bodi" in b1
@@ -170,7 +227,7 @@ for name in selected:
     assert "3min" not in b1, "Keep the long promotional video out of the short-case gallery"
     # Resolve both Markdown and HTML links; language labels need not match.
     links = re.findall(r"\]\(([^)]+)\)", text) + re.findall(r'href="([^"]+)"', text)
-    known_ids = set(expected_anchors)
+    known_ids = set(localized_anchors)
     for link in links:
         if link.startswith("#"):
             assert link[1:] in known_ids, (name, "missing anchor", link)
