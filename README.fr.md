@@ -120,7 +120,7 @@ Après ma validation, fournis les prompts vidéo de chaque séquence.
 
 La proposition comprend la structure du récit, la voix off par séquence, les actions, les plans et le travail sonore. Copiez ensuite les prompts un par un dans [Google Flow](https://flow.google.com/) ou un autre outil de génération vidéo, puis ajoutez les sous-titres et finalisez le montage dans CapCut ou un logiciel similaire.
 
-Pour votre premier essai, suivez le [tutoriel complet de production (en chinois)](https://x.com/CrazyKaomei/status/2102311241046008268).
+Pour votre première vidéo, suivez le [guide visuel de production sur X](https://x.com/CrazyKaomei/status/2102311241046008268) (fil avec des démonstrations vidéo étape par étape).
 
 <a id="autopilot-start"></a>
 
@@ -248,7 +248,7 @@ Contribution au style et aux prompts : [Lawal Ridwan / @leksautomate](https://gi
 
 ### A6 : Bientôt disponible…
 
-D’autres styles entièrement automatisés sont en cours d’entraînement. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
+De nouveaux styles spécialisés pour le mode Director sont en cours d’entraînement. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
 
 ---
 
@@ -291,7 +291,7 @@ Cliquez sur un aperçu animé pour regarder ou télécharger l’extrait vidéo 
 
 ### B2 : Bientôt disponible…
 
-D’autres styles entièrement automatisés sont en cours d’entraînement. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
+De nouveaux styles Autopilot et de nouvelles animations procédurales sont en cours d’entraînement. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
 
 <!-- readme:reliability -->
 

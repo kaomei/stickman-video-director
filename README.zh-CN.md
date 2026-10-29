@@ -119,7 +119,7 @@ https://github.com/kaomei/stickman-video-director
 
 提案包含故事结构、分段旁白、画面动作、镜头和声音设计。拿到提示词后，将它们逐条复制到 [Google Flow](https://flow.google.com/) 等视频生成工具，再用剪映等工具添加字幕、完成剪辑。
 
-第一次做，可以跟着[完整制作教程](https://x.com/CrazyKaomei/status/2102311241046008268)跑一遍。
+制作第一个视频时，请参考 [X 上的可视化制作教程](https://x.com/CrazyKaomei/status/2102311241046008268)（含分步视频演示的串帖）。
 
 <a id="autopilot-start"></a>
 
@@ -244,7 +244,7 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ### A6：待更新…
 
-更多全自动画风正在训练中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，一起在 5,000 Stars 时解锁！
+新的专用导演画风正在训练中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，一起在 5,000 Stars 时解锁！
 
 ---
 
@@ -287,7 +287,7 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ### B2：待更新…
 
-更多全自动画风正在训练中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，一起在 5,000 Stars 时解锁！
+新的全自动画风和程序化动画正在训练中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，一起在 5,000 Stars 时解锁！
 
 <!-- readme:reliability -->
 

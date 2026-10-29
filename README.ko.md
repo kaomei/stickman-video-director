@@ -120,7 +120,7 @@ Director 모드/A 모드로 아래 주제, 원고 또는 요구사항을
 
 기획안에는 이야기 구조, 구간별 내레이션, 인물 동작, 카메라 연출, 사운드 디자인이 포함됩니다. 프롬프트를 확인한 뒤 [Google Flow](https://flow.google.com/) 등 영상 생성 도구에 순서대로 입력하고, CapCut 등에서 자막을 넣고 편집합니다.
 
-처음이라면 [전체 제작 가이드·중국어](https://x.com/CrazyKaomei/status/2102311241046008268)를 따라 한 번 완성해 보세요.
+첫 영상을 만들 때는 [X의 시각적 제작 가이드](https://x.com/CrazyKaomei/status/2102311241046008268)를 따라 해 보세요(단계별 영상 데모가 포함된 스레드).
 
 <a id="autopilot-start"></a>
 
@@ -246,7 +246,7 @@ A1, A2, A3… 순으로 추가하며, 각 스타일에 맞는 애니메이션 �
 
 ### A6: 곧 공개…
 
-더 많은 완전 자동화 스타일을 훈련하고 있습니다. [프로젝트에 Star를 눌러](#road-to-10000-stars--creator-ecosystem) 5,000 Stars 달성 시 공개될 수 있도록 응원해 주세요!
+새로운 특화 Director 스타일을 훈련하고 있습니다. [프로젝트에 Star를 눌러](#road-to-10000-stars--creator-ecosystem) 5,000 Stars 달성 시 공개될 수 있도록 응원해 주세요!
 
 ---
 
@@ -289,7 +289,7 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 
 ### B2: 곧 공개…
 
-더 많은 완전 자동화 스타일을 훈련하고 있습니다. [프로젝트에 Star를 눌러](#road-to-10000-stars--creator-ecosystem) 5,000 Stars 달성 시 공개될 수 있도록 응원해 주세요!
+새로운 Autopilot 스타일과 절차적 애니메이션을 훈련하고 있습니다. [프로젝트에 Star를 눌러](#road-to-10000-stars--creator-ecosystem) 5,000 Stars 달성 시 공개될 수 있도록 응원해 주세요!
 
 <!-- readme:reliability -->
 

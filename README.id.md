@@ -123,7 +123,7 @@ Setelah saya setujui, berikan prompt video untuk setiap bagian.
 
 Rancangan mencakup struktur cerita, narasi per bagian, gerakan, kamera, dan arahan suara. Setelah menerima prompt, salin satu per satu ke [Google Flow](https://flow.google.com/) atau alat pembuat video lain. Gunakan CapCut atau editor lain untuk menambahkan subtitle dan menyelesaikan video.
 
-Untuk percobaan pertama, ikuti [panduan produksi lengkap dalam bahasa Mandarin](https://x.com/CrazyKaomei/status/2102311241046008268).
+Untuk video pertama Anda, ikuti [panduan produksi visual di X](https://x.com/CrazyKaomei/status/2102311241046008268) (utas dengan demo video langkah demi langkah).
 
 <a id="autopilot-start"></a>
 
@@ -253,7 +253,7 @@ Kontribusi gaya dan prompt: [Lawal Ridwan / @leksautomate](https://github.com/le
 
 ### A6: Segera hadir…
 
-Lebih banyak gaya yang sepenuhnya otomatis sedang dilatih. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk membukanya saat mencapai 5,000 Stars!
+Gaya khusus Director yang baru sedang dilatih. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk membukanya saat mencapai 5,000 Stars!
 
 ---
 
@@ -296,7 +296,7 @@ Klik GIF untuk menonton atau mengunduh contoh dengan audio.
 
 ### B2: Segera hadir…
 
-Lebih banyak gaya yang sepenuhnya otomatis sedang dilatih. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk membukanya saat mencapai 5,000 Stars!
+Gaya Autopilot dan animasi prosedural baru sedang dilatih. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk membukanya saat mencapai 5,000 Stars!
 
 <!-- readme:reliability -->
 

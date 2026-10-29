@@ -28,6 +28,7 @@ english_intro = (
     "Continually updated visual styles for **science explainers, dark psychology, tech parables, viral lore, and storytelling channels.**",
 )
 assert "\n\n".join(english_intro) in english_hero, "Approved English introduction and bold formatting"
+assert "For your first video, follow the [visual production walkthrough on X](https://x.com/CrazyKaomei/status/2102311241046008268) (Thread with step-by-step video demos)." in source, "Approved first-video walkthrough copy and unchanged X thread link"
 
 def images(text):
     return re.findall(r'<img\b[^>]*\bsrc="([^"]+)"', text)
@@ -98,6 +99,8 @@ for name in selected:
     assert '<a id="road-to-10000-stars--creator-ecosystem"></a>' in text, (name, "preserve the published roadmap deep link")
     for link in shared_links:
         assert link in text, (name, link)
+    tutorial = next(line for line in text.splitlines() if "https://x.com/CrazyKaomei/status/2102311241046008268" in line)
+    assert re.search(r"\[[^\]]*X[^\]]*\]\(https://x\.com/CrazyKaomei/status/2102311241046008268\)", tutorial), (name, "walkthrough explicitly identifies X in the link text")
     ecosystem = text.split("<!-- readme:contribute -->", 1)[1]
     ecosystem_sections = re.split(r"^## ", ecosystem, flags=re.M)
     assert len(ecosystem_sections) == 5, (name, "roadmap, planned styles, community, license use H2")
@@ -135,14 +138,20 @@ for name in selected:
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
     assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "B1", "B2"], (name, "published styles plus sequential teasers")
+    teaser_descriptions = []
     for next_id, end in (("a6", '<a id="b-styles"></a>'), ("b2", '<a id="faq"></a>')):
         placeholder = section(text, next_id, end)
         assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1 and "5,000" in placeholder, (name, next_id, "one roadmap CTA per series")
+        teaser_descriptions.append(placeholder.strip().split("\n\n")[1])
+    assert teaser_descriptions[0] != teaser_descriptions[1], (name, "Director and Autopilot teasers must describe distinct workflows")
     assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 2, (name, "two style-unlock roadmap links")
     if is_english:
-        teaser = "More fully automated style is currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock it at 5,000 Stars!"
-        assert text.count(teaser) == 2, (name, "one approved roadmap CTA per series")
-        for series in ("A", "B"):
+        teasers = {
+            "A": "New specialized director styles are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!",
+            "B": "New Autopilot styles and procedural animations are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!",
+        }
+        for series, teaser in teasers.items():
+            assert text.count(teaser) == 1, (name, series, "one approved workflow-specific roadmap CTA")
             entries = re.findall(rf"^### ({series}(\d+)): (.+)$", text, re.M)
             assert [int(number) for _, number, _ in entries] == list(range(1, len(entries) + 1)), (name, series, "sequential styles")
             assert [title for _, _, title in entries].count("Coming soon…") == 1, (name, series, "one next-style placeholder")

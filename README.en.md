@@ -119,7 +119,7 @@ Give me the director's treatment first. After I approve it, provide scene-by-sce
 
 The treatment covers the story structure, scene-by-scene narration, actions, camera direction, and sound design. Copy each prompt into [Google Flow](https://flow.google.com/) or another video generator, then add captions and finish the edit in CapCut or your preferred editor.
 
-For your first video, follow the [full production walkthrough](https://x.com/CrazyKaomei/status/2102311241046008268) (in Chinese).
+For your first video, follow the [visual production walkthrough on X](https://x.com/CrazyKaomei/status/2102311241046008268) (Thread with step-by-step video demos).
 
 <a id="autopilot-start"></a>
 
@@ -244,7 +244,7 @@ Style and prompt contribution: [Lawal Ridwan / @leksautomate](https://github.com
 
 ### A6: Coming soon…
 
-More fully automated style is currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock it at 5,000 Stars!
+New specialized director styles are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!
 
 ---
 
@@ -287,7 +287,7 @@ Click a GIF to view or download the preview with sound.
 
 ### B2: Coming soon…
 
-More fully automated style is currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock it at 5,000 Stars!
+New Autopilot styles and procedural animations are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!
 
 <!-- readme:reliability -->
 

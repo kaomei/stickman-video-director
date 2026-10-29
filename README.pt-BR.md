@@ -123,7 +123,7 @@ Depois da minha aprovação, entregue os prompts de vídeo por trecho.
 
 A proposta inclui estrutura da história, narração por trecho, ações, câmera e som. Depois de receber os prompts, copie-os um a um para o [Google Flow](https://flow.google.com/) ou outra ferramenta de vídeo. Use o CapCut ou outro editor para adicionar legendas e finalizar a montagem.
 
-Na primeira produção, siga o [tutorial completo em chinês](https://x.com/CrazyKaomei/status/2102311241046008268).
+Para seu primeiro vídeo, siga o [guia visual de produção no X](https://x.com/CrazyKaomei/status/2102311241046008268) (thread com demonstrações em vídeo passo a passo).
 
 <a id="autopilot-start"></a>
 
@@ -252,7 +252,7 @@ Contribuição de estilo e prompts: [Lawal Ridwan / @leksautomate](https://githu
 
 ### A6: Em breve…
 
-Mais estilos totalmente automatizados estão em treinamento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
+Novos estilos especializados para o modo Director estão em treinamento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
 
 ---
 
@@ -295,7 +295,7 @@ Clique no GIF para assistir ou baixar a amostra com áudio.
 
 ### B2: Em breve…
 
-Mais estilos totalmente automatizados estão em treinamento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
+Novos estilos Autopilot e animações procedurais estão em treinamento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
 
 <!-- readme:reliability -->
 

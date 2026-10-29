@@ -119,7 +119,7 @@ bir çöp adam videosuna dönüştür:
 
 Öneri; hikâye yapısını, bölüm bölüm seslendirmeyi, karakter hareketlerini, kamerayı ve ses tasarımını içerir. İstemleri aldıktan sonra sırayla [Google Flow](https://flow.google.com/) veya başka bir video üretim aracına kopyalayın; ardından CapCut gibi bir araçta altyazı ve kurguyu tamamlayın.
 
-İlk denemenizde [baştan sona yapım rehberini (Çince)](https://x.com/CrazyKaomei/status/2102311241046008268) izleyebilirsiniz.
+İlk videonuz için [X üzerindeki görsel yapım rehberini](https://x.com/CrazyKaomei/status/2102311241046008268) takip edin (adım adım video demoları içeren bir gönderi dizisi).
 
 <a id="autopilot-start"></a>
 
@@ -247,7 +247,7 @@ Stil ve istem katkısı: [Lawal Ridwan / @leksautomate](https://github.com/leksa
 
 ### A6: Yakında…
 
-Daha fazla tam otomatik stil şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
+Yeni uzmanlaşmış Director stilleri şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
 
 ---
 
@@ -290,7 +290,7 @@ Sesli örneği izlemek veya indirmek için hareketli ön izlemeye tıklayın.
 
 ### B2: Yakında…
 
-Daha fazla tam otomatik stil şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
+Yeni Autopilot stilleri ve prosedürel animasyonlar şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
 
 <!-- readme:reliability -->
 

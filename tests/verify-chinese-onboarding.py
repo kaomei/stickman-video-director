@@ -75,7 +75,7 @@ assert "[最近更新]" not in navigation, "Keep the removed updates shortcut ou
 assert '<a id="recent-updates"></a>' not in cn, "Do not restore the removed updates anchor"
 assert "## 最近更新" not in cn, "Do not restore the removed updates section"
 assert "完整制作教程" not in navigation
-assert "[完整制作教程](https://x.com/CrazyKaomei/status/2102311241046008268)" in cn, "Keep the tutorial in the Director instructions"
+assert "[X 上的可视化制作教程](https://x.com/CrazyKaomei/status/2102311241046008268)（含分步视频演示的串帖）" in director_start, "Keep the visual X walkthrough with step-by-step video demos in the Director instructions"
 assert "## 使用小贴士" not in cn
 faq = cn.split('<a id="faq"></a>', 1)[1].split('<!-- readme:contribute -->', 1)[0]
 faq_questions = (
