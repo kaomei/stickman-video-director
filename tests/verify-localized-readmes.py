@@ -93,7 +93,7 @@ for name in selected:
     localized_anchors = expected_anchors.copy()
     assert anchors(text) == localized_anchors, (name, "shared anchors and section order")
     h2_headings = re.findall(r"^## (.+)$", text, re.M)
-    heading_icons = ("🎬", "🚀", "🎬", "🤖", "❓", "⭐", "🎨", "💬", "📄")
+    heading_icons = ("🎬", "🧭", "🎨", "🤖", "❓", "⭐", "🔮", "💬", "📄")
     assert len(h2_headings) == len(heading_icons), (name, "nine peer sections")
     assert all(heading.startswith(icon + " ") for heading, icon in zip(h2_headings, heading_icons)), (name, "one consistent semantic icon per H2")
     assert '<a id="road-to-10000-stars--creator-ecosystem"></a>' in text, (name, "preserve the published roadmap deep link")
@@ -106,7 +106,7 @@ for name in selected:
     assert len(ecosystem_sections) == 5, (name, "roadmap, planned styles, community, license use H2")
     roadmap, planned, community = ecosystem_sections[1:4]
     assert not re.search(r"^(?:### |---\s*$)", ecosystem, re.M), (name, "consistent section headings, no extra thick rules")
-    assert planned.startswith("🎨 ") and community.startswith("💬 "), (name, "semantic icons match peer section headings")
+    assert planned.startswith("🔮 ") and community.startswith("💬 "), (name, "semantic icons match peer section headings")
     milestones = re.findall(r"^- \[([x ])\] \*\*(?:🔥 )?([0-9,]+) Stars\*\*", roadmap, re.M)
     assert milestones == [("x", "1,000"), ("x", "3,000"), (" ", "5,000"), (" ", "7,500"), (" ", "10,000")], (name, "approved milestone states")
     assert len(re.findall(r"^  - ", roadmap, re.M)) == 4, (name, "four nested milestone deliverables")

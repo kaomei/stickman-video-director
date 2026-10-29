@@ -84,7 +84,7 @@ Her iki iş akışı da ham bir konu, web bağlantısı veya tam bir senaryoyla 
 
 <a id="quick-start"></a>
 
-## 🚀 Başlayın
+## 🧭 Başlayın
 
 Claude Code, Codex, Cursor, Antigravity veya dosya ve terminal erişimi olan her türlü ajan ortamıyla uyumludur.
 
@@ -151,7 +151,7 @@ Yapay zekâ asistanı içeriğe uygun sahneleri tasarlar, görselleri ve seslend
 
 <a id="a-styles"></a>
 
-## 🎬 A · Director Mode stil galerisi
+## 🎨 A · Director Mode stil galerisi
 
 Stiller A1, A2, A3… olarak güncellenir. Her stilin altında ilgili animasyon örnekleri yer alır.
 
@@ -372,7 +372,7 @@ Hayır! Modüler 6 sahnelik mimarimizin temel avantajı budur. Sahne 3’ün aya
 
 <a id="whats-next"></a>
 
-## 🎨 Planlanan görsel stiller
+## 🔮 Planlanan görsel stiller
 
 Yüz göstermeyen YouTube kanallarında en çok talep edilen nişler için yeni uzmanlaşmış motorlar eğitiyoruz:
 

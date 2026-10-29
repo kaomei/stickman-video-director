@@ -84,7 +84,7 @@ Les deux méthodes peuvent partir d’un sujet brut, d’un lien web ou d’un s
 
 <a id="quick-start"></a>
 
-## 🚀 Bien démarrer
+## 🧭 Bien démarrer
 
 Compatible avec Claude Code, Codex, Cursor, Antigravity ou tout environnement d’agent ayant accès aux fichiers et au terminal.
 
@@ -152,7 +152,7 @@ Au premier lancement, il vérifie la configuration requise et vous explique éta
 
 <a id="a-styles"></a>
 
-## 🎬 A · Director Mode : les styles disponibles
+## 🎨 A · Director Mode : les styles disponibles
 
 Les styles sont numérotés A1, A2, A3… Chaque fiche présente ses exemples animés.
 
@@ -373,7 +373,7 @@ Non ! C’est l’avantage central de notre architecture modulaire en 6 scènes.
 
 <a id="whats-next"></a>
 
-## 🎨 Styles visuels prévus
+## 🔮 Styles visuels prévus
 
 Nous entraînons de nouveaux moteurs spécialisés pour les niches YouTube sans visage les plus demandées :
 

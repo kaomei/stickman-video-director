@@ -84,7 +84,7 @@ Kedua alur kerja bisa dimulai dari topik mentah, tautan web, atau naskah lengkap
 
 <a id="quick-start"></a>
 
-## 🚀 Mulai di sini
+## 🧭 Mulai di sini
 
 Kompatibel dengan Claude Code, Codex, Cursor, Antigravity, atau lingkungan agen apa pun dengan akses file dan terminal.
 
@@ -157,7 +157,7 @@ Saat pertama digunakan, asisten memeriksa konfigurasi dan menjelaskan apa yang b
 
 <a id="a-styles"></a>
 
-## 🎬 Pilihan gaya A · Director
+## 🎨 Pilihan gaya A · Director
 
 Diperbarui dengan penomoran A1, A2, A3… Setiap gaya memiliki contoh animasinya sendiri.
 
@@ -378,7 +378,7 @@ Tidak! Itulah keunggulan utama arsitektur modular 6 adegan kami. Jika adegan 3 p
 
 <a id="whats-next"></a>
 
-## 🎨 Gaya visual yang direncanakan
+## 🔮 Gaya visual yang direncanakan
 
 Kami sedang melatih mesin khusus baru untuk niche YouTube tanpa tampil di kamera yang paling banyak diminta:
 

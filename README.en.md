@@ -84,7 +84,7 @@ Both workflows can start with a raw topic, a web link, or a full script. Customi
 
 <a id="quick-start"></a>
 
-## 🚀 Get started
+## 🧭 Get started
 
 Compatible with Claude Code, Codex, Cursor, Antigravity, or any agent environment with file/terminal access.
 
@@ -148,7 +148,7 @@ On first use, it checks the required setup and walks you through anything missin
 
 <a id="a-styles"></a>
 
-## 🎬 A · Director Mode style gallery
+## 🎨 A · Director Mode style gallery
 
 Styles are numbered A1, A2, A3… Each includes its own animated examples.
 
@@ -369,7 +369,7 @@ No! That is the core advantage of our modular 6-scene architecture. If Scene 3 n
 
 <a id="whats-next"></a>
 
-## 🎨 Planned Visual Styles
+## 🔮 Planned Visual Styles
 
 We are actively training new specialized engines for the most requested faceless YouTube niches:
 

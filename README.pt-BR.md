@@ -84,7 +84,7 @@ Os dois fluxos podem começar com um tema inicial, um link da web ou um roteiro 
 
 <a id="quick-start"></a>
 
-## 🚀 Como começar
+## 🧭 Como começar
 
 Compatível com Claude Code, Codex, Cursor, Antigravity ou qualquer ambiente de agente com acesso a arquivos e ao terminal.
 
@@ -156,7 +156,7 @@ Na primeira vez, ele confere a configuração e explica o que falta e como resol
 
 <a id="a-styles"></a>
 
-## 🎬 Estilos A · Director
+## 🎨 Estilos A · Director
 
 Os estilos seguem a numeração A1, A2, A3… Cada um tem seus próprios exemplos de animação.
 
@@ -377,7 +377,7 @@ Não! Essa é a principal vantagem da nossa arquitetura modular de 6 cenas. Se a
 
 <a id="whats-next"></a>
 
-## 🎨 Estilos visuais planejados
+## 🔮 Estilos visuais planejados
 
 Estamos treinando novos motores especializados para os nichos mais pedidos de canais do YouTube sem aparecer:
 
