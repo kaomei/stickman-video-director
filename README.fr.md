@@ -369,7 +369,7 @@ Nous entraînons de nouveaux moteurs spécialisés pour les niches YouTube sans 
 
 ## Communauté et contributions
 
-Vous voulez proposer un style ou faire découvrir votre chaîne ? Contactez **[@CrazyKaomei](https://t.me/CrazyKaomei)** sur Telegram :
+Vous voulez proposer un style ou faire découvrir votre chaîne ? Contactez **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** sur Telegram :
 
 - **Proposer un style** : envoyez un lien de référence visuelle + la niche que vous souhaitez traiter.
 - **Présenter votre travail** : vous avez créé une vidéo avec cet outil ? Envoyez votre lien pour la présenter dans ce README et sur notre chaîne YouTube officielle !

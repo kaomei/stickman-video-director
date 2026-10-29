@@ -373,7 +373,7 @@ Estamos treinando novos motores especializados para os nichos mais pedidos de ca
 
 ## Comunidade e envios
 
-Quer sugerir um estilo ou ter seu canal em destaque? Mande uma mensagem para **[@CrazyKaomei](https://t.me/CrazyKaomei)** no Telegram:
+Quer sugerir um estilo ou ter seu canal em destaque? Mande uma mensagem para **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** no Telegram:
 
 - **Pedir um estilo**: envie um link de referência visual + o nicho que você quer abordar.
 - **Aparecer em destaque**: fez um vídeo com esta ferramenta? Envie o link para exibição neste README e no nosso canal oficial do YouTube!

@@ -368,7 +368,7 @@ Yüz göstermeyen YouTube kanallarında en çok talep edilen nişler için yeni 
 
 ## Topluluk ve eser gönderimi
 
-Bir stil önermek veya kanalınızın tanıtılmasını mı istiyorsunuz? Telegram’da **[@CrazyKaomei](https://t.me/CrazyKaomei)** hesabına mesaj gönderin:
+Bir stil önermek veya kanalınızın tanıtılmasını mı istiyorsunuz? Telegram’da **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** hesabına mesaj gönderin:
 
 - **Stil isteyin**: görsel referans bağlantısını + ele almak istediğiniz nişi gönderin.
 - **Eserinizi tanıtalım**: bu araçla video mu yaptınız? Bu README’de ve resmî YouTube kanalımızda sergilenmesi için bağlantısını gönderin!

@@ -365,7 +365,7 @@ We are actively training new specialized engines for the most requested faceless
 
 ## Community & Submissions
 
-Want to suggest a style or get your channel featured? Message **[@CrazyKaomei](https://t.me/CrazyKaomei)** on Telegram:
+Want to suggest a style or get your channel featured? Message **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** on Telegram:
 
 - **Request a Style**: Send a visual reference link + the niche you want to cover.
 - **Get Featured**: Made a video with this tool? Send your link to be showcased in this README and on our official YouTube channel!

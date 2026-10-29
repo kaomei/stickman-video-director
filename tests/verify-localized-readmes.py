@@ -54,7 +54,7 @@ for video in expected_videos:
     assert (root / video).is_file(), video
 shared_links = (
     "https://github.com/kaomei/stickman-video-director",
-    "https://t.me/CrazyKaomei",
+    "https://telegram.me/CrazyKaomei",
     "https://github.com/kaomei/stickman-video-director/blob/main/LICENSE",
     "https://github.com/leksautomate",
     "https://x.com/CrazyKaomei/status/2102311241046008268",
@@ -104,7 +104,7 @@ for name in selected:
     for token in ("OverSimplified", "Alan", "Reddit"):
         assert token in planned, (name, "style reference", token)
     assert len(re.findall(r"^- \*\*", community, re.M)) == 2, (name, "style requests and creator submissions")
-    assert "Telegram" in community and "**[@CrazyKaomei](https://t.me/CrazyKaomei)**" in community, (name, "Telegram contact")
+    assert "Telegram" in community and "**[@CrazyKaomei](https://telegram.me/CrazyKaomei)**" in community, (name, "Telegram contact")
     assert "README" in community and "YouTube" in community, (name, "creator showcase destinations")
     assert "https://github.com/kaomei/stickman-video-director/issues" not in community, (name, "Do not require a GitHub Issue for feedback")
     assert re.search(r"^🔔 \*.*\*\*\[@CrazyKaomei\]\(https://x\.com/CrazyKaomei\)\*\*.*\*$", community, re.M), (name, "italic X follow line with bold profile link")

@@ -367,7 +367,7 @@ Skill은 무료 오픈소스입니다. 이미지 생성, 음성 합성, 영상 �
 
 ## 커뮤니티와 작품 제출
 
-새로운 스타일을 제안하거나 채널을 소개하고 싶으신가요? Telegram의 **[@CrazyKaomei](https://t.me/CrazyKaomei)** 로 연락해 주세요:
+새로운 스타일을 제안하거나 채널을 소개하고 싶으신가요? Telegram의 **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** 로 연락해 주세요:
 
 - **스타일 요청**: 시각적 참고 링크 + 다루고 싶은 분야를 보내 주세요.
 - **작품 소개**: 이 도구로 영상을 만드셨나요? 링크를 보내 주시면 이 README와 공식 YouTube 채널에서 소개할 수 있습니다!

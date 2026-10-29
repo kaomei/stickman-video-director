@@ -374,7 +374,7 @@ Kami sedang melatih mesin khusus baru untuk niche YouTube tanpa tampil di kamera
 
 ## Komunitas dan kiriman karya
 
-Ingin mengusulkan gaya atau menampilkan channel Anda? Kirim pesan ke **[@CrazyKaomei](https://t.me/CrazyKaomei)** di Telegram:
+Ingin mengusulkan gaya atau menampilkan channel Anda? Kirim pesan ke **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** di Telegram:
 
 - **Minta gaya**: kirim tautan referensi visual + niche yang ingin Anda bahas.
 - **Tampilkan karya**: sudah membuat video dengan alat ini? Kirim tautannya untuk ditampilkan di README ini dan channel YouTube resmi kami!

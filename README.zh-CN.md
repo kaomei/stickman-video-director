@@ -365,7 +365,7 @@ Skill 免费开源。生图、配音和视频生成等服务，按你选择的�
 
 ## 社区与投稿
 
-想推荐画风，或让你的频道获得展示？欢迎通过 Telegram 联系 **[@CrazyKaomei](https://t.me/CrazyKaomei)**：
+想推荐画风，或让你的频道获得展示？欢迎通过 Telegram 联系 **[@CrazyKaomei](https://telegram.me/CrazyKaomei)**：
 
 - **推荐画风**：发送视觉参考链接 + 你想做的内容领域。
 - **作品展示**：用这个工具制作了视频？发送作品链接，就有机会在本 README 和官方 YouTube 频道中展示！
