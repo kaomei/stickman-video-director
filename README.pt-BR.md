@@ -48,11 +48,20 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Vídeo em desenho à mão minimalista com bonecos expressivos, texto em destaque e microanimações" width="90%"></a>
 </td>
 </tr>
+<tr>
+<td width="50%" align="center">
+<strong>Amber Noir</strong><br>
+<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animação stickman Amber Noir: personagem de moletom laranja em uma cidade com luz quente e sombras profundas" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Em breve…</strong></a>
+</td>
+</tr>
 </table>
 
 <div align="center">
 
-**6 estilos · 8 opções visuais · Exemplos testados · Grátis e de código aberto**
+**7 estilos · 9 opções visuais · Exemplos testados · Grátis e de código aberto**
 
 ⭐ **Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.**
 
@@ -152,6 +161,8 @@ O assistente de IA planeja as cenas, gera imagens e narração, prepara legendas
 
 Na primeira vez, ele confere a configuração e explica o que falta e como resolver, passo a passo. Se uma imagem ou voz não ficar boa, é possível ajustar só o trecho afetado e preservar o que você já aprovou.
 
+**Finalização opcional nos dois modos:** depois de aprovar o vídeo final, continue com o [kit de thumbnail e publicação](#thumbnail-publishing-kit) para criar uma capa no mesmo estilo e os textos de publicação, ou encerre aqui. Não é preciso trocar de modo nem reinstalar.
+
 <a id="style-gallery"></a>
 
 <a id="a-styles"></a>
@@ -250,7 +261,24 @@ Contribuição de estilo e prompts: [Lawal Ridwan / @leksautomate](https://githu
 
 <a id="a6"></a>
 
-### A6: Em breve…
+### A6: Amber Noir
+
+Luz dourada e quente, sombras profundas e um personagem de cabeça redonda preta com moletom laranja. Transforme um “e se…” intrigante em uma pequena história cinematográfica, contada por ações expressivas em vez de um apresentador falando para a câmera.
+
+- **Estilo visual**: reflexos em âmbar sobre sombras em tons de ameixa, silhuetas simples, cenários urbanos com sombreamento suave e movimentos de câmera contidos.
+- **Ideal para**: cenários “e se…”, psicologia, fábulas modernas, descobertas inesperadas e histórias curtas com reviravolta.
+- **Escolha quando**: quiser cenas animadas cinematográficas com narração independente. Em um agente com acesso ao navegador, os clipes aprovados podem ser montados com voz, efeitos sonoros, legendas marcantes em caixa alta e um título branco e limpo.
+
+| Exemplo 1: E se tudo custasse 10 mil vezes menos? | Exemplo 2: Uma oferta que vale uma corrida |
+|:---:|:---:|
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: uma história de 20 segundos em que os preços caem da noite para o dia" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: cena animada de 8 segundos com um personagem de moletom laranja em frente a uma loja" width="360"></a> |
+| Exemplo Renoise MCP · 20 segundos | Exemplo Google Flow · 8 segundos |
+
+---
+
+<a id="a7"></a>
+
+### A7: Em breve…
 
 Novos estilos especializados para o modo Director estão em treinamento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
 
@@ -336,24 +364,26 @@ Um pacote de finalização integrado para **Director Mode e Autopilot Mode**: ge
 
 ### O que o kit entrega:
 
-- **Prompt de thumbnail em 1 clique**: Alinhado ao estilo exato do personagem, à paleta de cores e ao conflito central do vídeo. Pronto para gerar no Midjourney, Google Flow ou DALL-E.
+- **Imagem de thumbnail**: Uma capa horizontal 16:9 alinhada ao personagem, estilo, paleta e conflito aprovados. Gerada diretamente quando há uma ferramenta de imagem adequada e os custos necessários são autorizados.
 - **5 opções de título de alto CTR**: Pensadas para intenção de busca, lacunas de curiosidade e apelo a um público amplo.
-- **Descrição para YouTube Studio e SEO**: Inclui marcações de tempo, resumo do tema e tags relevantes.
-- **Gancho para comentário fixado**: Uma pergunta provocativa para estimular debates, engajamento e retenção.
-- **Checklist pré-publicação**: Verificação de áreas seguras no celular, contraste e preparação para Content-ID.
+- **Descrição para YouTube Studio e SEO**: Resumo do tema, tags relevantes e marcações de tempo baseadas no corte final ou em uma linha do tempo verificada.
+- **Gancho para comentário fixado**: Uma pergunta pertinente que convida a uma conversa genuína.
+- **Checklist pré-publicação**: Áreas seguras no celular, contraste, precisão do conteúdo e situação dos direitos dos materiais. Sem garantia de liberação no Content-ID ou de elegibilidade para monetização.
 
 ### Como acionar:
 
-Depois de aprovar o roteiro ou o corte final do vídeo, basta enviar ao seu assistente de IA:
+Após você aprovar o vídeo final, o assistente oferecerá este pacote opcional. Aceite para continuar ou pule sem atrasar a entrega do vídeo. Não é preciso copiar um prompt. Você também pode pedir diretamente:
 
 ```text
 Gere o kit de thumbnail e publicação para este vídeo:
-- 1 prompt de thumbnail horizontal 16:9 que combine com o estilo atual
-- 5 opções de títulos virais para YouTube + rascunho de descrição
+- 1 imagem de thumbnail horizontal 16:9 que combine com o estilo aprovado
+- 5 opções de títulos para YouTube
+- Uma descrição, tags relevantes e marcações de tempo verificadas, quando disponíveis
 - 1 pergunta de engajamento para o comentário fixado
+- Um checklist pré-publicação com as verificações pendentes identificadas
 ```
 
-*Os materiais estão prontos para produção e podem ser arrastados diretamente para o YouTube Studio ou TikTok.*
+*Gerar a imagem exige uma ferramenta disponível e a autorização dos custos necessários. Se não estiver disponível, o assistente explica a limitação e entrega o pacote de texto. Pedidos antecipados com base no roteiro aprovado geram rascunhos; as verificações do corte final ficam pendentes. Baixe a capa e copie o texto para o YouTube Studio ou TikTok conforme necessário. Nada é enviado ou publicado automaticamente.*
 
 <!-- thumbnail-publishing-kit:end -->
 

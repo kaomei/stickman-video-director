@@ -40,11 +40,15 @@ def section(text, start, end):
     return text.split(f'<a id="{start}"></a>', 1)[1].split(end, 1)[0]
 
 expected_images = images(cn)
-assert len(expected_images) == 25 and len(set(expected_images)) == 20
+assert len(expected_images) == 28 and len(set(expected_images)) == 22
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
+local_a6_previews = {
+    "assets/readme/previews/style-6-amber-noir-mcp.gif",
+    "assets/readme/previews/style-6-amber-noir-flow.gif",
+}
 for url in expected_images:
     if "/previews/" in url:
-        assert re.match(re.escape(pinned) + r"[a-f0-9]{40}/assets/readme/previews/[^/]+\.gif$", url)
+        assert url in local_a6_previews or re.match(re.escape(pinned) + r"[a-f0-9]{40}/assets/readme/previews/[^/]+\.gif$", url)
         assert (root / "assets/readme/previews" / url.rsplit("/", 1)[1]).is_file(), url
 expected_anchors = anchors(cn)
 assert len(expected_anchors) == len(set(expected_anchors))
@@ -53,6 +57,12 @@ expected_videos = (
     "skills/directing-stickman-videos/assets/b1/approved-2026-10-23.mp4",
 )
 for video in expected_videos:
+    assert (root / video).is_file(), video
+a6_videos = (
+    "assets/readme/style-6-amber-noir-mcp.mp4",
+    "assets/readme/style-6-amber-noir-flow.mp4",
+)
+for video in a6_videos:
     assert (root / video).is_file(), video
 shared_links = (
     "https://github.com/kaomei/stickman-video-director",
@@ -132,14 +142,33 @@ for name in selected:
         assert len(re.findall(rf"<{tag}(?:\s|>)", text)) == text.count(f"</{tag}>"), (name, tag)
     hero = text.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
     rows = re.findall(r"<tr>(.*?)</tr>", hero, re.S)
-    assert len(rows) == 3 and all(row.count('<td width="50%"') == 2 for row in rows), name
-    assert re.findall(r'href="#([^"]+)"><img', hero) == ["a1", "a2", "a3", "a4", "style-5", "b1"], name
-    assert text.count('width="90%"') == 6 and text.count('width="360"') == 12, name
+    gallery_styles = re.findall(r'href="#([^"]+)"><img', hero)
+    assert gallery_styles == ["a1", "a2", "a3", "a4", "style-5", "b1", "a6"], name
+    # Owner rule: two columns, odd last card left + Coming Soon right;
+    # even card counts fill the grid without a placeholder. No spanning rows.
+    assert len(rows) == (len(gallery_styles) + 1) // 2, name
+    assert all(row.count('<td width="50%"') == 2 for row in rows), name
+    assert "colspan" not in hero and "rowspan" not in hero, name
+    cells = re.findall(r"<td\b[^>]*>(.*?)</td>", hero, re.S)
+    placeholders = [cell for cell in cells if "<img" not in cell]
+    assert len(placeholders) == len(gallery_styles) % 2, (name, "placeholder only for odd gallery count")
+    if placeholders:
+        assert placeholders == [cells[-1]] and "<img" in cells[-2], name
+        assert re.search(r'<a href="#a7"><strong>[^<]+</strong></a>', cells[-1]), name
+    assert text.count('width="90%"') == 7 and text.count('width="360"') == 14, name
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
-    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "B1", "B2"], (name, "published styles plus sequential teasers")
+    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "B1", "B2"], (name, "published styles plus sequential teasers")
+    a6 = section(text, "a6", '<a id="a7"></a>')
+    assert len(re.findall(r"^- \*\*", a6, re.M)) == 3, (name, "A6 localized style, use cases and selection guidance")
+    assert re.findall(r'<a href="([^"]+\.mp4)">', a6) == list(a6_videos), name
+    assert all(provider in a6 for provider in ("Renoise MCP", "Google Flow", "20", "8")), name
+    assert "Tested Flow workflow:" not in text and "Click either GIF" not in text, name
+    assert "Veo 3.1 Fast" not in a6, (name, "operational model guidance stays in Skill")
+    assert "Omni" not in a6, (name, "A6 does not inherit the legacy model")
+    assert re.search(r"\*\*7[^\n]+9[^\n]+\*\*", text), (name, "seven styles and nine visual options")
     teaser_descriptions = []
-    for next_id, end in (("a6", '<a id="b-styles"></a>'), ("b2", '<a id="faq"></a>')):
+    for next_id, end in (("a7", '<a id="b-styles"></a>'), ("b2", '<a id="faq"></a>')):
         placeholder = section(text, next_id, end)
         assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1 and "5,000" in placeholder, (name, next_id, "one roadmap CTA per series")
         teaser_descriptions.append(placeholder.strip().split("\n\n")[1])
@@ -213,7 +242,7 @@ for name in selected:
     if is_english:
         approved_mode_intro = (
             '<div align="center">\n\n'
-            '**6 styles · 8 visual options · Tested examples · Free and open source**\n\n'
+            '**7 styles · 9 visual options · Tested examples · Free and open source**\n\n'
             '⭐ **Star the project to catch the next style drop and feature unlocks.**\n\n'
             '[Get started](#quick-start) · [Director Styles](#a-styles) · [Autopilot Styles](#b-styles) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem)\n\n'
             '</div>\n\n'

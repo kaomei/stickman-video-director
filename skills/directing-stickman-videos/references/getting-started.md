@@ -68,6 +68,8 @@ Adapt this Chinese example to the actual environment and installation status:
 - **需要准备什么**：在 Codex、Claude Code 等能操作文件、执行命令的环境中使用；还需要可用的生图、配音服务，以及把素材合成视频的本地工具。我会先检查已有配置，只带你补缺少的部分。
 - **怎么进行**：给内容和需求 → 检查配置 → 确认脚本、画风和声音 → 看约 20 秒有声样片 → 确认后自动制作整片 → 拿到视频文件。
 
+两种模式都可在**你确认成片满意后**，选择继续制作匹配当前画风的封面、标题、简介与置顶评论；也可以直接结束。不需要重新选模式或复制一套提示词；可用的生图工具与费用会另行确认，发布账号不会被自动操作。
+
 可以直接这样说：
 
 ```text
@@ -108,6 +110,8 @@ The example is not a canned claim: report only checks actually completed, insert
 These are stage handoffs, not per-command logs or recurring reminders. When no user action is needed and the next step is authorized, continue doing it in the same turn. Stop only at the mode's existing approval gates or a genuine blocker. Do not ask permission again for every scene, file or command. At an approval gate, name what is being approved; a generic "continue" must not silently become approval of an unseen sample or new costs.
 
 ## A · Director handoffs
+
+The table and optional-reference sections below retain the A1–A5 workflow. When A6 is selected, use [A6 selection and production guidance](amber-noir.md) instead. Do not present its execution-route explanation before selection or replay the generic welcome afterward.
 
 | Stage | What to explain / next action |
 |---|---|
@@ -178,3 +182,9 @@ Make and inspect the representative sample with narration, subtitles, acting/mic
 After genuine sample/full-production approval, render the rest with pictures following the approved original-speed narration. Give updates at meaningful production stages; do not wait for a new confirmation after each shot. On interruption or failure, explain completed outputs and the exact blocked step, inspect existing jobs/cache and resume valid work rather than resubmitting blindly.
 
 Deliver MP4, subtitle sidecars and project/checkpoint paths with a short verification summary. If any check, listening review or output is still missing, say so; do not call a partial file a complete film. End with the useful next action (for example, review the film or request a specific revision), not automatic publication, a new video or another paid call.
+
+## Optional finishing after video approval
+
+For both modes, apply [Thumbnail & Publishing Kit](thumbnail-publishing-kit.md) after the user confirms the final video, or when they explicitly request packaging. Offer it once in the conversation language, unless already accepted, declined or deferred. Do not offer it merely because a proposal, A prompt package or B sample was approved, or a render passed technical checks. For A, the external edit is complete only when the user says so; request the final cut/timeline only if needed for the requested checks or timestamps, not to make the optional offer. For B, delivery of an MP4 is not final user acceptance.
+
+Use a short handoff such as: “这版视频确认没问题了。要不要顺便生成匹配当前画风的封面，以及标题、简介、置顶评论和发布前检查清单？” If the user explicitly requests packaging earlier, use the approved script for drafts and mark final-cut-dependent items pending. Skipping ends the task normally and never withholds the video. Keep all production, revision and cost approvals unchanged.

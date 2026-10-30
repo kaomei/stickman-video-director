@@ -48,11 +48,20 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Minimalist el çizimi çöp adam videosu: canlı ifadeler, vurgulu metinler ve mikro animasyonlar" width="90%"></a>
 </td>
 </tr>
+<tr>
+<td width="50%" align="center">
+<strong>Amber Noir</strong><br>
+<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir çöp adam animasyonu: sıcak ışıklı ve derin gölgeli bir şehirde turuncu kapüşonlu karakter" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Yakında…</strong></a>
+</td>
+</tr>
 </table>
 
 <div align="center">
 
-**6 stil · 8 görsel seçenek · Denenmiş örnekler · Ücretsiz ve açık kaynak**
+**7 stil · 9 görsel seçenek · Denenmiş örnekler · Ücretsiz ve açık kaynak**
 
 ⭐ **Bir sonraki stil paketini ve yeni özellikleri kaçırmamak için projeye yıldız verin.**
 
@@ -146,6 +155,8 @@ otomatik hazırla. Klipleri tek tek birleştirmemi istemeden bitmiş video dosya
 Yapay zekâ asistanı içeriğe uygun sahneleri tasarlar, görselleri ve seslendirmeyi üretir, altyazı ile ses efektlerini ekler ve hepsini anlatımın ritmine göre birleştirir. Sizin asıl işiniz senaryoyu ve ön izlemeyi onaylamaktır; her klibi kendiniz üretip birleştirmeniz gerekmez.
 
 İlk kullanımda gerekli ayarlar kontrol edilir; neyin eksik olduğu ve nasıl tamamlanacağı adım adım açıklanır. Bir görseli veya sesi beğenmezseniz yalnızca ilgili bölümü değiştirip onayladığınız kısımları koruyabilirsiniz.
+
+**Her iki mod için isteğe bağlı son adım:** tamamlanan videoyu onayladıktan sonra, aynı görsel tarzda bir kapak ve yükleme metinleri için [Küçük Resim ve Yayın Kitine](#thumbnail-publishing-kit) geçebilir veya burada bitirebilirsiniz. Mod değiştirmeniz ya da yeniden kurulum yapmanız gerekmez.
 
 <a id="style-gallery"></a>
 
@@ -245,7 +256,24 @@ Stil ve istem katkısı: [Lawal Ridwan / @leksautomate](https://github.com/leksa
 
 <a id="a6"></a>
 
-### A6: Yakında…
+### A6: Amber Noir
+
+Sıcak altın ışık, derin gölgeler ve turuncu kapüşonlu giyen siyah yuvarlak başlı bir karakter. Merak uyandıran bir “ya şöyle olsaydı?” fikrini küçük bir sinematik hikâyeye dönüştürün. Hikâyeyi kameraya konuşan bir sunucu değil, anlamlı hareketler anlatsın.
+
+- **Görsel stil**: koyu mürdüm gölgelerle kontrast oluşturan sıcak kehribar ışıklar, sade silüetler, yumuşak gölgelendirmeli şehir sahneleri ve ölçülü kamera hareketleri.
+- **Uygun içerikler**: “ya şöyle olsaydı?” senaryoları, psikoloji, modern fabllar, beklenmedik keşifler ve sürpriz sonlu kısa hikâyeler.
+- **Şu durumda seçin**: bağımsız bir dış sesle anlatılan sinematik animasyon sahneleri istediğinizde. Tarayıcı kullanabilen bir agent, onaylanan klipleri birleştirip seslendirme, ses efektleri, kalın ve büyük harfli altyazılar ve sade beyaz bir başlık ekleyebilir.
+
+| Örnek 1: Ya her şey 10.000 kat daha ucuz olsaydı? | Örnek 2: Koşmaya değer bir fırsat |
+|:---:|:---:|
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: fiyatların bir gecede düştüğü dünyayı anlatan 20 saniyelik hikâye" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: turuncu kapüşonlu karakterin bir mağaza önündeki 8 saniyelik animasyon sahnesi" width="360"></a> |
+| Renoise MCP örneği · 20 saniye | Google Flow örneği · 8 saniye |
+
+---
+
+<a id="a7"></a>
+
+### A7: Yakında…
 
 Yeni uzmanlaşmış Director stilleri şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
 
@@ -331,24 +359,26 @@ Hem **Director Mode hem de Autopilot Mode** için entegre bir son dokunuş paket
 
 ### Kitin içeriği:
 
-- **Tek Tıkla Küçük Resim Promptu**: Videonun karakter stili, renk paleti ve temel çatışmasıyla birebir uyumludur. Midjourney, Google Flow veya DALL-E ile üretime hazırdır.
+- **Küçük Resim Görseli**: Onaylanan karaktere, stile, renk paletine ve temel çatışmaya uygun 1 yatay 16:9 kapak. Uygun bir görsel aracı varsa ve gerekli ücretler onaylandıysa doğrudan üretilir.
 - **Yüksek Tıklanma Potansiyelli 5 Başlık**: Arama niyeti, merak boşlukları ve geniş izleyici kitlesi düşünülerek hazırlanır.
-- **YouTube Studio Açıklaması ve SEO**: Video zaman damgaları, konu özeti ve ilgili etiketleri içerir.
-- **Sabitlenmiş Yorum Kancası**: İzleyiciler arasında tartışma başlatarak etkileşim ve izlenme devamlılığı sağlayan çarpıcı bir soru.
-- **Yayın Öncesi Kontrol Listesi**: Mobil güvenli alan, kontrast ve Content-ID hazırlık kontrolü.
+- **YouTube Studio Açıklaması ve SEO**: Konu özeti, ilgili etiketler ve son kurguya veya doğrulanmış zaman çizelgesine dayanan zaman damgaları.
+- **Sabitlenmiş Yorum Kancası**: Gerçek bir sohbeti teşvik eden, videoyla ilgili 1 soru.
+- **Yayın Öncesi Kontrol Listesi**: Mobil güvenli alan, kontrast, içerik doğruluğu ve materyal haklarının inceleme durumu. Content-ID onayı veya para kazanma uygunluğu garanti edilmez.
 
 ### Nasıl başlatılır:
 
-Video senaryosunu veya son kurguyu onayladıktan sonra AI asistanınıza şunu göndermeniz yeterli:
+Son videoyu onayladığınızda asistan bu isteğe bağlı paketi teklif eder. Devam etmek için kabul edebilir veya video teslimini geciktirmeden atlayabilirsiniz. Prompt kopyalamak gerekmez. Doğrudan da isteyebilirsiniz:
 
 ```text
 Bu video için Küçük Resim ve Yayınlama Kitini oluştur:
-- Mevcut görsel stile uygun 1 adet yatay 16:9 küçük resim promptu
-- 5 viral YouTube başlığı seçeneği + açıklama taslağı
+- Onaylanan görsel stile uygun 1 adet yatay 16:9 küçük resim görseli
+- 5 YouTube başlığı seçeneği
+- Açıklama, ilgili etiketler ve varsa doğrulanmış zaman damgaları
 - Sabitlenmiş yorum için 1 etkileşim sorusu
+- Bekleyen kontrolleri açıkça belirten yayın öncesi kontrol listesi
 ```
 
-*Çıktılar kullanıma hazırdır; doğrudan YouTube Studio veya TikTok’a sürükleyip bırakabilirsiniz.*
+*Görsel üretimi, kullanılabilir bir araç ve gerekli ücret onayını gerektirir. Araç yoksa asistan eksikliği açıklar ve metin paketini sunar. Onaylı senaryoya dayanan erken talepler taslak üretir; son kurgu kontrolleri beklemede kalır. Kapağı indirin, metni gerektiği şekilde YouTube Studio veya TikTok’a kopyalayın. Hiçbir içerik otomatik yüklenmez veya yayımlanmaz.*
 
 <!-- thumbnail-publishing-kit:end -->
 

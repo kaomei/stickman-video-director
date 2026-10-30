@@ -48,11 +48,20 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Video stickman sketsa tangan minimalis dengan karakter ekspresif, teks utama, dan animasi ringan" width="90%"></a>
 </td>
 </tr>
+<tr>
+<td width="50%" align="center">
+<strong>Amber Noir</strong><br>
+<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animasi stickman Amber Noir: karakter berhoodie oranye di kota bercahaya hangat dengan bayangan pekat" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Segera hadir…</strong></a>
+</td>
+</tr>
 </table>
 
 <div align="center">
 
-**6 gaya · 8 pilihan visual · Contoh yang sudah diuji · Gratis dan open source**
+**7 gaya · 9 pilihan visual · Contoh yang sudah diuji · Gratis dan open source**
 
 ⭐ **Beri Star pada proyek ini agar tidak ketinggalan gaya dan fitur baru berikutnya.**
 
@@ -153,6 +162,8 @@ Asisten AI merancang adegan, menghasilkan gambar dan narasi, menyiapkan subtitle
 
 Saat pertama digunakan, asisten memeriksa konfigurasi dan menjelaskan apa yang belum tersedia serta cara melengkapinya. Jika gambar atau suara kurang cocok, bagian tersebut bisa disesuaikan tanpa mengulang bagian yang sudah disetujui.
 
+**Tahap akhir opsional untuk kedua mode:** setelah menyetujui video final, lanjutkan ke [Kit Thumbnail & Publikasi](#thumbnail-publishing-kit) untuk membuat sampul dengan gaya yang sama dan teks unggahan, atau selesai di sini. Tidak perlu berganti mode atau menginstal ulang.
+
 <a id="style-gallery"></a>
 
 <a id="a-styles"></a>
@@ -251,7 +262,24 @@ Kontribusi gaya dan prompt: [Lawal Ridwan / @leksautomate](https://github.com/le
 
 <a id="a6"></a>
 
-### A6: Segera hadir…
+### A6: Amber Noir
+
+Cahaya keemasan yang hangat, bayangan pekat, dan karakter berkepala bulat hitam dengan hoodie oranye. Ubah pertanyaan “bagaimana jika” yang mengundang rasa penasaran menjadi cerita pendek sinematik, disampaikan lewat gerakan ekspresif, bukan presenter yang berbicara ke kamera.
+
+- **Gaya visual**: sorotan amber hangat yang kontras dengan bayangan ungu plum gelap, siluet sederhana, latar kota dengan bayangan lembut, dan gerakan kamera yang terukur.
+- **Cocok untuk**: skenario “bagaimana jika”, psikologi, fabel modern, penemuan tak terduga, dan cerita pendek dengan twist.
+- **Pilih ini jika**: Anda menginginkan adegan animasi sinematik dengan narasi terpisah. Dalam agent yang dapat mengoperasikan browser, klip yang disetujui dapat dirangkai dengan sulih suara, efek suara, subtitle tebal berhuruf kapital, dan judul putih yang bersih.
+
+| Contoh 1: Bagaimana jika semua barang 10.000 kali lebih murah? | Contoh 2: Penawaran yang layak dikejar |
+|:---:|:---:|
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: cerita 20 detik tentang dunia dengan harga yang turun dalam semalam" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: adegan animasi 8 detik dengan karakter berhoodie oranye di depan toko" width="360"></a> |
+| Contoh Renoise MCP · 20 detik | Contoh Google Flow · 8 detik |
+
+---
+
+<a id="a7"></a>
+
+### A7: Segera hadir…
 
 Gaya khusus Director yang baru sedang dilatih. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk membukanya saat mencapai 5,000 Stars!
 
@@ -337,24 +365,26 @@ Paket penyelesaian terpadu untuk **Director Mode dan Autopilot Mode**: menghasil
 
 ### Isi kit:
 
-- **Prompt Thumbnail 1 Klik**: Disesuaikan dengan gaya karakter, palet warna, dan konflik utama video. Siap digunakan di Midjourney, Google Flow, atau DALL-E.
+- **Gambar Thumbnail**: Satu sampul lanskap 16:9 yang sesuai dengan karakter, gaya, palet, dan konflik yang telah disetujui. Dibuat langsung jika alat gambar yang sesuai tersedia dan biaya yang diperlukan telah disetujui.
 - **5 Variasi Judul Berpotensi CTR Tinggi**: Dirancang untuk maksud pencarian, celah rasa penasaran, dan daya tarik penonton yang luas.
-- **Deskripsi YouTube Studio & SEO**: Lengkap dengan penanda waktu video, ringkasan topik, dan tag yang relevan.
-- **Pemantik Komentar Tersemat**: Pertanyaan provokatif untuk mendorong diskusi penonton, interaksi, dan retensi.
-- **Checklist Sebelum Publikasi**: Pemeriksaan area aman di ponsel, kontras, dan kesiapan Content-ID.
+- **Deskripsi YouTube Studio & SEO**: Ringkasan topik, tag relevan, serta penanda waktu berdasarkan hasil edit akhir atau lini masa yang terverifikasi.
+- **Pemantik Komentar Tersemat**: Satu pertanyaan relevan yang mengundang diskusi tulus.
+- **Checklist Sebelum Publikasi**: Area aman di ponsel, kontras, akurasi konten, dan status pemeriksaan hak materi. Kelulusan Content-ID dan kelayakan monetisasi tidak dijamin.
 
 ### Cara memicunya:
 
-Setelah menyetujui naskah atau hasil edit akhir video, cukup kirimkan ini ke asisten AI:
+Setelah Anda menyetujui video akhir, asisten akan menawarkan paket penutup opsional ini. Setujui untuk melanjutkan atau lewati tanpa menunda penyerahan video. Tidak perlu menyalin prompt. Anda juga bisa meminta langsung:
 
 ```text
 Buat Kit Thumbnail & Publikasi untuk video ini:
-- 1 prompt thumbnail lanskap 16:9 yang sesuai dengan gaya visual saat ini
-- 5 opsi judul YouTube viral + draf deskripsi
+- 1 gambar thumbnail lanskap 16:9 yang sesuai dengan gaya yang disetujui
+- 5 opsi judul YouTube
+- Deskripsi, tag relevan, dan penanda waktu terverifikasi jika tersedia
 - 1 pertanyaan interaksi untuk komentar tersemat
+- Checklist sebelum publikasi dengan pemeriksaan tertunda yang ditandai jelas
 ```
 
-*Hasilnya siap produksi dan dapat langsung diseret ke YouTube Studio atau TikTok.*
+*Pembuatan gambar memerlukan alat yang tersedia dan persetujuan biaya bila diperlukan. Jika tidak tersedia, asisten menjelaskan kendalanya dan tetap menyerahkan paket teks. Permintaan lebih awal berdasarkan naskah yang disetujui menghasilkan draf; pemeriksaan hasil edit akhir tetap tertunda. Unduh sampul dan salin teks ke YouTube Studio atau TikTok sesuai kebutuhan. Tidak ada unggahan atau publikasi otomatis.*
 
 <!-- thumbnail-publishing-kit:end -->
 

@@ -26,7 +26,8 @@ revised_a5 = "  - `Style 5 (Historical Cartoon / 历史卡通风)`: white heads 
 assert legacy.count(revised_a5) == 1, "Missing exact owner-directed A5 baseline summary"
 legacy = legacy.replace(revised_a5, original_a5, 1)
 assert hashlib.sha256(legacy.encode()).hexdigest() == "f710612be73c952fb130d891b0650388ec5ae89469cae95eda8e147eec18b73e"
-assert len(entry.encode()) <= 14000, "Keep the new workflow detail in references"
+# A6 adds only a selection-time reference router; legacy Director stays frozen.
+assert len(entry.encode()) <= 15000, "Keep the new workflow detail in references"
 frontmatter = entry.split("---\n", 2)[1]
 name = re.search(r"^name: (.+)$", frontmatter, re.M).group(1)
 description = json.loads(re.search(r"^description: (.+)$", frontmatter, re.M).group(1))

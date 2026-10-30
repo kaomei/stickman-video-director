@@ -48,11 +48,20 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Minimal hand-drawn stickman video: expressive characters, key text, and subtle animation" width="90%"></a>
 </td>
 </tr>
+<tr>
+<td width="50%" align="center">
+<strong>Amber Noir</strong><br>
+<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir stickman animation: an orange-hoodie character in a warm-lit city with deep shadows" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Coming Soon…</strong></a>
+</td>
+</tr>
 </table>
 
 <div align="center">
 
-**6 styles · 8 visual options · Tested examples · Free and open source**
+**7 styles · 9 visual options · Tested examples · Free and open source**
 
 ⭐ **Star the project to catch the next style drop and feature unlocks.**
 
@@ -143,6 +152,8 @@ After I approve it, build the full video with visuals timed to the narration. De
 The AI assistant plans the scenes, generates the visuals and narration, adds captions and sound effects, and renders a complete video to the voiceover's timing. You approve the script and preview; you do not have to generate and assemble every scene yourself.
 
 On first use, it checks the required setup and walks you through anything missing. If a visual or voiceover section needs work, revise just that section and keep what you have already approved.
+
+**Optional finishing for either mode:** once you confirm the final video, continue with the [Thumbnail & Publishing Kit](#thumbnail-publishing-kit) for a matching cover and upload copy—or finish here. No new mode or installation is needed.
 
 <a id="style-gallery"></a>
 
@@ -242,7 +253,24 @@ Style and prompt contribution: [Lawal Ridwan / @leksautomate](https://github.com
 
 <a id="a6"></a>
 
-### A6: Coming soon…
+### A6: Amber Noir
+
+Warm golden light, deep shadows, and a black round-headed character in an orange hoodie. Turn a curious “what if” into a small cinematic story, told through expressive actions rather than a talking presenter.
+
+- **Visual style**: warm amber highlights against deep plum shadows, simple silhouettes, softly shaded city scenes, and restrained camera movement.
+- **Best for**: “what if” scenarios, psychology, modern fables, unexpected discoveries, and short stories with a twist.
+- **Choose this when**: you want cinematic animated scenes with an independent narrator. In a browser-enabled agent, approved clips can be assembled with voiceover, sound effects, bold uppercase captions, and a clean white title.
+
+| Example 1: What if everything cost 10,000 times less? | Example 2: A bargain worth running for |
+|:---:|:---:|
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: a 20-second story about a world where prices fall overnight; click to watch with sound" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: an 8-second animated scene of an orange-hoodie character outside a shop; click to watch with sound" width="360"></a> |
+| Renoise MCP example · 20 seconds | Google Flow example · 8 seconds |
+
+---
+
+<a id="a7"></a>
+
+### A7: Coming soon…
 
 New specialized director styles are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!
 
@@ -328,24 +356,26 @@ An integrated finishing pack for both **Director and Autopilot Mode**: generates
 
 ### What the kit delivers:
 
-- **1-Click Thumbnail Prompt**: Matched to your video’s exact character style, color palette, and core conflict. Ready to generate in Midjourney, Google Flow, or DALL-E.
+- **Thumbnail Image**: One landscape 16:9 cover matched to your video’s approved character style, color palette, and core conflict. Generated directly when a suitable image tool is available and any required cost is approved.
 - **5 High-CTR Title Variants**: Formulated for search intent, curiosity gaps, and broad viewer appeal.
-- **YouTube Studio Description & SEO**: Complete with video timestamps, topic summary, and relevant tags.
-- **Pinned Comment Hook**: A provocative question designed to trigger viewer debates and algorithm retention.
-- **Pre-Publish Checklist**: Safe-zone verification for mobile, contrast check, and Content-ID readiness.
+- **YouTube Studio Description & SEO**: Topic summary, relevant tags, and timestamps when supported by the final cut or a verified timeline.
+- **Pinned Comment Hook**: One relevant question inviting genuine viewer discussion.
+- **Pre-Publish Checklist**: Mobile safe zones, contrast, content accuracy, and media-rights review status. Content-ID clearance and monetization eligibility are not guaranteed.
 
 ### How to trigger it:
 
-Once you approve your video script or final cut, simply send to your AI assistant:
+After you confirm the final video, your assistant will ask whether you want this optional finishing pack. Say yes to continue, or skip it without delaying video delivery. No need to copy a prompt. You can also ask directly:
 
 ```text
 Generate the Thumbnail & Publishing Kit for this video:
-- 1 landscape 16:9 thumbnail prompt matching the current art style
-- 5 viral YouTube title options + description draft
+- 1 landscape 16:9 thumbnail image matching the approved art style
+- 5 YouTube title options
+- A description, relevant tags, and verified timestamps if available
 - 1 engagement question for the pinned comment
+- A pre-publish checklist with any pending checks clearly marked
 ```
 
-*Outputs are production-ready to drag & drop directly into YouTube Studio or TikTok.*
+*Image generation requires an available tool and any necessary cost approval; if unavailable, the assistant explains the gap and still delivers the text pack. An early request based on an approved script produces drafts, with final-cut checks pending. Download the cover and copy the text into YouTube Studio or TikTok as appropriate; nothing is uploaded or published automatically.*
 
 <!-- thumbnail-publishing-kit:end -->
 

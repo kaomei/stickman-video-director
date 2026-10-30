@@ -48,11 +48,20 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Vidéo stickman dessinée à la main : personnages expressifs, mots-clés et micro-animations" width="90%"></a>
 </td>
 </tr>
+<tr>
+<td width="50%" align="center">
+<strong>Amber Noir</strong><br>
+<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animation stickman Amber Noir : un personnage en sweat orange dans une ville aux lumières chaudes et aux ombres profondes" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Bientôt disponible…</strong></a>
+</td>
+</tr>
 </table>
 
 <div align="center">
 
-**6 styles · 8 variantes visuelles · Des exemples testés · Gratuit et open source**
+**7 styles · 9 variantes visuelles · Des exemples testés · Gratuit et open source**
 
 ⭐ **Ajoutez une étoile au projet pour suivre les prochains styles et les nouvelles fonctionnalités à débloquer.**
 
@@ -147,6 +156,8 @@ sur le rythme de la voix off. Livre le fichier vidéo final, sans assemblage man
 L’assistant IA adapte le storyboard au contenu, génère les visuels et la narration, ajoute les sous-titres et les effets sonores, puis assemble le tout au rythme de la voix off. Votre rôle consiste surtout à valider le scénario et l’aperçu, sans générer et assembler chaque séquence vous-même.
 
 Au premier lancement, il vérifie la configuration requise et vous explique étape par étape ce qui manque et comment le compléter. Si une image ou une voix ne vous convient pas, vous pouvez ne retoucher que la séquence concernée et conserver ce qui est déjà validé.
+
+**Une finition facultative pour les deux modes :** une fois la vidéo finale validée, passez au [kit de miniature et de publication](#thumbnail-publishing-kit) pour créer une miniature assortie et les textes de mise en ligne, ou terminez ici. Aucun changement de mode ni réinstallation n’est nécessaire.
 
 <a id="style-gallery"></a>
 
@@ -246,7 +257,24 @@ Contribution au style et aux prompts : [Lawal Ridwan / @leksautomate](https://gi
 
 <a id="a6"></a>
 
-### A6 : Bientôt disponible…
+### A6 : Amber Noir
+
+Une lumière dorée, des ombres profondes et un personnage à tête ronde noire en sweat à capuche orange. Transformez un « et si… » intrigant en une petite histoire cinématographique, racontée par des gestes expressifs plutôt que par un présentateur face caméra.
+
+- **Style visuel** : des reflets ambrés sur des ombres prune, des silhouettes simples, des décors urbains aux ombrages doux et des mouvements de caméra mesurés.
+- **Idéal pour** : les scénarios « et si… », la psychologie, les fables modernes, les découvertes inattendues et les histoires courtes à rebondissement.
+- **À choisir si** : vous souhaitez des scènes animées cinématographiques avec une narration indépendante. Avec un agent capable de piloter un navigateur, les clips approuvés peuvent être assemblés avec voix off, effets sonores, sous-titres épais en majuscules et titre blanc épuré.
+
+| Exemple 1 : Et si tout coûtait 10 000 fois moins cher ? | Exemple 2 : Une bonne affaire qui mérite un sprint |
+|:---:|:---:|
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir : une histoire de 20 secondes où les prix chutent du jour au lendemain" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir : une scène animée de 8 secondes avec un personnage en sweat orange devant une boutique" width="360"></a> |
+| Exemple Renoise MCP · 20 secondes | Exemple Google Flow · 8 secondes |
+
+---
+
+<a id="a7"></a>
+
+### A7 : Bientôt disponible…
 
 De nouveaux styles spécialisés pour le mode Director sont en cours d’entraînement. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
 
@@ -332,24 +360,26 @@ Un pack de finition intégré pour **Director Mode et Autopilot Mode** : il gén
 
 ### Ce que contient le kit :
 
-- **Prompt de miniature en un clic**: Adapté au style exact du personnage, à la palette et au conflit central de la vidéo. Prêt pour Midjourney, Google Flow ou DALL-E.
+- **Image de miniature**: Une couverture horizontale 16:9 adaptée au personnage, au style, à la palette et au conflit approuvés. Générée directement si un outil d’image adapté est disponible et si les frais éventuels sont autorisés.
 - **5 variantes de titres à fort potentiel de clic**: Conçues pour l’intention de recherche, les ressorts de curiosité et un large public.
-- **Description YouTube Studio et SEO**: Avec repères temporels, résumé du sujet et tags pertinents.
-- **Accroche pour le commentaire épinglé**: Une question qui suscite le débat afin de stimuler les interactions et la rétention.
-- **Checklist avant publication**: Vérification des zones de sécurité sur mobile, du contraste et de la préparation à Content-ID.
+- **Description YouTube Studio et SEO**: Résumé du sujet, tags pertinents et repères temporels fondés sur le montage final ou une timeline vérifiée.
+- **Accroche pour le commentaire épinglé**: Une question pertinente invitant à une vraie discussion.
+- **Checklist avant publication**: Zones de sécurité mobile, contraste, exactitude du contenu et état de vérification des droits. Aucune garantie de validation Content-ID ni d’éligibilité à la monétisation.
 
 ### Comment le lancer :
 
-Après avoir validé le script ou le montage final, envoyez simplement ceci à votre assistant IA :
+Après votre validation de la vidéo finale, l’assistant vous proposera ce pack facultatif. Acceptez pour continuer ou passez cette étape sans retarder la livraison. Aucun prompt à copier. Vous pouvez aussi le demander directement :
 
 ```text
 Génère le kit de miniature et de publication pour cette vidéo :
-- 1 prompt de miniature horizontale 16:9 correspondant au style actuel
-- 5 titres YouTube à potentiel viral + un brouillon de description
+- 1 image de miniature horizontale 16:9 correspondant au style approuvé
+- 5 propositions de titres YouTube
+- Une description, des tags pertinents et des repères temporels vérifiés si disponibles
 - 1 question engageante pour le commentaire épinglé
+- Une checklist avant publication indiquant clairement les vérifications en attente
 ```
 
-*Les livrables sont prêts à l’emploi et peuvent être déposés directement dans YouTube Studio ou TikTok.*
+*La génération d’image nécessite un outil disponible et l’autorisation des frais éventuels. Sinon, l’assistant explique la limite et livre le texte. Une demande anticipée sur la base du script approuvé produit des brouillons ; les contrôles dépendant du montage final restent en attente. Téléchargez la miniature et copiez le texte dans YouTube Studio ou TikTok selon vos besoins. Aucun envoi ni publication automatique.*
 
 <!-- thumbnail-publishing-kit:end -->
 
