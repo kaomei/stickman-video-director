@@ -37,7 +37,12 @@ image_paths = [f"assets/readme/thumbnails/{slug}.jpg" for slug in (
     "no-camera", "first-job", "a5-samurai-taxes",
     "a1-you-vs-you", "a2-busy-vs-better", "a4-3am-again",
 )]
-assert re.findall(r'<img src="([^"]+)"', kit) == image_paths
+image_urls = [
+    "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
+    "ae1685ba812f9686463f319fe6f0d4eb7d581433/" + image_path
+    for image_path in image_paths
+]
+assert re.findall(r'<img src="([^"]+)"', kit) == image_urls
 assert re.findall(r'<a href="([^"]+\.jpg)"', kit) == image_paths
 assert len(re.findall(r'<img[^>]+alt="[^"]+"', kit)) == 6
 assert kit.count('<tr>') == kit.count('</tr>') == 4
@@ -75,7 +80,7 @@ for locale, roadmap in roadmap_labels.items():
     assert text.count(start) == text.count(end) == 1, filename
     localized = text.split(start, 1)[1].split(end, 1)[0]
     assert text.index('<a id="b2"></a>') < text.index(start) < text.index('<a id="faq"></a>'), filename
-    assert re.findall(r'<img src="([^"]+)"', localized) == image_paths, filename
+    assert re.findall(r'<img src="([^"]+)"', localized) == image_urls, filename
     assert re.findall(r'<a href="([^"]+\.jpg)"', localized) == image_paths, filename
     assert len(re.findall(r'^- \*\*([^*]+)\*\*:', localized, re.M)) == 5, filename
     assert len(re.findall(r'^### ', localized, re.M)) == 2, filename

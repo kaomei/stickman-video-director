@@ -301,9 +301,9 @@ GIFをクリックすると、音声付きサンプルを再生・ダウンロ�
 
 <table width="100%">
   <tr>
-    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — 表情豊かな手描きの棒人間と、取り消し線の入ったカメラ" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — 巨大な石の障害物に向き合う先史時代のキャラクター" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — セル画調の侍、江戸の街並み、木版画風のセリフ書体" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — 表情豊かな手描きの棒人間と、取り消し線の入ったカメラ" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — 巨大な石の障害物に向き合う先史時代のキャラクター" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — セル画調の侍、江戸の街並み、木版画風のセリフ書体" width="280"></a></td>
   </tr>
   <tr>
     <td align="center">シンプルな問いと、一つの明確なシンボル。</td>
@@ -314,9 +314,9 @@ GIFをクリックすると、音声付きサンプルを再生・ダウンロ�
 
 <table width="100%">
   <tr>
-    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — 巨大な自分に向き合う小さな黒い棒人間と控えめな赤いアクセント" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — 作業カードに埋もれる赤い帽子のキャラクターと、一つの作業に集中する姿の対比" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — 深夜のスマホ、青い画面光、柔らかな手描き文字" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — 巨大な自分に向き合う小さな黒い棒人間と控えめな赤いアクセント" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — 作業カードに埋もれる赤い帽子のキャラクターと、一つの作業に集中する姿の対比" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — 深夜のスマホ、青い画面光、柔らかな手描き文字" width="280"></a></td>
   </tr>
   <tr>
     <td align="center">極端なサイズ差で一つの対立を描く。</td>

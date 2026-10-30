@@ -300,9 +300,9 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 <table width="100%">
   <tr>
-    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — 表情生动的手绘火柴人与打叉的相机" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — 史前角色面对巨大的石块障碍" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — 赛璐璐风武士、江户街景与木版画风衬线字" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — 表情生动的手绘火柴人与打叉的相机" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — 史前角色面对巨大的石块障碍" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — 赛璐璐风武士、江户街景与木版画风衬线字" width="280"></a></td>
   </tr>
   <tr>
     <td align="center">一个简单问题，一个清晰符号。</td>
@@ -313,9 +313,9 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 <table width="100%">
   <tr>
-    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — 小小的黑色火柴人面对巨大的自己，辅以克制的红色点缀" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — 红帽角色被工作流卡片淹没，与只专注一件事形成对照" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — 深夜刷手机、蓝色屏幕光与柔和手写字" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — 小小的黑色火柴人面对巨大的自己，辅以克制的红色点缀" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — 红帽角色被工作流卡片淹没，与只专注一件事形成对照" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — 深夜刷手机、蓝色屏幕光与柔和手写字" width="280"></a></td>
   </tr>
   <tr>
     <td align="center">用悬殊的体型讲清一个冲突。</td>

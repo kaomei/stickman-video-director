@@ -308,9 +308,9 @@ Um pacote de finalização integrado para **Director Mode e Autopilot Mode**: ge
 
 <table width="100%">
   <tr>
-    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — boneco expressivo desenhado à mão e câmera riscada" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — personagem pré-histórico diante de um enorme obstáculo de pedra" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — samurai em cel shading, rua de Edo e letras serifadas inspiradas em xilogravura" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — boneco expressivo desenhado à mão e câmera riscada" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — personagem pré-histórico diante de um enorme obstáculo de pedra" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — samurai em cel shading, rua de Edo e letras serifadas inspiradas em xilogravura" width="280"></a></td>
   </tr>
   <tr>
     <td align="center">Uma pergunta simples e um símbolo claro.</td>
@@ -321,9 +321,9 @@ Um pacote de finalização integrado para **Director Mode e Autopilot Mode**: ge
 
 <table width="100%">
   <tr>
-    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — pequeno boneco preto enfrentando uma versão gigante de si mesmo, com um discreto detalhe vermelho" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — personagem de gorro vermelho sobrecarregado por cartões de tarefas em contraste com uma única tarefa clara" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — rolagem no celular de madrugada, luz azul da tela e letras suaves feitas à mão" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — pequeno boneco preto enfrentando uma versão gigante de si mesmo, com um discreto detalhe vermelho" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — personagem de gorro vermelho sobrecarregado por cartões de tarefas em contraste com uma única tarefa clara" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — rolagem no celular de madrugada, luz azul da tela e letras suaves feitas à mão" width="280"></a></td>
   </tr>
   <tr>
     <td align="center">Um conflito contado por uma diferença extrema de escala.</td>

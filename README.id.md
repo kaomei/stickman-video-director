@@ -309,9 +309,9 @@ Paket penyelesaian terpadu untuk **Director Mode dan Autopilot Mode**: menghasil
 
 <table width="100%">
   <tr>
-    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — stickman sketsa tangan ekspresif dan kamera yang dicoret" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — karakter prasejarah menghadapi rintangan batu raksasa" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — samurai cel shading, jalanan Edo, dan huruf serif terinspirasi cetak cukil kayu" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — stickman sketsa tangan ekspresif dan kamera yang dicoret" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — karakter prasejarah menghadapi rintangan batu raksasa" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — samurai cel shading, jalanan Edo, dan huruf serif terinspirasi cetak cukil kayu" width="280"></a></td>
   </tr>
   <tr>
     <td align="center">Satu pertanyaan sederhana dan satu simbol yang jelas.</td>
@@ -322,9 +322,9 @@ Paket penyelesaian terpadu untuk **Director Mode dan Autopilot Mode**: menghasil
 
 <table width="100%">
   <tr>
-    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — stickman hitam kecil berhadapan dengan versi dirinya yang raksasa, dengan aksen merah sederhana" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — karakter bertopi merah tertimbun kartu pekerjaan dibandingkan dengan satu tugas yang jelas" width="280"></a></td>
-    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — menggulir ponsel larut malam, cahaya layar biru, dan tulisan tangan lembut" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — stickman hitam kecil berhadapan dengan versi dirinya yang raksasa, dengan aksen merah sederhana" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — karakter bertopi merah tertimbun kartu pekerjaan dibandingkan dengan satu tugas yang jelas" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@ae1685ba812f9686463f319fe6f0d4eb7d581433/assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — menggulir ponsel larut malam, cahaya layar biru, dan tulisan tangan lembut" width="280"></a></td>
   </tr>
   <tr>
     <td align="center">Satu konflik melalui perbedaan skala ekstrem.</td>
