@@ -51,7 +51,7 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 <tr>
 <td width="50%" align="center">
 <strong>Amber Noir</strong><br>
-<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animation stickman Amber Noir : un personnage en sweat orange dans une ville aux lumières chaudes et aux ombres profondes" width="90%"></a>
+<a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animation stickman Amber Noir : un personnage en sweat orange dans une ville aux lumières chaudes et aux ombres profondes" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <a href="#a7"><strong>Bientôt disponible…</strong></a>
@@ -267,7 +267,7 @@ Une lumière dorée, des ombres profondes et un personnage à tête ronde noire 
 
 | Exemple 1 : Et si tout coûtait 10 000 fois moins cher ? | Exemple 2 : Une bonne affaire qui mérite un sprint |
 |:---:|:---:|
-| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir : une histoire de 20 secondes où les prix chutent du jour au lendemain" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir : une scène animée de 8 secondes avec un personnage en sweat orange devant une boutique" width="360"></a> |
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir : une histoire de 20 secondes où les prix chutent du jour au lendemain" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir : une scène animée de 8 secondes avec un personnage en sweat orange devant une boutique" width="360"></a> |
 | Exemple Renoise MCP · 20 secondes | Exemple Google Flow · 8 secondes |
 
 ---

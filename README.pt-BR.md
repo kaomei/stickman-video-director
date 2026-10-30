@@ -51,7 +51,7 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <tr>
 <td width="50%" align="center">
 <strong>Amber Noir</strong><br>
-<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animação stickman Amber Noir: personagem de moletom laranja em uma cidade com luz quente e sombras profundas" width="90%"></a>
+<a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animação stickman Amber Noir: personagem de moletom laranja em uma cidade com luz quente e sombras profundas" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <a href="#a7"><strong>Em breve…</strong></a>
@@ -271,7 +271,7 @@ Luz dourada e quente, sombras profundas e um personagem de cabeça redonda preta
 
 | Exemplo 1: E se tudo custasse 10 mil vezes menos? | Exemplo 2: Uma oferta que vale uma corrida |
 |:---:|:---:|
-| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: uma história de 20 segundos em que os preços caem da noite para o dia" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: cena animada de 8 segundos com um personagem de moletom laranja em frente a uma loja" width="360"></a> |
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: uma história de 20 segundos em que os preços caem da noite para o dia" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: cena animada de 8 segundos com um personagem de moletom laranja em frente a uma loja" width="360"></a> |
 | Exemplo Renoise MCP · 20 segundos | Exemplo Google Flow · 8 segundos |
 
 ---

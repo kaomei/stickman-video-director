@@ -51,7 +51,7 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 <tr>
 <td width="50%" align="center">
 <strong>Amber Noir</strong><br>
-<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir çöp adam animasyonu: sıcak ışıklı ve derin gölgeli bir şehirde turuncu kapüşonlu karakter" width="90%"></a>
+<a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir çöp adam animasyonu: sıcak ışıklı ve derin gölgeli bir şehirde turuncu kapüşonlu karakter" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <a href="#a7"><strong>Yakında…</strong></a>
@@ -266,7 +266,7 @@ Sıcak altın ışık, derin gölgeler ve turuncu kapüşonlu giyen siyah yuvarl
 
 | Örnek 1: Ya her şey 10.000 kat daha ucuz olsaydı? | Örnek 2: Koşmaya değer bir fırsat |
 |:---:|:---:|
-| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: fiyatların bir gecede düştüğü dünyayı anlatan 20 saniyelik hikâye" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: turuncu kapüşonlu karakterin bir mağaza önündeki 8 saniyelik animasyon sahnesi" width="360"></a> |
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: fiyatların bir gecede düştüğü dünyayı anlatan 20 saniyelik hikâye" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: turuncu kapüşonlu karakterin bir mağaza önündeki 8 saniyelik animasyon sahnesi" width="360"></a> |
 | Renoise MCP örneği · 20 saniye | Google Flow örneği · 8 saniye |
 
 ---

@@ -165,7 +165,9 @@ for link in re.findall(r"\]\(([^)]+)\)", cn):
         assert (root / link.split("#")[0]).is_file(), link
 
 previews = sorted(set(re.findall(r'src="https://cdn\.jsdelivr\.net/gh/kaomei/stickman-video-director@[0-9a-f]{40}/(assets/readme/previews/[^" ]+\.gif)"', cn)))
-assert len(previews) == 13, "Keep all existing lightweight A previews and both B1 short previews"
+assert len(previews) == 15, "Keep all existing lightweight A/B previews plus both pinned A6 previews"
+for a6_name in ("flow", "mcp"):
+    assert f"assets/readme/previews/style-6-amber-noir-{a6_name}.gif" in previews
 for preview in previews:
     file = root / preview
     header = file.read_bytes()[:10]

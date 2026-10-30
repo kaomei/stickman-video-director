@@ -51,7 +51,7 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <tr>
 <td width="50%" align="center">
 <strong>Amber Noir</strong><br>
-<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animasi stickman Amber Noir: karakter berhoodie oranye di kota bercahaya hangat dengan bayangan pekat" width="90%"></a>
+<a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animasi stickman Amber Noir: karakter berhoodie oranye di kota bercahaya hangat dengan bayangan pekat" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <a href="#a7"><strong>Segera hadir…</strong></a>
@@ -272,7 +272,7 @@ Cahaya keemasan yang hangat, bayangan pekat, dan karakter berkepala bulat hitam 
 
 | Contoh 1: Bagaimana jika semua barang 10.000 kali lebih murah? | Contoh 2: Penawaran yang layak dikejar |
 |:---:|:---:|
-| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: cerita 20 detik tentang dunia dengan harga yang turun dalam semalam" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: adegan animasi 8 detik dengan karakter berhoodie oranye di depan toko" width="360"></a> |
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: cerita 20 detik tentang dunia dengan harga yang turun dalam semalam" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: adegan animasi 8 detik dengan karakter berhoodie oranye di depan toko" width="360"></a> |
 | Contoh Renoise MCP · 20 detik | Contoh Google Flow · 8 detik |
 
 ---

@@ -51,7 +51,7 @@
 <tr>
 <td width="50%" align="center">
 <strong>Amber Noir</strong><br>
-<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir 스틱맨 애니메이션: 따뜻한 조명과 깊은 그림자의 도시 속 주황색 후드티 캐릭터" width="90%"></a>
+<a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir 스틱맨 애니메이션: 따뜻한 조명과 깊은 그림자의 도시 속 주황색 후드티 캐릭터" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <a href="#a7"><strong>곧 공개…</strong></a>
@@ -265,7 +265,7 @@ A1, A2, A3… 순으로 추가하며, 각 스타일에 맞는 애니메이션 �
 
 | 예시 1: 모든 물건값이 1만 분의 1이 된다면? | 예시 2: 달려갈 만한 특가 |
 |:---:|:---:|
-| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: 하룻밤 새 물가가 내려간 세상을 그린 20초 이야기" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: 주황색 후드티 캐릭터가 가게 밖에 있는 8초 애니메이션" width="360"></a> |
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: 하룻밤 새 물가가 내려간 세상을 그린 20초 이야기" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: 주황색 후드티 캐릭터가 가게 밖에 있는 8초 애니메이션" width="360"></a> |
 | Renoise MCP 예시 · 20초 | Google Flow 예시 · 8초 |
 
 ---

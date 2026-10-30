@@ -51,7 +51,7 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 <tr>
 <td width="50%" align="center">
 <strong>Amber Noir</strong><br>
-<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir stickman animation: an orange-hoodie character in a warm-lit city with deep shadows" width="90%"></a>
+<a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir stickman animation: an orange-hoodie character in a warm-lit city with deep shadows" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <a href="#a7"><strong>Coming Soon…</strong></a>
@@ -263,7 +263,7 @@ Warm golden light, deep shadows, and a black round-headed character in an orange
 
 | Example 1: What if everything cost 10,000 times less? | Example 2: A bargain worth running for |
 |:---:|:---:|
-| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: a 20-second story about a world where prices fall overnight; click to watch with sound" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: an 8-second animated scene of an orange-hoodie character outside a shop; click to watch with sound" width="360"></a> |
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: a 20-second story about a world where prices fall overnight; click to watch with sound" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: an 8-second animated scene of an orange-hoodie character outside a shop; click to watch with sound" width="360"></a> |
 | Renoise MCP example · 20 seconds | Google Flow example · 8 seconds |
 
 ---

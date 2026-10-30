@@ -51,7 +51,7 @@
 <tr>
 <td width="50%" align="center">
 <strong>Amber Noir</strong><br>
-<a href="#a6"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noirの棒人間アニメーション：暖かな街灯と深い影の街、オレンジのパーカーのキャラクター" width="90%"></a>
+<a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noirの棒人間アニメーション：暖かな街灯と深い影の街、オレンジのパーカーのキャラクター" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <a href="#a7"><strong>近日公開…</strong></a>
@@ -264,7 +264,7 @@ A1、A2、A3…の番号で追加し、それぞれの画風に対応するア�
 
 | 作例 1：すべての値段が1万分の1になったら？ | 作例 2：走ってでも手に入れたいお買い得品 |
 |:---:|:---:|
-| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir：一夜で物価が下がる世界を描く20秒の物語" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir：オレンジのパーカーのキャラクターが店の前にいる8秒のアニメーション" width="360"></a> |
+| <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir：一夜で物価が下がる世界を描く20秒の物語" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir：オレンジのパーカーのキャラクターが店の前にいる8秒のアニメーション" width="360"></a> |
 | Renoise MCP 作例 · 20秒 | Google Flow 作例 · 8秒 |
 
 ---
