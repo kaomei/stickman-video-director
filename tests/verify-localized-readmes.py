@@ -40,7 +40,7 @@ def section(text, start, end):
     return text.split(f'<a id="{start}"></a>', 1)[1].split(end, 1)[0]
 
 expected_images = images(cn)
-assert len(expected_images) == 19 and len(set(expected_images)) == 14
+assert len(expected_images) == 25 and len(set(expected_images)) == 20
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 for url in expected_images:
     if "/previews/" in url:
@@ -93,8 +93,8 @@ for name in selected:
     localized_anchors = expected_anchors.copy()
     assert anchors(text) == localized_anchors, (name, "shared anchors and section order")
     h2_headings = re.findall(r"^## (.+)$", text, re.M)
-    heading_icons = ("🎬", "🧭", "🎨", "🤖", "❓", "⭐", "🔮", "💬", "📄")
-    assert len(h2_headings) == len(heading_icons), (name, "nine peer sections")
+    heading_icons = ("🎬", "🧭", "🎨", "🤖", "🖼️", "❓", "⭐", "🔮", "💬", "📄")
+    assert len(h2_headings) == len(heading_icons), (name, "ten peer sections including the publishing kit")
     assert all(heading.startswith(icon + " ") for heading, icon in zip(h2_headings, heading_icons)), (name, "one consistent semantic icon per H2")
     assert '<a id="road-to-10000-stars--creator-ecosystem"></a>' in text, (name, "preserve the published roadmap deep link")
     for link in shared_links:
@@ -144,7 +144,7 @@ for name in selected:
         assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1 and "5,000" in placeholder, (name, next_id, "one roadmap CTA per series")
         teaser_descriptions.append(placeholder.strip().split("\n\n")[1])
     assert teaser_descriptions[0] != teaser_descriptions[1], (name, "Director and Autopilot teasers must describe distinct workflows")
-    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 2, (name, "two style-unlock roadmap links")
+    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "two style-unlock links plus roadmap navigation")
     if is_english:
         teasers = {
             "A": "New specialized director styles are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!",
@@ -198,7 +198,7 @@ for name in selected:
         assert all(token in answer for token in tokens), (name, "localized FAQ topic parity", tokens)
     assert "MIT" in faq and "API" in faq and "YouTube" in faq and "Codex" in faq and "Claude Code" in faq, name
     code = re.findall(r"```text\n(.*?)```", text, re.S)
-    assert len(code) == 3, (name, "installation, A example, B example")
+    assert len(code) == 4, (name, "installation, A example, B example, publishing kit")
     assert shared_links[0] in code[0] and "SKILL.md" in code[0], name
     assert all(token in code[1] for token in ("A3", "30", "16:9")), name
     assert all(token in code[2] for token in ("B1", "5", "10", "20", "16:9", "YouTube")), name
@@ -215,7 +215,7 @@ for name in selected:
             '<div align="center">\n\n'
             '**6 styles · 8 visual options · Tested examples · Free and open source**\n\n'
             '⭐ **Star the project to catch the next style drop and feature unlocks.**\n\n'
-            '[Get started](#quick-start) · [Director Styles](#a-styles) · [Autopilot Styles](#b-styles) · [FAQ](#faq)\n\n'
+            '[Get started](#quick-start) · [Director Styles](#a-styles) · [Autopilot Styles](#b-styles) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem)\n\n'
             '</div>\n\n'
             '<a id="creation-modes"></a>\n\n'
             '## 🎬 Two ways to make your video\n\n'

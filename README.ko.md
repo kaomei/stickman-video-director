@@ -56,7 +56,7 @@
 
 ⭐ **프로젝트에 Star를 눌러 다음 스타일과 새 기능 공개를 확인하세요.**
 
-[시작하기](#quick-start) · [Director 스타일](#a-styles) · [Autopilot 스타일](#b-styles) · [자주 묻는 질문](#faq)
+[시작하기](#quick-start) · [Director 스타일](#a-styles) · [Autopilot 스타일](#b-styles) · [자주 묻는 질문](#faq) · [로드맵](#road-to-10000-stars--creator-ecosystem)
 
 </div>
 
@@ -290,6 +290,66 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 ### B2: 곧 공개…
 
 새로운 Autopilot 스타일과 절차적 애니메이션을 훈련하고 있습니다. [프로젝트에 Star를 눌러](#road-to-10000-stars--creator-ecosystem) 5,000 Stars 달성 시 공개될 수 있도록 응원해 주세요!
+
+<!-- thumbnail-publishing-kit:start -->
+<a id="thumbnail-publishing-kit"></a>
+
+## 🖼️ 고클릭률 썸네일 & 게시 키트
+
+**아무리 좋은 영상도 먼저 클릭을 받아야 합니다.** 애니메이션을 완성한 뒤 같은 워크플로에서 화풍에 맞는 썸네일, 높은 클릭률을 노리는 제목, 시청자 참여를 유도하는 훅까지 준비하세요.
+
+**Director Mode와 Autopilot Mode** 모두를 위한 통합 마무리 패키지입니다. 영상에서 승인한 캐릭터와 화풍에 맞춰 시각적 훅을 만들고, 바로 게시할 수 있는 YouTube 메타데이터를 함께 제공합니다.
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — 표정이 풍부한 손그림 스틱맨과 취소선이 그어진 카메라" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — 거대한 돌 장애물에 맞서는 선사시대 캐릭터" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — 셀 셰이딩 사무라이, 에도 거리, 목판화풍 세리프 글자" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">간단한 질문과 명확한 상징 하나.</td>
+    <td align="center">거대한 장애물로 시작하는 이야기.</td>
+    <td align="center">시대 의상, 배경, 제목 글자의 조화.</td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — 거대한 자신과 마주한 작은 검은 스틱맨, 절제된 붉은 포인트" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — 작업 카드에 파묻힌 빨간 모자 캐릭터와 한 가지 일에 집중하는 모습의 대비" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — 심야 스마트폰 스크롤, 푸른 화면빛, 부드러운 손글씨" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">극단적인 크기 차이로 보여주는 갈등 하나.</td>
+    <td align="center">바쁨과 효율의 차이를 한눈에.</td>
+    <td align="center">공감 가는 장면, 회화적 조명과 손글씨.</td>
+  </tr>
+</table>
+
+*모든 썸네일 콘셉트는 검증된 YouTube 패키징 심리학을 바탕으로 설계합니다. 강렬한 시각적 모순, 명확한 실루엣, 모바일에서도 읽기 쉬운 타이포그래피를 활용합니다.*
+
+### 키트 구성：
+
+- **원클릭 썸네일 프롬프트**: 영상의 캐릭터 화풍, 색상 팔레트, 핵심 갈등에 맞춰 작성합니다. Midjourney, Google Flow, DALL-E에서 바로 생성할 수 있습니다.
+- **고클릭률 제목 5종**: 검색 의도, 호기심을 자극하는 정보 격차, 폭넓은 시청자 매력을 고려합니다.
+- **YouTube Studio 설명 & SEO**: 영상 타임스탬프, 주제 요약, 관련 태그를 포함합니다.
+- **고정 댓글 훅**: 시청자 토론을 유도하고 참여와 시청 유지에 도움을 주는 질문을 제공합니다.
+- **게시 전 체크리스트**: 모바일 안전 영역, 대비, Content-ID 준비 상태를 확인합니다.
+
+### 실행 방법：
+
+영상 대본이나 최종 편집본을 승인한 뒤 AI 어시스턴트에 다음과 같이 보내세요：
+
+```text
+이 영상의 썸네일 & 게시 키트를 생성해 주세요:
+- 현재 화풍에 맞는 가로 16:9 썸네일 프롬프트 1개
+- 바이럴 YouTube 제목 5개 + 설명 초안
+- 고정 댓글에 쓸 참여 유도 질문 1개
+```
+
+*제작과 게시에 바로 사용할 수 있는 결과물로, YouTube Studio나 TikTok에 그대로 드래그 앤 드롭할 수 있습니다.*
+
+<!-- thumbnail-publishing-kit:end -->
 
 <!-- readme:reliability -->
 

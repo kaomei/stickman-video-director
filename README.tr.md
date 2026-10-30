@@ -56,7 +56,7 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 
 ⭐ **Bir sonraki stil paketini ve yeni özellikleri kaçırmamak için projeye yıldız verin.**
 
-[Başlayın](#quick-start) · [Director Stilleri](#a-styles) · [Autopilot Stilleri](#b-styles) · [Sık sorulan sorular](#faq)
+[Başlayın](#quick-start) · [Director Stilleri](#a-styles) · [Autopilot Stilleri](#b-styles) · [Sık sorulan sorular](#faq) · [Yol haritası](#road-to-10000-stars--creator-ecosystem)
 
 </div>
 
@@ -291,6 +291,66 @@ Sesli örneği izlemek veya indirmek için hareketli ön izlemeye tıklayın.
 ### B2: Yakında…
 
 Yeni Autopilot stilleri ve prosedürel animasyonlar şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
+
+<!-- thumbnail-publishing-kit:start -->
+<a id="thumbnail-publishing-kit"></a>
+
+## 🖼️ Yüksek Tıklanma Oranlı Küçük Resim ve Yayınlama Kiti
+
+**En iyi video bile önce tıklanmayı hak etmelidir.** Animasyon tamamlandığında aynı iş akışında görsel stile uygun küçük resimler, yüksek tıklanma oranını hedefleyen başlıklar ve izleyici etkileşimi sağlayan kancalar hazırlayın.
+
+Hem **Director Mode hem de Autopilot Mode** için entegre bir son dokunuş paketi: videonuzun onaylanmış karakterine ve görsel stiline uygun görsel kancalar ile yayına hazır YouTube meta verileri üretir.
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — etkileyici yüz ifadeli el çizimi çöp adam ve üzeri çizilmiş kamera" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — dev bir taş engelle karşılaşan tarih öncesi karakter" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — cel shading samuray, Edo sokağı ve ahşap baskı esintili serif yazılar" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Basit bir soru ve tek, net bir simge.</td>
+    <td align="center">Dev bir engelle kurulan hikâye.</td>
+    <td align="center">Dönem kıyafeti, dekor ve başlık tipografisi.</td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — devasa benliğiyle yüzleşen minik siyah çöp adam ve ölçülü kırmızı vurgu" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — iş akışı kartları altında kalan kırmızı bereli karaktere karşı tek ve net bir görev" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — gece geç saatte telefon kaydırma, mavi ekran ışığı ve yumuşak el yazısı" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Aşırı ölçek farkıyla anlatılan tek çatışma.</td>
+    <td align="center">Meşgul mü, verimli mi? Bir bakışta anlaşılır.</td>
+    <td align="center">Tanıdık bir sahne, resimsel ışık ve el yazısı.</td>
+  </tr>
+</table>
+
+*Tüm küçük resim konseptleri, YouTube’da kanıtlanmış sunum psikolojisine dayanır: güçlü görsel çelişkiler, net siluetler ve mobilde okunaklı tipografi.*
+
+### Kitin içeriği:
+
+- **Tek Tıkla Küçük Resim Promptu**: Videonun karakter stili, renk paleti ve temel çatışmasıyla birebir uyumludur. Midjourney, Google Flow veya DALL-E ile üretime hazırdır.
+- **Yüksek Tıklanma Potansiyelli 5 Başlık**: Arama niyeti, merak boşlukları ve geniş izleyici kitlesi düşünülerek hazırlanır.
+- **YouTube Studio Açıklaması ve SEO**: Video zaman damgaları, konu özeti ve ilgili etiketleri içerir.
+- **Sabitlenmiş Yorum Kancası**: İzleyiciler arasında tartışma başlatarak etkileşim ve izlenme devamlılığı sağlayan çarpıcı bir soru.
+- **Yayın Öncesi Kontrol Listesi**: Mobil güvenli alan, kontrast ve Content-ID hazırlık kontrolü.
+
+### Nasıl başlatılır:
+
+Video senaryosunu veya son kurguyu onayladıktan sonra AI asistanınıza şunu göndermeniz yeterli:
+
+```text
+Bu video için Küçük Resim ve Yayınlama Kitini oluştur:
+- Mevcut görsel stile uygun 1 adet yatay 16:9 küçük resim promptu
+- 5 viral YouTube başlığı seçeneği + açıklama taslağı
+- Sabitlenmiş yorum için 1 etkileşim sorusu
+```
+
+*Çıktılar kullanıma hazırdır; doğrudan YouTube Studio veya TikTok’a sürükleyip bırakabilirsiniz.*
+
+<!-- thumbnail-publishing-kit:end -->
 
 <!-- readme:reliability -->
 

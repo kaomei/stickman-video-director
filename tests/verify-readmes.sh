@@ -5,6 +5,7 @@ readme_root=$(git rev-parse --show-toplevel)
 python3 "$readme_root/tests/verify-first-use-guidance.py"
 python3 "$readme_root/tests/verify-b-common-quality.py"
 python3 "$readme_root/tests/verify-chinese-onboarding.py"
+python3 "$readme_root/tests/verify-thumbnail-kit.py"
 python3 "$readme_root/tests/verify-localized-readmes.py" "$@"
 
 # Preserve the original published demo files as well as the current inline GIFs.

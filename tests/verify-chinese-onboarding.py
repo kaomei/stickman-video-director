@@ -70,7 +70,7 @@ assert "也可以直接贴已有文案或文章" not in cn
 assert "[查看画风一览 ↓]" not in cn, "Do not restore the removed per-mode shortcut links"
 assert "[导演模式画风](#a-styles) · [全自动模式画风](#b-styles)" in cn, "Keep the localized top style navigation"
 navigation = next(line for line in cn.splitlines() if line.startswith("[开始使用](#quick-start)"))
-assert navigation.endswith("[常见问题](#faq)"), "Replace only the tutorial shortcut with the FAQ anchor"
+assert navigation.endswith("[常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem)"), "FAQ followed by the approved roadmap shortcut"
 assert "[最近更新]" not in navigation, "Keep the removed updates shortcut out of the navigation"
 assert '<a id="recent-updates"></a>' not in cn, "Do not restore the removed updates anchor"
 assert "## 最近更新" not in cn, "Do not restore the removed updates section"

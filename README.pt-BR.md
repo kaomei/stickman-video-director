@@ -56,7 +56,7 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 
 ⭐ **Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.**
 
-[Começar](#quick-start) · [Estilos Director](#a-styles) · [Estilos Autopilot](#b-styles) · [Perguntas frequentes](#faq)
+[Começar](#quick-start) · [Estilos Director](#a-styles) · [Estilos Autopilot](#b-styles) · [Perguntas frequentes](#faq) · [Roteiro de evolução](#road-to-10000-stars--creator-ecosystem)
 
 </div>
 
@@ -296,6 +296,66 @@ Clique no GIF para assistir ou baixar a amostra com áudio.
 ### B2: Em breve…
 
 Novos estilos Autopilot e animações procedurais estão em treinamento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
+
+<!-- thumbnail-publishing-kit:start -->
+<a id="thumbnail-publishing-kit"></a>
+
+## 🖼️ Kit de thumbnails de alto CTR e publicação
+
+**Até um ótimo vídeo precisa conquistar o clique primeiro.** Depois de concluir a animação, prepare no mesmo fluxo thumbnails com o visual certo, títulos de alto CTR e ganchos para engajar o público.
+
+Um pacote de finalização integrado para **Director Mode e Autopilot Mode**: gera ganchos visuais alinhados ao personagem e ao estilo aprovados do vídeo, com metadados do YouTube prontos para publicar.
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — boneco expressivo desenhado à mão e câmera riscada" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — personagem pré-histórico diante de um enorme obstáculo de pedra" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — samurai em cel shading, rua de Edo e letras serifadas inspiradas em xilogravura" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Uma pergunta simples e um símbolo claro.</td>
+    <td align="center">Uma história que começa com um obstáculo enorme.</td>
+    <td align="center">Traje de época, cenário e tipografia de destaque.</td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — pequeno boneco preto enfrentando uma versão gigante de si mesmo, com um discreto detalhe vermelho" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — personagem de gorro vermelho sobrecarregado por cartões de tarefas em contraste com uma única tarefa clara" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — rolagem no celular de madrugada, luz azul da tela e letras suaves feitas à mão" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Um conflito contado por uma diferença extrema de escala.</td>
+    <td align="center">Ocupado ou eficaz: dá para entender de relance.</td>
+    <td align="center">Uma cena familiar, luz pintada e letras à mão.</td>
+  </tr>
+</table>
+
+*Todos os conceitos de thumbnail seguem princípios comprovados de apresentação no YouTube: contradições visuais marcantes, silhuetas limpas e tipografia legível no celular.*
+
+### O que o kit entrega:
+
+- **Prompt de thumbnail em 1 clique**: Alinhado ao estilo exato do personagem, à paleta de cores e ao conflito central do vídeo. Pronto para gerar no Midjourney, Google Flow ou DALL-E.
+- **5 opções de título de alto CTR**: Pensadas para intenção de busca, lacunas de curiosidade e apelo a um público amplo.
+- **Descrição para YouTube Studio e SEO**: Inclui marcações de tempo, resumo do tema e tags relevantes.
+- **Gancho para comentário fixado**: Uma pergunta provocativa para estimular debates, engajamento e retenção.
+- **Checklist pré-publicação**: Verificação de áreas seguras no celular, contraste e preparação para Content-ID.
+
+### Como acionar:
+
+Depois de aprovar o roteiro ou o corte final do vídeo, basta enviar ao seu assistente de IA:
+
+```text
+Gere o kit de thumbnail e publicação para este vídeo:
+- 1 prompt de thumbnail horizontal 16:9 que combine com o estilo atual
+- 5 opções de títulos virais para YouTube + rascunho de descrição
+- 1 pergunta de engajamento para o comentário fixado
+```
+
+*Os materiais estão prontos para produção e podem ser arrastados diretamente para o YouTube Studio ou TikTok.*
+
+<!-- thumbnail-publishing-kit:end -->
 
 <!-- readme:reliability -->
 

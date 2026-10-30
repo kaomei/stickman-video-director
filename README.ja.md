@@ -56,7 +56,7 @@
 
 ⭐ **プロジェクトに Star を付けて、次の画風追加や新機能の解放をチェックしましょう。**
 
-[使い始める](#quick-start) · [Director の画風](#a-styles) · [Autopilot の画風](#b-styles) · [よくある質問](#faq)
+[使い始める](#quick-start) · [Director の画風](#a-styles) · [Autopilot の画風](#b-styles) · [よくある質問](#faq) · [ロードマップ](#road-to-10000-stars--creator-ecosystem)
 
 </div>
 
@@ -289,6 +289,66 @@ GIFをクリックすると、音声付きサンプルを再生・ダウンロ�
 ### B2: 近日公開…
 
 新しい Autopilot スタイルとプロシージャルアニメーションをトレーニング中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、5,000 Stars での解放を応援してください！
+
+<!-- thumbnail-publishing-kit:start -->
+<a id="thumbnail-publishing-kit"></a>
+
+## 🖼️ 高クリック率サムネイル＆公開キット
+
+**動画の魅力は、まずクリックされてこそ伝わります。** アニメーション完成後も同じワークフローで、画風に合ったサムネイル、高クリック率を狙うタイトル、視聴者の反応を引き出すフックをまとめて用意できます。
+
+**Director Mode と Autopilot Mode** の両方で使える仕上げパックです。承認済みのキャラクターと画風に合わせたビジュアルフックに加え、公開用の YouTube メタデータを生成します。
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — 表情豊かな手描きの棒人間と、取り消し線の入ったカメラ" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — 巨大な石の障害物に向き合う先史時代のキャラクター" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — セル画調の侍、江戸の街並み、木版画風のセリフ書体" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">シンプルな問いと、一つの明確なシンボル。</td>
+    <td align="center">巨大な障害物で物語を立ち上げる。</td>
+    <td align="center">時代衣装、背景、見出し書体を統一。</td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — 巨大な自分に向き合う小さな黒い棒人間と控えめな赤いアクセント" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — 作業カードに埋もれる赤い帽子のキャラクターと、一つの作業に集中する姿の対比" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — 深夜のスマホ、青い画面光、柔らかな手描き文字" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">極端なサイズ差で一つの対立を描く。</td>
+    <td align="center">忙しさと成果の違いをひと目で伝える。</td>
+    <td align="center">共感できる場面、絵画的な光、手描き文字。</td>
+  </tr>
+</table>
+
+*すべてのサムネイル案は、実績のある YouTube のパッケージング心理学を軸に設計しています。大胆な視覚的矛盾、明快なシルエット、スマホでも読みやすい文字を重視します。*
+
+### キットの内容：
+
+- **ワンクリック・サムネイルプロンプト**: 動画のキャラクターの画風、配色、中心となる対立に合わせて作成。Midjourney、Google Flow、DALL-E ですぐに生成できます。
+- **高クリック率を狙うタイトル 5 案**: 検索意図、好奇心を刺激する情報のギャップ、幅広い視聴者への訴求を考慮。
+- **YouTube Studio の説明文＆SEO**: 動画のタイムスタンプ、内容の要約、関連タグを含みます。
+- **固定コメント用フック**: 視聴者の議論を促し、エンゲージメントと視聴維持につなげる問いを用意。
+- **公開前チェックリスト**: モバイルのセーフゾーン、コントラスト、Content-ID 対応の準備を確認。
+
+### 呼び出し方：
+
+動画の脚本または最終編集版を承認したら、AI アシスタントに次のように送るだけです：
+
+```text
+この動画のサムネイル＆公開キットを生成してください：
+- 現在の画風に合う、横長 16:9 のサムネイルプロンプト 1 件
+- YouTube 向けのバイラルタイトル 5 案＋説明文の下書き
+- 固定コメント用の、反応を引き出す質問 1 件
+```
+
+*出力は制作・公開向けに整えられているため、YouTube Studio や TikTok にそのままドラッグ＆ドロップできます。*
+
+<!-- thumbnail-publishing-kit:end -->
 
 <!-- readme:reliability -->
 

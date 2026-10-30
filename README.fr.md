@@ -56,7 +56,7 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 
 ⭐ **Ajoutez une étoile au projet pour suivre les prochains styles et les nouvelles fonctionnalités à débloquer.**
 
-[Bien démarrer](#quick-start) · [Styles Director](#a-styles) · [Styles Autopilot](#b-styles) · [FAQ](#faq)
+[Bien démarrer](#quick-start) · [Styles Director](#a-styles) · [Styles Autopilot](#b-styles) · [FAQ](#faq) · [Feuille de route](#road-to-10000-stars--creator-ecosystem)
 
 </div>
 
@@ -292,6 +292,66 @@ Cliquez sur un aperçu animé pour regarder ou télécharger l’extrait vidéo 
 ### B2 : Bientôt disponible…
 
 De nouveaux styles Autopilot et de nouvelles animations procédurales sont en cours d’entraînement. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
+
+<!-- thumbnail-publishing-kit:start -->
+<a id="thumbnail-publishing-kit"></a>
+
+## 🖼️ Kit de miniatures à fort taux de clic et de publication
+
+**Même une excellente vidéo doit d’abord donner envie de cliquer.** Une fois l’animation terminée, préparez dans le même workflow une miniature cohérente, des titres à fort potentiel de clic et des accroches qui suscitent la participation.
+
+Un pack de finition intégré pour **Director Mode et Autopilot Mode** : il génère des accroches visuelles adaptées au personnage et au style validés de votre vidéo, ainsi que les métadonnées YouTube prêtes à publier.
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — personnage bâton expressif dessiné à la main et caméra barrée" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — personnage préhistorique face à un obstacle de pierre démesuré" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — samouraï en cel shading, rue d’Edo et lettres à empattements inspirées des estampes" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Une question simple et un symbole clair.</td>
+    <td align="center">Une intrigue posée par un obstacle démesuré.</td>
+    <td align="center">Costume d’époque, décor et lettrage de titre.</td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — minuscule silhouette noire face à son double gigantesque, avec une touche de rouge discrète" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — personnage au bonnet rouge submergé de cartes de tâches, opposé à une seule tâche claire" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — défilement nocturne sur téléphone, lumière bleue et lettrage manuscrit doux" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Un conflit raconté par un contraste d’échelle extrême.</td>
+    <td align="center">Occupé ou efficace : la différence saute aux yeux.</td>
+    <td align="center">Une scène familière, une lumière peinte et des lettres manuscrites.</td>
+  </tr>
+</table>
+
+*Tous les concepts de miniatures s’appuient sur des principes éprouvés de présentation sur YouTube : contradictions visuelles fortes, silhouettes nettes et typographie lisible sur mobile.*
+
+### Ce que contient le kit :
+
+- **Prompt de miniature en un clic**: Adapté au style exact du personnage, à la palette et au conflit central de la vidéo. Prêt pour Midjourney, Google Flow ou DALL-E.
+- **5 variantes de titres à fort potentiel de clic**: Conçues pour l’intention de recherche, les ressorts de curiosité et un large public.
+- **Description YouTube Studio et SEO**: Avec repères temporels, résumé du sujet et tags pertinents.
+- **Accroche pour le commentaire épinglé**: Une question qui suscite le débat afin de stimuler les interactions et la rétention.
+- **Checklist avant publication**: Vérification des zones de sécurité sur mobile, du contraste et de la préparation à Content-ID.
+
+### Comment le lancer :
+
+Après avoir validé le script ou le montage final, envoyez simplement ceci à votre assistant IA :
+
+```text
+Génère le kit de miniature et de publication pour cette vidéo :
+- 1 prompt de miniature horizontale 16:9 correspondant au style actuel
+- 5 titres YouTube à potentiel viral + un brouillon de description
+- 1 question engageante pour le commentaire épinglé
+```
+
+*Les livrables sont prêts à l’emploi et peuvent être déposés directement dans YouTube Studio ou TikTok.*
+
+<!-- thumbnail-publishing-kit:end -->
 
 <!-- readme:reliability -->
 

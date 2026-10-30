@@ -56,7 +56,7 @@
 
 ⭐ **为项目点个 Star，及时关注下一批画风和新功能解锁。**
 
-[开始使用](#quick-start) · [导演模式画风](#a-styles) · [全自动模式画风](#b-styles) · [常见问题](#faq)
+[开始使用](#quick-start) · [导演模式画风](#a-styles) · [全自动模式画风](#b-styles) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem)
 
 </div>
 
@@ -288,6 +288,66 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 ### B2：待更新…
 
 新的全自动画风和程序化动画正在训练中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，一起在 5,000 Stars 时解锁！
+
+<!-- thumbnail-publishing-kit:start -->
+<a id="thumbnail-publishing-kit"></a>
+
+## 🖼️ 高点击率封面与发布工具包
+
+**视频做得再好，也要先让人愿意点开。** 动画完成后，在同一工作流中统筹与画风匹配的封面、高点击率标题和观众互动钩子。
+
+适用于**导演模式与全自动模式**的一体化收尾工具包：围绕视频已确认的角色与画风设计视觉钩子，并配齐可直接发布的 YouTube 元数据。
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/no-camera.jpg"><img src="assets/readme/thumbnails/no-camera.jpg" alt="NO CAMERA? — 表情生动的手绘火柴人与打叉的相机" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/first-job.jpg"><img src="assets/readme/thumbnails/first-job.jpg" alt="THE FIRST JOB — 史前角色面对巨大的石块障碍" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a5-samurai-taxes.jpg"><img src="assets/readme/thumbnails/a5-samurai-taxes.jpg" alt="SAMURAI VS TAXES — 赛璐璐风武士、江户街景与木版画风衬线字" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">一个简单问题，一个清晰符号。</td>
+    <td align="center">用巨大的障碍建立故事悬念。</td>
+    <td align="center">时代服饰、场景与标题字体相呼应。</td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr>
+    <td align="center"><a href="assets/readme/thumbnails/a1-you-vs-you.jpg"><img src="assets/readme/thumbnails/a1-you-vs-you.jpg" alt="YOU vs YOU — 小小的黑色火柴人面对巨大的自己，辅以克制的红色点缀" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a2-busy-vs-better.jpg"><img src="assets/readme/thumbnails/a2-busy-vs-better.jpg" alt="BUSY ≠ BETTER — 红帽角色被工作流卡片淹没，与只专注一件事形成对照" width="280"></a></td>
+    <td align="center"><a href="assets/readme/thumbnails/a4-3am-again.jpg"><img src="assets/readme/thumbnails/a4-3am-again.jpg" alt="3AM. AGAIN. — 深夜刷手机、蓝色屏幕光与柔和手写字" width="280"></a></td>
+  </tr>
+  <tr>
+    <td align="center">用悬殊的体型讲清一个冲突。</td>
+    <td align="center">忙碌还是有效，一眼看懂。</td>
+    <td align="center">有共鸣的场景，绘画光影与手写字。</td>
+  </tr>
+</table>
+
+*所有封面构思都围绕经过验证的 YouTube 包装心理学设计：鲜明的视觉反差、清晰的轮廓，以及手机端易读的字体。*
+
+### 工具包包含：
+
+- **一键封面提示词**: 匹配视频的角色画风、配色与核心冲突，可直接用于 Midjourney、Google Flow 或 DALL-E 生图。
+- **5 个高点击率标题方案**: 兼顾搜索意图、好奇心缺口与广泛的观众吸引力。
+- **YouTube Studio 简介与 SEO**: 包含视频时间戳、主题摘要和相关标签。
+- **置顶评论互动钩子**: 用有讨论度的问题激发观众交流，带动互动与留存。
+- **发布前检查清单**: 核对手机端安全区、画面对比度与 Content-ID 准备情况。
+
+### 如何触发：
+
+确认视频脚本或最终成片后，只需向 AI 助手发送：
+
+```text
+为这个视频生成封面与发布工具包：
+- 1 条匹配当前画风的 16:9 横版封面提示词
+- 5 个爆款 YouTube 标题方案 + 简介草稿
+- 1 个用于置顶评论的互动问题
+```
+
+*交付内容可直接用于制作与发布，拖放进 YouTube Studio 或 TikTok 即可。*
+
+<!-- thumbnail-publishing-kit:end -->
 
 <!-- readme:reliability -->
 
