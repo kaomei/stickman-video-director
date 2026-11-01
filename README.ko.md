@@ -54,14 +54,15 @@
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir 스틱맨 애니메이션: 따뜻한 조명과 깊은 그림자의 도시 속 주황색 후드티 캐릭터" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>곧 공개…</strong></a>
+<strong>컬러 손그림</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="컬러 손그림 스틱맨 영상: 조용한 침실과 강을 따라 떠가는 생각" width="90%"></a>
 </td>
 </tr>
 </table>
 
 <div align="center">
 
-**7가지 스타일 · 9가지 비주얼 옵션 · 실제 제작 예시 · 무료 오픈소스**
+**8가지 스타일 · 10가지 비주얼 옵션 · 실제 제작 예시 · 무료 오픈소스**
 
 ⭐ **프로젝트에 Star를 눌러 다음 스타일과 새 기능 공개를 확인하세요.**
 
@@ -294,8 +295,6 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 - **추천 주제:** YouTube 지식·정보 영상, 심리와 성장, 직장 이야기, 교육 콘텐츠, 제품·서비스 홍보.
 - **선택 기준:** 주제, 원고, 이야기 대본을 내레이션과 자막이 있는 완성 영상으로 만들고 싶을 때 선택하세요. 화면을 음성의 흐름에 맞춰 구성하므로 지속적인 설명과 긴 이야기에 잘 어울립니다.
 
-움직이는 미리보기를 클릭하면 소리 있는 샘플을 보거나 다운로드할 수 있습니다.
-
 <table width="100%">
   <tr>
     <th width="50%" align="center">예시 1: 얼굴 공개 없이 YouTube 시작하기</th>
@@ -315,7 +314,34 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 
 <a id="b2"></a>
 
-### B2: 곧 공개…
+### B2: 컬러 손그림
+
+일상의 이야기를 개성 있는 그림으로 전합니다. 따뜻한 종이 질감, 다채로운 장면, 단순한 스틱맨과 손글씨 제목이 익숙한 순간을 몰입감 있는 내레이션 영상으로 바꿉니다.
+
+- **비주얼 스타일**: 가늘고 자연스러운 잉크 선, 차분한 색감, 이야기에 맞춘 배경을 사용합니다. 클로즈업, 시점 전환, 일러스트 도해, 작은 배경·소품 움직임으로 이야기를 이끌고 인물의 과도한 동작은 피합니다. 짙은 자막은 아담한 아이보리 종이 라벨 위에 표시합니다.
+- **추천 주제**: 일상 심리, 습관, 주의력, 자기 성장, 공감을 이끄는 YouTube 해설.
+- **이럴 때 선택**: 풍성한 일러스트 배경, Gemini 내레이션, 의미 단위 자막, 동작 효과음이 포함된 완성 영상을 원할 때. 코딩 Agent가 로컬에서 제작하고 조립합니다.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">예시 1: 떠오른 생각 하나를 흘려보내기</th>
+    <th width="50%" align="center">예시 2: 왜 휴대폰 잠금을 풀었더라?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 컬러 손그림: 조용한 침실, 강 위의 종이배, 편안한 잠들기 전 순간" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 컬러 손그림: 휴대폰을 확인하다 딴길로 빠지는 이야기. 내레이션, 아이보리 자막, 일러스트 장면 포함" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">잠들기 전 생각 · 풍경 컷 전환 · 부드러운 움직임</td>
+    <td align="center">일상의 주의 분산 · 다채로운 장면 · Fola 내레이션</td>
+  </tr>
+</table>
+
+---
+
+<a id="b3"></a>
+
+### B3: 곧 공개…
 
 새로운 Autopilot 스타일과 절차적 애니메이션을 훈련하고 있습니다. [프로젝트에 Star를 눌러](#road-to-10000-stars--creator-ecosystem) 5,000 Stars 달성 시 공개될 수 있도록 응원해 주세요!
 

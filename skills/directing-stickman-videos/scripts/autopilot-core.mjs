@@ -49,7 +49,7 @@ export function designPlane(project) {
 export function loadProject(file, {seconds} = {}) {
   file = fs.realpathSync(path.resolve(file));
   const p = json(file), base = path.dirname(file);
-  if (p.version !== 1 || p.style !== 'B1') throw new Error('Expected version 1 and style B1');
+  if (p.version !== 1 || !['B1', 'B2'].includes(p.style)) throw new Error('Expected version 1 and style B1 or B2');
   number(p.width, 'width', 256, 3840); number(p.height, 'height', 256, 3840); number(p.fps, 'fps', 12, 60);
   if (![p.width, p.height, p.fps].every(Number.isInteger) || p.width % 2 || p.height % 2) throw new Error('Even integer dimensions and integer fps required');
   if (!p.voice || Object.keys(p.voice).some(k => !['path', 'lead', 'tail', 'contains_sfx'].includes(k))) throw new Error('Voice supports path/lead/tail/contains_sfx only; speech speed cannot be changed');
@@ -80,7 +80,7 @@ export function loadProject(file, {seconds} = {}) {
       for (const k of ['x', 'y', 'w', 'h', 'size', 'angle', 'alpha', 'progress', 'lineWidth']) if (l[k] !== undefined) number(l[k], k, -10000, 10000);
       if (l.w !== undefined && l.w <= 0 || l.size !== undefined && l.size <= 0) throw new Error('Layer dimensions must be positive');
       if (l.type === 'image') { const f = mediaPath(base, l.path); if (!/\.(png|jpe?g)$/i.test(f)) throw new Error('Only PNG/JPEG image layers'); assets.add(f); }
-      if (l.type === 'pose') { number(l.pose, 'pose', 0, 2); if (!Number.isInteger(l.pose)) throw new Error('Integer pose index required'); assets.add(mediaPath(base, '@b1/character-pose-sheet-v6.png')); }
+      if (l.type === 'pose') { if (p.style !== 'B1') throw new Error('B1 pose atlas cannot be used in another style; author story-specific image layers'); number(l.pose, 'pose', 0, 2); if (!Number.isInteger(l.pose)) throw new Error('Integer pose index required'); assets.add(mediaPath(base, '@b1/character-pose-sheet-v6.png')); }
       if (l.type === 'text' && (typeof l.text !== 'string' || !l.text.trim() || l.text.length > 400)) throw new Error('Text layer must be 1–400 characters');
       if (l.type === 'line' && (!Array.isArray(l.points) || l.points.length < 2 || l.points.some(pt => !Array.isArray(pt) || pt.length !== 2 || pt.some(n => !Number.isFinite(n))))) throw new Error('Line requires finite [x,y] points');
       const span = shot.end - shot.start;
@@ -110,7 +110,7 @@ export function loadProject(file, {seconds} = {}) {
   }
   const sfx = scoped ? (p.sfx || []).filter(s => s.time < rangeEnd) : p.sfx || [];
   if (p.voice.contains_sfx && sfx.length) throw new Error('Already mixed voice must not receive duplicate SFX');
-  for (const s of sfx) { number(s.time, 'SFX time', 0, duration); number(s.gain, 'SFX gain', 0, 0.3); if (!['tap', 'paper', 'pop', 'chime'].includes(s.kind)) throw new Error('Unknown SFX'); }
+  for (const s of sfx) { number(s.time, 'SFX time', 0, duration); number(s.gain, 'SFX gain', 0, 0.3); if (!['tap', 'paper', 'pop', 'chime', 'jingle'].includes(s.kind)) throw new Error('Unknown SFX'); }
   if (p.music) { assets.add(mediaPath(base, p.music.path)); number(p.music.gain, 'music gain', 0, 0.2); }
   const timeline = {...p, shots, captions, sfx};
   const project = {...timeline, file, base, voicePath, voiceDuration, lead, tail, duration, rangeEnd};

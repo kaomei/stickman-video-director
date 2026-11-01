@@ -59,10 +59,16 @@ assert "B1-only visual/audio defaults and accepted examples" in supplement
 assert "common quality gates still apply to every B production" in supplement
 assert manifest["common_checklist"] == "../../references/autopilot-production-qa.md"
 assert "not the independently shared B" in manifest["scope"]["not_inherited_scope"]
-assert "currently accepts `style: B1` only" in (refs / "autopilot-runtime.md").read_text()
+runtime = (refs / "autopilot-runtime.md").read_text()
+b2 = (refs / "b2-colorful-handdrawn.md").read_text()
+assert "accepts `style: B1` and `style: B2`" in runtime
+assert "(b2-colorful-handdrawn.md)" in autopilot
+assert "independent local illustration-and-micro-animation style" in b2
+assert "Fola" in b2 and "ivory paper label" in b2
+assert "B1 `pose` atlas is rejected in B2" in runtime
 
 # New links stay portable and inside the single installed Skill.
-for source in (common_path, refs / "autopilot.md", refs / "b1-production-qa.md"):
+for source in (common_path, refs / "autopilot.md", refs / "b1-production-qa.md", refs / "b2-colorful-handdrawn.md"):
     assert "/Users/" not in source.read_text()
     for link in re.findall(r"\]\(([^)]+)\)", source.read_text()):
         if "://" in link:
@@ -74,4 +80,4 @@ for case_id in ("B-COMMON-01", "B-COMMON-02", "B-COMMON-03", "B-COMMON-04",
                 "B-COMMON-05", "B-COMMON-06", "B-COMMON-07", "B-COMMON-08"):
     assert case_id in cases
 print("B common gates: required routing, quality boundaries, portable links and independent style settings passed.")
-print("Static integrity only: planning decisions and actual picture/sound require separate review; future B2 is not implemented.")
+print("Static integrity only: planning decisions and actual picture/sound require separate review; B1/B2 runtime behavior is tested separately.")

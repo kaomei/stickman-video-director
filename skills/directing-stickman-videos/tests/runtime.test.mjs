@@ -30,6 +30,33 @@ test('aligned words are grouped without invented word timings', () => {
 test('keyframes interpolate locally and hold before/after endpoints', () => {
   const l = {keys: [{t: 0, x: 10}, {t: 1, x: 30}]}; assert.equal(keyState(l, 0.5).x, 20); assert.equal(keyState(l, 2).x, 30);
 });
+test('B2 has paper captions/no B1 grid and rejects the B1 character atlas', async t => {
+  const f = fixture(t); f.project.style = 'B2'; f.project.grid = true;
+  save(f.file, f.project); assert.throws(() => loadProject(f.file), /B1 pose atlas/);
+  f.project.shots[1].layers = [{type: 'text', text: 'NEW STORY', x: 80, y: 110}];
+  save(f.file, f.project); const p = loadProject(f.file), draw = await painter(p);
+  const pixels = draw(0.2).getContext('2d');
+  const pixel = (x,y) => [...pixels.getImageData(x,y,1,1).data];
+  assert.deepEqual(pixel(5,5), [244,240,229,255]);
+  // B1 grid columns/rows must not leak into the B2 background, even with grid:true.
+  assert.deepEqual(pixel(16,35), pixel(17,35));
+  assert.deepEqual(pixel(16,35), pixel(5,5));
+  const band = pixel(320,319);
+  assert.ok(band[0] > 246 && band[1] > 242, 'Ivory paper label must be visible behind dark text');
+  const region = pixels.getImageData(245,320,150,22).data;
+  assert.ok(region.some((v,i) => i%4===0 && v<100), 'Caption must contain dark ink');
+});
+test('B2 style switch invalidates B1 shot caches and retains the original voice', async t => {
+  const f = fixture(t);
+  f.project.shots.forEach(s => s.layers = [{type:'text',text:'LOCAL STORY',x:100,y:160}]);
+  save(f.file,f.project); const before = hashFile(path.join(f.dir,'voice.wav'));
+  const b1 = await render(loadProject(f.file));
+  f.project.style='B2'; f.project.sfx.push({time:.3,kind:'jingle',gain:.02});save(f.file,f.project);
+  const b2 = await render(loadProject(f.file),{replace:true});
+  assert.equal(b2.cache_hits,0);assert.notEqual(b1.output_sha256,b2.output_sha256);
+  assert.equal(b2.original_voice_sha256,before);assert.equal(hashFile(path.join(f.dir,'voice.wav')),before);
+  assert.equal(b2.frames,b1.frames);assert.equal(b2.full_decode,'pass');
+});
 test('portrait uses a taller design plane without stretching local shapes', async t => {
   const f = fixture(t); f.project.width = 360; f.project.height = 640; f.project.grid = false;
   f.project.shots[0].layers = [{type: 'line', points: [[0, 0], [200, 0], [200, 200], [0, 200], [0, 0]], x: 100, y: 200, lineWidth: 4}];
