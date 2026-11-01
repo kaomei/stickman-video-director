@@ -54,14 +54,15 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir çöp adam animasyonu: sıcak ışıklı ve derin gölgeli bir şehirde turuncu kapüşonlu karakter" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>Yakında…</strong></a>
+<strong>Renkli El Çizimi</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Renkli el çizimi çöp adam videosu: sessiz bir yatak odası ve nehirde süzülen bir düşünce" width="90%"></a>
 </td>
 </tr>
 </table>
 
 <div align="center">
 
-**7 stil · 9 görsel seçenek · Denenmiş örnekler · Ücretsiz ve açık kaynak**
+**8 stil · 10 görsel seçenek · Denenmiş örnekler · Ücretsiz ve açık kaynak**
 
 ⭐ **Bir sonraki stil paketini ve yeni özellikleri kaçırmamak için projeye yıldız verin.**
 
@@ -295,8 +296,6 @@ Görseller anlatıcının ritmini takip eder. İfadeleri canlı çöp adamlar, r
 - **Uygun içerikler**: YouTube açıklayıcı videoları, psikolojik gelişim, iş hayatı hikâyeleri, eğitici içerikler ve ürün tanıtımları.
 - **Nasıl seçilir?** Bir konuyu, metni veya senaryoyu seslendirmeli ve altyazılı eksiksiz bir videoya dönüştürmek istiyorsanız bu stili seçin. Görseller konuşmanın ritmine göre düzenlenir; kesintisiz anlatımlar ve uzun hikâyeler için uygundur.
 
-Sesli örneği izlemek veya indirmek için hareketli ön izlemeye tıklayın.
-
 <table width="100%">
   <tr>
     <th width="50%" align="center">Örnek 1: Yüzünü göstermeden YouTube içeriği üretmek</th>
@@ -316,7 +315,34 @@ Sesli örneği izlemek veya indirmek için hareketli ön izlemeye tıklayın.
 
 <a id="b2"></a>
 
-### B2: Yakında…
+### B2: Renkli El Çizimi
+
+Gündelik hikâyeler, karakterli çizimlerle hayat bulur. Sıcak kâğıt dokusu, renkli sahneler, sade çöp adamlar ve el yazısı başlıklar, tanıdık anları ilgi çekici anlatımlı videolara dönüştürür.
+
+- **Görsel stil**: ince ve hafif düzensiz mürekkep çizgileri, yumuşak renkler ve hikâyeye özel ortamlar. Yakın planlar, değişen bakış açıları, resimli şemalar ve küçük sahne ya da nesne hareketleri anlatıyı taşır; karakterler gereğinden fazla hareket etmez. Koyu altyazılar küçük fildişi kâğıt etiketlerin üzerinde görünür.
+- **İdeal konular**: gündelik psikoloji, alışkanlıklar, dikkat, kişisel gelişim ve izleyicinin kendinden bir şeyler bulacağı YouTube açıklama videoları.
+- **Ne zaman seçilmeli**: daha zengin çizimli ortamlar, Gemini anlatımı, anlam bütünlüğüne göre bölünmüş altyazılar ve eyleme uygun ses efektleriyle tamamlanmış bir video istediğinizde. Kodlama ajanınız videoyu yerel olarak üretir ve birleştirir.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Örnek 1: Bir düşüncenin akıp gitmesine izin ver</th>
+    <th width="50%" align="center">Örnek 2: Telefonun kilidini neden açmıştın?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Renkli El Çizimi: sessiz bir yatak odası, nehirde bir kâğıt kayık ve daha huzurlu bir uyku öncesi anı" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Renkli El Çizimi: telefona bakarken dikkatin dağılması; anlatım, fildişi altyazılar ve çizimli sahneler" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Uyku öncesi düşünceler · Ortam kesmeleri · Yumuşak hareketler</td>
+    <td align="center">Gündelik dikkat dağıtıcılar · Renkli sahneler · Fola anlatımı</td>
+  </tr>
+</table>
+
+---
+
+<a id="b3"></a>
+
+### B3: Yakında…
 
 Yeni Autopilot stilleri ve prosedürel animasyonlar şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
 

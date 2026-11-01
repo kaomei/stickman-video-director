@@ -54,14 +54,15 @@
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noirの棒人間アニメーション：暖かな街灯と深い影の街、オレンジのパーカーのキャラクター" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>近日公開…</strong></a>
+<strong>カラフル手描き</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="カラフル手描きの棒人間動画：静かな寝室と川を流れる思い" width="90%"></a>
 </td>
 </tr>
 </table>
 
 <div align="center">
 
-**7つの画風 · 9つのビジュアル · 制作例あり · 無料・オープンソース**
+**8つの画風 · 10のビジュアル · 制作例あり · 無料・オープンソース**
 
 ⭐ **プロジェクトに Star を付けて、次の画風追加や新機能の解放をチェックしましょう。**
 
@@ -293,8 +294,6 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
 - **向いている内容：** YouTubeの解説動画、心理や成長の話、仕事の物語、学習コンテンツ、商品・サービスの紹介。
 - **選び方：** テーマや原稿、物語の台本から、ナレーションと字幕付きの完成動画を作りたいときに。映像を音声のテンポに合わせて構成するため、継続的な解説や長めの物語に向いています。
 
-GIFをクリックすると、音声付きサンプルを再生・ダウンロードできます。
-
 <table width="100%">
   <tr>
     <th width="50%" align="center">制作例1：顔出しなしでYouTubeを始める</th>
@@ -314,7 +313,34 @@ GIFをクリックすると、音声付きサンプルを再生・ダウンロ�
 
 <a id="b2"></a>
 
-### B2: 近日公開…
+### B2: カラフル手描き
+
+日常の物語を、個性豊かな絵で。温かみのある紙、カラフルな場面、シンプルな棒人間、手書きの見出しで、身近な出来事を引き込まれるナレーション動画にします。
+
+- **画風**：細く自然に揺れるインク線、落ち着いた色、物語に合った背景。アップ、視点の切り替え、イラスト図解、小さな背景や小物の動きで展開し、人物を過度に動かしません。字幕はコンパクトなアイボリーの紙片に濃色で表示します。
+- **おすすめの題材**：日常心理、習慣、注意力、自己成長、共感を呼ぶ YouTube 解説。
+- **こんなときに**：豊かなイラスト背景、Gemini ナレーション、意味のまとまりで区切った字幕、動作に合う効果音を備えた完成動画が欲しいとき。コーディング Agent がローカルで制作・編集します。
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">作例 1：ひとつの考えを流してみる</th>
+    <th width="50%" align="center">作例 2：なぜスマホのロックを解除した？</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 カラフル手描き：静かな寝室、川に浮かぶ紙の船、穏やかな就寝前のひととき" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 カラフル手描き：スマホを確認するつもりが寄り道に。ナレーション、アイボリー字幕、イラスト背景付き" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">寝る前の思考 · 情景への切り替え · 穏やかな動き</td>
+    <td align="center">日常の気散り · カラフルな場面 · Fola ナレーション</td>
+  </tr>
+</table>
+
+---
+
+<a id="b3"></a>
+
+### B3: 近日公開…
 
 新しい Autopilot スタイルとプロシージャルアニメーションをトレーニング中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、5,000 Stars での解放を応援してください！
 

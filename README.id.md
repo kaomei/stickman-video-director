@@ -54,14 +54,15 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animasi stickman Amber Noir: karakter berhoodie oranye di kota bercahaya hangat dengan bayangan pekat" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>Segera hadir…</strong></a>
+<strong>Gambar Tangan Berwarna</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Video figur stik gambar tangan berwarna: kamar tenang dan pikiran yang mengalir bersama sungai" width="90%"></a>
 </td>
 </tr>
 </table>
 
 <div align="center">
 
-**7 gaya · 9 pilihan visual · Contoh yang sudah diuji · Gratis dan open source**
+**8 gaya · 10 pilihan visual · Contoh yang sudah diuji · Gratis dan open source**
 
 ⭐ **Beri Star pada proyek ini agar tidak ketinggalan gaya dan fitur baru berikutnya.**
 
@@ -301,8 +302,6 @@ Visual mengikuti jalannya narasi. Stickman ekspresif, properti berwarna dengan s
 - **Cocok untuk:** Video penjelasan YouTube, psikologi dan pengembangan diri, cerita dunia kerja, konten edukasi, serta promosi produk.
 - **Pilih yang mana?** Untuk mengubah topik, teks, atau naskah menjadi video lengkap dengan narasi dan subtitle. Visual mengikuti ritme suara, cocok untuk penjelasan berkelanjutan maupun cerita panjang.
 
-Klik GIF untuk menonton atau mengunduh contoh dengan audio.
-
 <table width="100%">
   <tr>
     <th width="50%" align="center">Contoh 1: Bikin Konten YouTube Tanpa Tampil di Kamera</th>
@@ -322,7 +321,34 @@ Klik GIF untuk menonton atau mengunduh contoh dengan audio.
 
 <a id="b2"></a>
 
-### B2: Segera hadir…
+### B2: Gambar Tangan Berwarna
+
+Cerita sehari-hari, digambar penuh karakter. Tekstur kertas hangat, latar berwarna, figur stik sederhana, dan judul tulisan tangan mengubah momen akrab menjadi video penjelasan bernarasi yang menarik.
+
+- **Gaya visual**: garis tinta tipis yang sedikit tidak beraturan, warna lembut, dan lingkungan yang sesuai dengan cerita. Close-up, pergantian sudut pandang, diagram ilustrasi, serta gerakan kecil pada latar atau properti menggerakkan cerita tanpa animasi karakter berlebihan. Teks subtitle gelap tampil di atas label kertas kecil berwarna gading.
+- **Cocok untuk**: psikologi sehari-hari, kebiasaan, perhatian, pengembangan diri, dan video penjelasan YouTube yang dekat dengan penonton.
+- **Pilih saat**: Anda ingin video jadi dengan latar ilustrasi lebih kaya, narasi Gemini, subtitle yang dipotong sesuai makna, dan efek suara aksi. Agen pemrograman Anda membuat dan merakitnya secara lokal.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Contoh 1: Biarkan satu pikiran berlalu</th>
+    <th width="50%" align="center">Contoh 2: Kenapa tadi membuka kunci ponsel?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Gambar Tangan Berwarna: kamar tenang, perahu kertas di sungai, dan suasana menjelang tidur yang lebih damai" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Gambar Tangan Berwarna: terdistraksi saat mengecek ponsel, dengan narasi, subtitle gading, dan latar ilustrasi" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Pikiran sebelum tidur · Potongan pemandangan · Gerakan lembut</td>
+    <td align="center">Distraksi sehari-hari · Latar berwarna · Narasi Fola</td>
+  </tr>
+</table>
+
+---
+
+<a id="b3"></a>
+
+### B3: Segera hadir…
 
 Gaya Autopilot dan animasi prosedural baru sedang dilatih. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk membukanya saat mencapai 5,000 Stars!
 

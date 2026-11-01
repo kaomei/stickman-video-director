@@ -54,14 +54,15 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animação stickman Amber Noir: personagem de moletom laranja em uma cidade com luz quente e sombras profundas" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>Em breve…</strong></a>
+<strong>Desenho à Mão Colorido</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Vídeo de bonecos de palito em desenho colorido: um quarto tranquilo e um pensamento seguindo o rio" width="90%"></a>
 </td>
 </tr>
 </table>
 
 <div align="center">
 
-**7 estilos · 9 opções visuais · Exemplos testados · Grátis e de código aberto**
+**8 estilos · 10 opções visuais · Exemplos testados · Grátis e de código aberto**
 
 ⭐ **Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.**
 
@@ -300,8 +301,6 @@ O visual acompanha a narração. Bonecos expressivos, objetos coloridos com tra�
 - **Indicado para:** Vídeos explicativos no YouTube, psicologia e crescimento pessoal, histórias de trabalho, conteúdo educativo e divulgação de produtos.
 - **Como escolher:** Para transformar um tema, texto ou roteiro em um vídeo completo com narração e legendas. As imagens seguem o ritmo da voz, tanto em explicações contínuas quanto em narrativas longas.
 
-Clique no GIF para assistir ou baixar a amostra com áudio.
-
 <table width="100%">
   <tr>
     <th width="50%" align="center">Exemplo 1: YouTube sem aparecer</th>
@@ -321,7 +320,34 @@ Clique no GIF para assistir ou baixar a amostra com áudio.
 
 <a id="b2"></a>
 
-### B2: Em breve…
+### B2: Desenho à Mão Colorido
+
+Histórias do cotidiano, desenhadas com personalidade. Papel acolhedor, cenários coloridos, bonecos de palito simples e títulos manuscritos transformam momentos familiares em vídeos narrados envolventes.
+
+- **Estilo visual**: traços de tinta finos e irregulares, cores suaves e ambientes próprios de cada história. Close-ups, mudanças de perspectiva, diagramas ilustrados e pequenos movimentos de cenário ou objetos conduzem a narrativa sem animar demais os personagens. Legendas escuras aparecem em pequenas etiquetas de papel marfim.
+- **Ideal para**: psicologia do cotidiano, hábitos, atenção, desenvolvimento pessoal e vídeos explicativos no YouTube com os quais o público se identifica.
+- **Quando escolher**: quando quiser um vídeo completo com cenários ilustrados mais ricos, narração Gemini, legendas divididas por sentido e efeitos sonoros de ação. Seu agente de programação produz e monta tudo localmente.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Exemplo 1: Deixe um pensamento passar</th>
+    <th width="50%" align="center">Exemplo 2: Por que você desbloqueou o celular?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Desenho à Mão Colorido: um quarto tranquilo, um barquinho de papel no rio e uma hora de dormir mais calma" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Desenho à Mão Colorido: uma distração ao checar o celular, com narração, legendas marfim e cenários ilustrados" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Pensamentos antes de dormir · Cortes de cenário · Movimentos suaves</td>
+    <td align="center">Distrações cotidianas · Cenários coloridos · Narração Fola</td>
+  </tr>
+</table>
+
+---
+
+<a id="b3"></a>
+
+### B3: Em breve…
 
 Novos estilos Autopilot e animações procedurais estão em treinamento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
 

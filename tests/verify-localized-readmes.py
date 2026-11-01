@@ -40,7 +40,7 @@ def section(text, start, end):
     return text.split(f'<a id="{start}"></a>', 1)[1].split(end, 1)[0]
 
 expected_images = images(cn)
-assert len(expected_images) == 28 and len(set(expected_images)) == 22
+assert len(expected_images) == 31 and len(set(expected_images)) == 24
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 local_a6_previews = {
     "assets/readme/previews/style-6-amber-noir-mcp.gif",
@@ -143,7 +143,7 @@ for name in selected:
     hero = text.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
     rows = re.findall(r"<tr>(.*?)</tr>", hero, re.S)
     gallery_styles = re.findall(r'href="#([^"]+)"><img', hero)
-    assert gallery_styles == ["a1", "a2", "a3", "a4", "style-5", "b1", "a6"], name
+    assert gallery_styles == ["a1", "a2", "a3", "a4", "style-5", "b1", "a6", "b2"], name
     # Owner rule: two columns, odd last card left + Coming Soon right;
     # even card counts fill the grid without a placeholder. No spanning rows.
     assert len(rows) == (len(gallery_styles) + 1) // 2, name
@@ -155,10 +155,10 @@ for name in selected:
     if placeholders:
         assert placeholders == [cells[-1]] and "<img" in cells[-2], name
         assert re.search(r'<a href="#a7"><strong>[^<]+</strong></a>', cells[-1]), name
-    assert text.count('width="90%"') == 7 and text.count('width="360"') == 14, name
+    assert text.count('width="90%"') == 8 and text.count('width="360"') == 16, name
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
-    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "B1", "B2"], (name, "published styles plus sequential teasers")
+    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "B1", "B2", "B3"], (name, "published styles plus sequential teasers")
     a6 = section(text, "a6", '<a id="a7"></a>')
     assert len(re.findall(r"^- \*\*", a6, re.M)) == 3, (name, "A6 localized style, use cases and selection guidance")
     assert re.findall(r'<a href="([^"]+\.mp4)">', a6) == list(a6_videos), name
@@ -166,9 +166,19 @@ for name in selected:
     assert "Tested Flow workflow:" not in text and "Click either GIF" not in text, name
     assert "Veo 3.1 Fast" not in a6, (name, "operational model guidance stays in Skill")
     assert "Omni" not in a6, (name, "A6 does not inherit the legacy model")
-    assert re.search(r"\*\*7[^\n]+9[^\n]+\*\*", text), (name, "seven styles and nine visual options")
+    assert re.search(r"\*\*8[^\n]+10[^\n]+\*\*", text), (name, "eight styles and ten visual options")
+    b2 = section(text, "b2", '<a id="b3"></a>')
+    assert all(re.search(re.escape(pinned) + r"[a-f0-9]{40}/assets/readme/previews/" + stem + r"\.gif", b2)
+               for stem in ("b2-colorful-sleep", "b2-colorful-phone-weather")), (name, "immutable B2 GIF URLs")
+    assert len(re.findall(r"^- \*\*", b2, re.M)) == 3, (name, "B2 style, topics and selection guidance")
+    assert re.findall(r'<a href="([^"]+\.mp4)">', b2) == ["assets/readme/b2-colorful-sleep.mp4", "assets/readme/b2-colorful-phone-weather.mp4"], (name, "approved B2 pair in requested order")
+    assert b2.count('<th width="50%"') == 2 and b2.count('width="360"') == 2, (name, "paired B2 gallery")
+    assert all(token in b2 for token in ("Gemini", "Fola")), (name, "B2 narration details")
+    assert "Renoise" not in b2 and not re.search(r"^Click a GIF", text, re.M), (name, "no unnecessary helper copy")
+    for video in re.findall(r'<a href="([^"]+\.mp4)">', b2):
+        assert (root / video).is_file(), (name, video)
     teaser_descriptions = []
-    for next_id, end in (("a7", '<a id="b-styles"></a>'), ("b2", '<a id="faq"></a>')):
+    for next_id, end in (("a7", '<a id="b-styles"></a>'), ("b3", '<!-- thumbnail-publishing-kit:start -->')):
         placeholder = section(text, next_id, end)
         assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1 and "5,000" in placeholder, (name, next_id, "one roadmap CTA per series")
         teaser_descriptions.append(placeholder.strip().split("\n\n")[1])
@@ -242,7 +252,7 @@ for name in selected:
     if is_english:
         approved_mode_intro = (
             '<div align="center">\n\n'
-            '**7 styles · 9 visual options · Tested examples · Free and open source**\n\n'
+            '**8 styles · 10 visual options · Tested examples · Free and open source**\n\n'
             '⭐ **Star the project to catch the next style drop and feature unlocks.**\n\n'
             '[Get started](#quick-start) · [Director Styles](#a-styles) · [Autopilot Styles](#b-styles) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem)\n\n'
             '</div>\n\n'

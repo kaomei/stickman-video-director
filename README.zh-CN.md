@@ -54,14 +54,15 @@
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="暖金暗影风火柴人动画：暖光与深邃暗影中的城市，主角身穿橙色连帽衫" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>敬请期待…</strong></a>
+<strong>彩色手绘风</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="彩色手绘风：安静的卧室与沿河漂走的念头" width="90%"></a>
 </td>
 </tr>
 </table>
 
 <div align="center">
 
-**7 大画风 · 9 种视觉方案 · 实测样片 · 免费开源**
+**8 大画风 · 10 种视觉方案 · 实测样片 · 免费开源**
 
 ⭐ **为项目点个 Star，及时关注下一批画风和新功能解锁。**
 
@@ -292,8 +293,6 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 - **适合内容**：YouTube 知识讲解、心理成长、职场故事、教育科普与产品宣传。
 - **怎么选**：想把一个话题、一段文案或故事脚本做成带配音、字幕的完整视频，可以选这一风格。画面跟随语音节奏编排，适合持续讲解和长篇叙事。
 
-点击动图，查看或下载有声样片。
-
 <table width="100%">
   <tr>
     <th width="50%" align="center">案例 1：不露脸做 YouTube</th>
@@ -313,7 +312,34 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 <a id="b2"></a>
 
-### B2：待更新…
+### B2：彩色手绘风
+
+让日常故事有自己的个性。温暖纸感、彩色场景、简洁火柴人与手写标题，把熟悉的生活片段变成生动的旁白解说。
+
+- **视觉风格**：纤细自然、略带不规则的墨线，柔和配色，以及贴合故事的环境。通过特写、视角切换、插画图解和小幅场景或道具动效推进叙事，避免人物过度活动。深色字幕搭配紧凑的米白纸片底。
+- **适合题材**：日常心理、习惯、注意力、个人成长，以及有共鸣的 YouTube 解说。
+- **选择建议**：想要更丰富的插画场景、Gemini 配音、按语义断句的字幕与动作音效，直接拿到完整成片时选择。由你的编程 Agent 在本地制作并组装。
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">示例 1：让一个念头慢慢飘走</th>
+    <th width="50%" align="center">示例 2：你刚才为什么解锁手机？</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 彩色手绘风：安静的卧室、河上的纸船与放松的睡前时刻" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 彩色手绘风：查看手机时的走神，配有旁白、米白字幕与插画场景" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">睡前思绪 · 场景切换 · 轻柔动效</td>
+    <td align="center">日常分心 · 彩色场景 · Fola 配音</td>
+  </tr>
+</table>
+
+---
+
+<a id="b3"></a>
+
+### B3：待更新…
 
 新的全自动画风和程序化动画正在训练中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，一起在 5,000 Stars 时解锁！
 

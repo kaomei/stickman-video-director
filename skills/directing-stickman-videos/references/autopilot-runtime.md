@@ -12,7 +12,7 @@ Install Node 20+ and FFmpeg/FFprobe using your platform's normal installer. Opti
 
 ## Manifest v1
 
-The bundled runtime currently accepts `style: B1` only. Its caption layout below is a B1 implementation, not a rule for every B style. A future style with a different layout needs explicit style/runtime support; changing its style code alone does not add that support.
+The bundled runtime accepts `style: B1` and `style: B2`. B1 keeps its white grid and original caption treatment. B2 uses warm paper without a grid and dark captions on an ivory paper label (40 design-unit default text). Select B2 explicitly and author its own colored scene/prop/character image layers; the B1 `pose` atlas is rejected in B2. The JSON excerpt below remains a B1 example, not a B2 art template. See [B2](b2-colorful-handdrawn.md) for its independent production defaults.
 
 All media paths are relative to `project.json` (or absolute local paths); `@b1/…` addresses bundled original B1 assets. Remote URLs and executable expressions are not accepted. Output is a separate project-local `output/` directory. Keep user/source files outside it.
 
@@ -38,13 +38,13 @@ All media paths are relative to `project.json` (or absolute local paths); `@b1/�
 
 This is an excerpt, not a complete valid film: full-film shots must cover the actual voice length plus lead/tail **without gaps/overlap**. A scoped preview needs coverage and available media only through its requested end; later shots may be unproduced or absent. Narration and timed subtitles are required for both preview and full film. Use `probe` to get actual duration. Captions use the final video time including lead. `voice.speed` is not accepted: keep the original rate. Optional `voice.contains_sfx: true` marks an already mixed master; do not add duplicate effects. Optional `music: {path, gain}` adds a licensed track, looping it under the narration; gain must be 0–0.2. The default is no background music, not a forced piano track.
 
-Layers: `image` (local PNG/JPEG, contain-fit within optional `h`), `pose` (original three-pose B1 atlas, indices 0–2), `text`, `line` (`points` array), `arrow`, `underline`. Design coordinates are 1280 units wide and `1280 × outputHeight / outputWidth` high (720 for 16:9; about 2275.56 for 9:16), uniformly scaled without stretching characters. Recompose portrait scenes explicitly; changing output dimensions alone does not design a vertical composition. Keep the bottom 110 design units clear for captions. Use `from`/`to` (shot-relative seconds) for selective visibility. `keys` are increasing shot-relative timestamps with optional numeric `x`, `y`, `w`, `angle` (radians), `alpha` and `progress`; values interpolate with smoothstep. For genuine local motion use separate layers or authored pose sprites. Images do not gain inferred limb motion automatically. Text `w` is its maximum width; captions wrap to two lines and overflow is an error, not invisible clipping.
+Layers: `image` (local PNG/JPEG, contain-fit within optional `h`), `pose` (B1 only: original three-pose atlas, indices 0–2), `text`, `line` (`points` array), `arrow`, `underline`. Design coordinates are 1280 units wide and `1280 × outputHeight / outputWidth` high (720 for 16:9; about 2275.56 for 9:16), uniformly scaled without stretching characters. Recompose portrait scenes explicitly; changing output dimensions alone does not design a vertical composition. Keep the bottom 110 design units clear for captions. Use `from`/`to` (shot-relative seconds) for selective visibility. `keys` are increasing shot-relative timestamps with optional numeric `x`, `y`, `w`, `angle` (radians), `alpha` and `progress`; values interpolate with smoothstep. For genuine local motion use separate layers or authored pose sprites. Images do not gain inferred limb motion automatically. Text `w` is its maximum width; captions wrap to two lines and overflow is an error, not invisible clipping. All styles are included in shot-cache identity so switching style cannot reuse another style's frames.
 
 ## Commands
 
 - `doctor`: dependency/font/key presence only; no network and no key values.
 - `probe FILE`: duration and media streams.
-- `init DIR`: create a non-overwriting project scaffold; it is not production-ready until voice, captions and shots are filled.
+- `init DIR [--style B1|B2]`: create a non-overwriting project scaffold; it is not production-ready until voice, captions and shots are filled.
 - `validate PROJECT [--seconds N]`: check real files, audio duration, shot coverage, cue timing, layers and SFX. Default is the complete film; `--seconds 20` checks only the sample range.
 - `captions WORDS.json OUTPUT.json`: convert `{words:[{start,end,word}]}` into readable timed phrases. `--lead 0.15` adds initial video offset. Requires actual aligned word timestamps.
 - `preview PROJECT [--seconds 20]`: check/render only the sample range, with caption sidecars/contact sheet/report and shot cache. Missing later-shot media does not block it. Existing outputs are not overwritten unless `--replace` is explicit.
@@ -67,6 +67,8 @@ node scripts/gemini-media.mjs image --prompt scene-prompt.txt --output scene.png
 The speech text file contains only the exact approved spoken words. Use the selected named voice without extra voice/style instructions; `--direction` is not supported. Verify that the selected TTS model offers the chosen voice before generation. Resolve settings as explicit user choice → selected B-style default → B common fallback; the Bodi command above illustrates the new B1 default, not a voice required for every B style. Image output is saved from the provider's native image payload, not recreated from base64 text. No default image model is assumed. API calls may be billed; the flags are not a substitute for user authorization. No API-backed request is needed for the included offline example or packaging tests.
 
 ## Recovery and verification
+
+The original procedural SFX kinds are `tap`, `paper`, `pop`, `chime` and `jingle` (a short metallic key-ring accent). Choose by action, not by style or caption turnover.
 
 Each shot is cached by its content, its own visual assets, overlapping captions, fonts, renderer version and timing—not every image in the film. Cache hits are probed before reuse. After interruption rerun the same command; do not delete the cache or resynthesize audio. `output/checkpoint.json` records the active stage and shot count. A project-local lock prevents simultaneous rendering. A stale lock is removed only when its recorded process is no longer running.
 

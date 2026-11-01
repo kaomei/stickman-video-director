@@ -54,14 +54,15 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animation stickman Amber Noir : un personnage en sweat orange dans une ville aux lumières chaudes et aux ombres profondes" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>Bientôt disponible…</strong></a>
+<strong>Dessin à la main en couleur</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Vidéo stickman dessinée en couleur : une chambre calme et une pensée au fil de l’eau" width="90%"></a>
 </td>
 </tr>
 </table>
 
 <div align="center">
 
-**7 styles · 9 variantes visuelles · Des exemples testés · Gratuit et open source**
+**8 styles · 10 variantes visuelles · Des exemples testés · Gratuit et open source**
 
 ⭐ **Ajoutez une étoile au projet pour suivre les prochains styles et les nouvelles fonctionnalités à débloquer.**
 
@@ -296,8 +297,6 @@ L’image suit la voix off. Des stickmen expressifs, des objets colorés dessin�
 - **Idéal pour** : vidéos explicatives YouTube, psychologie, récits du travail, vulgarisation et présentation de produits.
 - **Comment choisir** : pour transformer un sujet, un texte ou un scénario en une vidéo complète avec voix off et sous-titres. Les visuels sont calés sur la parole, ce qui convient aux explications suivies et aux récits longs.
 
-Cliquez sur un aperçu animé pour regarder ou télécharger l’extrait vidéo avec le son.
-
 <table width="100%">
   <tr>
     <th width="50%" align="center">Exemple 1 : Créer sur YouTube sans montrer son visage</th>
@@ -317,7 +316,34 @@ Cliquez sur un aperçu animé pour regarder ou télécharger l’extrait vidéo 
 
 <a id="b2"></a>
 
-### B2 : Bientôt disponible…
+### B2 : Dessin à la main en couleur
+
+Des histoires du quotidien, dessinées avec personnalité. Papier chaleureux, décors colorés, stickmen simples et titres manuscrits transforment les moments familiers en récits explicatifs vivants.
+
+- **Identité visuelle** : traits d’encre fins et irréguliers, couleurs douces et décors propres à chaque histoire. Gros plans, changements de point de vue, schémas illustrés et petits mouvements de décor ou d’objets font avancer le récit sans suranimer les personnages. Les sous-titres foncés reposent sur de petites étiquettes de papier ivoire.
+- **Idéal pour** : psychologie du quotidien, habitudes, attention, développement personnel et vidéos explicatives YouTube qui parlent à chacun.
+- **Comment choisir** : pour obtenir une vidéo complète avec des décors illustrés plus riches, une narration Gemini, des sous-titres découpés par unités de sens et des bruitages d’action. Votre agent de code la réalise et l’assemble en local.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Exemple 1 : Laisser passer une pensée</th>
+    <th width="50%" align="center">Exemple 2 : Pourquoi avez-vous déverrouillé votre téléphone ?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Dessin à la main en couleur : une chambre calme, un bateau en papier sur une rivière et un coucher apaisé" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Dessin à la main en couleur : une consultation du téléphone qui dérape, avec narration, sous-titres ivoire et décors illustrés" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Pensées du soir · Plans de décor · Mouvements doux</td>
+    <td align="center">Distractions quotidiennes · Décors colorés · Narration Fola</td>
+  </tr>
+</table>
+
+---
+
+<a id="b3"></a>
+
+### B3 : Bientôt disponible…
 
 De nouveaux styles Autopilot et de nouvelles animations procédurales sont en cours d’entraînement. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
 

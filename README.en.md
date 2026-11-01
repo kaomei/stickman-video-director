@@ -54,14 +54,15 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir stickman animation: an orange-hoodie character in a warm-lit city with deep shadows" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>Coming Soon…</strong></a>
+<strong>Colorful Hand-Drawn</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Colorful hand-drawn stickman video: a quiet bedroom and a thought drifting along a river" width="90%"></a>
 </td>
 </tr>
 </table>
 
 <div align="center">
 
-**7 styles · 9 visual options · Tested examples · Free and open source**
+**8 styles · 10 visual options · Tested examples · Free and open source**
 
 ⭐ **Star the project to catch the next style drop and feature unlocks.**
 
@@ -292,8 +293,6 @@ Let the narration lead. Expressive stick figures, colorful hand-drawn props, and
 - **Best for**: YouTube explainers, psychology and personal growth, workplace stories, educational videos, and product promotion.
 - **Choose this when**: you want a complete narrated, captioned video from a topic, copy, or story script. The visuals follow the voiceover's natural rhythm, making it a good fit for sustained explanations and long-form storytelling.
 
-Click a GIF to view or download the preview with sound.
-
 <table width="100%">
   <tr>
     <th width="50%" align="center">Example 1: YouTube without showing your face</th>
@@ -313,7 +312,34 @@ Click a GIF to view or download the preview with sound.
 
 <a id="b2"></a>
 
-### B2: Coming soon…
+### B2: Colorful Hand-Drawn
+
+Everyday stories, drawn with personality. Warm paper, colorful scenes, simple stick figures, and handwritten headings turn familiar moments into engaging narrated explainers.
+
+- **Visual style**: fine, irregular ink lines, muted colors, and story-specific environments. Closeups, changing viewpoints, illustrated diagrams, and small scene or prop movements carry the story without excessive character animation. Dark captions sit on compact ivory paper labels.
+- **Best for**: everyday psychology, habits, attention, personal growth, and relatable YouTube explainers.
+- **Choose this when**: you want a finished video with richer illustrated settings, Gemini narration, semantic captions, and action sound effects. Your coding agent builds and assembles it locally.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Example 1: Let one thought drift past</th>
+    <th width="50%" align="center">Example 2: Why did you unlock your phone?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Colorful Hand-Drawn: a quiet bedroom, a paper boat on a river, and a calmer bedtime moment" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Colorful Hand-Drawn: a phone-checking detour, with narration, ivory captions, and illustrated scenes" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Bedtime thoughts · Scenic cutaways · Gentle motion</td>
+    <td align="center">Everyday distractions · Colorful scenes · Fola narration</td>
+  </tr>
+</table>
+
+---
+
+<a id="b3"></a>
+
+### B3: Coming soon…
 
 New Autopilot styles and procedural animations are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!
 

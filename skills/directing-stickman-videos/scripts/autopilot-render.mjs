@@ -50,8 +50,8 @@ export async function painter(p) {
   }
   return function frame(t) {
     ctx.resetTransform(); ctx.clearRect(0, 0, p.width, p.height); ctx.scale(p.width / plane.width, p.width / plane.width);
-    ctx.fillStyle = '#FDFDFC'; ctx.fillRect(0, 0, plane.width, plane.height);
-    if (p.grid !== false) {
+    ctx.fillStyle = p.style === 'B2' ? '#f4f0e5' : '#FDFDFC'; ctx.fillRect(0, 0, plane.width, plane.height);
+    if (p.style === 'B1' && p.grid !== false) {
       ctx.beginPath(); ctx.strokeStyle = 'rgba(76,90,105,.036)'; ctx.lineWidth = 0.8;
       for (let x = 32.5; x < plane.width; x += 64) { ctx.moveTo(x, 0); ctx.lineTo(x, captionBand - 1); }
       for (let y = 16.5; y < captionBand; y += 64) { ctx.moveTo(0, y); ctx.lineTo(plane.width, y); } ctx.stroke();
@@ -84,11 +84,15 @@ export async function painter(p) {
     }
     const cue = p.captions.find(c => t >= c.start && t < c.end);
     if (cue) {
-      ctx.font = `600 ${p.captionSize || 34}px B1Caption`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.font = `${p.style === 'B2' ? 500 : 600} ${p.captionSize || (p.style === 'B2' ? 40 : 34)}px B1Caption`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       const lines = wrap(ctx, cue.text, 1120);
       if (lines.length > 2) throw new Error('Caption exceeds two lines; split the timed cue');
       const cy = plane.height - (lines.length === 1 ? 60 : 82);
-      lines.forEach((s, i) => { const y = cy + i * 43; ctx.strokeStyle = '#FDFDFC'; ctx.lineWidth = 7; ctx.strokeText(s, 640, y); ctx.fillStyle = '#20231F'; ctx.fillText(s, 640, y); });
+      if (p.style === 'B2') {
+        const width = Math.max(...lines.map(s => ctx.measureText(s).width));
+        ctx.fillStyle = 'rgba(249,246,235,.94)'; ctx.beginPath(); ctx.roundRect(640 - width / 2 - 22, cy - 33, width + 44, 66 + (lines.length - 1) * 43, 9); ctx.fill();
+        lines.forEach((s, i) => { ctx.fillStyle = '#38382f'; ctx.fillText(s, 640, cy + i * 43); });
+      } else lines.forEach((s, i) => { const y = cy + i * 43; ctx.strokeStyle = '#FDFDFC'; ctx.lineWidth = 7; ctx.strokeText(s, 640, y); ctx.fillStyle = '#20231F'; ctx.fillText(s, 640, y); });
       ctx.textAlign = 'left';
     }
     return canvas;
@@ -109,12 +113,20 @@ function makeSfx(p, file, duration) {
   const rate = 48000, n = Math.ceil(duration * rate), samples = new Float32Array(n);
   let seed = 8731; const noise = () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296 * 2 - 1; };
   for (const s of p.sfx || []) {
-    const len = s.kind === 'chime' ? 0.55 : s.kind === 'paper' ? 0.22 : 0.12;
+    const len = s.kind === 'jingle' ? 0.52 : s.kind === 'chime' ? 0.55 : s.kind === 'paper' ? 0.22 : 0.12;
     for (let i = 0; i < len * rate; i++) {
       const index = Math.round(s.time * rate) + i; if (index >= n) break;
       const t = i / rate, env = Math.exp(-t * (s.kind === 'chime' ? 8 : 25));
-      const value = s.kind === 'paper' ? noise() : s.kind === 'tap' ? noise() * 0.6 + Math.sin(t * 2 * Math.PI * 170) * 0.4 : Math.sin(2 * Math.PI * (s.kind === 'chime' ? 880 : 500 - 900 * t) * t);
-      samples[index] += value * env * s.gain;
+      let value = s.kind === 'paper' ? noise() : s.kind === 'tap' ? noise() * 0.6 + Math.sin(t * 2 * Math.PI * 170) * 0.4 : Math.sin(2 * Math.PI * (s.kind === 'chime' ? 880 : 500 - 900 * t) * t);
+      if (s.kind === 'jingle') {
+        // Three irregular metallic contacts: an original key-ring Foley accent.
+        value = 0;
+        for (const [delay, f] of [[0, 2460], [0.085, 3110], [0.21, 2080]]) {
+          const q = t - delay;
+          if (q >= 0) value += (Math.sin(2 * Math.PI * f * q) * 0.55 + Math.sin(2 * Math.PI * f * 1.73 * q) * 0.25 + Math.sin(2 * Math.PI * f * 2.31 * q) * 0.12) * Math.exp(-q * 18);
+        }
+      }
+      samples[index] += value * (s.kind === 'jingle' ? 1 : env) * s.gain;
     }
   }
   const bytes = Buffer.alloc(44 + n * 2); bytes.write('RIFF'); bytes.writeUInt32LE(bytes.length - 8, 4); bytes.write('WAVEfmt ', 8); bytes.writeUInt32LE(16, 16); bytes.writeUInt16LE(1, 20); bytes.writeUInt16LE(1, 22); bytes.writeUInt32LE(rate, 24); bytes.writeUInt32LE(rate * 2, 28); bytes.writeUInt16LE(2, 32); bytes.writeUInt16LE(16, 34); bytes.write('data', 36); bytes.writeUInt32LE(n * 2, 40);
@@ -151,7 +163,7 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
         if (layer.type === 'image') files.add(mediaPath(p.base, layer.path));
         if (layer.type === 'pose') files.add(mediaPath(p.base, '@b1/character-pose-sheet-v6.png'));
       }
-      const key = sha(JSON.stringify({shot, first, last, width: p.width, height: p.height, fps: p.fps, captions: p.captions.filter(c => c.end > first / p.fps && c.start < last / p.fps), captionSize: p.captionSize, grid: p.grid, inputs: p.inputs.filter(f => files.has(f.path)), rendererHash}));
+      const key = sha(JSON.stringify({shot, first, last, style: p.style, width: p.width, height: p.height, fps: p.fps, captions: p.captions.filter(c => c.end > first / p.fps && c.start < last / p.fps), captionSize: p.captionSize, grid: p.grid, inputs: p.inputs.filter(f => files.has(f.path)), rendererHash}));
       const clip = path.join(cache, `${key}.mp4`); let valid = false;
       if (fs.existsSync(clip)) try { const info = probe(clip); valid = Number(info.streams[0].nb_frames) === last - first; } catch {}
       if (valid) reused++; else { done(`rendering shot ${i + 1}/${p.shots.length}`); const tmp = path.join(cache, `${key}.partial.mp4`); await encode(p, frame, first, last - first, tmp); fs.renameSync(tmp, clip); }
