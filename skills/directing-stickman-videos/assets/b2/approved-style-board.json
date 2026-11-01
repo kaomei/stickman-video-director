@@ -1,0 +1,9 @@
+{
+  "style": "B2 Colorful Hand-Drawn / 彩色手绘风",
+  "board": "approved-style-board.jpg",
+  "source": "B2-Phone-Weather-Full-v4.mp4",
+  "source_sha256": "b03f6c963f71639a146f1ea209140675306967468482efd1620580bf7d6aa2e6",
+  "approval": "User confirmed this style as final on 2026-10-31, after removing the close-up thin-line arm.",
+  "extraction": "One frame per five seconds, 480x270 cells, 4x3 board, from accepted v4 only.",
+  "scope": "Visual grammar and caption reference, not a mandatory character, story, subject or composition sequence. New-topic samples still require user review."
+}
