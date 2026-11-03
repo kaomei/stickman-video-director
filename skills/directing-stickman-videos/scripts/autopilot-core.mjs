@@ -3,6 +3,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
+import {walkLayers, validateB3, visibleLayers} from './b3-graphics.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const FFMPEG = process.env.FFMPEG || 'ffmpeg';
@@ -49,7 +50,8 @@ export function designPlane(project) {
 export function loadProject(file, {seconds} = {}) {
   file = fs.realpathSync(path.resolve(file));
   const p = json(file), base = path.dirname(file);
-  if (p.version !== 1 || !['B1', 'B2'].includes(p.style)) throw new Error('Expected version 1 and style B1 or B2');
+  if (p.version !== 1 || !['B1', 'B2', 'B3'].includes(p.style)) throw new Error('Expected version 1 and style B1, B2 or B3');
+  if (p.style !== 'B3' && p.television !== undefined) throw new Error('Television finish belongs to B3 only');
   number(p.width, 'width', 256, 3840); number(p.height, 'height', 256, 3840); number(p.fps, 'fps', 12, 60);
   if (![p.width, p.height, p.fps].every(Number.isInteger) || p.width % 2 || p.height % 2) throw new Error('Even integer dimensions and integer fps required');
   if (!p.voice || Object.keys(p.voice).some(k => !['path', 'lead', 'tail', 'contains_sfx'].includes(k))) throw new Error('Voice supports path/lead/tail/contains_sfx only; speech speed cannot be changed');
@@ -65,18 +67,21 @@ export function loadProject(file, {seconds} = {}) {
   const scoped = seconds !== undefined;
   if (p.captionSize !== undefined) number(p.captionSize, 'caption size', 20, 64);
   if (!Array.isArray(p.shots) || !p.shots.length) throw new Error('Shots required');
-  const shots = scoped ? p.shots.filter(s => s.start < rangeEnd).map(s => ({...s, layers: Array.isArray(s.layers) ? s.layers.filter(l => s.start + (l.from ?? 0) < rangeEnd) : s.layers})) : p.shots;
+  const shots = scoped ? p.shots.filter(s => s.start < rangeEnd).map(s => ({...s, layers: Array.isArray(s.layers) ? visibleLayers(s.layers, s.start, rangeEnd) : s.layers})) : p.shots;
   if (!shots.length) throw new Error('Shots required in the preview range');
   let end = 0;
   const assets = new Set([voicePath]);
   const types = new Set(['image', 'pose', 'text', 'line', 'arrow', 'underline']);
+  if (p.style === 'B3') for (const type of ['group', 'path', 'rect', 'ellipse']) types.add(type);
   for (const [i, shot] of shots.entries()) {
     number(shot.start, 'shot start'); number(shot.end, 'shot end');
     if (Math.abs(shot.start - end) > 0.002 || shot.end <= shot.start) throw new Error(`Shot ${i}: gap/overlap or nonpositive duration`);
     end = shot.end;
     if (!Array.isArray(shot.layers) || !shot.layers.length) throw new Error(`Shot ${i} has no layers`);
-    for (const l of shot.layers) {
+    if (p.style === 'B3') validateB3(shot.layers, p.television);
+    for (const l of walkLayers(shot.layers)) {
       if (!types.has(l.type)) throw new Error(`Unknown layer ${l.type}`);
+      if (p.style !== 'B3' && ['children', 'commands', 'pivotX', 'pivotY', 'scaleX', 'scaleY', 'radius', 'fill', 'stroke'].some(k => l[k] !== undefined)) throw new Error('B3 artwork properties cannot be used in another style');
       for (const k of ['x', 'y', 'w', 'h', 'size', 'angle', 'alpha', 'progress', 'lineWidth']) if (l[k] !== undefined) number(l[k], k, -10000, 10000);
       if (l.w !== undefined && l.w <= 0 || l.size !== undefined && l.size <= 0) throw new Error('Layer dimensions must be positive');
       if (l.type === 'image') { const f = mediaPath(base, l.path); if (!/\.(png|jpe?g)$/i.test(f)) throw new Error('Only PNG/JPEG image layers'); assets.add(f); }
@@ -91,9 +96,10 @@ export function loadProject(file, {seconds} = {}) {
         if (key.t <= previous) throw new Error('Key times must increase');
         previous = key.t;
         for (const k of Object.keys(key)) {
-          if (!['t', 'x', 'y', 'w', 'angle', 'alpha', 'progress'].includes(k)) throw new Error(`Unsupported keyframe property: ${k}`);
+          if (!['t', 'x', 'y', 'w', 'angle', 'alpha', 'progress', ...(p.style === 'B3' ? ['scaleX', 'scaleY'] : [])].includes(k)) throw new Error(`Unsupported keyframe property: ${k}`);
           number(key[k], k, -10000, 10000);
           if (k === 'w' && key[k] <= 0 || ['alpha', 'progress'].includes(k) && (key[k] < 0 || key[k] > 1)) throw new Error('Invalid size/opacity/progress keyframe');
+          if (['scaleX', 'scaleY'].includes(k) && (key[k] <= 0 || key[k] > 100)) throw new Error('Invalid B3 scale keyframe');
         }
       }
     }
@@ -116,7 +122,7 @@ export function loadProject(file, {seconds} = {}) {
   const project = {...timeline, file, base, voicePath, voiceDuration, lead, tail, duration, rangeEnd};
   for (const f of Object.values(fontPaths(project))) { if (!fs.existsSync(f)) throw new Error(`Missing font: ${f}`); assets.add(f); }
   const inputs = [...assets].sort().map(f => ({path: f, sha256: hashFile(f)}));
-  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f)));
+  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f)));
   return {...project, inputs, fingerprint: sha(JSON.stringify({project: timeline, rangeEnd, inputs, engine}))};
 }
 export function outputDir(p) {

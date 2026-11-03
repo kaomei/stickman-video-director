@@ -4,12 +4,13 @@ import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import {createCanvas, loadImage, GlobalFonts} from '@napi-rs/canvas';
 import {ROOT, FFMPEG, sha, hashFile, save, probe, run, mediaPath, fontPaths, outputDir, designPlane, loadProject} from './autopilot-core.mjs';
+import {walkLayers, drawB3Shape, televisionFinish} from './b3-graphics.mjs';
 
 const clamp = x => Math.max(0, Math.min(1, x));
 const ease = x => { x = clamp(x); return x * x * (3 - 2 * x); };
 export function keyState(l, t) {
   const out = {...l};
-  for (const prop of ['x', 'y', 'w', 'angle', 'alpha', 'progress']) {
+  for (const prop of ['x', 'y', 'w', 'angle', 'alpha', 'progress', 'scaleX', 'scaleY']) {
     const keys = (l.keys || []).filter(k => k[prop] !== undefined);
     if (!keys.length) continue;
     if (t <= keys[0].t) out[prop] = keys[0][prop];
@@ -36,8 +37,9 @@ export async function painter(p) {
   const plane = designPlane(p), captionBand = plane.height - 110;
   if (!GlobalFonts.registerFromPath(fonts.hand, 'B1Hand') || !GlobalFonts.registerFromPath(fonts.caption, 'B1Caption')) throw new Error('Font registration failed');
   const canvas = createCanvas(p.width, p.height), ctx = canvas.getContext('2d');
+  const sceneCopy = p.style === 'B3' ? createCanvas(p.width, p.height) : null;
   const images = new Map();
-  for (const s of p.shots) for (const l of s.layers) if (['image', 'pose'].includes(l.type)) {
+  for (const s of p.shots) for (const l of walkLayers(s.layers)) if (['image', 'pose'].includes(l.type)) {
     const f = mediaPath(p.base, l.type === 'pose' ? '@b1/character-pose-sheet-v6.png' : l.path);
     if (!images.has(f)) images.set(f, await loadImage(f));
   }
@@ -50,19 +52,23 @@ export async function painter(p) {
   }
   return function frame(t) {
     ctx.resetTransform(); ctx.clearRect(0, 0, p.width, p.height); ctx.scale(p.width / plane.width, p.width / plane.width);
-    ctx.fillStyle = p.style === 'B2' ? '#f4f0e5' : '#FDFDFC'; ctx.fillRect(0, 0, plane.width, plane.height);
+    ctx.fillStyle = p.style === 'B3' ? '#111316' : p.style === 'B2' ? '#f4f0e5' : '#FDFDFC'; ctx.fillRect(0, 0, plane.width, plane.height);
     if (p.style === 'B1' && p.grid !== false) {
       ctx.beginPath(); ctx.strokeStyle = 'rgba(76,90,105,.036)'; ctx.lineWidth = 0.8;
       for (let x = 32.5; x < plane.width; x += 64) { ctx.moveTo(x, 0); ctx.lineTo(x, captionBand - 1); }
       for (let y = 16.5; y < captionBand; y += 64) { ctx.moveTo(0, y); ctx.lineTo(plane.width, y); } ctx.stroke();
     }
     const shot = p.shots.find(s => t >= s.start && t < s.end) || p.shots.at(-1);
-    for (const layer of shot.layers) {
+    function paintLayers(layers) { for (const layer of layers) {
       const dt = t - shot.start;
       if (dt < (layer.from || 0) || dt >= (layer.to ?? Infinity)) continue;
       const l = keyState(layer, dt), x = l.x || 0, y = l.y || 0, w = l.w || 200;
-      ctx.save(); ctx.globalAlpha = clamp(l.alpha ?? 1); ctx.translate(x, y); ctx.rotate(l.angle || 0);
-      if (l.type === 'image') {
+      ctx.save(); ctx.globalAlpha *= clamp(l.alpha ?? 1); ctx.translate(x, y);
+      const px = l.pivotX || 0, py = l.pivotY || 0;
+      ctx.translate(px, py); ctx.rotate(l.angle || 0); ctx.scale(l.scaleX ?? 1, l.scaleY ?? 1); ctx.translate(-px, -py);
+      if (l.type === 'group') paintLayers(l.children);
+      else if (['path', 'rect', 'ellipse'].includes(l.type)) drawB3Shape(ctx, l);
+      else if (l.type === 'image') {
         const img = images.get(mediaPath(p.base, l.path)), h = l.h || w * img.height / img.width;
         const scale = Math.min(w / img.width, h / img.height);
         ctx.drawImage(img, (w - img.width * scale) / 2, (h - img.height * scale) / 2, img.width * scale, img.height * scale);
@@ -70,29 +76,34 @@ export async function painter(p) {
         const img = images.get(mediaPath(p.base, '@b1/character-pose-sheet-v6.png')), sw = img.width / 3;
         ctx.drawImage(img, l.pose * sw, 0, sw, img.height, 0, 0, w, w * img.height / sw);
       } else if (l.type === 'text') {
-        const size = l.size || 52; ctx.font = `${l.bold ? 700 : 400} ${size}px B1Hand`; ctx.fillStyle = l.color || '#191916'; ctx.textBaseline = 'top';
+        const size = l.size || 52; ctx.font = `${l.bold ? 700 : 400} ${size}px ${p.style === 'B3' ? 'B1Caption' : 'B1Hand'}`; ctx.fillStyle = l.color || (p.style === 'B3' ? '#e9eaea' : '#191916'); ctx.textBaseline = 'top';
         const lines = wrap(ctx, l.text, l.w || 1080 - x);
         lines.forEach((s, i) => ctx.fillText(s, 0, i * size * 1.15));
       } else {
         let points = l.points;
         if (l.type === 'underline') points = [[0, 1], [w * 0.25, -1], [w * 0.55, 2], [w, -2]];
         if (l.type === 'arrow') points = Array.from({length: 30}, (_, i) => [w * i / 29, -26 * Math.sin(i / 29 * Math.PI)]);
-        stroke(points, l.lineWidth || (l.type === 'underline' ? 6 : 3), l.color || '#191916', l.progress ?? 1);
-        if (l.type === 'arrow' && (l.progress ?? 1) > 0.95) stroke([[w - 17, -12], [w, 0], [w - 19, 12]], 3, l.color || '#191916');
+        stroke(points, l.lineWidth || (l.type === 'underline' ? 6 : 3), l.color || (p.style === 'B3' ? '#d0d2d4' : '#191916'), l.progress ?? 1);
+        if (l.type === 'arrow' && (l.progress ?? 1) > 0.95) stroke([[w - 17, -12], [w, 0], [w - 19, 12]], 3, l.color || (p.style === 'B3' ? '#d0d2d4' : '#191916'));
       }
       ctx.restore();
+    } }
+    paintLayers(shot.layers);
+    if (sceneCopy && p.television?.enabled !== false) {
+      sceneCopy.getContext('2d').drawImage(canvas, 0, 0);
+      televisionFinish(ctx, sceneCopy, p.width, p.height, p.television?.intensity ?? 0.45);
     }
     const cue = p.captions.find(c => t >= c.start && t < c.end);
     if (cue) {
       ctx.font = `${p.style === 'B2' ? 500 : 600} ${p.captionSize || (p.style === 'B2' ? 40 : 34)}px B1Caption`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      const lines = wrap(ctx, cue.text, 1120);
+      const lines = wrap(ctx, p.style === 'B3' ? cue.text.toUpperCase() : cue.text, 1120);
       if (lines.length > 2) throw new Error('Caption exceeds two lines; split the timed cue');
       const cy = plane.height - (lines.length === 1 ? 60 : 82);
       if (p.style === 'B2') {
         const width = Math.max(...lines.map(s => ctx.measureText(s).width));
         ctx.fillStyle = 'rgba(249,246,235,.94)'; ctx.beginPath(); ctx.roundRect(640 - width / 2 - 22, cy - 33, width + 44, 66 + (lines.length - 1) * 43, 9); ctx.fill();
         lines.forEach((s, i) => { ctx.fillStyle = '#38382f'; ctx.fillText(s, 640, cy + i * 43); });
-      } else lines.forEach((s, i) => { const y = cy + i * 43; ctx.strokeStyle = '#FDFDFC'; ctx.lineWidth = 7; ctx.strokeText(s, 640, y); ctx.fillStyle = '#20231F'; ctx.fillText(s, 640, y); });
+      } else lines.forEach((s, i) => { const y = cy + i * 43; ctx.strokeStyle = p.style === 'B3' ? '#111316' : '#FDFDFC'; ctx.lineWidth = p.style === 'B3' ? 3 : 7; ctx.strokeText(s, 640, y); ctx.fillStyle = p.style === 'B3' ? '#f4f5f5' : '#20231F'; ctx.fillText(s, 640, y); });
       ctx.textAlign = 'left';
     }
     return canvas;
@@ -155,15 +166,15 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     }
     const cache = path.join(out, 'cache'); fs.mkdirSync(cache, {recursive: true});
     const frame = await painter(p), clips = []; let reused = 0;
-    const rendererHash = hashFile(path.join(ROOT, 'scripts/autopilot-render.mjs'));
+    const rendererHash = sha(['autopilot-render.mjs', 'b3-graphics.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f))).join(':'));
     for (const [i, shot] of p.shots.entries()) {
       const first = Math.round(shot.start * p.fps), last = Math.min(count, i === p.shots.length - 1 ? count : Math.round(shot.end * p.fps)); if (last <= first) continue;
       const files = new Set(Object.values(fontPaths(p)));
-      for (const layer of shot.layers) {
+      for (const layer of walkLayers(shot.layers)) {
         if (layer.type === 'image') files.add(mediaPath(p.base, layer.path));
         if (layer.type === 'pose') files.add(mediaPath(p.base, '@b1/character-pose-sheet-v6.png'));
       }
-      const key = sha(JSON.stringify({shot, first, last, style: p.style, width: p.width, height: p.height, fps: p.fps, captions: p.captions.filter(c => c.end > first / p.fps && c.start < last / p.fps), captionSize: p.captionSize, grid: p.grid, inputs: p.inputs.filter(f => files.has(f.path)), rendererHash}));
+      const key = sha(JSON.stringify({shot, first, last, style: p.style, television: p.television, width: p.width, height: p.height, fps: p.fps, captions: p.captions.filter(c => c.end > first / p.fps && c.start < last / p.fps), captionSize: p.captionSize, grid: p.grid, inputs: p.inputs.filter(f => files.has(f.path)), rendererHash}));
       const clip = path.join(cache, `${key}.mp4`); let valid = false;
       if (fs.existsSync(clip)) try { const info = probe(clip); valid = Number(info.streams[0].nb_frames) === last - first; } catch {}
       if (valid) reused++; else { done(`rendering shot ${i + 1}/${p.shots.length}`); const tmp = path.join(cache, `${key}.partial.mp4`); await encode(p, frame, first, last - first, tmp); fs.renameSync(tmp, clip); }

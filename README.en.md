@@ -58,11 +58,22 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Colorful hand-drawn stickman video: a quiet bedroom and a thought drifting along a river" width="90%"></a>
 </td>
 </tr>
+<!-- b3:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>Retro TV Style</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="retro TV-style fictional 3 AM television mystery with rounded white characters" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Coming Soon…</strong></a>
+</td>
+</tr>
+<!-- b3:hero:end -->
 </table>
 
 <div align="center">
 
-**8 styles · 10 visual options · Tested examples · Free and open source**
+**9 styles · 11 visual options · Tested examples · Free and open source**
 
 ⭐ **Star the project to catch the next style drop and feature unlocks.**
 
@@ -337,11 +348,32 @@ Everyday stories, drawn with personality. Warm paper, colorful scenes, simple st
 
 ---
 
+<!-- b3:section:start -->
 <a id="b3"></a>
 
-### B3: Coming soon…
+### B3: Retro TV Style
 
-New Autopilot styles and procedural animations are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!
+A dark canvas, refined white-and-gray characters, and a subtle television texture turn everyday questions into vivid visual stories.
+
+- **Visual style**: Rounded silhouettes, varied scenes, purposeful local animation, and clean white captions. Restrained bloom and scanlines add an analog-broadcast feel.
+- **Best for**: Everyday science, psychology, animal behavior, curious facts, and short mystery stories.
+- **Choose this when**: You want a finished video with Gemini Bodi narration, semantic captions, and action sound effects, built and assembled by your coding agent.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Example 1: What if your TV turns on at 3 AM?</th>
+    <th width="50%" align="center">Example 2: Why does a scared dog come closer?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="retro TV-style fictional 3 AM television mystery with rounded white characters" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-dog.gif" alt="retro TV-style dog-behavior explainer with white-and-gray characters and local animation" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Fictional suspense · Scene changes · TV texture</td>
+    <td align="center">Animal behavior · Local reactions · Bodi narration</td>
+  </tr>
+</table>
+<!-- b3:section:end -->
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

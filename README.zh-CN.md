@@ -58,11 +58,22 @@
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="彩色手绘风：安静的卧室与沿河漂走的念头" width="90%"></a>
 </td>
 </tr>
+<!-- b3:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>复古电视风</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Coming Soon…</strong></a>
+</td>
+</tr>
+<!-- b3:hero:end -->
 </table>
 
 <div align="center">
 
-**8 大画风 · 10 种视觉方案 · 实测样片 · 免费开源**
+**9 大画风 · 11 种视觉方案 · 实测样片 · 免费开源**
 
 ⭐ **为项目点个 Star，及时关注下一批画风和新功能解锁。**
 
@@ -337,11 +348,32 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ---
 
+<!-- b3:section:start -->
 <a id="b3"></a>
 
-### B3：待更新…
+### B3：复古电视风
 
-新的全自动画风和程序化动画正在训练中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，一起在 5,000 Stars 时解锁！
+深色画布、精致的白灰角色，加上一层克制的电视质感，把日常疑问讲成有画面感的故事。
+
+- **画面风格**: 圆润剪影、多样场景与有意义的局部动画，搭配清爽白色字幕；轻微辉光和扫描线营造模拟电视观感。
+- **适合题材**: 生活科普、心理现象、动物行为、冷知识和短篇悬疑故事。
+- **什么时候选**: 希望由代码智能体完成画面制作与组装，交付带 Gemini Bodi 旁白、语义字幕和动作音效的完整视频。
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">示例 1：如果电视在凌晨三点自己打开？</th>
+    <th width="50%" align="center">示例 2：害怕的狗为什么反而靠近？</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-dog.gif" alt="复古电视风狗狗行为科普，白灰角色与局部动画" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">虚构悬疑 · 场景切换 · 电视质感</td>
+    <td align="center">动物行为 · 局部反应 · Bodi 旁白</td>
+  </tr>
+</table>
+<!-- b3:section:end -->
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

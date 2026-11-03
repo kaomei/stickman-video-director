@@ -58,11 +58,22 @@
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="カラフル手描きの棒人間動画：静かな寝室と川を流れる思い" width="90%"></a>
 </td>
 </tr>
+<!-- b3:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>レトロテレビ風</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="丸みのある白いキャラクターで描く午前3時のテレビ怪談" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Coming Soon…</strong></a>
+</td>
+</tr>
+<!-- b3:hero:end -->
 </table>
 
 <div align="center">
 
-**8つの画風 · 10のビジュアル · 制作例あり · 無料・オープンソース**
+**9つの画風 · 11のビジュアル · 制作例あり · 無料・オープンソース**
 
 ⭐ **プロジェクトに Star を付けて、次の画風追加や新機能の解放をチェックしましょう。**
 
@@ -338,11 +349,32 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
 
 ---
 
+<!-- b3:section:start -->
 <a id="b3"></a>
 
-### B3: 近日公開…
+### B3: レトロテレビ風
 
-新しい Autopilot スタイルとプロシージャルアニメーションをトレーニング中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、5,000 Stars での解放を応援してください！
+暗い画面、繊細な白とグレーのキャラクター、控えめなテレビの質感で、身近な疑問を印象的な映像に。
+
+- **画風**: 丸みのあるシルエット、多彩な場面、意味のある部分アニメーション、読みやすい白い字幕。淡い光と走査線でアナログ放送の雰囲気を添えます。
+- **おすすめの題材**: 身近な科学、心理現象、動物の行動、豆知識、短いミステリー。
+- **こんなときに**: コーディングエージェントに映像制作と編集を任せ、Gemini Bodi のナレーション、意味のまとまりに沿った字幕、動作音を備えた完成動画が欲しいとき。
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">作例 1：午前3時にテレビが勝手についたら？</th>
+    <th width="50%" align="center">作例 2：怖がる犬が近づくのはなぜ？</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="丸みのある白いキャラクターで描く午前3時のテレビ怪談" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-dog.gif" alt="白とグレーのキャラクターが動く、レトロテレビ風の犬の行動解説" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">フィクションのサスペンス · 場面転換 · テレビの質感</td>
+    <td align="center">動物の行動 · 小さな反応 · Bodi ナレーション</td>
+  </tr>
+</table>
+<!-- b3:section:end -->
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

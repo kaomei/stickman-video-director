@@ -58,11 +58,22 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Renkli el çizimi çöp adam videosu: sessiz bir yatak odası ve nehirde süzülen bir düşünce" width="90%"></a>
 </td>
 </tr>
+<!-- b3:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>Retro TV Stili</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Coming Soon…</strong></a>
+</td>
+</tr>
+<!-- b3:hero:end -->
 </table>
 
 <div align="center">
 
-**8 stil · 10 görsel seçenek · Denenmiş örnekler · Ücretsiz ve açık kaynak**
+**9 stil · 11 görsel seçenek · Denenmiş örnekler · Ücretsiz ve açık kaynak**
 
 ⭐ **Bir sonraki stil paketini ve yeni özellikleri kaçırmamak için projeye yıldız verin.**
 
@@ -340,11 +351,32 @@ Gündelik hikâyeler, karakterli çizimlerle hayat bulur. Sıcak kâğıt dokusu
 
 ---
 
+<!-- b3:section:start -->
 <a id="b3"></a>
 
-### B3: Yakında…
+### B3: Retro TV Stili
 
-Yeni Autopilot stilleri ve prosedürel animasyonlar şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
+Koyu bir zemin, özenli beyaz-gri karakterler ve hafif bir televizyon dokusu, günlük soruları canlı görsel hikâyelere dönüştürür.
+
+- **Görsel stil**: Yuvarlak siluetler, çeşitli sahneler, anlamlı yerel animasyonlar ve sade beyaz altyazılar. Hafif parıltı ve tarama çizgileri analog yayın hissi verir.
+- **Uygun konular**: Günlük bilim, psikoloji, hayvan davranışları, ilginç bilgiler ve kısa gizem hikâyeleri.
+- **Ne zaman seçilmeli**: Kodlama ajanınızın hazırlayıp birleştirdiği, Gemini Bodi anlatımı, anlam birimlerine göre altyazılar ve eylem ses efektleri içeren tamamlanmış bir video istediğinizde.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Örnek 1: TV’niz gece 3’te kendiliğinden açılırsa?</th>
+    <th width="50%" align="center">Örnek 2: Korkan bir köpek neden yaklaşır?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-dog.gif" alt="Beyaz-gri karakterler ve yerel animasyonla köpek davranışı açıklaması" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Kurgu gerilim · Sahne geçişleri · TV dokusu</td>
+    <td align="center">Hayvan davranışları · Yerel tepkiler · Bodi anlatımı</td>
+  </tr>
+</table>
+<!-- b3:section:end -->
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

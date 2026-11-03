@@ -66,9 +66,14 @@ assert "(b2-colorful-handdrawn.md)" in autopilot
 assert "independent local illustration-and-micro-animation style" in b2
 assert "Fola" in b2 and "ivory paper label" in b2
 assert "B1 `pose` atlas is rejected in B2" in runtime
+assert "`style: B3`" in runtime and "## B3 layered artwork" in runtime
+b3 = (refs / "b3-television.md").read_text()
+assert "(b3-television.md)" in autopilot and "(references/b3-television.md)" in entry
+assert "unit tests" in b3.lower() and "not animation quality or acceptance" in b3
+assert "currently accepts B1/B2 only" not in b3
 
 # New links stay portable and inside the single installed Skill.
-for source in (common_path, refs / "autopilot.md", refs / "b1-production-qa.md", refs / "b2-colorful-handdrawn.md"):
+for source in (common_path, refs / "autopilot.md", refs / "b1-production-qa.md", refs / "b2-colorful-handdrawn.md", refs / "b3-television.md"):
     assert "/Users/" not in source.read_text()
     for link in re.findall(r"\]\(([^)]+)\)", source.read_text()):
         if "://" in link:

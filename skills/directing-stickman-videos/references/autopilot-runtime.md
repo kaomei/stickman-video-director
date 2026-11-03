@@ -14,6 +14,8 @@ Install Node 20+ and FFmpeg/FFprobe using your platform's normal installer. Opti
 
 The bundled runtime accepts `style: B1` and `style: B2`. B1 keeps its white grid and original caption treatment. B2 uses warm paper without a grid and dark captions on an ivory paper label (40 design-unit default text). Select B2 explicitly and author its own colored scene/prop/character image layers; the B1 `pose` atlas is rejected in B2. The JSON excerpt below remains a B1 example, not a B2 art template. See [B2](b2-colorful-handdrawn.md) for its independent production defaults.
 
+[B3 Retro TV Style](b3-television.md) is explicitly selected with `style: B3`. It uses a dark field, story-specific white/gray artwork, native Gemini Bodi by default, clean white uppercase semantic captions and an optional restrained television finish. Its layered artwork is described below; it does not reuse the B1 pose atlas or B2 paper-caption design.
+
 All media paths are relative to `project.json` (or absolute local paths); `@b1/…` addresses bundled original B1 assets. Remote URLs and executable expressions are not accepted. Output is a separate project-local `output/` directory. Keep user/source files outside it.
 
 ```json
@@ -40,11 +42,34 @@ This is an excerpt, not a complete valid film: full-film shots must cover the ac
 
 Layers: `image` (local PNG/JPEG, contain-fit within optional `h`), `pose` (B1 only: original three-pose atlas, indices 0–2), `text`, `line` (`points` array), `arrow`, `underline`. Design coordinates are 1280 units wide and `1280 × outputHeight / outputWidth` high (720 for 16:9; about 2275.56 for 9:16), uniformly scaled without stretching characters. Recompose portrait scenes explicitly; changing output dimensions alone does not design a vertical composition. Keep the bottom 110 design units clear for captions. Use `from`/`to` (shot-relative seconds) for selective visibility. `keys` are increasing shot-relative timestamps with optional numeric `x`, `y`, `w`, `angle` (radians), `alpha` and `progress`; values interpolate with smoothstep. For genuine local motion use separate layers or authored pose sprites. Images do not gain inferred limb motion automatically. Text `w` is its maximum width; captions wrap to two lines and overflow is an error, not invisible clipping. All styles are included in shot-cache identity so switching style cannot reuse another style's frames.
 
+## B3 layered artwork
+
+`init DIR --style B3` creates a non-overwriting B3 scaffold. B3 additionally accepts these declarative layers; no JavaScript, SVG markup, URLs or executable expressions:
+
+- `path`: `commands` are numeric arrays beginning with `M`; supported commands are `M x y`, `L x y`, `Q cx cy x y`, `C c1x c1y c2x c2y x y`, and `Z`. Choose `fill`/`stroke` colors or `none`, and a positive `lineWidth`. Use curves for rounded limbs/pets rather than dense angular connector scaffolds. Paths do not interpolate or draw themselves; use separate pose layers with `from`/`to`, and `line.progress` for progressive connectors.
+- `rect` / `ellipse`: positive `w`, `h`, optional rounded-rectangle `radius`, `fill` and `stroke`.
+- `group`: a nonempty `children` array in back-to-front drawing order. Local `x`/`y` position the group; `pivotX`/`pivotY` define a local rotation/scale anchor. Optional positive `scaleX`/`scaleY` work on any B3 layer and in its keys. Keep joints attached; use keyframed rotation for bounded head/ear/hand movement. Parent alpha multiplies child alpha. A foreground layer after the group can occlude it.
+
+All child `from`/`to` and key times remain **relative to the shot**, not to the parent group's appearance time. Nested media that first appear after a preview's end are not required until that range is rendered. Cache keys include nested media, B3 graphics code and television settings.
+
+An illustrative **layer excerpt**, not a complete film or a reusable character:
+
+```json
+{"type":"group","x":500,"y":180,"children":[
+  {"type":"rect","x":0,"y":120,"w":140,"h":110,"radius":14,"fill":"#858990"},
+  {"type":"group","pivotX":70,"pivotY":110,"keys":[{"t":0,"angle":0},{"t":0.6,"angle":0.12}],"children":[
+    {"type":"ellipse","x":25,"y":20,"w":90,"h":90,"fill":"#e7e9eb"}
+  ]}
+]}
+```
+
+Top-level `television: {enabled: true, intensity: 0.45}` enables soft bloom, subtle scanlines and vignette once after scene composition, **before clean captions**. Intensity ranges from 0 to 1; set `enabled: false` for clean interaction checks. This treatment belongs only to B3. Meaningful object/scene action, varied compositions and faithful contact still require authored decisions and encoded playback review; treatment cannot rescue a static illustration.
+
 ## Commands
 
 - `doctor`: dependency/font/key presence only; no network and no key values.
 - `probe FILE`: duration and media streams.
-- `init DIR [--style B1|B2]`: create a non-overwriting project scaffold; it is not production-ready until voice, captions and shots are filled.
+- `init DIR [--style B1|B2|B3]`: create a non-overwriting project scaffold; it is not production-ready until voice, captions and shots are filled.
 - `validate PROJECT [--seconds N]`: check real files, audio duration, shot coverage, cue timing, layers and SFX. Default is the complete film; `--seconds 20` checks only the sample range.
 - `captions WORDS.json OUTPUT.json`: convert `{words:[{start,end,word}]}` into readable timed phrases. `--lead 0.15` adds initial video offset. Requires actual aligned word timestamps.
 - `preview PROJECT [--seconds 20]`: check/render only the sample range, with caption sidecars/contact sheet/report and shot cache. Missing later-shot media does not block it. Existing outputs are not overwritten unless `--replace` is explicit.

@@ -58,11 +58,22 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Vídeo de bonecos de palito em desenho colorido: um quarto tranquilo e um pensamento seguindo o rio" width="90%"></a>
 </td>
 </tr>
+<!-- b3:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>Estilo TV retrô</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Coming Soon…</strong></a>
+</td>
+</tr>
+<!-- b3:hero:end -->
 </table>
 
 <div align="center">
 
-**8 estilos · 10 opções visuais · Exemplos testados · Grátis e de código aberto**
+**9 estilos · 11 opções visuais · Exemplos testados · Grátis e de código aberto**
 
 ⭐ **Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.**
 
@@ -345,11 +356,32 @@ Histórias do cotidiano, desenhadas com personalidade. Papel acolhedor, cenário
 
 ---
 
+<!-- b3:section:start -->
 <a id="b3"></a>
 
-### B3: Em breve…
+### B3: Estilo TV retrô
 
-Novos estilos Autopilot e animações procedurais estão em treinamento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
+Fundo escuro, personagens refinados em branco e cinza e uma textura sutil de televisão transformam dúvidas do dia a dia em histórias visuais.
+
+- **Visual**: Silhuetas arredondadas, cenários variados, animações locais com propósito e legendas brancas limpas. Brilho suave e linhas de varredura trazem um toque de TV analógica.
+- **Ideal para**: Ciência do cotidiano, psicologia, comportamento animal, curiosidades e histórias curtas de mistério.
+- **Escolha quando**: Quiser um vídeo completo, criado e montado pelo seu agente de código, com narração Gemini Bodi, legendas por unidades de sentido e efeitos sonoros ligados às ações.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Exemplo 1: E se sua TV ligasse sozinha às 3 da manhã?</th>
+    <th width="50%" align="center">Exemplo 2: Por que um cão assustado se aproxima?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-dog.gif" alt="Explicação do comportamento canino em branco e cinza com animação local" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Suspense fictício · Mudanças de cena · Textura de TV</td>
+    <td align="center">Comportamento animal · Reações locais · Narração Bodi</td>
+  </tr>
+</table>
+<!-- b3:section:end -->
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

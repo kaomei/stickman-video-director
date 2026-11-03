@@ -58,11 +58,22 @@
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="컬러 손그림 스틱맨 영상: 조용한 침실과 강을 따라 떠가는 생각" width="90%"></a>
 </td>
 </tr>
+<!-- b3:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>레트로 TV 스타일</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="둥근 흰색 캐릭터로 표현한 새벽 3시 TV 미스터리" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Coming Soon…</strong></a>
+</td>
+</tr>
+<!-- b3:hero:end -->
 </table>
 
 <div align="center">
 
-**8가지 스타일 · 10가지 비주얼 옵션 · 실제 제작 예시 · 무료 오픈소스**
+**9가지 스타일 · 11가지 비주얼 옵션 · 실제 제작 예시 · 무료 오픈소스**
 
 ⭐ **프로젝트에 Star를 눌러 다음 스타일과 새 기능 공개를 확인하세요.**
 
@@ -339,11 +350,32 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 
 ---
 
+<!-- b3:section:start -->
 <a id="b3"></a>
 
-### B3: 곧 공개…
+### B3: 레트로 TV 스타일
 
-새로운 Autopilot 스타일과 절차적 애니메이션을 훈련하고 있습니다. [프로젝트에 Star를 눌러](#road-to-10000-stars--creator-ecosystem) 5,000 Stars 달성 시 공개될 수 있도록 응원해 주세요!
+어두운 화면, 섬세한 흰색·회색 캐릭터, 은은한 TV 질감으로 일상의 궁금증을 생생한 이야기로 만듭니다.
+
+- **화면 스타일**: 둥근 실루엣, 다양한 장면, 의미 있는 부분 애니메이션과 깔끔한 흰색 자막. 약한 빛 번짐과 주사선으로 아날로그 방송 느낌을 더합니다.
+- **추천 주제**: 생활 과학, 심리 현상, 동물 행동, 흥미로운 상식과 짧은 미스터리.
+- **이럴 때 선택**: 코딩 에이전트가 화면 제작과 편집을 맡아 Gemini Bodi 내레이션, 의미 단위 자막, 동작 효과음이 포함된 완성 영상을 원할 때.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">예시 1: 새벽 3시에 TV가 저절로 켜진다면?</th>
+    <th width="50%" align="center">예시 2: 겁먹은 개가 다가오는 이유는?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="둥근 흰색 캐릭터로 표현한 새벽 3시 TV 미스터리" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-dog.gif" alt="흰색·회색 캐릭터와 부분 애니메이션으로 설명하는 개의 행동" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">창작 서스펜스 · 장면 전환 · TV 질감</td>
+    <td align="center">동물 행동 · 작은 반응 · Bodi 내레이션</td>
+  </tr>
+</table>
+<!-- b3:section:end -->
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

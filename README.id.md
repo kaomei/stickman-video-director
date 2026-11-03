@@ -58,11 +58,22 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Video figur stik gambar tangan berwarna: kamar tenang dan pikiran yang mengalir bersama sungai" width="90%"></a>
 </td>
 </tr>
+<!-- b3:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>Gaya TV Retro</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<a href="#a7"><strong>Coming Soon…</strong></a>
+</td>
+</tr>
+<!-- b3:hero:end -->
 </table>
 
 <div align="center">
 
-**8 gaya · 10 pilihan visual · Contoh yang sudah diuji · Gratis dan open source**
+**9 gaya · 11 pilihan visual · Contoh yang sudah diuji · Gratis dan open source**
 
 ⭐ **Beri Star pada proyek ini agar tidak ketinggalan gaya dan fitur baru berikutnya.**
 
@@ -346,11 +357,32 @@ Cerita sehari-hari, digambar penuh karakter. Tekstur kertas hangat, latar berwar
 
 ---
 
+<!-- b3:section:start -->
 <a id="b3"></a>
 
-### B3: Segera hadir…
+### B3: Gaya TV Retro
 
-Gaya Autopilot dan animasi prosedural baru sedang dilatih. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk membukanya saat mencapai 5,000 Stars!
+Latar gelap, karakter putih-abu yang rapi, dan tekstur televisi yang halus mengubah pertanyaan sehari-hari menjadi cerita visual yang hidup.
+
+- **Gaya visual**: Siluet membulat, latar beragam, animasi lokal yang bermakna, dan subtitle putih yang bersih. Pendar lembut dan garis pindai memberi nuansa siaran analog.
+- **Cocok untuk**: Sains sehari-hari, psikologi, perilaku hewan, fakta unik, dan cerita misteri pendek.
+- **Pilih jika**: Anda ingin video jadi yang dibuat dan dirakit oleh agen coding, dengan narasi Gemini Bodi, subtitle berdasarkan satuan makna, dan efek suara sesuai aksi.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Contoh 1: Bagaimana jika TV menyala sendiri pukul 3 pagi?</th>
+    <th width="50%" align="center">Contoh 2: Mengapa anjing yang takut malah mendekat?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-dog.gif" alt="Penjelasan perilaku anjing dengan karakter putih-abu dan animasi lokal" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Suspense fiksi · Pergantian adegan · Tekstur TV</td>
+    <td align="center">Perilaku hewan · Reaksi lokal · Narasi Bodi</td>
+  </tr>
+</table>
+<!-- b3:section:end -->
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>
