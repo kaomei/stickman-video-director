@@ -61,7 +61,7 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
-<strong>Retro TV Style</strong><br>
+<strong>Retro TV</strong><br>
 <a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="retro TV-style fictional 3 AM television mystery with rounded white characters" width="90%"></a>
 </td>
 <td width="50%" align="center">
@@ -351,7 +351,7 @@ Everyday stories, drawn with personality. Warm paper, colorful scenes, simple st
 <!-- b3:section:start -->
 <a id="b3"></a>
 
-### B3: Retro TV Style
+### B3: Retro TV
 
 A dark canvas, refined white-and-gray characters, and a subtle television texture turn everyday questions into vivid visual stories.
 
