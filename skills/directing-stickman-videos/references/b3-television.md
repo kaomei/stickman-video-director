@@ -1,0 +1,81 @@
+# B3 · Retro TV Style / 复古电视风: design and motion
+
+Read after [Autopilot](autopilot.md) and its [shared production QA](autopilot-production-qa.md). This is B3 of the existing Skill, not a newly named Skill or permission to remake media. The user accepted the dog-behavior v6 and chair/clothes v1 examples. Preserve those recordings and films; they were authored in project-local renderers. The bundled declarative runtime now supports the underlying layered mechanisms, but does not automatically reproduce their art or certify a new story's quality. Apply these decisions only to B3; preserve A/B1/B2.
+
+## Reusable production entry
+
+Use `node scripts/autopilot.mjs init /absolute/project --style B3`, then provide the approved continuous narration, actually aligned semantic captions and authored shots. Follow [runtime configuration](autopilot-runtime.md#b3-layered-artwork) for numeric paths, group pivots, visibility/pose changes, z-order and the television pass. Use native Bodi for a new track without additional voice direction; retain accepted tracks unchanged. The agent creates the story-specific artwork and motion, then runs `validate` and `preview`; the CLI composes those decisions, not arbitrary text into finished art by itself.
+
+Before the first new sample, test its hardest contact/occlusion or state transition cleanly, with `television.enabled: false`. Verify it at normal speed, then enable the restrained treatment once. Do not use a global pan, CRT noise or another frozen dog/human pose as evidence of local action. Keep editable assets, event ledger, source/license records, exact audio fingerprints and the sample review checkpoint in the project.
+
+## Reference fidelity without copying a story
+
+Reference priority is **explicit user choices → original reference video's visual effects → accepted implementation examples**. An accepted sample does not become a replacement visual authority merely because it was made later. Preserve explicit refinements such as appealing pet design and uncluttered staging, while calibrating silhouette, composition, typography, television finish and editing mechanisms against the original reference.
+
+Before authoring, read the bundled [reference manifest](../assets/b3/reference-manifest.json) and inspect the [accepted implementation board](../assets/b3/accepted-implementation-board.jpg). The public pack contains our accepted original implementations, not the original channel's frames or clips: no redistribution permission for that study video is asserted. The stills are decoded video frames, not app screenshots or clean illustration masters. Use individual frames rather than the labeled browsing collage as image references.
+
+Inspect the bundled silent implementation excerpts at original timing; static references cannot establish movement: [dog design](../assets/b3/accepted-dog.png), [dog motion](../assets/b3/accepted-dog-motion.mp4), [room/prop design](../assets/b3/accepted-chair.png), [room/prop motion](../assets/b3/accepted-chair-motion.mp4). They show accepted refinements only, not proof of exact source fidelity or a mandatory cast/layout.
+
+The following mechanisms were observed in the private original study. If the user supplies an authorized copy, compare these windows directly; they are intentionally **not bundled**. If unavailable, proceed with the derived rules and implementation examples, but record direct source comparison as missing evidence rather than claiming exact replication:
+
+| Original time | Observed mechanism | What to compare |
+| --- | --- | --- |
+| 23–28s | Relationship build | Stable dog anchor; human state change, destination replacement and connector reveal |
+| 83–88s | Surveillance insert | Direct view to framed feed; subject/timecode progression and intermittent signal disturbance |
+| 142–147s | Warning states | Pose, speech label, red strike, then door/figure action as separate stages |
+| 196–201s | Signal and reframe | Warning card to thought insert, fading subject, then a new dog-detail composition |
+| 205–212s | Pose and comparison build | Dog detail changes, then a stacked human/dog comparison and a new prop cut |
+
+The [accepted implementation board](../assets/b3/accepted-implementation-board.jpg) and supplementary dog/chair excerpts in the manifest demonstrate approved refinements only; they do not redefine the source's visual effects or prescribe a universal dog, room or layout. For a new shot, record source time → observed mechanism → new semantic use → sample time in the project ledger. Compare clean design and final television treatment separately. Do not infer smoothness from stills or claim exhaustive replication after inspecting a few windows.
+
+Use references as visual study, not as a reusable soundtrack, borrowed scene assets or mandatory plot. Author new story-specific artwork. Keep any privately supplied source excerpts out of public output unless redistribution rights are verified. New rights-cleared studies still need comparison to the original; do not silently promote a drifting generated sample to the visual standard. Installing this pack grants no permission to publish a user's private media.
+
+The established direction is a dark field, refined white/gray silhouettes, clear objects, generous negative space, compact uppercase typography and a restrained analog-broadcast finish. Ordinary humans retain blank circular heads in front/profile/seated views; convey orientation through body arrangement, not protruding noses/ears. Keep rounded joints, readable arm/body gaps and useful gray overlap detail. Do not reintroduce knee crossbars, stick-on thin-line arms, rigid disconnected limbs or a costume imposed on every story. Pets have their own facial grammar; the humans' blank-face convention does not require faceless animals.
+
+Source-like effect families include progressive diagrams/connectors, object/screen state changes, framed surveillance inserts, purposeful character/prop reactions and brief signal interruptions. Select by the current sentence and tone. Do not force a horror voice, red warning, CCTV inset or full-screen glitch into a gentle explainer simply because the reference uses them elsewhere.
+
+**Local movement and reference-style editing are separate acceptance questions.** The rejected dog trial had head/ear/paw action yet still repeated a large side-view dog, headline and floor. More limb cycles or stronger CRT cannot repair that composition grammar. For a reference-led revision, record a small mechanism matrix: source time → observed sequence → new semantic use → new sample time. Use temporally adjacent frames to distinguish a diagram drawing itself, a destination being replaced, a pose/prop changing state, and a hard cut; do not infer motion from one attractive still. Translate the mechanisms into the new story rather than copying its exact frames or plot.
+
+Plan the edit across shots as well as within them: where appropriate, establish a relationship, isolate a meaningful detail, reveal alternatives, regroup those alternatives into an explanation, and return to an actionable scene. This is an example progression, not a compulsory template. Preserve visual anchors across a build, then change focal scale, representational mode or relationship when the idea changes. A border/title animation around an unchanged subject does not count as this transformation. Brief signal displacement may punctuate an actual idea change; keep it out of the caption band and do not count it toward semantic-motion coverage.
+
+## Featured pets: appealing characters, not stock symbols
+
+When an animal carries the story, design it as a recognizable, appealing character before animation. For a friendly dog, a softer head-to-body balance, rounded shorter muzzle, small distinct nose/eyes, readable ears, compact paws and a coherent tail are useful starting points. Keep enough face/ear separation in white/gray to survive the final bloom and small-view playback. Avoid the long pointed snout, narrow tubular torso and mechanically straight spindly legs that made the rejected dog read like a generic signage icon. Breed, ear type and markings follow the story/user; do not prescribe one universal puppy or identical pet across unrelated films.
+
+Create a compact clean pose/expression board for the views and states actually needed, such as attentive, head lowered/ears back, crouched/hidden and relaxed. Preserve proportions and markings through the film while changing gaze, ear angle, head/body posture and tail state. Review it without CRT first, then at final treatment/playback size. A fearful pet can still have an appealing design: do not replace fear signals with a smile, cheerful wag or comic acting merely to make it cute. Do not generalize appeasement as guilt, loyalty or a guarantee against biting; show safe distance without an impact shot.
+
+## Motion planning: restrained is not frozen
+
+Carry the complete original voice and actual aligned times forward. In each shot's ledger record: spoken idea, start/end, focal subject, start state → visible event → end state, affected layers/pose assets, local timing/pivots, ground/contact anchors, occlusion order, SFX cue and connection to the next shot. Keep camera motion and CRT overlays in separate fields so they cannot be counted as subject action.
+
+Use stable poses with bounded local animation. A head tilt, ear droop, weight shift, tail tuck, a hand lowering, a latch turning or a screen revealing new information can convey an event without continuous walking/waving. Let scene, prop and information motion carry rhythm where the character should hold. Do not make every layer move or assign an arbitrary gesture to every word. Meet the common maximum 2.5-second principal-picture inactivity rule through meaningful visible progression, not a quota of limb cycles or compulsory cuts.
+
+If narration names a behavior, **show that behavior**: an unchanged dog next to the word APPROACH is not approaching. A small approach needs authored step/contact states with planted support paws and a stable floor, not sliding the whole sprite. A retreat/hide needs displacement and correct sofa/door occlusion; a lowered head needs a visible before/after pose. Choose a simpler readable staged action or a different explanatory composition when a complex gait cannot be made coherent. Do not silently drop the behavior or deform limbs to force it.
+
+Use original editable paths, layered sprites or discrete authored poses with plausible transitions. Keep head, ears, tail and foreground occluders independently controllable where the action needs them; pivot at anatomical attachments and avoid detached parts, duplicated limbs, changing limb lengths or body-through-furniture intersections. For a freeze response, establish the change into freezing, then let a meaningful surrounding event carry the intentional hold; do not animate away the meaning of freezing just to add movement.
+
+The following are **not** substitutes for local/semantic action: a flat drawing with a global push/pan/fade, caption turnover, a breathing loop repeated everywhere, scanline flicker, bloom, chromatic noise or an unrelated corner animation. They may accompany an already readable event. Build and verify clean animation first; apply the television treatment once at composition level. Preserve mid-gray details, captions and silhouettes; a bezel or constant strong glitch is not required.
+
+### Dog-behavior example, not a template for every story
+
+| Spoken idea | Visible progression | Continuity check |
+| --- | --- | --- |
+| Creep closer | Look toward person → lower head/ears → small supported approach | Paws contact floor; no whole-sprite skating |
+| Lowered head / tucked tail | Clearly neutral pose → head lowers and tail curls inward | Same dog; muzzle and tail remain legible |
+| Approach / freeze / hide | Distinct examples or successive states; hide passes behind an occluder | Do not reuse the same frozen pose under new labels |
+| Lower your hand / give space | Hand lowers → person steps back or framing demonstrates real separation | No hitting; hand remains attached; distance actually changes |
+| Safety and trust | Give space → allow a voluntary small reaction/relaxation | No forced approach or claim all dogs behave alike |
+
+## Typography, voice and scene resources
+
+Use readable white bold sans-serif semantic captions near the bottom, uppercase where the language supports case, without B2's paper-label background. Keep scene headings sparse and distinct from captions; do not mechanically split phrases to create rapid flashes. Preserve the project's approved font, timing and recording during local visual revisions. New B3 projects default to native Gemini **Bodi**, one continuous track when supported, with no added voice/style direction; user choice overrides the default. Verify the actual available model/voice and quota. Never regenerate or speed-change accepted narration for animation timing.
+
+Use varied story-specific environments, prop details, diagrams and viewpoints, not the same room and standing presenter for every theme. A rich asset library is a selection pool, not a requirement to fill every scene. Keep one dominant action and quiet supporting detail. Original or licensed architectural/prop assets may be adapted to a coherent white/gray language; record source/license and do not paste mismatched stock icons together. Time restrained original/licensed action SFX to real events below the narration; signal noise is an accent, not a default soundtrack. No creator watermark by default.
+
+## Capability and acceptance gates
+
+1. **Capability truth:** the bundled [runtime](autopilot-runtime.md) accepts `style: B3` with authored numeric paths, rounded shapes, group transforms, separate layers/poses, progressive line diagrams, z-order occlusion, continuous audio and semantic captions. It does not infer pose changes from a flat image, morph paths, rig a gait or choose useful scenes automatically. Author discrete states and local keyframes or use an explicitly reviewed project-local renderer when necessary; test the required interaction before production. Unit tests prove mechanisms, not animation quality or acceptance.
+2. **Design proof:** inspect clean and treated character/pose boards at actual viewing size. The featured pet must read as an appealing character with distinct story-relevant states, not an anonymous warning symbol. This requires visual/user judgment; a geometry test cannot certify cuteness. Human and animal design rules remain separate.
+3. **Motion proof:** before the next sample, inspect a short clean test of the hardest interaction, then a same-shot before/during/after strip. Watch the encoded transition at normal speed; static pose sheets and pixel differences cannot prove smooth action. Separate the main animation from captions, camera and CRT when checking semantic events and inactivity gaps. A deliberate freeze can pass only when the surrounding meaningful progression carries the shot.
+4. **Reference-aware sample:** deliver the user-requested duration (normally 20–30 seconds), with actual local character/prop/scene action, narration, semantic captions, SFX and restrained finish. Compare selected reference mechanisms to the new sample without copying its story. Check local action **and** edit/composition grammar separately; passing one does not establish the other. Review the entire sample, not only its opening or a contact sheet. Inspect that magnified details actually contain the named feature through its complete action, and that split-panel subjects fit their foreground shelters. Record failing timestamps, contact/occlusion problems and unavailable playback/listening separately from decode/loudness checks.
+5. **Acceptance and preservation:** camera-only fixed-pose footage fails the motion gate even if it decodes and its captions align. Do not mark it approved or re-deliver it as improved without fixing the relevant shots. Keep source/voice fingerprints, editable artwork, event ledger, QA and checkpoint; reuse unaffected assets/audio. A Skill edit alone is not an improved video. After delivery stop for user review; no full film, README/gallery changes, external generation costs or publication without the corresponding authorization.

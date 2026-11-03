@@ -1,0 +1,89 @@
+{
+  "schema": "b3-public-reference-lock-v1",
+  "style": "B3",
+  "version": "2026-11-03-public-v1",
+  "status": "public_implementation_reference_pack",
+  "authority_order": [
+    "explicit_user_choices",
+    "primary_original_reference",
+    "secondary_accepted_implementation"
+  ],
+  "source": {
+    "filename": "电视风.mp4",
+    "sha256": "4bdb5d828dac75bc1e4b3dc50bf099d732ac10f86c92b585f488f434e6db355d",
+    "width": 640,
+    "height": 360,
+    "frame_rate": "30/1",
+    "duration_seconds": 272.788027,
+    "rights": "Original user-supplied study video is not bundled. No redistribution license asserted; use only a privately available authorized copy for direct comparison.",
+    "bundled": false
+  },
+  "limits": "Bundled stills are decoded frames from accepted original implementations, not clean illustration masters or original-channel extracts. Silent clips retain implementation timing. Hashes prove identity, not aesthetic fidelity or arbitrary-story quality. The original reference remains the visual-effects authority when privately available; implementation examples do not replace it.",
+  "references": [],
+  "motion": [],
+  "supplements": [
+    {
+      "path": "accepted-dog.png",
+      "sha256": "1129f82587e0b65ed510ac62b471bdb71ce9074fcc056f8fcbda6684d2c78072",
+      "width": 1280,
+      "height": 720,
+      "source_time_seconds": 2,
+      "kind": "decoded_video_frame_not_original_artwork",
+      "id": "accepted-dog",
+      "authority": "secondary_accepted_implementation",
+      "source_sha256": "66c1c49ded3fc6e37d05e9d6e4d4c3aad3a77e117e36f23ee24bc3da14f7d1be",
+      "source_filename": "B3-Dog-Motion-Polish-v6.mp4",
+      "use": "Accepted appealing pet proportions and supported local approach; implementation example, not original source fidelity.",
+      "motion": {
+        "path": "accepted-dog-motion.mp4",
+        "sha256": "d1896ec3b8d13fcce3174b01fbce6446c69c8c978d636506d96278055f2addba",
+        "source_start_seconds": 0,
+        "source_end_seconds": 3.6,
+        "duration_seconds": 3.6,
+        "width": 1280,
+        "height": 720,
+        "frame_rate": "30/1",
+        "audio": "none",
+        "kind": "silent_transcoded_source_window",
+        "full_decode": "pass"
+      }
+    },
+    {
+      "path": "accepted-chair.png",
+      "sha256": "d100839c20d61e85716fc0f4e749a157850763ea354114e02dd310af1d0e59ae",
+      "width": 1280,
+      "height": 720,
+      "source_time_seconds": 0.8,
+      "kind": "decoded_video_frame_not_original_artwork",
+      "id": "accepted-chair",
+      "authority": "secondary_accepted_implementation",
+      "source_sha256": "522794275166dd7fe9236cdee47a66f9a0b47942f1a3b045f1a3b3932e02a314",
+      "source_filename": "B3-After-Dark-Preview-v1.mp4",
+      "use": "Accepted story-specific room/prop and light-switch state change; not a universal room or presenter template.",
+      "motion": {
+        "path": "accepted-chair-motion.mp4",
+        "sha256": "5db2b68e1d0797131211ebdd46a907cc362bd65bb2011f7e9056bcf6b3ebbdb4",
+        "source_start_seconds": 0,
+        "source_end_seconds": 3.2,
+        "duration_seconds": 3.2,
+        "width": 1280,
+        "height": 720,
+        "frame_rate": "30/1",
+        "audio": "none",
+        "kind": "silent_transcoded_source_window",
+        "full_decode": "pass"
+      }
+    }
+  ],
+  "boards": [
+    {
+      "path": "accepted-implementation-board.jpg",
+      "sha256": "59cd4b8d268bed8b38d50180680bb40396c717f6432175006954e3e9fff490ff",
+      "width": 1280,
+      "height": 432,
+      "kind": "labeled_contact_sheet_not_generation_anchor"
+    }
+  ],
+  "guide": "../../references/b3-television.md",
+  "production_rules": "Inspect the bundled implementation examples and derived guide. If the authorized original reference is available privately, compare its effects and record time/mechanism/new-shot mapping. If unavailable, disclose that direct source-fidelity verification is missing; never claim the bundled examples prove exact replication. Author new story-specific assets and review clean design and treated motion separately."
+}
