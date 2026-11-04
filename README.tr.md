@@ -55,18 +55,18 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 </td>
 <td width="50%" align="center">
 <strong>Renkli El Çizimi</strong><br>
-<a href="#b2"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="Renkli el çizimi çöp adam videosu: sessiz bir yatak odası ve nehirde süzülen bir düşünce" width="90%"></a>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Renkli el çizimi çöp adam videosu: sessiz bir yatak odası ve nehirde süzülen bir düşünce" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
 <strong>Retro TV Stili</strong><br>
-<a href="#b3"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="90%"></a>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <strong>Hayatta Kalma Gerilimi</strong><br>
-<a href="#b4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 · Hayatta Kalma Gerilimi" width="90%"></a>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Hayatta Kalma Gerilimi" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:end -->
@@ -335,8 +335,8 @@ Uyumaya çalıştıkça zihniniz neden daha çok konuşur? YouTube’daki [@Psyc
     <th width="50%" align="center">Örnek 2: Telefonun kilidini açtın — ama nedenini unuttun</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Renkli El Çizimi: sessiz bir yatak odası, nehirde bir kâğıt kayık ve daha huzurlu bir uyku öncesi anı" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Renkli El Çizimi: telefona bakarken dikkatin dağılması; anlatım, fildişi altyazılar ve çizimli sahneler" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Renkli El Çizimi: sessiz bir yatak odası, nehirde bir kâğıt kayık ve daha huzurlu bir uyku öncesi anı" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Renkli El Çizimi: telefona bakarken dikkatin dağılması; anlatım, fildişi altyazılar ve çizimli sahneler" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Uyku öncesi düşünceler · Ortam kesmeleri · Yumuşak hareketler</td>
@@ -362,8 +362,8 @@ Gece yarısı ilginç bir yayına rastlamak gibi. YouTube’daki [@BradikininVid
     <th width="50%" align="center">Örnek 2: Köpeğin pişman mı, yoksa korkuyor mu?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="assets/readme/previews/b3-tv-dog.gif" alt="Beyaz-gri karakterler ve yerel animasyonla köpek davranışı açıklaması" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-dog.gif" alt="Beyaz-gri karakterler ve yerel animasyonla köpek davranışı açıklaması" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Kurgu gerilim · Sahne geçişleri · TV dokusu</td>
@@ -389,8 +389,8 @@ Bir geri sayım. Gece gelen bir telefon. Asla çiğnememeniz gereken bir kural. 
     <th width="50%" align="center">Örnek 2: Ölümün geldiğini görebilseydin?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4: beyaz eldivenli 911 operatörü, gece çağrısı ve pencere dışındaki tehdit" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="assets/readme/previews/b4-death-clock.gif" alt="B4: ölüm saati, gruplu yazı, korkmuş yüz ve beliren tehdit" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4: beyaz eldivenli 911 operatörü, gece çağrısı ve pencere dışındaki tehdit" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-death-clock.gif" alt="B4: ölüm saati, gruplu yazı, korkmuş yüz ve beliren tehdit" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Brian anlatımı · Öyküyle senkron efektler · Gerilimli final seçimi</td>

@@ -55,18 +55,18 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 </td>
 <td width="50%" align="center">
 <strong>Colorful Hand-Drawn</strong><br>
-<a href="#b2"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="Colorful hand-drawn stickman video: a quiet bedroom and a thought drifting along a river" width="90%"></a>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Colorful hand-drawn stickman video: a quiet bedroom and a thought drifting along a river" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
 <strong>Retro TV</strong><br>
-<a href="#b3"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="retro TV-style fictional 3 AM television mystery with rounded white characters" width="90%"></a>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="retro TV-style fictional 3 AM television mystery with rounded white characters" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <strong>Survival Thriller</strong><br>
-<a href="#b4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 · Survival Thriller" width="90%"></a>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Survival Thriller" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:end -->
@@ -332,8 +332,8 @@ Why does your mind get louder the harder you try to sleep? Inspired by YouTube's
     <th width="50%" align="center">Example 2: You Unlocked Your Phone—and Forgot Why</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Colorful Hand-Drawn: a quiet bedroom, a paper boat on a river, and a calmer bedtime moment" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Colorful Hand-Drawn: a phone-checking detour, with narration, ivory captions, and illustrated scenes" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Colorful Hand-Drawn: a quiet bedroom, a paper boat on a river, and a calmer bedtime moment" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Colorful Hand-Drawn: a phone-checking detour, with narration, ivory captions, and illustrated scenes" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Bedtime thoughts · Scenic cutaways · Gentle motion</td>
@@ -359,8 +359,8 @@ Like stumbling across a curious late-night broadcast. Inspired by YouTube's [@Br
     <th width="50%" align="center">Example 2: Is Your Dog Guilty—or Just Scared?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="retro TV-style fictional 3 AM television mystery with rounded white characters" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="assets/readme/previews/b3-tv-dog.gif" alt="retro TV-style dog-behavior explainer with white-and-gray characters and local animation" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="retro TV-style fictional 3 AM television mystery with rounded white characters" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-dog.gif" alt="retro TV-style dog-behavior explainer with white-and-gray characters and local animation" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Fictional suspense · Scene changes · TV texture</td>
@@ -386,8 +386,8 @@ A countdown. A late-night call. A rule you must never break. Ordinary places bec
     <th width="50%" align="center">Example 2: What if you saw death coming?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 night-dispatch suspense with a horror opening, a white-glove dispatcher, and a threat outside the window" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="assets/readme/previews/b4-death-clock.gif" alt="B4 death-clock opening with grouped typography, a frightened expression, and an emerging threat" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 night-dispatch suspense with a horror opening, a white-glove dispatcher, and a threat outside the window" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-death-clock.gif" alt="B4 death-clock opening with grouped typography, a frightened expression, and an emerging threat" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Brian narration · Story-synced SFX · A cliffhanger choice</td>

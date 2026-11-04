@@ -55,18 +55,18 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 </td>
 <td width="50%" align="center">
 <strong>Gambar Tangan Berwarna</strong><br>
-<a href="#b2"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="Video figur stik gambar tangan berwarna: kamar tenang dan pikiran yang mengalir bersama sungai" width="90%"></a>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Video figur stik gambar tangan berwarna: kamar tenang dan pikiran yang mengalir bersama sungai" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
 <strong>Gaya TV Retro</strong><br>
-<a href="#b3"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="90%"></a>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <strong>Thriller Bertahan Hidup</strong><br>
-<a href="#b4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 · Thriller Bertahan Hidup" width="90%"></a>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Thriller Bertahan Hidup" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:end -->
@@ -341,8 +341,8 @@ Kenapa pikiran justru makin ramai saat Anda berusaha tidur? Terinspirasi oleh [@
     <th width="50%" align="center">Contoh 2: Ponsel Sudah Terbuka, Tapi Lupa Mau Apa</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Gambar Tangan Berwarna: kamar tenang, perahu kertas di sungai, dan suasana menjelang tidur yang lebih damai" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Gambar Tangan Berwarna: terdistraksi saat mengecek ponsel, dengan narasi, subtitle gading, dan latar ilustrasi" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Gambar Tangan Berwarna: kamar tenang, perahu kertas di sungai, dan suasana menjelang tidur yang lebih damai" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Gambar Tangan Berwarna: terdistraksi saat mengecek ponsel, dengan narasi, subtitle gading, dan latar ilustrasi" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Pikiran sebelum tidur · Potongan pemandangan · Gerakan lembut</td>
@@ -368,8 +368,8 @@ Seperti tak sengaja menemukan siaran aneh larut malam. Terinspirasi oleh [@Bradi
     <th width="50%" align="center">Contoh 2: Anjingmu Merasa Bersalah — atau Justru Takut?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="assets/readme/previews/b3-tv-dog.gif" alt="Penjelasan perilaku anjing dengan karakter putih-abu dan animasi lokal" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-dog.gif" alt="Penjelasan perilaku anjing dengan karakter putih-abu dan animasi lokal" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Suspense fiksi · Pergantian adegan · Tekstur TV</td>
@@ -395,8 +395,8 @@ Hitung mundur. Telepon larut malam. Aturan yang tak boleh dilanggar. Terinspiras
     <th width="50%" align="center">Contoh 2: Bagaimana Jika Kamu Bisa Melihat Kematian Mendekat?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4: operator 911 bersarung tangan putih, panggilan malam dan ancaman di luar jendela" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="assets/readme/previews/b4-death-clock.gif" alt="B4: jam kematian, teks bertahap, ekspresi ketakutan dan ancaman muncul" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4: operator 911 bersarung tangan putih, panggilan malam dan ancaman di luar jendela" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-death-clock.gif" alt="B4: jam kematian, teks bertahap, ekspresi ketakutan dan ancaman muncul" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Narasi Brian · Efek selaras cerita · Pilihan akhir penuh ketegangan</td>

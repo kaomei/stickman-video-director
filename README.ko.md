@@ -55,18 +55,18 @@
 </td>
 <td width="50%" align="center">
 <strong>컬러 손그림</strong><br>
-<a href="#b2"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="컬러 손그림 스틱맨 영상: 조용한 침실과 강을 따라 떠가는 생각" width="90%"></a>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="컬러 손그림 스틱맨 영상: 조용한 침실과 강을 따라 떠가는 생각" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
 <strong>레트로 TV 스타일</strong><br>
-<a href="#b3"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="둥근 흰색 캐릭터로 표현한 새벽 3시 TV 미스터리" width="90%"></a>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="둥근 흰색 캐릭터로 표현한 새벽 3시 TV 미스터리" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <strong>서바이벌 스릴러</strong><br>
-<a href="#b4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 · 서바이벌 스릴러" width="90%"></a>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · 서바이벌 스릴러" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:end -->
@@ -334,8 +334,8 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
     <th width="50%" align="center">예시 2: 잠금은 풀었는데, 뭘 하려던 건지 잊었다</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="B2 컬러 손그림: 조용한 침실, 강 위의 종이배, 편안한 잠들기 전 순간" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 컬러 손그림: 휴대폰을 확인하다 딴길로 빠지는 이야기. 내레이션, 아이보리 자막, 일러스트 장면 포함" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 컬러 손그림: 조용한 침실, 강 위의 종이배, 편안한 잠들기 전 순간" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 컬러 손그림: 휴대폰을 확인하다 딴길로 빠지는 이야기. 내레이션, 아이보리 자막, 일러스트 장면 포함" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">잠들기 전 생각 · 풍경 컷 전환 · 부드러운 움직임</td>
@@ -361,8 +361,8 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
     <th width="50%" align="center">예시 2: 우리 개는 반성하는 걸까, 겁먹은 걸까?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="둥근 흰색 캐릭터로 표현한 새벽 3시 TV 미스터리" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="assets/readme/previews/b3-tv-dog.gif" alt="흰색·회색 캐릭터와 부분 애니메이션으로 설명하는 개의 행동" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="둥근 흰색 캐릭터로 표현한 새벽 3시 TV 미스터리" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-dog.gif" alt="흰색·회색 캐릭터와 부분 애니메이션으로 설명하는 개의 행동" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">창작 서스펜스 · 장면 전환 · TV 질감</td>
@@ -388,8 +388,8 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
     <th width="50%" align="center">예시 2: 다가오는 죽음이 보인다면?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 한밤중 911 상황실, 흰 장갑 접수원과 창밖의 위협" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="assets/readme/previews/b4-death-clock.gif" alt="B4 죽음의 시계, 단계적 글자 연출과 공포에 질린 표정, 나타나는 위협" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 한밤중 911 상황실, 흰 장갑 접수원과 창밖의 위협" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-death-clock.gif" alt="B4 죽음의 시계, 단계적 글자 연출과 공포에 질린 표정, 나타나는 위협" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Brian 내레이션 · 전개에 맞춘 효과음 · 긴장감 있는 선택형 결말</td>

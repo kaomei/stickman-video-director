@@ -55,18 +55,18 @@
 </td>
 <td width="50%" align="center">
 <strong>カラフル手描き</strong><br>
-<a href="#b2"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="カラフル手描きの棒人間動画：静かな寝室と川を流れる思い" width="90%"></a>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="カラフル手描きの棒人間動画：静かな寝室と川を流れる思い" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
 <strong>レトロテレビ風</strong><br>
-<a href="#b3"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="丸みのある白いキャラクターで描く午前3時のテレビ怪談" width="90%"></a>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="丸みのある白いキャラクターで描く午前3時のテレビ怪談" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <strong>サバイバル・スリラー</strong><br>
-<a href="#b4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 · サバイバル・スリラー" width="90%"></a>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · サバイバル・スリラー" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:end -->
@@ -333,8 +333,8 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
     <th width="50%" align="center">作例 2：スマホを開いたのに、何をするか忘れた</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="B2 カラフル手描き：静かな寝室、川に浮かぶ紙の船、穏やかな就寝前のひととき" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 カラフル手描き：スマホを確認するつもりが寄り道に。ナレーション、アイボリー字幕、イラスト背景付き" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 カラフル手描き：静かな寝室、川に浮かぶ紙の船、穏やかな就寝前のひととき" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 カラフル手描き：スマホを確認するつもりが寄り道に。ナレーション、アイボリー字幕、イラスト背景付き" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">寝る前の思考 · 情景への切り替え · 穏やかな動き</td>
@@ -360,8 +360,8 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
     <th width="50%" align="center">作例 2：その犬は反省している？それとも怖がっている？</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="丸みのある白いキャラクターで描く午前3時のテレビ怪談" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="assets/readme/previews/b3-tv-dog.gif" alt="白とグレーのキャラクターが動く、レトロテレビ風の犬の行動解説" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="丸みのある白いキャラクターで描く午前3時のテレビ怪談" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-dog.gif" alt="白とグレーのキャラクターが動く、レトロテレビ風の犬の行動解説" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">フィクションのサスペンス · 場面転換 · テレビの質感</td>
@@ -387,8 +387,8 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
     <th width="50%" align="center">作例 2：死が近づくのが見えたら？</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4：深夜の911指令室、白い手袋の指令員と窓の外の脅威" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="assets/readme/previews/b4-death-clock.gif" alt="B4：死の時計、段階的な文字演出と怯える表情、現れる脅威" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4：深夜の911指令室、白い手袋の指令員と窓の外の脅威" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-death-clock.gif" alt="B4：死の時計、段階的な文字演出と怯える表情、現れる脅威" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Brianの語り · 展開に連動する効果音 · 選択で締めるサスペンス</td>

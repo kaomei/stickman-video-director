@@ -55,18 +55,18 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 </td>
 <td width="50%" align="center">
 <strong>Desenho à Mão Colorido</strong><br>
-<a href="#b2"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="Vídeo de bonecos de palito em desenho colorido: um quarto tranquilo e um pensamento seguindo o rio" width="90%"></a>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Vídeo de bonecos de palito em desenho colorido: um quarto tranquilo e um pensamento seguindo o rio" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
 <strong>Estilo TV retrô</strong><br>
-<a href="#b3"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="90%"></a>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <strong>Suspense de sobrevivência</strong><br>
-<a href="#b4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 · Suspense de sobrevivência" width="90%"></a>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Suspense de sobrevivência" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:end -->
@@ -340,8 +340,8 @@ Por que a mente faz mais barulho quando você tenta dormir? Inspirado no [@Psych
     <th width="50%" align="center">Exemplo 2: Você desbloqueou o celular — e esqueceu por quê</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Desenho à Mão Colorido: um quarto tranquilo, um barquinho de papel no rio e uma hora de dormir mais calma" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Desenho à Mão Colorido: uma distração ao checar o celular, com narração, legendas marfim e cenários ilustrados" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Desenho à Mão Colorido: um quarto tranquilo, um barquinho de papel no rio e uma hora de dormir mais calma" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Desenho à Mão Colorido: uma distração ao checar o celular, com narração, legendas marfim e cenários ilustrados" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Pensamentos antes de dormir · Cortes de cenário · Movimentos suaves</td>
@@ -367,8 +367,8 @@ Como encontrar uma transmissão curiosa de madrugada. Inspirados no [@Bradikinin
     <th width="50%" align="center">Exemplo 2: Seu cachorro está arrependido — ou com medo?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="assets/readme/previews/b3-tv-dog.gif" alt="Explicação do comportamento canino em branco e cinza com animação local" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-dog.gif" alt="Explicação do comportamento canino em branco e cinza com animação local" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Suspense fictício · Mudanças de cena · Textura de TV</td>
@@ -394,8 +394,8 @@ Uma contagem regressiva. Uma ligação de madrugada. Uma regra que você nunca d
     <th width="50%" align="center">Exemplo 2: E se você visse a morte chegando?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4: atendente do 911 de luvas brancas, ligação noturna e ameaça na janela" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="assets/readme/previews/b4-death-clock.gif" alt="B4: relógio da morte, texto em grupos, expressão assustada e ameaça surgindo" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4: atendente do 911 de luvas brancas, ligação noturna e ameaça na janela" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-death-clock.gif" alt="B4: relógio da morte, texto em grupos, expressão assustada e ameaça surgindo" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Narração Brian · Efeitos sincronizados à história · Escolha final em suspense</td>

@@ -55,18 +55,18 @@
 </td>
 <td width="50%" align="center">
 <strong>彩色手绘风</strong><br>
-<a href="#b2"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="彩色手绘风：安静的卧室与沿河漂走的念头" width="90%"></a>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="彩色手绘风：安静的卧室与沿河漂走的念头" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
 <strong>复古电视风</strong><br>
-<a href="#b3"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="90%"></a>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <strong>求生短剧风</strong><br>
-<a href="#b4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 · 求生短剧风" width="90%"></a>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · 求生短剧风" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:end -->
@@ -332,8 +332,8 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
     <th width="50%" align="center">示例 2：手机解锁了，你却忘了要干什么</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="B2 彩色手绘风：安静的卧室、河上的纸船与放松的睡前时刻" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 彩色手绘风：查看手机时的走神，配有旁白、米白字幕与插画场景" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 彩色手绘风：安静的卧室、河上的纸船与放松的睡前时刻" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 彩色手绘风：查看手机时的走神，配有旁白、米白字幕与插画场景" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">睡前思绪 · 场景切换 · 轻柔动效</td>
@@ -359,8 +359,8 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
     <th width="50%" align="center">示例 2：你的狗是在认错，还是在害怕？</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="assets/readme/previews/b3-tv-dog.gif" alt="复古电视风狗狗行为科普，白灰角色与局部动画" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-dog.gif" alt="复古电视风狗狗行为科普，白灰角色与局部动画" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">虚构悬疑 · 场景切换 · 电视质感</td>
@@ -386,8 +386,8 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
     <th width="50%" align="center">样片 2：如果你能看见死亡倒计时？</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 凌晨接警悬疑：恐怖开场、白手套接线员与窗外异象" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="assets/readme/previews/b4-death-clock.gif" alt="B4 死亡倒计时：分组问句、惊恐表情与逐渐浮现的威胁" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 凌晨接警悬疑：恐怖开场、白手套接线员与窗外异象" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-death-clock.gif" alt="B4 死亡倒计时：分组问句、惊恐表情与逐渐浮现的威胁" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Brian 旁白 · 剧情同步音效 · 悬念互动结尾</td>
