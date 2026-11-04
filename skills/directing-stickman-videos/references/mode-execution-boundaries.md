@@ -1,0 +1,39 @@
+# Mode execution boundaries
+
+Required before production; detailed routing retained outside the compact entrypoint.
+
+## Two modes, one Skill
+
+Keep the existing installation and name. Route by the requested deliverable:
+
+- **A · Director**: proposals, storyboards and standalone video-generation prompts. A1/A1.1/A1.2 map to Style 1 light/dark; A2/A2.1/A2.2 to Style 2/2A/2B; A3–A5 to Styles 3–5. Follow the unchanged Director contract below.
+- **A6 · Amber Noir / 暖金暗影风**: read [A6](amber-noir.md) when selected, before planning. It owns its reference-guided shots, optional execution routes and separate narration/finishing; bypass the A1–A5 contract below. After approvals and available setup, carry the selected route through to a finished MP4, not just copied prompts. Use its confirmed Gemini Puck narration and title/caption finishing standard, with no creator watermark by default. Explain the two routes and verified sample model only after A6 selection, not in the generic welcome or a detailed README setup section.
+- **B · Autopilot**: a finished local video with narration, captions, meaningful illustrations, local motion and SFX. Read [Autopilot](autopilot.md), then its selected B-style reference: B1 [极简线稿风 / Minimal Line Art](b1-minimal-handdrawn.md), B2 [彩色手绘风 / Colorful Hand-Drawn](b2-colorful-handdrawn.md), or B3 [复古电视风 / Retro TV](b3-television.md). B styles have their own assets and numbering; do not silently reuse an A-style prompt or sample.
+
+For **B3**, inspect its bundled implementation stills/motion before authoring story-specific layers and local action. Original-video excerpts are not redistributed; if an authorized original is unavailable privately, disclose missing source-fidelity comparison. The original reference defines visual effects; accepted examples are secondary implementation evidence, not replacement style standards or templates. Follow its Bodi voice and television finish; rendering is not acceptance. Keep queued styles local and release only the requested style.
+
+**B4 · Survival Thriller:** read [求生短剧风 / Survival Thriller](b4-survival-storytelling.md), its required [audio execution contract](b4-audio-direction.md) and [opening/typography contract](b4-opening-direction.md); use its five white-glove 40s-sample illustrations, prompt and drift gates. Plan distinct first-three/first-ten-second visual and hearing hooks from the story, preserve drawing/anatomy, and vary text by dramatic function. Fix new B4 narration to ai33 / ElevenLabs Brian's verified voice ID; automate plot-needed role performances and story-led SFX within approved scope/cost. Account use is optional; never silently substitute a narrator. Select `style: B4` in the shared installed runtime; keep production media in the external project. Never alias B4 to another style.
+
+B4 accepts well-drawn held character poses; limb animation is not a completion requirement. Keep narrative shots at most three seconds with meaningful changes of view/state, not zoom-only pseudo-cuts. Follow its deliberate-hold review without forcing skeletal motion. Its opening contract fixes the left half-shadow/question treatment, semantic grouped entrances and a first-three-second visual escalation gate: establish the setup, emphasize the complete payoff group, and show a readable principal-picture change rather than type motion alone. Its audio contract calls for a subtle continuous scene bed and necessary causal SFX, not a continuous alarm. Before delivery run the portable [B4 production check](b4-repeatability-check.md); a passing ledger is not aesthetic or listening approval. When a story calls for ending choices, finish the reveal first, then use the audio contract's brief Brian question, balanced option treatment and readable hold; a rendered video invites comments, not fake clickable branching.
+
+B4 starts with perceptible story-led sound from the first picture frame and intelligible Brian narration as early as the native recording allows by default: no automatic two-second silent lead-in or decorative title wait. A barely measurable bed or sub-only hit does not establish an audible hook. Do not treat an SFX-only title pad as the default; an approved spoken hook can lead directly into the original body. Check the final encoded opening under the [first-frame audio gate](b4-audio-direction.md#first-frame-audio-gate), retaining explicitly motivated nonverbal openings/silence rather than filling them blindly.
+
+For B4 horror stories, apply the visual contract's **story-led horror visibility gate** across opening, body and ending: show the scripted threat in the picture, keep cast identities distinct and reject ordinary-looking threat shots that rely only on narration, labels or SFX. Preserve intentional withheld reveals; this does not impose horror on other genres.
+
+If the mode is ambiguous, ask one short question. Honor previously supplied choices. Do not run Director's ten-second clip rules, no-visible-text rule or Phase B prompt workflow for Autopilot. Autopilot can start with a topic, promotion brief, post, article or story script; it is not story-only. English is the default narration language, but the user's language and voice choices take precedence.
+
+Voice instructions are mode-specific: by default B uses the selected named TTS voice as provided, with no added voice/style description. B4's audio contract expressly permits story-motivated acting instructions for secondary dialogue roles, not automatic narrator tuning. Its required [story-led sound system](autopilot-sound-system.md) covers every genre with scene/beat sound scripts and separates optional voice-tuning recommendations from authorized execution. It never automatically revoices accepted media. Director's detailed frozen voice profiles below and in `references/voice-continuity.md` apply only to A1–A5, not to A6 or any B style.
+
+A and B share an installation, not a production contract or style library. All sections from **A · Director** to the end of this file apply only to A1–A5, including phrases such as "all styles". For B, use only Autopilot's production rules and the selected B-style reference; do not inherit A's setup, approvals, pacing, prompts, voice or visual constraints. Each B style owns its visuals, captions, voice, pacing and SFX; never inherit B1 by default. Preserve A's validated rules when revising B, and vice versa.
+
+**All B styles: semantic, single-line subtitles.** Segment captions by meaning and actual speech pauses; show at most one subtitle line at a time. Split overlong cues into successive semantic units, not a second line, fixed word-count chunks or mechanically shrunken text. Keep each style's typography and validate the final encoded frame and subtitle sidecars under the [common caption gate](autopilot-production-qa.md#natural-captions-and-semantic-sound). This B-only rule does not change A.
+
+## First use and next steps
+
+Use one shared guide in the user's requested or current conversation language, falling back to an available host/local language setting when unclear. Keep guidance language separate from video narration/subtitles; do not select it from the README edition.
+
+Apply [first-use and stage guidance](getting-started.md) in both modes: immediately after verified installation, otherwise on first invocation. Explain outputs, uses, tools, workflow, copyable requests and public style/sample catalogs by code. Reuse known choices. At stage handoffs or blockers, distinguish assistant work from user choices; state outputs, gaps and next action. Do not add approval gates or repeat the welcome.
+
+For A5, follow **A5 proactive character guidance** in that guide before planning. Other A references follow **Optional A character references**; keep voice rules unchanged.
+
+For A/B, read [optional finishing](thumbnail-publishing-kit.md) after final-video approval or a packaging request. Offer once; skipping never blocks delivery or alters production.

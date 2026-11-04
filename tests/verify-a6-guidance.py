@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check A6 reference routing and provenance text; no live/media behavior claim."""
 from pathlib import Path
+import importlib.util
 import re
 
 root = Path(__file__).resolve().parents[1]
@@ -43,9 +44,22 @@ for text in (
 ):
     assert text in a6, text
 assert not re.search(r"/Users/|/home/|70847984-|task:366834", a6)
-for target in re.findall(r"\]\(([^)]+\.md)(?:#[^)]*)?\)", a6):
-    if not target.startswith(("https://", "http://")):
-        assert (reference.parent / target).is_file(), target
+contract = skill / "references/a6-reference-prompts.md"
+for document in (reference, contract, skill / "assets/a6/SOURCE-NOTES.md"):
+    content = document.read_text()
+    assert not re.search(r"/Users/|/home/", content), document
+    for target in re.findall(r"\]\(([^)]+)\)", content):
+        if not target.startswith(("https://", "http://", "#")):
+            assert (document.parent / target.split("#", 1)[0]).is_file(), target
+for required in ("reference-manifest.json", "a6-reference-prompts.md", "a6_reference_check.py",
+                 "Before claiming that references are missing", "not a visual-quality verdict"):
+    assert required in a6, required
+spec = importlib.util.spec_from_file_location("a6_reference_check", skill / "scripts/a6_reference_check.py")
+checker = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(checker)
+assert len(checker.validate_pack(skill)) >= 3
+for fixture in ("night-library", "coastal-station"):
+    checker.validate_plan(skill, skill / ("tests/fixtures/a6-" + fixture + ".plan.json"))
 for readme in root.glob("README*.md"):
     assert "Route 2 · Renoise MCP (explicit choice)" not in readme.read_text()
     assert "utm_source=crazykaomei-aini-202610" not in readme.read_text()
@@ -57,5 +71,5 @@ for text in ("Gemini TTS · Puck", "curious, exploratory", "ALL CAPS",
     assert text in finishing, text
 assert (skill / "scripts/a6_finish.py").is_file()
 
-print("A6 selection-only routing, tested Flow model provenance and separate finishing: PASS")
+print("A6 routing, Flow provenance, separate finishing, bundled references and expanded prompt fixtures: PASS")
 print("Static instruction checks only; no browser, paid generation or fresh media test performed.")

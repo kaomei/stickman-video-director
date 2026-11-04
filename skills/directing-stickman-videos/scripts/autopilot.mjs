@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
-import {ROOT, FFMPEG, FFPROBE, run, probe, loadProject, outputDir, save, json, hashFile, groupWords} from './autopilot-core.mjs';
+import {ROOT, STYLES, FFMPEG, FFPROBE, run, probe, loadProject, outputDir, save, json, hashFile, groupWords} from './autopilot-core.mjs';
+import {BRIAN} from './b4-runtime.mjs';
 
 const [command, ...args] = process.argv.slice(2);
 const option = (flag, fallback) => args.includes(flag) ? args[args.indexOf(flag) + 1] : fallback;
@@ -17,11 +18,11 @@ async function main() {
   else if (command === 'init') {
     if (!args[0]) throw new Error('Project directory required');
     const style = option('--style', 'B1');
-    if (!['B1', 'B2', 'B3'].includes(style)) throw new Error('Choose style B1, B2 or B3');
+    if (!STYLES.includes(style)) throw new Error('Choose style B1, B2, B3 or B4');
     const dir = path.resolve(args[0]); if (fs.existsSync(dir)) throw new Error('Project directory already exists; will not overwrite');
     if (dir.startsWith(ROOT + path.sep)) throw new Error('Create projects outside the installed Skill');
     fs.mkdirSync(dir, {recursive: true});
-    save(path.join(dir, 'project.json'), {version: 1, style, width: 1280, height: 720, fps: 30, voice: {path: 'narration.wav', lead: 0, tail: 0}, captions: [], shots: [], sfx: [], ...(style === 'B3' ? {television: {enabled: true, intensity: 0.45}} : {})});
+    save(path.join(dir, 'project.json'), {version: 1, style, width: 1280, height: 720, fps: 30, voice: {path: 'narration.wav', lead: 0, tail: 0, ...(style === 'B4' ? BRIAN : {})}, captions: [], shots: [], sfx: [], ...(style === 'B3' ? {television: {enabled: true, intensity: 0.45}} : {}), ...(style === 'B4' ? {ambience: [], dialogue: [], audio_cuts: []} : {})});
     console.log(JSON.stringify({project: path.join(dir, 'project.json'), stage: 'scaffold; add approved narration, aligned captions and authored scenes before rendering'}));
   } else if (command === 'captions') {
     if (!args[0] || !args[1]) throw new Error('Aligned word input and output file required');
@@ -47,6 +48,8 @@ async function main() {
       reviewed = loadProject(args[0], {seconds: report.preview_seconds});
       outputDir(reviewed);
       if (report.fingerprint !== reviewed.fingerprint || report.output !== path.join(out, 'preview.mp4') || !fs.existsSync(report.output) || hashFile(report.output) !== report.output_sha256) throw new Error(error);
+      if (reviewed.style === 'B4' && report.opening_audio?.status !== 'diagnostic_pass' &&
+        !(typeof reviewed.opening_audio_override === 'string' && reviewed.opening_audio_override.trim())) throw new Error('B4 opening audio needs review; repair it or record a story-motivated opening_audio_override before approval');
     }
     if (command === 'approve') {
       const note = option('--note', ''); if (!note.trim()) throw new Error('A note recording genuine user approval is required');

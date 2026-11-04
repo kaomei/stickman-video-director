@@ -51,7 +51,9 @@ assert all('align="center"' not in row for row in mode_rows[2:-1]), "Do not cent
 assert "插画分镜＋微动画" in mode_comparison and "插画轮播" not in mode_comparison, "Describe B as illustrated scenes rather than a slideshow; do not impose B1's drawing style on every B style"
 assert "一次安装，按需选择" not in cn, "Keep the removed mode-selection sentence out of the introduction"
 quick_start_intro = cn.split('<a id="quick-start"></a>', 1)[1].split('<a id="director-start"></a>', 1)[0]
-assert "兼容 Claude Code、Codex、Cursor、Antigravity，或任何具备文件和终端访问能力的智能体环境。" in quick_start_intro
+assert "想尽可能接近展示案例，建议优先使用 Codex。" in quick_start_intro
+assert "也可安装到 Claude Code、Cursor、Antigravity 等具备文件和终端访问能力的 Agent" in quick_start_intro
+assert "最终效果可能有所差异" in quick_start_intro
 assert "把以下内容发送给你的 AI 助手：" in quick_start_intro
 install = quick_start_intro.split("```text\n", 1)[1].split("```", 1)[0]
 assert "帮我安装这个 Skill：" in install
@@ -80,35 +82,34 @@ assert "## 使用小贴士" not in cn
 faq = cn.split('<a id="faq"></a>', 1)[1].split('<!-- readme:contribute -->', 1)[0]
 faq_questions = (
     "这真的是 100% 免费的吗？有没有隐藏收费？",
+    "我该怎么保持角色的一致性？",
+    "我该使用什么工具？需要指定生图模型吗？",
+    "如果我手里没有写好的现成剧本，能直接做视频吗？",
+    "它是如何确保视频具有高完播率、有梗且不枯燥的？",
     "生成的视频可以在 YouTube 和 TikTok 上开通收益变现吗？",
     "我需要懂编程或者拥有昂贵的高性能显卡吗？",
-    "如果我手里没有写好的现成剧本，能直接做视频吗？",
-    "我应该如何选择“分镜导演模式”与“全自动模式”？",
-    "它是如何确保视频具有高完播率、有梗且不枯燥的？",
-    "支持哪些 AI 助手和剪辑软件？",
-    "如果成片里某个单独镜头我不满意，必须全片推倒重做吗？",
 )
 assert re.findall(r"^### Q(\d+)\. (.+)$", faq, re.M) == [
     (str(number), question) for number, question in enumerate(faq_questions, 1)
-], "Keep the supplied Chinese Q1-Q8 wording, order and visible heading format"
+], "Keep the approved seven FAQ questions, order and visible heading format"
 assert "<details" not in faq and "</details>" not in faq and "<summary" not in faq, "Do not collapse the FAQ answers"
 faq_answers = re.split(r"^### Q\d+\. .+\n", faq, flags=re.M)[1:]
 # These are supplied-copy checks, not factual verification of the draft's claims.
 required_copy = (
     ("MIT 开源协议", "$30–$60", "没有任何订阅费", "按需支付官方 API 费用"),
+    ("**B · 全自动模式**", "代码驱动", "人物素材图", "不同场景中复用", "**A · 导演模式**", "火柴人角色参考图"),
+    ("**推荐使用 Codex，以尽可能接近案例效果。**", "制作和测试", "其他 Agent", "GPT 内置模型", "没有额外配置生图 API"),
+    ("公众号长文", "前 3 秒爆款黄金钩子", "6 幕式标准分镜"),
+    ("**视觉叙事心理学**", "**黄金 3 秒钩子**", "**爆款视觉隐喻**", "**卡点与节奏留白**", "Casually Explained"),
     ("搬运重复内容（Reused Content）", "高价值原创内容", "YouTube 创作者收益计划（YPP）", "TikTok 创作者基金"),
     ("专业独立显卡", "**分镜导演模式（Director Mode）**", "**全自动模式（Autopilot Mode）**", "云端 API 或轻量级渲染"),
-    ("公众号长文", "前 3 秒爆款黄金钩子", "6 幕式标准分镜"),
-    ("**选择分镜导演模式（Director Mode）**", "**选择全自动模式（Autopilot Mode）**", "生成字幕并合成完整成片"),
-    ("**视觉叙事心理学**", "**黄金 3 秒钩子**", "**爆款视觉隐喻**", "**卡点与节奏留白**", "Casually Explained"),
-    ("**支持环境**", "**视频模型**", "**剪辑软件**", "Antigravity", "DaVinci Resolve"),
-    ("6 幕式模块化架构", "第 1、2、4、5、6 镜头的音频和素材完全保留", "节省 80% 的返工剪辑时间"),
 )
 for number, (answer, phrases) in enumerate(zip(faq_answers, required_copy), 1):
     for phrase in phrases:
         assert phrase in answer, (number, phrase)
-assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 2, 0, 2, 3, 3, 0], "Keep the supplied FAQ bullet structure"
-assert faq.count("<!-- readme:platforms -->") == 1 and "<!-- readme:platforms -->" in faq_answers[3], "Keep the internal platform marker between Q4 and Q5"
+assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 0, 0, 3, 0, 2], "Keep the approved FAQ paragraph/bullet structure"
+assert all(len(answer.strip().split("\n\n")) == 2 for answer in faq_answers[1:3]), "Keep consistency and tool answers to two concise paragraphs"
+assert faq.count("<!-- readme:platforms -->") == 1 and "<!-- readme:platforms -->" in faq_answers[0], "Keep the internal platform marker after Q1"
 assert "**10 分钟及以上**" in cn and "连续故事短剧" in cn
 assert "Codex、Claude Code" in cn and "Google Flow" in cn
 assert "两种工作流都可以从一个初步话题、一个网页链接或一份完整脚本开始。" in mode_comparison
@@ -119,7 +120,7 @@ assert "给出话题、内容或需求 → 确认视频脚本 → 确认 20 秒�
 autopilot_start = cn.split('<a id="autopilot-start"></a>', 1)[1].split('<a id="style-gallery"></a>', 1)[0]
 autopilot_example = autopilot_start.split("```text\n", 1)[1].split("```", 1)[0]
 assert autopilot_example.startswith("使用全自动模式/B模式，"), "Explicitly select mode B in the reusable Autopilot example"
-for requirement in ("话题、文章、帖子、新闻或具体需求", "做成在 YouTube 上有吸引力的视频", "粘贴内容或链接，也可以直接描述宣传需求", "需求：5～10 分钟", "B1「极简手绘风」", "旁白、字幕和音效", "20 秒有声样片", "画面跟随配音节奏", "交付完整视频文件"):
+for requirement in ("话题、文章、帖子、新闻或具体需求", "做成在 YouTube 上有吸引力的视频", "粘贴内容或链接，也可以直接描述宣传需求", "需求：5～10 分钟", "B1「极简线稿风」", "旁白、字幕和音效", "20 秒有声样片", "画面跟随配音节奏", "交付完整视频文件"):
     assert requirement in autopilot_start, requirement
 assert "Node.js" not in autopilot_start and "FFmpeg" not in autopilot_start
 assert "开始前按所选方案配置" not in autopilot_start, "Let the installed AI assistant guide setup rather than prescribe a separate manual setup step"
@@ -129,16 +130,17 @@ for requirement in ("AI 助手会根据内容设计分镜", "配好字幕和音�
                     "只调整对应片段，保留已经确认的部分"):
     assert requirement in autopilot_notes, requirement
 for label in ("A1：经典黑白风", "A2：现代潮酷风", "A3：史前洞穴风",
-              "A4：治愈故事风", "A5：历史卡通风", "A6：暖金暗影风", "A7：待更新…", "B1：极简手绘风", "B2：彩色手绘风", "B3：复古电视风"):
+              "A4：治愈故事风", "A5：历史卡通风", "A6：暖金暗影风", "A7：待更新…", "B1：极简线稿风", "B2：彩色手绘风", "B3：复古电视风", "B4：求生短剧风"):
     assert f"### {label}\n" in cn, label
 hero = cn.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
 style_names = ("经典黑白风", "现代潮酷风", "史前洞穴风", "治愈故事风", "历史卡通风", "暖金暗影风")
 b_style_names = [name for name in re.findall(r"^### B\d+：([^\n]+)$", cn, re.M)
                  if not name.startswith("待更新")]
 assert re.findall(r"<strong>([^<]+)</strong><br>", hero) == list(style_names[:5]) + b_style_names[:1] + list(style_names[5:]) + b_style_names[1:], "Preserve existing gallery order and append new B styles"
-assert "<strong>极简手绘风</strong><br>" in hero, "Use the approved B1 preview in the sixth cell"
+assert "<strong>极简线稿风</strong><br>" in hero, "Use the approved B1 preview in the sixth cell"
 assert re.findall(r'<a href="#([^"]+)"><img', hero)[:4] == ["a1", "a2", "a3", "a4"], "Link the first four previews directly to their style details"
-assert f"**{len(style_names) + len(b_style_names)} 大画风 · {len(style_names) + 2 + len(b_style_names)} 种视觉方案 · 实测样片 · 免费开源**" in cn
+assert f"**{len(style_names) + len(b_style_names)} 种画风 · 实测样片 · 免费开源**" in cn
+assert "种视觉方案" not in cn, "Count A+B styles once, not variants as a separate metric"
 assert re.search(r'<a href="#b1"><img src="([^"]+/b1-minimal-handdrawn\.gif)"[^>]+width="90%"></a>', hero), "Use B1 example 1 in the top gallery and keep its detail-section link"
 for number, name in enumerate(style_names, 1):
     assert f"### A{number}：{name}\n" in cn, "Keep preview and detail names aligned"
@@ -164,8 +166,10 @@ for link in re.findall(r"\]\(([^)]+)\)", cn):
     if "://" not in link and not link.startswith("#"):
         assert (root / link.split("#")[0]).is_file(), link
 
-previews = sorted(set(re.findall(r'src="https://cdn\.jsdelivr\.net/gh/kaomei/stickman-video-director@[0-9a-f]{40}/(assets/readme/previews/[^" ]+\.gif)"', cn)))
-assert len(previews) == 19, "Keep all existing lightweight A/B previews, both pinned A6 previews and the B2/B3 pairs"
+previews = sorted(set(re.findall(r'src="(?:https://cdn\.jsdelivr\.net/gh/kaomei/stickman-video-director@[0-9a-f]{40}/)?(assets/readme/previews/[^" ]+\.gif)"', cn)))
+assert len(previews) == 21, "Keep the 19 published previews plus the two approved B4 previews"
+for name in ("b4-dispatch", "b4-death-clock"):
+    assert f"assets/readme/previews/{name}.gif" in previews
 for a6_name in ("flow", "mcp"):
     assert f"assets/readme/previews/style-6-amber-noir-{a6_name}.gif" in previews
 for preview in previews:
@@ -178,14 +182,15 @@ for preview in previews:
 b1 = cn.split('<a id="b1"></a>', 1)[1].split('<a id="b2"></a>', 1)[0]
 assert "点击动图，查看或下载有声样片。" not in cn, "Owner requested no repeated GIF-click helper copy"
 assert re.search(r'src="([^"]+/b1-minimal-handdrawn\.gif)"', hero).group(1) == re.search(r'src="([^"]+/b1-minimal-handdrawn\.gif)"', b1).group(1), "Reuse the immutable B1 example 1 preview in the top gallery"
-fields = ("- **画面特点**：", "- **适合内容**：", "- **怎么选**：")
-assert all(b1.count(field) == 1 for field in fields), "Use the same introduction fields as A styles"
+fields = ("- **视觉亮点**：", "- **适合内容**：")
+assert all(b1.count(field) == 1 for field in fields), "Keep the approved concise style benefits"
+assert "- **怎么选**：" not in b1, "Do not restore the removed repetitive selection copy"
 assert [b1.index(field) for field in fields] == sorted(b1.index(field) for field in fields)
 table = re.search(r'<table width="100%">(.*?)</table>', b1, re.S).group(1)
 rows = re.findall(r"<tr>(.*?)</tr>", table, re.S)
 assert len(rows) == 3, "Keep two B1 short cases with a heading, preview and caption row"
 assert re.findall(r'<th width="50%" align="center">(.*?)</th>', rows[0]) == [
-    "案例 1：不露脸做 YouTube", "案例 2：为什么没人看？"
+    "案例 1：不露脸做 YouTube", "案例 2：每天发内容，为什么依旧没人看？"
 ], "Use concise B1 case titles while preserving the original and later sample order"
 cells = re.findall(r'<td width="50%" align="center">(.*?)</td>', rows[1], re.S)
 assert len(cells) == 2, "Keep both preview columns equally sized and centered"

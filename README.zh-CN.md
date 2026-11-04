@@ -44,8 +44,8 @@
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="历史卡通风火柴人动画：江户日本的武士故事" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>极简手绘风</strong><br>
-<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="极简手绘风火柴人视频：生动角色、重点文字与微动画" width="90%"></a>
+<strong>极简线稿风</strong><br>
+<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="极简线稿风火柴人视频：生动角色、重点文字与微动画" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -55,17 +55,18 @@
 </td>
 <td width="50%" align="center">
 <strong>彩色手绘风</strong><br>
-<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="彩色手绘风：安静的卧室与沿河漂走的念头" width="90%"></a>
+<a href="#b2"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="彩色手绘风：安静的卧室与沿河漂走的念头" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
 <strong>复古电视风</strong><br>
-<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="90%"></a>
+<a href="#b3"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>Coming Soon…</strong></a>
+<strong>求生短剧风</strong><br>
+<a href="#b4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 · 求生短剧风" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:end -->
@@ -73,7 +74,7 @@
 
 <div align="center">
 
-**9 大画风 · 11 种视觉方案 · 实测样片 · 免费开源**
+**10 种画风 · 实测样片 · 免费开源**
 
 ⭐ **为项目点个 Star，及时关注下一批画风和新功能解锁。**
 
@@ -107,7 +108,9 @@
 
 ## 🧭 开始使用
 
-兼容 Claude Code、Codex、Cursor、Antigravity，或任何具备文件和终端访问能力的智能体环境。
+**想尽可能接近展示案例，建议优先使用 Codex。** 本项目的自制案例均由我使用 Codex 制作与测试。
+
+也可安装到 Claude Code、Cursor、Antigravity 等具备文件和终端访问能力的 Agent；但模型能力、工具配置与执行方式不同，最终效果可能有所差异。
 
 把以下内容发送给你的 AI 助手：
 
@@ -153,7 +156,7 @@ https://github.com/kaomei/stickman-video-director
 做成在 YouTube 上有吸引力的视频：
 [粘贴内容或链接，也可以直接描述宣传需求]
 
-需求：5～10 分钟，横屏 16:9，采用 B1「极简手绘风」，配上旁白、字幕和音效。
+需求：5～10 分钟，横屏 16:9，采用 B1「极简线稿风」，配上旁白、字幕和音效。
 
 先检查生图、配音和视频合成配置，再给我脚本与 20 秒有声样片；
 确认后，让画面跟随配音节奏自动完成整片，交付完整视频文件，不用我逐段拼装。
@@ -179,11 +182,10 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ### A1：经典黑白风
 
-用最少的线条，把一个概念讲清楚。纯白或纯黑的画布上，人物、道具和强调色承担主要信息，适合做节奏明快的知识解说。
+一个圆头、几根线条，也能把复杂道理讲得让人会心一笑。黑白留白让每个动作和视觉比喻更醒目：焦虑可以是一座牢笼，注意力也可以是一格快要见底的电量。
 
-- **画面特点**：简洁圆头、线条肢体与统一线宽，可偶尔加入简单表情；最多三种高饱和强调色，用来区分情绪、风险或行动。抽象内容可以变成具体画面，比如把焦虑画成牢笼，把注意力画成进度条。
-- **适合内容**：科学常识、心理成长、励志、自我管理、商业拆解与概念解释。
-- **怎么选**：白底黑火柴人清爽直观，适合教学和日常科普；黑底白火柴人对比更强，适合悬念、冲突和情绪表达。
+- **视觉亮点**：白底版清爽轻快，黑底版更有悬念；少量亮色点出关键，画面干净，信息不打架。
+- **适合内容**：科学常识、心理成长、自我管理、商业拆解，以及需要“换个比喻就懂了”的概念讲解。
 
 | A1.1 · 白底黑火柴人 | A1.2 · 黑底白火柴人 |
 |:---:|:---:|
@@ -196,11 +198,10 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ### A2：现代潮酷风
 
-红色冷帽、黄色 T 恤，是这套画风最鲜明的角色标记。既可以在干净的科技空间里讲产品，也可以走进卧室、街道和荒野，演一段有起伏的故事。
+红帽黄衣，一眼认得出的故事主角。上一秒还在透明的科技界面前拆解一个新工具，下一秒就能走进城市与荒野，经历一场关于选择、成长或冒险的小故事。
 
-- **画面特点**：固定红帽黄衣的极简角色，搭配两种环境。极简科技方案用纯白空间、极淡网格、悬浮玻璃界面和青蓝光效表现科技感；彩色故事方案用彩色场景、光影和空间纵深营造故事氛围。
-- **适合内容**：极简科技适合 AI 工具、科技产品、方法教学与功能解说；彩色故事适合成长经历、生活话题、冒险与励志故事。
-- **怎么选**：重点是“讲清一个工具或方法”，选极简科技；重点是“跟着角色经历一件事”，选彩色故事。
+- **视觉亮点**：极简科技版用白色空间、悬浮界面与青蓝微光突出产品；彩色故事版用场景纵深和光影，把角色带进真实的情绪起伏。
+- **适合内容**：AI 工具、科技产品、方法教学、成长经历、生活话题与冒险故事。
 
 | A2.1 · 极简科技 | A2.2 · 彩色故事 |
 |:---:|:---:|
@@ -213,15 +214,14 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ### A3：史前洞穴风
 
-把今天的烦恼，搬回没有手机和办公室的史前世界。洞穴、兽皮、篝火和夸张表情，让职场、人性与生活里的荒诞，变成一段带反转的小故事。
+没有手机，没有办公室，怎么连原始人也逃不过打工？画风灵感来自 YouTube 拥有 **20 万粉丝**的 [@Zenn0009](https://www.youtube.com/@Zenn0009)。把现代人的烦恼扔进洞穴和部落，用兽皮、篝火和夸张反应，演出熟悉得好笑、又意外扎心的荒诞小故事。
 
-- **画面特点**：粗手绘线条、白色实心头部、深色肢体、兽皮服饰和土色环境，强调角色互动、表情反应与喜剧停顿。角色按故事设计，男女老幼都可以出现，不同故事不必共用一张脸。
-- **适合内容**：史前脑洞、职场讽刺、人性观察、黑色幽默、寓言与儿童英语故事。
-- **怎么选**：想用一个小情节讲出“原来如此”或“怎么会这样”的反转，可以选这一风格；尤其适合把现代关系放进原始部落，做出熟悉又意外的笑点。
+- **视觉亮点**：粗犷手绘、土色世界与鲜明表情；笑点藏在角色互动、反应镜头和恰到好处的停顿里。
+- **适合内容**：职场讽刺、人性观察、史前脑洞、黑色幽默、寓言与儿童英语故事。
 
-| 案例 1：《人类的第一份工作是怎么来的？》 | 案例 2：《人类第一次发现火源》 |
+| 案例 1：人类的第一份工作是怎么来的？ | 案例 2：人类第一次发现火源 |
 |:---:|:---:|
-| <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="《人类的第一份工作是怎么来的？》动态预览" width="360"> | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-community-fire.gif" alt="《人类第一次发现火源》——粉丝作品" width="360"> |
+| <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="人类的第一份工作是怎么来的？动态预览" width="360"> | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-community-fire.gif" alt="人类第一次发现火源——粉丝作品" width="360"> |
 | 史前故事 · 职场反转 | 火源主题 · 粉丝作品 |
 
 ---
@@ -230,11 +230,10 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ### A4：治愈故事风
 
-一只舍不得用的杯子，一条忍不住秒回的消息，一个终于留给自己的下午。让极简角色走进彩色的日常场景，用动作、表情和镜头讲普通人能共鸣的小事。
+那条忍不住秒回的消息，那个终于留给自己的下午。把说不清的情绪放进地铁、卧室和街角咖啡座，让观众在一个细微的表情里认出自己。
 
-- **画面特点**：白色实心圆头与细长躯干、深色细肢体和自然的小表情，搭配完整的 2D 卡通环境。全景交代地点，近景捕捉犹豫或释然，跟拍带着角色继续向前。
-- **适合内容**：生活共鸣、心理成长、人际关系、温暖故事、习惯养成与儿童英语。
-- **怎么选**：想让观众从一个具体生活片段里认出自己，可以选这一风格。色彩和光影随主题变化，既能表达温暖，也能讲焦虑、疲惫和重新出发。
+- **视觉亮点**：彩色日常场景、柔和光影与自然的小动作；镜头靠近时看见犹豫，拉远时留下一点释然。
+- **适合内容**：生活共鸣、人际关系、心理成长、习惯养成，以及温暖但不回避焦虑与疲惫的故事。
 
 | 案例 1：通勤路上的消息焦虑 | 案例 2：把时间留给自己 |
 |:---:|:---:|
@@ -248,11 +247,10 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ### A5：历史卡通风
 
-让火柴人走进历史：江户街头的武士、古埃及神庙里的黑猫、罗马营地中的士兵。用鲜明的时代服饰、彩色场景和带反差的小情节，把历史知识讲得更有画面感。
+武士也有账单要付，古埃及的猫也能抢走主角的风头。走进古人的街巷、神庙与营地，把书上的历史细节，变成角色正在经历的鲜活小事。
 
-- **画面特点**：白色实心圆头、黑色椭圆眼睛、清晰粗轮廓与细线肢体，搭配时代服饰、柔和赛璐璐明暗和彩色绘景。换国家、换时代时，调整服装、建筑、道具和音乐，保留同一套角色画法。
-- **适合内容**：世界历史、文明趣事、古人日常、人物故事与历史题材的幽默短片。
-- **怎么选**：想把知识点变成“古人正在经历的一件事”，可以选这一风格。既能讲一个历史细节，也能用角色反应和情节反转，让观众愿意继续看。
+- **视觉亮点**：白色圆头、利落墨线与彩色时代场景；服饰、建筑和道具交代年代，人物反应与情节反差带出趣味。
+- **适合内容**：世界历史、文明趣事、古人日常、人物故事与轻幽默历史短片。
 
 | 案例 1：江户日本 · 武士的日常 | 案例 2：古埃及 · 猫与木乃伊 |
 |:---:|:---:|
@@ -267,16 +265,15 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ### A6：暖金暗影风
 
-暖金色灯光、深邃暗影，以及穿着橙色连帽衫的黑色圆头角色。把一个令人好奇的“如果”变成电影感小故事，用富有表现力的动作讲述，而不是让角色对镜头口播。
+如果一觉醒来，所有东西都便宜了一万倍？画风灵感来自 YouTube [@IfverseTales](https://www.youtube.com/@IfverseTales)（**3 周涨粉 6 万**）。橙色连帽衫穿过暖金灯光与深紫暗影，把一个看似随口的假设，展开成有欲望、有代价、也有反转的电影感小故事。
 
-- **视觉风格**：暖琥珀色高光与深紫暗影形成对比，搭配简洁剪影、柔和明暗的城市场景和克制的镜头运动。
-- **适合内容**：“如果”主题、心理学、现代寓言、意外发现，以及带反转的短故事。
-- **适合这样选**：你想用电影感动画场景搭配独立旁白。在支持浏览器操作的智能体中，确认后的片段可以继续组装，加入配音、音效、醒目的全大写字幕和简洁的白色标题。
+- **视觉亮点**：琥珀高光、深色剪影与有纵深的城市场景；用角色行动和克制运镜制造悬念，而不是站着解释。
+- **适合内容**：“如果”脑洞、现代寓言、心理话题、意外发现与反转故事。
 
-| 示例 1：如果所有东西都便宜一万倍？ | 示例 2：值得跑去抢的好价 |
+| 示例 1：如果所有东西都便宜一万倍？ | 示例 2：物价大崩溃时代 |
 |:---:|:---:|
 | <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="暖金暗影风：物价一夜骤降的 20 秒故事" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="暖金暗影风：橙色连帽衫角色在商店外的 8 秒动画" width="360"></a> |
-| Renoise MCP 示例 · 20 秒 | Google Flow 示例 · 8 秒 |
+| Renoise MCP 示例 · 20 秒 · Tim 旁白 | Google Flow 示例 · 8 秒 · 模型原生音频 |
 
 ---
 
@@ -296,22 +293,21 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 <a id="b1"></a>
 
-### B1：极简手绘风
+### B1：极简线稿风
 
-让画面跟着旁白推进。用表情生动的火柴人、彩色手绘道具和醒目的重点文字，把知识、故事或产品亮点讲得清楚又有趣。
+像一个会画画的朋友，边讲边把重点画给你看。黑色线稿、灵动表情和少量彩色道具，把抽象知识变成小剧场，也让产品卖点有了具体的使用情境。
 
-- **画面特点**：近白纸底与极淡网格，黑色手绘线条搭配少量彩色道具；用表情、局部微动画、连贯转场和音效推动画面，重点文字突出信息，字幕配合旁白。
-- **适合内容**：YouTube 知识讲解、心理成长、职场故事、教育科普与产品宣传。
-- **怎么选**：想把一个话题、一段文案或故事脚本做成带配音、字幕的完整视频，可以选这一风格。画面跟随语音节奏编排，适合持续讲解和长篇叙事。
+- **视觉亮点**：近白纸面、轻手绘笔触与醒目的重点字；表情、道具和局部微动画跟着讲述接力，不靠堆满屏幕抓注意。
+- **适合内容**：YouTube 知识解说、教育科普、心理成长、职场故事与产品介绍。
 
 <table width="100%">
   <tr>
     <th width="50%" align="center">案例 1：不露脸做 YouTube</th>
-    <th width="50%" align="center">案例 2：为什么没人看？</th>
+    <th width="50%" align="center">案例 2：每天发内容，为什么依旧没人看？</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b1-minimal-handdrawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="B1 极简手绘风案例 1：点击查看或下载不露脸的 YouTube 视频创作有声样片" width="360"></a></td>
-    <td width="50%" align="center"><a href="skills/directing-stickman-videos/assets/b1/approved-2026-10-23.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@61e202ccecf9d9926cf76e13f3284181297729b8/assets/readme/previews/b1-minimal-handdrawn-2026-10-23.gif" alt="B1 极简手绘风案例 2：点击查看或下载 Bodi 有声样片，含字幕、手绘角色与微动画" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b1-minimal-handdrawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="B1 极简线稿风案例 1：点击查看或下载不露脸的 YouTube 视频创作有声样片" width="360"></a></td>
+    <td width="50%" align="center"><a href="skills/directing-stickman-videos/assets/b1/approved-2026-10-23.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@61e202ccecf9d9926cf76e13f3284181297729b8/assets/readme/previews/b1-minimal-handdrawn-2026-10-23.gif" alt="B1 极简线稿风案例 2：点击查看或下载 Bodi 有声样片，含字幕、手绘角色与微动画" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">手绘角色 · 重点文字 · 微动画</td>
@@ -325,20 +321,19 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ### B2：彩色手绘风
 
-让日常故事有自己的个性。温暖纸感、彩色场景、简洁火柴人与手写标题，把熟悉的生活片段变成生动的旁白解说。
+为什么越想早点睡，脑子反而越热闹？画风灵感来自 YouTube [@PsychToonsHQ](https://www.youtube.com/@PsychToonsHQ)（**20 万订阅者**），用温暖纸感、柔和色彩和手写笔触，把失眠、拖延与分心，画成让人“这不就是我吗”的心理小剧场。
 
-- **视觉风格**：纤细自然、略带不规则的墨线，柔和配色，以及贴合故事的环境。通过特写、视角切换、插画图解和小幅场景或道具动效推进叙事，避免人物过度活动。深色字幕搭配紧凑的米白纸片底。
-- **适合题材**：日常心理、习惯、注意力、个人成长，以及有共鸣的 YouTube 解说。
-- **选择建议**：想要更丰富的插画场景、Gemini 配音、按语义断句的字幕与动作音效，直接拿到完整成片时选择。由你的编程 Agent 在本地制作并组装。
+- **视觉亮点**：细腻墨线、彩色生活场景与米白纸片字幕；从一个小动作切入，用特写、图解和轻巧动效讲清背后的心理。
+- **适合内容**：日常心理、睡眠、习惯、注意力、个人成长与有共鸣的生活解说。
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">示例 1：让一个念头慢慢飘走</th>
-    <th width="50%" align="center">示例 2：你刚才为什么解锁手机？</th>
+    <th width="50%" align="center">示例 1：为什么越想入睡，反而越清醒？</th>
+    <th width="50%" align="center">示例 2：手机解锁了，你却忘了要干什么</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 彩色手绘风：安静的卧室、河上的纸船与放松的睡前时刻" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 彩色手绘风：查看手机时的走神，配有旁白、米白字幕与插画场景" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="B2 彩色手绘风：安静的卧室、河上的纸船与放松的睡前时刻" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 彩色手绘风：查看手机时的走神，配有旁白、米白字幕与插画场景" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">睡前思绪 · 场景切换 · 轻柔动效</td>
@@ -353,20 +348,19 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ### B3：复古电视风
 
-深色画布、精致的白灰角色，加上一层克制的电视质感，把日常疑问讲成有画面感的故事。
+像在深夜换台时，撞见一段奇妙的冷知识节目。画风灵感来自 YouTube [@BradikininVideos](https://www.youtube.com/@BradikininVideos)（**3 周涨粉 5.5 万**）：深色屏幕里，白灰角色、微弱辉光和电视纹理，把一个普通疑问慢慢变成“原来是这样”。
 
-- **画面风格**: 圆润剪影、多样场景与有意义的局部动画，搭配清爽白色字幕；轻微辉光和扫描线营造模拟电视观感。
-- **适合题材**: 生活科普、心理现象、动物行为、冷知识和短篇悬疑故事。
-- **什么时候选**: 希望由代码智能体完成画面制作与组装，交付带 Gemini Bodi 旁白、语义字幕和动作音效的完整视频。
+- **视觉亮点**：明暗鲜明的圆润角色、清爽白字与克制扫描线；场景切换和局部反应，让科普有趣，也让异常多一点悬念。
+- **适合内容**：生活科普、心理现象、动物行为、冷知识与短篇悬疑。
 
 <table width="100%">
   <tr>
     <th width="50%" align="center">示例 1：如果电视在凌晨三点自己打开？</th>
-    <th width="50%" align="center">示例 2：害怕的狗为什么反而靠近？</th>
+    <th width="50%" align="center">示例 2：你的狗是在认错，还是在害怕？</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-dog.gif" alt="复古电视风狗狗行为科普，白灰角色与局部动画" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="assets/readme/previews/b3-tv-dog.gif" alt="复古电视风狗狗行为科普，白灰角色与局部动画" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">虚构悬疑 · 场景切换 · 电视质感</td>
@@ -374,6 +368,38 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
   </tr>
 </table>
 <!-- b3:section:end -->
+
+<!-- b4:section:start -->
+<a id="b4"></a>
+
+### B4：求生短剧风
+
+一个倒计时、一通深夜来电、一条不能违背的规则——日常场景，也能变成步步逼近的危机。画风灵感来自 YouTube [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives)（**3 周涨粉 10 万**），用圆白头、白手套与强烈的明暗反差，让简洁的角色也能演出令人不安的故事。
+
+- **视觉亮点**：半阴影开场、异常特写与突然浮现的威胁；表情、光影和道具的细微变化，比满屏解释更能制造悬念。
+- **声音氛围**：Brian 旁白从开场带入故事，轻而连续的环境底音托住气氛，关键声响随剧情出现，让危险听得见，却不喧宾夺主。
+- **适合内容**：求生规则、都市怪谈、灾难逃生与反转悬疑。
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">样片 1：911接线员守则：不要出警</th>
+    <th width="50%" align="center">样片 2：如果你能看见死亡倒计时？</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 凌晨接警悬疑：恐怖开场、白手套接线员与窗外异象" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="assets/readme/previews/b4-death-clock.gif" alt="B4 死亡倒计时：分组问句、惊恐表情与逐渐浮现的威胁" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Brian 旁白 · 剧情同步音效 · 悬念互动结尾</td>
+    <td align="center">Brian 旁白 · 恐怖视觉钩子 · 重点文字动效</td>
+  </tr>
+</table>
+
+<!-- b4:section:end -->
+
+
+
+---
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>
@@ -447,29 +473,25 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 是的。Stickman Video Director 采用 MIT 开源协议，100% 完全免费且开源，你可以自由用于个人创作或商业变现。不同于传统每月收取 $30–$60 昂贵月费的商业软件，本项目没有任何订阅费。你只需根据自己选择调用的第三方大模型服务（如 Google Gemini、Claude 或 ElevenLabs）按需支付官方 API 费用。
 
-### Q2. 生成的视频可以在 YouTube 和 TikTok 上开通收益变现吗？
+<!-- readme:platforms -->
 
-完全可以。无脸号创作者最担心被平台判定为“搬运重复内容（Reused Content）”或“低质 AI 垃圾”导致无法获利。由于本项目生成的是具有高度原创叙事节奏、独特视觉分镜和有针对性撰写的故事脚本，成片完全属于高价值原创内容，符合 YouTube 创作者收益计划（YPP）与 TikTok 创作者基金的变现标准。
+### Q2. 我该怎么保持角色的一致性？
 
-### Q3. 我需要懂编程或者拥有昂贵的高性能显卡吗？
+**B · 全自动模式**：采用代码驱动的制作流程，在制作视频前会先生成人物素材图，并在不同场景中复用，因此人物一致性相对稳定。
 
-完全不需要。你不需要购买几万块的专业独立显卡，也不需要懂写代码。
+**A · 导演模式**：主要依赖文生视频。如果人物的发型、服饰等特征比较复杂，难以仅靠文字稳定复现，建议加一张火柴人角色参考图，并在后续片段中持续使用，让效果更稳定。
 
-- **分镜导演模式（Director Mode）**：直接在任意支持 Skill 的 AI 助手对话框里用普通中文/英文交流即可使用；
-- **全自动模式（Autopilot Mode）**：运行在 Claude Code、Codex 或 Cursor 等现代智能体环境中，所有繁重的生成均交由云端 API 或轻量级渲染完成，不消耗本地硬件配置。
+### Q3. 我该使用什么工具？需要指定生图模型吗？
+
+**推荐使用 Codex，以尽可能接近案例效果。** 展示的 B 模式样片都由我在 Codex 中制作和测试，无需自己写代码。其他 Agent 也可安装 Skill，但模型、工具配置和执行方式不同，效果可能有差异。
+
+生图直接使用 GPT 内置模型，我没有额外配置生图 API。建议先做短样片，确认画风和效果后再继续全片。
 
 ### Q4. 如果我手里没有写好的现成剧本，能直接做视频吗？
 
 可以。你可以直接扔给 AI 导演一段粗糙的想法、一个新闻链接、甚至一整篇公众号长文。AI 导演会自动提炼核心戏剧冲突，写出前 3 秒爆款黄金钩子，并将你的主题拆解为带有幽默节奏与台词断句的 6 幕式标准分镜。
 
-<!-- readme:platforms -->
-
-### Q5. 我应该如何选择“分镜导演模式”与“全自动模式”？
-
-- **选择分镜导演模式（Director Mode）**：当你希望严格把控每一个镜头构图、运镜轨迹和视觉隐喻时使用。它是你的“零成本安全网”，在生成任何真实视频之前，你可以完全免费地反复微调剧本和分镜；
-- **选择全自动模式（Autopilot Mode）**：当你追求极致出片效率、想当甩手掌柜时使用。一键自动编排剧本、对齐配音、生成字幕并合成完整成片。
-
-### Q6. 它是如何确保视频具有高完播率、有梗且不枯燥的？
+### Q5. 它是如何确保视频具有高完播率、有梗且不枯燥的？
 
 普通 AI 工具只会机械地把文字直译成画面，导致视频像催眠 PPT。Stickman Video Director 植入了专业的**视觉叙事心理学**：
 
@@ -477,15 +499,16 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 - **爆款视觉隐喻**：把枯燥抽象的概念转化为具象的搞笑视觉梗（例如把“精神内耗”具象化为一个疯狂自转的仓鼠轮，把“被掏空”具象化为头顶仅剩 1% 的低电量进度条）；
 - **卡点与节奏留白**：内置情绪铺垫、反转神表情与音效提示点（SFX），完美还原 Casually Explained 等顶流创作者的幽默节奏。
 
-### Q7. 支持哪些 AI 助手和剪辑软件？
+### Q6. 生成的视频可以在 YouTube 和 TikTok 上开通收益变现吗？
 
-- **支持环境**：无缝兼容 Claude Code、OpenAI Codex、Cursor、Antigravity 等任意具备终端或文件读写能力的智能体环境；
-- **视频模型**：生成的提示词深度适配 Google Flow、Runway (Gen-3)、Luma、Kling（可灵）、Pika 等主流工具；
-- **剪辑软件**：导出的音画素材可直接一键拖入 CapCut（剪映海外版）、Premiere Pro、DaVinci Resolve 进行微调。
+完全可以。无脸号创作者最担心被平台判定为“搬运重复内容（Reused Content）”或“低质 AI 垃圾”导致无法获利。由于本项目生成的是具有高度原创叙事节奏、独特视觉分镜和有针对性撰写的故事脚本，成片完全属于高价值原创内容，符合 YouTube 创作者收益计划（YPP）与 TikTok 创作者基金的变现标准。
 
-### Q8. 如果成片里某个单独镜头我不满意，必须全片推倒重做吗？
+### Q7. 我需要懂编程或者拥有昂贵的高性能显卡吗？
 
-绝对不需要！这是我们 6 幕式模块化架构的最大优势。如果你对第 3 个镜头不满意，你只需单独重新生成第 3 个镜头，第 1、2、4、5、6 镜头的音频和素材完全保留，为你节省 80% 的返工剪辑时间，杜绝浪费 API 额度。
+完全不需要。你不需要购买几万块的专业独立显卡，也不需要懂写代码。
+
+- **分镜导演模式（Director Mode）**：直接在任意支持 Skill 的 AI 助手对话框里用普通中文/英文交流即可使用；
+- **全自动模式（Autopilot Mode）**：运行在 Claude Code、Codex 或 Cursor 等现代智能体环境中，所有繁重的生成均交由云端 API 或轻量级渲染完成，不消耗本地硬件配置。
 
 <!-- readme:contribute -->
 

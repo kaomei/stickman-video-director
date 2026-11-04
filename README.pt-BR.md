@@ -44,7 +44,7 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="Animação histórica com bonecos de palito no Japão do período Edo" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Desenho à mão minimalista</strong><br>
+<strong>Traço minimalista</strong><br>
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Vídeo em desenho à mão minimalista com bonecos expressivos, texto em destaque e microanimações" width="90%"></a>
 </td>
 </tr>
@@ -55,17 +55,18 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 </td>
 <td width="50%" align="center">
 <strong>Desenho à Mão Colorido</strong><br>
-<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Vídeo de bonecos de palito em desenho colorido: um quarto tranquilo e um pensamento seguindo o rio" width="90%"></a>
+<a href="#b2"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="Vídeo de bonecos de palito em desenho colorido: um quarto tranquilo e um pensamento seguindo o rio" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
 <strong>Estilo TV retrô</strong><br>
-<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="90%"></a>
+<a href="#b3"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>Coming Soon…</strong></a>
+<strong>Suspense de sobrevivência</strong><br>
+<a href="#b4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 · Suspense de sobrevivência" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:end -->
@@ -73,7 +74,7 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 
 <div align="center">
 
-**9 estilos · 11 opções visuais · Exemplos testados · Grátis e de código aberto**
+**10 estilos visuais · Exemplos testados · Grátis e de código aberto**
 
 ⭐ **Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.**
 
@@ -107,7 +108,9 @@ Os dois fluxos podem começar com um tema inicial, um link da web ou um roteiro 
 
 ## 🧭 Como começar
 
-Compatível com Claude Code, Codex, Cursor, Antigravity ou qualquer ambiente de agente com acesso a arquivos e ao terminal.
+**Para chegar o mais perto possível dos exemplos, recomendo começar pelo Codex.** Os exemplos de minha autoria neste projeto foram criados e testados com o Codex.
+
+O Skill também pode ser instalado no Claude Code, Cursor, Antigravity ou em outros agentes com acesso a arquivos e terminal. Porém, diferenças nos modelos, na configuração das ferramentas e na execução podem alterar o resultado.
 
 Envie o seguinte ao seu assistente de IA:
 
@@ -158,7 +161,7 @@ post, notícia ou pedido abaixo em um vídeo atraente para o YouTube:
 [Cole o conteúdo ou link, ou descreva o vídeo promocional que precisa]
 
 Quero 5 a 10 minutos, horizontal 16:9, no estilo B1
-“Desenho à mão minimalista”, com narração, legendas e efeitos sonoros.
+“Traço minimalista”, com narração, legendas e efeitos sonoros.
 
 Primeiro, confira a configuração de imagens, voz e montagem de vídeo.
 Depois, entregue o roteiro e uma amostra de 20 segundos com áudio.
@@ -187,11 +190,10 @@ Os estilos seguem a numeração A1, A2, A3… Cada um tem seus próprios exemplo
 
 ### A1: Preto e branco clássico
 
-Poucas linhas, uma ideia bem explicada. Em um fundo totalmente branco ou preto, personagens, objetos e cores de destaque conduzem a história. Funciona bem para explicações claras e ágeis.
+Uma cabeça redonda e poucos traços fazem uma ideia complicada se encaixar. A ansiedade vira uma gaiola; a atenção, uma bateria acabando. Sem excessos, cada gesto e metáfora ganha força.
 
-- **Visual:** Cabeça redonda, membros feitos de linhas, traço uniforme e, quando fizer sentido, expressões simples. Até três cores vibrantes ajudam a separar emoções, riscos e ações. Conceitos abstratos viram imagens: ansiedade pode ser uma prisão; atenção, uma barra de progresso.
-- **Indicado para:** Ciência, psicologia, motivação, organização pessoal, análise de negócios e explicação de conceitos.
-- **Como escolher:** Fundo branco para um resultado limpo e direto; fundo preto para mais contraste, tensão e carga emocional.
+- **O visual**: Tinta preta no branco ou branco no preto, com pontos de cor para destacar o essencial.
+- **Para contar**: Ciência, psicologia, desenvolvimento pessoal, negócios e conceitos que pedem uma boa analogia visual.
 
 | A1.1 · Bonecos pretos em fundo branco | A1.2 · Bonecos brancos em fundo preto |
 |:---:|:---:|
@@ -204,11 +206,10 @@ Poucas linhas, uma ideia bem explicada. Em um fundo totalmente branco ou preto, 
 
 ### A2: Pop moderno
 
-O gorro vermelho e a camiseta amarela são a marca do personagem. Ele pode explicar um produto em um ambiente tecnológico ou viver uma história em um quarto, na rua ou em uma paisagem aberta.
+Gorro vermelho, camiseta amarela: um personagem que você reconhece de cara. Das interfaces flutuantes às ruas e à natureza, demonstrações de ferramentas e viradas pessoais ganham uma história para acompanhar.
 
-- **Visual:** Um personagem reconhecível, dois tipos de cenário. A tecnologia minimalista combina espaço branco, grade discreta, interfaces flutuantes com aparência de vidro e luz azul-ciano. A narrativa colorida aposta em cenários, iluminação cinematográfica e profundidade.
-- **Indicado para:** Tecnologia minimalista para ferramentas de IA, produtos de tecnologia, tutoriais e demonstrações. Narrativa colorida para crescimento pessoal, cotidiano, aventuras e histórias de superação.
-- **Como escolher:** Para explicar uma ferramenta ou um método, vá de tecnologia minimalista. Para acompanhar a experiência de um personagem, escolha narrativa colorida.
+- **O visual**: Minimal Tech combina espaço branco e interfaces de vidro; Colorful Story traz cenários ricos, profundidade e luz expressiva.
+- **Para contar**: Ferramentas de IA, tecnologia, tutoriais, crescimento pessoal, experiências cotidianas e aventuras.
 
 | A2.1 · Tecnologia minimalista | A2.2 · Narrativa colorida |
 |:---:|:---:|
@@ -221,11 +222,10 @@ O gorro vermelho e a camiseta amarela são a marca do personagem. Ele pode expli
 
 ### A3: Cavernas pré-históricas
 
-E se os problemas de hoje fossem parar em um mundo sem celular nem escritório? Cavernas, roupas de pele, fogueiras e expressões exageradas transformam situações de trabalho e pequenas contradições humanas em histórias com uma boa virada.
+Sem celular nem escritório. Por que os homens das cavernas continuam presos ao trabalho? O visual se inspira no canal [@Zenn0009](https://www.youtube.com/@Zenn0009) do YouTube (**200 mil inscritos**). Leve problemas modernos para fogueiras e peles de animais e transforme frustrações conhecidas em pequenas histórias absurdas, com uma boa alfinetada.
 
-- **Visual:** Contornos soltos, cabeça preenchida de branco, membros escuros, roupas de pele e cenários em tons de terra. O foco está na interação, nas reações e nas pausas cômicas. O elenco acompanha a história: adultos, crianças e idosos podem ter aparências diferentes. Não é preciso repetir o mesmo rosto em todos os vídeos.
-- **Indicado para:** Imaginação pré-histórica, sátira do trabalho, comportamento humano, humor ácido, fábulas e histórias infantis para aprender inglês.
-- **Como escolher:** Quando um pequeno acontecimento precisa levar a um final inesperado. Relações modernas ficam familiares e absurdas ao mesmo tempo em uma tribo pré-histórica.
+- **O visual**: Traços rústicos, tons terrosos, reações grandes. Interações, cortes de reação e pausas fazem a comédia acontecer.
+- **Para contar**: Sátira do trabalho, natureza humana, hipóteses pré-históricas, humor ácido, fábulas e histórias infantis em inglês.
 
 | Exemplo 1: “Como surgiu o primeiro emprego da humanidade?” | Exemplo 2: “A primeira descoberta do fogo” |
 |:---:|:---:|
@@ -238,11 +238,10 @@ E se os problemas de hoje fossem parar em um mundo sem celular nem escritório? 
 
 ### A4: Histórias acolhedoras
 
-Uma caneca que você guarda para uma ocasião especial. Uma mensagem que parece exigir resposta imediata. Uma tarde que finalmente fica só para você. Personagens simples entram em cenários coloridos e contam pequenas histórias por meio de gestos, expressões e enquadramentos.
+A mensagem que parece exigir resposta. A tarde que você finalmente guardou para si. Estações, quartos e cafés dão espaço para sentimentos difíceis de explicar — e para o público se reconhecer.
 
-- **Visual:** Cabeças redondas preenchidas de branco, corpos alongados, membros finos e escuros e expressões discretas em cenários 2D coloridos. Planos abertos apresentam o lugar; closes mostram hesitação ou alívio; a câmera acompanha o personagem para a história seguir em frente.
-- **Indicado para:** Identificação com o cotidiano, crescimento pessoal, relacionamentos, momentos de afeto, novos hábitos e conteúdo infantil em inglês.
-- **Como escolher:** Para quem quer que o público pense “isso também acontece comigo”. A cor e a luz acompanham o tema, seja acolhimento, ansiedade, cansaço ou recomeço.
+- **O visual**: Cotidiano colorido, luz suave, gestos discretos. O close mostra a hesitação; o plano aberto deixa respirar.
+- **Para contar**: Relações, emoções, hábitos, crescimento e histórias acolhedoras que também abraçam a ansiedade e o cansaço.
 
 | Exemplo 1: A ansiedade das mensagens no caminho para o trabalho | Exemplo 2: Reservar um tempo para si |
 |:---:|:---:|
@@ -256,11 +255,10 @@ Uma caneca que você guarda para uma ocasião especial. Uma mensagem que parece 
 
 ### A5: Cartoon histórico
 
-Um samurai pelas ruas de Edo, um gato preto num templo egípcio, um soldado num acampamento romano. Figurinos de época, cenários coloridos e pequenas reviravoltas transformam um assunto de história em uma cena que dá vontade de acompanhar.
+Samurais também têm contas a pagar. No Egito, um gato pode roubar a cena. Pelas ruas e templos do passado, curiosidades históricas viram situações que um personagem precisa enfrentar.
 
-- **Visual:** Cabeças redondas preenchidas de branco, olhos ovais pretos, contornos marcados e membros finos. Roupas de época recebem sombras suaves em cel shading; os cenários têm acabamento de pintura. Ao mudar de país ou período, troque roupas, arquitetura, objetos e trilha, mantendo o mesmo jeito de desenhar os personagens.
-- **Indicado para:** História mundial, curiosidades, cotidiano de outras épocas, personagens históricos e comédias com tema histórico.
-- **Como escolher:** Para mostrar um fato por meio de uma situação, em vez de só explicá-lo. Uma reação ou uma virada bem colocada ajuda a conduzir a narrativa.
+- **O visual**: Cabeças brancas, contornos marcantes e cenários de época coloridos. Roupas e arquitetura situam a história; reações e contrastes dão vida a ela.
+- **Para contar**: História mundial, civilizações, cotidiano antigo, figuras históricas e curiosidades bem-humoradas.
 
 | Exemplo 1: O cotidiano de um samurai em Edo | Exemplo 2: Gatos e múmias no Egito Antigo |
 |:---:|:---:|
@@ -275,16 +273,15 @@ Contribuição de estilo e prompts: [Lawal Ridwan / @leksautomate](https://githu
 
 ### A6: Amber Noir
 
-Luz dourada e quente, sombras profundas e um personagem de cabeça redonda preta com moletom laranja. Transforme um “e se…” intrigante em uma pequena história cinematográfica, contada por ações expressivas em vez de um apresentador falando para a câmera.
+E se você acordasse e tudo custasse dez mil vezes menos? A inspiração visual vem de [@IfverseTales](https://www.youtube.com/@IfverseTales) no YouTube (**60 mil inscritos conquistados em 3 semanas**). Uma figura de moletom laranja atravessa luz dourada e sombras de ameixa, transformando uma hipótese casual em tentação, consequências e reviravoltas.
 
-- **Estilo visual**: reflexos em âmbar sobre sombras em tons de ameixa, silhuetas simples, cenários urbanos com sombreamento suave e movimentos de câmera contidos.
-- **Ideal para**: cenários “e se…”, psicologia, fábulas modernas, descobertas inesperadas e histórias curtas com reviravolta.
-- **Escolha quando**: quiser cenas animadas cinematográficas com narração independente. Em um agente com acesso ao navegador, os clipes aprovados podem ser montados com voz, efeitos sonoros, legendas marcantes em caixa alta e um título branco e limpo.
+- **O visual**: Reflexos âmbar, silhuetas escuras e cidades em camadas. Ações e câmera contida despertam curiosidade sem um apresentador falando.
+- **Para contar**: Cenários hipotéticos, fábulas modernas, psicologia, descobertas e histórias com virada.
 
-| Exemplo 1: E se tudo custasse 10 mil vezes menos? | Exemplo 2: Uma oferta que vale uma corrida |
+| Exemplo 1: E se tudo custasse 10 mil vezes menos? | Exemplo 2: A era do colapso dos preços |
 |:---:|:---:|
 | <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: uma história de 20 segundos em que os preços caem da noite para o dia" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: cena animada de 8 segundos com um personagem de moletom laranja em frente a uma loja" width="360"></a> |
-| Exemplo Renoise MCP · 20 segundos | Exemplo Google Flow · 8 segundos |
+| Exemplo Renoise MCP · 20 segundos · Narração: Tim | Exemplo Google Flow · 8 segundos · Áudio nativo do modelo |
 
 ---
 
@@ -304,18 +301,17 @@ Os estilos seguem a numeração B1, B2, B3… Cada um tem seus próprios vídeos
 
 <a id="b1"></a>
 
-### B1: Desenho à mão minimalista
+### B1: Traço minimalista
 
-O visual acompanha a narração. Bonecos expressivos, objetos coloridos com traço à mão e textos em destaque tornam ideias, histórias e benefícios de produtos mais claros e interessantes.
+Como um amigo desenhando enquanto explica. Rostos expressivos, linhas pretas e poucos objetos coloridos transformam conhecimento abstrato e benefícios de produtos em situações que todo mundo reconhece.
 
-- **Visual:** Fundo de papel quase branco com uma grade muito discreta, linhas pretas à mão e poucos objetos coloridos. Expressões, microanimações, transições contínuas e efeitos sonoros conduzem as cenas; os textos destacam o essencial e as legendas acompanham a voz.
-- **Indicado para:** Vídeos explicativos no YouTube, psicologia e crescimento pessoal, histórias de trabalho, conteúdo educativo e divulgação de produtos.
-- **Como escolher:** Para transformar um tema, texto ou roteiro em um vídeo completo com narração e legendas. As imagens seguem o ritmo da voz, tanto em explicações contínuas quanto em narrativas longas.
+- **O visual**: Papel quase branco, traços vivos, títulos com propósito. Expressões, objetos e movimentos sutis explicam sem lotar a tela.
+- **Para contar**: Explicações no YouTube, educação, psicologia, crescimento pessoal, trabalho e produtos.
 
 <table width="100%">
   <tr>
     <th width="50%" align="center">Exemplo 1: YouTube sem aparecer</th>
-    <th width="50%" align="center">Exemplo 2: Por que ninguém está assistindo?</th>
+    <th width="50%" align="center">Exemplo 2: Postando todo dia: por que ninguém assiste?</th>
   </tr>
   <tr>
     <td width="50%" align="center"><a href="assets/readme/b1-minimal-handdrawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Exemplo B1 de desenho à mão minimalista: clique para assistir ou baixar a amostra com áudio sobre criar vídeos para YouTube sem aparecer" width="360"></a></td>
@@ -333,20 +329,19 @@ O visual acompanha a narração. Bonecos expressivos, objetos coloridos com tra�
 
 ### B2: Desenho à Mão Colorido
 
-Histórias do cotidiano, desenhadas com personalidade. Papel acolhedor, cenários coloridos, bonecos de palito simples e títulos manuscritos transformam momentos familiares em vídeos narrados envolventes.
+Por que a mente faz mais barulho quando você tenta dormir? Inspirado no [@PsychToonsHQ](https://www.youtube.com/@PsychToonsHQ) do YouTube (**200 mil inscritos**), o papel acolhedor e as cores suaves transformam insônia, procrastinação e distração em histórias familiares demais.
 
-- **Estilo visual**: traços de tinta finos e irregulares, cores suaves e ambientes próprios de cada história. Close-ups, mudanças de perspectiva, diagramas ilustrados e pequenos movimentos de cenário ou objetos conduzem a narrativa sem animar demais os personagens. Legendas escuras aparecem em pequenas etiquetas de papel marfim.
-- **Ideal para**: psicologia do cotidiano, hábitos, atenção, desenvolvimento pessoal e vídeos explicativos no YouTube com os quais o público se identifica.
-- **Quando escolher**: quando quiser um vídeo completo com cenários ilustrados mais ricos, narração Gemini, legendas divididas por sentido e efeitos sonoros de ação. Seu agente de programação produz e monta tudo localmente.
+- **O visual**: Linhas finas, cenários cotidianos e legendas em papel marfim. Closes, metáforas e movimentos delicados revelam a psicologia dos hábitos.
+- **Para contar**: Psicologia cotidiana, sono, hábitos, atenção, crescimento e explicações com identificação.
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">Exemplo 1: Deixe um pensamento passar</th>
-    <th width="50%" align="center">Exemplo 2: Por que você desbloqueou o celular?</th>
+    <th width="50%" align="center">Exemplo 1: Por que tentar dormir deixa você mais acordado?</th>
+    <th width="50%" align="center">Exemplo 2: Você desbloqueou o celular — e esqueceu por quê</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Desenho à Mão Colorido: um quarto tranquilo, um barquinho de papel no rio e uma hora de dormir mais calma" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Desenho à Mão Colorido: uma distração ao checar o celular, com narração, legendas marfim e cenários ilustrados" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Desenho à Mão Colorido: um quarto tranquilo, um barquinho de papel no rio e uma hora de dormir mais calma" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Desenho à Mão Colorido: uma distração ao checar o celular, com narração, legendas marfim e cenários ilustrados" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Pensamentos antes de dormir · Cortes de cenário · Movimentos suaves</td>
@@ -361,20 +356,19 @@ Histórias do cotidiano, desenhadas com personalidade. Papel acolhedor, cenário
 
 ### B3: Estilo TV retrô
 
-Fundo escuro, personagens refinados em branco e cinza e uma textura sutil de televisão transformam dúvidas do dia a dia em histórias visuais.
+Como encontrar uma transmissão curiosa de madrugada. Inspirados no [@BradikininVideos](https://www.youtube.com/@BradikininVideos) do YouTube (**55 mil inscritos conquistados em 3 semanas**), personagens brancos e cinza, brilho discreto e textura analógica transformam perguntas comuns em descobertas.
 
-- **Visual**: Silhuetas arredondadas, cenários variados, animações locais com propósito e legendas brancas limpas. Brilho suave e linhas de varredura trazem um toque de TV analógica.
-- **Ideal para**: Ciência do cotidiano, psicologia, comportamento animal, curiosidades e histórias curtas de mistério.
-- **Escolha quando**: Quiser um vídeo completo, criado e montado pelo seu agente de código, com narração Gemini Bodi, legendas por unidades de sentido e efeitos sonoros ligados às ações.
+- **O visual**: Figuras luminosas no escuro, letras brancas limpas e linhas de varredura sutis. Mudanças de cena e pequenas reações dão graça à ciência e suspense ao estranho.
+- **Para contar**: Ciência cotidiana, psicologia, comportamento animal, curiosidades e pequenos mistérios.
 
 <table width="100%">
   <tr>
     <th width="50%" align="center">Exemplo 1: E se sua TV ligasse sozinha às 3 da manhã?</th>
-    <th width="50%" align="center">Exemplo 2: Por que um cão assustado se aproxima?</th>
+    <th width="50%" align="center">Exemplo 2: Seu cachorro está arrependido — ou com medo?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-dog.gif" alt="Explicação do comportamento canino em branco e cinza com animação local" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="assets/readme/previews/b3-tv-dog.gif" alt="Explicação do comportamento canino em branco e cinza com animação local" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Suspense fictício · Mudanças de cena · Textura de TV</td>
@@ -382,6 +376,37 @@ Fundo escuro, personagens refinados em branco e cinza e uma textura sutil de tel
   </tr>
 </table>
 <!-- b3:section:end -->
+
+<!-- b4:section:start -->
+<a id="b4"></a>
+
+### B4: Suspense de sobrevivência
+
+Uma contagem regressiva. Uma ligação de madrugada. Uma regra que você nunca deve quebrar. Inspirados no [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives) do YouTube (**100 mil inscritos conquistados em 3 semanas**), lugares comuns viram armadilhas. Cabeças redondas brancas, luvas brancas e contrastes fortes colocam personagens simples em um mundo inquietante.
+
+- **O visual**: Aberturas em meia-sombra, closes perturbadores e ameaças que saem do escuro. Expressões, luz e objetos mudam para criar tensão sem explicar cada imagem.
+- **O som**: Brian prende a atenção desde a abertura. Uma ambiência baixa e contínua sustenta a tensão; efeitos ligados à história revelam o perigo sem encobrir a voz.
+- **Para contar**: Regras de sobrevivência, lendas urbanas, fugas de desastres e suspense com reviravolta.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Exemplo 1: Regras do atendente do 911: não envie a polícia</th>
+    <th width="50%" align="center">Exemplo 2: E se você visse a morte chegando?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4: atendente do 911 de luvas brancas, ligação noturna e ameaça na janela" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="assets/readme/previews/b4-death-clock.gif" alt="B4: relógio da morte, texto em grupos, expressão assustada e ameaça surgindo" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Narração Brian · Efeitos sincronizados à história · Escolha final em suspense</td>
+    <td align="center">Narração Brian · Abertura visual arrepiante · Texto animado de impacto</td>
+  </tr>
+</table>
+
+<!-- b4:section:end -->
+
+
+---
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>
@@ -455,29 +480,25 @@ Gere o kit de thumbnail e publicação para este vídeo:
 
 Sim. O Stickman Video Director é 100% gratuito e de código aberto sob a licença MIT. Você pode usá-lo livremente em projetos pessoais e comerciais. Ao contrário de plataformas SaaS proprietárias que cobram US$ 30–60/mês, este projeto não tem assinatura. Você só paga pelo uso das suas APIs de terceiros (como Google Gemini, Claude ou ElevenLabs), conforme os modelos que escolher conectar.
 
-### Q2. Posso monetizar esses vídeos no YouTube e no TikTok?
+<!-- readme:platforms -->
 
-Sim, com certeza. Uma grande preocupação de quem cria canais sem aparecer é a política de desmonetização do YouTube para “Reused Content” ou conteúdo de IA de baixo esforço. Como o Stickman Video Director escreve arcos narrativos personalizados, ritmo exclusivo e encenação visual original, seu resultado é totalmente original. Centenas de canais monetizam com sucesso vídeos narrativos de bonecos-palito pelo YouTube Partner Program (YPP).
+### Q2. Como posso manter a consistência dos personagens?
 
-### Q3. Preciso saber programar ou ter uma GPU cara?
+**B · Modo Autopilot**: Usa um fluxo de produção orientado por código. As imagens do personagem são criadas antes da produção do vídeo e reutilizadas em diferentes cenas, o que mantém a aparência relativamente estável.
 
-Não. Você não precisa de uma placa RTX de ponta nem de conhecimentos de programação.
+**A · Modo Diretor**: Depende principalmente da geração de vídeo a partir de texto. Se o penteado, a roupa ou outras características do personagem forem complexos e difíceis de reproduzir de forma consistente só com texto, adicione uma imagem de referência do personagem em palitos e continue usando-a nos próximos clipes para obter resultados mais estáveis.
 
-- **Director Mode** funciona por conversa em qualquer assistente de IA compatível com Skills.
-- **Autopilot Mode** roda em agentes de programação com IA (como Claude Code, Codex ou Cursor) usando pedidos simples em inglês. Toda a geração visual pesada é feita por APIs leves na nuvem ou renderização procedural, não pelo seu hardware local.
+### Q3. Quais ferramentas devo usar? Preciso escolher um modelo de geração de imagens?
+
+**Para chegar o mais perto possível dos exemplos, recomendo o Codex.** Foi nele que produzi e testei os vídeos de demonstração do modo B; você não precisa programar. O Skill também pode ser instalado em outros agentes, mas diferenças nos modelos, na configuração das ferramentas e na execução podem alterar o resultado.
+
+Para as imagens, uso o modelo integrado ao GPT, sem configurar uma API adicional. Faça primeiro uma amostra curta para conferir o estilo e o resultado antes de produzir o vídeo completo.
 
 ### Q4. Posso fazer um vídeo sem ter um roteiro pronto?
 
 Sim. Você pode colar uma ideia inicial, um pensamento espontâneo, um link de notícia ou um post de blog inteiro. O diretor de IA extrai o conflito central, escreve um gancho atraente de 3 segundos e organiza o tema em um arco narrativo enxuto de 6 cenas, com timing cômico e indicações de narração.
 
-<!-- readme:platforms -->
-
-### Q5. Quando devo escolher Director Mode ou Autopilot Mode?
-
-- **Escolha Director Mode** quando quiser controle absoluto sobre cada plano, ângulo de câmera e metáfora visual. Ele protege seu orçamento: você aprova o roteiro e os storyboards gratuitamente antes de gerar um único quadro de vídeo.
-- **Escolha Autopilot Mode** quando quiser uma experiência automática em um clique que gere roteiro, narração, legendas e o arquivo de vídeo final.
-
-### Q6. Como a IA mantém a retenção do público sem deixar o vídeo chato?
+### Q5. Como a IA mantém a retenção do público sem deixar o vídeo chato?
 
 Ferramentas tradicionais de IA apenas ilustram o texto literalmente. O Stickman Video Director aplica de verdade a **psicologia da narrativa visual**:
 
@@ -485,15 +506,16 @@ Ferramentas tradicionais de IA apenas ilustram o texto literalmente. O Stickman 
 - **Metáforas visuais**: transforma conceitos abstratos em piadas visuais, como ansiedade representada por uma roda de hamster encolhendo ou esgotamento por uma bateria em 1%.
 - **Ritmo e pausas cômicas**: insere pausas estruturadas, planos de reação e indicações de efeitos sonoros (SFX), acompanhando o timing de criadores como Casually Explained.
 
-### Q7. Quais assistentes de IA e editores de vídeo são compatíveis?
+### Q6. Posso monetizar esses vídeos no YouTube e no TikTok?
 
-- **Ambientes de IA**: Claude Code, OpenAI Codex, Cursor, Antigravity ou qualquer ambiente de agente com acesso a arquivos e ao terminal.
-- **Geradores de vídeo**: Google Flow, Runway (Gen-3), Luma Dream Machine, Kling, Pika ou qualquer modelo de imagem para vídeo ou texto para vídeo.
-- **Editores de vídeo**: os prompts e as exportações de áudio estão prontos para arrastar e soltar no CapCut, Premiere Pro, DaVinci Resolve ou Final Cut.
+Sim, com certeza. Uma grande preocupação de quem cria canais sem aparecer é a política de desmonetização do YouTube para “Reused Content” ou conteúdo de IA de baixo esforço. Como o Stickman Video Director escreve arcos narrativos personalizados, ritmo exclusivo e encenação visual original, seu resultado é totalmente original. Centenas de canais monetizam com sucesso vídeos narrativos de bonecos-palito pelo YouTube Partner Program (YPP).
 
-### Q8. Se eu não gostar de uma cena, preciso renderizar o vídeo inteiro de novo?
+### Q7. Preciso saber programar ou ter uma GPU cara?
 
-Não! Essa é a principal vantagem da nossa arquitetura modular de 6 cenas. Se a cena 3 precisar de ajuste, revise apenas o prompt dela. As cenas 1, 2, 4, 5 e 6 permanecem intactas. Isso economiza 80% do tempo de edição e evita desperdício de créditos de geração.
+Não. Você não precisa de uma placa RTX de ponta nem de conhecimentos de programação.
+
+- **Director Mode** funciona por conversa em qualquer assistente de IA compatível com Skills.
+- **Autopilot Mode** roda em agentes de programação com IA (como Claude Code, Codex ou Cursor) usando pedidos simples em inglês. Toda a geração visual pesada é feita por APIs leves na nuvem ou renderização procedural, não pelo seu hardware local.
 
 <!-- readme:contribute -->
 

@@ -4,8 +4,10 @@ import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {walkLayers, validateB3, visibleLayers} from './b3-graphics.mjs';
+import {prepareB4} from './b4-runtime.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+export const STYLES = ['B1', 'B2', 'B3', 'B4'];
 export const FFMPEG = process.env.FFMPEG || 'ffmpeg';
 export const FFPROBE = process.env.FFPROBE || 'ffprobe';
 export const sha = value => crypto.createHash('sha256').update(value).digest('hex');
@@ -50,18 +52,22 @@ export function designPlane(project) {
 export function loadProject(file, {seconds} = {}) {
   file = fs.realpathSync(path.resolve(file));
   const p = json(file), base = path.dirname(file);
-  if (p.version !== 1 || !['B1', 'B2', 'B3'].includes(p.style)) throw new Error('Expected version 1 and style B1, B2 or B3');
+  if (p.version !== 1 || !STYLES.includes(p.style)) throw new Error('Expected version 1 and style B1, B2, B3 or B4');
   if (p.style !== 'B3' && p.television !== undefined) throw new Error('Television finish belongs to B3 only');
+  if (p.style !== 'B4' && ['ambience', 'dialogue', 'audio_cuts', 'opening_audio_override'].some(k => p[k] !== undefined)) throw new Error('B4 audio tracks belong to B4 only');
   number(p.width, 'width', 256, 3840); number(p.height, 'height', 256, 3840); number(p.fps, 'fps', 12, 60);
   if (![p.width, p.height, p.fps].every(Number.isInteger) || p.width % 2 || p.height % 2) throw new Error('Even integer dimensions and integer fps required');
-  if (!p.voice || Object.keys(p.voice).some(k => !['path', 'lead', 'tail', 'contains_sfx'].includes(k))) throw new Error('Voice supports path/lead/tail/contains_sfx only; speech speed cannot be changed');
+  const voiceFields = ['path', 'lead', 'tail', 'contains_sfx', ...(p.style === 'B4' ? ['name', 'id', 'user_override', 'trim_start'] : [])];
+  if (!p.voice || Object.keys(p.voice).some(k => !voiceFields.includes(k))) throw new Error('Voice supports path/lead/tail/contains_sfx and B4 identity only; speech speed cannot be changed');
   const voicePath = mediaPath(base, p.voice.path), audio = probe(voicePath);
   if (!audio.streams.some(s => s.codec_type === 'audio')) throw new Error('Narration has no audio stream');
   const voiceDuration = Number(audio.format.duration);
   number(voiceDuration, 'voice duration', 0.01, 86400);
   const lead = p.voice.lead ?? 0, tail = p.voice.tail ?? 0;
   number(lead, 'lead', 0, 5); number(tail, 'tail', 0, 5);
-  const duration = voiceDuration + lead + tail;
+  const voiceTrimStart = p.voice.trim_start ?? 0;
+  number(voiceTrimStart, 'voice trim_start', 0, Math.min(5, voiceDuration - 0.01));
+  const duration = voiceDuration - voiceTrimStart + lead + tail;
   if (seconds !== undefined) number(seconds, 'preview length', 0.001, 60);
   const rangeEnd = Math.min(duration, seconds ?? duration);
   const scoped = seconds !== undefined;
@@ -72,11 +78,14 @@ export function loadProject(file, {seconds} = {}) {
   let end = 0;
   const assets = new Set([voicePath]);
   const types = new Set(['image', 'pose', 'text', 'line', 'arrow', 'underline']);
+  if (p.style === 'B4') types.add('shadow');
   if (p.style === 'B3') for (const type of ['group', 'path', 'rect', 'ellipse']) types.add(type);
   for (const [i, shot] of shots.entries()) {
     number(shot.start, 'shot start'); number(shot.end, 'shot end');
     if (Math.abs(shot.start - end) > 0.002 || shot.end <= shot.start) throw new Error(`Shot ${i}: gap/overlap or nonpositive duration`);
     end = shot.end;
+    if (p.style === 'B4' && shot.end - shot.start > 3.000001 &&
+      !(shot.kind === 'exceptional_hold' && typeof shot.user_approval === 'string' && shot.user_approval.trim() && typeof shot.reason === 'string' && shot.reason.trim())) throw new Error('B4 narrative shots must be at most 3 seconds; exceptional holds require user_approval and reason');
     if (!Array.isArray(shot.layers) || !shot.layers.length) throw new Error(`Shot ${i} has no layers`);
     if (p.style === 'B3') validateB3(shot.layers, p.television);
     for (const l of walkLayers(shot.layers)) {
@@ -84,6 +93,7 @@ export function loadProject(file, {seconds} = {}) {
       if (p.style !== 'B3' && ['children', 'commands', 'pivotX', 'pivotY', 'scaleX', 'scaleY', 'radius', 'fill', 'stroke'].some(k => l[k] !== undefined)) throw new Error('B3 artwork properties cannot be used in another style');
       for (const k of ['x', 'y', 'w', 'h', 'size', 'angle', 'alpha', 'progress', 'lineWidth']) if (l[k] !== undefined) number(l[k], k, -10000, 10000);
       if (l.w !== undefined && l.w <= 0 || l.size !== undefined && l.size <= 0) throw new Error('Layer dimensions must be positive');
+      if (l.type === 'shadow') { number(l.w, 'shadow width', 1, 10000); number(l.h, 'shadow height', 1, 10000); }
       if (l.type === 'image') { const f = mediaPath(base, l.path); if (!/\.(png|jpe?g)$/i.test(f)) throw new Error('Only PNG/JPEG image layers'); assets.add(f); }
       if (l.type === 'pose') { if (p.style !== 'B1') throw new Error('B1 pose atlas cannot be used in another style; author story-specific image layers'); number(l.pose, 'pose', 0, 2); if (!Number.isInteger(l.pose)) throw new Error('Integer pose index required'); assets.add(mediaPath(base, '@b1/character-pose-sheet-v6.png')); }
       if (l.type === 'text' && (typeof l.text !== 'string' || !l.text.trim() || l.text.length > 400)) throw new Error('Text layer must be 1–400 characters');
@@ -116,13 +126,14 @@ export function loadProject(file, {seconds} = {}) {
   }
   const sfx = scoped ? (p.sfx || []).filter(s => s.time < rangeEnd) : p.sfx || [];
   if (p.voice.contains_sfx && sfx.length) throw new Error('Already mixed voice must not receive duplicate SFX');
-  for (const s of sfx) { number(s.time, 'SFX time', 0, duration); number(s.gain, 'SFX gain', 0, 0.3); if (!['tap', 'paper', 'pop', 'chime', 'jingle'].includes(s.kind)) throw new Error('Unknown SFX'); }
+  for (const s of sfx) { number(s.time, 'SFX time', 0, duration); number(s.gain, 'SFX gain', 0, p.style === 'B4' && s.kind === 'file' ? 1 : 0.3); if (!['tap', 'paper', 'pop', 'chime', 'jingle', ...(p.style === 'B4' ? ['file'] : [])].includes(s.kind)) throw new Error('Unknown SFX'); }
   if (p.music) { assets.add(mediaPath(base, p.music.path)); number(p.music.gain, 'music gain', 0, 0.2); }
-  const timeline = {...p, shots, captions, sfx};
-  const project = {...timeline, file, base, voicePath, voiceDuration, lead, tail, duration, rangeEnd};
+  const b4 = p.style === 'B4' ? prepareB4({...p, sfx}, {base, duration, rangeEnd, assets, mediaPath, probe}) : {};
+  const timeline = {...p, shots, captions, sfx, ...b4};
+  const project = {...timeline, file, base, voicePath, voiceDuration, voiceTrimStart, lead, tail, duration, rangeEnd};
   for (const f of Object.values(fontPaths(project))) { if (!fs.existsSync(f)) throw new Error(`Missing font: ${f}`); assets.add(f); }
   const inputs = [...assets].sort().map(f => ({path: f, sha256: hashFile(f)}));
-  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f)));
+  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs', ...(p.style === 'B4' ? ['b4-runtime.mjs', 'b4-style-lock.mjs', 'b4-opening-audio-check.mjs'] : [])].map(f => hashFile(path.join(ROOT, 'scripts', f)));
   return {...project, inputs, fingerprint: sha(JSON.stringify({project: timeline, rangeEnd, inputs, engine}))};
 }
 export function outputDir(p) {

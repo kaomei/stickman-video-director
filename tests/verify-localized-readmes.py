@@ -40,11 +40,17 @@ def section(text, start, end):
     return text.split(f'<a id="{start}"></a>', 1)[1].split(end, 1)[0]
 
 expected_images = images(cn)
-assert len(expected_images) == 34 and len(set(expected_images)) == 26
+assert len(expected_images) == 37 and len(set(expected_images)) == 28
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 local_a6_previews = {
     "assets/readme/previews/style-6-amber-noir-mcp.gif",
     "assets/readme/previews/style-6-amber-noir-flow.gif",
+    "assets/readme/previews/b2-colorful-sleep.gif",
+    "assets/readme/previews/b2-colorful-phone-weather.gif",
+    "assets/readme/previews/b3-tv-dog.gif",
+    "assets/readme/previews/b3-tv-night-signal.gif",
+    "assets/readme/previews/b4-dispatch.gif",
+    "assets/readme/previews/b4-death-clock.gif",
 }
 for url in expected_images:
     if "/previews/" in url:
@@ -143,7 +149,7 @@ for name in selected:
     hero = text.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
     rows = re.findall(r"<tr>(.*?)</tr>", hero, re.S)
     gallery_styles = re.findall(r'href="#([^"]+)"><img', hero)
-    assert gallery_styles == ["a1", "a2", "a3", "a4", "style-5", "b1", "a6", "b2", "b3"], name
+    assert gallery_styles == ["a1", "a2", "a3", "a4", "style-5", "b1", "a6", "b2", "b3", "b4"], name
     # Owner rule: two columns, odd last card left + Coming Soon right;
     # even card counts fill the grid without a placeholder. No spanning rows.
     assert len(rows) == (len(gallery_styles) + 1) // 2, name
@@ -155,41 +161,42 @@ for name in selected:
     if placeholders:
         assert placeholders == [cells[-1]] and "<img" in cells[-2], name
         assert re.search(r'<a href="#a7"><strong>[^<]+</strong></a>', cells[-1]), name
-    assert text.count('width="90%"') == 9 and text.count('width="360"') == 18, name
+    assert text.count('width="90%"') == 10 and text.count('width="360"') == 20, name
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
-    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "B1", "B2", "B3"], (name, "local style catalog plus sequential teasers; not publication proof")
+    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "B1", "B2", "B3", "B4"], (name, "published style catalog plus A7 teaser")
     a6 = section(text, "a6", '<a id="a7"></a>')
-    assert len(re.findall(r"^- \*\*", a6, re.M)) == 3, (name, "A6 localized style, use cases and selection guidance")
+    assert len(re.findall(r"^- \*\*", a6, re.M)) == 2, (name, "A6 advantages and use cases")
     assert re.findall(r'<a href="([^"]+\.mp4)">', a6) == list(a6_videos), name
-    assert all(provider in a6 for provider in ("Renoise MCP", "Google Flow", "20", "8")), name
+    assert all(provider in a6 for provider in ("Renoise MCP", "Google Flow", "Tim", "@IfverseTales")), name
     assert "Tested Flow workflow:" not in text and "Click either GIF" not in text, name
     assert "Veo 3.1 Fast" not in a6, (name, "operational model guidance stays in Skill")
     assert "Omni" not in a6, (name, "A6 does not inherit the legacy model")
-    assert re.search(r"\*\*9[^\n]+11[^\n]+\*\*", text), (name, "nine styles and eleven visual options")
+    assert re.search(r"\*\*10[^\n]+\*\*", text) and "11 visual options" not in text, (name, "ten A+B visual styles, no competing option count")
     placeholder = section(text, "a7", '<a id="b-styles"></a>')
     assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1 and "5,000" in placeholder, (name, "A7 roadmap CTA retained")
     assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 2, (name, "A7 unlock link plus roadmap navigation")
     b2 = section(text, "b2", '<!-- b3:section:start -->')
-    assert all(re.search(re.escape(pinned) + r"[a-f0-9]{40}/assets/readme/previews/" + stem + r"\.gif", b2)
-               for stem in ("b2-colorful-sleep", "b2-colorful-phone-weather")), (name, "immutable B2 GIF URLs preserved")
-    assert len(re.findall(r"^- \*\*", b2, re.M)) == 3, (name, "B2 style, topics and selection guidance")
+    assert len(re.findall(r"^- \*\*", b2, re.M)) == 2, (name, "B2 advantages and use cases")
     assert re.findall(r'<a href="([^"]+\.mp4)">', b2) == ["assets/readme/b2-colorful-sleep.mp4", "assets/readme/b2-colorful-phone-weather.mp4"], (name, "approved B2 pair in requested order")
     assert b2.count('<th width="50%"') == 2 and b2.count('width="360"') == 2, (name, "paired B2 gallery")
-    assert all(token in b2 for token in ("Gemini", "Fola")), (name, "B2 narration details")
+    assert "Fola" in b2, (name, "B2 narrator credit")
     assert "Renoise" not in b2 and not re.search(r"^Click a GIF", text, re.M), (name, "no unnecessary helper copy")
     for video in re.findall(r'<a href="([^"]+\.mp4)">', b2):
         assert (root / video).is_file(), (name, video)
     b3 = section(text, "b3", '<!-- b3:section:end -->')
-    assert all(re.search(re.escape(pinned) + r"[a-f0-9]{40}/assets/readme/previews/" + stem + r"\.gif", b3)
-               for stem in ("b3-tv-night-signal", "b3-tv-dog")), (name, "immutable B3 GIF URLs")
-    assert len(re.findall(r"^- \*\*", b3, re.M)) == 3, (name, "B3 style, topics and selection guidance")
+    assert len(re.findall(r"^- \*\*", b3, re.M)) == 2, (name, "B3 advantages and use cases")
     assert re.findall(r'<a href="([^"]+\.mp4)">', b3) == ["assets/readme/b3-tv-night-signal.mp4", "assets/readme/b3-tv-dog.mp4"], (name, "user-selected Desktop B3.1 then B33.2")
     assert b3.count('<th width="50%"') == 2 and b3.count('width="360"') == 2, (name, "paired B3 gallery")
-    assert all(token in b3 for token in ("Gemini", "Bodi")), (name, "B3 narration details")
+    assert "Bodi" in b3, (name, "B3 narrator credit")
     assert all(token not in b3 for token in ("Renoise", "Fola", "Click a GIF", "@CrazyKaomei")), (name, "no unrelated dependencies, voice, helper copy or watermark")
     for video in re.findall(r'<a href="([^"]+\.mp4)">', b3):
         assert (root / video).is_file(), (name, video)
+    b4 = section(text, "b4", '<a id="thumbnail-publishing-kit"></a>')
+    assert re.findall(r'<a href="([^"]+\.mp4)">', b4) == ["assets/readme/b4-dispatch.mp4", "assets/readme/b4-death-clock.mp4"], name
+    assert all(token in b4 for token in ("Brian", "@BeanieSurvives")), (name, "B4 identity, voice and reference")
+    assert len(re.findall(r"^- \*\*", b4, re.M)) == 3, (name, "B4 visuals, sound and use cases")
+    assert not re.search(r"^### B[5-9]", text, re.M), (name, "B5+ excluded")
     if is_english:
         teasers = {
             "A": "New specialized director styles are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!",
@@ -202,45 +209,43 @@ for name in selected:
             next_id, _, title = entries[-1]
             assert title == "Coming soon…", (name, series, "placeholder follows the latest released style")
             assert f"### {next_id}: Coming soon…\n\n{teaser}" in text, (name, series, "approved placeholder copy")
-        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Hand-Drawn"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV")], (name, "local B style catalog")
+        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Line Art"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV"), ("B4", "Survival Thriller")], (name, "approved B style names")
         assert "<strong>Retro TV</strong><br>" in hero and "Retro TV Style" not in text, (name, "concise English B3 name in gallery and section")
     for variant in ("A1.1", "A1.2", "A2.1", "A2.2"):
         assert variant in text, (name, variant)
     faq = section(text, "faq", "<!-- readme:contribute -->")
-    assert re.findall(r"^### Q(\d+)\.", faq, re.M) == [str(i) for i in range(1, 9)], name
-    assert all(tag not in faq for tag in ("<details", "<summary")), (name, "visible Q1-Q8")
+    assert re.findall(r"^### Q(\d+)\.", faq, re.M) == [str(i) for i in range(1, 8)], name
+    assert all(tag not in faq for tag in ("<details", "<summary")), (name, "visible Q1-Q7")
     if is_english:
         assert "## ❓ Frequently Asked Questions\n" in faq
         questions = (
             "Is this really 100% free? Are there any hidden fees?",
+            "How do I maintain character consistency?",
+            "Which tools should I use? Do I need a specific image-generation model?",
+            "Can I make a video without an existing script?",
+            "How does the AI ensure the video has high viewer retention and isn't boring?",
             "Can I monetize these videos on YouTube and TikTok?",
             "Do I need programming skills or an expensive GPU?",
-            "Can I make a video without an existing script?",
-            "When should I choose Director Mode vs. Autopilot Mode?",
-            "How does the AI ensure the video has high viewer retention and isn't boring?",
-            "What AI assistants and video editors are supported?",
-            "What if I dislike one specific scene—do I have to re-render the whole video?",
         )
         assert re.findall(r"^### Q\d+\. (.+)$", faq, re.M) == list(questions), (name, "approved English FAQ order")
         faq_answers = re.split(r"^### Q\d+\. .+\n", faq, flags=re.M)[1:]
         # Copy checks preserve the supplied draft; they do not substantiate its marketing claims.
         required_copy = (
             ("$30–$60/month", "zero subscription fees", "third-party API usage"),
+            ("code-driven", "image assets", "reference image"),
+            ("recommend Codex", "created and tested", "GPT's built-in model", "without a separate image-generation API"),
+            ("shower thought", "3-second hook", "tight 6-scene narrative arc"),
+            ("**visual storytelling psychology**", "**The 3-Second Hook**", "**Visual Metaphors**", "**Pacing & Comic Pauses**"),
             ("completely original", "YouTube Partner Program (YPP)"),
             ("RTX", "**Director Mode**", "**Autopilot Mode**", "cloud APIs or procedural rendering"),
-            ("shower thought", "3-second hook", "tight 6-scene narrative arc"),
-            ("**Choose Director Mode**", "**Choose Autopilot Mode**", "finished video file"),
-            ("**visual storytelling psychology**", "**The 3-Second Hook**", "**Visual Metaphors**", "**Pacing & Comic Pauses**"),
-            ("**AI Environments**", "**Video Generators**", "**Video Editors**", "Antigravity", "DaVinci Resolve"),
-            ("modular 6-scene architecture", "Scenes 1, 2, 4, 5, and 6 remain untouched", "80% of editing time"),
         )
         for number, (answer, phrases) in enumerate(zip(faq_answers, required_copy), 1):
             for phrase in phrases:
                 assert phrase in answer, (name, number, phrase)
-        assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 2, 0, 2, 3, 3, 0], (name, "approved FAQ list formatting")
+        assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 0, 0, 3, 0, 2], (name, "approved FAQ list formatting")
     faq_answers = re.split(r"^### Q\d+\. .+\n", faq, flags=re.M)[1:]
-    assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 2, 0, 2, 3, 3, 0], (name, "localized FAQ bullet parity")
-    for answer, tokens in zip(faq_answers, (("MIT", "API"), ("YouTube", "YPP"), ("Codex", "Claude Code", "Cursor"), ("3", "6"), ("Director Mode", "Autopilot Mode"), ("SFX", "Casually Explained"), ("Antigravity", "Google Flow", "DaVinci Resolve"), ("80", "6"))):
+    assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 0, 0, 3, 0, 2], (name, "localized FAQ bullet parity")
+    for answer, tokens in zip(faq_answers, (("MIT", "API"), ("B", "A"), ("Codex", "GPT"), ("3", "6"), ("SFX", "Casually Explained"), ("YouTube", "YPP"), ("Codex", "Claude Code", "Cursor"))):
         assert all(token in answer for token in tokens), (name, "localized FAQ topic parity", tokens)
     assert "MIT" in faq and "API" in faq and "YouTube" in faq and "Codex" in faq and "Claude Code" in faq, name
     code = re.findall(r"```text\n(.*?)```", text, re.S)
@@ -259,7 +264,7 @@ for name in selected:
     if is_english:
         approved_mode_intro = (
             '<div align="center">\n\n'
-            '**9 styles · 11 visual options · Tested examples · Free and open source**\n\n'
+            '**10 visual styles · Tested examples · Free and open source**\n\n'
             '⭐ **Star the project to catch the next style drop and feature unlocks.**\n\n'
             '[Get started](#quick-start) · [Director Styles](#a-styles) · [Autopilot Styles](#b-styles) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem)\n\n'
             '</div>\n\n'
@@ -294,6 +299,6 @@ for name in selected:
     alts = re.findall(r'<img\b[^>]*\balt="([^"]*)"', text)
     assert len(alts) == len(expected_images) and all(alt.strip() for alt in alts), name
     assert "api.star-history.com/svg" in text
-    print(f"{name}: navigation, A/B structure, 8 FAQs, media, links and examples passed.")
+    print(f"{name}: navigation, A/B structure, 7 FAQs, media, links and examples passed.")
 
 print("Eight languages share the approved A/B layout; French follows Korean.")

@@ -28,6 +28,14 @@ legacy = legacy.replace(revised_a5, original_a5, 1)
 assert hashlib.sha256(legacy.encode()).hexdigest() == "f710612be73c952fb130d891b0650388ec5ae89469cae95eda8e147eec18b73e"
 # A6 adds only a selection-time reference router; legacy Director stays frozen.
 assert len(entry.encode()) <= 15000, "Keep the new workflow detail in references"
+boundaries = skill / "references/mode-execution-boundaries.md"
+assert "(references/mode-execution-boundaries.md)" in entry and boundaries.is_file()
+assert "Before planning" in entry
+assert "Published B choices are B1, B2, B3 and B4" in guide_text
+assert "B1–B4 use the bundled manifest runtime" in guide_text
+assert "not an accepted `style: B4` CLI value" not in guide_text
+assert "B4 and B5 remain local development only" not in guide_text
+assert "Only B1 is currently available" not in guide_text
 frontmatter = entry.split("---\n", 2)[1]
 name = re.search(r"^name: (.+)$", frontmatter, re.M).group(1)
 description = json.loads(re.search(r"^description: (.+)$", frontmatter, re.M).group(1))

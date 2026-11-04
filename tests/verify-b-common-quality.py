@@ -42,7 +42,13 @@ for boundary in (
     "Do not repeat compositions to fill time",
     "final encoded frame",
     "actual entity/action",
-    "every cue boundary and visual line break",
+    "Review every cue boundary against meaning and actual speech pauses",
+    "semantic subtitles with at most one visible line at a time",
+    "Preserve all spoken words and order",
+    "noun phrases, verbs with necessary objects",
+    "numbers/units and phrasal verbs",
+    "rather than a second line or mechanically smaller/squeezed type",
+    "neighboring cues for broken meaning",
     "each cue starts at its own first aligned spoken word",
     "same detail standard throughout the entire film",
     "excluding the subtitle band",
@@ -61,7 +67,8 @@ assert manifest["common_checklist"] == "../../references/autopilot-production-qa
 assert "not the independently shared B" in manifest["scope"]["not_inherited_scope"]
 runtime = (refs / "autopilot-runtime.md").read_text()
 b2 = (refs / "b2-colorful-handdrawn.md").read_text()
-assert "accepts `style: B1` and `style: B2`" in runtime
+assert "accepts `style: B1`, `B2`, `B3` and `B4`" in runtime
+assert "## B4 production tracks" in runtime
 assert "(b2-colorful-handdrawn.md)" in autopilot
 assert "independent local illustration-and-micro-animation style" in b2
 assert "Fola" in b2 and "ivory paper label" in b2

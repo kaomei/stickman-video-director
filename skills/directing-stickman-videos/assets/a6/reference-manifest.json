@@ -1,0 +1,36 @@
+{
+  "schema": "a6-reference-pack-v1",
+  "scope": "A6 only; style references are not automatic new-story cast or shot approvals",
+  "assets": [
+    {
+      "id": "apartment-style",
+      "path": "assets/a6/apartment-style-example.png",
+      "sha256": "a8be18b5fd6011dfc0a7bc92266361fc878dcc093629d4f6af54948941dcd2eb",
+      "width": 941,
+      "height": 1672,
+      "uses": ["style", "sample_identity", "sample_first_frame"],
+      "provenance": "Original project illustration generated with the built-in image generator, 2026-10-30; first-frame asset in the accepted A6 Ten Seconds film project, not a downloaded creator frame.",
+      "acceptance": "User accepted the V4 film's overall A6 effect as the production standard; no claim of a separate blind review or individual approval of every source still."
+    },
+    {
+      "id": "cafe-detail",
+      "path": "assets/a6/cafe-face-and-light.jpg",
+      "sha256": "0e5b7f9eeb4d3af3cf0c1111346b7327f2f2e4599483b51cc04aa7dfcc5f51f9",
+      "width": 1376,
+      "height": 768,
+      "uses": ["style", "sample_identity"],
+      "provenance": "Original project still made in Flow, 2026-10-30; asset d7bec11e-51ea-4c8b-b60f-33a75e56fcf6. Image model not independently recorded; not labelled a Veo-generated still.",
+      "acceptance": "Production-test reference for face, simplified hands, mug contact and amber/plum lighting; not independently user-approved as a final shot."
+    },
+    {
+      "id": "shop-body",
+      "path": "assets/a6/shop-full-body.jpg",
+      "sha256": "f5655c9bb4174d327ace70641b8a1da7e1e7fa1ffcc7861e4775537abd5627b4",
+      "width": 1376,
+      "height": 768,
+      "uses": ["style", "sample_identity"],
+      "provenance": "Original project still made in Flow, 2026-10-30; asset 39c1e1fb-7cec-4e10-9c5c-5acd23dce8b6. Image model not independently recorded; not labelled a Veo-generated still.",
+      "acceptance": "Production-test reference for full-body silhouette, connected black neck and grounded feet; not independently user-approved as a final shot."
+    }
+  ]
+}

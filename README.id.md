@@ -44,7 +44,7 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="Animasi stickman sejarah di Jepang zaman Edo" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Sketsa Tangan Minimalis</strong><br>
+<strong>Seni Garis Minimalis</strong><br>
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Video stickman sketsa tangan minimalis dengan karakter ekspresif, teks utama, dan animasi ringan" width="90%"></a>
 </td>
 </tr>
@@ -55,17 +55,18 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 </td>
 <td width="50%" align="center">
 <strong>Gambar Tangan Berwarna</strong><br>
-<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Video figur stik gambar tangan berwarna: kamar tenang dan pikiran yang mengalir bersama sungai" width="90%"></a>
+<a href="#b2"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="Video figur stik gambar tangan berwarna: kamar tenang dan pikiran yang mengalir bersama sungai" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
 <strong>Gaya TV Retro</strong><br>
-<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="90%"></a>
+<a href="#b3"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>Coming Soon…</strong></a>
+<strong>Thriller Bertahan Hidup</strong><br>
+<a href="#b4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 · Thriller Bertahan Hidup" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:end -->
@@ -73,7 +74,7 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 
 <div align="center">
 
-**9 gaya · 11 pilihan visual · Contoh yang sudah diuji · Gratis dan open source**
+**10 gaya visual · Contoh yang sudah diuji · Gratis dan open source**
 
 ⭐ **Beri Star pada proyek ini agar tidak ketinggalan gaya dan fitur baru berikutnya.**
 
@@ -107,7 +108,9 @@ Kedua alur kerja bisa dimulai dari topik mentah, tautan web, atau naskah lengkap
 
 ## 🧭 Mulai di sini
 
-Kompatibel dengan Claude Code, Codex, Cursor, Antigravity, atau lingkungan agen apa pun dengan akses file dan terminal.
+**Agar hasilnya sedekat mungkin dengan contoh, saya menyarankan untuk mulai dengan Codex.** Contoh buatan saya di proyek ini dibuat dan diuji menggunakan Codex.
+
+Skill juga dapat dipasang di Claude Code, Cursor, Antigravity, atau agent lain yang memiliki akses file dan terminal. Namun, perbedaan kemampuan model, konfigurasi alat, dan cara eksekusi dapat menghasilkan keluaran yang berbeda.
 
 Kirim pesan berikut ke asisten AI Anda:
 
@@ -159,7 +162,7 @@ yang menarik untuk YouTube:
 [Tempel konten atau tautan, atau jelaskan kebutuhan video promosi]
 
 Kebutuhan: 5–10 menit, horizontal 16:9, gaya B1
-“Sketsa Tangan Minimalis”, dengan narasi, subtitle, dan efek suara.
+“Seni Garis Minimalis”, dengan narasi, subtitle, dan efek suara.
 
 Periksa dahulu konfigurasi gambar, suara, dan penggabungan video.
 Lalu berikan naskah dan contoh video 20 detik dengan audio.
@@ -188,11 +191,10 @@ Diperbarui dengan penomoran A1, A2, A3… Setiap gaya memiliki contoh animasinya
 
 ### A1: Hitam Putih Klasik
 
-Ide besar bisa dijelaskan dengan beberapa garis saja. Di atas latar putih atau hitam polos, karakter, properti, dan warna aksen menjadi pembawa cerita. Pas untuk video penjelasan yang singkat dan mudah dipahami.
+Kepala bulat dan beberapa garis bisa membuat ide rumit terasa jelas. Kecemasan menjadi sangkar; perhatian menjadi baterai yang hampir habis. Tanpa hiasan berlebih, setiap ekspresi dan perumpamaan jadi berarti.
 
-- **Tampilannya:** Kepala bulat, tangan dan kaki berupa garis, ketebalan garis konsisten, serta sesekali ekspresi sederhana. Maksimal tiga warna aksen cerah membedakan emosi, risiko, atau tindakan. Konsep abstrak menjadi gambar: rasa cemas sebagai sangkar, fokus sebagai indikator progres.
-- **Cocok untuk:** Sains, psikologi, motivasi, pengelolaan diri, analisis bisnis, dan penjelasan konsep.
-- **Pilih yang mana?** Latar putih terasa bersih dan lugas untuk pembelajaran sehari-hari. Latar hitam memberi kontras, ketegangan, dan kesan emosional yang lebih kuat.
+- **Tampilannya**: Garis hitam di atas putih atau putih di atas hitam, dengan sedikit warna cerah untuk menyorot inti.
+- **Cocok untuk**: Sains, psikologi, pengembangan diri, bisnis, dan konsep yang terbantu oleh analogi visual.
 
 | A1.1 · Stickman hitam di latar putih | A1.2 · Stickman putih di latar hitam |
 |:---:|:---:|
@@ -205,11 +207,10 @@ Ide besar bisa dijelaskan dengan beberapa garis saja. Di atas latar putih atau h
 
 ### A2: Pop Modern
 
-Kupluk merah dan kaus kuning membuat karakter ini mudah dikenali. Gunakan latar teknologi yang bersih untuk menjelaskan produk, atau ajak karakternya masuk ke kamar, jalanan, dan ruang terbuka untuk bercerita.
+Kupluk merah, kaus kuning: tokoh yang langsung dikenali. Ikuti ia dari antarmuka teknologi melayang ke jalanan dan alam, mengubah demo alat atau titik balik kehidupan menjadi cerita berpusat pada karakter.
 
-- **Tampilannya:** Satu karakter yang mudah dikenali, dua jenis dunia. Teknologi minimalis memadukan ruang putih, pola kisi samar, antarmuka melayang seperti kaca, dan cahaya biru sian. Cerita berwarna memakai latar berwarna, pencahayaan sinematik, dan kedalaman ruang.
-- **Cocok untuk:** Teknologi minimalis untuk alat AI, produk teknologi, tutorial, dan demo fitur. Cerita berwarna untuk pengembangan diri, kejadian sehari-hari, petualangan, dan cerita motivasi.
-- **Pilih yang mana?** Pilih teknologi minimalis untuk menjelaskan alat atau metode; pilih cerita berwarna untuk mengikuti pengalaman seorang karakter.
+- **Tampilannya**: Minimal Tech memakai ruang putih dan antarmuka kaca; Colorful Story menambah latar kaya, kedalaman, dan cahaya sesuai suasana.
+- **Cocok untuk**: Alat AI, produk teknologi, tutorial, pertumbuhan pribadi, pengalaman sehari-hari, dan petualangan.
 
 | A2.1 · Teknologi Minimalis | A2.2 · Cerita Berwarna |
 |:---:|:---:|
@@ -222,11 +223,10 @@ Kupluk merah dan kaus kuning membuat karakter ini mudah dikenali. Gunakan latar 
 
 ### A3: Gua Prasejarah
 
-Bawa masalah masa kini ke dunia tanpa ponsel dan kantor. Gua, pakaian kulit hewan, api unggun, dan ekspresi berlebihan mengubah keluh kesah dunia kerja serta tingkah manusia menjadi cerita dengan kejutan.
+Tak ada ponsel atau kantor. Kenapa manusia gua tetap terjebak pekerjaan? Gaya visualnya terinspirasi oleh [@Zenn0009](https://www.youtube.com/@Zenn0009) di YouTube (**200 ribu subscriber**). Bawa masalah modern ke tengah gua, api unggun, dan kulit binatang; kekesalan sehari-hari berubah jadi kisah absurd dengan sindiran tajam.
 
-- **Tampilannya:** Garis kasar seperti gambar tangan, kepala berisi putih, tangan dan kaki berwarna gelap, pakaian kulit hewan, serta latar bernuansa tanah. Interaksi karakter, sorotan reaksi, dan jeda komedi jadi kunci. Pilih karakter dewasa, anak-anak, atau lansia sesuai cerita; tidak semua cerita harus memakai wajah yang sama.
-- **Cocok untuk:** Skenario prasejarah, sindiran dunia kerja, pengamatan tentang sifat manusia, komedi gelap, fabel, dan cerita berbahasa Inggris untuk anak.
-- **Pilih yang mana?** Untuk cerita singkat dengan akhir tak terduga, terutama saat hubungan ala masa kini terasa lucu sekaligus akrab di tengah suku prasejarah.
+- **Tampilannya**: Garis kasar, warna bumi, reaksi besar. Interaksi, potongan reaksi, dan jeda komedi membangun cerita.
+- **Cocok untuk**: Satire kerja, sifat manusia, pengandaian prasejarah, komedi gelap, fabel, dan cerita belajar bahasa Inggris untuk anak.
 
 | Contoh 1: “Dari Mana Datangnya Pekerjaan Pertama Manusia?” | Contoh 2: “Manusia Pertama Kali Menemukan Api” |
 |:---:|:---:|
@@ -239,11 +239,10 @@ Bawa masalah masa kini ke dunia tanpa ponsel dan kantor. Gua, pakaian kulit hewa
 
 ### A4: Cerita Hangat
 
-Mug yang selalu disimpan untuk hari istimewa. Pesan yang rasanya harus segera dibalas. Sore yang akhirnya Anda luangkan untuk diri sendiri. Karakter sederhana hadir di latar keseharian yang berwarna; gerakan, ekspresi, dan kamera membawa ceritanya.
+Pesan yang rasanya harus segera dibalas. Sore yang akhirnya Anda simpan untuk diri sendiri. Stasiun, kamar, dan kafe kecil memberi tempat bagi perasaan yang sulit dijelaskan.
 
-- **Tampilannya:** Kepala bulat berisi putih, tubuh ramping, tangan dan kaki berupa garis gelap, serta ekspresi kecil yang alami di lingkungan kartun 2D penuh warna. Gambar lebar mengenalkan tempat, close-up menangkap keraguan atau kelegaan, dan kamera yang mengikuti karakter menjaga cerita tetap bergerak.
-- **Cocok untuk:** Cerita keseharian yang dekat dengan penonton, pengembangan diri, hubungan, momen hangat, membangun kebiasaan, dan konten berbahasa Inggris untuk anak.
-- **Pilih yang mana?** Agar penonton merasa, “Ini aku banget,” lewat momen kecil. Warna dan cahaya mengikuti topik: kehangatan, kecemasan, kelelahan, atau awal yang baru.
+- **Tampilannya**: Latar keseharian berwarna, cahaya lembut, gestur sederhana. Close-up menangkap keraguan; gambar lebar memberi ruang bernapas.
+- **Cocok untuk**: Hubungan, emosi, kebiasaan, pertumbuhan diri, serta cerita hangat yang tetap mengakui cemas dan lelah.
 
 | Contoh 1: Cemas Membalas Pesan Saat di Perjalanan | Contoh 2: Meluangkan Waktu untuk Diri Sendiri |
 |:---:|:---:|
@@ -257,11 +256,10 @@ Mug yang selalu disimpan untuk hari istimewa. Pesan yang rasanya harus segera di
 
 ### A5: Kartun Sejarah
 
-Ceritakan sejarah lewat karakter yang bisa diikuti. Temani samurai menyusuri jalanan Edo, jumpai kucing hitam di kuil Mesir, atau ikuti prajurit menuju perkemahan Romawi. Kostum zaman dulu, latar berwarna, dan kejutan kecil membuat masa lalu terasa seperti cerita, bukan kumpulan slide.
+Samurai juga punya tagihan. Kucing Mesir bisa mencuri perhatian. Di jalan dan kuil masa lalu, detail sejarah menjadi kejadian nyata yang harus dihadapi seorang tokoh.
 
-- **Tampilannya:** Kepala bulat berisi putih, mata oval hitam, garis tegas, serta tangan dan kaki tipis seperti stickman. Dipadukan dengan pakaian sesuai zaman, bayangan kartun yang lembut, dan latar bergaya lukisan. Ganti pakaian, bangunan, properti, dan musik sesuai era, bukan dasar gaya karakternya.
-- **Cocok untuk:** Sejarah dunia, fakta mengejutkan, kehidupan sehari-hari di masa lalu, tokoh sejarah, dan komedi bertema sejarah.
-- **Pilih yang mana?** Untuk mengubah fakta menjadi kejadian yang dialami karakter. Bangun penjelasan lewat situasi yang jelas, reaksi yang bermakna, atau kejutan cerita.
+- **Tampilannya**: Kepala putih bulat, garis tegas, latar zaman yang penuh warna. Busana dan bangunan menetapkan masa; reaksi dan kontras menghidupkannya.
+- **Cocok untuk**: Sejarah dunia, peradaban, keseharian masa lalu, tokoh sejarah, dan cerita sejarah yang jenaka.
 
 | Contoh 1: Keseharian di Jepang Zaman Edo | Contoh 2: Kucing dan Mumi di Mesir Kuno |
 |:---:|:---:|
@@ -276,16 +274,15 @@ Kontribusi gaya dan prompt: [Lawal Ridwan / @leksautomate](https://github.com/le
 
 ### A6: Amber Noir
 
-Cahaya keemasan yang hangat, bayangan pekat, dan karakter berkepala bulat hitam dengan hoodie oranye. Ubah pertanyaan “bagaimana jika” yang mengundang rasa penasaran menjadi cerita pendek sinematik, disampaikan lewat gerakan ekspresif, bukan presenter yang berbicara ke kamera.
+Bagaimana jika saat bangun, semua barang sepuluh ribu kali lebih murah? Inspirasi visualnya berasal dari [@IfverseTales](https://www.youtube.com/@IfverseTales) di YouTube (**bertambah 60 ribu subscriber dalam 3 minggu**). Sosok berhoodie oranye bergerak di antara cahaya emas dan bayangan ungu tua, mengubah pengandaian menjadi godaan dan konsekuensi tak terduga.
 
-- **Gaya visual**: sorotan amber hangat yang kontras dengan bayangan ungu plum gelap, siluet sederhana, latar kota dengan bayangan lembut, dan gerakan kamera yang terukur.
-- **Cocok untuk**: skenario “bagaimana jika”, psikologi, fabel modern, penemuan tak terduga, dan cerita pendek dengan twist.
-- **Pilih ini jika**: Anda menginginkan adegan animasi sinematik dengan narasi terpisah. Dalam agent yang dapat mengoperasikan browser, klip yang disetujui dapat dirangkai dengan sulih suara, efek suara, subtitle tebal berhuruf kapital, dan judul putih yang bersih.
+- **Tampilannya**: Sorotan ambar, siluet gelap, kota berlapis. Tindakan tokoh dan kamera terkendali membangun rasa ingin tahu.
+- **Cocok untuk**: Pengandaian, fabel modern, psikologi, penemuan mengejutkan, dan cerita berbalik arah.
 
-| Contoh 1: Bagaimana jika semua barang 10.000 kali lebih murah? | Contoh 2: Penawaran yang layak dikejar |
+| Contoh 1: Bagaimana jika semua barang 10.000 kali lebih murah? | Contoh 2: Era Runtuhnya Harga |
 |:---:|:---:|
 | <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: cerita 20 detik tentang dunia dengan harga yang turun dalam semalam" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: adegan animasi 8 detik dengan karakter berhoodie oranye di depan toko" width="360"></a> |
-| Contoh Renoise MCP · 20 detik | Contoh Google Flow · 8 detik |
+| Contoh Renoise MCP · 20 detik · Narasi: Tim | Contoh Google Flow · 8 detik · Audio bawaan model |
 
 ---
 
@@ -305,22 +302,21 @@ Diperbarui dengan penomoran B1, B2, B3… Setiap gaya memiliki contoh video deng
 
 <a id="b1"></a>
 
-### B1: Sketsa Tangan Minimalis
+### B1: Seni Garis Minimalis
 
-Visual mengikuti jalannya narasi. Stickman ekspresif, properti berwarna dengan sentuhan gambar tangan, dan teks utama yang menonjol membantu menjelaskan ide, cerita, atau keunggulan produk dengan jelas dan menarik.
+Seperti teman yang menggambar sambil menjelaskan. Wajah ekspresif, garis hitam, dan beberapa benda berwarna mengubah pengetahuan abstrak dan manfaat produk menjadi situasi yang akrab.
 
-- **Tampilannya:** Latar kertas hampir putih dengan kisi sangat samar, garis hitam seperti gambar tangan, dan sedikit properti berwarna. Ekspresi, animasi ringan pada bagian gambar, transisi yang mengalir, dan efek suara menggerakkan adegan. Teks utama menonjolkan informasi, sementara subtitle mengikuti narasi.
-- **Cocok untuk:** Video penjelasan YouTube, psikologi dan pengembangan diri, cerita dunia kerja, konten edukasi, serta promosi produk.
-- **Pilih yang mana?** Untuk mengubah topik, teks, atau naskah menjadi video lengkap dengan narasi dan subtitle. Visual mengikuti ritme suara, cocok untuk penjelasan berkelanjutan maupun cerita panjang.
+- **Tampilannya**: Kertas nyaris putih, goresan hidup, teks inti yang berguna. Ekspresi, properti, dan gerak halus menjelaskan tanpa menyesakkan layar.
+- **Cocok untuk**: Video penjelasan YouTube, pendidikan, psikologi, pengembangan diri, cerita kerja, dan pengenalan produk.
 
 <table width="100%">
   <tr>
     <th width="50%" align="center">Contoh 1: Bikin Konten YouTube Tanpa Tampil di Kamera</th>
-    <th width="50%" align="center">Contoh 2: Kenapa Tidak Ada yang Menonton?</th>
+    <th width="50%" align="center">Contoh 2: Posting Tiap Hari, Kenapa Tetap Tak Ada yang Menonton?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b1-minimal-handdrawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Contoh B1 Sketsa Tangan Minimalis: klik untuk menonton atau mengunduh contoh bersuara tentang membuat konten YouTube tanpa tampil di kamera" width="360"></a></td>
-    <td width="50%" align="center"><a href="skills/directing-stickman-videos/assets/b1/approved-2026-10-23.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@61e202ccecf9d9926cf76e13f3284181297729b8/assets/readme/previews/b1-minimal-handdrawn-2026-10-23.gif" alt="Contoh B1 Sketsa Tangan Minimalis: klik untuk menonton atau mengunduh contoh dengan suara Bodi, subtitle, karakter gambar tangan, dan animasi ringan" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b1-minimal-handdrawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Contoh B1 Seni Garis Minimalis: klik untuk menonton atau mengunduh contoh bersuara tentang membuat konten YouTube tanpa tampil di kamera" width="360"></a></td>
+    <td width="50%" align="center"><a href="skills/directing-stickman-videos/assets/b1/approved-2026-10-23.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@61e202ccecf9d9926cf76e13f3284181297729b8/assets/readme/previews/b1-minimal-handdrawn-2026-10-23.gif" alt="Contoh B1 Seni Garis Minimalis: klik untuk menonton atau mengunduh contoh dengan suara Bodi, subtitle, karakter gambar tangan, dan animasi ringan" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Karakter gambar tangan · Teks utama · Animasi ringan</td>
@@ -334,20 +330,19 @@ Visual mengikuti jalannya narasi. Stickman ekspresif, properti berwarna dengan s
 
 ### B2: Gambar Tangan Berwarna
 
-Cerita sehari-hari, digambar penuh karakter. Tekstur kertas hangat, latar berwarna, figur stik sederhana, dan judul tulisan tangan mengubah momen akrab menjadi video penjelasan bernarasi yang menarik.
+Kenapa pikiran justru makin ramai saat Anda berusaha tidur? Terinspirasi oleh [@PsychToonsHQ](https://www.youtube.com/@PsychToonsHQ) di YouTube (**200 ribu subscriber**), kertas hangat dan warna lembut mengubah insomnia, menunda pekerjaan, dan distraksi menjadi kisah yang terasa dekat.
 
-- **Gaya visual**: garis tinta tipis yang sedikit tidak beraturan, warna lembut, dan lingkungan yang sesuai dengan cerita. Close-up, pergantian sudut pandang, diagram ilustrasi, serta gerakan kecil pada latar atau properti menggerakkan cerita tanpa animasi karakter berlebihan. Teks subtitle gelap tampil di atas label kertas kecil berwarna gading.
-- **Cocok untuk**: psikologi sehari-hari, kebiasaan, perhatian, pengembangan diri, dan video penjelasan YouTube yang dekat dengan penonton.
-- **Pilih saat**: Anda ingin video jadi dengan latar ilustrasi lebih kaya, narasi Gemini, subtitle yang dipotong sesuai makna, dan efek suara aksi. Agen pemrograman Anda membuat dan merakitnya secara lokal.
+- **Tampilannya**: Garis tipis, latar keseharian berwarna, takarir kertas gading. Close-up, metafora visual, dan gerak lembut mengungkap psikologi kebiasaan.
+- **Cocok untuk**: Psikologi sehari-hari, tidur, kebiasaan, perhatian, pertumbuhan diri, dan penjelasan kehidupan yang relevan.
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">Contoh 1: Biarkan satu pikiran berlalu</th>
-    <th width="50%" align="center">Contoh 2: Kenapa tadi membuka kunci ponsel?</th>
+    <th width="50%" align="center">Contoh 1: Kenapa Makin Ingin Tidur, Makin Terjaga?</th>
+    <th width="50%" align="center">Contoh 2: Ponsel Sudah Terbuka, Tapi Lupa Mau Apa</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Gambar Tangan Berwarna: kamar tenang, perahu kertas di sungai, dan suasana menjelang tidur yang lebih damai" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Gambar Tangan Berwarna: terdistraksi saat mengecek ponsel, dengan narasi, subtitle gading, dan latar ilustrasi" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Gambar Tangan Berwarna: kamar tenang, perahu kertas di sungai, dan suasana menjelang tidur yang lebih damai" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Gambar Tangan Berwarna: terdistraksi saat mengecek ponsel, dengan narasi, subtitle gading, dan latar ilustrasi" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Pikiran sebelum tidur · Potongan pemandangan · Gerakan lembut</td>
@@ -362,20 +357,19 @@ Cerita sehari-hari, digambar penuh karakter. Tekstur kertas hangat, latar berwar
 
 ### B3: Gaya TV Retro
 
-Latar gelap, karakter putih-abu yang rapi, dan tekstur televisi yang halus mengubah pertanyaan sehari-hari menjadi cerita visual yang hidup.
+Seperti tak sengaja menemukan siaran aneh larut malam. Terinspirasi oleh [@BradikininVideos](https://www.youtube.com/@BradikininVideos) di YouTube (**bertambah 55 ribu subscriber dalam 3 minggu**), tokoh putih-abu, cahaya tipis, dan tekstur analog mengubah pertanyaan biasa menjadi penemuan.
 
-- **Gaya visual**: Siluet membulat, latar beragam, animasi lokal yang bermakna, dan subtitle putih yang bersih. Pendar lembut dan garis pindai memberi nuansa siaran analog.
-- **Cocok untuk**: Sains sehari-hari, psikologi, perilaku hewan, fakta unik, dan cerita misteri pendek.
-- **Pilih jika**: Anda ingin video jadi yang dibuat dan dirakit oleh agen coding, dengan narasi Gemini Bodi, subtitle berdasarkan satuan makna, dan efek suara sesuai aksi.
+- **Tampilannya**: Tokoh bercahaya di layar gelap, teks putih bersih, garis pindai halus. Perpindahan adegan dan reaksi kecil memberi sains rasa bermain, serta misteri ketegangan.
+- **Cocok untuk**: Sains keseharian, psikologi, perilaku hewan, fakta unik, dan misteri pendek.
 
 <table width="100%">
   <tr>
     <th width="50%" align="center">Contoh 1: Bagaimana jika TV menyala sendiri pukul 3 pagi?</th>
-    <th width="50%" align="center">Contoh 2: Mengapa anjing yang takut malah mendekat?</th>
+    <th width="50%" align="center">Contoh 2: Anjingmu Merasa Bersalah — atau Justru Takut?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-dog.gif" alt="Penjelasan perilaku anjing dengan karakter putih-abu dan animasi lokal" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="assets/readme/previews/b3-tv-dog.gif" alt="Penjelasan perilaku anjing dengan karakter putih-abu dan animasi lokal" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Suspense fiksi · Pergantian adegan · Tekstur TV</td>
@@ -383,6 +377,37 @@ Latar gelap, karakter putih-abu yang rapi, dan tekstur televisi yang halus mengu
   </tr>
 </table>
 <!-- b3:section:end -->
+
+<!-- b4:section:start -->
+<a id="b4"></a>
+
+### B4: Thriller Bertahan Hidup
+
+Hitung mundur. Telepon larut malam. Aturan yang tak boleh dilanggar. Terinspirasi oleh [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives) di YouTube (**bertambah 100 ribu subscriber dalam 3 minggu**), tempat biasa berubah menjadi jebakan. Kepala putih bulat, sarung tangan putih, dan kontras tajam membawa tokoh sederhana ke dunia yang meresahkan.
+
+- **Tampilannya**: Pembuka setengah berbayang, close-up mengusik, ancaman muncul dari gelap. Perubahan ekspresi, cahaya, dan benda membangun ketegangan tanpa menjelaskan setiap gambar.
+- **Suara**: Brian menarik perhatian sejak awal. Ambiens pelan yang terus mengalir menopang ketegangan; efek sesuai cerita membuat bahaya terdengar tanpa menutupi narasi.
+- **Cocok untuk**: Aturan bertahan hidup, legenda urban, pelarian dari bencana, dan ketegangan dengan kejutan.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Contoh 1: Aturan Operator 911: Jangan Kirim Polisi</th>
+    <th width="50%" align="center">Contoh 2: Bagaimana Jika Kamu Bisa Melihat Kematian Mendekat?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4: operator 911 bersarung tangan putih, panggilan malam dan ancaman di luar jendela" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="assets/readme/previews/b4-death-clock.gif" alt="B4: jam kematian, teks bertahap, ekspresi ketakutan dan ancaman muncul" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Narasi Brian · Efek selaras cerita · Pilihan akhir penuh ketegangan</td>
+    <td align="center">Narasi Brian · Pembuka visual mencekam · Animasi teks yang menonjolkan inti</td>
+  </tr>
+</table>
+
+<!-- b4:section:end -->
+
+
+---
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>
@@ -456,29 +481,25 @@ Buat Kit Thumbnail & Publikasi untuk video ini:
 
 Ya. Stickman Video Director 100% gratis dan open source dengan lisensi MIT. Anda bebas menggunakannya untuk proyek pribadi maupun komersial. Berbeda dari platform SaaS tertutup yang mengenakan US$30–60/bulan, proyek ini tidak memiliki biaya langganan. Anda hanya membayar penggunaan API pihak ketiga sendiri, seperti Google Gemini, Claude, atau ElevenLabs, sesuai model yang Anda hubungkan.
 
-### Q2. Bisakah video ini dimonetisasi di YouTube dan TikTok?
+<!-- readme:platforms -->
 
-Ya, tentu saja. Salah satu kekhawatiran utama kreator tanpa wajah adalah kebijakan demonetisasi YouTube untuk “Reused Content” atau konten AI minim usaha. Karena Stickman Video Director menulis alur cerita khusus, ritme narasi unik, dan penataan visual orisinal, hasil Anda sepenuhnya orisinal. Ratusan channel berhasil memonetisasi video naratif stickman melalui YouTube Partner Program (YPP).
+### Q2. Bagaimana saya menjaga konsistensi karakter?
 
-### Q3. Apakah saya perlu bisa coding atau memiliki GPU mahal?
+**B · Mode Autopilot**: Menggunakan alur produksi berbasis kode. Aset gambar karakter dibuat sebelum produksi video dan dipakai ulang di berbagai adegan, sehingga penampilan karakter relatif konsisten.
 
-Tidak. Anda tidak memerlukan kartu grafis RTX kelas atas atau pengetahuan pemrograman.
+**A · Mode Sutradara**: Terutama mengandalkan pembuatan video dari teks. Jika gaya rambut, pakaian, atau ciri karakter lainnya rumit dan sulit direproduksi secara konsisten hanya dengan teks, tambahkan satu gambar referensi karakter stickman dan terus gunakan pada klip berikutnya agar hasilnya lebih stabil.
 
-- **Director Mode** digunakan lewat percakapan di asisten AI apa pun yang mendukung Skill.
-- **Autopilot Mode** berjalan di agen coding AI seperti Claude Code, Codex, atau Cursor, menggunakan permintaan sederhana dalam bahasa Inggris. Seluruh proses pembuatan visual yang berat ditangani oleh API cloud ringan atau rendering prosedural, bukan perangkat keras lokal Anda.
+### Q3. Alat apa yang sebaiknya saya gunakan? Apakah perlu memilih model pembuat gambar tertentu?
+
+**Agar hasilnya sedekat mungkin dengan contoh, saya merekomendasikan Codex.** Video contoh Mode B saya buat dan uji di Codex; Anda tidak perlu menulis kode sendiri. Skill juga dapat dipasang di agent lain, tetapi perbedaan model, konfigurasi alat, dan cara eksekusi dapat memengaruhi hasilnya.
+
+Untuk gambar, saya memakai model bawaan GPT tanpa menyiapkan API tambahan. Buat sampel pendek terlebih dahulu untuk memeriksa gaya dan hasilnya sebelum melanjutkan video lengkap.
 
 ### Q4. Bisakah saya membuat video tanpa naskah yang sudah jadi?
 
 Ya. Anda bisa menempelkan ide kasar, pemikiran spontan, tautan berita, atau satu artikel blog lengkap. Sutradara AI akan mengambil konflik utama, menulis hook 3 detik yang menarik, lalu menyusun topik Anda menjadi alur cerita padat berisi 6 adegan dengan timing komedi dan arahan narasi.
 
-<!-- readme:platforms -->
-
-### Q5. Kapan saya harus memilih Director Mode atau Autopilot Mode?
-
-- **Pilih Director Mode** ketika Anda ingin mengontrol sepenuhnya setiap shot, sudut kamera, dan metafora visual. Mode ini menjadi pengaman biaya: Anda menyetujui naskah dan storyboard secara gratis sebelum membuat satu frame video pun.
-- **Pilih Autopilot Mode** ketika Anda menginginkan pengalaman otomatis satu klik yang menghasilkan naskah, narasi, subtitle, dan file video jadi.
-
-### Q6. Bagaimana AI menjaga retensi penonton dan membuat video tidak membosankan?
+### Q5. Bagaimana AI menjaga retensi penonton dan membuat video tidak membosankan?
 
 Alat AI tradisional hanya mengubah teks menjadi ilustrasi harfiah. Stickman Video Director menerapkan **psikologi storytelling visual** yang nyata:
 
@@ -486,15 +507,16 @@ Alat AI tradisional hanya mengubah teks menjadi ilustrasi harfiah. Stickman Vide
 - **Metafora Visual**: mengubah konsep abstrak yang membosankan menjadi lelucon visual, misalnya kecemasan sebagai roda hamster yang menyusut atau burnout sebagai indikator baterai 1%.
 - **Ritme dan Jeda Komedi**: memasukkan jeda terstruktur, shot reaksi, dan petunjuk efek suara (SFX) untuk meniru timing komedi kreator seperti Casually Explained.
 
-### Q7. Asisten AI dan editor video apa yang didukung?
+### Q6. Bisakah video ini dimonetisasi di YouTube dan TikTok?
 
-- **Lingkungan AI**: Claude Code, OpenAI Codex, Cursor, Antigravity, atau lingkungan agen apa pun dengan akses file dan terminal.
-- **Generator Video**: Google Flow, Runway (Gen-3), Luma Dream Machine, Kling, Pika, atau model gambar-ke-video / teks-ke-video apa pun.
-- **Editor Video**: prompt dan hasil ekspor audio siap diseret ke CapCut, Premiere Pro, DaVinci Resolve, atau Final Cut.
+Ya, tentu saja. Salah satu kekhawatiran utama kreator tanpa wajah adalah kebijakan demonetisasi YouTube untuk “Reused Content” atau konten AI minim usaha. Karena Stickman Video Director menulis alur cerita khusus, ritme narasi unik, dan penataan visual orisinal, hasil Anda sepenuhnya orisinal. Ratusan channel berhasil memonetisasi video naratif stickman melalui YouTube Partner Program (YPP).
 
-### Q8. Jika satu adegan tidak saya sukai, apakah seluruh video harus dirender ulang?
+### Q7. Apakah saya perlu bisa coding atau memiliki GPU mahal?
 
-Tidak! Itulah keunggulan utama arsitektur modular 6 adegan kami. Jika adegan 3 perlu disesuaikan, Anda cukup merevisi prompt adegan itu saja. Adegan 1, 2, 4, 5, dan 6 tetap utuh. Ini menghemat 80% waktu editing dan menghindari pemborosan kredit generasi.
+Tidak. Anda tidak memerlukan kartu grafis RTX kelas atas atau pengetahuan pemrograman.
+
+- **Director Mode** digunakan lewat percakapan di asisten AI apa pun yang mendukung Skill.
+- **Autopilot Mode** berjalan di agen coding AI seperti Claude Code, Codex, atau Cursor, menggunakan permintaan sederhana dalam bahasa Inggris. Seluruh proses pembuatan visual yang berat ditangani oleh API cloud ringan atau rendering prosedural, bukan perangkat keras lokal Anda.
 
 <!-- readme:contribute -->
 

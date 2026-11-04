@@ -87,7 +87,24 @@ test('render is resumable, produces captioned A/V and requires exact preview app
 });
 test('caption overflow fails rather than silently clipping', async t => {
   const f = fixture(t); f.project.captions[0].text = 'A very long caption phrase. '.repeat(8); save(f.file, f.project);
-  const r = command(['validate', f.file]); assert.notEqual(r.status, 0); assert.match(r.stderr, /two lines/);
+  const r = command(['validate', f.file]); assert.notEqual(r.status, 0); assert.match(r.stderr, /one line/);
+});
+test('B captions reject two-line wrapping and explicit breaks across styles', async t => {
+  const f = fixture(t);
+  f.project.shots.forEach(s => s.layers = [{type: 'text', text: 'LOCAL SCENE', x: 80, y: 110}]);
+  for (const style of ['B1', 'B2', 'B3']) {
+    f.project.style = style;
+    f.project.captions[0].text = 'One coherent phrase.';
+    save(f.file, f.project);
+    const draw = await painter(loadProject(f.file));
+    assert.doesNotThrow(() => draw(0.2));
+    for (const text of ['ONE CHOICE LEADS TO ANOTHER '.repeat(3), 'First line\nSecond line']) {
+      f.project.captions[0].text = text;
+      save(f.file, f.project);
+      const invalid = await painter(loadProject(f.file));
+      assert.throws(() => invalid(0.2), /one line/, `${style} must reject multi-line subtitles`);
+    }
+  }
 });
 test('B accepts independent timing/scene text but requires narration and subtitles', t => {
   const f = fixture(t); f.project.grid = true;
