@@ -7,29 +7,24 @@ description: "Turn topics, requirements, articles or scripts into stickman video
 
 ## Two modes, one Skill
 
-Keep the existing installation and name. Route by the requested deliverable:
+Keep the existing installation/name. Honor known choices; ask one short question if the requested deliverable is ambiguous. Before planning, read [mode execution boundaries](references/mode-execution-boundaries.md), then the selected route:
 
-- **A · Director**: proposals, storyboards and standalone video-generation prompts. A1/A1.1/A1.2 map to Style 1 light/dark; A2/A2.1/A2.2 to Style 2/2A/2B; A3–A5 to Styles 3–5. Follow the unchanged Director contract below.
-- **A6 · Amber Noir / 暖金暗影风**: read [A6](references/amber-noir.md) when selected, before planning. It owns its reference-guided shots, optional execution routes and separate narration/finishing; bypass the A1–A5 contract below. After approvals and available setup, carry the selected route through to a finished MP4, not just copied prompts. Use its confirmed Gemini Puck narration and title/caption finishing standard, with no creator watermark by default. Explain the two routes and verified sample model only after A6 selection, not in the generic welcome or a detailed README setup section.
-- **B · Autopilot**: a finished local video with narration, captions, meaningful illustrations, local motion and SFX. Read [Autopilot](references/autopilot.md), then its selected B-style reference: B1 [极简手绘风](references/b1-minimal-handdrawn.md), B2 [彩色手绘风 / Colorful Hand-Drawn](references/b2-colorful-handdrawn.md), or B3 [复古电视风 / Retro TV Style](references/b3-television.md). B styles have their own assets and numbering; do not silently reuse an A-style prompt or sample.
+- **A · Director / A1–A5:** approved proposals and standalone video prompts. A1 maps to Style 1 light/dark, A2 to Style 2/2A/2B, A3–A5 to Styles 3–5. Follow the unchanged contract below.
+- **A6 · Amber Noir:** read [A6](references/amber-noir.md) when selected, before planning; bypass the A1–A5 contract below. It owns reference-guided execution, Gemini Puck narration and finishing.
+- **B · Autopilot:** read [Autopilot](references/autopilot.md), then B1 [Minimal Line Art](references/b1-minimal-handdrawn.md), B2 [Colorful Hand-Drawn](references/b2-colorful-handdrawn.md), or B3 [Retro TV](references/b3-television.md). A finished local video includes narration, semantic captions, illustrations, meaningful motion and SFX. Inspect B3's bundled implementation examples before authoring; original-video excerpts are not redistributed. Disclose missing private-original comparison rather than treating accepted examples as the style authority.
+- **B4 · Survival Thriller:** read [B4](references/b4-survival-storytelling.md), [audio direction](references/b4-audio-direction.md), [opening direction](references/b4-opening-direction.md) and [production check](references/b4-repeatability-check.md). Preserve the white-glove reference lock; limb animation is not a completion requirement. Apply the first-three-second visual escalation gate and, for horror, the story-led horror visibility gate. Use fixed Brian, first-frame sound/early narration, a subtle continuous bed and causal SFX. Select B4 in the shared installed runtime. No silent title pad, automatic narrator substitution or alias to another style.
 
-For **B3**, inspect its guide and implementation references before authoring; disclose missing original-video comparison. Use Bodi and restrained TV finish, not another style's defaults. Keep queued styles local.
+A and B share installation, not production contracts. The rules from **A · Director** to the end apply only to A1–A5, not to A6 or any B style. Each B owns its visuals, captions, voice, pacing and SFX; never default to B1 or import A's setup, ten-second clips, approval or visible-text rules. Preserve unrelated styles when revising one route.
 
-If the mode is ambiguous, ask one short question. Honor previously supplied choices. Do not run Director's ten-second clip rules, no-visible-text rule or Phase B prompt workflow for Autopilot. Autopilot can start with a topic, promotion brief, post, article or story script; it is not story-only. English is the default narration language, but the user's language and voice choices take precedence.
+B supports topics, promotion briefs, posts, articles and scripts. English narration is default; explicit language/voice choices prevail. Use the selected native named TTS voice without added voice/style descriptions by default; B4 permits story-motivated secondary-role acting, not automatic narrator tuning. Read the required [story-led sound system](references/autopilot-sound-system.md). Never automatically revoice accepted media.
 
-Voice instructions are mode-specific: B uses the selected named TTS voice as provided, with no added voice/style description. Director's detailed frozen voice profiles below and in `references/voice-continuity.md` apply only to A1–A5, not to A6 or any B style.
-
-A and B share an installation, not a production contract or style library. All sections from **A · Director** to the end of this file apply only to A1–A5, including phrases such as "all styles". For B, use only Autopilot's production rules and the selected B-style reference; do not inherit A's setup, approvals, pacing, prompts, voice or visual constraints. Each B style owns its visuals, captions, voice, pacing and SFX; never inherit B1 by default. Preserve A's validated rules when revising B, and vice versa.
+All B captions are semantic and single-line: preserve meaning, tight grammatical groups and actual speech pauses; split overlong cues into successive semantic units, not mechanical word counts or smaller type. Check encoded frames and sidecars under the [common caption gate](references/autopilot-production-qa.md#natural-captions-and-semantic-sound). A is unchanged.
 
 ## First use and next steps
 
-Use one shared guide in the user's requested or current conversation language, falling back to an available host/local language setting when unclear. Keep guidance language separate from video narration/subtitles; do not select it from the README edition.
+Read [first-use and stage guidance](references/getting-started.md) after verified installation or on first invocation. Use the conversation/requested guidance language independently of video language or README edition. Reuse choices; do not replay welcome or add approvals. Follow **A5 proactive character guidance** and **Optional A character references** there without changing voice rules.
 
-Apply [first-use and stage guidance](references/getting-started.md) in both modes: immediately after verified installation, otherwise on first invocation. Explain outputs, uses, tools, workflow, copyable requests and public style/sample catalogs by code. Reuse known choices. At stage handoffs or blockers, distinguish assistant work from user choices; state outputs, gaps and next action. Do not add approval gates or repeat the welcome.
-
-For A5, follow **A5 proactive character guidance** in that guide before planning. Other A references follow **Optional A character references**; keep voice rules unchanged.
-
-For A/B, read [optional finishing](references/thumbnail-publishing-kit.md) after final-video approval or a packaging request. Offer once; skipping never blocks delivery or alters production.
+Read [optional finishing](references/thumbnail-publishing-kit.md) after final-video approval or a packaging request; offer once, never block delivery.
 
 ## A · Director
 

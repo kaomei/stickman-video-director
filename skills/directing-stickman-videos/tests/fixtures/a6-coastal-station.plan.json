@@ -1,0 +1,31 @@
+{
+  "schema": "a6-reference-plan-v1",
+  "status": "offline text fixture; no generated or approved new cast/shot images",
+  "images": [
+    {
+      "id": "keeper-identity-candidate",
+      "purpose": "character_reference",
+      "reference_inputs": [{"source": "package", "asset_id": "shop-body", "role": "style"}],
+      "image_prompt": {
+        "style": "A6 two-dimensional illustrated figure with a compact matte-black circular head joined to the torso by a short black neck, two small cream-white eyes and compact line mouth, simplified black hands and distinct black limbs. Angular drawn shapes use restrained cel shading, amber rim light and deep plum shadow, not glossy 3D or photoreal rendering.",
+        "cast": "One adult station keeper wears a navy work jacket with brass buttons, a muted mustard scarf and black trousers and shoes. No headwear. Both empty hands rest naturally beside the hips; two legs separate centrally and both shoes meet the floor.",
+        "world": "A neutral deep-plum studio background is lit softly from one amber lamp outside the frame. No room furniture or scenery is copied from the reference.",
+        "composition": "A landscape character sheet has a front full-body view and a separate side full-body view with identical scale and wardrobe. Keep all head, hand and foot contours visible. It is a casting candidate, not a scene first frame.",
+        "constraints": "Use only drawing, proportion and light qualities from the supplied style image. No hoodie, shop door, human skin, extra fingers, floating neck, written labels or watermark. New-story approval is still required."
+      }
+    },
+    {
+      "id": "platform-shot-first-frame-candidate",
+      "purpose": "shot_first_frame",
+      "reference_inputs": [{"source": "package", "asset_id": "apartment-style", "role": "style"}],
+      "image_prompt": {
+        "style": "A6 graphic two-dimensional storytelling: compact matte-black round head, connected short black neck, small cream facial marks and simplified black hands and legs. Restrained cel shading and angular illustrated environments combine warm amber illumination with deep plum shadows, without photoreal people or glossy 3D toys.",
+        "cast": "One adult station keeper in a navy brass-buttoned work jacket, mustard scarf, black trousers and black shoes stands at a seaside railway platform. The uncovered round head turns toward a distant light. The right hand holds a small brass lantern by its handle; the left arm rests down. Two distinct legs and both feet remain grounded.",
+        "world": "At dusk a deserted coastal platform curves beside a dark sea. A low shelter and unlettered station sign sit in the distance. The lantern casts amber light on damp paving while plum storm clouds gather above the horizon.",
+        "composition": "One portrait full-body first-frame candidate places the keeper in the lower-right foreground with the horizon visible beyond the left shoulder. Show the hand wrapped around the lantern handle and leave a clean view down the empty track. This is a single scene rather than a character sheet.",
+        "constraints": "Transfer the reference's drawing grammar only; do not copy its apartment, red-orange clothing or cup. No generated text, captions, watermark, extra limbs, disconnected neck or speaking mouth. The lantern is held by the right hand, not floating."
+      },
+      "motion_prompt": "From the approved platform first frame, a distant light brightens once. The non-speaking keeper raises the held lantern slightly and turns the head toward that light. Hold a steady camera and preserve right-hand contact with the handle. No narration or generated text."
+    }
+  ]
+}

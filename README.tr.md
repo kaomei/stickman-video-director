@@ -44,7 +44,7 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="Tarihi çöp adam animasyonu: Edo dönemi Japonya’sında bir samurayın hikâyesi" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Minimalist El Çizimi</strong><br>
+<strong>Minimal Çizgi Sanatı</strong><br>
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Minimalist el çizimi çöp adam videosu: canlı ifadeler, vurgulu metinler ve mikro animasyonlar" width="90%"></a>
 </td>
 </tr>
@@ -55,17 +55,18 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 </td>
 <td width="50%" align="center">
 <strong>Renkli El Çizimi</strong><br>
-<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="Renkli el çizimi çöp adam videosu: sessiz bir yatak odası ve nehirde süzülen bir düşünce" width="90%"></a>
+<a href="#b2"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="Renkli el çizimi çöp adam videosu: sessiz bir yatak odası ve nehirde süzülen bir düşünce" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:start -->
 <tr>
 <td width="50%" align="center">
 <strong>Retro TV Stili</strong><br>
-<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="90%"></a>
+<a href="#b3"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<a href="#a7"><strong>Coming Soon…</strong></a>
+<strong>Hayatta Kalma Gerilimi</strong><br>
+<a href="#b4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4 · Hayatta Kalma Gerilimi" width="90%"></a>
 </td>
 </tr>
 <!-- b3:hero:end -->
@@ -73,7 +74,7 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 
 <div align="center">
 
-**9 stil · 11 görsel seçenek · Denenmiş örnekler · Ücretsiz ve açık kaynak**
+**10 görsel stil · Denenmiş örnekler · Ücretsiz ve açık kaynak**
 
 ⭐ **Bir sonraki stil paketini ve yeni özellikleri kaçırmamak için projeye yıldız verin.**
 
@@ -107,7 +108,9 @@ Her iki iş akışı da ham bir konu, web bağlantısı veya tam bir senaryoyla 
 
 ## 🧭 Başlayın
 
-Claude Code, Codex, Cursor, Antigravity veya dosya ve terminal erişimi olan her türlü ajan ortamıyla uyumludur.
+**Örneklere mümkün olduğunca yakın sonuçlar için önce Codex’i öneririm.** Bu projedeki kendi örneklerimi Codex kullanarak hazırladım ve test ettim.
+
+Skill’i Claude Code, Cursor, Antigravity veya dosya ve terminal erişimi olan başka agent ortamlarına da kurabilirsiniz. Ancak model yetenekleri, araç yapılandırması ve yürütme biçimi farklı olduğundan sonuçlar değişebilir.
 
 Aşağıdaki mesajı yapay zekâ asistanınıza gönderin:
 
@@ -153,7 +156,7 @@ Autopilot / B modunu kullanarak aşağıdaki konuyu, makaleyi, gönderiyi,
 haberi veya somut ihtiyacı YouTube’da ilgi çekecek bir videoya dönüştür:
 [İçeriği veya bağlantıyı yapıştır; tanıtım ihtiyacını doğrudan da anlatabilirsin]
 
-İsteklerim: 5–10 dakika, yatay 16:9, B1 “Minimalist El Çizimi” stili;
+İsteklerim: 5–10 dakika, yatay 16:9, B1 “Minimal Çizgi Sanatı” stili;
 seslendirme, altyazı ve ses efektleri de olsun.
 
 Önce görsel üretim, seslendirme ve video birleştirme ayarlarını kontrol et.
@@ -182,11 +185,10 @@ Stiller A1, A2, A3… olarak güncellenir. Her stilin altında ilgili animasyon 
 
 ### A1: Klasik Siyah Beyaz
 
-Az çizgiyle bir fikri net anlatın. Bembeyaz veya simsiyah zeminde karakterler, nesneler ve vurgu renkleri bilgiyi taşır; tempolu açıklayıcı videolar için uygundur.
+Yuvarlak bir baş ve birkaç çizgi, karmaşık bir fikri anlaşılır kılar. Kaygı bir kafese, dikkat biten bir pile dönüşür. Gereksiz ayrıntılar çekilince her hareket ve görsel benzetme öne çıkar.
 
-- **Görsel özellikler**: sade yuvarlak başlar, çizgi uzuvlar ve tutarlı çizgi kalınlığı; gerektiğinde basit yüz ifadeleri. Duyguları, riskleri veya eylemleri ayırmak için en fazla üç canlı vurgu rengi kullanılır. Soyut kavramlar somutlaştırılabilir: kaygı bir kafese, dikkat bir ilerleme çubuğuna dönüşebilir.
-- **Uygun içerikler**: bilimsel bilgiler, psikoloji, motivasyon, kişisel yönetim, iş dünyası analizleri ve kavram açıklamaları.
-- **Nasıl seçilir?** Beyaz zeminde siyah karakterler temiz ve doğrudandır; eğitim ve gündelik bilgi anlatımına uygundur. Siyah zeminde beyaz karakterler daha güçlü kontrast sunar; gerilim, çatışma ve duygu anlatımında öne çıkar.
+- **Görünüm**: Beyaz üstüne siyah veya siyah üstüne beyaz; önemli ayrıntıyı gösteren az sayıda canlı renk.
+- **İyi anlattığı konular**: Bilim, psikoloji, kişisel gelişim, iş dünyası ve görsel benzetmeyle açılan kavramlar.
 
 | A1.1 · Beyaz zeminde siyah karakterler | A1.2 · Siyah zeminde beyaz karakterler |
 |:---:|:---:|
@@ -199,11 +201,10 @@ Az çizgiyle bir fikri net anlatın. Bembeyaz veya simsiyah zeminde karakterler,
 
 ### A2: Modern ve Renkli
 
-Kırmızı bere ve sarı tişört bu stilin ayırt edici karakter özellikleri. Karakter, sade bir teknoloji ortamında ürün anlatabilir; yatak odasında, sokakta veya doğada inişli çıkışlı bir hikâyenin de kahramanı olabilir.
+Kırmızı bere, sarı tişört: ilk bakışta tanınan bir karakter. Havada duran teknoloji ekranlarından sokağa ve doğaya uzanan yolculuk, bir araç tanıtımını veya kişisel dönüm noktasını hikâyeye çevirir.
 
-- **Görsel özellikler**: kırmızı beresi ve sarı tişörtü sabit kalan minimalist karakter, iki farklı ortamla eşleşir. Minimalist Teknoloji seçeneği; beyaz alan, çok silik ızgara, havada duran cam arayüzler ve camgöbeği ışıklarla teknoloji hissi verir. Renkli Hikâye seçeneği ise renkli mekânlar, ışık-gölge ve derinlikle hikâye atmosferi kurar.
-- **Uygun içerikler**: Minimalist Teknoloji; yapay zekâ araçları, teknoloji ürünleri, yöntem anlatımları ve özellik tanıtımları için uygundur. Renkli Hikâye; kişisel gelişim yolculukları, gündelik konular, macera ve motivasyon hikâyelerine uyar.
-- **Nasıl seçilir?** Amaç bir aracı veya yöntemi açıklamaksa Minimalist Teknoloji’yi; karakterin yaşadığı bir olayı takip etmekse Renkli Hikâye’yi seçin.
+- **Görünüm**: Minimal Tech, beyaz boşluk ve cam arayüzler; Colorful Story, derinlikli mekânlar ve duyguyu izleyen ışık.
+- **İyi anlattığı konular**: Yapay zekâ araçları, teknoloji ürünleri, rehberler, gelişim, gündelik deneyimler ve maceralar.
 
 | A2.1 · Minimalist Teknoloji | A2.2 · Renkli Hikâye |
 |:---:|:---:|
@@ -216,11 +217,10 @@ Kırmızı bere ve sarı tişört bu stilin ayırt edici karakter özellikleri. 
 
 ### A3: Tarih Öncesi Mağara
 
-Bugünün dertlerini telefonların ve ofislerin olmadığı tarih öncesi bir dünyaya taşıyın. Mağaralar, hayvan postları, kamp ateşleri ve abartılı ifadeler; iş hayatının ve insan ilişkilerinin tuhaflıklarını sürpriz sonlu küçük hikâyelere dönüştürür.
+Telefon yok, ofis yok. Peki mağara insanları neden hâlâ çalışıyor? Görsel tarz, YouTube’da **200 bin abonesi** olan [@Zenn0009](https://www.youtube.com/@Zenn0009) kanalından ilham alır. Modern dertleri ateşlerin ve hayvan postlarının arasına bırakın; tanıdık sıkıntılar, sonunda iğnesi olan absürt hikâyelere dönüşsün.
 
-- **Görsel özellikler**: kalın el çizgileri, içi beyaz başlar, koyu uzuvlar, post giysiler ve toprak tonlarında çevreler. Karakter etkileşimi, yüz tepkileri ve komik duraksamalar öne çıkar. Karakterler hikâyeye göre tasarlanır; kadınlar, erkekler, çocuklar ve yaşlılar yer alabilir. Farklı hikâyelerde aynı yüzü kullanmak gerekmez.
-- **Uygun içerikler**: tarih öncesi hayal gücü, iş hayatı hicvi, insan davranışları, kara mizah, fabllar ve çocuklar için İngilizce hikâyeler.
-- **Nasıl seçilir?** Küçük bir olayla “Demek öyleymiş!” ya da “Bu nasıl oldu?” dedirten bir son istiyorsanız bu stili seçin. Modern ilişkileri ilkel bir kabileye taşımak, hem tanıdık hem beklenmedik espriler yaratır.
+- **Görünüm**: Ham çizgiler, toprak tonları, büyük tepkiler. Etkileşimler, tepki planları ve komik duraklar anlatır.
+- **İyi anlattığı konular**: İş hayatı hicvi, insan doğası, tarih öncesi varsayımlar, kara mizah, fabllar ve çocuklar için İngilizce hikâyeler.
 
 | Örnek 1: İnsanlığın İlk İşi Nasıl Ortaya Çıktı? | Örnek 2: Ateşin İlk Keşfi |
 |:---:|:---:|
@@ -233,11 +233,10 @@ Bugünün dertlerini telefonların ve ofislerin olmadığı tarih öncesi bir d�
 
 ### A4: İç Isıtan Hikâyeler
 
-Kullanmaya kıyamadığınız bir fincan, hemen yanıtlamadan duramadığınız bir mesaj, sonunda kendinize ayırdığınız bir öğleden sonra. Minimalist karakterler renkli günlük mekânlara girer; hareketleri, ifadeleri ve kamera planlarıyla hepimize tanıdık gelen küçük anları anlatır.
+Cevaplamak zorunda hissettiğiniz mesaj. Sonunda kendinize ayırdığınız öğleden sonra. İstasyonlar, yatak odaları ve köşe kafeleri, adı konamayan duygulara yer açar.
 
-- **Görsel özellikler**: içi beyaz yuvarlak başlar, ince uzun gövdeler, koyu ince uzuvlar ve doğal küçük ifadeler; tamamlanmış 2D çizgi film ortamlarıyla bir araya gelir. Geniş plan mekânı tanıtır, yakın plan tereddüdü veya rahatlamayı yakalar, takip planı karakterle birlikte ilerler.
-- **Uygun içerikler**: gündelik duygular, psikolojik gelişim, ilişkiler, sıcak hikâyeler, alışkanlıklar ve çocuklar için İngilizce içerikler.
-- **Nasıl seçilir?** İzleyicinin belirli bir yaşam anında kendini bulmasını istiyorsanız bu stili seçin. Renk ve ışık konuya göre değişir; sıcaklığın yanı sıra kaygıyı, yorgunluğu ve yeniden başlamayı da anlatabilir.
+- **Görünüm**: Renkli gündelik mekânlar, yumuşak ışık, ölçülü jestler. Yakın plan tereddüdü yakalar; geniş plan nefes aldırır.
+- **İyi anlattığı konular**: İlişkiler, duygular, alışkanlıklar, gelişim; kaygı ve yorgunluğu da kabul eden sıcak hikâyeler.
 
 | Örnek 1: İşe giderken mesaj kaygısı | Örnek 2: Kendine zaman ayırmak |
 |:---:|:---:|
@@ -251,11 +250,10 @@ Kullanmaya kıyamadığınız bir fincan, hemen yanıtlamadan duramadığınız 
 
 ### A5: Tarihi Çizgi Film
 
-Çöp adamları tarihin içine yerleştirin: Edo sokaklarında samuraylar, Antik Mısır tapınaklarında kara kediler, Roma kamplarında askerler. Döneme özgü kıyafetler, renkli mekânlar ve küçük ters köşeler tarih bilgisini gözünüzde canlandırır.
+Samurayların da faturaları var. Mısır’da bir kedi sahneyi çalabilir. Geçmişin sokakları ve tapınaklarında tarih bilgisi, bir karakterin başına gelen somut bir olaya dönüşür.
 
-- **Görsel özellikler**: içi beyaz yuvarlak başlar, siyah oval gözler, belirgin kalın konturlar ve ince çizgi uzuvlar; dönem kıyafetleri, yumuşak cel-shading gölgeleri ve renkli boyanmış dekorlarla birleşir. Ülke ve dönem değişirken kıyafetleri, mimariyi, nesneleri ve müziği değiştirin; karakterlerin çizim dilini koruyun.
-- **Uygun içerikler**: dünya tarihi, uygarlıklardan ilginç bilgiler, geçmişte günlük yaşam, kişi hikâyeleri ve tarihi mizah kısa filmleri.
-- **Nasıl seçilir?** Bir bilgiyi “geçmişte birinin yaşadığı olay” hâline getirmek istediğinizde bu stili kullanın. Tarihi bir ayrıntıyı aktarırken karakter tepkileri ve sürprizlerle izleyicinin ilgisini canlı tutabilirsiniz.
+- **Görünüm**: Beyaz yuvarlak başlar, belirgin konturlar, renkli dönem mekânları. Kostüm ve mimari zamanı kurar; tepkiler hikâyeyi canlandırır.
+- **İyi anlattığı konular**: Dünya tarihi, uygarlıklar, geçmişte gündelik yaşam, tarihî kişiler ve eğlenceli tarih öyküleri.
 
 | Örnek 1: Edo Japonyası · Bir samurayın günlük yaşamı | Örnek 2: Antik Mısır · Kediler ve mumyalar |
 |:---:|:---:|
@@ -270,16 +268,15 @@ Stil ve istem katkısı: [Lawal Ridwan / @leksautomate](https://github.com/leksa
 
 ### A6: Amber Noir
 
-Sıcak altın ışık, derin gölgeler ve turuncu kapüşonlu giyen siyah yuvarlak başlı bir karakter. Merak uyandıran bir “ya şöyle olsaydı?” fikrini küçük bir sinematik hikâyeye dönüştürün. Hikâyeyi kameraya konuşan bir sunucu değil, anlamlı hareketler anlatsın.
+Uyandığınızda her şey on bin kat ucuzlamış olsa? Görsel ilham, YouTube’daki [@IfverseTales](https://www.youtube.com/@IfverseTales) kanalından geliyor (**3 haftada 60 bin yeni abone**). Turuncu kapüşonlu bir figür, altın ışık ve koyu mor gölgeler arasında ilerler; basit bir varsayım, cazibe ve beklenmedik sonuçlar doğurur.
 
-- **Görsel stil**: koyu mürdüm gölgelerle kontrast oluşturan sıcak kehribar ışıklar, sade silüetler, yumuşak gölgelendirmeli şehir sahneleri ve ölçülü kamera hareketleri.
-- **Uygun içerikler**: “ya şöyle olsaydı?” senaryoları, psikoloji, modern fabllar, beklenmedik keşifler ve sürpriz sonlu kısa hikâyeler.
-- **Şu durumda seçin**: bağımsız bir dış sesle anlatılan sinematik animasyon sahneleri istediğinizde. Tarayıcı kullanabilen bir agent, onaylanan klipleri birleştirip seslendirme, ses efektleri, kalın ve büyük harfli altyazılar ve sade beyaz bir başlık ekleyebilir.
+- **Görünüm**: Kehribar ışıklar, koyu siluetler, katmanlı şehirler. Karakter eylemleri ve ölçülü kamera merakı büyütür.
+- **İyi anlattığı konular**: Varsayımlar, modern fabllar, psikoloji, şaşırtıcı keşifler ve ters köşeler.
 
-| Örnek 1: Ya her şey 10.000 kat daha ucuz olsaydı? | Örnek 2: Koşmaya değer bir fırsat |
+| Örnek 1: Ya her şey 10.000 kat daha ucuz olsaydı? | Örnek 2: Fiyatların Çöktüğü Çağ |
 |:---:|:---:|
 | <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="Amber Noir: fiyatların bir gecede düştüğü dünyayı anlatan 20 saniyelik hikâye" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir: turuncu kapüşonlu karakterin bir mağaza önündeki 8 saniyelik animasyon sahnesi" width="360"></a> |
-| Renoise MCP örneği · 20 saniye | Google Flow örneği · 8 saniye |
+| Renoise MCP örneği · 20 saniye · Anlatım: Tim | Google Flow örneği · 8 saniye · Modelin ürettiği ses |
 
 ---
 
@@ -299,18 +296,17 @@ Stiller B1, B2, B3… olarak güncellenir. Her stilin altında çizimli sahneler
 
 <a id="b1"></a>
 
-### B1: Minimalist El Çizimi
+### B1: Minimal Çizgi Sanatı
 
-Görseller anlatıcının ritmini takip eder. İfadeleri canlı çöp adamlar, renkli el çizimi nesneler ve dikkat çeken anahtar metinlerle bilgiyi, hikâyeyi veya ürünün öne çıkan yönlerini açık ve eğlenceli anlatın.
+Bir arkadaşınız anlatırken çiziyormuş gibi. İfadeli yüzler, siyah çizgiler ve birkaç renkli nesne, soyut bilgiyi ve ürün faydalarını tanıdık durumlara dönüştürür.
 
-- **Görsel özellikler**: beyaza yakın kâğıt zemin, çok silik ızgara, siyah el çizgileri ve az sayıda renkli nesne. İfadeler, yerel mikro animasyonlar, akıcı geçişler ve ses efektleri görselleri ilerletir. Ekrandaki vurgulu metin ana mesajı öne çıkarır; altyazılar seslendirmeye eşlik eder.
-- **Uygun içerikler**: YouTube açıklayıcı videoları, psikolojik gelişim, iş hayatı hikâyeleri, eğitici içerikler ve ürün tanıtımları.
-- **Nasıl seçilir?** Bir konuyu, metni veya senaryoyu seslendirmeli ve altyazılı eksiksiz bir videoya dönüştürmek istiyorsanız bu stili seçin. Görseller konuşmanın ritmine göre düzenlenir; kesintisiz anlatımlar ve uzun hikâyeler için uygundur.
+- **Görünüm**: Beyaza yakın kâğıt, canlı çizgiler, amaçlı başlıklar. İfadeler, nesneler ve küçük hareketler ekranı doldurmadan anlatır.
+- **İyi anlattığı konular**: YouTube açıklamaları, eğitim, psikoloji, gelişim, iş hikâyeleri ve ürün tanıtımları.
 
 <table width="100%">
   <tr>
     <th width="50%" align="center">Örnek 1: Yüzünü göstermeden YouTube içeriği üretmek</th>
-    <th width="50%" align="center">Örnek 2: Neden kimse izlemiyor?</th>
+    <th width="50%" align="center">Örnek 2: Her gün paylaşıyorsun: neden kimse izlemiyor?</th>
   </tr>
   <tr>
     <td width="50%" align="center"><a href="assets/readme/b1-minimal-handdrawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="B1 örnek 1: yüzünü göstermeden YouTube videosu üretme konulu sesli örneği izleyin veya indirin" width="360"></a></td>
@@ -328,20 +324,19 @@ Görseller anlatıcının ritmini takip eder. İfadeleri canlı çöp adamlar, r
 
 ### B2: Renkli El Çizimi
 
-Gündelik hikâyeler, karakterli çizimlerle hayat bulur. Sıcak kâğıt dokusu, renkli sahneler, sade çöp adamlar ve el yazısı başlıklar, tanıdık anları ilgi çekici anlatımlı videolara dönüştürür.
+Uyumaya çalıştıkça zihniniz neden daha çok konuşur? YouTube’daki [@PsychToonsHQ](https://www.youtube.com/@PsychToonsHQ) kanalından (**200 bin abone**) ilham alan sıcak kâğıt ve yumuşak renkler, uykusuzluğu ve dikkat dağınıklığını kendimizi gördüğümüz hikâyelere çevirir.
 
-- **Görsel stil**: ince ve hafif düzensiz mürekkep çizgileri, yumuşak renkler ve hikâyeye özel ortamlar. Yakın planlar, değişen bakış açıları, resimli şemalar ve küçük sahne ya da nesne hareketleri anlatıyı taşır; karakterler gereğinden fazla hareket etmez. Koyu altyazılar küçük fildişi kâğıt etiketlerin üzerinde görünür.
-- **İdeal konular**: gündelik psikoloji, alışkanlıklar, dikkat, kişisel gelişim ve izleyicinin kendinden bir şeyler bulacağı YouTube açıklama videoları.
-- **Ne zaman seçilmeli**: daha zengin çizimli ortamlar, Gemini anlatımı, anlam bütünlüğüne göre bölünmüş altyazılar ve eyleme uygun ses efektleriyle tamamlanmış bir video istediğinizde. Kodlama ajanınız videoyu yerel olarak üretir ve birleştirir.
+- **Görünüm**: İnce çizgiler, renkli gündelik mekânlar ve fildişi kâğıt altyazılar. Yakın planlar, benzetmeler ve yumuşak hareketler alışkanlıkları açar.
+- **İyi anlattığı konular**: Gündelik psikoloji, uyku, alışkanlıklar, dikkat, gelişim ve hayatı açıklayan hikâyeler.
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">Örnek 1: Bir düşüncenin akıp gitmesine izin ver</th>
-    <th width="50%" align="center">Örnek 2: Telefonun kilidini neden açmıştın?</th>
+    <th width="50%" align="center">Örnek 1: Uyumaya çalışmak neden uykunu kaçırıyor?</th>
+    <th width="50%" align="center">Örnek 2: Telefonun kilidini açtın — ama nedenini unuttun</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Renkli El Çizimi: sessiz bir yatak odası, nehirde bir kâğıt kayık ve daha huzurlu bir uyku öncesi anı" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@a7f13ef5cd023e0e4fa637ec9f658582a2c211fe/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Renkli El Çizimi: telefona bakarken dikkatin dağılması; anlatım, fildişi altyazılar ve çizimli sahneler" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Renkli El Çizimi: sessiz bir yatak odası, nehirde bir kâğıt kayık ve daha huzurlu bir uyku öncesi anı" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Renkli El Çizimi: telefona bakarken dikkatin dağılması; anlatım, fildişi altyazılar ve çizimli sahneler" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Uyku öncesi düşünceler · Ortam kesmeleri · Yumuşak hareketler</td>
@@ -356,20 +351,19 @@ Gündelik hikâyeler, karakterli çizimlerle hayat bulur. Sıcak kâğıt dokusu
 
 ### B3: Retro TV Stili
 
-Koyu bir zemin, özenli beyaz-gri karakterler ve hafif bir televizyon dokusu, günlük soruları canlı görsel hikâyelere dönüştürür.
+Gece yarısı ilginç bir yayına rastlamak gibi. YouTube’daki [@BradikininVideos](https://www.youtube.com/@BradikininVideos) kanalından (**3 haftada 55 bin abone artışı**) ilham alan beyaz-gri karakterler, hafif parıltı ve analog doku, sıradan soruları keşfe dönüştürür.
 
-- **Görsel stil**: Yuvarlak siluetler, çeşitli sahneler, anlamlı yerel animasyonlar ve sade beyaz altyazılar. Hafif parıltı ve tarama çizgileri analog yayın hissi verir.
-- **Uygun konular**: Günlük bilim, psikoloji, hayvan davranışları, ilginç bilgiler ve kısa gizem hikâyeleri.
-- **Ne zaman seçilmeli**: Kodlama ajanınızın hazırlayıp birleştirdiği, Gemini Bodi anlatımı, anlam birimlerine göre altyazılar ve eylem ses efektleri içeren tamamlanmış bir video istediğinizde.
+- **Görünüm**: Karanlıkta ışıldayan figürler, temiz beyaz yazı ve ince tarama çizgileri. Sahne değişimleri ve küçük tepkiler bilime oyun, tuhaf olaylara gerilim katar.
+- **İyi anlattığı konular**: Gündelik bilim, psikoloji, hayvan davranışı, ilginç bilgiler ve kısa gizemler.
 
 <table width="100%">
   <tr>
     <th width="50%" align="center">Örnek 1: TV’niz gece 3’te kendiliğinden açılırsa?</th>
-    <th width="50%" align="center">Örnek 2: Korkan bir köpek neden yaklaşır?</th>
+    <th width="50%" align="center">Örnek 2: Köpeğin pişman mı, yoksa korkuyor mu?</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@b0ac8fabc4cf86a7a0b1ebe64e4b2c61414076fe/assets/readme/previews/b3-tv-dog.gif" alt="Beyaz-gri karakterler ve yerel animasyonla köpek davranışı açıklaması" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="assets/readme/previews/b3-tv-dog.gif" alt="Beyaz-gri karakterler ve yerel animasyonla köpek davranışı açıklaması" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Kurgu gerilim · Sahne geçişleri · TV dokusu</td>
@@ -377,6 +371,37 @@ Koyu bir zemin, özenli beyaz-gri karakterler ve hafif bir televizyon dokusu, g�
   </tr>
 </table>
 <!-- b3:section:end -->
+
+<!-- b4:section:start -->
+<a id="b4"></a>
+
+### B4: Hayatta Kalma Gerilimi
+
+Bir geri sayım. Gece gelen bir telefon. Asla çiğnememeniz gereken bir kural. YouTube’daki [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives) kanalından (**3 haftada 100 bin abone artışı**) ilhamla sıradan yerler tuzağa dönüşür. Yuvarlak beyaz başlar, beyaz eldivenler ve keskin ışık-gölge, basit karakterlere tekinsiz bir dünya kurar.
+
+- **Görünüm**: Yarı gölgeli açılışlar, huzursuz yakın planlar, karanlıktan beliren tehditler. İfade, ışık ve nesne değişimleri, her şeyi açıklamadan gerilimi artırır.
+- **Ses dünyası**: Brian ilk andan içine çeker. Sessizce süren ortam sesi gerilimi taşır; öyküye bağlı efektler anlatımı bastırmadan tehlikeyi duyurur.
+- **İyi anlattığı konular**: Hayatta kalma kuralları, şehir efsaneleri, felaketten kaçış ve ters köşeli gerilim.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Örnek 1: 911 Operatörü Kuralları: Polis Gönderme</th>
+    <th width="50%" align="center">Örnek 2: Ölümün geldiğini görebilseydin?</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b4-dispatch.mp4"><img src="assets/readme/previews/b4-dispatch.gif" alt="B4: beyaz eldivenli 911 operatörü, gece çağrısı ve pencere dışındaki tehdit" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b4-death-clock.mp4"><img src="assets/readme/previews/b4-death-clock.gif" alt="B4: ölüm saati, gruplu yazı, korkmuş yüz ve beliren tehdit" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Brian anlatımı · Öyküyle senkron efektler · Gerilimli final seçimi</td>
+    <td align="center">Brian anlatımı · Ürpertici görsel açılış · Vurgulu metin animasyonu</td>
+  </tr>
+</table>
+
+<!-- b4:section:end -->
+
+
+---
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>
@@ -450,29 +475,25 @@ Bu video için Küçük Resim ve Yayınlama Kitini oluştur:
 
 Evet. Stickman Video Director, MIT lisansıyla %100 ücretsiz ve açık kaynaklıdır. Kişisel ve ticari projelerinizde özgürce kullanabilirsiniz. Aylık 30–60 dolar isteyen kapalı SaaS platformlarının aksine bu projede abonelik ücreti yoktur. Yalnızca bağlamayı seçtiğiniz modellere göre Google Gemini, Claude veya ElevenLabs gibi üçüncü taraf API kullanımınızı ödersiniz.
 
-### Q2. Bu videolardan YouTube ve TikTok’ta para kazanabilir miyim?
+<!-- readme:platforms -->
 
-Evet, kesinlikle. Yüzünü göstermeyen içerik üreticilerinin önemli bir kaygısı, YouTube’un “Reused Content” veya düşük emekli yapay zekâ içeriklerine yönelik para kazanmayı kapatma politikasıdır. Stickman Video Director özel hikâye örgüleri, benzersiz anlatım temposu ve özgün görsel sahneleme yazdığı için çıktınız tamamen özgündür. Yüzlerce kanal, YouTube Partner Program (YPP) kapsamında çöp adam anlatı videolarından başarıyla gelir elde ediyor.
+### Q2. Karakter tutarlılığını nasıl korurum?
 
-### Q3. Programlama bilgisine veya pahalı bir GPU’ya ihtiyacım var mı?
+**B · Autopilot Modu**: Kod tabanlı bir üretim akışı kullanır. Video üretilmeden önce karakter görselleri oluşturulur ve farklı sahnelerde yeniden kullanılır; böylece karakterin görünümü nispeten tutarlı kalır.
 
-Hayır. Üst düzey bir RTX ekran kartına veya kodlama bilgisine ihtiyacınız yok.
+**A · Yönetmen Modu**: Temelde metinden video üretimine dayanır. Saç modeli, kıyafet veya diğer özellikler karmaşıksa ve yalnızca metinle tutarlı biçimde yeniden üretilemiyorsa bir çöp adam karakter referans görseli ekleyin ve sonraki kliplerde de kullanın. Bu, sonuçların daha tutarlı olmasını sağlar.
 
-- **Director Mode**, Skill uyumlu herhangi bir yapay zekâ asistanında sohbet yoluyla çalışır.
-- **Autopilot Mode**, Claude Code, Codex veya Cursor gibi yapay zekâ kodlama ajanlarında basit İngilizce taleplerle çalışır. Ağır görsel üretim işlemleri yerel donanımınızda değil, hafif bulut API’leri veya prosedürel render ile yürütülür.
+### Q3. Hangi araçları kullanmalıyım? Belirli bir görsel üretim modeli seçmem gerekiyor mu?
+
+**Örneklere mümkün olduğunca yakın sonuçlar için Codex’i öneririm.** B Modu örnek videolarını Codex’te hazırlayıp test ettim; kendiniz kod yazmanız gerekmez. Skill başka agent ortamlarına da kurulabilir, ancak model, araç yapılandırması ve yürütme biçimindeki farklar sonucu etkileyebilir.
+
+Görseller için GPT’nin yerleşik modelini kullanıyorum; ek bir görsel üretim API’si yapılandırmadım. Videonun tamamına geçmeden önce kısa bir örnekle stili ve sonucu kontrol edin.
 
 ### Q4. Hazır bir senaryo olmadan video yapabilir miyim?
 
 Evet. Ham bir fikri, aklınıza gelen bir düşünceyi, haber bağlantısını veya tam bir blog yazısını yapıştırabilirsiniz. Yapay zekâ yönetmen ana çatışmayı çıkarır, etkileyici bir 3 saniyelik açılış yazar ve konuyu komedi zamanlaması ile seslendirme ipuçları içeren sıkı bir 6 sahnelik anlatı örgüsüne dönüştürür.
 
-<!-- readme:platforms -->
-
-### Q5. Director Mode ile Autopilot Mode arasında nasıl seçim yapmalıyım?
-
-- **Director Mode’u seçin**: Her plan, kamera açısı ve görsel metafor üzerinde tam kontrol istiyorsanız. Maliyet açısından güvenlik ağı görevi görür: tek bir video karesi üretmeden önce senaryo ve storyboard’u ücretsiz onaylarsınız.
-- **Autopilot Mode’u seçin**: Senaryo, seslendirme, altyazı ve bitmiş video dosyasını otomatik oluşturan, tek tıklamalı ve zahmetsiz bir deneyim istiyorsanız.
-
-### Q6. Yapay zekâ videonun sıkıcı olmamasını ve izleyiciyi tutmasını nasıl sağlıyor?
+### Q5. Yapay zekâ videonun sıkıcı olmamasını ve izleyiciyi tutmasını nasıl sağlıyor?
 
 Geleneksel yapay zekâ araçları metni yalnızca birebir resimlere dönüştürür. Stickman Video Director gerçek **görsel hikâye anlatımı psikolojisi** uygular:
 
@@ -480,15 +501,16 @@ Geleneksel yapay zekâ araçları metni yalnızca birebir resimlere dönüştür
 - **Görsel Metaforlar**: Soyut ve sıkıcı kavramları komik görsel şakalara çevirir; örneğin kaygıyı küçülen bir hamster çarkı, tükenmişliği %1 pil göstergesi olarak betimler.
 - **Tempo ve Komik Duraklamalar**: Casually Explained gibi üreticilerin komedi zamanlamasını yansıtmak için yapılandırılmış duraklamalar, tepki planları ve ses efekti ipuçları (SFX) ekler.
 
-### Q7. Hangi yapay zekâ asistanları ve video editörleri destekleniyor?
+### Q6. Bu videolardan YouTube ve TikTok’ta para kazanabilir miyim?
 
-- **Yapay Zekâ Ortamları**: Claude Code, OpenAI Codex, Cursor, Antigravity veya dosya ve terminal erişimi olan herhangi bir ajan ortamı.
-- **Video Üreticileri**: Google Flow, Runway (Gen-3), Luma Dream Machine, Kling, Pika veya herhangi bir görselden videoya / metinden videoya modeli.
-- **Video Editörleri**: Prompt’lar ve dışa aktarılan sesler CapCut, Premiere Pro, DaVinci Resolve veya Final Cut’a sürükleyip bırakmaya hazırdır.
+Evet, kesinlikle. Yüzünü göstermeyen içerik üreticilerinin önemli bir kaygısı, YouTube’un “Reused Content” veya düşük emekli yapay zekâ içeriklerine yönelik para kazanmayı kapatma politikasıdır. Stickman Video Director özel hikâye örgüleri, benzersiz anlatım temposu ve özgün görsel sahneleme yazdığı için çıktınız tamamen özgündür. Yüzlerce kanal, YouTube Partner Program (YPP) kapsamında çöp adam anlatı videolarından başarıyla gelir elde ediyor.
 
-### Q8. Tek bir sahneyi beğenmezsem tüm videoyu yeniden render etmem gerekir mi?
+### Q7. Programlama bilgisine veya pahalı bir GPU’ya ihtiyacım var mı?
 
-Hayır! Modüler 6 sahnelik mimarimizin temel avantajı budur. Sahne 3’ün ayarlanması gerekiyorsa yalnızca o sahnenin prompt’unu değiştirirsiniz. Sahne 1, 2, 4, 5 ve 6 aynı kalır. Bu, kurgu süresinden %80 tasarruf sağlar ve üretim kredilerinin boşa harcanmasını önler.
+Hayır. Üst düzey bir RTX ekran kartına veya kodlama bilgisine ihtiyacınız yok.
+
+- **Director Mode**, Skill uyumlu herhangi bir yapay zekâ asistanında sohbet yoluyla çalışır.
+- **Autopilot Mode**, Claude Code, Codex veya Cursor gibi yapay zekâ kodlama ajanlarında basit İngilizce taleplerle çalışır. Ağır görsel üretim işlemleri yerel donanımınızda değil, hafif bulut API’leri veya prosedürel render ile yürütülür.
 
 <!-- readme:contribute -->
 

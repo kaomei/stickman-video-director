@@ -1,0 +1,102 @@
+{
+  "schema": "b4-style-lock-v3",
+  "style": "B4",
+  "version": "2026-10-31-v3-white-glove-40s",
+  "status": "published_white_glove_reference_pack",
+  "approved_on": "2026-10-31",
+  "approval": {
+    "quote": "参考图要不重新做吧，包括那个我通过的预览视频，四十秒样片，也是需要重做，重做的点就在于白手套，所以先重做一遍，然后把它的画风固定到skill里。",
+    "scope": "The earlier Meridian Tower 40-second sample is the user-approved drawing baseline. The user requests a white-glove revision of its full-scene artwork and sample, followed by local B4 packaging. This authorizes the revision, not acceptance of the unseen revised sample, a new voice recording, another film or publication. This is the historical revision authorization; later public showcase acceptance and publication authorization are recorded separately below."
+  },
+  "sample_review": "Historical white-glove remake snapshot: delivered for review, with no separate acceptance recorded here. Public Dispatch and Death Clock examples were subsequently accepted; see publication.",
+  "provenance": {
+    "sample": "Meridian Tower / preview40-voice-v2 / meridian-tower-preview-40s.mp4",
+    "sample_sha256": "48d6c33352e8863bc5a42061061b2898e001cea753bbc70182958ac55a6ee7e3",
+    "remade_sample": "B4-Meridian-Tower-White-Gloves-40s.mp4",
+    "remade_sample_sha256": "f68324d119f7e4d4736d763a9ec7363acaf7b052649ba75969719b761d0df4c4",
+    "asset_kind": "Five full-scene PNG illustrations edited with built-in image_gen to replace black hands with rounded white cartoon gloves. These exact revised assets are used directly by the remade sample renderer. No extracted video frames, crops, subtitles or application UI; non-hand regions were requested to be preserved but are not asserted pixel-identical.",
+    "source_project": "2026-10-19/https-www-youtube-com-watch-v",
+    "renderer_chain": "preview40-voice-v2/restyle_subtitles.py loads preview40-voice-v1/render_preview40.py, which resolves the source art recorded below.",
+    "remake_preservation": "Original AAC packets, 40-second duration, 17-shot sequence and subtitle sidecar retained. The city illustration has no visible hands and is unchanged. Original video and source art remain intact.",
+    "portable": "Source locations are provenance labels only. Generation uses the five revised files bundled here; it must not depend on the original project, sample video, chat or generation cache.",
+    "supersedes": "The four black-hand v2 reference copies and the earlier sole dispatch-office anchor are not the B4 authority. Use this white-glove set; the dispatch-office v6 remains only a story-specific still."
+  },
+  "references": [
+    {
+      "id": "motor-room",
+      "path": "reference-01-motor-room.png",
+      "sha256": "23a4dd6c5d1141bfddacd381525a1d96e82be81b070b2d63acbc58d7a8fe13fa",
+      "width": 1672,
+      "height": 941,
+      "source_art": "work/story01/preview20-v2/assets/room-fixed.png",
+      "source_art_sha256": "d591714d2823f509891daf4efcc79af87a39ace2cb0aacf6b5de50d34870be3c",
+      "use": "Interior machinery, ink-contour hierarchy, full-body stick character and painted light/shadow; not obligatory beanie/scarf or location."
+    },
+    {
+      "id": "rooftop",
+      "path": "reference-02-rooftop.png",
+      "sha256": "ad1cfb7b30d9e1aa44130760781dce91c29febf4e2688a8362b9b5443466ffeb",
+      "width": 1672,
+      "height": 941,
+      "source_art": "work/story01/preview40-voice-v1/assets/roof.png",
+      "source_art_sha256": "ab1d637de7fa7bb3d1a0f6778fc11e4af1f1b8c6d3e23b4e3e80ef303c79cedb",
+      "use": "Exterior depth, architectural detail and coherent character-to-parapet contact; not a universal rooftop setting."
+    },
+    {
+      "id": "driver",
+      "path": "reference-03-driver.png",
+      "sha256": "364a80b28843e14b55addd3114aed9c113d91a56885d8cd25d46fc964a90fb9e",
+      "width": 1672,
+      "height": 941,
+      "source_art": "work/story01/preview40-voice-v1/assets/driver.png",
+      "source_art_sha256": "3e0f7139faa0fdca9b61dcecc276f9a473c370db8b8a237fb946c8ef259715aa",
+      "use": "Closer character/prop composition, circular white head, thin black body and detailed readable vehicle interior."
+    },
+    {
+      "id": "street",
+      "path": "reference-04-street.png",
+      "sha256": "5167ca2b1d904481feb0d6b8590c85c6a5e223dc8e9bca6943d6baf98dbff2d4",
+      "width": 1672,
+      "height": 941,
+      "source_art": "work/story01/preview40-voice-v1/assets/girl.png",
+      "source_art_sha256": "97dab86807b55c343a731de70cfec262f4544537c89eeb02df056a21292853fa",
+      "use": "Low-angle street composition, varied cast, story gesture and layered city scenery; hair/clothes are example identities, not universal wardrobe."
+    },
+    {
+      "id": "opposite-rooftop",
+      "path": "reference-05-opposite-rooftop.png",
+      "sha256": "80a33dd11c830525e475ef8d1ffb62c5fd47131b14af01edf59dd1137ff71769",
+      "width": 1672,
+      "height": 941,
+      "source_art": "work/story01/preview40-voice-v1/assets/opposite.png",
+      "use": "Distant character readability, raised and hanging white gloves, rooftop machinery and layered city depth; not an obligatory duplicate protagonist or location."
+    }
+  ],
+  "prompt": {
+    "path": "style-lock.txt",
+    "sha256": "a724ce29b03624c13e70a8ae5a8c8209e83a48b697b28244263d3eefa0193795"
+  },
+  "guide": "../../references/b4-survival-storytelling.md",
+  "common_qa": "../../references/autopilot-production-qa.md",
+  "runtime": {
+    "cli_supported": true,
+    "note": "Select B4 in the shared init/validate/preview/render CLI. Uses native-rate local narration, separate dialogue, ambience and file-backed SFX. Never alias B4 to another B style. File checks do not certify acting, sound or arbitrary-story quality."
+  },
+  "publication": {
+    "authorized_on": "2026-11-04",
+    "scope": "User explicitly requested publishing all approved changes including B4; retains existing canonical images and complete style prompt.",
+    "execution": "Agent-directed production through the shared B4 manifest/CLI, bundled white-glove references and project-local media. Aesthetic quality still requires actual sample review.",
+    "accepted_showcases": [
+      {
+        "name": "Dispatch / B4.1",
+        "repository_path": "assets/readme/b4-dispatch.mp4",
+        "sha256": "9f69521a561d2bd51cee972c33ab7ce9f5238ac680cd573139a870ef8434da2b"
+      },
+      {
+        "name": "Death Clock opening",
+        "repository_path": "assets/readme/b4-death-clock.mp4",
+        "sha256": "d63dbf0036c1f9bfea757c32136143f0b7998afec45579591c7cfe2541bfaddf"
+      }
+    ]
+  }
+}

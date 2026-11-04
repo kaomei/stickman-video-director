@@ -1,0 +1,25 @@
+# B4 · Portable production evidence check
+
+Read after the B4 visual, opening and audio contracts. This checker validates project evidence and timing, **not** art quality or actual listening. B4 rendering uses the [shared installed runtime](autopilot-runtime.md#b4-production-tracks); the ledger complements its media/timeline validation. Use a fresh external project and an isolated copy of this Skill for an installation rehearsal; never depend on old chat context or absolute developer-machine paths inside the package.
+
+Run from the installed Skill:
+
+```bash
+node scripts/b4-production-check.mjs /absolute/project/b4-ledger.json
+```
+
+The project-local JSON contract is `schema: b4-production-ledger-v1`, `style: B4`, with `fps`, `duration_frames`, `script`, `voice`, `opening`, `assets`, `shots`, `ambience`, `audio_cuts` and `critical_sfx`. Paths below resolve inside the external project, never inside the Skill. Each referenced file must exist; the checker never runs source-provided commands or fetches URLs.
+
+- `script`: `file`, `sha256`, and nonempty `authorization` identifying the user's production instruction for this exact script. The UTF-8 text must be nonblank, including in planning mode. Credit approval alone is not script authorization. This is recorded evidence, not an authentication or permission-granting mechanism; verify it against the actual conversation before generation.
+- `voice`: `name: Brian`, `id: nPczCjzI2devNBz1zQrb`, `file`, `sha256`, and `input_script_sha256` matching `script.sha256`; retain approved native settings in a separate project cast manifest. The input hash records which script was sent, not a claim that the audio transcript was automatically verified. An explicit narrator override must record `user_override` and its actual identity; do not mark an unapproved substitute Brian.
+- `opening`: `left_half_shadow: true`, `question_groups` (two complete semantic strings), `group_start_frames` (setup first, full remainder second), `remainder_entrance: together`. Different user-approved treatments require an explicit `user_override` reason.
+- `assets`: unique `id`, `file`, `sha256`, `provenance` (`new_generated` or `project_owned`), `references` (bundled reference IDs actually submitted), `prompt_file` (the saved complete submitted prompt), and `prompt_sha256`. A fresh-story test sets `fresh_test: true` and only uses `new_generated` story art. Canonical style references are allowed; old film frames are not new art.
+- `shots`: contiguous `start_frame`, `end_frame` (exclusive), `asset_id`, nonempty `meaningful_view` and `beat`. Each narrative shot is <=3 seconds. A repeated unchanged `meaningful_view` does not reset the timer; re-cropping one asset must not invent a new view. An exceptional hold needs `kind: exceptional_hold`, `user_approval` and `reason`.
+- `ambience`: intervals covering the programme except declared `audio_cuts`, each with `start_frame`, `end_frame`, `file`, `role: subtle_bed`. Crossfades/overlaps are allowed; a gap is not. `audio_cuts` record the same interval fields plus `reason` and `return_trigger`.
+- `critical_sfx`: each scripted consequential event has `id`, `file`, `sha256`, `trigger`, `perspective`, `rights_status: cleared`, `review` (`pending` or `pass`). An empty list must explicitly state `no_critical_sfx_reason`; do not omit a real event to pass.
+
+Machine checks reject absent/blank/unrecorded scripts, stale voice-input script hashes, missing files/fingerprints, wrong voice identity, stale/missing canonical references, missing complete style prompt, >3-second narrative shots, uncovered timeline/bed and unreviewed or uncleared critical effects. `--planning` permits missing generated media and pending cue review, but still requires the authorized script and reports `planning_only`, never delivery-ready. Report the mode honestly.
+
+Inspect encoded pictures, contact anatomy, caption semantics, source material/causality, full-mix sound and user review separately. File hashes only establish which file was checked; self-reported provenance and view IDs still require human/source review. A valid ledger is necessary evidence, not proof of an attractive or stable generation model.
+
+For every B4 export also run `node scripts/b4-opening-audio-check.mjs /absolute/final.mp4` and save the JSON externally with that file's fingerprint. This decodes the actual opening and flags a delayed perceptible onset or token-hit/near-silent gap; the ledger's ambience coverage cannot establish audibility. Resolve any diagnostic finding or record a story-motivated silence exception under the [first-frame audio gate](b4-audio-direction.md#first-frame-audio-gate). A diagnostic pass is not a listening/creative acceptance pass.

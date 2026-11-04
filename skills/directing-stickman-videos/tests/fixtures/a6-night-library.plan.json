@@ -1,0 +1,43 @@
+{
+  "schema": "a6-reference-plan-v1",
+  "status": "offline text fixture; no generated or approved new cast/shot images",
+  "images": [
+    {
+      "id": "archivist-identity-candidate",
+      "purpose": "character_reference",
+      "reference_inputs": [{"source": "package", "asset_id": "shop-body", "role": "style"}],
+      "image_prompt": {
+        "style": "A6 illustrated two-dimensional character design: a compact matte-black round head connected to the torso by a short black neck, small cream-white eye marks, a compact cream line mouth, simplified black hands and black stick limbs, angular contours and restrained cel shading. Warm amber light falls into deep plum shadows; this is not a glossy 3D toy or a photoreal person.",
+        "cast": "One adult archivist wears a muted teal knee-length coat, a cream scarf and simple black shoes. The head is uncovered. Both arms hang naturally beside the body; both hands are empty. Preserve two distinct legs meeting at the pelvis and grounded feet.",
+        "world": "A plain deep-plum studio backdrop and one warm amber side light isolate the figure. No cafe, apartment furniture or unrelated props.",
+        "composition": "A landscape identity sheet shows separated front and three-quarter full-body views of this archivist, with consistent scale and wardrobe. Leave clear gaps between views. This is an identity candidate, not a video opening frame.",
+        "constraints": "Copy only the supplied reference's drawing and light grammar, not its orange clothing or shop location. No hood, text, watermark, extra limbs, floating head or realistic fingers. Do not add speech bubbles."
+      }
+    },
+    {
+      "id": "library-world-candidate",
+      "purpose": "environment_reference",
+      "reference_inputs": [{"source": "package", "asset_id": "apartment-style", "role": "style"}],
+      "image_prompt": {
+        "style": "A layered two-dimensional illustrated interior with angular shapes, restrained cel shading, amber pools of light and deep plum shadows. Preserve the supplied reference's graphic light treatment rather than realistic materials or glossy 3D rendering.",
+        "cast": "No people, faces, silhouettes or character sheets are visible in this environment reference.",
+        "world": "A closed municipal library at night has tall dark-plum shelves, a narrow wooden reading table, one brass desk lamp and rain on the distant window. An old burgundy book rests alone near the table edge.",
+        "composition": "One wide establishing view looks diagonally down a shelf aisle toward the table. The lamp marks the focal point; the table surface and book remain clearly readable. A dark aisle leaves room for the later approved actor.",
+        "constraints": "No generated words, title, captions or watermark. No cafe cups, orange hoodie or copied apartment layout. Keep a coherent floor plane, plausible shelf perspective and illustrated rather than photographic depth."
+      }
+    },
+    {
+      "id": "library-shot-first-frame-candidate",
+      "purpose": "shot_first_frame",
+      "reference_inputs": [{"source": "package", "asset_id": "cafe-detail", "role": "style"}],
+      "image_prompt": {
+        "style": "Two-dimensional A6 illustration with a compact matte-black round head, connected short black neck, small cream-white eyes and compact line mouth, simplified black hands and limbs, amber rim light and deep plum shadows. Use angular drawn contours and restrained cel shading, not photoreal skin or glossy toy materials.",
+        "cast": "One adult archivist wears an uncovered black round head, muted teal knee-length coat, cream scarf and simple black shoes. The archivist stands beside a reading table, eyes fixed on a burgundy book. The right black hand hovers above the closed book without touching it; the left arm hangs naturally down. Both feet are planted and legs are visibly separate.",
+        "world": "The municipal library is closed at night. Tall plum shelves frame a wooden reading table, a warm brass desk lamp and a rain-darkened window. Only the one burgundy book is on the table within reach.",
+        "composition": "One portrait shot frames the archivist from head to shoes at a slight three-quarter angle. Keep the right hand, book cover and tabletop unobscured in the lower middle. The lamp provides warm side light; no action has happened yet. This is one composed image, not a multi-panel sheet.",
+        "constraints": "Use the attached example only for drawing grammar. The new cast and shot require story approval; no fabricated identity input is attached here. No text, captions, watermark, orange hoodie, extra arms, broken wrist contact or open speaking mouth."
+      },
+      "motion_prompt": "From the approved single-shot first frame, the archivist slowly rests the right hand on the closed book, then pauses in surprise when the lamp flickers once. A gentle camera push keeps the hand and book visible. The actor remains non-speaking. No narration or captions."
+    }
+  ]
+}

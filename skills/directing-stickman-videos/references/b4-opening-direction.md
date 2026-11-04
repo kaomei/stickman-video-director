@@ -1,0 +1,64 @@
+# B4 · Story-led opening, typography and audiovisual escalation
+
+Required with the [B4 visual contract](b4-survival-storytelling.md), [audio contract](b4-audio-direction.md) and [shared QA](autopilot-production-qa.md). These are production/review rules, not new renderer capabilities. Apply only to B4; preserve other styles and accepted media unless their revision is requested.
+
+## Opening design before generation
+
+Record the first three seconds and first ten seconds in the project shot/sound ledger: exact approved words and actual voice times, visible anomaly or dramatic question, focal action/state change, text function, sound cause/perspective, and transition into the body. Preserve supplied copy; a visual hook is not permission to rewrite or reorder narration.
+
+For horror openings, execute the [story-led horror visibility gate](b4-survival-storytelling.md#story-led-horror-visibility-gate): identify the visible threat evidence and cast relationship before generation, then check the encoded picture without relying on labels or sound. Do not limit this gate to the hook; retain it for later threat-bearing beats without spoiling withheld reveals.
+
+- **Earn attention with the story.** Establish a concrete abnormality, consequence, conflict or useful discovery appropriate to the genre. For horror, make the threatening relationship legible at playback size through silhouette, scale, staging, obstruction and controlled contrast. More blood, crushed blacks, extra monsters, painful peaks or faster cuts are not automatic improvements. For non-horror B4, use the story's own stakes; do not import a horror preset.
+- **Reserve distinct opening artwork.** When refreshing the hook, create a purposeful new view/state rather than replaying a later climax still with another crop. Inspect opening/body assets together for distant repetition. Do not reveal the ending early, invent plot events or regenerate every accepted later illustration merely for novelty. A motivated callback may reuse an asset when the later action/information actually changes.
+- **Progress, do not merely decorate.** Plan readable local acting, prop contact, environmental change or substantive information development, plus time to perceive the result. A well-drawn held pose can carry tension or a reveal; no compulsory limb animation. Camera drift, subtitle turnover, grain and glow alone are not principal-picture action. Apply B4's deliberate-hold exception to the shared inactivity review without compulsory rapid cuts merely to simulate acting; avoid flash inserts, chained punch-ins and motion that obscures cause and effect. The separate three-second editorial limit below still applies.
+- **Keep the drawing lock under exaggeration.** Submit the canonical scene-relevant B4 reference and complete style prompt for each new asset. Preserve round white heads, compact white gloves, coherent shoulder–elbow–wrist reach and the outlined flat-color environment. Stronger fear or staging must not turn into realistic anatomy, 3D shading or an unrelated illustration style.
+
+## Text has a dramatic job
+
+### Confirmed opening treatment
+
+For the default B4 story hook, stage a **left-side half-shadow scrim** fading into the image, with a short audience-facing question on the left and the story-supported anomaly readable on the right. Preserve the outlined 2D drawing and readable color; avoid a uniformly black/blue horror filter or repeated polished badge template. This is editorial type, not invented in-world evidence. For horror, the right-side threat must actually be unsettling, not a normal friendly pose with an ominous label. Other genres use their own conflict instead of a monster. A materially different opening treatment may be explicitly chosen by the user.
+
+Use a concise question, usually two short semantic groups, derived from this story; do not repeat another sample's exact wording. Let the setup group appear first, then reveal the **entire remaining question together** after a short readable beat. Never stagger the second group word by word, letter by letter or with a typewriter. The accepted example's words and exact delay are project details, not mandatory copy/timing. Keep the complete question visible long enough to read, and distinguish this hook from later rule/note/prop typography.
+
+### First-three-second visual escalation gate
+
+The first three seconds need a designed progression, not simply a finished title placed over an unchanged illustration. Record the setup group, payoff group, actual entrance frames, one emphasis treatment, principal-picture before/after states and the readable hold in the project ledger. Respect the designed spatial/semantic blocks: when an upper block sets up a lower punchline, show the upper block first and reveal the **whole lower block together**. Do not mechanically choose the first two words as the setup or show every block simultaneously. Align the payoff with the approved spoken phrase where present; never delay narration to wait for typography.
+
+Give the payoff one clear emphasis, such as a short scale-settle, weight/contrast change or motivated ink/shadow treatment. Preserve complete readable words and stable letter proportions; avoid competing bounces, continuous glitching or a second copy in the subtitles. The exact effect and timing belong to the story, not a universal preset.
+
+Alongside the text, show at least one **readable principal-picture change** during the opening beat: a coherent change from concern to fear, a small natural recoil, a revealing prop/environment state or the emergence of a story-supported threat/trace. Typography, grain, camera drift and glow alone do not pass this gate. Cut between well-drawn expression/pose states or animate a trustworthy local layer; no compulsory limb animation or distorted puppet rig. Keep the important change visible long enough to perceive, rather than using a one-frame shock insert. A deliberately static opening may be an explicit scoped user choice, recorded with its purpose; do not assume it by default.
+
+For horror, the change must strengthen the visible threatening relationship, not only make a neutral character wiggle. An optional death-shadow or similar editorial apparition must fit the story, be recorded as subjective/editorial rather than invented factual action, and preserve withheld reveals. It is not a mandatory reaper, extra monster or permission to alter the plot. Other genres use their own stakes.
+
+Review the actual encoded first three seconds at normal speed and at the setup/payoff/reaction frames, with sound muted once. Check reading order, emphasis, visible reaction/reveal, anatomy, style continuity and payoff hold. For expression/reveal transitions also inspect an intermediate encoded frame: keep the common pelvis/two-leg fork, glove contact and stable body coherent, without doubled facial features or limbs. Follow the visual contract's pose/state checks; stronger fear does not excuse broken anatomy. A static screenshot of the final title or a passing text-policy test is not evidence of effective timing, fear or audience retention. Record creative acceptance as pending until reviewed.
+
+### Three-second narrative shot limit
+
+Every B4 **narrative shot is at most 3.0 seconds**, including the opening and body. A valid cut changes the focal subject, viewpoint, visible action/state or consequential information; another crop/zoom of the same unchanged image does not reset this limit. Design distinct views before generation, especially across the first ten seconds. Do not conceal a 5–10-second static shot behind subtitle changes, tiny flicker or decorative noise.
+
+This is an editing limit, not a demand for limb animation: a coherent held pose is valid within a shot. A longer reading-only ending or deliberately sustained exceptional hold needs an explicit scoped user choice and a recorded reason; it cannot silently become an exception for ordinary narration. Preserve actual speech and semantic caption boundaries across cuts; do not shorten words or add pauses to fit the limit. Review chronological and distant shots for repetition, with no obligatory one-second flashes.
+
+Separate synchronized subtitles from scene information, a chapter/opening label, an anomalous fact and an exceptional warning. Do not present every early line as the same oversized centered title. Use a small coherent hand-drawn/rounded type family with distinct scale, placement and entrance behavior for these jobs, not a different decorative font on every cut.
+
+**Show facts; do not label every fact.** If the picture already shows a location, garment, action or outcome, omit a second explanatory tag. Do not add routine floating words such as “outside,” a garment color, a year or “all lights off” merely to echo narration. Use a clock, watch or readable phone/computer display close-up for time when the story supports it, rather than a floating time card. Essential synchronized subtitles remain separate. Keep structural titles (for example a large rule number) and meaningful connection/disconnection states when they orient the viewer. Do not invent extra rules or signal states.
+
+Avoid a repeated rounded-card/emoji/badge template. Prefer integrated scene composition and a few justified text moments: a half-shadowed headline, restrained hand-lettered warning or scene-specific mark when appropriate. Vary function and composition, not random fonts/colors. If art/action can express the beat more clearly, remove the decorative label rather than restyling it.
+
+For a rule or longer warning that needs full attention, a full-frame text treatment may temporarily soften the existing scene with a restrained translucent/frosted layer. Reveal semantic units with time to read; preserve context, contrast and safe areas. Do not stack a duplicate full subtitle over the same words. Check the final encoded frame, not just the design canvas.
+
+For a story-motivated ominous written warning, an irregular handwritten note, rough paper edge or restrained ink mark may fit better than a polished tech HUD. This is an optional story adapter, **not a mandatory death-note graphic**. Do not fabricate an in-world note or factual evidence where the script has none; clearly editorial text remains editorial. Roughness must not sacrifice legibility. Do not transfer the Dispatch note, font or exact timing to every story.
+
+## Sound and picture must resolve together
+
+Spot the immediate hearing hook from a real source/event or motivated subjective contrast. No default ringtone, scream or trailer boom. Establish one clear foreground sound job; use a subtle continuous scene-matched bed and sparse necessary causal events around it, as required by the audio contract. Three functional layers do not need to run at once. Remove redundant hiss, wind, hum, drones and overlapping tails before adding weight. Keep deliberate AUDIO CUT with explicit stop/remain/return cues.
+
+Apply the audio contract's [first-frame audio gate](b4-audio-direction.md#first-frame-audio-gate): default to early intelligible Brian narration, not a fixed SFX-only title pad. Do not wait for the question/title entrance before starting perceptible sound, or leave a token hit followed by an empty-feeling lead-in. Inspect the exported first three seconds, not just cue timestamps. If approved as spoken copy, a short question may lead into the retained body; synchronize title groups to that actual voice and move affected picture/captions/SFX together after a duration change. An audible SFX onset alone is not proof of early speech.
+
+Brian remains the fixed narrator. Automatically execute plot-needed role casting/performance and SFX acquisition/mixing under the audio contract and existing cost/rights gates; do not force extra voices. Verify critical events in the full encoded mix, with speech active, not only in an effects-only export. A new rule alone does not authorize revoicing old samples; explicit remake authorization does.
+
+## Acceptance evidence
+
+Review first-ten-second playback, chronological opening/body contact sheet, suspect full-size anatomy/contact crops, text reading time, semantic-event gaps and the complete final mix. Record source identities, actual submitted references, timings, fingerprints, stem paths, loudness/true peak and failures. Static policy tests prove instruction coverage, not attractive art, convincing acting or frightening sound. Mark unavailable physical listening/device checks as pending user review. Deliver the complete requested sample/film and a verified folder shortcut, retaining old versions; no automatic gallery replacement, installed-copy sync or publication.
+
+Run the [portable production check](b4-repeatability-check.md) on the actual project ledger. Do not turn its mechanical PASS into a claim that viewers found the hook frightening or the sound convincing.
