@@ -95,7 +95,9 @@ Exports include an encoded opening-audio diagnostic. Approval is blocked on a fl
 
 ## Optional Gemini API adapters
 
-Browser/native generation tools can be used instead. API adapters require `GEMINI_API_KEY` in the environment, the chosen model ID and explicit network authorization. They make **one request, no automatic retries**, do not print keys/provider response bodies, and use only Google's fixed HTTPS endpoint. Failures/timeouts are recorded; inspect service history before trying again. Model access/quota is not validated by key presence. Private reference upload is opt-in through explicit `--reference` paths.
+The renderer consumes compatible local audio and image files; it is not tied to the service that generated them. Follow [selected-provider execution](autopilot.md#selected-provider-execution) for another service. `doctor`'s `gemini_key_present` is informational for the Gemini route, not a requirement for all providers or proof of generation readiness. Do not repurpose `gemini-media.mjs` with another provider's key/base URL; use a suitable tool or project-local adapter instead.
+
+Browser/native generation tools can be used instead. The bundled Gemini adapter requires `GEMINI_API_KEY` in the environment, the chosen model ID and explicit network authorization. Its commands make **one request, no automatic retries**, do not print keys/provider response bodies, and use only Google's fixed HTTPS endpoint. Failures/timeouts are recorded; inspect service history before trying again. Model access/quota is not validated by key presence. Private reference upload is opt-in through explicit `--reference` paths.
 
 ```bash
 node scripts/gemini-media.mjs speech --text narration.txt --output narration.wav \
