@@ -70,11 +70,20 @@
 </td>
 </tr>
 <!-- b3:hero:end -->
+<!-- b5:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>캐릭터 해설</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+</td>
+<td width="50%" align="center"><a href="#a7"><strong>공개 예정…</strong></a></td>
+</tr>
+<!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**10가지 비주얼 스타일 · 실제 제작 예시 · 무료 오픈소스**
+**11가지 비주얼 스타일 · 실제 제작 예시 · 무료 오픈소스**
 
 ⭐ **프로젝트에 Star를 눌러 다음 스타일과 새 기능 공개를 확인하세요.**
 
@@ -398,6 +407,28 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 </table>
 
 <!-- b4:section:end -->
+
+<!-- b5:section:start -->
+<a id="b5"></a>
+
+### B5: 캐릭터 해설
+
+**Turn your favorite avatar into a stickman star.**
+
+좋아하는 아바타가 설명하고, 스틱맨의 움직임이 아이디어를 코미디로 보여줍니다.
+
+- **화면**: 따뜻한 종이 배경, 오른쪽 아래의 말하는 캐릭터, 왼쪽의 거대한 소품과 인과관계가 분명한 물리 코미디.
+- **소리**: 명료한 음성을 중심으로 동작에 맞춘 효과음과 절제된 배경 음악. 예시 음성은 The Pharaoh 3입니다.
+- **용도**: 일상 관찰, 지식 해설, 대중문화와 유쾌한 논평.
+
+<div align="center">
+<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
+
+승인된 예시 · 22.8초 · 16:9
+</div>
+
+새 캐릭터는 외형을 먼저 확인한 뒤 코드로 움직입니다. 승인된 16:9 예시는 참고용이며 모든 아바타의 자동 리깅을 보장하지 않습니다. 사용 권한을 확인하세요. [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
+<!-- b5:section:end -->
 
 
 ---

@@ -70,11 +70,20 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 </td>
 </tr>
 <!-- b3:hero:end -->
+<!-- b5:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>Character Explainer</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+</td>
+<td width="50%" align="center"><a href="#a7"><strong>Segera Hadir…</strong></a></td>
+</tr>
+<!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**10 gaya visual · Contoh yang sudah diuji · Gratis dan open source**
+**11 gaya visual · Contoh yang sudah diuji · Gratis dan open source**
 
 ⭐ **Beri Star pada proyek ini agar tidak ketinggalan gaya dan fitur baru berikutnya.**
 
@@ -405,6 +414,28 @@ Hitung mundur. Telepon larut malam. Aturan yang tak boleh dilanggar. Terinspiras
 </table>
 
 <!-- b4:section:end -->
+
+<!-- b5:section:start -->
+<a id="b5"></a>
+
+### B5: Character Explainer
+
+**Turn your favorite avatar into a stickman star.**
+
+Avatar pilihan Anda menjadi pembawa cerita, sementara manusia lidi mengubah ide menjadi komedi fisik.
+
+- **Visual**: Latar kertas hangat, karakter berbicara di kanan bawah, serta benda besar dan animasi sebab-akibat di kiri.
+- **Suara**: Narasi jelas, efek yang selaras dengan aksi, dan musik latar lembut. Contoh ini memakai The Pharaoh 3.
+- **Cocok untuk**: Penjelasan, pengamatan sehari-hari, budaya pop, dan komentar jenaka.
+
+<div align="center">
+<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
+
+Contoh disetujui · 22,8 dtk · 16:9
+</div>
+
+Karakter baru dimulai dari persetujuan kemiripan, lalu dianimasikan dengan kode. Contoh 16:9 yang disetujui adalah referensi, bukan jaminan untuk semua avatar. Pastikan izin penggunaannya. [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
+<!-- b5:section:end -->
 
 
 ---

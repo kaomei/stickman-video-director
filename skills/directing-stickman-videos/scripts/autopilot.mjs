@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {ROOT, STYLES, FFMPEG, FFPROBE, run, probe, loadProject, outputDir, save, json, hashFile, groupWords} from './autopilot-core.mjs';
 import {BRIAN} from './b4-runtime.mjs';
+import {initB5} from './character-explainer.mjs';
 
 const [command, ...args] = process.argv.slice(2);
 const option = (flag, fallback) => args.includes(flag) ? args[args.indexOf(flag) + 1] : fallback;
@@ -11,6 +12,7 @@ async function main() {
     const checks = {node: Number(process.versions.node.split('.')[0]) >= 20};
     for (const [name, exe] of [['ffmpeg', FFMPEG], ['ffprobe', FFPROBE]]) try { run(exe, ['-version']); checks[name] = true; } catch { checks[name] = false; }
     try { await import('@napi-rs/canvas'); checks.canvas = true; } catch { checks.canvas = false; }
+    try { await import('sharp'); checks.sharp = true; } catch { checks.sharp = false; }
     checks.fonts = ['Caveat.ttf', 'NotoSans.ttf'].every(f => { const file = path.join(ROOT, 'assets/fonts', f); return fs.existsSync(file) && fs.statSync(file).size > 10000; });
     console.log(JSON.stringify({checks, gemini_key_present: Boolean(process.env.GEMINI_API_KEY), network_checked: false, note: 'Key presence is not quota/billing verification'}, null, 2));
     if (Object.values(checks).some(v => !v)) process.exitCode = 1;
@@ -18,7 +20,8 @@ async function main() {
   else if (command === 'init') {
     if (!args[0]) throw new Error('Project directory required');
     const style = option('--style', 'B1');
-    if (!STYLES.includes(style)) throw new Error('Choose style B1, B2, B3 or B4');
+    if (style === 'B5') { console.log(JSON.stringify(initB5(args[0]))); return; }
+    if (!STYLES.includes(style)) throw new Error('Choose style B1, B2, B3, B4 or B5');
     const dir = path.resolve(args[0]); if (fs.existsSync(dir)) throw new Error('Project directory already exists; will not overwrite');
     if (dir.startsWith(ROOT + path.sep)) throw new Error('Create projects outside the installed Skill');
     fs.mkdirSync(dir, {recursive: true});
@@ -30,6 +33,7 @@ async function main() {
     save(args[1], groupWords(json(args[0]), Number(option('--lead', 0))));
     console.log(JSON.stringify({output: path.resolve(args[1])}));
   } else if (['validate', 'preview', 'approve', 'render'].includes(command)) {
+    if (args[0] && json(path.resolve(args[0])).style === 'B5') throw new Error('B5 uses the code-authored route: node scripts/character-explainer.mjs --help; not the B1–B4 manifest renderer');
     const scoped = command === 'preview' || command === 'validate' && args.includes('--seconds');
     const seconds = scoped ? Number(option('--seconds', 20)) : undefined;
     if (scoped && (!Number.isFinite(seconds) || seconds <= 0 || seconds > 60)) throw new Error('Preview length must be greater than 0 and at most 60 seconds');

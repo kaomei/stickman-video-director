@@ -70,11 +70,20 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 </td>
 </tr>
 <!-- b3:hero:end -->
+<!-- b5:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>Character Explainer</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+</td>
+<td width="50%" align="center"><a href="#a7"><strong>Coming Soon…</strong></a></td>
+</tr>
+<!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**10 visual styles · Tested examples · Free and open source**
+**11 visual styles · Tested examples · Free and open source**
 
 ⭐ **Star the project to catch the next style drop and feature unlocks.**
 
@@ -396,6 +405,28 @@ A countdown. A late-night call. A rule you must never break. Ordinary places bec
 </table>
 
 <!-- b4:section:end -->
+
+<!-- b5:section:start -->
+<a id="b5"></a>
+
+### B5: Character Explainer
+
+**Turn your favorite avatar into a stickman star.**
+
+Your chosen avatar takes the mic while expressive stickmen turn the idea into physical comedy.
+
+- **The look**: Warm paper, a speaking character at bottom right, oversized props and energetic cause-and-effect animation on the left.
+- **The sound**: Voice-led delivery with action-synced effects and restrained background music. The example uses The Pharaoh 3.
+- **Made for**: Relatable explainers, everyday observations, pop culture and comic commentary.
+
+<div align="center">
+<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
+
+Approved example · 22.8s · 16:9
+</div>
+
+New characters start with an approved likeness; code handles animation. The approved 16:9 example is a reference, not a guarantee for every uploaded avatar. Use avatars you have permission to use. [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
+<!-- b5:section:end -->
 
 
 

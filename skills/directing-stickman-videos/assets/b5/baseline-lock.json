@@ -16,7 +16,7 @@
     },
     {
       "path": "example/assets/fonts/Anton-OFL.txt",
-      "sha256": "81977c4925c65f22134006dacc19d026dc9ed1dd05a76cea942f5f3faec027a4"
+      "sha256": "dbd945e828dd179a73d9cc376742cdc6a1c9ff399ed127bf544aa3de8913f1a9"
     },
     {
       "path": "example/assets/fonts/Instrument-Sans-1.ttf",
@@ -24,7 +24,7 @@
     },
     {
       "path": "example/assets/fonts/Instrument-Sans-OFL.txt",
-      "sha256": "dbf672485ce7a75280a24a3b0b0255b69beb05aa57c9ef23e7c1689c2b323c94"
+      "sha256": "7166ff6294ff1e52c8a6f6bb6a3952fa4cf917c1a0e6653fadc0a5bab12c1736"
     },
     {
       "path": "example/assets/paper.png",

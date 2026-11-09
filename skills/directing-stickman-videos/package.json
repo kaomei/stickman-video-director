@@ -5,6 +5,6 @@
   "type": "module",
   "description": "Local Autopilot runtime inside the existing directing-stickman-videos Skill",
   "engines": {"node": ">=20"},
-  "dependencies": {"@napi-rs/canvas": "0.1.100"},
+  "dependencies": {"@napi-rs/canvas": "0.1.100", "sharp": "0.35.5"},
   "scripts": {"test": "node --test tests/*.test.mjs", "doctor": "node scripts/autopilot.mjs doctor"}
 }
