@@ -40,7 +40,7 @@ def section(text, start, end):
     return text.split(f'<a id="{start}"></a>', 1)[1].split(end, 1)[0]
 
 expected_images = images(cn)
-assert len(expected_images) == 39 and len(set(expected_images)) == 29
+assert len(expected_images) == 42 and len(set(expected_images)) == 32
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 local_a6_previews = {
     "assets/readme/previews/style-6-amber-noir-mcp.gif",
@@ -51,6 +51,7 @@ local_a6_previews = {
     "assets/readme/previews/b3-tv-night-signal.gif",
     "assets/readme/previews/b4-dispatch.gif",
     "assets/readme/previews/b4-death-clock.gif",
+    "assets/readme/previews/b5-character-explainer-crazymei.gif",
 }
 for url in expected_images:
     if "/previews/" in url:
@@ -161,7 +162,7 @@ for name in selected:
     if placeholders:
         assert placeholders == [cells[-1]] and "<img" in cells[-2], name
         assert re.search(r'<a href="#a7"><strong>[^<]+</strong></a>', cells[-1]), name
-    assert text.count('width="90%"') == 11 and text.count('width="360"') == 21, name
+    assert text.count('width="90%"') == 11 and text.count('width="360"') == 22, name
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
     assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "B1", "B2", "B3", "B4", "B5"], (name, "published style catalog plus A7 teaser")
@@ -198,9 +199,19 @@ for name in selected:
     assert len(re.findall(r"^- \*\*", b4, re.M)) == 3, (name, "B4 visuals, sound and use cases")
     assert not re.search(r"^### B[6-9]", text, re.M), (name, "B6+ excluded")
     b5 = section(text, "b5", '<!-- b5:section:end -->')
-    assert re.findall(r'<a href="([^"]+\.mp4)">', b5) == ["assets/readme/b5-character-explainer.mp4"], name
+    assert re.findall(r'<a href="([^"]+\.mp4)">', b5) == ["assets/readme/b5-character-explainer.mp4", "assets/readme/b5-character-explainer-crazymei.mp4"], name
     assert len(re.findall(r"^- \*\*", b5, re.M)) == 3, name
-    assert all(token in b5 for token in ("The Pharaoh 3", "Turn your favorite avatar into a stickman star.", "CREDITS.md")), name
+    assert all(token in b5 for token in ("The Pharaoh 3", "Claire", "Crazy Mei")), name
+    assert b5.count('<th width="50%"') == 2 and b5.count('width="360"') == 2, name
+    host_terms = {"en": "Animated Host", "zh-CN": "动画主讲", "ja": "アニメの語り手", "ko": "애니메이션 진행자", "fr": "Présentateur animé", "pt-BR": "Apresentador animado", "tr": "Animasyon sunucu", "id": "Pembawa acara animasi"}
+    rights_terms = {"en": "permission is required to use well-known characters", "zh-CN": "使用知名角色需获得授权", "ja": "有名なキャラクターを使う場合は許諾が必要", "ko": "유명 캐릭터를 사용하려면 허가가 필요", "fr": "l’utilisation de personnages connus nécessite une autorisation", "pt-BR": "o uso de personagens conhecidos exige autorização", "tr": "tanınmış karakterleri kullanmak için izin gerekir", "id": "penggunaan karakter terkenal memerlukan izin"}
+    assert host_terms[active] in b5, (name, "localized animated host caption")
+    introduction = b5.split('<table', 1)[0]
+    assert rights_terms[active] in introduction, (name, "inline localized rights reminder")
+    assert '<a href=' not in introduction and '](' not in introduction, (name, "rights reminder is plain text")
+    assert not any(old in b5 for old in ("Turn your favorite avatar into a stickman star.", "CREDITS.md", "22.8", "49.2", "Character-led")), name
+    for video in re.findall(r'<a href="([^"]+\.mp4)">', b5):
+        assert (root / video).is_file(), (name, video)
     assert "Character Explainer Style" not in text, name
     if is_english:
         teasers = {
@@ -260,7 +271,18 @@ for name in selected:
     assert all(token in code[2] for token in ("B1", "5", "10", "20", "16:9", "YouTube")), name
     assert "B1" not in code[0] and "A3" not in code[0], name
     modes = section(text, "creation-modes", '<a id="quick-start"></a>')
-    setup = modes.rsplit("\n|", 1)[1].split("\n\n", 1)[1]
+    assert text.count('<!-- project-sponsor:start -->') == text.count('<!-- project-sponsor:end -->') == 1, name
+    partner_block = text.split('<!-- project-sponsor:start -->', 1)[1].split('<!-- project-sponsor:end -->', 1)[0]
+    headings = {"en": "API Partners", "zh-CN": "API 合作伙伴", "ja": "API パートナー", "ko": "API 파트너", "fr": "Partenaires API", "pt-BR": "Parceiros de API", "tr": "API İş Ortakları", "id": "Mitra API"}
+    assert f'#### {headings[active]}' in partner_block, (name, "localized partner heading")
+    assert partner_block.count('<tr>') == 2 and len(re.findall(r'<td\b', partner_block)) == 4, name
+    assert partner_block.index('sponsor-sjolt') < partner_block.index('sponsor-apimart'), name
+    assert re.findall(r'href="([^"]+)"', partner_block) == ['https://sjolt.ai/', 'https://sjolt.ai/', 'https://go.apimart.ai/tw-stickman-video-director', 'https://go.apimart.ai/tw-stickman-video-director'], (name, "exact logo and CTA destinations")
+    assert 'Thanks to' not in partner_block and '感谢' not in partner_block, name
+    assert text.index('<!-- project-sponsor:start -->') > text.index('<a id="creation-modes"></a>'), name
+    assert text.index('<!-- project-sponsor:end -->') < text.index('<a id="quick-start"></a>'), name
+    modes_before_partners = modes.split('<!-- project-sponsor:start -->', 1)[0]
+    setup = modes_before_partners.rsplit("\n|", 1)[1].split("\n\n", 1)[1]
     assert all(ratio in setup for ratio in ("9:16", "16:9", "1:1")), (name, "customizable aspect ratios")
     assert len(re.findall(r"^- \*\*", setup, re.M)) == 2 and not re.search(r"^>", setup, re.M), (name, "unquoted two-item setup note")
     assert all(agent in setup for agent in ("Claude Code", "OpenAI Codex", "Cursor")), (name, "Autopilot environment boundary")
@@ -284,7 +306,7 @@ for name in selected:
             '- **Director Mode** works anywhere in standard conversational AI windows.\n'
             '- **Autopilot Mode** runs inside AI coding agents with file/terminal access (like **Claude Code, OpenAI Codex, or Cursor**) to automatically handle end-to-end rendering and file delivery.'
         )
-        assert modes.rstrip().endswith(approved_setup_copy), (name, "approved workflow customization and unquoted setup list")
+        assert modes_before_partners.rstrip().endswith(approved_setup_copy), (name, "approved workflow customization and unquoted setup list")
     assert all(token in modes for token in ("Codex", "Claude Code", "Google Flow", "10")), name
     b1 = section(text, "b1", '<a id="b2"></a>')
     assert "Bodi" in b1

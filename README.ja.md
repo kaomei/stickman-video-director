@@ -74,7 +74,7 @@
 <tr>
 <td width="50%" align="center">
 <strong>キャラクター解説</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5の助けを求める心理の解説。アニメの語り手と表情豊かな棒人間" width="90%"></a>
 </td>
 <td width="50%" align="center"><a href="#a7"><strong>近日公開…</strong></a></td>
 </tr>
@@ -112,6 +112,24 @@
 
 - **Director Mode** は通常の対話型 AI のチャット画面で利用できます。
 - **Autopilot Mode** はファイルとターミナルにアクセスできる AI コーディングエージェント（**Claude Code、OpenAI Codex、Cursor** など）内で動作し、レンダリングからファイル納品までを自動で処理します。
+
+<!-- project-sponsor:start -->
+<a id="project-sponsor"></a>
+
+#### API パートナー
+
+<table>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
+<td><p>SJolt は、画像・動画・音声の生成モデルを1つの API で利用できるプラットフォームです。Playground で品質とコストを比較してから、同じリクエストの流れをプロジェクトに組み込めるため、試作から開発へスムーズに移れます。</p><p>非同期タスクの状況確認と従量課金に対応し、対応モデルの利用を共通の残高で管理できます。 <a href="https://sjolt.ai/">SJolt 公式サイト</a> でモデルを探し、Playground を試せます。</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
+<td><p>APIMart は AI 画像・動画生成に特化した低価格 API プラットフォームです。GPT-Image-2 は1枚 $0.006 から、1ドルで160枚以上。画像と動画を共通の非同期 API で処理し、タスクを送信して ID を受け取り、ポーリングまたはコールバックで結果を取得できます。数万枚の一括生成でもタイムアウトせず、モデルを変えてもコードの変更は不要。月額料金なしの従量課金です。 <a href="https://go.apimart.ai/tw-stickman-video-director">登録リンク</a> から登録して利用を始められます。</p></td>
+</tr>
+</table>
+
+<!-- project-sponsor:end -->
 
 <a id="quick-start"></a>
 
@@ -412,21 +430,27 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
 
 ### B5: キャラクター解説
 
-**Turn your favorite avatar into a stickman star.**
+お気に入りのアバターを、チャンネルの語り手に。有名なキャラクターを使う場合は許諾が必要です。画面の隅で主役が語り、左側では棒人間がアイデアを小さな劇に変えます。請求書に引きずられたり、プレッシャーに押しつぶされたり——抽象的な話にも、笑いと記憶に残る場面が生まれます。
 
-お気に入りのアバターが解説し、棒人間の動きがアイデアをコミカルに表現します。
+- **映像の魅力**: 温かい紙の質感、個性のある語り手、黒と赤の強調文字。大げさな重み、反動、小道具の変形で、言葉を視覚的なたとえに変えます。
+- **音の雰囲気**: 明瞭なナレーションを軸に、口の動き、表情、字幕を音声に合わせます。効果音は動作の決めどころに置き、控えめな音楽で声を引き立てます。
+- **おすすめの内容**: 知識解説、身近な心理、日常の気づき、ポップカルチャー、ユーモラスなコメント。
 
-- **映像**: 温かい紙の背景、右下の話すキャラクター、左側の大きな小道具と因果関係のある物理コメディ。
-- **音**: 声を中心に、動きと同期した効果音と控えめなBGM。作例の声は The Pharaoh 3。
-- **用途**: 身近な話題、知識解説、ポップカルチャー、ユーモラスなコメント。
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">作例1：なぜ人に助けを求められないの？</th>
+    <th width="50%" align="center">作例2：動画作りで避けたい3つの失敗</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5の助けを求める心理の解説。アニメの語り手と表情豊かな棒人間" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 Crazy Meiによる動画作りの3つの失敗の解説。視覚的なたとえと体を使ったコメディ" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">The Pharaoh 3 ナレーション · アニメの語り手 · 大げさな動き</td>
+    <td align="center">Claire ナレーション · Crazy Mei が解説 · 視覚的なたとえ</td>
+  </tr>
+</table>
 
-<div align="center">
-<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
-
-承認済み作例 · 22.8秒 · 16:9
-</div>
-
-新しいキャラクターは外見を確認してからコードで動かします。16:9の承認済み作例は参考であり、すべてのアバターへの自動適用を保証しません。使用権を確認してください。 [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
 <!-- b5:section:end -->
 
 

@@ -73,8 +73,8 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 <!-- b5:hero:start -->
 <tr>
 <td width="50%" align="center">
-<strong>Character Explainer</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+<strong>Karakterli Anlatım</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5: yardım isteme üzerine, animasyon sunucu ve ifadeli çöp adamlarla anlatım" width="90%"></a>
 </td>
 <td width="50%" align="center"><a href="#a7"><strong>Yakında…</strong></a></td>
 </tr>
@@ -112,6 +112,24 @@ Her iki iş akışı da ham bir konu, web bağlantısı veya tam bir senaryoyla 
 
 - **Director Mode**, standart sohbet tabanlı yapay zekâ pencerelerinde çalışır.
 - **Autopilot Mode**, dosya ve terminal erişimi olan yapay zekâ kodlama ajanları (**Claude Code, OpenAI Codex veya Cursor** gibi) içinde çalışarak render işleminden dosya teslimine kadar tüm süreci otomatik yürütür.
+
+<!-- project-sponsor:start -->
+<a id="project-sponsor"></a>
+
+#### API İş Ortakları
+
+<table>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
+<td><p>SJolt, görsel, video ve ses üretim modellerini tek bir API üzerinden sunar. Playground’da çıktı kalitesini ve maliyeti karşılaştırın, ardından aynı istek akışını projenize taşıyın; denemeden geliştirmeye geçerken araç değiştirmeniz gerekmez.</p><p>Asenkron görevleri takip edin, kullanım bazında ödeme yapın ve desteklenen modelleri tek bir bakiyeyle yönetin. <a href="https://sjolt.ai/">SJolt’u keşfedin</a> ve modelleri inceleyip Playground’u deneyin.</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
+<td><p>APIMart, yapay zekâyla görsel ve video üretimine odaklanan düşük maliyetli bir API platformudur. GPT-Image-2 görsel başına 0,006 dolardan başlar; 1 dolarla 160’tan fazla görsel üretilebilir. Tek bir asenkron API hem görseli hem videoyu kapsar: görevi gönderin, bir kimlik alın, sonuçları sorgulama veya callback ile getirin. On binlerce görseli zaman aşımı olmadan toplu üretin, kodu değiştirmeden model değiştirin. Aylık ücret yok, kullandıkça ödeyin — <a href="https://go.apimart.ai/tw-stickman-video-director">buradan kaydolun</a> ve kullanmaya başlayın.</p></td>
+</tr>
+</table>
+
+<!-- project-sponsor:end -->
 
 <a id="quick-start"></a>
 
@@ -412,23 +430,29 @@ Bir geri sayım. Gece gelen bir telefon. Asla çiğnememeniz gereken bir kural. 
 <!-- b5:section:start -->
 <a id="b5"></a>
 
-### B5: Character Explainer
+### B5: Karakterli Anlatım
 
-**Turn your favorite avatar into a stickman star.**
+Sevdiğiniz avatarı kanalınızın sunucusuna dönüştürün; tanınmış karakterleri kullanmak için izin gerekir. Sunucu ekranın köşesinde anlatırken soldaki çöp adamlar fikri küçük bir sahneye dönüştürür: faturalar tarafından sürüklenir, baskı altında ezilir ya da görsel bir esprinin içine düşerler. Soyut fikirler bile eğlenceli ve akılda kalıcı olur.
 
-Avatarınız anlatır; çöp adamlar fikirleri fiziksel komediye dönüştürür.
+- **Görsel tarz**: Sıcak kâğıt dokusu, kendine özgü bir sunucu ve siyah-kırmızı vurgulu yazılar. Abartılı ağırlık, geri sıçrama ve dönüşen nesneler, açıklamaları görsel metaforlara çevirir.
+- **Ses atmosferi**: Net anlatım öndedir; dudak hareketleri, ifadeler ve altyazılar sesi takip eder. Efektler hareketin vurucu anına oturur, hafif müzik konuşmanın önüne geçmez.
+- **Uygun içerikler**: Bilgilendirici anlatımlar, gündelik psikoloji, yaşamdan gözlemler, popüler kültür ve esprili yorumlar.
 
-- **Görünüm**: Sıcak kâğıt fon, sağ altta konuşan karakter, solda büyük nesneler ve neden-sonuç odaklı hareketler.
-- **Ses**: Net anlatım, hareketle eşleşen efektler ve geri planda kalan müzik. Örnekte The Pharaoh 3 kullanılmıştır.
-- **Uygun konular**: Gündelik gözlemler, açıklayıcı içerikler, popüler kültür ve mizahi yorumlar.
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Örnek 1: Yardım istemek neden bu kadar zor?</th>
+    <th width="50%" align="center">Örnek 2: Video yaparken bu üç hatayı bırakın</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5: yardım isteme üzerine, animasyon sunucu ve ifadeli çöp adamlarla anlatım" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5: Crazy Mei üç video hatasını görsel metaforlar ve fiziksel komediyle anlatıyor" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">The Pharaoh 3 seslendirme · Animasyon sunucu · Abartılı hareketler</td>
+    <td align="center">Claire seslendirme · Crazy Mei sunumu · Görsel metaforlar</td>
+  </tr>
+</table>
 
-<div align="center">
-<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
-
-Onaylı örnek · 22,8 sn · 16:9
-</div>
-
-Yeni karakterin benzerliği önce onaylanır, sonra kodla canlandırılır. Onaylı 16:9 örnek bir referanstır; her avatar için otomatik rig garantisi değildir. Kullanım haklarını kontrol edin. [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
 <!-- b5:section:end -->
 
 

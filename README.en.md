@@ -74,7 +74,7 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 <tr>
 <td width="50%" align="center">
 <strong>Character Explainer</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 explainer about asking for help, with a distinctive presenter and expressive stickmen" width="90%"></a>
 </td>
 <td width="50%" align="center"><a href="#a7"><strong>Coming Soon…</strong></a></td>
 </tr>
@@ -112,6 +112,24 @@ Both workflows can start with a raw topic, a web link, or a full script. Customi
 
 - **Director Mode** works anywhere in standard conversational AI windows.
 - **Autopilot Mode** runs inside AI coding agents with file/terminal access (like **Claude Code, OpenAI Codex, or Cursor**) to automatically handle end-to-end rendering and file delivery.
+
+<!-- project-sponsor:start -->
+<a id="project-sponsor"></a>
+
+#### API Partners
+
+<table>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="Official SJolt logo" width="64"><br><strong>SJolt</strong></a></td>
+<td><p>SJolt brings image, video, and audio generation models together through one API. Compare output quality and cost in the playground, then bring the same request flow into your project—from experimentation to integration, without switching tools.</p><p>Track asynchronous tasks and pay by usage, with one balance across supported models. <a href="https://sjolt.ai/">Explore SJolt</a> to browse models and try the playground.</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart project sponsor" width="110"></a></td>
+<td><p>APIMart is a low-cost API platform for AI image &amp; video generation — GPT-Image-2 from $0.006/image, 160+ images per dollar. One async API covers both image and video: submit a task, get an ID, fetch results via polling or callback. Batch tens of thousands of images without timeouts, switch models without changing code. Pay-as-you-go with no monthly fee — <a href="https://go.apimart.ai/tw-stickman-video-director">sign up here</a> to get started.</p></td>
+</tr>
+</table>
+
+<!-- project-sponsor:end -->
 
 <a id="quick-start"></a>
 
@@ -411,21 +429,27 @@ A countdown. A late-night call. A rule you must never break. Ordinary places bec
 
 ### B5: Character Explainer
 
-**Turn your favorite avatar into a stickman star.**
+Give your favorite avatar a starring role—permission is required to use well-known characters. Your presenter takes the mic in the corner while expressive stickmen act out the idea—dragged around by bills, flattened by pressure, or caught in a visual punchline. Even abstract ideas become something viewers can see and remember.
 
-Your chosen avatar takes the mic while expressive stickmen turn the idea into physical comedy.
+- **The look**: Warm paper textures, a distinctive presenter, and bold black-and-red type. Exaggerated weight, recoil, and transforming props turn explanations into visual metaphors.
+- **The sound**: Clear narration leads, with lip sync, expressions, and captions following the voice. Sound effects land on the action; light music stays out of the way.
+- **Made for**: Explainers, everyday psychology, observations, pop culture, and witty commentary.
 
-- **The look**: Warm paper, a speaking character at bottom right, oversized props and energetic cause-and-effect animation on the left.
-- **The sound**: Voice-led delivery with action-synced effects and restrained background music. The example uses The Pharaoh 3.
-- **Made for**: Relatable explainers, everyday observations, pop culture and comic commentary.
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Example 1: Why Is Asking for Help So Hard?</th>
+    <th width="50%" align="center">Example 2: Stop Making These Three Video Mistakes</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 explainer about asking for help, with a distinctive presenter and expressive stickmen" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 Crazy Mei explainer about three video mistakes, with visual metaphors and physical comedy" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">The Pharaoh 3 narration · Animated Host · Expressive action</td>
+    <td align="center">Claire narration · Crazy Mei presenter · Visual metaphors</td>
+  </tr>
+</table>
 
-<div align="center">
-<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
-
-Approved example · 22.8s · 16:9
-</div>
-
-New characters start with an approved likeness; code handles animation. The approved 16:9 example is a reference, not a guarantee for every uploaded avatar. Use avatars you have permission to use. [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
 <!-- b5:section:end -->
 
 

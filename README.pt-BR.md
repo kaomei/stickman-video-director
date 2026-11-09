@@ -73,8 +73,8 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <!-- b5:hero:start -->
 <tr>
 <td width="50%" align="center">
-<strong>Character Explainer</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+<strong>Explicação com personagem</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 sobre pedir ajuda, com apresentador animado e bonecos-palito expressivos" width="90%"></a>
 </td>
 <td width="50%" align="center"><a href="#a7"><strong>Em breve…</strong></a></td>
 </tr>
@@ -112,6 +112,24 @@ Os dois fluxos podem começar com um tema inicial, um link da web ou um roteiro 
 
 - **Director Mode** funciona em janelas comuns de conversa com IA.
 - **Autopilot Mode** roda em agentes de programação com IA que têm acesso a arquivos e ao terminal (como **Claude Code, OpenAI Codex ou Cursor**) para cuidar automaticamente da renderização à entrega dos arquivos.
+
+<!-- project-sponsor:start -->
+<a id="project-sponsor"></a>
+
+#### Parceiros de API
+
+<table>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
+<td><p>A SJolt reúne modelos de geração de imagem, vídeo e áudio em uma única API. Compare qualidade e custo no Playground e leve o mesmo fluxo de requisições para seu projeto, sem trocar de ferramentas entre os testes e a integração.</p><p>Acompanhe tarefas assíncronas e pague conforme o uso, com um único saldo para os modelos disponíveis. <a href="https://sjolt.ai/">Explore a SJolt</a> para conhecer os modelos e testar o Playground.</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
+<td><p>A APIMart é uma plataforma de API de baixo custo para geração de imagens e vídeos com IA — GPT-Image-2 a partir de US$ 0,006 por imagem, mais de 160 imagens por dólar. Uma API assíncrona atende imagem e vídeo: envie a tarefa, receba um ID e obtenha os resultados por consulta periódica ou callback. Gere dezenas de milhares de imagens em lote sem timeout e troque de modelo sem alterar o código. Pagamento por uso, sem mensalidade — <a href="https://go.apimart.ai/tw-stickman-video-director">cadastre-se aqui</a> para começar.</p></td>
+</tr>
+</table>
+
+<!-- project-sponsor:end -->
 
 <a id="quick-start"></a>
 
@@ -417,23 +435,29 @@ Uma contagem regressiva. Uma ligação de madrugada. Uma regra que você nunca d
 <!-- b5:section:start -->
 <a id="b5"></a>
 
-### B5: Character Explainer
+### B5: Explicação com personagem
 
-**Turn your favorite avatar into a stickman star.**
+Transforme seu avatar favorito no apresentador do canal; o uso de personagens conhecidos exige autorização. Enquanto ele conta a história no canto da tela, os bonecos-palito encenam a ideia à esquerda — arrastados por contas, esmagados pela pressão ou presos em uma piada visual. Até conceitos abstratos ganham humor e ficam na memória.
 
-Seu avatar apresenta enquanto bonecos-palito transformam ideias em comédia física.
+- **O visual**: Textura de papel em tons quentes, apresentador marcante e palavras em preto e vermelho. Peso exagerado, rebotes e objetos que se transformam convertem explicações em metáforas visuais.
+- **O som**: Narração clara conduz a história, com boca, expressões e legendas acompanhando a voz. Os efeitos sonoros marcam as ações, e a música leve não compete com a fala.
+- **Ideal para**: Vídeos explicativos, psicologia do dia a dia, observações, cultura pop e comentários bem-humorados.
 
-- **Visual**: Papel em tons quentes, personagem falando no canto inferior direito, objetos enormes e animação de causa e efeito à esquerda.
-- **Som**: Voz clara, efeitos sincronizados às ações e música discreta. O exemplo usa The Pharaoh 3.
-- **Ideal para**: Explicações, observações do cotidiano, cultura pop e comentários bem-humorados.
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Exemplo 1: Por que é tão difícil pedir ajuda?</th>
+    <th width="50%" align="center">Exemplo 2: Pare de cometer estes três erros nos seus vídeos</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 sobre pedir ajuda, com apresentador animado e bonecos-palito expressivos" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 com Crazy Mei explicando três erros em vídeos, com metáforas visuais e comédia física" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Narração The Pharaoh 3 · Apresentador animado · Ações expressivas</td>
+    <td align="center">Narração Claire · Crazy Mei apresenta · Metáforas visuais</td>
+  </tr>
+</table>
 
-<div align="center">
-<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
-
-Exemplo aprovado · 22,8 s · 16:9
-</div>
-
-Novos personagens começam com a aparência aprovada; o código cuida da animação. O exemplo 16:9 aprovado é uma referência, não uma garantia para qualquer avatar. Verifique as permissões de uso. [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
 <!-- b5:section:end -->
 
 
