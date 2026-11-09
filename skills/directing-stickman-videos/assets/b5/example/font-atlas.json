@@ -1,0 +1,514 @@
+{
+  "Instrument-Sans-1.ttf|62|-1.8|white|If": {
+    "file": "assets/type/f3b175bdb0869d48d3.png",
+    "width": 37.199999999999996,
+    "image_width": 70,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|you": {
+    "file": "assets/type/b7d98fa608a6b848d4.png",
+    "width": 105.4,
+    "image_width": 138,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|hate": {
+    "file": "assets/type/7672d4bab79746a150.png",
+    "width": 129.60000000000002,
+    "image_width": 162,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|asking": {
+    "file": "assets/type/ca7f85bb72ce877c95.png",
+    "width": 187.00000000000003,
+    "image_width": 220,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|people": {
+    "file": "assets/type/084c4c65545ec01d02.png",
+    "width": 193.00000000000003,
+    "image_width": 226,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|for": {
+    "file": "assets/type/ea26d0cf7d4efd617b.png",
+    "width": 81.39999999999999,
+    "image_width": 114,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|help": {
+    "file": "assets/type/67c82db8fe5c423913.png",
+    "width": 124.60000000000001,
+    "image_width": 157,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|feel": {
+    "file": "assets/type/fe0f58ca54a15a4696.png",
+    "width": 104.60000000000001,
+    "image_width": 137,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|physically": {
+    "file": "assets/type/31f8f74e44ac93caa1.png",
+    "width": 280.8,
+    "image_width": 313,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|sick": {
+    "file": "assets/type/b8868d3390fe501b8a.png",
+    "width": 112.60000000000001,
+    "image_width": 145,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|when": {
+    "file": "assets/type/e9ac70bba53d9b31ab.png",
+    "width": 158.60000000000002,
+    "image_width": 191,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|someone": {
+    "file": "assets/type/c93437235840b7b06c.png",
+    "width": 262.20000000000005,
+    "image_width": 295,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|buys": {
+    "file": "assets/type/07c214e64c0aa1494a.png",
+    "width": 136.60000000000002,
+    "image_width": 169,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|something": {
+    "file": "assets/type/d415d50c73d3b9bfb2.png",
+    "width": 306.6,
+    "image_width": 339,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|nice": {
+    "file": "assets/type/3583bf8d2e412c2944.png",
+    "width": 119.60000000000001,
+    "image_width": 152,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|And": {
+    "file": "assets/type/7d54cbff6f53e646f0.png",
+    "width": 120.4,
+    "image_width": 153,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|if": {
+    "file": "assets/type/be4d173b09dff2203b.png",
+    "width": 37.199999999999996,
+    "image_width": 70,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|your": {
+    "file": "assets/type/22fb8fbfd68f5943a1.png",
+    "width": 128.60000000000002,
+    "image_width": 161,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|first": {
+    "file": "assets/type/0f914a67989647a0cb.png",
+    "width": 113.8,
+    "image_width": 146,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|instinct": {
+    "file": "assets/type/26ed9accf2c3ecd5dd.png",
+    "width": 215.4,
+    "image_width": 248,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|you're": {
+    "file": "assets/type/17a95b93edfb608501.png",
+    "width": 176.00000000000003,
+    "image_width": 209,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|overwhelmed": {
+    "file": "assets/type/701c9e88836e45b4dc.png",
+    "width": 388.00000000000006,
+    "image_width": 421,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|is": {
+    "file": "assets/type/aa190d706efe4caf26.png",
+    "width": 45.199999999999996,
+    "image_width": 78,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|to": {
+    "file": "assets/type/603ac3a45aea7da796.png",
+    "width": 61.2,
+    "image_width": 94,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|lock": {
+    "file": "assets/type/43e211d5dceca6df7d.png",
+    "width": 119.60000000000001,
+    "image_width": 152,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|door": {
+    "file": "assets/type/65f7567a7e90275063.png",
+    "width": 132.60000000000002,
+    "image_width": 165,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|and": {
+    "file": "assets/type/a0c96230d521748b45.png",
+    "width": 109.4,
+    "image_width": 142,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|isolate": {
+    "file": "assets/type/e5f447b8fd79b4352d.png",
+    "width": 186.20000000000002,
+    "image_width": 219,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|That's": {
+    "file": "assets/type/86c4f136b2a80964e1.png",
+    "width": 179.00000000000003,
+    "image_width": 212,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|not": {
+    "file": "assets/type/14e72fe0130f7b9490.png",
+    "width": 98.4,
+    "image_width": 131,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|'independence'": {
+    "file": "assets/type/9ae1a584b5d5c05fe6.png",
+    "width": 433.6,
+    "image_width": 466,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|a": {
+    "file": "assets/type/773f254c2be04c3fb2.png",
+    "width": 35.0,
+    "image_width": 67,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|trauma": {
+    "file": "assets/type/a3580d068dbead7c86.png",
+    "width": 209.00000000000003,
+    "image_width": 242,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|response": {
+    "file": "assets/type/3bda46361138600558.png",
+    "width": 259.40000000000003,
+    "image_width": 292,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|You": {
+    "file": "assets/type/7feab2f8cf6cffb7c2.png",
+    "width": 115.4,
+    "image_width": 148,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|learned": {
+    "file": "assets/type/b3ab75fb9400ba65ce.png",
+    "width": 214.20000000000002,
+    "image_width": 247,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|at": {
+    "file": "assets/type/9c99cce26bda7c9459.png",
+    "width": 59.2,
+    "image_width": 92,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|very": {
+    "file": "assets/type/e442f79aad0412dd40.png",
+    "width": 122.60000000000001,
+    "image_width": 155,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|young": {
+    "file": "assets/type/582a155733fe6d9ef4.png",
+    "width": 179.8,
+    "image_width": 212,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|age": {
+    "file": "assets/type/6fcad86c0a86f55b2f.png",
+    "width": 105.4,
+    "image_width": 138,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|that": {
+    "file": "assets/type/aec05d612f2b97868f.png",
+    "width": 120.60000000000001,
+    "image_width": 153,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|relying": {
+    "file": "assets/type/5739da8cfe46a0a612.png",
+    "width": 194.20000000000002,
+    "image_width": 227,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|on": {
+    "file": "assets/type/07d2aa4161ff85f4fe.png",
+    "width": 74.2,
+    "image_width": 107,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|dangerous": {
+    "file": "assets/type/aa20106fd69e599410.png",
+    "width": 303.6,
+    "image_width": 336,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|So": {
+    "file": "assets/type/3d1b0e8355660cf481.png",
+    "width": 76.2,
+    "image_width": 109,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|decided": {
+    "file": "assets/type/6ade5513e007704634.png",
+    "width": 227.20000000000002,
+    "image_width": 260,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|the": {
+    "file": "assets/type/8ce8f8856caded0aa7.png",
+    "width": 96.4,
+    "image_width": 129,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|only": {
+    "file": "assets/type/1f62cf8aa826ec184c.png",
+    "width": 121.60000000000001,
+    "image_width": 154,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|person": {
+    "file": "assets/type/b5c236c40fc55cee01.png",
+    "width": 197.00000000000003,
+    "image_width": 230,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|who": {
+    "file": "assets/type/6a40af164fb9219755.png",
+    "width": 123.4,
+    "image_width": 156,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|could": {
+    "file": "assets/type/2a24ce12ad2706c758.png",
+    "width": 158.8,
+    "image_width": 191,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|never": {
+    "file": "assets/type/91f604e94bda6d28c8.png",
+    "width": 160.8,
+    "image_width": 193,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|let": {
+    "file": "assets/type/28cb1334e7240100ed.png",
+    "width": 74.39999999999999,
+    "image_width": 107,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|down": {
+    "file": "assets/type/53155f0050894d8adc.png",
+    "width": 160.60000000000002,
+    "image_width": 193,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|62|-1.8|white|was": {
+    "file": "assets/type/5449bca173d60fe861.png",
+    "width": 113.4,
+    "image_width": 146,
+    "image_height": 136,
+    "baseline": 84,
+    "pad": 16
+  },
+  "Anton-0.ttf|110|-0.5|#1E1C1A|ALL BY": {
+    "file": "assets/type/54be7c8d90281e4936.png",
+    "width": 266.5,
+    "image_width": 299,
+    "image_height": 222,
+    "baseline": 149,
+    "pad": 16
+  },
+  "Anton-0.ttf|148|-0.5|#1E1C1A|YOURSELF?": {
+    "file": "assets/type/4124ba6778d7a09441.png",
+    "width": 595.0,
+    "image_width": 627,
+    "image_height": 291,
+    "baseline": 200,
+    "pad": 16
+  },
+  "Anton-0.ttf|116|-0.5|#1E1C1A|INDEPENDENCE": {
+    "file": "assets/type/69b4facd7b9f3b42c0.png",
+    "width": 610.5,
+    "image_width": 643,
+    "image_height": 233,
+    "baseline": 157,
+    "pad": 16
+  },
+  "Anton-0.ttf|150|-0.5|#1E1C1A|TRAUMA": {
+    "file": "assets/type/b10605b1e54ff03a27.png",
+    "width": 456.5,
+    "image_width": 489,
+    "image_height": 294,
+    "baseline": 203,
+    "pad": 16
+  },
+  "Anton-0.ttf|150|-0.5|#1E1C1A|RESPONSE": {
+    "file": "assets/type/e8fa60ae848091a9fb.png",
+    "width": 548.5,
+    "image_width": 581,
+    "image_height": 294,
+    "baseline": 203,
+    "pad": 16
+  },
+  "Anton-0.ttf|190|-0.5|#1E1C1A|YOU": {
+    "file": "assets/type/167f48c2ce48cfe093.png",
+    "width": 266.0,
+    "image_width": 298,
+    "image_height": 366,
+    "baseline": 257,
+    "pad": 16
+  },
+  "Anton-0.ttf|150|-0.5|#D7372C|TRAUMA": {
+    "file": "assets/type/1af314fde0a377efee.png",
+    "width": 456.5,
+    "image_width": 489,
+    "image_height": 294,
+    "baseline": 203,
+    "pad": 16
+  },
+  "Anton-0.ttf|190|-0.5|#D7372C|YOU": {
+    "file": "assets/type/ef063e074e237b32c2.png",
+    "width": 266.0,
+    "image_width": 298,
+    "image_height": 366,
+    "baseline": 257,
+    "pad": 16
+  },
+  "Instrument-Sans-1.ttf|25|0|#858079|@CrazyKaomei": {
+    "file": "assets/type/76f97013f418fb21ec.png",
+    "width": 183.0,
+    "image_width": 215,
+    "image_height": 69,
+    "baseline": 34,
+    "pad": 16
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "baseline": "B5 Character Explainer / approved V13",
+  "video": {
+    "path": "approved-sample.mp4",
+    "sha256": "d5b3d9495b10b58b27128fa531277e3558d8218ba692432c152dd4a0294ef4cc",
+    "audio_packets_sha256": "23d793e0614ab3c26fe1e822eafe693707c7b0d2e5d2f82844bed024512c80ee"
+  },
+  "files": [
+    {
+      "path": "approved-sample.mp4",
+      "sha256": "d5b3d9495b10b58b27128fa531277e3558d8218ba692432c152dd4a0294ef4cc"
+    },
+    {
+      "path": "example/assets/fonts/Anton-0.ttf",
+      "sha256": "fd9301f2837c99df2be07cc7f0be66e9470f5354d8fcf1606027c67fcd637a53"
+    },
+    {
+      "path": "example/assets/fonts/Anton-OFL.txt",
+      "sha256": "dbd945e828dd179a73d9cc376742cdc6a1c9ff399ed127bf544aa3de8913f1a9"
+    },
+    {
+      "path": "example/assets/fonts/Instrument-Sans-1.ttf",
+      "sha256": "d25efe5b0dcf3b36607d9a0fb046932547a5dfec407ea17162ca126d63b33d42"
+    },
+    {
+      "path": "example/assets/fonts/Instrument-Sans-OFL.txt",
+      "sha256": "7166ff6294ff1e52c8a6f6bb6a3952fa4cf917c1a0e6653fadc0a5bab12c1736"
+    },
+    {
+      "path": "example/assets/paper.png",
+      "sha256": "3e7951c1282026765a95333ef46f81f723e57c5c4251c45b9adcaa6a4b8fd7cf"
+    },
+    {
+      "path": "example/assets/rig/spider-approved.svg",
+      "sha256": "10c7aa42249a9a35867828027374efba8446fbb06836b43658bc4363ec5858a2"
+    },
+    {
+      "path": "example/assets/type/07c214e64c0aa1494a.png",
+      "sha256": "6a7cab4bf5d04ca720641cd37b2a5ea120036d1f06d737b8aa96b83956e44940"
+    },
+    {
+      "path": "example/assets/type/07d2aa4161ff85f4fe.png",
+      "sha256": "aa784ee656e189e77cb4e6f88ab61e84bb974e59567237175f100de85b2f8ca0"
+    },
+    {
+      "path": "example/assets/type/084c4c65545ec01d02.png",
+      "sha256": "30b5ad01eb58abe2908198f0c457c01cfcc2c5cb176074010f485223fc61d90e"
+    },
+    {
+      "path": "example/assets/type/0f914a67989647a0cb.png",
+      "sha256": "88cc1abfff3caf266e78a32473bb9fcd9e819c1d4b53c55711329dc308f222b6"
+    },
+    {
+      "path": "example/assets/type/14e72fe0130f7b9490.png",
+      "sha256": "5afcaac2f98f1a75c02cdf24ab20b704d0bdb05b2ad2793f709104276b717333"
+    },
+    {
+      "path": "example/assets/type/167f48c2ce48cfe093.png",
+      "sha256": "1b100e40ea031420b12b6c25e6fc55434a41ff62927e45d78873effe8aff7a63"
+    },
+    {
+      "path": "example/assets/type/17a95b93edfb608501.png",
+      "sha256": "73873a0c5438be5212ea0b6e3a67823be7ae3febd4b24ae4a772cb83c0963141"
+    },
+    {
+      "path": "example/assets/type/1af314fde0a377efee.png",
+      "sha256": "f95ed38ce57f007483c6fe7971973acc2b3909665d1073c6e5bb8c1996ae336b"
+    },
+    {
+      "path": "example/assets/type/1f62cf8aa826ec184c.png",
+      "sha256": "1fa4af693599a9a31c2b990f999e6a8ae14c4e6884bbc2fd3cd8a3101f4f2cd6"
+    },
+    {
+      "path": "example/assets/type/22fb8fbfd68f5943a1.png",
+      "sha256": "b2cbc050b0f68309f3c6088db74d5fd89fd3819d21962cac8a32a36ecccaa4d3"
+    },
+    {
+      "path": "example/assets/type/26ed9accf2c3ecd5dd.png",
+      "sha256": "bf26a4d021ec9091158dff4de50242121c9e5c25e197ae7c72368db58cdee8f3"
+    },
+    {
+      "path": "example/assets/type/28cb1334e7240100ed.png",
+      "sha256": "8b4c4c69f8c04427f40bd0e9d80ec06f67699172c9d23385dc324f7b5b48e43f"
+    },
+    {
+      "path": "example/assets/type/2a24ce12ad2706c758.png",
+      "sha256": "8592ab4d18616b561a5330c9d0339b1fb2d0955f513ecfb326239703b1c58d18"
+    },
+    {
+      "path": "example/assets/type/31f8f74e44ac93caa1.png",
+      "sha256": "1b68286ac15cbedb5a5109745fa262ae6b0fd15612c41caec337313d7dedb6d4"
+    },
+    {
+      "path": "example/assets/type/3583bf8d2e412c2944.png",
+      "sha256": "440adbf7d3926b69808c37058f8c6437b2b79e998ea7bde47cd380762f207676"
+    },
+    {
+      "path": "example/assets/type/3bda46361138600558.png",
+      "sha256": "983555b7843d8199b32ade3a0b3e0493f0390cc9252777588ae584d345019fa1"
+    },
+    {
+      "path": "example/assets/type/3d1b0e8355660cf481.png",
+      "sha256": "2f7ad4406943f88463a87c8310662fa4e6c310029c20930475608e7ce7ec553e"
+    },
+    {
+      "path": "example/assets/type/4124ba6778d7a09441.png",
+      "sha256": "8562c9ba199ca40131d51ab9426ee7666bb8030a042b810edeee588fa9ddc83f"
+    },
+    {
+      "path": "example/assets/type/43e211d5dceca6df7d.png",
+      "sha256": "ea3f0920703366aacc5273b4425c214d8b8101a4d989ec723c2adaa01d479138"
+    },
+    {
+      "path": "example/assets/type/53155f0050894d8adc.png",
+      "sha256": "d4ae0d0c7031341129722670533f309c3195966bd4c23f6114a4b9f257cab8d0"
+    },
+    {
+      "path": "example/assets/type/5449bca173d60fe861.png",
+      "sha256": "fa58c89bd6d9d08451d1ae986f88bb1e1e40a0e20ffabf0f906bfe5a94ebf7f6"
+    },
+    {
+      "path": "example/assets/type/54be7c8d90281e4936.png",
+      "sha256": "99c9daa0973e7930f88fd62b781d18caa14548297ec3573d125839945b404fc2"
+    },
+    {
+      "path": "example/assets/type/5739da8cfe46a0a612.png",
+      "sha256": "2ba683de2411f703b548d31134ab744407e03e7e3495fb4e08f44843ba98c27f"
+    },
+    {
+      "path": "example/assets/type/582a155733fe6d9ef4.png",
+      "sha256": "e60907d5748af615407defed431b32e6bf61d120d5ba710e737f9196d1d35f3f"
+    },
+    {
+      "path": "example/assets/type/603ac3a45aea7da796.png",
+      "sha256": "0c4dad261ddde1306b2c763f23513f583d478ec8b8214a28ce4822d2554cd1eb"
+    },
+    {
+      "path": "example/assets/type/65f7567a7e90275063.png",
+      "sha256": "20d3ab5678d6f8a8acd287bc6e9206b9b9c63383baf0af88b79ae24fb0cebba8"
+    },
+    {
+      "path": "example/assets/type/67c82db8fe5c423913.png",
+      "sha256": "62dca453c8bf064520058e64de33735245220f8475d99c04f3ac4f23645c43d3"
+    },
+    {
+      "path": "example/assets/type/69b4facd7b9f3b42c0.png",
+      "sha256": "7abcb30f8866f5991b993efef5b8d58764ea135cb2e154814f69de68802bc8ab"
+    },
+    {
+      "path": "example/assets/type/6a40af164fb9219755.png",
+      "sha256": "916cd86ccbd5c64590ab6dbdff15a102aa7fac273142ba9dd815d1858584e770"
+    },
+    {
+      "path": "example/assets/type/6ade5513e007704634.png",
+      "sha256": "e436bfc6930764816085d03776052685a0e4f13ba54d47c1e87935a17c7cbc08"
+    },
+    {
+      "path": "example/assets/type/6fcad86c0a86f55b2f.png",
+      "sha256": "c3e56218ebcb10fda4c30c925157eeeac4ee6c46da17487a67d99b23bd9d2d5f"
+    },
+    {
+      "path": "example/assets/type/701c9e88836e45b4dc.png",
+      "sha256": "72e78e07f91ea8058d69cda4a656bbbeca562e12bcb3e5400785373acc75682b"
+    },
+    {
+      "path": "example/assets/type/7672d4bab79746a150.png",
+      "sha256": "42bd8614ce29eb9c4b3bcdadc8c37819843fb2c280b2d2dcab6904d44568ca06"
+    },
+    {
+      "path": "example/assets/type/76f97013f418fb21ec.png",
+      "sha256": "c2ce79e3e8d34a55f4323b09768d4ab8da66953b02722d3713e5871e213419d8"
+    },
+    {
+      "path": "example/assets/type/773f254c2be04c3fb2.png",
+      "sha256": "0bd78cd7e8c3ccce4800a5acc2af26f6fd2be790d1316841eba480337edbf98e"
+    },
+    {
+      "path": "example/assets/type/7d54cbff6f53e646f0.png",
+      "sha256": "9279074da3d2b3653e8a20119107e96262d9fbc1515f26a5481d63d9800004d2"
+    },
+    {
+      "path": "example/assets/type/7feab2f8cf6cffb7c2.png",
+      "sha256": "ed9646257cb71e32ff55ebf2d44121f15b98ac3c2bd4e85b1576ad6b15e73896"
+    },
+    {
+      "path": "example/assets/type/86c4f136b2a80964e1.png",
+      "sha256": "76b38b7fe3e4096fd7e129dd96f1ea98b25436211787565c0669da36b2cef1ac"
+    },
+    {
+      "path": "example/assets/type/8ce8f8856caded0aa7.png",
+      "sha256": "145e512e50d23c82667a157a8ddef56729934b2c95fae2b56f7c2c5e1d301334"
+    },
+    {
+      "path": "example/assets/type/91f604e94bda6d28c8.png",
+      "sha256": "524a12d91e4f6d29b7a15266a8e89e6ef88428176ab521926fbaea469d1149c1"
+    },
+    {
+      "path": "example/assets/type/9ae1a584b5d5c05fe6.png",
+      "sha256": "5a0dc8833e49ded6ac68b1a1327711b9a60f9cbc7be54b5b561876e9bdd388f3"
+    },
+    {
+      "path": "example/assets/type/9c99cce26bda7c9459.png",
+      "sha256": "12ea5901b274e031609611dc9cb99371f325e0cb66a7a26f629c07aafd58be13"
+    },
+    {
+      "path": "example/assets/type/a0c96230d521748b45.png",
+      "sha256": "46d69c86ab0aaf3ef0c26ca8e399a34ee3f1d7fc2a2e2ad715795ac6361b2d52"
+    },
+    {
+      "path": "example/assets/type/a3580d068dbead7c86.png",
+      "sha256": "a0d1f6bf9484424223cbdb398f63798c58ce38ae57f2c81539d7a1d81c865157"
+    },
+    {
+      "path": "example/assets/type/aa190d706efe4caf26.png",
+      "sha256": "aa39a169e9612182affefabb811fca76979c88e8a99243387cb8d378bf2d312a"
+    },
+    {
+      "path": "example/assets/type/aa20106fd69e599410.png",
+      "sha256": "633dee7ec1eb1748e5c56bf274dc6ae928a7247fa46d84e1bc925809d753f40a"
+    },
+    {
+      "path": "example/assets/type/aec05d612f2b97868f.png",
+      "sha256": "b038883e1ffaed0d2b7e643da3382049f30c15d570292aee5c42796fff01703d"
+    },
+    {
+      "path": "example/assets/type/b10605b1e54ff03a27.png",
+      "sha256": "0a694bd92a6ee9215d1ef5d5cbb34e16934e992740c800bdd44aa39779c87074"
+    },
+    {
+      "path": "example/assets/type/b3ab75fb9400ba65ce.png",
+      "sha256": "ed22db97bd9aa693a438b0a38ce037127d7ae4d140bcd4669124fd6accedabc0"
+    },
+    {
+      "path": "example/assets/type/b5c236c40fc55cee01.png",
+      "sha256": "94aaa5e34c95b945219fdd4ebdaa093705c08d8488372399d29fc5198bba7ea7"
+    },
+    {
+      "path": "example/assets/type/b7d98fa608a6b848d4.png",
+      "sha256": "eaa2a34665cae4c118b32496b4dc7d6349a69c419a8c0ca07ba162314dedf475"
+    },
+    {
+      "path": "example/assets/type/b8868d3390fe501b8a.png",
+      "sha256": "064a6f102157bbb24373a3f945ceed337fc51646baa9d2b9734ddbbda722104d"
+    },
+    {
+      "path": "example/assets/type/be4d173b09dff2203b.png",
+      "sha256": "c676fa2a896161d2084f1610ef993d74c70c441a4707bd4c37c59a2066985ba1"
+    },
+    {
+      "path": "example/assets/type/c93437235840b7b06c.png",
+      "sha256": "626da42c836bde7d7d6f7ad1f203b079503e98c59f14fbdc4323c88de1b33d40"
+    },
+    {
+      "path": "example/assets/type/ca7f85bb72ce877c95.png",
+      "sha256": "4e90695467625f93623bd95eddd150acc4105123cc246855b6d70bbc6afea619"
+    },
+    {
+      "path": "example/assets/type/d415d50c73d3b9bfb2.png",
+      "sha256": "22439a9e8adf80d92165c1b8c574020978a15733694a35d95762b982d4233c37"
+    },
+    {
+      "path": "example/assets/type/e442f79aad0412dd40.png",
+      "sha256": "b13a8b9be4896813539d291cd8eae083f2223d4a8355bc578eaa759b7f446ecc"
+    },
+    {
+      "path": "example/assets/type/e5f447b8fd79b4352d.png",
+      "sha256": "63f627cc412b5f942fb337830150347219f22d05a8bf93e6ccff70a1ae86af23"
+    },
+    {
+      "path": "example/assets/type/e8fa60ae848091a9fb.png",
+      "sha256": "7d957b1438245d62edb099e7bcc6832b3c90151b012a0921ad7cc4e267ccab48"
+    },
+    {
+      "path": "example/assets/type/e9ac70bba53d9b31ab.png",
+      "sha256": "5054afbec9752e2d4d5f6dc539aa62bf99ba11ffeef7eab6615f1aa3368d1b94"
+    },
+    {
+      "path": "example/assets/type/ea26d0cf7d4efd617b.png",
+      "sha256": "a290b7bb0ca5aee98c06a25002b95f86c36af1c2a76bbdee4ae9d33afa2d437a"
+    },
+    {
+      "path": "example/assets/type/ef063e074e237b32c2.png",
+      "sha256": "56cc903730dc93dd93d85f3fb7202078c45261fd2f8410a319f0b6ae285712ef"
+    },
+    {
+      "path": "example/assets/type/f3b175bdb0869d48d3.png",
+      "sha256": "7172a32487ee636aeb2179bebd6fad146af10e72a04e94b3d2ff739276d593a5"
+    },
+    {
+      "path": "example/assets/type/fe0f58ca54a15a4696.png",
+      "sha256": "fdb06d57cb6f2572b11e5085b2c97f0958ea2f95dfa7b12269d793031114b06d"
+    },
+    {
+      "path": "example/caption-groups.json",
+      "sha256": "083159844f1287bda2dee2469317ec16a3bcd35a6ea403cb28556ff33170926c"
+    },
+    {
+      "path": "example/config.json",
+      "sha256": "ec126298989371834079914d901764653ad8b542e3b4479a7208e1e7636b7b57"
+    },
+    {
+      "path": "example/events.cjs",
+      "sha256": "1e05c6588d24078e8e64265bdd8506a26d8af8417c93477c34ea4edfcd85d54d"
+    },
+    {
+      "path": "example/font-atlas.json",
+      "sha256": "2df585814251923d0a144a3b3155d651c284de60c76a3db23b6393b3c36a8cdc"
+    },
+    {
+      "path": "example/presenter-gestures.cjs",
+      "sha256": "6dbe228baec01612ea7c37e9eeec8d185846eca5a5ed98e012b8e1279fc1cc3d"
+    },
+    {
+      "path": "example/renderer.cjs",
+      "sha256": "55a7431545b074bfe9fd907b83c6a1cfd4c977860d3be0398f7c747f2b3ad254"
+    },
+    {
+      "path": "example/speech-levels.json",
+      "sha256": "64e473cf83d1e7aba66d8dae5dc0986a8bc0b4390134aa35793f8edf5c9ee7ed"
+    },
+    {
+      "path": "example/stage-legacy.cjs",
+      "sha256": "b4538f27e615d662d3d11e5e8321bbd9625743f398783fd671cba9078fd88821"
+    },
+    {
+      "path": "example/stage-v7.cjs",
+      "sha256": "5a8450412cd26f36d068d22070f8baebec49b96fb04a12e645ace6ada95503a6"
+    },
+    {
+      "path": "example/stage.cjs",
+      "sha256": "c2fd1d133d287b24f76692d5c69008ed7a97c2c58e14d58a2231dfe4c4a47f84"
+    },
+    {
+      "path": "example/word-timings.json",
+      "sha256": "c61e8b4bb39b14c7c53328ea847e1171d39f0f13d048a272df16b40708bc51c5"
+    },
+    {
+      "path": "reference/0000.png",
+      "sha256": "8ed070af0f8193a5dbd2697f3c034c103485ba0436934eed36c49467ed24047d"
+    },
+    {
+      "path": "reference/0055.png",
+      "sha256": "a9a45f4daf603c71c99f4de7a7d78b54d06e05ef2c6e17d41b6ea9864e30989c"
+    },
+    {
+      "path": "reference/0128.png",
+      "sha256": "01abae5c6486c79add3ee738f5668acc48c01f2d6fff6356cbc116412c963167"
+    },
+    {
+      "path": "reference/0226.png",
+      "sha256": "85fd1f212ed0515825c2dfc5b5c8b1c85e78113a09ca75b7cfeeebe78737a386"
+    },
+    {
+      "path": "reference/0335.png",
+      "sha256": "adbecc058d91b6701d11f4e012130dcb048ba992241ca311b6c6868df4da67f3"
+    },
+    {
+      "path": "reference/0390.png",
+      "sha256": "395387baf8336f4bdfbb72a4facaa2c952b55389c4253368902a3b818e36d4d0"
+    },
+    {
+      "path": "reference/0510.png",
+      "sha256": "fad19dd063be99fc68064d3b6a19d158bb3f65f626e9c1da27051d408b317883"
+    },
+    {
+      "path": "reference/0580.png",
+      "sha256": "e7b500cdde6d32680d0139ea48eec0638bc4f126466e5a936c50081e330f5367"
+    },
+    {
+      "path": "reference/0641.png",
+      "sha256": "88db0de8cdc7e1ca9e970c2d3eb4ba39b1075992b0db32b806550a98085dbb90"
+    },
+    {
+      "path": "reference/contact-sheet.jpg",
+      "sha256": "8ca5baa8fc33039efb7d191f6391d12e36181a360216078e7e7f33d0b13229d0"
+    },
+    {
+      "path": "sound-spotting.json",
+      "sha256": "c112c0dad33a6ce732994b98d8faae8f52cf08ca3722e0be9559d6988d0ed050"
+    }
+  ]
+}

@@ -31,7 +31,8 @@ assert len(entry.encode()) <= 15000, "Keep the new workflow detail in references
 boundaries = skill / "references/mode-execution-boundaries.md"
 assert "(references/mode-execution-boundaries.md)" in entry and boundaries.is_file()
 assert "Before planning" in entry
-assert "Published B choices are B1, B2, B3 and B4" in guide_text
+assert "Published B choices are B1, B2, B3, B4 and B5" in guide_text
+assert "scripts/character-explainer.mjs" in guide_text
 assert "B1–B4 use the bundled manifest runtime" in guide_text
 assert "not an accepted `style: B4` CLI value" not in guide_text
 assert "B4 and B5 remain local development only" not in guide_text

@@ -70,11 +70,20 @@
 </td>
 </tr>
 <!-- b3:hero:end -->
+<!-- b5:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>角色解说风</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+</td>
+<td width="50%" align="center"><a href="#a7"><strong>敬请期待…</strong></a></td>
+</tr>
+<!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**10 种画风 · 实测样片 · 免费开源**
+**11 种画风 · 实测样片 · 免费开源**
 
 ⭐ **为项目点个 Star，及时关注下一批画风和新功能解锁。**
 
@@ -396,6 +405,28 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 </table>
 
 <!-- b4:section:end -->
+
+<!-- b5:section:start -->
+<a id="b5"></a>
+
+### B5：角色解说风
+
+**Turn your favorite avatar into a stickman star.**
+
+让你喜欢的头像担任讲解员，用火柴人的夸张动作把观点演出来。
+
+- **画面**: 暖纸背景、右下角半身主讲人，左侧用大物件、受力与回弹制造动态十足的物理喜剧。
+- **声音**: 清晰配音优先，关键音效紧贴动作，背景乐克制铺底。样片使用 The Pharaoh 3。
+- **适合**: 生活观察、知识解说、流行文化和趣味评论。
+
+<div align="center">
+<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
+
+已确认样片 · 22.8 秒 · 16:9
+</div>
+
+新角色先确认辨识度，再由代码完成动画。已确认的横屏样片是效果参考，不代表任意头像都能自动绑定；请使用获得相应授权的形象。 [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
+<!-- b5:section:end -->
 
 
 

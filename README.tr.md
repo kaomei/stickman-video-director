@@ -70,11 +70,20 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 </td>
 </tr>
 <!-- b3:hero:end -->
+<!-- b5:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>Character Explainer</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+</td>
+<td width="50%" align="center"><a href="#a7"><strong>Yakında…</strong></a></td>
+</tr>
+<!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**10 görsel stil · Denenmiş örnekler · Ücretsiz ve açık kaynak**
+**11 görsel stil · Denenmiş örnekler · Ücretsiz ve açık kaynak**
 
 ⭐ **Bir sonraki stil paketini ve yeni özellikleri kaçırmamak için projeye yıldız verin.**
 
@@ -399,6 +408,28 @@ Bir geri sayım. Gece gelen bir telefon. Asla çiğnememeniz gereken bir kural. 
 </table>
 
 <!-- b4:section:end -->
+
+<!-- b5:section:start -->
+<a id="b5"></a>
+
+### B5: Character Explainer
+
+**Turn your favorite avatar into a stickman star.**
+
+Avatarınız anlatır; çöp adamlar fikirleri fiziksel komediye dönüştürür.
+
+- **Görünüm**: Sıcak kâğıt fon, sağ altta konuşan karakter, solda büyük nesneler ve neden-sonuç odaklı hareketler.
+- **Ses**: Net anlatım, hareketle eşleşen efektler ve geri planda kalan müzik. Örnekte The Pharaoh 3 kullanılmıştır.
+- **Uygun konular**: Gündelik gözlemler, açıklayıcı içerikler, popüler kültür ve mizahi yorumlar.
+
+<div align="center">
+<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
+
+Onaylı örnek · 22,8 sn · 16:9
+</div>
+
+Yeni karakterin benzerliği önce onaylanır, sonra kodla canlandırılır. Onaylı 16:9 örnek bir referanstır; her avatar için otomatik rig garantisi değildir. Kullanım haklarını kontrol edin. [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
+<!-- b5:section:end -->
 
 
 ---

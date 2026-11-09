@@ -40,7 +40,7 @@ def section(text, start, end):
     return text.split(f'<a id="{start}"></a>', 1)[1].split(end, 1)[0]
 
 expected_images = images(cn)
-assert len(expected_images) == 37 and len(set(expected_images)) == 28
+assert len(expected_images) == 39 and len(set(expected_images)) == 29
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 local_a6_previews = {
     "assets/readme/previews/style-6-amber-noir-mcp.gif",
@@ -149,7 +149,7 @@ for name in selected:
     hero = text.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
     rows = re.findall(r"<tr>(.*?)</tr>", hero, re.S)
     gallery_styles = re.findall(r'href="#([^"]+)"><img', hero)
-    assert gallery_styles == ["a1", "a2", "a3", "a4", "style-5", "b1", "a6", "b2", "b3", "b4"], name
+    assert gallery_styles == ["a1", "a2", "a3", "a4", "style-5", "b1", "a6", "b2", "b3", "b4", "b5"], name
     # Owner rule: two columns, odd last card left + Coming Soon right;
     # even card counts fill the grid without a placeholder. No spanning rows.
     assert len(rows) == (len(gallery_styles) + 1) // 2, name
@@ -161,10 +161,10 @@ for name in selected:
     if placeholders:
         assert placeholders == [cells[-1]] and "<img" in cells[-2], name
         assert re.search(r'<a href="#a7"><strong>[^<]+</strong></a>', cells[-1]), name
-    assert text.count('width="90%"') == 10 and text.count('width="360"') == 20, name
+    assert text.count('width="90%"') == 11 and text.count('width="360"') == 21, name
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
-    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "B1", "B2", "B3", "B4"], (name, "published style catalog plus A7 teaser")
+    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "B1", "B2", "B3", "B4", "B5"], (name, "published style catalog plus A7 teaser")
     a6 = section(text, "a6", '<a id="a7"></a>')
     assert len(re.findall(r"^- \*\*", a6, re.M)) == 2, (name, "A6 advantages and use cases")
     assert re.findall(r'<a href="([^"]+\.mp4)">', a6) == list(a6_videos), name
@@ -172,7 +172,7 @@ for name in selected:
     assert "Tested Flow workflow:" not in text and "Click either GIF" not in text, name
     assert "Veo 3.1 Fast" not in a6, (name, "operational model guidance stays in Skill")
     assert "Omni" not in a6, (name, "A6 does not inherit the legacy model")
-    assert re.search(r"\*\*10[^\n]+\*\*", text) and "11 visual options" not in text, (name, "ten A+B visual styles, no competing option count")
+    assert re.search(r"\*\*10[^\n]+\*\*", text) and "11 visual options" not in text, (name, "eleven A+B visual styles")
     placeholder = section(text, "a7", '<a id="b-styles"></a>')
     assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1 and "5,000" in placeholder, (name, "A7 roadmap CTA retained")
     assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 2, (name, "A7 unlock link plus roadmap navigation")
@@ -192,11 +192,16 @@ for name in selected:
     assert all(token not in b3 for token in ("Renoise", "Fola", "Click a GIF", "@CrazyKaomei")), (name, "no unrelated dependencies, voice, helper copy or watermark")
     for video in re.findall(r'<a href="([^"]+\.mp4)">', b3):
         assert (root / video).is_file(), (name, video)
-    b4 = section(text, "b4", '<a id="thumbnail-publishing-kit"></a>')
+    b4 = section(text, "b4", '<!-- b4:section:end -->')
     assert re.findall(r'<a href="([^"]+\.mp4)">', b4) == ["assets/readme/b4-dispatch.mp4", "assets/readme/b4-death-clock.mp4"], name
     assert all(token in b4 for token in ("Brian", "@BeanieSurvives")), (name, "B4 identity, voice and reference")
     assert len(re.findall(r"^- \*\*", b4, re.M)) == 3, (name, "B4 visuals, sound and use cases")
-    assert not re.search(r"^### B[5-9]", text, re.M), (name, "B5+ excluded")
+    assert not re.search(r"^### B[6-9]", text, re.M), (name, "B6+ excluded")
+    b5 = section(text, "b5", '<!-- b5:section:end -->')
+    assert re.findall(r'<a href="([^"]+\.mp4)">', b5) == ["assets/readme/b5-character-explainer.mp4"], name
+    assert len(re.findall(r"^- \*\*", b5, re.M)) == 3, name
+    assert all(token in b5 for token in ("The Pharaoh 3", "Turn your favorite avatar into a stickman star.", "CREDITS.md")), name
+    assert "Character Explainer Style" not in text, name
     if is_english:
         teasers = {
             "A": "New specialized director styles are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!",
@@ -209,7 +214,7 @@ for name in selected:
             next_id, _, title = entries[-1]
             assert title == "Coming soon…", (name, series, "placeholder follows the latest released style")
             assert f"### {next_id}: Coming soon…\n\n{teaser}" in text, (name, series, "approved placeholder copy")
-        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Line Art"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV"), ("B4", "Survival Thriller")], (name, "approved B style names")
+        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Line Art"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV"), ("B4", "Survival Thriller"), ("B5", "Character Explainer")], (name, "approved B style names")
         assert "<strong>Retro TV</strong><br>" in hero and "Retro TV Style" not in text, (name, "concise English B3 name in gallery and section")
     for variant in ("A1.1", "A1.2", "A2.1", "A2.2"):
         assert variant in text, (name, variant)
@@ -264,7 +269,7 @@ for name in selected:
     if is_english:
         approved_mode_intro = (
             '<div align="center">\n\n'
-            '**10 visual styles · Tested examples · Free and open source**\n\n'
+            '**11 visual styles · Tested examples · Free and open source**\n\n'
             '⭐ **Star the project to catch the next style drop and feature unlocks.**\n\n'
             '[Get started](#quick-start) · [Director Styles](#a-styles) · [Autopilot Styles](#b-styles) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem)\n\n'
             '</div>\n\n'

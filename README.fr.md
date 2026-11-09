@@ -70,11 +70,20 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 </td>
 </tr>
 <!-- b3:hero:end -->
+<!-- b5:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>Character Explainer</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+</td>
+<td width="50%" align="center"><a href="#a7"><strong>Bientôt…</strong></a></td>
+</tr>
+<!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**10 styles visuels · Des exemples testés · Gratuit et open source**
+**11 styles visuels · Des exemples testés · Gratuit et open source**
 
 ⭐ **Ajoutez une étoile au projet pour suivre les prochains styles et les nouvelles fonctionnalités à débloquer.**
 
@@ -400,6 +409,28 @@ Un compte à rebours. Un appel nocturne. Une règle à ne jamais enfreindre. Ins
 </table>
 
 <!-- b4:section:end -->
+
+<!-- b5:section:start -->
+<a id="b5"></a>
+
+### B5 : Character Explainer
+
+**Turn your favorite avatar into a stickman star.**
+
+Votre avatar prend la parole pendant que des personnages bâtons transforment les idées en comédie physique.
+
+- **Le visuel**: Papier chaleureux, personnage parlant en bas à droite, grands accessoires et animation de cause à effet à gauche.
+- **Le son**: Voix claire, effets synchronisés aux gestes et musique discrète. La voix de cet exemple est The Pharaoh 3.
+- **Pour**: Explications du quotidien, observations, culture populaire et commentaires humoristiques.
+
+<div align="center">
+<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
+
+Exemple approuvé · 22,8 s · 16:9
+</div>
+
+Validez d’abord la ressemblance du nouveau personnage, puis animez-le par code. Cet exemple 16:9 approuvé est une référence, pas une garantie pour tous les avatars. Vérifiez les droits d’utilisation. [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
+<!-- b5:section:end -->
 
 
 ---

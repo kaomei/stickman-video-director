@@ -4,6 +4,8 @@ This is mode B of **directing-stickman-videos**, not a second installation. Run 
 
 B has its own production contract and independently defined styles. Do not import Director's proposal/prompt phases, clip-length rules, voice profiles or visual restrictions. Narration and synchronized subtitles are required in every B video.
 
+**B5 · Character Explainer** uses the dedicated [code-authored route](b5-character-explainer.md). Initialize with `--style B5`; render through `scripts/character-explainer.mjs`, not the B1–B4 manifest renderer. New stories need authored scenes, timing, caption glyphs and authorized audio; the example is not arbitrary-avatar auto-rigging.
+
 ## Independent B-style settings
 
 Keep one installed Skill and entrypoint; style references are internal modules, not separate installations or nested `SKILL.md` files. Each B style defines its own visuals/characters, caption font/size/placement, narration provider/voice defaults, pacing and SFX treatment. Updating B1 must not rewrite another style or A.

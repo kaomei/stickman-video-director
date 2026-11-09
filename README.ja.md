@@ -70,11 +70,20 @@
 </td>
 </tr>
 <!-- b3:hero:end -->
+<!-- b5:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>キャラクター解説</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+</td>
+<td width="50%" align="center"><a href="#a7"><strong>近日公開…</strong></a></td>
+</tr>
+<!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**10種類の画風 · 制作例あり · 無料・オープンソース**
+**11種類の画風 · 制作例あり · 無料・オープンソース**
 
 ⭐ **プロジェクトに Star を付けて、次の画風追加や新機能の解放をチェックしましょう。**
 
@@ -397,6 +406,28 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
 </table>
 
 <!-- b4:section:end -->
+
+<!-- b5:section:start -->
+<a id="b5"></a>
+
+### B5: キャラクター解説
+
+**Turn your favorite avatar into a stickman star.**
+
+お気に入りのアバターが解説し、棒人間の動きがアイデアをコミカルに表現します。
+
+- **映像**: 温かい紙の背景、右下の話すキャラクター、左側の大きな小道具と因果関係のある物理コメディ。
+- **音**: 声を中心に、動きと同期した効果音と控えめなBGM。作例の声は The Pharaoh 3。
+- **用途**: 身近な話題、知識解説、ポップカルチャー、ユーモラスなコメント。
+
+<div align="center">
+<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
+
+承認済み作例 · 22.8秒 · 16:9
+</div>
+
+新しいキャラクターは外見を確認してからコードで動かします。16:9の承認済み作例は参考であり、すべてのアバターへの自動適用を保証しません。使用権を確認してください。 [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
+<!-- b5:section:end -->
 
 
 ---

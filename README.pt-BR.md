@@ -70,11 +70,20 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 </td>
 </tr>
 <!-- b3:hero:end -->
+<!-- b5:hero:start -->
+<tr>
+<td width="50%" align="center">
+<strong>Character Explainer</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+</td>
+<td width="50%" align="center"><a href="#a7"><strong>Em breve…</strong></a></td>
+</tr>
+<!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**10 estilos visuais · Exemplos testados · Grátis e de código aberto**
+**11 estilos visuais · Exemplos testados · Grátis e de código aberto**
 
 ⭐ **Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.**
 
@@ -404,6 +413,28 @@ Uma contagem regressiva. Uma ligação de madrugada. Uma regra que você nunca d
 </table>
 
 <!-- b4:section:end -->
+
+<!-- b5:section:start -->
+<a id="b5"></a>
+
+### B5: Character Explainer
+
+**Turn your favorite avatar into a stickman star.**
+
+Seu avatar apresenta enquanto bonecos-palito transformam ideias em comédia física.
+
+- **Visual**: Papel em tons quentes, personagem falando no canto inferior direito, objetos enormes e animação de causa e efeito à esquerda.
+- **Som**: Voz clara, efeitos sincronizados às ações e música discreta. O exemplo usa The Pharaoh 3.
+- **Ideal para**: Explicações, observações do cotidiano, cultura pop e comentários bem-humorados.
+
+<div align="center">
+<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
+
+Exemplo aprovado · 22,8 s · 16:9
+</div>
+
+Novos personagens começam com a aparência aprovada; o código cuida da animação. O exemplo 16:9 aprovado é uma referência, não uma garantia para qualquer avatar. Verifique as permissões de uso. [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
+<!-- b5:section:end -->
 
 
 ---

@@ -1,0 +1,615 @@
+{
+  "events": [
+    {
+      "time": 0.035,
+      "frame": 1,
+      "description": "opening title: dry stamp, not a music hit",
+      "file": "[local licensed sound]",
+      "duration": 0.22,
+      "peak_dbfs_before_master": -17,
+      "event_rms_dbfs_before_master": -22.057870053022633,
+      "strongest_5ms_packet_seconds_after_anchor": 0.010229166666666666,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "46b05c07b5ac336ccd7f2a1367de7016df4ad15d1c0deae54f68d3964d2e7c39",
+          "trim_start_seconds": 0.0393125,
+          "rate": 1,
+          "hp_hz": 90,
+          "lp_hz": 3600
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 1.84,
+      "frame": 55,
+      "description": "crate floor contact: hard edge plus short wooden body",
+      "file": "[local licensed sound]",
+      "duration": 0.34,
+      "peak_dbfs_before_master": -11.8,
+      "event_rms_dbfs_before_master": -23.83887978049841,
+      "strongest_5ms_packet_seconds_after_anchor": 0.00775,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "fee214ad7526772b86fa7040fafb98448790e8af56ce15ce75188f4080817fea",
+          "trim_start_seconds": 0.058020833333333334,
+          "rate": 1,
+          "hp_hz": 90,
+          "lp_hz": 4700
+        },
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "46b05c07b5ac336ccd7f2a1367de7016df4ad15d1c0deae54f68d3964d2e7c39",
+          "trim_start_seconds": 0.0393125,
+          "rate": 1.2,
+          "hp_hz": 90,
+          "lp_hz": 4700
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 2.2,
+      "frame": 66,
+      "description": "oversized gift moves into stage",
+      "file": "[local licensed sound]",
+      "duration": 0.24,
+      "peak_dbfs_before_master": -19,
+      "event_rms_dbfs_before_master": -36.14538951619977,
+      "strongest_5ms_packet_seconds_after_anchor": 0.005270833333333333,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "2c4ed36746964b8018f7dc45801b2f166232f5d81178364b5ede88efe05631ec",
+          "trim_start_seconds": 0.1005,
+          "rate": 1.12,
+          "hp_hz": 220,
+          "lp_hz": 6500
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 2.48,
+      "frame": 74,
+      "description": "gift settles with a compact comic knock",
+      "file": "[local licensed sound]",
+      "duration": 0.18,
+      "peak_dbfs_before_master": -15.5,
+      "event_rms_dbfs_before_master": -33.3209464624323,
+      "strongest_5ms_packet_seconds_after_anchor": 0.0059791666666666665,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "e643685f82b357fdc05966431dda1a26a905e403cdaaa4d59984dbafdee9a688",
+          "trim_start_seconds": 0.09610416666666667,
+          "rate": 1,
+          "hp_hz": 170,
+          "lp_hz": 4800
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 3.16,
+      "frame": 95,
+      "description": "ribbon uncoils with a clearly audible swish",
+      "file": "[local licensed sound]",
+      "duration": 0.29,
+      "peak_dbfs_before_master": -18,
+      "event_rms_dbfs_before_master": -33.18285027657436,
+      "strongest_5ms_packet_seconds_after_anchor": 0.003895833333333333,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "52ee977a9e9678ea6496152931effe479414a5375db88a01040b8a445b74ae6d",
+          "trim_start_seconds": 0.1935625,
+          "rate": 1.15,
+          "hp_hz": 260,
+          "lp_hz": 6500
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 3.68,
+      "frame": 110,
+      "description": "first ribbon tightens around the actor",
+      "file": "[local licensed sound]",
+      "duration": 0.19,
+      "peak_dbfs_before_master": -18,
+      "event_rms_dbfs_before_master": -32.62123609712008,
+      "strongest_5ms_packet_seconds_after_anchor": 0.004145833333333333,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "52ee977a9e9678ea6496152931effe479414a5375db88a01040b8a445b74ae6d",
+          "trim_start_seconds": 0.1935625,
+          "rate": 1.5,
+          "hp_hz": 270,
+          "lp_hz": 6500
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 4.28,
+      "frame": 128,
+      "description": "second ribbon catches: small elastic punctuation",
+      "file": "[local licensed sound]",
+      "duration": 0.18,
+      "peak_dbfs_before_master": -16.5,
+      "event_rms_dbfs_before_master": -34.90286970509005,
+      "strongest_5ms_packet_seconds_after_anchor": 0.005166666666666667,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "e643685f82b357fdc05966431dda1a26a905e403cdaaa4d59984dbafdee9a688",
+          "trim_start_seconds": 0.09610416666666667,
+          "rate": 1.15,
+          "hp_hz": 200,
+          "lp_hz": 4900
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 5.02,
+      "frame": 151,
+      "description": "taut ribbon yanks: quick whip",
+      "file": "[local licensed sound]",
+      "duration": 0.2,
+      "peak_dbfs_before_master": -17,
+      "event_rms_dbfs_before_master": -33.615360298372366,
+      "strongest_5ms_packet_seconds_after_anchor": 0.004458333333333333,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "2c4ed36746964b8018f7dc45801b2f166232f5d81178364b5ede88efe05631ec",
+          "trim_start_seconds": 0.1005,
+          "rate": 1.2,
+          "hp_hz": 300,
+          "lp_hz": 6500
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 5.08,
+      "frame": 152,
+      "description": "rubber recoil answers the visible tug",
+      "file": "[local licensed sound]",
+      "duration": 0.3,
+      "peak_dbfs_before_master": -16,
+      "event_rms_dbfs_before_master": -27.261799887075906,
+      "strongest_5ms_packet_seconds_after_anchor": 0.006583333333333333,
+      "sources": [
+        {
+          "source": "original deterministic damped-rubber recoil synthesis",
+          "license": "CC0-1.0"
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 6.233333333333333,
+      "frame": 187,
+      "description": "paper bundle 1: progressively heavier close slap",
+      "file": "[local licensed sound]",
+      "duration": 0.16,
+      "peak_dbfs_before_master": -18,
+      "event_rms_dbfs_before_master": -23.89711302576485,
+      "strongest_5ms_packet_seconds_after_anchor": 0.000625,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "46b05c07b5ac336ccd7f2a1367de7016df4ad15d1c0deae54f68d3964d2e7c39",
+          "trim_start_seconds": 0.0393125,
+          "rate": 1.4,
+          "hp_hz": 180,
+          "lp_hz": 5600
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 6.566666666666666,
+      "frame": 197,
+      "description": "paper bundle 2: progressively heavier close slap",
+      "file": "[local licensed sound]",
+      "duration": 0.17,
+      "peak_dbfs_before_master": -17,
+      "event_rms_dbfs_before_master": -23.81471992196709,
+      "strongest_5ms_packet_seconds_after_anchor": 0.0008333333333333334,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "46b05c07b5ac336ccd7f2a1367de7016df4ad15d1c0deae54f68d3964d2e7c39",
+          "trim_start_seconds": 0.0393125,
+          "rate": 1.25,
+          "hp_hz": 180,
+          "lp_hz": 5600
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 6.966666666666667,
+      "frame": 209,
+      "description": "paper bundle 3: progressively heavier close slap",
+      "file": "[local licensed sound]",
+      "duration": 0.18,
+      "peak_dbfs_before_master": -16,
+      "event_rms_dbfs_before_master": -22.85786317326863,
+      "strongest_5ms_packet_seconds_after_anchor": 0.00125,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "46b05c07b5ac336ccd7f2a1367de7016df4ad15d1c0deae54f68d3964d2e7c39",
+          "trim_start_seconds": 0.0393125,
+          "rate": 1.12,
+          "hp_hz": 180,
+          "lp_hz": 5600
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 7.266666666666667,
+      "frame": 218,
+      "description": "paper bundle 4: progressively heavier close slap",
+      "file": "[local licensed sound]",
+      "duration": 0.2,
+      "peak_dbfs_before_master": -15,
+      "event_rms_dbfs_before_master": -22.277270593894578,
+      "strongest_5ms_packet_seconds_after_anchor": 0.0017708333333333332,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "46b05c07b5ac336ccd7f2a1367de7016df4ad15d1c0deae54f68d3964d2e7c39",
+          "trim_start_seconds": 0.0393125,
+          "rate": 1,
+          "hp_hz": 180,
+          "lp_hz": 5600
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 7.533333333333333,
+      "frame": 226,
+      "description": "last paper stack crushes actor: layered slap and weight",
+      "file": "[local licensed sound]",
+      "duration": 0.3,
+      "peak_dbfs_before_master": -11.8,
+      "event_rms_dbfs_before_master": -22.911771116936986,
+      "strongest_5ms_packet_seconds_after_anchor": 0.004270833333333333,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "fee214ad7526772b86fa7040fafb98448790e8af56ce15ce75188f4080817fea",
+          "trim_start_seconds": 0.058020833333333334,
+          "rate": 1,
+          "hp_hz": 95,
+          "lp_hz": 5300
+        },
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "46b05c07b5ac336ccd7f2a1367de7016df4ad15d1c0deae54f68d3964d2e7c39",
+          "trim_start_seconds": 0.0393125,
+          "rate": 1.3,
+          "hp_hz": 95,
+          "lp_hz": 5300
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 7.566666666666666,
+      "frame": 227,
+      "description": "compressed actor leaks air: brief comic exhale",
+      "file": "[local licensed sound]",
+      "duration": 0.19,
+      "peak_dbfs_before_master": -21,
+      "event_rms_dbfs_before_master": -30.576714772442344,
+      "strongest_5ms_packet_seconds_after_anchor": 0.004145833333333333,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "ea484e9354072b7510dd078b65babe09414ada724eae6077071e93d3d08bbaa0",
+          "trim_start_seconds": 0.030770833333333334,
+          "rate": 1.35,
+          "hp_hz": 200,
+          "lp_hz": 5700
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 7.733333333333333,
+      "frame": 232,
+      "description": "stored paper load releases: distinct rubber spring",
+      "file": "[local licensed sound]",
+      "duration": 0.35,
+      "peak_dbfs_before_master": -14,
+      "event_rms_dbfs_before_master": -25.922098871446998,
+      "strongest_5ms_packet_seconds_after_anchor": 0.006583333333333333,
+      "sources": [
+        {
+          "source": "original deterministic damped-rubber recoil synthesis",
+          "license": "CC0-1.0"
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 7.866666666666666,
+      "frame": 236,
+      "description": "paper scatters behind the fast escape",
+      "file": "[local licensed sound]",
+      "duration": 0.25,
+      "peak_dbfs_before_master": -19,
+      "event_rms_dbfs_before_master": -34.194809763232556,
+      "strongest_5ms_packet_seconds_after_anchor": 0.0024375,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "52ee977a9e9678ea6496152931effe479414a5375db88a01040b8a445b74ae6d",
+          "trim_start_seconds": 0.1935625,
+          "rate": 1.35,
+          "hp_hz": 360,
+          "lp_hz": 6500
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 8.85,
+      "frame": 266,
+      "description": "door shuts with a full dry wooden slam",
+      "file": "[local licensed sound]",
+      "duration": 0.31,
+      "peak_dbfs_before_master": -13,
+      "event_rms_dbfs_before_master": -24.28269179009748,
+      "strongest_5ms_packet_seconds_after_anchor": 0.006145833333333333,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "fee214ad7526772b86fa7040fafb98448790e8af56ce15ce75188f4080817fea",
+          "trim_start_seconds": 0.058020833333333334,
+          "rate": 1,
+          "hp_hz": 125,
+          "lp_hz": 4400
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 9.02,
+      "frame": 271,
+      "description": "lock engages: distinct short click",
+      "file": "[local licensed sound]",
+      "duration": 0.12,
+      "peak_dbfs_before_master": -19,
+      "event_rms_dbfs_before_master": -44.245761534199694,
+      "strongest_5ms_packet_seconds_after_anchor": 0.004458333333333333,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "248536021bcf9ed0dec60913f86cf1d5eb5d3ef08f8fd0003dc4d9cec2f7960e",
+          "trim_start_seconds": 0.1565,
+          "rate": 1.35,
+          "hp_hz": 600,
+          "lp_hz": 5700
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 10.9,
+      "frame": 327,
+      "description": "NOT independence: short scratch at the cancellation stroke",
+      "file": "[local licensed sound]",
+      "duration": 0.25,
+      "peak_dbfs_before_master": -15,
+      "event_rms_dbfs_before_master": -25.469499664591137,
+      "strongest_5ms_packet_seconds_after_anchor": 0.0059791666666666665,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "c9cc832a9a50456347ce109ae08480d2d672346689e9210595073ab69c0ddcb5",
+          "trim_start_seconds": 0.21872916666666667,
+          "rate": 1,
+          "hp_hz": 220,
+          "lp_hz": 4800
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 11,
+      "frame": 330,
+      "description": "body flattens: rounded thump and escaping air",
+      "file": "[local licensed sound]",
+      "duration": 0.23,
+      "peak_dbfs_before_master": -14,
+      "event_rms_dbfs_before_master": -21.750231926686986,
+      "strongest_5ms_packet_seconds_after_anchor": 0.010395833333333333,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "46b05c07b5ac336ccd7f2a1367de7016df4ad15d1c0deae54f68d3964d2e7c39",
+          "trim_start_seconds": 0.0393125,
+          "rate": 1,
+          "hp_hz": 95,
+          "lp_hz": 4300
+        },
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "ea484e9354072b7510dd078b65babe09414ada724eae6077071e93d3d08bbaa0",
+          "trim_start_seconds": 0.030770833333333334,
+          "rate": 1.4,
+          "hp_hz": 95,
+          "lp_hz": 4300
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 11.2,
+      "frame": 336,
+      "description": "flattened body springs back",
+      "file": "[local licensed sound]",
+      "duration": 0.34,
+      "peak_dbfs_before_master": -16,
+      "event_rms_dbfs_before_master": -27.79736676939644,
+      "strongest_5ms_packet_seconds_after_anchor": 0.006583333333333333,
+      "sources": [
+        {
+          "source": "original deterministic damped-rubber recoil synthesis",
+          "license": "CC0-1.0"
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 12.666666666666666,
+      "frame": 380,
+      "description": "revelation lands gently: restrained low-mid body",
+      "file": "[local licensed sound]",
+      "duration": 0.32,
+      "peak_dbfs_before_master": -22,
+      "event_rms_dbfs_before_master": -34.94050172308717,
+      "strongest_5ms_packet_seconds_after_anchor": 0.00020833333333333335,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "04d82a61d520373ba96423a62973f173fa73d2e54d2163cd13e7c8abbe50b8d4",
+          "trim_start_seconds": 0.050520833333333334,
+          "rate": 1,
+          "hp_hz": 120,
+          "lp_hz": 2000
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 16.9,
+      "frame": 507,
+      "description": "reliance thread snaps: dry material break",
+      "file": "[local licensed sound]",
+      "duration": 0.16,
+      "peak_dbfs_before_master": -15.5,
+      "event_rms_dbfs_before_master": -41.80635268032182,
+      "strongest_5ms_packet_seconds_after_anchor": 0.006625,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "248536021bcf9ed0dec60913f86cf1d5eb5d3ef08f8fd0003dc4d9cec2f7960e",
+          "trim_start_seconds": 0.1565,
+          "rate": 1,
+          "hp_hz": 350,
+          "lp_hz": 6000
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 19.133333333333333,
+      "frame": 574,
+      "description": "first palm on mirror: hard close tap, no breaking glass",
+      "file": "[local licensed sound]",
+      "duration": 0.13,
+      "peak_dbfs_before_master": -18,
+      "event_rms_dbfs_before_master": -33.75412722679302,
+      "strongest_5ms_packet_seconds_after_anchor": 0.000041666666666666665,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "46b05c07b5ac336ccd7f2a1367de7016df4ad15d1c0deae54f68d3964d2e7c39",
+          "trim_start_seconds": 0.0393125,
+          "rate": 1.9,
+          "hp_hz": 650,
+          "lp_hz": 5500
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 20.3,
+      "frame": 609,
+      "description": "second deliberate palm contact: answering tap",
+      "file": "[local licensed sound]",
+      "duration": 0.14,
+      "peak_dbfs_before_master": -19,
+      "event_rms_dbfs_before_master": -38.49246001936436,
+      "strongest_5ms_packet_seconds_after_anchor": 0.000020833333333333333,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "46b05c07b5ac336ccd7f2a1367de7016df4ad15d1c0deae54f68d3964d2e7c39",
+          "trim_start_seconds": 0.0393125,
+          "rate": 1.7,
+          "hp_hz": 700,
+          "lp_hz": 5200
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    },
+    {
+      "time": 21.466666666666665,
+      "frame": 644,
+      "description": "hands return to self: warm final contact",
+      "file": "[local licensed sound]",
+      "duration": 0.24,
+      "peak_dbfs_before_master": -19,
+      "event_rms_dbfs_before_master": -25.88938095197701,
+      "strongest_5ms_packet_seconds_after_anchor": 0.0016458333333333333,
+      "sources": [
+        {
+          "source": "[local licensed sound]",
+          "source_sha256": "46b05c07b5ac336ccd7f2a1367de7016df4ad15d1c0deae54f68d3964d2e7c39",
+          "trim_start_seconds": 0.0393125,
+          "rate": 1,
+          "hp_hz": 160,
+          "lp_hz": 3600
+        }
+      ],
+      "perspective": "dry foreground stage-left, mono-compatible",
+      "sync_tolerance_frames": 1
+    }
+  ],
+  "picture_anchors": "Locked V10/V9 frame-addressed contacts; unchanged",
+  "source_provenance": "Existing credited CrazyMei/Pixabay-derived edited source bundle; new damped spring synthesis CC0. No reference film soundtrack extracted.",
+  "fx_bus_gain": 1,
+  "master_gain": 0.7194489780810326,
+  "new_paid_calls": 0
+}

@@ -1,0 +1,14 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration": 22.8,
+  "account": "@CrazyKaomei",
+  "presenter": {
+    "x": 1615,
+    "y": 770,
+    "scale": 0.84,
+    "rig": "assets/rig/spider-approved.svg"
+  },
+  "role": "approved sample only; new stories must be reauthored"
+}
