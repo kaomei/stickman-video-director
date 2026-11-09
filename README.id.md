@@ -4,7 +4,7 @@
 
 # 🎬 Stickman Video Director
 
-**Ubah naskah apa pun menjadi video animasi stickman viral dalam berbagai gaya untuk channel YouTube tanpa tampil di kamera. Sepenuhnya open source.**
+**Ubah naskah apa pun menjadi video animasi stickman viral dalam berbagai gaya untuk channel YouTube tanpa tampil di kamera.**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)

@@ -4,7 +4,7 @@
 
 # 🎬 Stickman Video Director
 
-**どんな脚本も、顔出しなしのYouTubeチャンネルでバズる、多彩な画風の棒人間アニメ動画に。完全オープンソース。**
+**どんな脚本も、顔出しなしのYouTubeチャンネルでバズる、多彩な画風の棒人間アニメ動画に。**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)

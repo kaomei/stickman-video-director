@@ -4,7 +4,7 @@
 
 # 🎬 Stickman Video Director
 
-**어떤 대본이든 얼굴 공개 없는 YouTube 채널을 위한 다양한 그림체의 바이럴 스틱맨 애니메이션 영상으로. 완전한 오픈소스.**
+**어떤 대본이든 얼굴 공개 없는 YouTube 채널을 위한 다양한 그림체의 바이럴 스틱맨 애니메이션 영상으로.**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
