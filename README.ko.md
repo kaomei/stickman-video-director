@@ -74,7 +74,7 @@
 <tr>
 <td width="50%" align="center">
 <strong>캐릭터 해설</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="도움 요청의 심리를 설명하는 B5 영상: 애니메이션 진행자와 표정이 풍부한 스틱맨" width="90%"></a>
 </td>
 <td width="50%" align="center"><a href="#a7"><strong>공개 예정…</strong></a></td>
 </tr>
@@ -112,6 +112,24 @@
 
 - **Director Mode**는 일반적인 대화형 AI 채팅 창에서 사용할 수 있습니다.
 - **Autopilot Mode**는 파일과 터미널에 접근할 수 있는 AI 코딩 에이전트(**Claude Code, OpenAI Codex, Cursor** 등) 안에서 실행되어 렌더링부터 파일 전달까지 전 과정을 자동으로 처리합니다.
+
+<!-- project-sponsor:start -->
+<a id="project-sponsor"></a>
+
+#### API 파트너
+
+<table>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
+<td><p>SJolt는 이미지·영상·음성 생성 모델을 하나의 API로 제공합니다. Playground에서 결과의 품질과 비용을 비교한 뒤 같은 요청 흐름을 프로젝트에 연결할 수 있어, 실험에서 개발로 넘어가는 과정이 간편합니다.</p><p>비동기 작업 조회와 사용량 기반 결제를 지원하며, 하나의 잔액으로 지원 모델의 사용을 관리합니다. <a href="https://sjolt.ai/">SJolt 공식 사이트</a> 에서 모델을 살펴보고 Playground를 체험해 보세요.</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
+<td><p>APIMart는 AI 이미지·영상 생성에 특화된 저가 API 플랫폼입니다. GPT-Image-2는 장당 $0.006부터, 1달러로 160장 이상 생성할 수 있습니다. 이미지와 영상을 하나의 비동기 API로 처리하며, 작업을 제출해 ID를 받고 폴링이나 콜백으로 결과를 가져옵니다. 수만 장을 일괄 생성해도 타임아웃 없이 처리하고, 모델을 바꿔도 코드를 변경할 필요가 없습니다. 월 요금 없이 사용량만큼 결제합니다. <a href="https://go.apimart.ai/tw-stickman-video-director">가입 링크</a> 에서 등록하고 시작하세요.</p></td>
+</tr>
+</table>
+
+<!-- project-sponsor:end -->
 
 <a id="quick-start"></a>
 
@@ -413,21 +431,27 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 
 ### B5: 캐릭터 해설
 
-**Turn your favorite avatar into a stickman star.**
+좋아하는 아바타를 채널의 진행자로 만들어 보세요. 유명 캐릭터를 사용하려면 허가가 필요합니다. 화면 구석의 진행자가 이야기를 이끌고, 왼쪽의 스틱맨은 그 내용을 작은 상황극으로 보여줍니다. 청구서에 끌려가고 압박감에 납작해지는 모습처럼, 추상적인 개념도 웃음과 기억에 남는 장면으로 바뀝니다.
 
-좋아하는 아바타가 설명하고, 스틱맨의 움직임이 아이디어를 코미디로 보여줍니다.
+- **시각적 매력**: 따뜻한 종이 질감, 개성 있는 진행자, 검정과 빨강의 강조 글자. 과장된 무게감과 반동, 소품 변형으로 설명을 시각적 비유로 바꿉니다.
+- **사운드 분위기**: 명료한 내레이션을 중심으로 입 모양, 표정, 자막이 음성을 따라갑니다. 효과음은 동작의 핵심 순간에 맞추고, 잔잔한 음악은 목소리를 가리지 않습니다.
+- **추천 콘텐츠**: 지식 해설, 일상 심리, 생활 속 관찰, 대중문화, 재치 있는 논평.
 
-- **화면**: 따뜻한 종이 배경, 오른쪽 아래의 말하는 캐릭터, 왼쪽의 거대한 소품과 인과관계가 분명한 물리 코미디.
-- **소리**: 명료한 음성을 중심으로 동작에 맞춘 효과음과 절제된 배경 음악. 예시 음성은 The Pharaoh 3입니다.
-- **용도**: 일상 관찰, 지식 해설, 대중문화와 유쾌한 논평.
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">예시 1: 왜 도움을 요청하기가 어려울까?</th>
+    <th width="50%" align="center">예시 2: 영상 제작에서 피해야 할 세 가지 실수</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="도움 요청의 심리를 설명하는 B5 영상: 애니메이션 진행자와 표정이 풍부한 스틱맨" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="영상 제작의 세 가지 실수를 설명하는 B5 Crazy Mei 영상: 시각적 비유와 몸개그" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">The Pharaoh 3 내레이션 · 애니메이션 진행자 · 과장된 동작</td>
+    <td align="center">Claire 내레이션 · Crazy Mei 진행 · 시각적 비유</td>
+  </tr>
+</table>
 
-<div align="center">
-<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
-
-승인된 예시 · 22.8초 · 16:9
-</div>
-
-새 캐릭터는 외형을 먼저 확인한 뒤 코드로 움직입니다. 승인된 16:9 예시는 참고용이며 모든 아바타의 자동 리깅을 보장하지 않습니다. 사용 권한을 확인하세요. [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
 <!-- b5:section:end -->
 
 

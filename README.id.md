@@ -73,8 +73,8 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <!-- b5:hero:start -->
 <tr>
 <td width="50%" align="center">
-<strong>Character Explainer</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer: speaking avatar and energetic stickman physical comedy" width="90%"></a>
+<strong>Penjelasan dengan Karakter</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 tentang meminta bantuan, dengan pembawa acara animasi dan manusia lidi ekspresif" width="90%"></a>
 </td>
 <td width="50%" align="center"><a href="#a7"><strong>Segera Hadir…</strong></a></td>
 </tr>
@@ -112,6 +112,24 @@ Kedua alur kerja bisa dimulai dari topik mentah, tautan web, atau naskah lengkap
 
 - **Director Mode** dapat digunakan di jendela percakapan AI standar.
 - **Autopilot Mode** berjalan di agen coding AI dengan akses file dan terminal (seperti **Claude Code, OpenAI Codex, atau Cursor**) untuk menangani rendering hingga penyerahan file secara otomatis.
+
+<!-- project-sponsor:start -->
+<a id="project-sponsor"></a>
+
+#### Mitra API
+
+<table>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
+<td><p>SJolt menyatukan model pembuat gambar, video, dan audio melalui satu API. Bandingkan kualitas hasil dan biaya di Playground, lalu gunakan alur permintaan yang sama di proyek Anda, tanpa berganti alat dari eksperimen ke integrasi.</p><p>Pantau tugas asinkron dan bayar sesuai penggunaan, dengan satu saldo untuk berbagai model yang didukung. <a href="https://sjolt.ai/">Jelajahi SJolt</a> untuk melihat model dan mencoba Playground.</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
+<td><p>APIMart adalah platform API berbiaya rendah untuk pembuatan gambar dan video AI — GPT-Image-2 mulai dari US$0,006 per gambar, lebih dari 160 gambar per dolar. Satu API asinkron mencakup gambar dan video: kirim tugas, dapatkan ID, lalu ambil hasil lewat polling atau callback. Proses puluhan ribu gambar sekaligus tanpa timeout dan ganti model tanpa mengubah kode. Bayar sesuai pemakaian, tanpa biaya bulanan — <a href="https://go.apimart.ai/tw-stickman-video-director">daftar di sini</a> untuk mulai menggunakan.</p></td>
+</tr>
+</table>
+
+<!-- project-sponsor:end -->
 
 <a id="quick-start"></a>
 
@@ -418,23 +436,29 @@ Hitung mundur. Telepon larut malam. Aturan yang tak boleh dilanggar. Terinspiras
 <!-- b5:section:start -->
 <a id="b5"></a>
 
-### B5: Character Explainer
+### B5: Penjelasan dengan Karakter
 
-**Turn your favorite avatar into a stickman star.**
+Jadikan avatar favorit Anda pembawa acara di kanal Anda; penggunaan karakter terkenal memerlukan izin. Sang pembawa acara bercerita di sudut layar, sementara manusia lidi di sebelah kiri memperagakan idenya — diseret tagihan, tergencet tekanan, atau terjebak dalam lelucon visual. Konsep abstrak pun jadi lucu dan mudah diingat.
 
-Avatar pilihan Anda menjadi pembawa cerita, sementara manusia lidi mengubah ide menjadi komedi fisik.
+- **Tampilan**: Tekstur kertas hangat, pembawa acara yang khas, serta teks penekanan hitam dan merah. Bobot berlebihan, gerak memantul, dan properti yang berubah bentuk menjadikan penjelasan sebagai metafora visual.
+- **Suasana audio**: Narasi yang jelas memimpin cerita, dengan gerak bibir, ekspresi, dan takarir mengikuti suara. Efek suara tepat di momen aksi, sementara musik ringan tidak menutupi narasi.
+- **Cocok untuk**: Video penjelasan, psikologi sehari-hari, pengamatan kehidupan, budaya pop, dan komentar jenaka.
 
-- **Visual**: Latar kertas hangat, karakter berbicara di kanan bawah, serta benda besar dan animasi sebab-akibat di kiri.
-- **Suara**: Narasi jelas, efek yang selaras dengan aksi, dan musik latar lembut. Contoh ini memakai The Pharaoh 3.
-- **Cocok untuk**: Penjelasan, pengamatan sehari-hari, budaya pop, dan komentar jenaka.
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Contoh 1: Mengapa meminta bantuan terasa begitu sulit?</th>
+    <th width="50%" align="center">Contoh 2: Hentikan tiga kesalahan ini saat membuat video</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 tentang meminta bantuan, dengan pembawa acara animasi dan manusia lidi ekspresif" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 Crazy Mei menjelaskan tiga kesalahan video dengan metafora visual dan komedi fisik" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Narasi The Pharaoh 3 · Pembawa acara animasi · Aksi ekspresif</td>
+    <td align="center">Narasi Claire · Dipandu Crazy Mei · Metafora visual</td>
+  </tr>
+</table>
 
-<div align="center">
-<a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 Character Explainer approved 16:9 example" width="360"></a>
-
-Contoh disetujui · 22,8 dtk · 16:9
-</div>
-
-Karakter baru dimulai dari persetujuan kemiripan, lalu dianimasikan dengan kode. Contoh 16:9 yang disetujui adalah referensi, bukan jaminan untuk semua avatar. Pastikan izin penggunaannya. [B5](skills/directing-stickman-videos/references/b5-character-explainer.md) · [Credits](skills/directing-stickman-videos/assets/b5/CREDITS.md)
 <!-- b5:section:end -->
 
 

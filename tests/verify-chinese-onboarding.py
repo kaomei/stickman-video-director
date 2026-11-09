@@ -157,7 +157,7 @@ assert "看看一个 30 秒故事的完整分镜" not in cn
 assert cn.count("<details>") == cn.count("</details>")
 assert cn.count('<div align="center">') == cn.count("</div>")
 assert cn.count("<table") == cn.count("</table>")
-assert cn.count("<td ") == cn.count("</td>")
+assert len(re.findall(r"<td(?:\s|>)", cn)) == cn.count("</td>")
 ids = re.findall(r'<a id="([^"]+)"></a>', cn)
 assert len(ids) == len(set(ids)), "Duplicate explicit anchors"
 for anchor in re.findall(r'\]\(#([^)]+)\)|href="#([^"]+)"', cn):
@@ -167,8 +167,9 @@ for link in re.findall(r"\]\(([^)]+)\)", cn):
         assert (root / link.split("#")[0]).is_file(), link
 
 previews = sorted(set(re.findall(r'src="(?:https://cdn\.jsdelivr\.net/gh/kaomei/stickman-video-director@[0-9a-f]{40}/)?(assets/readme/previews/[^" ]+\.gif)"', cn)))
-assert len(previews) == 22, "Keep all 21 published previews and append the approved B5 preview"
+assert len(previews) == 23, "Keep all 22 published previews and append the approved second B5 preview"
 assert "assets/readme/previews/b5-character-explainer.gif" in previews
+assert "assets/readme/previews/b5-character-explainer-crazymei.gif" in previews
 for name in ("b4-dispatch", "b4-death-clock"):
     assert f"assets/readme/previews/{name}.gif" in previews
 for a6_name in ("flow", "mcp"):
