@@ -4,7 +4,7 @@
 
 # 🎬 Stickman Video Director
 
-**Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels. Fully open-source.**
+**Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels.**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)

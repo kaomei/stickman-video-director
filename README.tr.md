@@ -4,7 +4,7 @@
 
 # 🎬 Stickman Video Director
 
-**Her senaryoyu, yüzünüzü göstermeden içerik ürettiğiniz YouTube kanalları için farklı tarzlarda viral çöp adam animasyon videolarına dönüştürün. Tamamen açık kaynak.**
+**Her senaryoyu, yüzünüzü göstermeden içerik ürettiğiniz YouTube kanalları için farklı tarzlarda viral çöp adam animasyon videolarına dönüştürün.**
 
 [![GitHub Yıldızları](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT Lisansı](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)

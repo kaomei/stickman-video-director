@@ -21,7 +21,7 @@ assert {p.name for p in root.glob("README*.md")} == expected_files
 assert source == (root / "README.en.md").read_text(), "Default homepage must match English"
 assert "# 🎬 Stickman Video Director" in source
 english_hero = source.split("</div>", 1)[0]
-assert "**Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels. Fully open-source.**" in english_hero
+assert "**Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels.**" in english_hero
 english_intro = (
     "Start with a topic, an article, or a script. Automatically orchestrate visuals, voiceovers, captions, and sound effects into a production-ready stickman video.",
     "**⚡ 100% Free & Open-Source. No camera, no $50/mo subscriptions, and ready in minutes, not days.**",
