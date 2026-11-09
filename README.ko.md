@@ -120,11 +120,11 @@
 
 <table>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
 <td><p>SJolt는 이미지·영상·음성 생성 모델을 하나의 API로 제공합니다. Playground에서 결과의 품질과 비용을 비교한 뒤 같은 요청 흐름을 프로젝트에 연결할 수 있어, 실험에서 개발로 넘어가는 과정이 간편합니다.</p><p>비동기 작업 조회와 사용량 기반 결제를 지원하며, 하나의 잔액으로 지원 모델의 사용을 관리합니다. <a href="https://sjolt.ai/">SJolt 공식 사이트</a> 에서 모델을 살펴보고 Playground를 체험해 보세요.</p></td>
 </tr>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
 <td><p>APIMart는 AI 이미지·영상 생성에 특화된 저가 API 플랫폼입니다. GPT-Image-2는 장당 $0.006부터, 1달러로 160장 이상 생성할 수 있습니다. 이미지와 영상을 하나의 비동기 API로 처리하며, 작업을 제출해 ID를 받고 폴링이나 콜백으로 결과를 가져옵니다. 수만 장을 일괄 생성해도 타임아웃 없이 처리하고, 모델을 바꿔도 코드를 변경할 필요가 없습니다. 월 요금 없이 사용량만큼 결제합니다. <a href="https://go.apimart.ai/tw-stickman-video-director">가입 링크</a> 에서 등록하고 시작하세요.</p></td>
 </tr>
 </table>
@@ -444,7 +444,7 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
   </tr>
   <tr>
     <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="도움 요청의 심리를 설명하는 B5 영상: 애니메이션 진행자와 표정이 풍부한 스틱맨" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="영상 제작의 세 가지 실수를 설명하는 B5 Crazy Mei 영상: 시각적 비유와 몸개그" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/readme/previews/b5-character-explainer-crazymei.gif" alt="영상 제작의 세 가지 실수를 설명하는 B5 Crazy Mei 영상: 시각적 비유와 몸개그" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">The Pharaoh 3 내레이션 · 애니메이션 진행자 · 과장된 동작</td>

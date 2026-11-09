@@ -120,11 +120,11 @@ Both workflows can start with a raw topic, a web link, or a full script. Customi
 
 <table>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="Official SJolt logo" width="64"><br><strong>SJolt</strong></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/sjolt.png" alt="Official SJolt logo" width="64"><br><strong>SJolt</strong></a></td>
 <td><p>SJolt brings image, video, and audio generation models together through one API. Compare output quality and cost in the playground, then bring the same request flow into your project—from experimentation to integration, without switching tools.</p><p>Track asynchronous tasks and pay by usage, with one balance across supported models. <a href="https://sjolt.ai/">Explore SJolt</a> to browse models and try the playground.</p></td>
 </tr>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart project sponsor" width="110"></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart project sponsor" width="110"></a></td>
 <td><p>APIMart is a low-cost API platform for AI image &amp; video generation — GPT-Image-2 from $0.006/image, 160+ images per dollar. One async API covers both image and video: submit a task, get an ID, fetch results via polling or callback. Batch tens of thousands of images without timeouts, switch models without changing code. Pay-as-you-go with no monthly fee — <a href="https://go.apimart.ai/tw-stickman-video-director">sign up here</a> to get started.</p></td>
 </tr>
 </table>
@@ -442,7 +442,7 @@ Give your favorite avatar a starring role—permission is required to use well-k
   </tr>
   <tr>
     <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 explainer about asking for help, with a distinctive presenter and expressive stickmen" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 Crazy Mei explainer about three video mistakes, with visual metaphors and physical comedy" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 Crazy Mei explainer about three video mistakes, with visual metaphors and physical comedy" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">The Pharaoh 3 narration · Animated Host · Expressive action</td>

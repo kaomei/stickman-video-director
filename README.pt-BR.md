@@ -120,11 +120,11 @@ Os dois fluxos podem começar com um tema inicial, um link da web ou um roteiro 
 
 <table>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
 <td><p>A SJolt reúne modelos de geração de imagem, vídeo e áudio em uma única API. Compare qualidade e custo no Playground e leve o mesmo fluxo de requisições para seu projeto, sem trocar de ferramentas entre os testes e a integração.</p><p>Acompanhe tarefas assíncronas e pague conforme o uso, com um único saldo para os modelos disponíveis. <a href="https://sjolt.ai/">Explore a SJolt</a> para conhecer os modelos e testar o Playground.</p></td>
 </tr>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
 <td><p>A APIMart é uma plataforma de API de baixo custo para geração de imagens e vídeos com IA — GPT-Image-2 a partir de US$ 0,006 por imagem, mais de 160 imagens por dólar. Uma API assíncrona atende imagem e vídeo: envie a tarefa, receba um ID e obtenha os resultados por consulta periódica ou callback. Gere dezenas de milhares de imagens em lote sem timeout e troque de modelo sem alterar o código. Pagamento por uso, sem mensalidade — <a href="https://go.apimart.ai/tw-stickman-video-director">cadastre-se aqui</a> para começar.</p></td>
 </tr>
 </table>
@@ -450,7 +450,7 @@ Transforme seu avatar favorito no apresentador do canal; o uso de personagens co
   </tr>
   <tr>
     <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 sobre pedir ajuda, com apresentador animado e bonecos-palito expressivos" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 com Crazy Mei explicando três erros em vídeos, com metáforas visuais e comédia física" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 com Crazy Mei explicando três erros em vídeos, com metáforas visuais e comédia física" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Narração The Pharaoh 3 · Apresentador animado · Ações expressivas</td>
