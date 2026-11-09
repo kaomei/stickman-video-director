@@ -120,11 +120,11 @@ Her iki iş akışı da ham bir konu, web bağlantısı veya tam bir senaryoyla 
 
 <table>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
 <td><p>SJolt, görsel, video ve ses üretim modellerini tek bir API üzerinden sunar. Playground’da çıktı kalitesini ve maliyeti karşılaştırın, ardından aynı istek akışını projenize taşıyın; denemeden geliştirmeye geçerken araç değiştirmeniz gerekmez.</p><p>Asenkron görevleri takip edin, kullanım bazında ödeme yapın ve desteklenen modelleri tek bir bakiyeyle yönetin. <a href="https://sjolt.ai/">SJolt’u keşfedin</a> ve modelleri inceleyip Playground’u deneyin.</p></td>
 </tr>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
 <td><p>APIMart, yapay zekâyla görsel ve video üretimine odaklanan düşük maliyetli bir API platformudur. GPT-Image-2 görsel başına 0,006 dolardan başlar; 1 dolarla 160’tan fazla görsel üretilebilir. Tek bir asenkron API hem görseli hem videoyu kapsar: görevi gönderin, bir kimlik alın, sonuçları sorgulama veya callback ile getirin. On binlerce görseli zaman aşımı olmadan toplu üretin, kodu değiştirmeden model değiştirin. Aylık ücret yok, kullandıkça ödeyin — <a href="https://go.apimart.ai/tw-stickman-video-director">buradan kaydolun</a> ve kullanmaya başlayın.</p></td>
 </tr>
 </table>
@@ -445,7 +445,7 @@ Sevdiğiniz avatarı kanalınızın sunucusuna dönüştürün; tanınmış kara
   </tr>
   <tr>
     <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5: yardım isteme üzerine, animasyon sunucu ve ifadeli çöp adamlarla anlatım" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5: Crazy Mei üç video hatasını görsel metaforlar ve fiziksel komediyle anlatıyor" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5: Crazy Mei üç video hatasını görsel metaforlar ve fiziksel komediyle anlatıyor" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">The Pharaoh 3 seslendirme · Animasyon sunucu · Abartılı hareketler</td>

@@ -120,11 +120,11 @@
 
 <table>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="SJolt 官方 Logo" width="64"><br><strong>SJolt</strong></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/sjolt.png" alt="SJolt 官方 Logo" width="64"><br><strong>SJolt</strong></a></td>
 <td><p>SJolt 通过一套 API 接入多种图片、视频与音频生成模型。先在 Playground 中比较效果与成本，再将同一套请求流程接入你的项目，减少从试验到开发的切换。</p><p>支持异步任务查询与按用量计费，通过一个余额管理不同模型的使用。前往 <a href="https://sjolt.ai/">SJolt 官网</a>探索模型与在线试用。</p></td>
 </tr>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart 项目赞助" width="110"></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart 项目赞助" width="110"></a></td>
 <td><p>APIMart 是专注 AI 图片/视频生成的低价 API 平台，GPT-Image-2 低至 $0.006/张，1 美元可出图 160+ 张。图片、视频一套异步 API 通吃，提交任务拿 ID、回调取结果，跑批万张不超时、换模型不改代码。按量付费、无月费，通过此<a href="https://go.apimart.ai/tw-stickman-video-director">注册链接</a>注册即可开用。</p></td>
 </tr>
 </table>
@@ -442,7 +442,7 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
   </tr>
   <tr>
     <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 角色解说：为什么不愿开口求助，个性主讲人与火柴人小剧场" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 Crazy Mei 解说：三个视频创作误区，视觉比喻与物理喜剧" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 Crazy Mei 解说：三个视频创作误区，视觉比喻与物理喜剧" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">The Pharaoh 3 旁白 · 动画主讲 · 夸张动作</td>

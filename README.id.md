@@ -120,11 +120,11 @@ Kedua alur kerja bisa dimulai dari topik mentah, tautan web, atau naskah lengkap
 
 <table>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
 <td><p>SJolt menyatukan model pembuat gambar, video, dan audio melalui satu API. Bandingkan kualitas hasil dan biaya di Playground, lalu gunakan alur permintaan yang sama di proyek Anda, tanpa berganti alat dari eksperimen ke integrasi.</p><p>Pantau tugas asinkron dan bayar sesuai penggunaan, dengan satu saldo untuk berbagai model yang didukung. <a href="https://sjolt.ai/">Jelajahi SJolt</a> untuk melihat model dan mencoba Playground.</p></td>
 </tr>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
 <td><p>APIMart adalah platform API berbiaya rendah untuk pembuatan gambar dan video AI — GPT-Image-2 mulai dari US$0,006 per gambar, lebih dari 160 gambar per dolar. Satu API asinkron mencakup gambar dan video: kirim tugas, dapatkan ID, lalu ambil hasil lewat polling atau callback. Proses puluhan ribu gambar sekaligus tanpa timeout dan ganti model tanpa mengubah kode. Bayar sesuai pemakaian, tanpa biaya bulanan — <a href="https://go.apimart.ai/tw-stickman-video-director">daftar di sini</a> untuk mulai menggunakan.</p></td>
 </tr>
 </table>
@@ -451,7 +451,7 @@ Jadikan avatar favorit Anda pembawa acara di kanal Anda; penggunaan karakter ter
   </tr>
   <tr>
     <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 tentang meminta bantuan, dengan pembawa acara animasi dan manusia lidi ekspresif" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 Crazy Mei menjelaskan tiga kesalahan video dengan metafora visual dan komedi fisik" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 Crazy Mei menjelaskan tiga kesalahan video dengan metafora visual dan komedi fisik" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Narasi The Pharaoh 3 · Pembawa acara animasi · Aksi ekspresif</td>

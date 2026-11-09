@@ -51,7 +51,6 @@ local_a6_previews = {
     "assets/readme/previews/b3-tv-night-signal.gif",
     "assets/readme/previews/b4-dispatch.gif",
     "assets/readme/previews/b4-death-clock.gif",
-    "assets/readme/previews/b5-character-explainer-crazymei.gif",
 }
 for url in expected_images:
     if "/previews/" in url:
@@ -278,6 +277,15 @@ for name in selected:
     assert partner_block.count('<tr>') == 2 and len(re.findall(r'<td\b', partner_block)) == 4, name
     assert partner_block.index('sponsor-sjolt') < partner_block.index('sponsor-apimart'), name
     assert re.findall(r'href="([^"]+)"', partner_block) == ['https://sjolt.ai/', 'https://sjolt.ai/', 'https://go.apimart.ai/tw-stickman-video-director', 'https://go.apimart.ai/tw-stickman-video-director'], (name, "exact logo and CTA destinations")
+    # GitHub rewrites relative images to its raw-file host, which failed to load
+    # in the published README. Match the existing immutable CDN/Camo image path.
+    partner_images = images(partner_block)
+    assert len(partner_images) == 2, (name, "one image per API partner")
+    for url, asset in zip(partner_images, ("sjolt.png", "apimart.png")):
+        assert re.fullmatch(re.escape(pinned) + r"[a-f0-9]{40}/assets/sponsors/" + re.escape(asset), url), (name, "commit-pinned partner image", url)
+        assert (root / "assets/sponsors" / asset).is_file(), (name, asset)
+    b5_second_images = [url for url in images(text) if url.endswith("/b5-character-explainer-crazymei.gif")]
+    assert len(b5_second_images) == 1 and all(url.startswith(pinned) for url in b5_second_images), (name, "pin B5 second preview")
     assert 'Thanks to' not in partner_block and '感谢' not in partner_block, name
     assert text.index('<!-- project-sponsor:start -->') > text.index('<a id="creation-modes"></a>'), name
     assert text.index('<!-- project-sponsor:end -->') < text.index('<a id="quick-start"></a>'), name

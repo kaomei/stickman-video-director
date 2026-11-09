@@ -120,11 +120,11 @@
 
 <table>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-sjolt"></a><a href="https://sjolt.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/sjolt.png" alt="SJolt" width="64"><br><strong>SJolt</strong></a></td>
 <td><p>SJolt は、画像・動画・音声の生成モデルを1つの API で利用できるプラットフォームです。Playground で品質とコストを比較してから、同じリクエストの流れをプロジェクトに組み込めるため、試作から開発へスムーズに移れます。</p><p>非同期タスクの状況確認と従量課金に対応し、対応モデルの利用を共通の残高で管理できます。 <a href="https://sjolt.ai/">SJolt 公式サイト</a> でモデルを探し、Playground を試せます。</p></td>
 </tr>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
 <td><p>APIMart は AI 画像・動画生成に特化した低価格 API プラットフォームです。GPT-Image-2 は1枚 $0.006 から、1ドルで160枚以上。画像と動画を共通の非同期 API で処理し、タスクを送信して ID を受け取り、ポーリングまたはコールバックで結果を取得できます。数万枚の一括生成でもタイムアウトせず、モデルを変えてもコードの変更は不要。月額料金なしの従量課金です。 <a href="https://go.apimart.ai/tw-stickman-video-director">登録リンク</a> から登録して利用を始められます。</p></td>
 </tr>
 </table>
@@ -443,7 +443,7 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
   </tr>
   <tr>
     <td width="50%" align="center"><a href="assets/readme/b5-character-explainer.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5の助けを求める心理の解説。アニメの語り手と表情豊かな棒人間" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 Crazy Meiによる動画作りの3つの失敗の解説。視覚的なたとえと体を使ったコメディ" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5 Crazy Meiによる動画作りの3つの失敗の解説。視覚的なたとえと体を使ったコメディ" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">The Pharaoh 3 ナレーション · アニメの語り手 · 大げさな動き</td>
