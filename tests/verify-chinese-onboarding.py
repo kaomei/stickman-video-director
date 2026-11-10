@@ -46,8 +46,8 @@ mode_rows = [line for line in mode_comparison.splitlines() if line.startswith("|
 assert not any(row.startswith(("| **操作** |", "| **用途** |")) for row in mode_rows), "Keep the comparison concise without the removed operation and use-case rows"
 assert mode_rows[0] == '|  | <div align="center">A · 导演模式</div> | <div align="center">B · 全自动模式</div> |', "Center only the mode headings"
 assert mode_rows[1] == "|:---:|:---|:---|", "Keep explanatory columns left-aligned"
-assert mode_rows[-1] == '| **开始** | <div align="center"><a href="#director-start">使用导演模式</a></div> | <div align="center"><a href="#autopilot-start">使用全自动模式</a></div> |', "Center the two start links"
-assert all('align="center"' not in row for row in mode_rows[2:-1]), "Do not center the explanatory body text"
+assert len(mode_rows) == 7 and mode_rows[-1].startswith('| **产出** |'), "Keep five explanatory rows without the redundant Start row"
+assert all('align="center"' not in row for row in mode_rows[2:]), "Do not center the explanatory body text"
 assert "插画分镜＋微动画" in mode_comparison and "插画轮播" not in mode_comparison, "Describe B as illustrated scenes rather than a slideshow; do not impose B1's drawing style on every B style"
 assert "一次安装，按需选择" not in cn, "Keep the removed mode-selection sentence out of the introduction"
 quick_start_intro = cn.split('<a id="quick-start"></a>', 1)[1].split('<a id="director-start"></a>', 1)[0]
@@ -70,9 +70,9 @@ assert "填写话题、粘贴文案，也可以直接描述需求" in director_e
 assert "人类的第一份工作是怎么来的" not in director_example, "Use a fill-in template rather than a hard-coded topic"
 assert "也可以直接贴已有文案或文章" not in cn
 assert "[查看画风一览 ↓]" not in cn, "Do not restore the removed per-mode shortcut links"
-assert "[导演模式画风](#a-styles) · [全自动模式画风](#b-styles)" in cn, "Keep the localized top style navigation"
+assert "[画风与样片](#style-gallery)" in cn, "Use one localized style shortcut landing at A then B"
 navigation = next(line for line in cn.splitlines() if line.startswith("[开始使用](#quick-start)"))
-assert navigation.endswith("[常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem)"), "FAQ followed by the approved roadmap shortcut"
+assert navigation.endswith("[常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [加入社区](#community)"), "Community follows the roadmap shortcut"
 assert "[最近更新]" not in navigation, "Keep the removed updates shortcut out of the navigation"
 assert '<a id="recent-updates"></a>' not in cn, "Do not restore the removed updates anchor"
 assert "## 最近更新" not in cn, "Do not restore the removed updates section"

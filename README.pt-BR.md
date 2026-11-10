@@ -87,7 +87,7 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 
 ⭐ **Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.**
 
-[Começar](#quick-start) · [Estilos Director](#a-styles) · [Estilos Autopilot](#b-styles) · [Perguntas frequentes](#faq) · [Roteiro de evolução](#road-to-10000-stars--creator-ecosystem)
+[Começar](#quick-start) · [Estilos e demos](#style-gallery) · [Perguntas frequentes](#faq) · [Roteiro de evolução](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)
 
 </div>
 
@@ -104,7 +104,6 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 | **Ferramentas** | Planeje com um assistente de IA compatível com Skills, gere os clipes no seu gerador de vídeo preferido (Google Flow, Runway, Luma, Kling etc.) e depois monte tudo no CapCut ou Premiere. | Roda em agentes como **Codex e Claude Code**, capazes de ler e gravar arquivos, usar ferramentas e executar comandos para conectar a geração de materiais à montagem local. |
 | **Visual** | **Animação gerada por trecho:** foco em ações, direção de câmera e interação entre personagens. | **Cenas ilustradas + microanimações:** cortes, aproximações e movimentos de câmera acompanham a narração, sem precisar gerar uma animação completa para cada trecho. |
 | **Entrega** | Proposta de direção, storyboard, prompts de vídeo por trecho e design de som. | **Arquivo de vídeo completo, com narração, legendas e microanimações.** |
-| **Começar** | <div align="center"><a href="#director-start">Usar o modo Director</a></div> | <div align="center"><a href="#autopilot-start">Usar o modo Autopilot</a></div> |
 
 Os dois fluxos podem começar com um tema inicial, um link da web ou um roteiro completo. Escolha livremente a proporção de tela (9:16, 16:9, 1:1), o idioma da narração e a voz. As durações acima são recomendações, não limites rígidos.
 
@@ -116,7 +115,7 @@ Os dois fluxos podem começar com um tema inicial, um link da web ou um roteiro 
 <!-- project-sponsor:start -->
 <a id="project-sponsor"></a>
 
-#### Parceiros de API
+#### Parceiros de API · [Apoie este projeto ↗](https://telegram.me/CrazyKaomei)
 
 <table>
 <tr>
@@ -126,6 +125,10 @@ Os dois fluxos podem começar com um tema inicial, um link da web ou um roteiro 
 <tr>
 <td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
 <td><p>A APIMart é uma plataforma de API de baixo custo para geração de imagens e vídeos com IA — GPT-Image-2 a partir de US$ 0,006 por imagem, mais de 160 imagens por dólar. Uma API assíncrona atende imagem e vídeo: envie a tarefa, receba um ID e obtenha os resultados por consulta periódica ou callback. Gere dezenas de milhares de imagens em lote sem timeout e troque de modelo sem alterar o código. Pagamento por uso, sem mensalidade — <a href="https://go.apimart.ai/tw-stickman-video-director">cadastre-se aqui</a> para começar.</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-renoise"></a><a href="https://renoise.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@5f5985c73757a643925e06cd010767684c1e926a/assets/sponsors/renoise.png" alt="Renoise" width="64"><br><strong>Renoise</strong></a></td>
+<td><p>O Renoise AI é uma plataforma completa de criação de vídeos e imagens com IA para profissionais de marketing, publicidade e criadores de conteúdo. Uma única assinatura dá acesso a mais de 40 modelos de ponta, incluindo Seedance, Kling, Wan e GPT Image, com novos modelos adicionados em até 24 horas após o lançamento. Explique ao agente o que você precisa em linguagem natural: ele escreve os prompts, planeja as cenas e gera vídeos em lote, mantendo a consistência dos personagens e produtos entre as tomadas.</p><p>Crie pela web ou pelos apps para iOS e Android, ou conecte o Renoise ao Claude, ChatGPT e Codex via MCP e plugins para gerar conteúdo, acompanhar o progresso e ver os resultados na conversa. Nos ambientes de agente com suporte à edição, você também pode transformar vários clipes em um vídeo finalizado com legendas, motion graphics e música sincronizada com as batidas. <a href="https://renoise.ai/">Explore o Renoise</a> para conhecer os modelos e as ferramentas de criação.</p></td>
 </tr>
 </table>
 
@@ -613,9 +616,11 @@ Estamos treinando novos motores especializados para os nichos mais pedidos de ca
 - **Podcast com dois microfones e stand-up** — Comédia de diálogo ágil, reaproveitamento de entrevistas e troca de provocações entre personagens
 - **Mistérios da internet e lendas urbanas** — Esboços a lápis sinistros, falhas analógicas e histórias de mistério do Reddit
 
+<a id="community"></a>
+
 ## 💬 Comunidade e envios
 
-Quer sugerir um estilo ou ter seu canal em destaque? Mande uma mensagem para **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** no Telegram:
+Tem uma ideia de estilo ou quer ganhar destaque? Entre na nossa [comunidade do Telegram](https://telegram.me/stickmanskill):
 
 - **Pedir um estilo**: envie um link de referência visual + o nicho que você quer abordar.
 - **Aparecer em destaque**: fez um vídeo com esta ferramenta? Envie o link para exibição neste README e no nosso canal oficial do YouTube!

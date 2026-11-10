@@ -87,7 +87,7 @@
 
 ⭐ **프로젝트에 Star를 눌러 다음 스타일과 새 기능 공개를 확인하세요.**
 
-[시작하기](#quick-start) · [Director 스타일](#a-styles) · [Autopilot 스타일](#b-styles) · [자주 묻는 질문](#faq) · [로드맵](#road-to-10000-stars--creator-ecosystem)
+[시작하기](#quick-start) · [스타일·샘플 영상](#style-gallery) · [자주 묻는 질문](#faq) · [로드맵](#road-to-10000-stars--creator-ecosystem) · [커뮤니티](#community)
 
 </div>
 
@@ -104,7 +104,6 @@
 | **필요한 환경** | Skill 호환 AI 어시스턴트로 기획하고, 선호하는 영상 생성 도구(Google Flow, Runway, Luma, Kling 등)에서 클립을 생성한 뒤 CapCut이나 Premiere로 편집하세요. | **Codex, Claude Code**처럼 파일을 읽고 쓰고, 도구를 호출하고, 명령을 실행할 수 있는 AI 에이전트에서 소재 생성과 로컬 영상 합성을 연결합니다. |
 | **화면 구성** | **구간별 애니메이션 생성**: 인물의 동작, 카메라 연출, 캐릭터 간 상호작용을 중시합니다. | **일러스트 스토리보드＋부분 애니메이션**: 장면 전환, 줌, 팬을 내레이션에 맞춰 구성합니다. 매번 전체 동작 영상을 생성하지 않아도 이야기를 전할 수 있습니다. |
 | **결과물** | 연출 기획안, 스토리보드, 구간별 영상 프롬프트, 사운드 디자인. | **내레이션·자막·부분 애니메이션이 포함된 완성 영상 파일**. |
-| **시작하기** | <div align="center"><a href="#director-start">Director 모드 사용하기</a></div> | <div align="center"><a href="#autopilot-start">Autopilot 모드 사용하기</a></div> |
 
 두 워크플로 모두 간단한 주제, 웹 링크 또는 완성된 대본으로 시작할 수 있습니다. 화면 비율(9:16, 16:9, 1:1), 내레이션 언어, 음성을 자유롭게 선택하세요. 위의 영상 길이는 권장 사항이며 엄격한 제한이 아닙니다.
 
@@ -116,7 +115,7 @@
 <!-- project-sponsor:start -->
 <a id="project-sponsor"></a>
 
-#### API 파트너
+#### API 파트너 · [이 프로젝트 후원하기 ↗](https://telegram.me/CrazyKaomei)
 
 <table>
 <tr>
@@ -126,6 +125,10 @@
 <tr>
 <td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
 <td><p>APIMart는 AI 이미지·영상 생성에 특화된 저가 API 플랫폼입니다. GPT-Image-2는 장당 $0.006부터, 1달러로 160장 이상 생성할 수 있습니다. 이미지와 영상을 하나의 비동기 API로 처리하며, 작업을 제출해 ID를 받고 폴링이나 콜백으로 결과를 가져옵니다. 수만 장을 일괄 생성해도 타임아웃 없이 처리하고, 모델을 바꿔도 코드를 변경할 필요가 없습니다. 월 요금 없이 사용량만큼 결제합니다. <a href="https://go.apimart.ai/tw-stickman-video-director">가입 링크</a> 에서 등록하고 시작하세요.</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-renoise"></a><a href="https://renoise.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@5f5985c73757a643925e06cd010767684c1e926a/assets/sponsors/renoise.png" alt="Renoise" width="64"><br><strong>Renoise</strong></a></td>
+<td><p>Renoise AI는 마케팅·광고 담당자와 콘텐츠 크리에이터를 위한 올인원 AI 영상·이미지 제작 플랫폼입니다. 구독 하나로 Seedance, Kling, Wan, GPT Image 등 40개 이상의 주요 모델을 이용할 수 있으며, 새 모델은 출시 후 24시간 이내에 추가됩니다. 원하는 것을 일상적인 말로 에이전트에게 설명하면 프롬프트 작성부터 장면 구성, 영상 일괄 생성까지 맡길 수 있고, 장면이 바뀌어도 캐릭터와 제품의 일관성을 유지할 수 있습니다.</p><p>웹과 iOS·Android 앱에서 바로 제작하거나 MCP와 플러그인을 통해 Claude, ChatGPT, Codex에 연결해 대화 안에서 콘텐츠를 생성하고 진행 상황과 결과를 확인할 수 있습니다. 편집을 지원하는 에이전트 환경에서는 여러 클립에 자막, 모션 그래픽, 비트에 맞춘 음악을 더해 하나의 완성된 영상으로 만들 수도 있습니다. <a href="https://renoise.ai/">Renoise 공식 사이트</a>에서 모델과 제작 도구를 살펴보세요.</p></td>
 </tr>
 </table>
 
@@ -607,9 +610,11 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 - **투 마이크 팟캐스트와 스탠드업** — 빠른 대화 코미디, 인터뷰 재구성, 캐릭터 간 티키타카
 - **인터넷 미스터리와 도시 전설** — 으스스한 연필 스케치, 아날로그 글리치, Reddit 미스터리 이야기
 
+<a id="community"></a>
+
 ## 💬 커뮤니티와 작품 제출
 
-새로운 스타일을 제안하거나 채널을 소개하고 싶으신가요? Telegram의 **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** 로 연락해 주세요:
+스타일 아이디어가 있거나 작품을 소개하고 싶으신가요? [Telegram 커뮤니티](https://telegram.me/stickmanskill)에 참여하세요:
 
 - **스타일 요청**: 시각적 참고 링크 + 다루고 싶은 분야를 보내 주세요.
 - **작품 소개**: 이 도구로 영상을 만드셨나요? 링크를 보내 주시면 이 README와 공식 YouTube 채널에서 소개할 수 있습니다!

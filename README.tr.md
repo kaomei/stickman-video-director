@@ -87,7 +87,7 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 
 ⭐ **Bir sonraki stil paketini ve yeni özellikleri kaçırmamak için projeye yıldız verin.**
 
-[Başlayın](#quick-start) · [Director Stilleri](#a-styles) · [Autopilot Stilleri](#b-styles) · [Sık sorulan sorular](#faq) · [Yol haritası](#road-to-10000-stars--creator-ecosystem)
+[Başlayın](#quick-start) · [Stiller ve Demolar](#style-gallery) · [Sık sorulan sorular](#faq) · [Yol haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)
 
 </div>
 
@@ -104,7 +104,6 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 | **Araçlar** | Skill uyumlu bir yapay zekâ asistanıyla planlayın, klipleri tercih ettiğiniz video üreticisinde (Google Flow, Runway, Luma, Kling vb.) oluşturun, ardından CapCut veya Premiere’de birleştirin. | **Codex veya Claude Code** gibi dosya okuyup yazabilen, araç kullanabilen ve komut çalıştırabilen bir yapay zekâ kodlama ajanı; medya üretimini yerel video birleştirmeyle buluşturur. |
 | **Görsel anlatım** | **Bölüm bölüm üretilen animasyonlar**: karakter hareketleri, kamera düzeni ve karakterler arası etkileşim ön plandadır. | **Çizimli sahne planı + mikro animasyon**: kesmeler, yakınlaşmalar ve kaydırmalar anlatıcıyı takip eder; her bölüm için baştan sona hareketli video üretmek gerekmez. |
 | **Çıktı** | Yönetmen önerisi, sahne planı, bölüm bazında video istemleri ve ses tasarımı. | **Seslendirme, altyazı ve mikro animasyon içeren eksiksiz video dosyası.** |
-| **Başlangıç** | <div align="center"><a href="#director-start">Director ile başlayın</a></div> | <div align="center"><a href="#autopilot-start">Autopilot ile başlayın</a></div> |
 
 Her iki iş akışı da ham bir konu, web bağlantısı veya tam bir senaryoyla başlayabilir. En-boy oranını (9:16, 16:9, 1:1), anlatım dilini ve seslendirmeyi özgürce seçin. Yukarıdaki süreler öneridir, kesin sınırlar değildir.
 
@@ -116,7 +115,7 @@ Her iki iş akışı da ham bir konu, web bağlantısı veya tam bir senaryoyla 
 <!-- project-sponsor:start -->
 <a id="project-sponsor"></a>
 
-#### API İş Ortakları
+#### API İş Ortakları · [Bu projeyi destekleyin ↗](https://telegram.me/CrazyKaomei)
 
 <table>
 <tr>
@@ -126,6 +125,10 @@ Her iki iş akışı da ham bir konu, web bağlantısı veya tam bir senaryoyla 
 <tr>
 <td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
 <td><p>APIMart, yapay zekâyla görsel ve video üretimine odaklanan düşük maliyetli bir API platformudur. GPT-Image-2 görsel başına 0,006 dolardan başlar; 1 dolarla 160’tan fazla görsel üretilebilir. Tek bir asenkron API hem görseli hem videoyu kapsar: görevi gönderin, bir kimlik alın, sonuçları sorgulama veya callback ile getirin. On binlerce görseli zaman aşımı olmadan toplu üretin, kodu değiştirmeden model değiştirin. Aylık ücret yok, kullandıkça ödeyin — <a href="https://go.apimart.ai/tw-stickman-video-director">buradan kaydolun</a> ve kullanmaya başlayın.</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-renoise"></a><a href="https://renoise.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@5f5985c73757a643925e06cd010767684c1e926a/assets/sponsors/renoise.png" alt="Renoise" width="64"><br><strong>Renoise</strong></a></td>
+<td><p>Renoise AI, pazarlama ve reklam profesyonelleri ile içerik üreticileri için hepsi bir arada bir yapay zekâ video ve görsel üretim platformudur. Tek abonelikle Seedance, Kling, Wan ve GPT Image dâhil 40’tan fazla önde gelen modele erişebilir; yeni modelleri yayınlandıktan sonraki 24 saat içinde kullanabilirsiniz. İhtiyacınızı günlük dille ajana anlatın: istemleri yazar, çekimleri planlar ve videoları toplu olarak üretirken karakterlerin ve ürünlerin çekimler arasındaki tutarlılığını korur.</p><p>Web’de veya iOS ve Android uygulamalarında üretim yapın; MCP ve eklentilerle Claude, ChatGPT ve Codex’e bağlanarak sohbet içinde içerik oluşturun, ilerlemeyi takip edin ve sonuçları görüntüleyin. Düzenlemeyi destekleyen ajan ortamlarında birden fazla klibi altyazılar, hareketli grafikler ve ritme senkronize müzikle tamamlanmış bir videoya da dönüştürebilirsiniz. <a href="https://renoise.ai/">Renoise’ı keşfedin</a> ve modellerini, yaratıcı araçlarını inceleyin.</p></td>
 </tr>
 </table>
 
@@ -608,9 +611,11 @@ Yüz göstermeyen YouTube kanallarında en çok talep edilen nişler için yeni 
 - **İki mikrofonlu podcast ve stand-up** — Hızlı diyalog komedisi, röportajları yeniden işleme ve karakter atışmaları
 - **İnternet gizemleri ve şehir efsaneleri** — Ürkütücü kurşun kalem çizimleri, analog bozulmalar ve Reddit gizem hikâyeleri
 
+<a id="community"></a>
+
 ## 💬 Topluluk ve eser gönderimi
 
-Bir stil önermek veya kanalınızın tanıtılmasını mı istiyorsunuz? Telegram’da **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** hesabına mesaj gönderin:
+Bir stil fikriniz mi var veya öne çıkmak mı istiyorsunuz? [Telegram topluluğumuza](https://telegram.me/stickmanskill) katılın:
 
 - **Stil isteyin**: görsel referans bağlantısını + ele almak istediğiniz nişi gönderin.
 - **Eserinizi tanıtalım**: bu araçla video mu yaptınız? Bu README’de ve resmî YouTube kanalımızda sergilenmesi için bağlantısını gönderin!
