@@ -1,0 +1,884 @@
+{
+  "duration": 63.53333333333333,
+  "language": "en",
+  "words": [
+    {
+      "text": "Jensen",
+      "start": 0.0,
+      "end": 0.5,
+      "screen": "Jensen"
+    },
+    {
+      "text": "Huang",
+      "start": 0.5,
+      "end": 0.82,
+      "screen": "Huang"
+    },
+    {
+      "text": "admitted",
+      "start": 0.82,
+      "end": 1.38,
+      "screen": "admitted"
+    },
+    {
+      "text": "cheating.",
+      "start": 1.38,
+      "end": 1.78,
+      "screen": "cheating"
+    },
+    {
+      "text": "The",
+      "start": 2.4,
+      "end": 2.46,
+      "screen": "The"
+    },
+    {
+      "text": "woman",
+      "start": 2.46,
+      "end": 2.68,
+      "screen": "woman"
+    },
+    {
+      "text": "linked",
+      "start": 2.68,
+      "end": 2.98,
+      "screen": "linked"
+    },
+    {
+      "text": "to",
+      "start": 2.98,
+      "end": 3.14,
+      "screen": "to"
+    },
+    {
+      "text": "him",
+      "start": 3.14,
+      "end": 3.22,
+      "screen": "him"
+    },
+    {
+      "text": "in",
+      "start": 3.22,
+      "end": 3.32,
+      "screen": "in"
+    },
+    {
+      "text": "reports?",
+      "start": 3.32,
+      "end": 3.66,
+      "screen": "reports"
+    },
+    {
+      "text": "An",
+      "start": 4.28,
+      "end": 4.46,
+      "screen": "An"
+    },
+    {
+      "text": "executive",
+      "start": 4.46,
+      "end": 4.86,
+      "screen": "executive"
+    },
+    {
+      "text": "at",
+      "start": 4.86,
+      "end": 5.12,
+      "screen": "at"
+    },
+    {
+      "text": "one",
+      "start": 5.12,
+      "end": 5.28,
+      "screen": "one"
+    },
+    {
+      "text": "of",
+      "start": 5.28,
+      "end": 5.38,
+      "screen": "of"
+    },
+    {
+      "text": "Nvidia's",
+      "start": 5.38,
+      "end": 5.86,
+      "screen": "Nvidia's"
+    },
+    {
+      "text": "customers.",
+      "start": 5.86,
+      "end": 6.18,
+      "screen": "customers"
+    },
+    {
+      "text": "Suddenly,",
+      "start": 7.08,
+      "end": 7.46,
+      "screen": "Suddenly"
+    },
+    {
+      "text": "\"customer",
+      "start": 7.94,
+      "end": 8.28,
+      "screen": "\"customer"
+    },
+    {
+      "text": "relations\"",
+      "start": 8.28,
+      "end": 8.76,
+      "screen": "relations\""
+    },
+    {
+      "text": "is",
+      "start": 8.76,
+      "end": 9.12,
+      "screen": "is"
+    },
+    {
+      "text": "a",
+      "start": 9.12,
+      "end": 9.22,
+      "screen": "a"
+    },
+    {
+      "text": "very",
+      "start": 9.22,
+      "end": 9.5,
+      "screen": "very"
+    },
+    {
+      "text": "awkward",
+      "start": 9.5,
+      "end": 9.92,
+      "screen": "awkward"
+    },
+    {
+      "text": "phrase.",
+      "start": 9.92,
+      "end": 10.32,
+      "screen": "phrase"
+    },
+    {
+      "text": "Her",
+      "start": 11.12,
+      "end": 11.24,
+      "screen": "Her"
+    },
+    {
+      "text": "name",
+      "start": 11.24,
+      "end": 11.46,
+      "screen": "name"
+    },
+    {
+      "text": "is",
+      "start": 11.46,
+      "end": 11.64,
+      "screen": "is"
+    },
+    {
+      "text": "Alice",
+      "start": 11.64,
+      "end": 11.98,
+      "screen": "Alice"
+    },
+    {
+      "text": "Huang.",
+      "start": 11.98,
+      "end": 12.3,
+      "screen": "Huang"
+    },
+    {
+      "text": "She",
+      "start": 12.82,
+      "end": 12.94,
+      "screen": "She"
+    },
+    {
+      "text": "worked",
+      "start": 12.94,
+      "end": 13.14,
+      "screen": "worked"
+    },
+    {
+      "text": "at",
+      "start": 13.14,
+      "end": 13.32,
+      "screen": "at"
+    },
+    {
+      "text": "Singapore-based",
+      "start": 13.32,
+      "end": 14.04,
+      "screen": "Singapore-based"
+    },
+    {
+      "text": "Megaspeed.",
+      "start": 14.04,
+      "end": 14.86,
+      "screen": "Megaspeed"
+    },
+    {
+      "text": "Photos",
+      "start": 16.02,
+      "end": 16.66,
+      "screen": "Photos"
+    },
+    {
+      "text": "put",
+      "start": 16.66,
+      "end": 16.84,
+      "screen": "put"
+    },
+    {
+      "text": "them",
+      "start": 16.84,
+      "end": 17.0,
+      "screen": "them"
+    },
+    {
+      "text": "at",
+      "start": 17.0,
+      "end": 17.1,
+      "screen": "at"
+    },
+    {
+      "text": "a",
+      "start": 17.1,
+      "end": 17.2,
+      "screen": "a"
+    },
+    {
+      "text": "Taipei",
+      "start": 17.2,
+      "end": 17.58,
+      "screen": "Taipei"
+    },
+    {
+      "text": "bar",
+      "start": 17.58,
+      "end": 17.92,
+      "screen": "bar"
+    },
+    {
+      "text": "in",
+      "start": 17.92,
+      "end": 18.16,
+      "screen": "in"
+    },
+    {
+      "text": "2024,",
+      "start": 18.16,
+      "end": 18.92,
+      "screen": "2024"
+    },
+    {
+      "text": "alongside",
+      "start": 19.4,
+      "end": 19.84,
+      "screen": "alongside"
+    },
+    {
+      "text": "other",
+      "start": 19.84,
+      "end": 20.36,
+      "screen": "other"
+    },
+    {
+      "text": "tech",
+      "start": 20.36,
+      "end": 20.62,
+      "screen": "tech"
+    },
+    {
+      "text": "executives.",
+      "start": 20.62,
+      "end": 21.1,
+      "screen": "executives"
+    },
+    {
+      "text": "Later,",
+      "start": 21.82,
+      "end": 22.1,
+      "screen": "Later"
+    },
+    {
+      "text": "she",
+      "start": 22.5,
+      "end": 22.68,
+      "screen": "she"
+    },
+    {
+      "text": "appeared",
+      "start": 22.68,
+      "end": 23.02,
+      "screen": "appeared"
+    },
+    {
+      "text": "at",
+      "start": 23.02,
+      "end": 23.24,
+      "screen": "at"
+    },
+    {
+      "text": "another",
+      "start": 23.24,
+      "end": 23.48,
+      "screen": "another"
+    },
+    {
+      "text": "business",
+      "start": 23.48,
+      "end": 23.82,
+      "screen": "business"
+    },
+    {
+      "text": "dinner.",
+      "start": 23.82,
+      "end": 24.18,
+      "screen": "dinner"
+    },
+    {
+      "text": "Now",
+      "start": 24.92,
+      "end": 25.16,
+      "screen": "Now"
+    },
+    {
+      "text": "those",
+      "start": 25.16,
+      "end": 25.42,
+      "screen": "those"
+    },
+    {
+      "text": "old",
+      "start": 25.42,
+      "end": 25.72,
+      "screen": "old"
+    },
+    {
+      "text": "pictures",
+      "start": 25.72,
+      "end": 26.06,
+      "screen": "pictures"
+    },
+    {
+      "text": "are",
+      "start": 26.06,
+      "end": 26.3,
+      "screen": "are"
+    },
+    {
+      "text": "getting",
+      "start": 26.3,
+      "end": 26.46,
+      "screen": "getting"
+    },
+    {
+      "text": "a",
+      "start": 26.46,
+      "end": 26.64,
+      "screen": "a"
+    },
+    {
+      "text": "very",
+      "start": 26.64,
+      "end": 26.9,
+      "screen": "very"
+    },
+    {
+      "text": "different",
+      "start": 26.9,
+      "end": 27.26,
+      "screen": "different"
+    },
+    {
+      "text": "kind",
+      "start": 27.26,
+      "end": 27.56,
+      "screen": "kind"
+    },
+    {
+      "text": "of",
+      "start": 27.56,
+      "end": 27.72,
+      "screen": "of"
+    },
+    {
+      "text": "attention.",
+      "start": 27.72,
+      "end": 28.06,
+      "screen": "attention"
+    },
+    {
+      "text": "The",
+      "start": 28.79,
+      "end": 28.88,
+      "screen": "The"
+    },
+    {
+      "text": "photos",
+      "start": 28.88,
+      "end": 29.16,
+      "screen": "photos"
+    },
+    {
+      "text": "don't",
+      "start": 29.16,
+      "end": 29.6,
+      "screen": "don't"
+    },
+    {
+      "text": "prove",
+      "start": 29.6,
+      "end": 29.86,
+      "screen": "prove"
+    },
+    {
+      "text": "a",
+      "start": 29.86,
+      "end": 29.96,
+      "screen": "a"
+    },
+    {
+      "text": "romance.",
+      "start": 29.96,
+      "end": 30.34,
+      "screen": "romance"
+    },
+    {
+      "text": "Huang's",
+      "start": 30.96,
+      "end": 31.54,
+      "screen": "Huang's"
+    },
+    {
+      "text": "apology",
+      "start": 31.54,
+      "end": 31.94,
+      "screen": "apology"
+    },
+    {
+      "text": "admits",
+      "start": 31.94,
+      "end": 32.4,
+      "screen": "admits"
+    },
+    {
+      "text": "infidelity,",
+      "start": 32.4,
+      "end": 33.0,
+      "screen": "infidelity"
+    },
+    {
+      "text": "but",
+      "start": 33.0,
+      "end": 33.58,
+      "screen": "but"
+    },
+    {
+      "text": "doesn't",
+      "start": 33.58,
+      "end": 33.9,
+      "screen": "doesn't"
+    },
+    {
+      "text": "name",
+      "start": 33.9,
+      "end": 34.12,
+      "screen": "name"
+    },
+    {
+      "text": "her.",
+      "start": 34.12,
+      "end": 34.32,
+      "screen": "her"
+    },
+    {
+      "text": "The",
+      "start": 34.98,
+      "end": 35.16,
+      "screen": "The"
+    },
+    {
+      "text": "plot",
+      "start": 35.16,
+      "end": 35.38,
+      "screen": "plot"
+    },
+    {
+      "text": "twist?",
+      "start": 35.38,
+      "end": 35.62,
+      "screen": "twist"
+    },
+    {
+      "text": "Before",
+      "start": 36.24,
+      "end": 36.48,
+      "screen": "Before"
+    },
+    {
+      "text": "his",
+      "start": 36.48,
+      "end": 36.74,
+      "screen": "his"
+    },
+    {
+      "text": "apology,",
+      "start": 36.74,
+      "end": 37.2,
+      "screen": "apology"
+    },
+    {
+      "text": "three",
+      "start": 37.54,
+      "end": 37.7,
+      "screen": "three"
+    },
+    {
+      "text": "House",
+      "start": 37.7,
+      "end": 38.02,
+      "screen": "House"
+    },
+    {
+      "text": "committee",
+      "start": 38.02,
+      "end": 38.28,
+      "screen": "committee"
+    },
+    {
+      "text": "chairs",
+      "start": 38.28,
+      "end": 38.66,
+      "screen": "chairs"
+    },
+    {
+      "text": "were",
+      "start": 38.66,
+      "end": 38.9,
+      "screen": "were"
+    },
+    {
+      "text": "already",
+      "start": 38.9,
+      "end": 39.32,
+      "screen": "already"
+    },
+    {
+      "text": "asking",
+      "start": 39.32,
+      "end": 39.68,
+      "screen": "asking"
+    },
+    {
+      "text": "about",
+      "start": 39.68,
+      "end": 39.96,
+      "screen": "about"
+    },
+    {
+      "text": "his",
+      "start": 39.96,
+      "end": 40.16,
+      "screen": "his"
+    },
+    {
+      "text": "interactions",
+      "start": 40.16,
+      "end": 40.72,
+      "screen": "interactions"
+    },
+    {
+      "text": "with",
+      "start": 40.72,
+      "end": 41.02,
+      "screen": "with"
+    },
+    {
+      "text": "Alice,",
+      "start": 41.02,
+      "end": 41.3,
+      "screen": "Alice"
+    },
+    {
+      "text": "following",
+      "start": 41.64,
+      "end": 41.96,
+      "screen": "following"
+    },
+    {
+      "text": "reports",
+      "start": 41.96,
+      "end": 42.4,
+      "screen": "reports"
+    },
+    {
+      "text": "alleging",
+      "start": 42.4,
+      "end": 42.9,
+      "screen": "alleging"
+    },
+    {
+      "text": "Chinese",
+      "start": 42.9,
+      "end": 43.24,
+      "screen": "Chinese"
+    },
+    {
+      "text": "intelligence",
+      "start": 43.24,
+      "end": 43.84,
+      "screen": "intelligence"
+    },
+    {
+      "text": "ties.",
+      "start": 43.84,
+      "end": 44.24,
+      "screen": "ties"
+    },
+    {
+      "text": "Those",
+      "start": 45.18,
+      "end": 45.4,
+      "screen": "Those"
+    },
+    {
+      "text": "claims",
+      "start": 45.4,
+      "end": 45.8,
+      "screen": "claims"
+    },
+    {
+      "text": "aren't",
+      "start": 45.8,
+      "end": 46.16,
+      "screen": "aren't"
+    },
+    {
+      "text": "established",
+      "start": 46.16,
+      "end": 46.6,
+      "screen": "established"
+    },
+    {
+      "text": "findings.",
+      "start": 46.6,
+      "end": 47.06,
+      "screen": "findings"
+    },
+    {
+      "text": "Nvidia's",
+      "start": 47.98,
+      "end": 48.54,
+      "screen": "Nvidia's"
+    },
+    {
+      "text": "board",
+      "start": 48.54,
+      "end": 48.78,
+      "screen": "board"
+    },
+    {
+      "text": "says",
+      "start": 48.78,
+      "end": 49.12,
+      "screen": "says"
+    },
+    {
+      "text": "it",
+      "start": 49.12,
+      "end": 49.52,
+      "screen": "it"
+    },
+    {
+      "text": "has",
+      "start": 49.52,
+      "end": 49.72,
+      "screen": "has"
+    },
+    {
+      "text": "no",
+      "start": 49.72,
+      "end": 49.96,
+      "screen": "no"
+    },
+    {
+      "text": "reason",
+      "start": 49.96,
+      "end": 50.28,
+      "screen": "reason"
+    },
+    {
+      "text": "to",
+      "start": 50.28,
+      "end": 50.46,
+      "screen": "to"
+    },
+    {
+      "text": "believe",
+      "start": 50.46,
+      "end": 50.74,
+      "screen": "believe"
+    },
+    {
+      "text": "company",
+      "start": 50.74,
+      "end": 51.14,
+      "screen": "company"
+    },
+    {
+      "text": "secrets",
+      "start": 51.14,
+      "end": 51.58,
+      "screen": "secrets"
+    },
+    {
+      "text": "were",
+      "start": 51.58,
+      "end": 51.8,
+      "screen": "were"
+    },
+    {
+      "text": "compromised.",
+      "start": 51.8,
+      "end": 52.32,
+      "screen": "compromised"
+    },
+    {
+      "text": "But",
+      "start": 53.04,
+      "end": 53.36,
+      "screen": "But"
+    },
+    {
+      "text": "it's",
+      "start": 53.36,
+      "end": 53.54,
+      "screen": "it's"
+    },
+    {
+      "text": "launched",
+      "start": 53.54,
+      "end": 53.84,
+      "screen": "launched"
+    },
+    {
+      "text": "an",
+      "start": 53.84,
+      "end": 54.02,
+      "screen": "an"
+    },
+    {
+      "text": "independent",
+      "start": 54.02,
+      "end": 54.54,
+      "screen": "independent"
+    },
+    {
+      "text": "investigation.",
+      "start": 54.54,
+      "end": 55.4,
+      "screen": "investigation"
+    },
+    {
+      "text": "Most",
+      "start": 56.36,
+      "end": 56.56,
+      "screen": "Most"
+    },
+    {
+      "text": "cheating",
+      "start": 56.56,
+      "end": 56.88,
+      "screen": "cheating"
+    },
+    {
+      "text": "scandals",
+      "start": 56.88,
+      "end": 57.48,
+      "screen": "scandals"
+    },
+    {
+      "text": "get",
+      "start": 57.48,
+      "end": 57.66,
+      "screen": "get"
+    },
+    {
+      "text": "an",
+      "start": 57.66,
+      "end": 57.78,
+      "screen": "an"
+    },
+    {
+      "text": "apology",
+      "start": 57.78,
+      "end": 58.12,
+      "screen": "apology"
+    },
+    {
+      "text": "post.",
+      "start": 58.12,
+      "end": 58.52,
+      "screen": "post"
+    },
+    {
+      "text": "This",
+      "start": 59.2,
+      "end": 59.32,
+      "screen": "This"
+    },
+    {
+      "text": "one",
+      "start": 59.32,
+      "end": 59.52,
+      "screen": "one"
+    },
+    {
+      "text": "got",
+      "start": 59.52,
+      "end": 59.72,
+      "screen": "got"
+    },
+    {
+      "text": "lawyers.",
+      "start": 59.72,
+      "end": 60.08,
+      "screen": "lawyers"
+    },
+    {
+      "text": "Would",
+      "start": 60.9,
+      "end": 61.08,
+      "screen": "Would"
+    },
+    {
+      "text": "you",
+      "start": 61.08,
+      "end": 61.22,
+      "screen": "you"
+    },
+    {
+      "text": "watch",
+      "start": 61.22,
+      "end": 61.46,
+      "screen": "watch"
+    },
+    {
+      "text": "the",
+      "start": 61.46,
+      "end": 61.6,
+      "screen": "the"
+    },
+    {
+      "text": "documentary?",
+      "start": 61.6,
+      "end": 62.04,
+      "screen": "documentary"
+    }
+  ],
+  "alignment_method": "Actual offline MLX Whisper word timestamps; exact normalized script match. Singapore-based merges adjacent tokens. Sentence-initial long tokens refined only across measured silence; no even redistribution. Original voice; no trim, rate or pitch alteration.",
+  "recorded_audio": true
+}

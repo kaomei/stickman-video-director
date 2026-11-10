@@ -14,13 +14,15 @@ Keep the existing installation/name. Honor known choices; ask one short question
 - **B · Autopilot:** read [Autopilot](references/autopilot.md), then B1 [Minimal Line Art](references/b1-minimal-handdrawn.md), B2 [Colorful Hand-Drawn](references/b2-colorful-handdrawn.md), or B3 [Retro TV](references/b3-television.md). A finished local video includes narration, semantic captions, illustrations, meaningful motion and SFX. Inspect B3's bundled implementation examples before authoring; original-video excerpts are not redistributed. Disclose missing private-original comparison rather than treating accepted examples as the style authority.
 - **B4 · Survival Thriller:** read [B4](references/b4-survival-storytelling.md), [audio direction](references/b4-audio-direction.md), [opening direction](references/b4-opening-direction.md) and [production check](references/b4-repeatability-check.md). Preserve the white-glove reference lock; limb animation is not a completion requirement. Apply the first-three-second visual escalation gate and, for horror, the story-led horror visibility gate. Use fixed Brian, first-frame sound/early narration, a subtle continuous bed and causal SFX. Select B4 in the shared installed runtime. No silent title pad, automatic narrator substitution or alias to another style.
 
-- **B5 · Character Explainer:** read [B5](references/b5-character-explainer.md) for avatar approval, physical comedy, sound and code rendering; no B1–B4 alias.
+- **B5 · Character Explainer:** read [B5](references/b5-character-explainer.md) and [left-stage choreography](references/b5-left-stage-motion.md) before authoring. No B1–B4 alias.
 
 A and B share installation, not production contracts. The rules from **A · Director** to the end apply only to A1–A5, not to A6 or any B style. Each B owns its visuals, captions, voice, pacing and SFX; never default to B1 or import A's setup, ten-second clips, approval or visible-text rules. Preserve unrelated styles when revising one route.
 
 B supports topics, promotion briefs, posts, articles and scripts. English narration is default; explicit language/voice choices prevail. Follow [selected-provider execution](references/autopilot.md#selected-provider-execution) before declaring a non-default service unsupported: a missing bundled adapter is not a provider prohibition. Use the selected native named TTS voice without added voice/style descriptions by default; B4 permits story-motivated secondary-role acting, not automatic narrator tuning. Read the required [story-led sound system](references/autopilot-sound-system.md). Never automatically revoice accepted media.
 
-B1–B4 captions are single-line; B5 permits up to three semantic lines. Preserve meaning and speech pauses; split overlong cues semantically, not by fixed word counts or smaller type. Check encoded frames and sidecars under the [common caption gate](references/autopilot-production-qa.md#natural-captions-and-semantic-sound). A is unchanged.
+Captions: B1–B4 single-line; B5 up to three semantic lines. Apply the [common gate](references/autopilot-production-qa.md#natural-captions-and-semantic-sound). A unchanged.
+
+All B styles: native **16:9 and 9:16**, under the [dual-format gate](references/autopilot-production-qa.md#native-landscape-and-portrait).
 
 ## First use and next steps
 

@@ -8,6 +8,14 @@ Maintain a compact project-local shot ledger: spoken phrase and actual word time
 
 Make actions, objects, diagrams and marks explain the spoken idea. A control needs visible operation/contact, a choice distinguishable alternatives, and an outcome a visible result. Preserve approved identities while varying acting and viewpoint; do not illustrate every sentence with a recycled presenter/laptop. Time reveals to the corresponding speech, allowing purposeful anticipation/reaction. Pictures follow the real voice; never stretch speech, add dead air or revoice accepted narration to fit a visual template.
 
+## Native landscape and portrait
+
+All B styles must support **16:9 and 9:16**. Honor a request for either ratio or both; resolve an unspecified delivery choice once without silently buying/rendering an extra version. A both-version request shares approved script, original-speed voice, accepted identity and reusable sound/assets, not one fixed composition.
+
+Plan native stage, focal hierarchy, prop paths, typography, captions, presenter placement and platform-safe areas for each ratio. Re-author framing and motion where needed. Do not crop off meaningful actions, scale text to unreadability, stretch proportions, or describe a landscape crop as a validated portrait layout. A B5 portrait must preserve both the explaining stage and presenter without blindly copying its landscape x/y coordinates.
+
+Check representative opening/body/ending frames and actual moving playback in each requested ratio. Record resolution, safe-area/caption checks, action/presenter legibility, motion/contact checks and user-review status separately. Successful landscape encoding or a static avatar approval does not establish portrait capability. Existing untested style/ratio combinations remain explicit development/acceptance gaps; this requirement itself is not evidence they passed. This local rule update grants no new generation, paid calls, public sync or release authority.
+
 ## First 30 seconds: picture, sound and copy together
 
 Give the **first 30 seconds**, or the whole opening when the video is shorter, a dedicated hook pass. Aim to substantially exceed a routine slideshow opening through relevance, clarity and coordinated picture/sound, not faster cuts or louder effects. Plan these beats explicitly in the ledger:
