@@ -1,0 +1,60 @@
+{
+  "id": "b5-jensen-v13-local-20261110",
+  "status": "user_approved_published_reference",
+  "approval": "先把这版正式纳入本地 B5 的基准素材和验收规则，只本地更新，不发布。",
+  "publication_authorized": true,
+  "publication_approval": "可以先发布吧 — 2026-11-10; B5 quality update only",
+  "public_rights_cleared": false,
+  "rights_review_scope": "Finished editorial composite and original code only; no blanket third-party identity, raw audio or provider-rights certification. See README and parent CREDITS.",
+  "scope": "Additional published long-form reference; preserve original Spider-Man baseline",
+  "video": {"path": "approved-sample.mp4", "width": 1920, "height": 1080, "fps": 30, "frames": 1906, "duration": 63.53333333333333},
+  "audio": {
+    "voice": "The Pharaoh 3 - Energetic, Lively & Cheerful",
+    "voice_is_global_b5_default": false,
+    "method": "Exact V12 repaired AAC preserved in V13; no new speech or crying audio",
+    "adts_sha256": "62f8baca315c8128017d062f6d75e1ee2e63eb00332247c1f3d4d63b01bb6913",
+    "fixture_only_repair_seconds": [15.36, 15.64],
+    "apply_repair_times_to_other_stories": false
+  },
+  "presenter": {
+    "identity": "User-approved abstract Jensen illustration, not a voice clone",
+    "emotion_scope": "This story only: all-film miserable/dejected with variable cartoon crying",
+    "all_frame_frown_min": 1.4,
+    "all_frame_eyes_max": 0.75,
+    "inherit_tears_or_sadness_in_new_stories": false,
+    "mouth_source": "Dry speech envelope and word timings; not phoneme-accurate",
+    "face_only_revision_preserves": ["body", "left stage", "captions", "audio"]
+  },
+  "scene": {
+    "entry": "scene/renderer.cjs",
+    "left_cast": "Anonymous code stickmen, not the right-side celebrity",
+    "normal_arm_bones": [86, 84],
+    "normal_leg_bones": [80, 80],
+    "max_numeric_bone_or_grip_error": 0.000001,
+    "account_mark_default": "",
+    "caption_max_lines": 3,
+    "review_regions": [
+      {"seconds": [4, 7.08], "gate": "Untitled cart/office composition uses large complete action, not an empty upper field"},
+      {"seconds": [7.08, 16], "gate": "Handshake drags body; expression and identity beat develop, not one standing pose"},
+      {"seconds": [24.9, 28.8], "gate": "Camera grip, pressure, release, airborne extreme, landing and recovery"},
+      {"seconds": [30.96, 34.98], "gate": "Receipt action readable without redundant heading"},
+      {"seconds": [36.24, 47.98], "gate": "Chairs, envelope and report use different causal action chains"},
+      {"seconds": [47.98, 53.04], "gate": "Vault shot fills untitled stage without shifting presenter/captions"},
+      {"seconds": [56.36, 63.53333333333333], "gate": "Phone to legal case to clapper; readable ending and emotional continuity"}
+    ]
+  },
+  "prior_observed_qa": {
+    "full_video_decode_passed": true,
+    "head_only_scope_samples_passed": 15,
+    "browser_playback_error": null,
+    "audio_identical_to_v12": true,
+    "note": "Observed in source V13 delivery; promotion must independently verify copied bytes and portable runtime. No claim of new physical listening checks."
+  },
+  "generalization": {
+    "new_story_needs_new_action_cards_and_review": true,
+    "new_identity_needs_existing_image_svg_route_and_approval": true,
+    "portrait_validated_by_this_baseline": false,
+    "fixed_prop_sequence_or_facial_preset": false,
+    "documentation_or_numeric_checks_are_creative_approval": false
+  }
+}

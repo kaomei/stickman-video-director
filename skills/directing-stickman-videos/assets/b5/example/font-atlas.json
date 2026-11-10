@@ -502,13 +502,5 @@
     "image_height": 366,
     "baseline": 257,
     "pad": 16
-  },
-  "Instrument-Sans-1.ttf|25|0|#858079|@CrazyKaomei": {
-    "file": "assets/type/76f97013f418fb21ec.png",
-    "width": 183.0,
-    "image_width": 215,
-    "image_height": 69,
-    "baseline": 34,
-    "pad": 16
   }
 }

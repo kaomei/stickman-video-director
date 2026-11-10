@@ -95,7 +95,7 @@ function captions(t){
 }
 function mixColor(a,b,u){return '#'+[1,3,5].map(i=>Math.round(mix(parseInt(a.slice(i,i+2),16),parseInt(b.slice(i,i+2),16),u)).toString(16).padStart(2,'0')).join('')}
 function frame(t){
- let account=imageTile(config.account,'Instrument-Sans-1.ttf',25,gray,112,80,0);
+ let account=config.account?imageTile(config.account,'Instrument-Sans-1.ttf',25,gray,112,80,0):'';
  return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="${paper}"/><image width="${W}" height="${H}" href="${paperURI}" opacity=".48"/>${account}${stage.draw(t,{title,drawStroke})}${presenter(t)}${captions(t)}</svg>`);
 }
 module.exports={frame,presenter,captions,levels,blinks};

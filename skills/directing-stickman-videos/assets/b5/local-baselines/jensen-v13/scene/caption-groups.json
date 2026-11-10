@@ -1,0 +1,590 @@
+[
+  {
+    "lines": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "key": 3,
+    "semantic_unit": "Jensen Huang admitted cheating.",
+    "measured_widths": [
+      398.20000000000005,
+      262.40000000000003,
+      275.40000000000003
+    ]
+  },
+  {
+    "lines": [
+      [
+        4,
+        5,
+        6
+      ],
+      [
+        7,
+        8,
+        9,
+        10
+      ]
+    ],
+    "key": 10,
+    "semantic_unit": "The woman linked to him in reports?",
+    "measured_widths": [
+      525.0000000000001,
+      496.20000000000005
+    ]
+  },
+  {
+    "lines": [
+      [
+        11,
+        12,
+        13
+      ],
+      [
+        14,
+        15,
+        16
+      ],
+      [
+        17
+      ]
+    ],
+    "key": 17,
+    "semantic_unit": "An executive at one of Nvidia's customers.",
+    "measured_widths": [
+      446.80000000000007,
+      411.80000000000007,
+      326.6
+    ]
+  },
+  {
+    "lines": [
+      [
+        18
+      ],
+      [
+        19
+      ],
+      [
+        20
+      ]
+    ],
+    "key": 20,
+    "semantic_unit": "Suddenly, \"customer relations\"",
+    "measured_widths": [
+      269.40000000000003,
+      300.6,
+      297.8
+    ]
+  },
+  {
+    "lines": [
+      [
+        21,
+        22,
+        23,
+        24
+      ],
+      [
+        25
+      ]
+    ],
+    "key": 24,
+    "semantic_unit": "is a very awkward phrase.",
+    "measured_widths": [
+      528.2,
+      195.00000000000003
+    ]
+  },
+  {
+    "lines": [
+      [
+        26,
+        27,
+        28
+      ],
+      [
+        29,
+        30
+      ]
+    ],
+    "key": 29,
+    "semantic_unit": "Her name is Alice Huang.",
+    "measured_widths": [
+      336.00000000000006,
+      368.00000000000006
+    ]
+  },
+  {
+    "lines": [
+      [
+        31,
+        32,
+        33
+      ],
+      [
+        34
+      ],
+      [
+        35
+      ]
+    ],
+    "key": 35,
+    "semantic_unit": "She worked at Singapore-based Megaspeed.",
+    "measured_widths": [
+      411.4000000000001,
+      490.8,
+      353.6
+    ]
+  },
+  {
+    "lines": [
+      [
+        36,
+        37,
+        38
+      ],
+      [
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      [
+        44
+      ]
+    ],
+    "key": 44,
+    "semantic_unit": "Photos put them at a Taipei bar in 2024,",
+    "measured_widths": [
+      481.80000000000007,
+      469.4000000000001,
+      169.60000000000002
+    ]
+  },
+  {
+    "lines": [
+      [
+        45,
+        46
+      ],
+      [
+        47,
+        48
+      ]
+    ],
+    "key": 48,
+    "semantic_unit": "alongside other tech executives.",
+    "measured_widths": [
+      441.80000000000007,
+      473.80000000000007
+    ]
+  },
+  {
+    "lines": [
+      [
+        49,
+        50
+      ],
+      [
+        51
+      ]
+    ],
+    "key": 49,
+    "semantic_unit": "Later, she appeared",
+    "measured_widths": [
+      288.6,
+      269.40000000000003
+    ]
+  },
+  {
+    "lines": [
+      [
+        52,
+        53
+      ],
+      [
+        54,
+        55
+      ]
+    ],
+    "key": 55,
+    "semantic_unit": "at another business dinner.",
+    "measured_widths": [
+      297.80000000000007,
+      468.80000000000007
+    ]
+  },
+  {
+    "lines": [
+      [
+        56,
+        57,
+        58
+      ],
+      [
+        59
+      ]
+    ],
+    "key": 59,
+    "semantic_unit": "Now those old pictures",
+    "measured_widths": [
+      406.4000000000001,
+      256.4000000000001
+    ]
+  },
+  {
+    "lines": [
+      [
+        60,
+        61,
+        62,
+        63
+      ],
+      [
+        64,
+        65,
+        66
+      ],
+      [
+        67
+      ]
+    ],
+    "key": 67,
+    "semantic_unit": "are getting a very different kind of attention.",
+    "measured_widths": [
+      498.40000000000003,
+      456.20000000000005,
+      288.6
+    ]
+  },
+  {
+    "lines": [
+      [
+        68,
+        69,
+        70
+      ],
+      [
+        71,
+        72,
+        73
+      ]
+    ],
+    "key": 71,
+    "semantic_unit": "The photos don't prove a romance.",
+    "measured_widths": [
+      488.0000000000001,
+      502.80000000000007
+    ]
+  },
+  {
+    "lines": [
+      [
+        74,
+        75
+      ],
+      [
+        76,
+        77
+      ]
+    ],
+    "key": 77,
+    "semantic_unit": "Huang's apology admits infidelity,",
+    "measured_widths": [
+      472.80000000000007,
+      479.20000000000005
+    ]
+  },
+  {
+    "lines": [
+      [
+        78,
+        79,
+        80
+      ],
+      [
+        81
+      ]
+    ],
+    "key": 80,
+    "semantic_unit": "but doesn't name her.",
+    "measured_widths": [
+      525.0000000000001,
+      95.4
+    ]
+  },
+  {
+    "lines": [
+      [
+        82,
+        83,
+        84
+      ]
+    ],
+    "key": 84,
+    "semantic_unit": "The plot twist?",
+    "measured_widths": [
+      418.6000000000001
+    ]
+  },
+  {
+    "lines": [
+      [
+        85,
+        86
+      ],
+      [
+        87
+      ]
+    ],
+    "key": 85,
+    "semantic_unit": "Before his apology,",
+    "measured_widths": [
+      305.80000000000007,
+      227.20000000000002
+    ]
+  },
+  {
+    "lines": [
+      [
+        88,
+        89
+      ],
+      [
+        90,
+        91
+      ]
+    ],
+    "key": 91,
+    "semantic_unit": "three House committee chairs",
+    "measured_widths": [
+      345.00000000000006,
+      523.0000000000001
+    ]
+  },
+  {
+    "lines": [
+      [
+        92,
+        93
+      ],
+      [
+        94
+      ]
+    ],
+    "key": 94,
+    "semantic_unit": "were already asking",
+    "measured_widths": [
+      363.20000000000005,
+      211.00000000000003
+    ]
+  },
+  {
+    "lines": [
+      [
+        95,
+        96
+      ],
+      [
+        97,
+        98
+      ],
+      [
+        99
+      ]
+    ],
+    "key": 99,
+    "semantic_unit": "about his interactions with Alice,",
+    "measured_widths": [
+      263.6,
+      480.20000000000005,
+      165.8
+    ]
+  },
+  {
+    "lines": [
+      [
+        100,
+        101
+      ],
+      [
+        102,
+        103
+      ],
+      [
+        104,
+        105
+      ]
+    ],
+    "key": 102,
+    "semantic_unit": "following reports alleging Chinese intelligence ties.",
+    "measured_widths": [
+      482.20000000000005,
+      493.0000000000001,
+      445.20000000000005
+    ]
+  },
+  {
+    "lines": [
+      [
+        106,
+        107
+      ],
+      [
+        108,
+        109
+      ],
+      [
+        110
+      ]
+    ],
+    "key": 110,
+    "semantic_unit": "Those claims aren't established findings.",
+    "measured_widths": [
+      373.20000000000005,
+      505.4,
+      253.40000000000006
+    ]
+  },
+  {
+    "lines": [
+      [
+        111,
+        112
+      ],
+      [
+        113,
+        114,
+        115,
+        116
+      ],
+      [
+        117,
+        118,
+        119
+      ]
+    ],
+    "key": 119,
+    "semantic_unit": "Nvidia's board says it has no reason to believe",
+    "measured_widths": [
+      400.6000000000001,
+      381.6,
+      505.20000000000005
+    ]
+  },
+  {
+    "lines": [
+      [
+        120,
+        121
+      ],
+      [
+        122
+      ],
+      [
+        123
+      ]
+    ],
+    "key": 121,
+    "semantic_unit": "company secrets were compromised.",
+    "measured_widths": [
+      511.80000000000007,
+      140.60000000000002,
+      394.00000000000006
+    ]
+  },
+  {
+    "lines": [
+      [
+        124,
+        125,
+        126
+      ],
+      [
+        127,
+        128
+      ],
+      [
+        129
+      ]
+    ],
+    "key": 129,
+    "semantic_unit": "But it's launched an independent investigation.",
+    "measured_widths": [
+      475.20000000000005,
+      448.6000000000001,
+      391.40000000000003
+    ]
+  },
+  {
+    "lines": [
+      [
+        130,
+        131
+      ],
+      [
+        132,
+        133,
+        134
+      ],
+      [
+        135,
+        136
+      ]
+    ],
+    "key": 135,
+    "semantic_unit": "Most cheating scandals get an apology post.",
+    "measured_widths": [
+      409.4000000000001,
+      444.80000000000007,
+      392.20000000000005
+    ]
+  },
+  {
+    "lines": [
+      [
+        137,
+        138,
+        139
+      ],
+      [
+        140
+      ]
+    ],
+    "key": 140,
+    "semantic_unit": "This one got lawyers.",
+    "measured_widths": [
+      354.20000000000005,
+      241.20000000000002
+    ]
+  },
+  {
+    "lines": [
+      [
+        141,
+        142,
+        143
+      ],
+      [
+        144,
+        145
+      ]
+    ],
+    "key": 145,
+    "semantic_unit": "Would you watch the documentary?",
+    "measured_widths": [
+      501.80000000000007,
+      517.8000000000001
+    ]
+  }
+]

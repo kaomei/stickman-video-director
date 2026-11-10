@@ -1,0 +1,15 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration": 63.53333333333333,
+  "account": "",
+  "presenter": {
+    "x": 1630,
+    "y": 725,
+    "scale": 0.76,
+    "rig": "assets/rig/jensen-approved.png"
+  },
+  "recorded_audio": true,
+  "role": "new approved Jensen script; local preview only; no publication"
+}

@@ -1,0 +1,45 @@
+# B5 accepted baselines — registry and review contract
+
+The owner first approved local baseline integration, then separately authorized this B5 publication on 2026-11-10: “可以先发布吧”. The package includes finished composites and original implementation references, not standalone source audio. This approval does not authorize new generation, paid use or publication of future user projects. Keep the existing Skill name and B5 code.
+
+## Inspect the actual media, then the implementation
+
+| Baseline | Evidence and role | Limit |
+| --- | --- | --- |
+| Spider-Man / 22.8s | [Full composite](../assets/b5/approved-sample.mp4), [true frames](../assets/b5/reference/contact-sheet.jpg), [authored example](../assets/b5/example/renderer.cjs), [immutable lock](../assets/b5/baseline-lock.json). Short-form layout, physical comedy and action-sound reference. | Existing scaffold/check remain specific to this sample. Historical account branding is not a new-project default. |
+| Jensen / V13 / 63.53s | [Full composite](../assets/b5/local-baselines/jensen-v13/approved-sample.mp4), [expressions](../assets/b5/local-baselines/jensen-v13/reference/expression-sheet.jpg), [full-frame reference](../assets/b5/local-baselines/jensen-v13/reference/frame-26.8.png), [portable renderer](../assets/b5/local-baselines/jensen-v13/scene/renderer.cjs), [acceptance fixtures](../assets/b5/local-baselines/jensen-v13/acceptance.json), [lock](../assets/b5/local-baselines/jensen-v13/baseline-lock.json). Latest approved long-form standard for varied causal action, untitled framing and continuous presenter acting. The historical folder name is retained for compatibility. | Finished editorial cartoon reference, not an authentic recording. All-film miserable/crying Jensen is this story's requested performance, not a universal B5 face or an assertion about the actual person. See its scoped provenance and rights limits. |
+
+Both are 1920×1080, 30fps landscape references. Neither establishes that 9:16, another identity, a different language or another story has been creatively validated. Native dual-format support remains required; portrait requires its own native layout and review, not cropping this film.
+
+True rendered frames are references, not application screenshots. A facial contact sheet checks expression continuity; it cannot prove left-side action quality or SFX. Watch the complete accepted composite at normal speed. Compare relevant motion strips and whole action chains, not only stills or average event density. The original authorized CrazyMei/B5.2 references remain useful privately; do not redistribute those source videos or claim identical fidelity without comparing them.
+
+## What is reusable, and what must change
+
+**Reusable standards:** left anonymous code stickmen / right approved presenter; warm paper and dark ink; varied readable silhouettes; before → anticipation → contact → consequence → delayed secondary action → recovery; normal fixed-length bones and actual wrist/prop contact; deliberate bounded comic deformation; title-aware shot framing; no default account mark; semantic voice-aligned captions; speech first, material-specific action SFX above secondary music; independent mouth/emotional acting and consistent identity.
+
+**Story-specific:** exact dialogue, factual claims, names, title words, timings, prop designs, action order, body/face emotions and music/SFX sources. A new story must not inherit this film's crying, legal cases, photos, inquiry or clock positions as an automatic template. New factual content requires its own verification. An accepted head is not permission to clone a person's voice.
+
+**Locked for local corrections:** accepted identity, original-speed approved narration, unaffected animation/captions and exact accepted mix. Change only the authorized component; compare fingerprints and impacted regions. The Jensen V13 head revision preserved the V11 stage/body/captions and V12 repaired audio. No additional sobs or new TTS were used.
+
+## Acceptance record required for each new B5 film
+
+1. **Semantic action plan:** match actual spoken clauses to story-specific comic verbs and physical causes. Several different action chains must visibly change the actor's situation. A single standing/crouching pose, noun collage, repeatedly bouncing props or one reused keyframe loop fails even when technically valid.
+2. **Acting and anatomy:** check anticipation, contact, maximum deformation, landing and recovery in dense strips, plus continuous silent left-stage playback. Fixed local bones, plausible elbow bends, one current limb each, stable grips and planted feet in ordinary motion. Use explicit timed squash/stretch with recovery for physical comedy, not accidental long arms. Mix holds with asymmetric acceleration and delayed head/hand/prop response; constant frantic movement is not the target.
+3. **Composition:** optional editorial titles need a reason. When no title is present, reframe the complete action so it does not become tiny at the bottom of an empty upper canvas. Test all extremes and cut boundaries. Keep title/captions/presenter in screen space; never zoom the entire layout or automatically follow per-frame bounding boxes. Omit redundant explanatory labels and all default `@xxx`/test marks.
+4. **Presenter:** preserve accepted likeness, abstract finish, size and half-body composition. Mouth follows dry speech and closes on pauses; rest/keyword gestures are not permanently raised hands. Facial acting has a story-appropriate baseline, varied peaks and smooth continuity, without a cheerful stock-face reset, frozen expression, doubled pupils or mask artifacts. For this Jensen fixture only, the baseline is visibly miserable throughout with intermittent exaggerated crying; no extra voice/audio changes.
+5. **Sound:** listen to the final encoded composite at the actual action contacts. Distinct material transients, short bodies/tails and motivated reactions must be audible above low BGM without masking speech. Check quiet clauses, pauses and transitions for spurious gasps/catches; fix identified artifacts locally, not all breathing. Geometry/event checks and loudness numbers do not prove sound is compelling. Record any unavailable human/headphone/phone-speaker check honestly.
+6. **Captions and delivery:** semantic grouping aligned to accepted speech, complete words in order, no clipping or missing tiles, up to three lines for B5 only. Requested full duration, final decode, correct native ratio, input/output hashes, current user review and absolute output-folder link. Do not claim automatic style consistency from a passing renderer.
+
+Save the actual observations and gaps per gate. Don't turn these gates into a checklist that passes on documentation presence alone. A fresh film still needs visual/listening review and user acceptance.
+
+## Local regression command
+
+From this Skill directory after its existing runtime dependencies are present:
+
+```sh
+node --test tests/b5-local-baseline.test.mjs
+```
+
+This checks locked files, portable dependency closure, deterministic seek behavior, all-frame expression/rig/contact invariants, caption coverage, video metadata and unchanged AAC. It does not generate speech/images, mix audio, render a new full film, spend credits or publish. The original Spider-Man check remains `node scripts/character-explainer.mjs check`.
+
+Boundary cases to review explicitly: (a) cheerful new story must not inherit Jensen tears; (b) simple original geometric presenter can still use approved SVG, while complex likenesses follow the existing image-first route; (c) left actors stay anonymous regardless of the presenter; (d) 9:16 adaptation is pending until its own preview passes; (e) “update baseline” is not release authorization. These boundaries must survive future edits.

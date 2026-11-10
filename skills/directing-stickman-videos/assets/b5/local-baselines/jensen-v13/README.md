@@ -1,0 +1,14 @@
+# Jensen V13 — approved B5 extended baseline
+
+The owner approved this full film as local baseline material, then separately authorized this B5 publication on 2026-11-10. The historical `local-baselines` folder name is retained for compatibility. Keep Spider-Man's earlier baseline intact. See the [B5 registry and acceptance rules](../../../../references/b5-accepted-baselines.md).
+
+- `approved-sample.mp4`: exact accepted 63.533333s, 1920×1080, 30fps, 1906-frame composite. SHA-256 `b46c272512277096d7cc3f85a435d52d4657887c68050b15ec555071fd8da387`.
+- `reference/`: true rendered full frames and the facial-expression contact sheet, copied unchanged from V13. These are not UI screenshots; use the full composite for timing and listening.
+- `scene/`: self-contained reachable code/assets from accepted V11 staging, with the approved V13 facial performer. Only its source-directory lookup was localized; no choreography or facial curves were changed. The renderer produces SVG buffers; use the Skill's existing Sharp dependency to inspect individual frames. Code executes only after inspection/trust. It does not contain an automatic new-story engine or a new TTS service.
+- `acceptance.json`: project-specific fixtures and scope boundaries. `baseline-lock.json`: byte fingerprints of this local bundle.
+
+The right presenter keeps the approved raster head/hair/glasses and code-animated abstract features. Its miserable, exaggerated, intermittently crying performance was explicitly requested for this film only. The left actors remain anonymous stickmen using story-specific force/contact comedy. V13 preserves the accepted V12 audio, including the isolated nonword-breath repair at 15.36–15.64s; it adds no crying sounds. The Pharaoh 3 is the selected synthetic sample voice, not Jensen Huang's actual voice.
+
+Provenance: original project-authored code and generated identity, user's reviewed script and finished composite. This bundle intentionally contains no standalone music, SFX or dry voice. The publication review is scoped to this finished editorial composite and original code; it is **not blanket commercial, identity, raw-audio or provider-rights certification**. See the parent [credits, source checks and explicit evidence limits](../../CREDITS.md); preserve the music attribution and included font notices. Illustrated scandal/news metaphors and crying are not evidence of real events or the actual person's emotional state. New productions require their own factual, likeness and asset-rights review.
+
+Copy the `scene/` to an external working project for authorized experiments; do not modify the locked baseline in place. Use its mechanisms, not its exact prop order, speech or crying, for another story. No account watermark or creator-handle mark is enabled. Both native aspect ratios remain supported by the B5 contract, but this specific baseline proves landscape only.

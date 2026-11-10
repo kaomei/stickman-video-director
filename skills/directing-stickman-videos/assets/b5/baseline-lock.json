@@ -296,7 +296,7 @@
     },
     {
       "path": "example/config.json",
-      "sha256": "ec126298989371834079914d901764653ad8b542e3b4479a7208e1e7636b7b57"
+      "sha256": "906740fe2235d9ecda6a951bb746c48b16d9455436ead1780b7961dff367753b"
     },
     {
       "path": "example/events.cjs",
@@ -304,7 +304,7 @@
     },
     {
       "path": "example/font-atlas.json",
-      "sha256": "2df585814251923d0a144a3b3155d651c284de60c76a3db23b6393b3c36a8cdc"
+      "sha256": "a709e48cfb4e0bb8d90ee96357521b9debec334280b50ab4298fd13162e93757"
     },
     {
       "path": "example/presenter-gestures.cjs",
@@ -312,7 +312,7 @@
     },
     {
       "path": "example/renderer.cjs",
-      "sha256": "55a7431545b074bfe9fd907b83c6a1cfd4c977860d3be0398f7c747f2b3ad254"
+      "sha256": "828610a6ab20bfb1c55ad1cdda14d94103ade8d3607dc14eb2344dfe47f9dd7b"
     },
     {
       "path": "example/speech-levels.json",
