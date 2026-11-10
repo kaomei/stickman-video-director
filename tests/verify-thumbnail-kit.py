@@ -101,13 +101,13 @@ for locale, roadmap in roadmap_labels.items():
     assert all(token in localized for token in ('YouTube Studio', 'SEO', 'Content-ID', 'TikTok')), filename
     nav = next(line for line in text.splitlines() if '](#quick-start)' in line and '](#faq)' in line)
     targets = re.findall(r'\]\((#[^)]+)\)', nav)
-    assert targets == ['#quick-start', '#a-styles', '#b-styles', '#faq', '#road-to-10000-stars--creator-ecosystem'], (filename, targets)
-    assert nav.endswith(f'[{roadmap}](#road-to-10000-stars--creator-ecosystem)'), filename
+    assert targets == ['#quick-start', '#style-gallery', '#faq', '#road-to-10000-stars--creator-ecosystem', '#community'], (filename, targets)
+    assert f'[{roadmap}](#road-to-10000-stars--creator-ecosystem)' in nav and nav.endswith('](#community)'), filename
     if locale != 'en':
         assert 'Your video is only as good as the click.' not in localized, filename
         assert '### What the kit delivers:' not in localized, filename
         assert 'A simple question and one clear symbol.' not in localized, filename
-    print(f'{filename}: localized kit, six shared images, five deliverables, trigger and FAQ → Roadmap navigation passed.')
+    print(f'{filename}: localized kit, six shared images, five deliverables, trigger and FAQ → Roadmap → Community navigation passed.')
 
 # Shared routing must be included in the same installed Skill, not a new mode.
 skill = root / 'skills/directing-stickman-videos'

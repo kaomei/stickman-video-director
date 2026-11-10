@@ -87,7 +87,7 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 
 ⭐ **Star the project to catch the next style drop and feature unlocks.**
 
-[Get started](#quick-start) · [Director Styles](#a-styles) · [Autopilot Styles](#b-styles) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem)
+[Get started](#quick-start) · [Styles & Demos](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)
 
 </div>
 
@@ -104,7 +104,6 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 | **Tools** | Plan with a Skill-compatible AI assistant, generate clips in your preferred video generator (Google Flow, Runway, Luma, Kling, etc.), then assemble in CapCut or Premiere. | Run in **Codex, Claude Code**, or another AI coding agent that can read and write files, call tools, and execute commands to connect generation with local rendering. |
 | **Visuals** | **Generated animated clips**, with character movement, camera direction, and interactions. | **Illustrated scenes with subtle animation**, using cuts, pans, and zooms to support the narration rather than generating a full-motion clip for every scene. |
 | **Output** | A director's treatment, storyboards, scene-by-scene video prompts, and sound design. | **A complete video file with voiceover, captions, and subtle animation.** |
-| **Start** | <div align="center"><a href="#director-start">Use Director Mode</a></div> | <div align="center"><a href="#autopilot-start">Use Autopilot Mode</a></div> |
 
 Both workflows can start with a raw topic, a web link, or a full script. Customize your aspect ratio (9:16, 16:9, 1:1), narration language, and voiceover freely. The lengths above are recommendations, not hard limits.
 
@@ -116,7 +115,7 @@ Both workflows can start with a raw topic, a web link, or a full script. Customi
 <!-- project-sponsor:start -->
 <a id="project-sponsor"></a>
 
-#### API Partners
+#### API Partners · [Support this project ↗](https://telegram.me/CrazyKaomei)
 
 <table>
 <tr>
@@ -126,6 +125,10 @@ Both workflows can start with a raw topic, a web link, or a full script. Customi
 <tr>
 <td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart project sponsor" width="110"></a></td>
 <td><p>APIMart is a low-cost API platform for AI image &amp; video generation — GPT-Image-2 from $0.006/image, 160+ images per dollar. One async API covers both image and video: submit a task, get an ID, fetch results via polling or callback. Batch tens of thousands of images without timeouts, switch models without changing code. Pay-as-you-go with no monthly fee — <a href="https://go.apimart.ai/tw-stickman-video-director">sign up here</a> to get started.</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-renoise"></a><a href="https://renoise.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@5f5985c73757a643925e06cd010767684c1e926a/assets/sponsors/renoise.png" alt="Renoise" width="64"><br><strong>Renoise</strong></a></td>
+<td><p>Renoise AI is an all-in-one video and image creation platform for marketers, advertisers, and content creators. One subscription gives you access to 40+ leading models, including Seedance, Kling, Wan, and GPT Image, with new models added within 24 hours of release. Tell the Agent what you need in plain language—it writes prompts, plans shots, and generates videos in batches, while keeping your characters and products consistent across shots.</p><p>Create on the web or in the iOS and Android apps, or connect via MCP and plugins to Claude, ChatGPT, and Codex to generate content, track progress, and view results right in the conversation. In supported Agent environments, you can also turn multiple clips into a finished video with captions, motion graphics, and music synced to the beat. <a href="https://renoise.ai/">Visit Renoise</a> to explore its models and creative tools.</p></td>
 </tr>
 </table>
 
@@ -606,9 +609,11 @@ We are actively training new specialized engines for the most requested faceless
 - **Two-Mic Podcast & Stand-Up** — Snappy dialogue comedy, interview repurposing & character banter
 - **Internet Mysteries & Urban Legends** — Eerie pencil sketches, analog glitch & Reddit mystery lore
 
+<a id="community"></a>
+
 ## 💬 Community & Submissions
 
-Want to suggest a style or get your channel featured? Message **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** on Telegram:
+Got a style idea or want to get featured? Join our [Telegram Community](https://telegram.me/stickmanskill):
 
 - **Request a Style**: Send a visual reference link + the niche you want to cover.
 - **Get Featured**: Made a video with this tool? Send your link to be showcased in this README and on our official YouTube channel!

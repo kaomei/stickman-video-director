@@ -87,7 +87,7 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 
 ⭐ **Beri Star pada proyek ini agar tidak ketinggalan gaya dan fitur baru berikutnya.**
 
-[Mulai di sini](#quick-start) · [Gaya Director](#a-styles) · [Gaya Autopilot](#b-styles) · [Tanya jawab](#faq) · [Peta jalan](#road-to-10000-stars--creator-ecosystem)
+[Mulai di sini](#quick-start) · [Gaya & Demo](#style-gallery) · [Tanya jawab](#faq) · [Peta jalan](#road-to-10000-stars--creator-ecosystem) · [Komunitas](#community)
 
 </div>
 
@@ -104,7 +104,6 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 | **Alat** | Rencanakan dengan asisten AI yang mendukung Skill, buat klip di generator video pilihan Anda (Google Flow, Runway, Luma, Kling, dan lainnya), lalu susun di CapCut atau Premiere. | Dijalankan melalui agen seperti **Codex atau Claude Code** yang dapat membaca dan menulis file, memakai alat, serta menjalankan perintah untuk menghubungkan pembuatan materi dengan penggabungan video lokal. |
 | **Visual** | **Animasi per adegan:** berfokus pada gerakan, arahan kamera, dan interaksi karakter. | **Storyboard ilustrasi + animasi ringan:** pergantian adegan, zoom, dan pergeseran kamera mengikuti narasi, tanpa harus menghasilkan animasi penuh untuk setiap bagian. |
 | **Hasil** | Rancangan penyutradaraan, storyboard, prompt video per bagian, dan arahan suara. | **File video lengkap dengan narasi, subtitle, dan animasi ringan.** |
-| **Mulai** | <div align="center"><a href="#director-start">Gunakan mode Director</a></div> | <div align="center"><a href="#autopilot-start">Gunakan mode Autopilot</a></div> |
 
 Kedua alur kerja bisa dimulai dari topik mentah, tautan web, atau naskah lengkap. Pilih rasio aspek (9:16, 16:9, 1:1), bahasa narasi, dan suara dengan bebas. Durasi di atas adalah rekomendasi, bukan batas mutlak.
 
@@ -116,7 +115,7 @@ Kedua alur kerja bisa dimulai dari topik mentah, tautan web, atau naskah lengkap
 <!-- project-sponsor:start -->
 <a id="project-sponsor"></a>
 
-#### Mitra API
+#### Mitra API · [Dukung proyek ini ↗](https://telegram.me/CrazyKaomei)
 
 <table>
 <tr>
@@ -126,6 +125,10 @@ Kedua alur kerja bisa dimulai dari topik mentah, tautan web, atau naskah lengkap
 <tr>
 <td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
 <td><p>APIMart adalah platform API berbiaya rendah untuk pembuatan gambar dan video AI — GPT-Image-2 mulai dari US$0,006 per gambar, lebih dari 160 gambar per dolar. Satu API asinkron mencakup gambar dan video: kirim tugas, dapatkan ID, lalu ambil hasil lewat polling atau callback. Proses puluhan ribu gambar sekaligus tanpa timeout dan ganti model tanpa mengubah kode. Bayar sesuai pemakaian, tanpa biaya bulanan — <a href="https://go.apimart.ai/tw-stickman-video-director">daftar di sini</a> untuk mulai menggunakan.</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-renoise"></a><a href="https://renoise.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@5f5985c73757a643925e06cd010767684c1e926a/assets/sponsors/renoise.png" alt="Renoise" width="64"><br><strong>Renoise</strong></a></td>
+<td><p>Renoise AI adalah platform lengkap untuk pembuatan video dan gambar AI bagi pemasar, pengiklan, dan kreator konten. Satu langganan memberi akses ke lebih dari 40 model unggulan, termasuk Seedance, Kling, Wan, dan GPT Image, dengan model baru ditambahkan dalam 24 jam setelah dirilis. Cukup jelaskan kebutuhan Anda kepada agen dengan bahasa sehari-hari: agen akan menulis prompt, merencanakan adegan, dan membuat video secara massal sambil menjaga konsistensi karakter dan produk antar-shot.</p><p>Berkreasilah lewat web atau aplikasi iOS dan Android, atau hubungkan Renoise ke Claude, ChatGPT, dan Codex melalui MCP dan plugin untuk membuat konten, memantau progres, dan melihat hasil langsung di percakapan. Di lingkungan agen yang mendukung pengeditan, Anda juga dapat merangkai beberapa klip menjadi video jadi dengan takarir, grafis gerak, dan musik yang sinkron dengan ketukan. <a href="https://renoise.ai/">Jelajahi Renoise</a> untuk mengenal model dan alat kreatifnya.</p></td>
 </tr>
 </table>
 
@@ -614,9 +617,11 @@ Kami sedang melatih mesin khusus baru untuk niche YouTube tanpa tampil di kamera
 - **Podcast dua mikrofon dan stand-up** — Komedi dialog cepat, pengolahan ulang wawancara, dan saling ledek antarkarakter
 - **Misteri internet dan legenda urban** — Sketsa pensil menyeramkan, gangguan analog, dan kisah misteri Reddit
 
+<a id="community"></a>
+
 ## 💬 Komunitas dan kiriman karya
 
-Ingin mengusulkan gaya atau menampilkan channel Anda? Kirim pesan ke **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** di Telegram:
+Punya ide gaya atau ingin ditampilkan? Bergabunglah dengan [komunitas Telegram kami](https://telegram.me/stickmanskill):
 
 - **Minta gaya**: kirim tautan referensi visual + niche yang ingin Anda bahas.
 - **Tampilkan karya**: sudah membuat video dengan alat ini? Kirim tautannya untuk ditampilkan di README ini dan channel YouTube resmi kami!

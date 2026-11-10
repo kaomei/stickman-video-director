@@ -87,7 +87,7 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 
 ⭐ **Ajoutez une étoile au projet pour suivre les prochains styles et les nouvelles fonctionnalités à débloquer.**
 
-[Bien démarrer](#quick-start) · [Styles Director](#a-styles) · [Styles Autopilot](#b-styles) · [FAQ](#faq) · [Feuille de route](#road-to-10000-stars--creator-ecosystem)
+[Bien démarrer](#quick-start) · [Styles et démos](#style-gallery) · [FAQ](#faq) · [Feuille de route](#road-to-10000-stars--creator-ecosystem) · [Communauté](#community)
 
 </div>
 
@@ -104,7 +104,6 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 | **Outils** | Préparez les plans avec un assistant IA compatible avec les Skills, générez les séquences dans votre outil vidéo préféré (Google Flow, Runway, Luma, Kling, etc.), puis assemblez-les dans CapCut ou Premiere. | Un agent de développement IA comme **Codex ou Claude Code**, capable de lire et d’écrire des fichiers, d’appeler des outils et d’exécuter des commandes, pour relier génération des médias et assemblage local. |
 | **Rendu** | **Séquences animées générées une par une** : gestes, mise en scène et interactions entre personnages. | **Illustrations de storyboard + micro-animations** : changements de plan, zooms et panoramiques accompagnent la narration, sans générer une animation complète pour chaque séquence. |
 | **Livrable** | Proposition de réalisation, storyboard, prompts vidéo par séquence et indications sonores. | **Un fichier vidéo complet avec voix off, sous-titres et micro-animations.** |
-| **Démarrer** | <div align="center"><a href="#director-start">Utiliser Director</a></div> | <div align="center"><a href="#autopilot-start">Utiliser Autopilot</a></div> |
 
 Les deux méthodes peuvent partir d’un sujet brut, d’un lien web ou d’un script complet. Choisissez librement le format (9:16, 16:9, 1:1), la langue de narration et la voix off. Les durées ci-dessus sont des recommandations, pas des limites strictes.
 
@@ -116,7 +115,7 @@ Les deux méthodes peuvent partir d’un sujet brut, d’un lien web ou d’un s
 <!-- project-sponsor:start -->
 <a id="project-sponsor"></a>
 
-#### Partenaires API
+#### Partenaires API · [Soutenir ce projet ↗](https://telegram.me/CrazyKaomei)
 
 <table>
 <tr>
@@ -126,6 +125,10 @@ Les deux méthodes peuvent partir d’un sujet brut, d’un lien web ou d’un s
 <tr>
 <td width="140" align="center" valign="middle"><a id="sponsor-apimart"></a><a href="https://go.apimart.ai/tw-stickman-video-director"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/sponsors/apimart.png" alt="APIMart" width="110"></a></td>
 <td><p>APIMart est une plateforme API à bas prix dédiée à la génération d’images et de vidéos par IA : GPT-Image-2 à partir de 0,006 $ par image, soit plus de 160 images par dollar. Une API asynchrone commune couvre les images et les vidéos : soumettez une tâche, recevez un identifiant, puis récupérez les résultats par interrogation périodique ou callback. Générez des dizaines de milliers d’images par lots sans expiration et changez de modèle sans modifier le code. Paiement à l’usage, sans abonnement mensuel : <a href="https://go.apimart.ai/tw-stickman-video-director">inscrivez-vous ici</a> pour commencer.</p></td>
+</tr>
+<tr>
+<td width="140" align="center" valign="middle"><a id="sponsor-renoise"></a><a href="https://renoise.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@5f5985c73757a643925e06cd010767684c1e926a/assets/sponsors/renoise.png" alt="Renoise" width="64"><br><strong>Renoise</strong></a></td>
+<td><p>Renoise AI est une plateforme tout-en-un de création vidéo et d’images par IA, pensée pour le marketing, la publicité et les créateurs de contenu. Un seul abonnement donne accès à plus de 40 modèles de pointe, dont Seedance, Kling, Wan et GPT Image, avec de nouveaux modèles intégrés dans les 24 heures suivant leur sortie. Décrivez simplement votre idée à l’agent : il rédige les prompts, découpe les scènes et génère des vidéos par lots, tout en préservant la cohérence des personnages et des produits d’un plan à l’autre.</p><p>Créez sur le web ou dans les applications iOS et Android, ou connectez Renoise à Claude, ChatGPT et Codex via MCP et des plugins pour générer du contenu, suivre sa progression et consulter les résultats dans la conversation. Dans les environnements d’agent compatibles avec le montage, vous pouvez aussi assembler plusieurs séquences avec sous-titres, animations graphiques et musique calée sur le rythme. <a href="https://renoise.ai/">Découvrez Renoise</a> pour explorer ses modèles et ses outils créatifs.</p></td>
 </tr>
 </table>
 
@@ -609,9 +612,11 @@ Nous entraînons de nouveaux moteurs spécialisés pour les niches YouTube sans 
 - **Podcast à deux micros et stand-up** — Comédie dialoguée rythmée, réutilisation d’interviews et échanges entre personnages
 - **Mystères d’Internet et légendes urbaines** — Croquis au crayon inquiétants, parasites analogiques et récits mystérieux de Reddit
 
+<a id="community"></a>
+
 ## 💬 Communauté et contributions
 
-Vous voulez proposer un style ou faire découvrir votre chaîne ? Contactez **[@CrazyKaomei](https://telegram.me/CrazyKaomei)** sur Telegram :
+Une idée de style ou envie d’être mis à l’honneur ? Rejoignez notre [communauté Telegram](https://telegram.me/stickmanskill) :
 
 - **Proposer un style** : envoyez un lien de référence visuelle + la niche que vous souhaitez traiter.
 - **Présenter votre travail** : vous avez créé une vidéo avec cet outil ? Envoyez votre lien pour la présenter dans ce README et sur notre chaîne YouTube officielle !

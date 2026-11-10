@@ -40,7 +40,7 @@ def section(text, start, end):
     return text.split(f'<a id="{start}"></a>', 1)[1].split(end, 1)[0]
 
 expected_images = images(cn)
-assert len(expected_images) == 42 and len(set(expected_images)) == 32
+assert len(expected_images) == 43 and len(set(expected_images)) == 33
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 local_a6_previews = {
     "assets/readme/previews/style-6-amber-noir-mcp.gif",
@@ -78,6 +78,8 @@ shared_links = (
     "https://x.com/CrazyKaomei/status/2102311241046008268",
     "https://x.com/CrazyKaomei",
     "https://flow.google.com/",
+    "https://telegram.me/stickmanskill",
+    "https://renoise.ai/",
 )
 selected = sys.argv[1:] or sorted(expected_files)
 assert all(name in expected_files for name in selected), selected
@@ -135,7 +137,19 @@ for name in selected:
     for token in ("OverSimplified", "Alan", "Reddit"):
         assert token in planned, (name, "style reference", token)
     assert len(re.findall(r"^- \*\*", community, re.M)) == 2, (name, "style requests and creator submissions")
-    assert "Telegram" in community and "**[@CrazyKaomei](https://telegram.me/CrazyKaomei)**" in community, (name, "Telegram contact")
+    assert re.search(r"\[[^\]]*Telegram[^\]]*\]\(https://telegram\.me/stickmanskill\)", community), (name, "official Telegram group, not personal contact")
+    assert "https://telegram.me/CrazyKaomei" not in community, (name, "personal contact belongs in project support")
+    invitations = {
+        "en": "Got a style idea or want to get featured? Join our [Telegram Community](https://telegram.me/stickmanskill):",
+        "zh-CN": "想推荐画风，或让你的频道获得展示？欢迎加入[官方 Telegram 交流群](https://telegram.me/stickmanskill)。",
+        "ja": "スタイルのアイデアや、作品紹介のご希望はありますか？[Telegram コミュニティ](https://telegram.me/stickmanskill)にご参加ください：",
+        "ko": "스타일 아이디어가 있거나 작품을 소개하고 싶으신가요? [Telegram 커뮤니티](https://telegram.me/stickmanskill)에 참여하세요:",
+        "fr": "Une idée de style ou envie d’être mis à l’honneur ? Rejoignez notre [communauté Telegram](https://telegram.me/stickmanskill) :",
+        "pt-BR": "Tem uma ideia de estilo ou quer ganhar destaque? Entre na nossa [comunidade do Telegram](https://telegram.me/stickmanskill):",
+        "tr": "Bir stil fikriniz mi var veya öne çıkmak mı istiyorsunuz? [Telegram topluluğumuza](https://telegram.me/stickmanskill) katılın:",
+        "id": "Punya ide gaya atau ingin ditampilkan? Bergabunglah dengan [komunitas Telegram kami](https://telegram.me/stickmanskill):",
+    }
+    assert invitations[active] in community, (name, "preserved style/showcase lead and localized group invitation")
     assert "README" in community and "YouTube" in community, (name, "creator showcase destinations")
     assert "https://github.com/kaomei/stickman-video-director/issues" not in community, (name, "Do not require a GitHub Issue for feedback")
     assert re.search(r"^🔔 \*.*\*\*\[@CrazyKaomei\]\(https://x\.com/CrazyKaomei\)\*\*.*\*$", community, re.M), (name, "italic X follow line with bold profile link")
@@ -274,22 +288,33 @@ for name in selected:
     partner_block = text.split('<!-- project-sponsor:start -->', 1)[1].split('<!-- project-sponsor:end -->', 1)[0]
     headings = {"en": "API Partners", "zh-CN": "API 合作伙伴", "ja": "API パートナー", "ko": "API 파트너", "fr": "Partenaires API", "pt-BR": "Parceiros de API", "tr": "API İş Ortakları", "id": "Mitra API"}
     assert f'#### {headings[active]}' in partner_block, (name, "localized partner heading")
-    assert partner_block.count('<tr>') == 2 and len(re.findall(r'<td\b', partner_block)) == 4, name
-    assert partner_block.index('sponsor-sjolt') < partner_block.index('sponsor-apimart'), name
-    assert re.findall(r'href="([^"]+)"', partner_block) == ['https://sjolt.ai/', 'https://sjolt.ai/', 'https://go.apimart.ai/tw-stickman-video-director', 'https://go.apimart.ai/tw-stickman-video-director'], (name, "exact logo and CTA destinations")
+    assert re.search(r'^#### [^\n]+ · \[[^\]]+ ↗\]\(https://telegram\.me/CrazyKaomei\)$', partner_block, re.M), (name, "project support links to personal Telegram")
+    assert partner_block.count('<tr>') == 3 and len(re.findall(r'<td\b', partner_block)) == 6, name
+    assert partner_block.index('sponsor-sjolt') < partner_block.index('sponsor-apimart') < partner_block.index('sponsor-renoise'), name
+    assert re.findall(r'href="([^"]+)"', partner_block) == ['https://sjolt.ai/', 'https://sjolt.ai/', 'https://go.apimart.ai/tw-stickman-video-director', 'https://go.apimart.ai/tw-stickman-video-director', 'https://renoise.ai/', 'https://renoise.ai/'], (name, "exact logo and CTA destinations")
     # GitHub rewrites relative images to its raw-file host, which failed to load
     # in the published README. Match the existing immutable CDN/Camo image path.
     partner_images = images(partner_block)
-    assert len(partner_images) == 2, (name, "one image per API partner")
-    for url, asset in zip(partner_images, ("sjolt.png", "apimart.png")):
+    assert len(partner_images) == 3, (name, "one image per API partner")
+    for url, asset in zip(partner_images, ("sjolt.png", "apimart.png", "renoise.png")):
         assert re.fullmatch(re.escape(pinned) + r"[a-f0-9]{40}/assets/sponsors/" + re.escape(asset), url), (name, "commit-pinned partner image", url)
         assert (root / "assets/sponsors" / asset).is_file(), (name, asset)
+    renoise_row = re.findall(r'<tr>(.*?)</tr>', partner_block, re.S)[2]
+    assert renoise_row.count('<p>') == 2, (name, "two-paragraph Renoise introduction")
+    # Preserve the approved supplied copy; these checks do not substantiate its marketing claims.
+    assert all(token in renoise_row for token in ("40", "24", "Seedance", "Kling", "Wan", "GPT Image", "iOS", "MCP", "Claude", "ChatGPT", "Codex")), (name, "localized Renoise coverage")
     b5_second_images = [url for url in images(text) if url.endswith("/b5-character-explainer-crazymei.gif")]
     assert len(b5_second_images) == 1 and all(url.startswith(pinned) for url in b5_second_images), (name, "pin B5 second preview")
     assert 'Thanks to' not in partner_block and '感谢' not in partner_block, name
     assert text.index('<!-- project-sponsor:start -->') > text.index('<a id="creation-modes"></a>'), name
     assert text.index('<!-- project-sponsor:end -->') < text.index('<a id="quick-start"></a>'), name
     modes_before_partners = modes.split('<!-- project-sponsor:start -->', 1)[0]
+    comparison = modes_before_partners.split('\n|', 1)[1].split('\n\n', 1)[0]
+    assert len(comparison.splitlines()) == 7 and '](#' not in comparison, (name, "five comparison rows; removed only redundant Start row")
+    shortcut_line = next(line for line in text.splitlines() if '](#style-gallery)' in line)
+    assert re.findall(r'\]\((#[^)]+)\)', shortcut_line) == ['#quick-start', '#style-gallery', '#faq', '#road-to-10000-stars--creator-ecosystem', '#community'], (name, "single styles shortcut and community after roadmap")
+    assert text.index('<a id="style-gallery"></a>') < text.index('<a id="a-styles"></a>') < text.index('<a id="b-styles"></a>'), (name, "gallery lands at A before B")
+    assert text.index('<a id="community"></a>') < text.index('## 💬 '), (name, "community shortcut lands at footer heading")
     setup = modes_before_partners.rsplit("\n|", 1)[1].split("\n\n", 1)[1]
     assert all(ratio in setup for ratio in ("9:16", "16:9", "1:1")), (name, "customizable aspect ratios")
     assert len(re.findall(r"^- \*\*", setup, re.M)) == 2 and not re.search(r"^>", setup, re.M), (name, "unquoted two-item setup note")
@@ -301,7 +326,7 @@ for name in selected:
             '<div align="center">\n\n'
             '**11 visual styles · Tested examples · Free and open source**\n\n'
             '⭐ **Star the project to catch the next style drop and feature unlocks.**\n\n'
-            '[Get started](#quick-start) · [Director Styles](#a-styles) · [Autopilot Styles](#b-styles) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem)\n\n'
+            '[Get started](#quick-start) · [Styles & Demos](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)\n\n'
             '</div>\n\n'
             '<a id="creation-modes"></a>\n\n'
             '## 🎬 Two ways to make your video\n\n'
