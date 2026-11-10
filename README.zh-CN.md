@@ -128,7 +128,7 @@
 </tr>
 <tr>
 <td width="140" align="center" valign="middle"><a id="sponsor-renoise"></a><a href="https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@5f5985c73757a643925e06cd010767684c1e926a/assets/sponsors/renoise.png" alt="Renoise" width="64"><br><strong>Renoise</strong></a></td>
-<td><p>Renoise AI 是面向营销广告和自媒体创作者的一站式 AI 视频与图片创作平台。一个订阅就能用 Seedance、Kling、Wan、GPT Image 等 40+ 顶尖模型，新模型 24 小时内接入。用大白话跟 Agent 说需求，它替你写提示词、拆分镜、批量出片，让同一个角色或产品在不同镜头中保持一致。</p><p>网页和 iOS、安卓 App 都能直接创作，也能通过 MCP 或插件接入 Claude、ChatGPT、Codex，在对话里生成内容、跟踪进度、查看结果。在支持剪辑的 Agent 环境中，还能把多条素材剪成带字幕、动效和卡点配乐的成片。 <a href="https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom">前往 Renoise 官网</a>探索模型与创作工具。</p></td>
+<td><p>Renoise AI 是面向营销广告和自媒体创作者的一站式 AI 视频与图片创作平台。用大白话跟 Agent 说需求，它替你写提示词、拆分镜、批量出片，同一个角色或产品换了镜头也不走样。</p><p>网页和 iOS、安卓 App 都能直接创作，也能通过 MCP 接进 Claude、ChatGPT（Codex），在对话里生成素材和剪辑包装，无需剪辑软件，获得可发布的成片。<a href="https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom">前往 Renoise 官网</a>探索模型与创作工具。</p></td>
 </tr>
 </table>
 

@@ -302,7 +302,10 @@ for name in selected:
     renoise_row = re.findall(r'<tr>(.*?)</tr>', partner_block, re.S)[2]
     assert renoise_row.count('<p>') == 2, (name, "two-paragraph Renoise introduction")
     # Preserve the approved supplied copy; these checks do not substantiate its marketing claims.
-    assert all(token in renoise_row for token in ("40", "24", "Seedance", "Kling", "Wan", "GPT Image", "iOS", "MCP", "Claude", "ChatGPT", "Codex")), (name, "localized Renoise coverage")
+    renoise_copy = re.search(r'<td>(.*?)</td>', renoise_row, re.S).group(1)
+    assert all(token in renoise_copy for token in ("iOS", "MCP", "Claude", "ChatGPT", "Codex")), (name, "localized Renoise coverage")
+    assert "Android" in renoise_copy or "安卓" in renoise_copy, (name, "Renoise Android app coverage")
+    assert all(token not in renoise_copy for token in ("40", "24", "Seedance", "Kling", "Wan", "GPT Image")), (name, "superseded Renoise model-count and rollout claims removed")
     b5_second_images = [url for url in images(text) if url.endswith("/b5-character-explainer-crazymei.gif")]
     assert len(b5_second_images) == 1 and all(url.startswith(pinned) for url in b5_second_images), (name, "pin B5 second preview")
     assert 'Thanks to' not in partner_block and '感谢' not in partner_block, name
