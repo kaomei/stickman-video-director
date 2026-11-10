@@ -127,8 +127,8 @@
 <td><p>APIMart は AI 画像・動画生成に特化した低価格 API プラットフォームです。GPT-Image-2 は1枚 $0.006 から、1ドルで160枚以上。画像と動画を共通の非同期 API で処理し、タスクを送信して ID を受け取り、ポーリングまたはコールバックで結果を取得できます。数万枚の一括生成でもタイムアウトせず、モデルを変えてもコードの変更は不要。月額料金なしの従量課金です。 <a href="https://go.apimart.ai/tw-stickman-video-director">登録リンク</a> から登録して利用を始められます。</p></td>
 </tr>
 <tr>
-<td width="140" align="center" valign="middle"><a id="sponsor-renoise"></a><a href="https://renoise.ai/"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@5f5985c73757a643925e06cd010767684c1e926a/assets/sponsors/renoise.png" alt="Renoise" width="64"><br><strong>Renoise</strong></a></td>
-<td><p>Renoise AI は、マーケティング・広告担当者やコンテンツクリエイター向けの、AI 動画・画像制作を一つにまとめたプラットフォームです。一つのサブスクリプションで Seedance、Kling、Wan、GPT Image など 40 以上の先端モデルを利用でき、新モデルは公開から 24 時間以内に追加されます。普段の言葉でエージェントに依頼すれば、プロンプト作成、カット割り、動画の一括生成まで対応。カットが変わっても、キャラクターや商品の一貫性を保てます。</p><p>Web や iOS・Android アプリで直接制作できるほか、MCP やプラグインで Claude、ChatGPT、Codex に接続し、会話の中で生成、進捗確認、結果の閲覧ができます。編集に対応したエージェント環境では、複数の素材に字幕、モーショングラフィックス、ビートに合わせた音楽を加え、一本の動画に仕上げることも可能です。 <a href="https://renoise.ai/">Renoise 公式サイト</a>でモデルと制作ツールをご覧ください。</p></td>
+<td width="140" align="center" valign="middle"><a id="sponsor-renoise"></a><a href="https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@5f5985c73757a643925e06cd010767684c1e926a/assets/sponsors/renoise.png" alt="Renoise" width="64"><br><strong>Renoise</strong></a></td>
+<td><p>Renoise AI は、マーケティング・広告担当者やコンテンツクリエイター向けの、AI 動画・画像制作を一つにまとめたプラットフォームです。一つのサブスクリプションで Seedance、Kling、Wan、GPT Image など 40 以上の先端モデルを利用でき、新モデルは公開から 24 時間以内に追加されます。普段の言葉でエージェントに依頼すれば、プロンプト作成、カット割り、動画の一括生成まで対応。カットが変わっても、キャラクターや商品の一貫性を保てます。</p><p>Web や iOS・Android アプリで直接制作できるほか、MCP やプラグインで Claude、ChatGPT、Codex に接続し、会話の中で生成、進捗確認、結果の閲覧ができます。編集に対応したエージェント環境では、複数の素材に字幕、モーショングラフィックス、ビートに合わせた音楽を加え、一本の動画に仕上げることも可能です。 <a href="https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom">Renoise 公式サイト</a>でモデルと制作ツールをご覧ください。</p></td>
 </tr>
 </table>
 

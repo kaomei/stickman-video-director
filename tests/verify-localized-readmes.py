@@ -79,7 +79,7 @@ shared_links = (
     "https://x.com/CrazyKaomei",
     "https://flow.google.com/",
     "https://telegram.me/stickmanskill",
-    "https://renoise.ai/",
+    "https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom",
 )
 selected = sys.argv[1:] or sorted(expected_files)
 assert all(name in expected_files for name in selected), selected
@@ -291,7 +291,7 @@ for name in selected:
     assert re.search(r'^#### [^\n]+ · \[[^\]]+ ↗\]\(https://telegram\.me/CrazyKaomei\)$', partner_block, re.M), (name, "project support links to personal Telegram")
     assert partner_block.count('<tr>') == 3 and len(re.findall(r'<td\b', partner_block)) == 6, name
     assert partner_block.index('sponsor-sjolt') < partner_block.index('sponsor-apimart') < partner_block.index('sponsor-renoise'), name
-    assert re.findall(r'href="([^"]+)"', partner_block) == ['https://sjolt.ai/', 'https://sjolt.ai/', 'https://go.apimart.ai/tw-stickman-video-director', 'https://go.apimart.ai/tw-stickman-video-director', 'https://renoise.ai/', 'https://renoise.ai/'], (name, "exact logo and CTA destinations")
+    assert re.findall(r'href="([^"]+)"', partner_block) == ['https://sjolt.ai/', 'https://sjolt.ai/', 'https://go.apimart.ai/tw-stickman-video-director', 'https://go.apimart.ai/tw-stickman-video-director', 'https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom', 'https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom'], (name, "exact logo and CTA destinations")
     # GitHub rewrites relative images to its raw-file host, which failed to load
     # in the published README. Match the existing immutable CDN/Camo image path.
     partner_images = images(partner_block)
