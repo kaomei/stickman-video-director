@@ -128,7 +128,7 @@
 </tr>
 <tr>
 <td width="140" align="center" valign="middle"><a id="sponsor-renoise"></a><a href="https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@5f5985c73757a643925e06cd010767684c1e926a/assets/sponsors/renoise.png" alt="Renoise" width="64"><br><strong>Renoise</strong></a></td>
-<td><p>Renoise AI는 마케팅·광고 담당자와 콘텐츠 크리에이터를 위한 올인원 AI 영상·이미지 제작 플랫폼입니다. 구독 하나로 Seedance, Kling, Wan, GPT Image 등 40개 이상의 주요 모델을 이용할 수 있으며, 새 모델은 출시 후 24시간 이내에 추가됩니다. 원하는 것을 일상적인 말로 에이전트에게 설명하면 프롬프트 작성부터 장면 구성, 영상 일괄 생성까지 맡길 수 있고, 장면이 바뀌어도 캐릭터와 제품의 일관성을 유지할 수 있습니다.</p><p>웹과 iOS·Android 앱에서 바로 제작하거나 MCP와 플러그인을 통해 Claude, ChatGPT, Codex에 연결해 대화 안에서 콘텐츠를 생성하고 진행 상황과 결과를 확인할 수 있습니다. 편집을 지원하는 에이전트 환경에서는 여러 클립에 자막, 모션 그래픽, 비트에 맞춘 음악을 더해 하나의 완성된 영상으로 만들 수도 있습니다. <a href="https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom">Renoise 공식 사이트</a>에서 모델과 제작 도구를 살펴보세요.</p></td>
+<td><p>Renoise AI는 마케팅·광고 담당자와 콘텐츠 크리에이터를 위한 올인원 AI 영상·이미지 제작 플랫폼입니다. 일상적인 말로 에이전트에게 원하는 것을 설명하면 프롬프트 작성, 장면 구성, 영상 일괄 생성까지 맡길 수 있습니다. 장면이 바뀌어도 같은 캐릭터나 제품의 일관성을 유지합니다.</p><p>웹과 iOS·Android 앱에서 바로 제작할 수 있으며, MCP를 통해 Claude나 ChatGPT(Codex)에도 연결할 수 있습니다. 대화 안에서 소재 생성부터 편집과 마무리까지 진행해, 별도의 편집 소프트웨어 없이 바로 게시할 수 있는 완성 영상을 얻을 수 있습니다. <a href="https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom">Renoise 공식 사이트</a>에서 모델과 제작 도구를 살펴보세요.</p></td>
 </tr>
 </table>
 
