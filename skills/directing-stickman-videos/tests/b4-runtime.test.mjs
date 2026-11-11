@@ -194,6 +194,9 @@ test('B4 encoded silent opening is flagged and cannot be approved without a moti
   const f = fixture(t);
   run(FFMPEG, ['-v', 'error', '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=mono', '-t', '3.2', '-y', path.join(f.dir, 'voice.wav')]);
   f.project.ambience[0].gain = 0; f.project.dialogue = []; f.project.sfx = []; f.write();
+  // A muted bed no longer supplies coverage. Explicitly isolate the synthetic
+  // silent-master diagnostic with a declared cut, rather than bypass that gate.
+  f.project.audio_cuts = [{start: 0, end: 3.2, reason: 'Synthetic silent-master diagnostic', return_trigger: 'End of measurement'}]; f.write();
   let r = command(['preview', f.file, '--seconds', '1.6']); assert.equal(r.status, 0, r.stderr);
   assert.equal(report(f).opening_audio.status, 'needs_review');
   r = command(['approve', f.file, '--note', 'Synthetic fixture']); assert.notEqual(r.status, 0); assert.match(r.stderr, /opening audio needs review/);
@@ -209,12 +212,13 @@ test('B4 explicit source-silence trim repairs onset without changing rate or sou
     '-af', 'adelay=300:all=1', '-y', source]);
   const originalHash = hashFile(source);
   f.project.ambience[0].gain = 0; f.project.dialogue = []; f.project.sfx = []; f.write();
+  f.project.audio_cuts = [{start: 0, end: 3.2, reason: 'Isolate source-onset measurement from background in synthetic fixture', return_trigger: 'End of measurement'}]; f.write();
   let r = command(['preview', f.file, '--seconds', '1.6']);
   assert.equal(r.status, 0, r.stderr);
   assert.equal(report(f).opening_audio.status, 'needs_review');
   f.project.voice.trim_start = .28;
   f.project.shots.at(-1).end = 2.92; f.project.captions.at(-1).end = 2.92;
-  f.project.ambience[0].end = 2.92; f.write();
+  f.project.ambience[0].end = 2.92; f.project.audio_cuts[0].end = 2.92; f.write();
   const p = loadProject(f.file);
   assert.ok(Math.abs(p.duration - 2.92) < .001);
   r = command(['preview', f.file, '--seconds', '1.6', '--replace']);

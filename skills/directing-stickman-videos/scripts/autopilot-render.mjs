@@ -4,7 +4,8 @@ import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import {createCanvas, loadImage, GlobalFonts} from '@napi-rs/canvas';
 import {ROOT, FFMPEG, sha, hashFile, save, probe, run, mediaPath, fontPaths, outputDir, designPlane, loadProject} from './autopilot-core.mjs';
-import {walkLayers, drawB3Shape, televisionFinish} from './b3-graphics.mjs';
+import {walkLayers, drawB3Shape, televisionFinish, keyState} from './b3-graphics.mjs';
+export {keyState} from './b3-graphics.mjs';
 import {appendAudioTracks} from './b4-runtime.mjs';
 import {checkBStyleMotionPaint} from './b-style-quality.mjs';
 import {checkOpeningFile} from './b4-opening-audio-check.mjs';
@@ -12,18 +13,6 @@ import {checkB4OpeningPaint, checkB4OpeningFile} from './b4-opening-visual-check
 import {B4_HOOK} from './b4-opening.mjs';
 
 const clamp = x => Math.max(0, Math.min(1, x));
-const ease = x => { x = clamp(x); return x * x * (3 - 2 * x); };
-export function keyState(l, t) {
-  const out = {...l};
-  for (const prop of ['x', 'y', 'w', 'angle', 'alpha', 'progress', 'scaleX', 'scaleY']) {
-    const keys = (l.keys || []).filter(k => k[prop] !== undefined);
-    if (!keys.length) continue;
-    if (t <= keys[0].t) out[prop] = keys[0][prop];
-    else if (t >= keys.at(-1).t) out[prop] = keys.at(-1)[prop];
-    else { const i = keys.findIndex(k => k.t > t), a = keys[i - 1], b = keys[i]; out[prop] = a[prop] + (b[prop] - a[prop]) * ease((t - a.t) / (b.t - a.t)); }
-  }
-  return out;
-}
 function wrap(ctx, text, maxWidth) {
   const parts = /\s/.test(text) ? text.split(/\s+/) : [...text];
   const separator = /\s/.test(text) ? ' ' : '';
@@ -65,7 +54,7 @@ export async function painter(p, {pictureOnly = false} = {}) {
     for (let i = 0; i < lengths.length && left > 0; i++) { const f = Math.min(1, left / Math.max(0.001, lengths[i])); ctx.lineTo(points[i][0] + (points[i + 1][0] - points[i][0]) * f, points[i][1] + (points[i + 1][1] - points[i][1]) * f); left -= lengths[i]; }
     ctx.stroke();
   }
-  return function frame(t, {omitIds = [], focusIds = [], hookSettled = false} = {}) {
+  return function frame(t, {omitIds = [], focusIds = [], hookSettled = false, principalMotionOnly = false, freezeAncestorsAt} = {}) {
     ctx.resetTransform(); ctx.clearRect(0, 0, p.width, p.height); ctx.scale(p.width / plane.width, p.width / plane.width);
     ctx.fillStyle = ['B3', 'B4'].includes(p.style) ? '#111316' : p.style === 'B2' ? '#f4f0e5' : '#FDFDFC'; ctx.fillRect(0, 0, plane.width, plane.height);
     if (!focusIds.length && p.style === 'B1' && p.grid !== false) {
@@ -76,12 +65,16 @@ export async function painter(p, {pictureOnly = false} = {}) {
     const shot = p.shots.find(s => t >= s.start && t < s.end) || p.shots.at(-1);
     function paintLayers(layers, selectedParent = false) { for (const layer of layers) {
       if (omitIds.includes(layer.id)) continue;
+      if (principalMotionOnly && ['text', 'shadow'].includes(layer.type)) continue;
       const selected = selectedParent || focusIds.includes(layer.id);
       if (focusIds.length && !selected && !(layer.children && [...walkLayers(layer.children)].some(l => focusIds.includes(l.id)))) continue;
       if (pictureOnly && layer.type !== 'image') continue;
       const dt = t - shot.start;
       if (dt < (layer.from || 0) || dt >= (layer.to ?? Infinity)) continue;
-      const l = keyState(layer, dt), x = l.x || 0, y = l.y || 0, w = l.w || 200;
+      // Isolate the declared local action: an animated ancestor/camera cannot
+      // supply its pixel difference. Visibility still follows the actual time.
+      const localTime = focusIds.length && !selected && Number.isFinite(freezeAncestorsAt) ? freezeAncestorsAt - shot.start : dt;
+      const l = keyState(layer, localTime), x = l.x || 0, y = l.y || 0, w = l.w || 200;
       // Used by the diagnostic to compare the actual settle with a frozen title.
       if (hookSettled && l.b4Hook === 'payoff') { l.scaleX = 1; l.scaleY = 1; }
       ctx.save(); ctx.globalAlpha *= clamp(l.alpha ?? 1); ctx.translate(x, y);

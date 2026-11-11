@@ -549,7 +549,7 @@ Evet. Stickman Video Director, MIT lisansıyla %100 ücretsiz ve açık kaynakl�
 
 ### Q4. Hazır bir senaryo olmadan video yapabilir miyim?
 
-Evet. Ham bir fikri, aklınıza gelen bir düşünceyi, haber bağlantısını veya tam bir blog yazısını yapıştırabilirsiniz. Yapay zekâ yönetmen ana çatışmayı çıkarır, etkileyici bir 3 saniyelik açılış yazar ve konuyu komedi zamanlaması ile seslendirme ipuçları içeren sıkı bir 6 sahnelik anlatı örgüsüne dönüştürür.
+Evet. Ham bir fikri, aklınıza gelen bir düşünceyi, haber bağlantısını veya tam bir blog yazısını yapıştırabilirsiniz. Yapay zekâ yönetmen ana çatışmayı çıkarır, etkileyici bir 3 saniyelik açılış yazar ve hikâyeyi ve çekimleri konuya, hedef süreye ve seçilen stile göre düzenler; komedi zamanlaması ve seslendirme ipuçları da ekler.
 
 ### Q5. Yapay zekâ videonun sıkıcı olmamasını ve izleyiciyi tutmasını nasıl sağlıyor?
 

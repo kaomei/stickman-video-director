@@ -55,13 +55,16 @@ export function prepareAudioTracks(p, {base, duration, rangeEnd, assets, mediaPa
   });
   if (p.voice.contains_sfx && (sfx.length || ambience.length || dialogue.length || p.music || audio_cuts.length)) throw new Error('Already mixed master must not receive duplicate audio tracks/cuts');
   if (!p.voice.contains_sfx) {
-    const coverage = [...ambience, ...audio_cuts].sort((a, b) => a.start - b.start);
+    // Keep muted tracks editable, but do not count silence as a continuous bed.
+    // Nonzero gain establishes structural coverage only: the source and encoded
+    // mix still require audibility/listening review, not an arbitrary gain floor.
+    const coverage = [...ambience.filter(item => item.gain > 0), ...audio_cuts].sort((a, b) => a.start - b.start);
     let end = 0;
     for (const interval of coverage) {
-      if (interval.start > end + 0.002) throw new Error(`${p.style} ambience has an uncovered gap; author a subtle bed or motivated audio_cut`);
+      if (interval.start > end + 0.002) throw new Error(`${p.style} ambience has an uncovered gap; author an unmuted subtle bed or motivated audio_cut (gain=0 does not cover the bed)`);
       end = Math.max(end, interval.end);
     }
-    if (end < rangeEnd - 0.002) throw new Error(`${p.style} requires a subtle continuous ambience bed or an already mixed master`);
+    if (end < rangeEnd - 0.002) throw new Error(`${p.style} requires a subtle continuous ambience bed with nonzero gain, a motivated audio_cut or an already mixed master`);
   }
   return {ambience, dialogue, sfx, audio_cuts};
 }

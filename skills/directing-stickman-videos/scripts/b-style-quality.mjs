@@ -1,9 +1,17 @@
 // Shared B1–B3 production checks. These establish evidence, not creative acceptance.
 import path from 'node:path';
 import {walkLayers} from './b3-graphics.mjs';
+import {isSceneScaleMotion} from './b-style-motion-geometry.mjs';
 
 export const CAPTION_PRESETS = Object.freeze({B1: 34, B2: 40, B3: 34});
 const text = x => typeof x === 'string' && x.trim().length > 0;
+const MAX_INACTIVE = 2.5, SAMPLE_STEP = .25;
+function* layerTree(layers, ancestors = []) {
+  for (const layer of layers) {
+    yield {layer, ancestors};
+    if (layer.type === 'group') yield* layerTree(layer.children, [...ancestors, layer]);
+  }
+}
 export function prepareBStyleQuality(p, {root, hashFile, mediaPath}) {
   if (!(p.style in CAPTION_PRESETS)) return [];
   const override = p.caption_override;
@@ -15,19 +23,24 @@ export function prepareBStyleQuality(p, {root, hashFile, mediaPath}) {
       throw Error(`${p.style} caption preset invalidated: use the bundled Noto Sans/${CAPTION_PRESETS[p.style]} treatment or record caption_override reason and actual user_approval`);
   }
   const intervals = [], ids = new Set();
-  for (const shot of p.shots) for (const layer of walkLayers(shot.layers)) {
+  for (const shot of p.shots) for (const {layer, ancestors} of layerTree(shot.layers)) {
     if (layer.id) { if (ids.has(layer.id)) throw Error('Motion diagnostics require unique layer ids across the project'); ids.add(layer.id); }
     if (!layer.motion) continue;
     if (!text(layer.id) || !['actor', 'prop', 'information'].includes(layer.motion.role) || !text(layer.motion.reason)) throw Error('Local motion requires a unique layer id, role and story reason');
     if (['text', 'shadow'].includes(layer.type) || layer.motion.camera === true) throw Error('Captions, title entrances, shadows and camera movement do not count as principal-picture micro-animation');
-    // A background-scale transform is not local acting. Declare the smaller actor/prop instead.
-    if ((layer.w ?? 0) >= 1152 && layer.type === 'image') throw Error('A full-frame image transform does not count as local micro-animation');
+    // Inspect the artwork subtree and inherited transforms, not the container's
+    // often absent width. Wrapping a scene in a group must not turn a pan into acting.
+    const span = Math.min(shot.end, p.rangeEnd) - shot.start;
+    const times = new Set([0, span, ...[...ancestors, ...walkLayers([layer])].flatMap(l => (l.keys || []).map(k => k.t))]);
+    for (let t = 0; t < span; t += SAMPLE_STEP) times.add(t);
+    if (isSceneScaleMotion(layer, ancestors, [...times].filter(t => t >= 0 && t <= span), {width:1280,height:1280*p.height/p.width}))
+      throw Error('A full-frame image or scene-scale group transform does not count as local micro-animation; declare a smaller actor/prop instead');
     for (const [prop, delta] of [['x', 2], ['y', 2], ['angle', .02], ['progress', .02], ['scaleX', .02], ['scaleY', .02], ['w', 2]]) {
       const keys = (layer.keys || []).filter(k => k[prop] !== undefined);
       for (let i = 1; i < keys.length; i++) {
         const a = keys[i - 1], b = keys[i];
-        const start = Math.max(shot.start + a.t, shot.start + (layer.from ?? 0));
-        const end = Math.min(shot.start + b.t, shot.start + (layer.to ?? shot.end - shot.start), p.rangeEnd);
+        const start = Math.max(shot.start + a.t, shot.start + (layer.from ?? 0), ...ancestors.map(l => shot.start + (l.from ?? 0)));
+        const end = Math.min(shot.start + b.t, shot.start + (layer.to ?? shot.end - shot.start), p.rangeEnd, ...ancestors.map(l => shot.start + (l.to ?? shot.end - shot.start)));
         if (end > start && Math.abs(b[prop] - a[prop]) >= delta) intervals.push({id: layer.id, start, end, reason: layer.motion.reason});
       }
     }
@@ -42,15 +55,34 @@ export function prepareBStyleQuality(p, {root, hashFile, mediaPath}) {
 }
 
 export async function checkBStyleMotionPaint(p, draw) {
-  const evidence = [];
-  for (const interval of p.motion_intervals || []) {
-    const span = interval.end - interval.start;
-    const a = Buffer.from(draw(interval.start + span * .1, {focusIds: [interval.id]}).data());
-    const b = draw(interval.start + span * .9, {focusIds: [interval.id]}).data();
-    let changed = 0;
-    for (let i = 0; i < a.length; i += 4) if (Math.max(Math.abs(a[i] - b[i]), Math.abs(a[i + 1] - b[i + 1]), Math.abs(a[i + 2] - b[i + 2])) > 12) changed++;
-    if (changed < 8) throw Error(`${p.style} local motion ${interval.id} produced no isolated-layer pixel change; check visibility, keyframes and asset content`);
-    evidence.push({...interval, changed_pixels: changed});
+  const intervals = p.motion_intervals || [], evidence = new Map(), windows = [];
+  if (!intervals.length) return {intervals:[],windows:[]}; // A <=2.5s static beat is already scoped by validation.
+  // A 0.25s sampling margin makes the rolling windows conservative: a >2.5s
+  // blank stretch contains an entire 2.25s check window. Do not credit a whole
+  // minute merely because its endpoint differs by two design pixels.
+  const size = Math.min(p.rangeEnd, MAX_INACTIVE - SAMPLE_STEP), starts = new Set([0, Math.max(0,p.rangeEnd-size)]);
+  for (let start = SAMPLE_STEP; start + size < p.rangeEnd; start += SAMPLE_STEP) starts.add(start);
+  for (const start of [...starts].sort((a,b)=>a-b)) {
+    const end = Math.min(p.rangeEnd,start+size); let best = null;
+    for (const interval of intervals) {
+      const a = Math.max(start,interval.start), b = Math.min(end,interval.end);
+      if (b-a < .00001) continue;
+      const epsilon = Math.min(1e-5,(b-a)/10);
+      const options = {focusIds:[interval.id],principalMotionOnly:true,freezeAncestorsAt:a+epsilon};
+      const first = Buffer.from(draw(a+epsilon,options).data()); let changed = 0;
+      for (const t of [(a+b)/2,b-epsilon]) {
+        const last = draw(t,options).data(); let n = 0;
+        for (let i=0;i<first.length;i+=4) if (Math.max(Math.abs(first[i]-last[i]),Math.abs(first[i+1]-last[i+1]),Math.abs(first[i+2]-last[i+2]))>12) n++;
+        changed = Math.max(changed,n);
+      }
+      const key = `${interval.id}:${interval.start}:${interval.end}`, prior = evidence.get(key);
+      evidence.set(key,{...interval,changed_pixels:Math.max(prior?.changed_pixels??0,changed)});
+      if (!best || changed>best.changed_pixels) best = {start,end,id:interval.id,changed_pixels:changed};
+      if (changed>=8) break; // One genuine principal-picture action can carry a window.
+    }
+    if (!best || best.changed_pixels<8) throw Error(`${p.style} principal picture inactive: no isolated-layer pixel change in bounded window ${start.toFixed(2)}–${end.toFixed(2)}s; check visibility, local keyframes and asset content, not camera/title motion`);
+    windows.push(best);
   }
-  return {intervals: evidence, limits: 'Isolated-layer pixel change only; causal action, final visibility, semantic captions and sound still require playback review'};
+  return {intervals:[...evidence.values()],windows,sample_step:SAMPLE_STEP,max_window:size,
+    limits:'Bounded isolated-layer pixel change, with text/shadows excluded and ancestors frozen; geometry is conservative. Causal action, final visibility/occlusion, semantic captions and sound still require playback review'};
 }
