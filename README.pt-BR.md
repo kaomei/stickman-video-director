@@ -554,7 +554,7 @@ Meus exemplos usam o modelo de imagem integrado ao GPT, sem configurar uma API a
 
 ### Q4. Posso fazer um vídeo sem ter um roteiro pronto?
 
-Sim. Você pode colar uma ideia inicial, um pensamento espontâneo, um link de notícia ou um post de blog inteiro. O diretor de IA extrai o conflito central, escreve um gancho atraente de 3 segundos e organiza o tema em um arco narrativo enxuto de 6 cenas, com timing cômico e indicações de narração.
+Sim. Você pode colar uma ideia inicial, um pensamento espontâneo, um link de notícia ou um post de blog inteiro. O diretor de IA extrai o conflito central, escreve um gancho atraente de 3 segundos e organiza a história e os planos conforme o tema, a duração desejada e o estilo escolhido, com timing cômico e indicações de narração.
 
 ### Q5. Como a IA mantém a retenção do público sem deixar o vídeo chato?
 

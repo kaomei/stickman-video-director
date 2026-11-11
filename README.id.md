@@ -555,7 +555,7 @@ Contoh saya memakai model gambar bawaan GPT tanpa menyiapkan API tambahan. Agen 
 
 ### Q4. Bisakah saya membuat video tanpa naskah yang sudah jadi?
 
-Ya. Anda bisa menempelkan ide kasar, pemikiran spontan, tautan berita, atau satu artikel blog lengkap. Sutradara AI akan mengambil konflik utama, menulis hook 3 detik yang menarik, lalu menyusun topik Anda menjadi alur cerita padat berisi 6 adegan dengan timing komedi dan arahan narasi.
+Ya. Anda bisa menempelkan ide kasar, pemikiran spontan, tautan berita, atau satu artikel blog lengkap. Sutradara AI akan mengambil konflik utama, menulis hook 3 detik yang menarik, lalu menyusun cerita dan pengambilan gambar sesuai topik, durasi target, dan gaya pilihan Anda, dengan timing komedi dan arahan narasi.
 
 ### Q5. Bagaimana AI menjaga retensi penonton dan membuat video tidak membosankan?
 

@@ -1,4 +1,20 @@
 // Declarative B3 artwork only: no source-code evaluation or SVG/URL loading.
+// Shared interpolation keeps rendering and geometric motion checks in agreement.
+export function keyState(l, t) {
+  const out = {...l};
+  for (const prop of ['x', 'y', 'w', 'angle', 'alpha', 'progress', 'scaleX', 'scaleY']) {
+    const keys = (l.keys || []).filter(k => k[prop] !== undefined);
+    if (!keys.length) continue;
+    if (t <= keys[0].t) out[prop] = keys[0][prop];
+    else if (t >= keys.at(-1).t) out[prop] = keys.at(-1)[prop];
+    else {
+      const i = keys.findIndex(k => k.t > t), a = keys[i - 1], b = keys[i];
+      const x = Math.max(0, Math.min(1, (t - a.t) / (b.t - a.t)));
+      out[prop] = a[prop] + (b[prop] - a[prop]) * x * x * (3 - 2 * x);
+    }
+  }
+  return out;
+}
 export function* walkLayers(layers) {
   for (const layer of layers) {
     yield layer;

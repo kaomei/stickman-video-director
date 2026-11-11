@@ -19,6 +19,12 @@ navigation = (
 expected_files = {"README.md", *(f"README.{locale}.md" for locale, _ in navigation)}
 assert {p.name for p in root.glob("README*.md")} == expected_files
 assert source == (root / "README.en.md").read_text(), "Default homepage must match English"
+b3_boundaries = (root / "skills/directing-stickman-videos/references/mode-execution-boundaries.md").read_text()
+assert "Follow its Bodi voice" not in b3_boundaries, "B3 sample voice must not become a provider requirement"
+assert all(phrase in b3_boundaries for phrase in (
+    "Preserve its television finish", "Bodi is the sample voice credit",
+    "not a required service or voice", "the user's selected available voice route takes priority",
+)), "B3 television finish and configurable voice boundary must remain explicit"
 assert "# 🎬 Stickman Video Director" in source
 english_hero = source.split("</div>", 1)[0]
 assert "**Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels.**" in english_hero
@@ -263,7 +269,7 @@ for name in selected:
             ("$30–$60/month", "zero subscription fees", "third-party API usage"),
             ("code-driven", "image assets", "reference image"),
             ("recommend Codex", "created and tested", "GPT's built-in model", "without a separate image-generation API"),
-            ("shower thought", "3-second hook", "tight 6-scene narrative arc"),
+            ("shower thought", "3-second hook", "story and shots", "topic, target length, and chosen style"),
             ("**visual storytelling psychology**", "**The 3-Second Hook**", "**Visual Metaphors**", "**Pacing & Comic Pauses**"),
             ("completely original", "YouTube Partner Program (YPP)"),
             ("RTX", "**Director Mode**", "**Autopilot Mode**", "cloud APIs or procedural rendering"),
@@ -303,7 +309,19 @@ for name in selected:
     for style_id, next_marker, voice in (("b1", '<a id="b2"></a>', "Bodi"), ("b2", '<a id="b3"></a>', "Fola"), ("b3", '<!-- b3:section:end -->', "Bodi")):
         style_section = section(text, style_id, next_marker)
         assert re.search(r'<td align="center">Google Gemini · [^<]*' + voice, style_section), (name, style_id, "verified sample platform and voice")
-    for answer, tokens in zip(faq_answers, (("MIT", "API"), ("B", "A"), ("Codex", "GPT"), ("3", "6"), ("SFX", "Casually Explained"), ("YouTube", "YPP"), ("Codex", "Claude Code", "Cursor"))):
+    story_plan_copy = {
+        "en": ("story and shots", "topic", "target length", "chosen style"),
+        "zh-CN": ("故事与分镜", "主题", "目标时长", "所选画风"),
+        "ja": ("物語とカット", "題材", "目標の長さ", "選んだスタイル"),
+        "ko": ("이야기와 장면", "주제", "목표 길이", "선택한 스타일"),
+        "fr": ("récit et les plans", "sujet", "durée visée", "style choisi"),
+        "pt-BR": ("história e os planos", "tema", "duração desejada", "estilo escolhido"),
+        "tr": ("hikâyeyi ve çekimleri", "konuya", "hedef süreye", "seçilen stile"),
+        "id": ("cerita dan pengambilan gambar", "topik", "durasi target", "gaya pilihan"),
+    }
+    assert all(token in faq_answers[3] for token in story_plan_copy[active]), (name, "story and shot structure scales with topic, length and style")
+    assert not re.search(r"6(?:[- ]scene| 幕|シーン|개 장면| scènes| cenas| sahne| adegan)", faq_answers[3]), (name, "no fixed six-scene FAQ promise")
+    for answer, tokens in zip(faq_answers, (("MIT", "API"), ("B", "A"), ("Codex", "GPT"), ("3",), ("SFX", "Casually Explained"), ("YouTube", "YPP"), ("Codex", "Claude Code", "Cursor"))):
         assert all(token in answer for token in tokens), (name, "localized FAQ topic parity", tokens)
     assert "MIT" in faq and "API" in faq and "YouTube" in faq and "Codex" in faq and "Claude Code" in faq, name
     code = re.findall(r"```text\n(.*?)```", text, re.S)

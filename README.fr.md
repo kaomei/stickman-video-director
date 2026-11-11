@@ -550,7 +550,7 @@ Mes exemples utilisent le modèle d’image intégré à GPT, sans API suppléme
 
 ### Q4. Puis-je créer une vidéo sans script déjà rédigé ?
 
-Oui. Collez une idée brute, une réflexion spontanée, un lien d’actualité ou un article de blog entier. Le réalisateur IA extrait le conflit central, écrit une accroche de 3 secondes et structure votre sujet en un arc narratif resserré de 6 scènes, avec rythme comique et indications de voix off.
+Oui. Collez une idée brute, une réflexion spontanée, un lien d’actualité ou un article de blog entier. Le réalisateur IA extrait le conflit central, écrit une accroche de 3 secondes et adapte le récit et les plans au sujet, à la durée visée et au style choisi, avec rythme comique et indications de voix off.
 
 ### Q5. Comment l’IA rend-elle la vidéo captivante et évite-t-elle l’ennui ?
 

@@ -547,7 +547,7 @@ My examples use GPT's built-in model without a separate image-generation API. Ot
 
 ### Q4. Can I make a video without an existing script?
 
-Yes. You can paste a rough idea, a shower thought, a news link, or an entire blog post. The AI director will extract the core conflict, write a compelling 3-second hook, and structure your topic into a tight 6-scene narrative arc complete with comedic timing and voiceover cues.
+Yes. You can paste a rough idea, a shower thought, a news link, or an entire blog post. The AI director will extract the core conflict, write a compelling 3-second hook, and structure the story and shots to fit your topic, target length, and chosen style, complete with comedic timing and voiceover cues.
 
 ### Q5. How does the AI ensure the video has high viewer retention and isn't boring?
 
