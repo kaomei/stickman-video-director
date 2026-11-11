@@ -92,7 +92,7 @@ test('B5 preserves only the exact approved code-native Spider-Man identity excep
   assert.throws(f.validate,/not SVG\/Canvas/);
 });
 
-test('B5 requires continuous quiet bed coverage, causal sound notes and fixed typography', async t => {
+test('B5 requires continuous quiet bed coverage, causal sound notes and default typography without an override', async t => {
   const f = await fixture(t), original = structuredClone(f.q);
   f.q.sound = []; f.save(); assert.throws(f.validate,/sound ledger/);
   Object.assign(f.q,structuredClone(original)); f.q.sound[0].kind = 'dialogue'; f.save(); assert.throws(f.validate,/background gaps/);
@@ -101,6 +101,49 @@ test('B5 requires continuous quiet bed coverage, causal sound notes and fixed ty
   f.q.sound[1].reason = ''; f.save(); assert.throws(f.validate,/cue\/time\/reason/);
   Object.assign(f.q,structuredClone(original)); f.q.captions.preset='generic-default'; f.save(); assert.throws(f.validate,/Instrument Sans\/Anton/);
   Object.assign(f.q,structuredClone(original)); f.q.captions.font=f.lock('Anton-0.ttf'); f.save(); assert.throws(f.validate,/font changed/);
+});
+
+test('B5 permits an explicit user font/effect treatment without a second approval prompt', async t => {
+  const f = await fixture(t), before = f.validate().manifest_sha256;
+  f.q.captions.preset = 'fixture-user-editorial';
+  f.q.captions.font = f.lock('Anton-0.ttf');
+  f.q.captions.title_font = f.lock('Instrument-Sans-1.ttf');
+  f.q.captions.override = {kind:'user_choice', reason:'Fixture requests a different font/effect', user_approval:'Synthetic user request fixture, not actual creative approval', treatment:'Anton captions, Instrument Sans titles, red emphasis; maintain readable safe bounds'};
+  f.save();
+  const evidence = f.validate();
+  assert.equal(evidence.captions.override.kind,'user_choice');
+  assert.equal(evidence.captions.preset,'fixture-user-editorial');
+  assert.equal(evidence.captions.font_sha256,f.lock('Anton-0.ttf').sha256);
+  assert.notEqual(evidence.manifest_sha256,before);
+  await checkB5Motion(evidence,f.render,sharp);
+});
+
+test('B5 language fallback changes font assets but does not silently choose another design preset', async t => {
+  const f = await fixture(t);
+  fs.copyFileSync(path.join(root,'assets/fonts/NotoSans.ttf'),path.join(f.scene,'localized.ttf'));
+  f.q.captions.font = f.lock('localized.ttf');
+  f.q.captions.title_font = f.lock('localized.ttf');
+  f.q.captions.override = {kind:'language_fallback', language:'tr', reason:'Synthetic localization fixture, not glyph-coverage certification', treatment:'Use the supplied localized font; preserve headline/caption hierarchy and semantic layout'};
+  f.save();
+  assert.equal(f.validate().captions.override.language,'tr');
+  f.q.captions.preset = 'unrequested-design'; f.save();
+  assert.throws(f.validate,/Instrument Sans\/Anton/);
+});
+
+test('B5 rejects unscoped typography bypasses and retains font, semantic, sound and motion gates', async t => {
+  const f = await fixture(t), valid = {kind:'user_choice', reason:'Synthetic scoped test', user_approval:'Synthetic request fixture only', treatment:'Alternate fixture font'};
+  for (const override of [null, {}, {kind:'anything',reason:'x'}, {...valid,reason:''}, {...valid,user_approval:''}, {...valid,treatment:''}, {kind:'language_fallback',reason:'x',treatment:'x'}, {kind:'language_fallback',reason:'x',language:'zh-CN'}]) {
+    f.q.captions.override = override; f.save(); assert.throws(f.validate,/override|request|treatment|language/);
+  }
+  f.q.captions.override = valid; f.q.captions.font = f.lock('Anton-0.ttf'); f.save();
+  assert.equal(f.validate().mode,'new_story');
+  const original = structuredClone(f.q);
+  f.q.captions.semantic_review=''; f.save(); assert.throws(f.validate,/semantic/);
+  Object.assign(f.q,structuredClone(original)); f.q.captions.font.sha256='0'.repeat(64); f.save(); assert.throws(f.validate,/hash changed/);
+  Object.assign(f.q,structuredClone(original)); f.q.captions.title_font.path='../outside.ttf'; f.save(); assert.throws(f.validate,/local-only/);
+  Object.assign(f.q,structuredClone(original)); f.q.sound=[]; f.save(); assert.throws(f.validate,/sound ledger/);
+  Object.assign(f.q,structuredClone(original)); f.q.motion=[]; f.save(); assert.throws(f.validate,/inactive/);
+  Object.assign(f.q,structuredClone(original)); f.q.presenter.static_approval=''; f.save(); assert.throws(f.validate,/approval/);
 });
 
 test('B5 rejects static/fake raster/missing render-path evidence and samples real local pixels', async t => {
@@ -117,14 +160,29 @@ test('B5 rejects static/fake raster/missing render-path evidence and samples rea
   await assert.rejects(checkB5Motion(f.validate(),{...f.render,productionAssets:[f.lock('fake.png')]},sharp),/corrupt|invalid|pngload|header|input/i);
 });
 
-test('B5 new-story frames/encode enforce current evidence and reviewed mix without paid calls', async t => {
+test('B5 custom-font frames/encode retain rendered captions, evidence and reviewed mix without paid calls', async t => {
   const f = await fixture(t);
-  fs.writeFileSync(path.join(f.scene,'renderer.cjs'),`const fs=require('node:fs');module.exports={productionAssets:${JSON.stringify([f.lock('presenter.png')])},frame:${svg.toString()},qualityFrame:${svg.toString()}};`);
+  fs.copyFileSync(path.join(root,'assets/fonts/NotoSans.ttf'),path.join(f.scene,'custom.ttf'));
+  f.q.captions.font=f.lock('custom.ttf');
+  f.q.captions.preset='fixture-user-noto';
+  f.q.captions.override={kind:'user_choice',reason:'Synthetic end-to-end font customization test',user_approval:'Synthetic request fixture, not actual creative approval',treatment:'Noto Sans caption tile with red emphasis, original picture motion retained'};
+  f.save();
+  const {createCanvas,GlobalFonts}=require('@napi-rs/canvas');
+  assert(GlobalFonts.registerFromPath(path.join(f.scene,'custom.ttf'),'B5CustomFixture'));
+  const tile=createCanvas(160,35),ctx=tile.getContext('2d');
+  ctx.font='18px B5CustomFixture';ctx.fillStyle='#D7372C';ctx.fillText('Custom caption',1,24);
+  fs.writeFileSync(path.join(f.scene,'caption.png'),tile.toBuffer('image/png'));
+  fs.writeFileSync(path.join(f.scene,'renderer.cjs'),`const fs=require('node:fs'),path=require('node:path');const picture=${svg.toString()};const tile=fs.readFileSync(path.join(__dirname,'caption.png')).toString('base64');module.exports={productionAssets:${JSON.stringify([f.lock('presenter.png')])},frame:t=>Buffer.from(picture(t).toString().replace('</svg>','<image x="150" y="130" width="160" height="35" href="data:image/png;base64,'+tile+'"/></svg>')),qualityFrame:picture};`);
   let r=run(['validate',f.dir]); assert.equal(r.status,0,r.stderr);
   const frameDir=path.join(f.tmp,'frames');
   r=run(['frames',f.dir,'--output',frameDir,'--all']); assert.notEqual(r.status,0); assert.match(r.stderr,/trusted-code/);
   r=run(['frames',f.dir,'--output',frameDir,'--all','--trusted-code']); assert.equal(r.status,0,r.stderr);
   const ledger=JSON.parse(fs.readFileSync(path.join(frameDir,'frames.json'))); assert.equal(ledger.frames.length,48); assert(ledger.production.motion_samples[0].changed_pixels>8);
+  assert.equal(ledger.production.captions.override.kind,'user_choice');
+  assert.equal(ledger.production.captions.font_sha256,f.lock('custom.ttf').sha256);
+  const printed=await sharp(path.join(frameDir,'000000.png')).extract({left:150,top:130,width:160,height:35}).removeAlpha().raw().toBuffer();
+  let red=0;for(let i=0;i<printed.length;i+=3)if(printed[i]>130&&printed[i+1]<110&&printed[i+2]<110)red++;
+  assert(red>20,'custom-font caption tile must appear in the rendered frame');
   const args=['encode',f.dir,'--frames-dir',frameDir,'--audio',path.join(f.scene,'mix.wav'),'--output',path.join(f.tmp,'delivery'),'--approval-note','Synthetic engineering encode only; not user creative approval'];
   r=run(args); assert.equal(r.status,0,r.stderr);
   assert.equal(JSON.parse(fs.readFileSync(path.join(f.tmp,'delivery/delivery.json'))).full_decode,'pass');
@@ -133,4 +191,6 @@ test('B5 new-story frames/encode enforce current evidence and reviewed mix witho
   r=run(wrong); assert.notEqual(r.status,0); assert.match(r.stderr,/reviewed final mix/);
   fs.appendFileSync(path.join(f.scene,'renderer.cjs'),'\n// stale\n');
   r=run(args); assert.notEqual(r.status,0); assert.match(r.stderr,/Project changed/);
+  fs.appendFileSync(path.join(f.scene,'custom.ttf'),'changed font');
+  r=run(['validate',f.dir]); assert.notEqual(r.status,0); assert.match(r.stderr,/hash changed/);
 });

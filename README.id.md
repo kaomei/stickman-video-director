@@ -551,7 +551,7 @@ Ya. Stickman Video Director 100% gratis dan open source dengan lisensi MIT. Anda
 
 **Agar hasilnya sedekat mungkin dengan contoh, saya merekomendasikan Codex.** Video contoh Mode B saya buat dan uji di Codex; Anda tidak perlu menulis kode sendiri. Skill juga dapat dipasang di agent lain, tetapi perbedaan model, konfigurasi alat, dan cara eksekusi dapat memengaruhi hasilnya.
 
-Contoh saya memakai model gambar bawaan GPT tanpa menyiapkan API tambahan. Agen lain dapat memakai alat gambar yang tersedia di lingkungannya. Pembawa acara B5 berupa orang nyata atau karakter kompleks harus memakai gambar yang dihasilkan atau sudah disetujui, bukan wajah pengganti yang digambar dengan kode. Kredit suara menunjukkan sumber contoh, bukan layanan yang wajib dipakai. Bila perlu, minta agen mengatur layanan pilihan Anda, lalu periksa sampel pendek sebelum membuat video lengkap.
+Contoh saya memakai model gambar bawaan GPT tanpa menyiapkan API tambahan. Agen lain dapat memakai alat gambar yang tersedia di lingkungannya. Pembawa acara B5 berupa orang nyata atau karakter kompleks harus memakai gambar yang dihasilkan atau sudah disetujui, bukan wajah pengganti yang digambar dengan kode. Kredit suara menunjukkan sumber contoh, bukan layanan yang wajib dipakai. Bila perlu, minta agen mengatur layanan pilihan Anda, lalu periksa sampel pendek sebelum membuat video lengkap. Preset gaya adalah titik awal, bukan batasan: minta agen mengubah font, efek teks, atau bahasa video dan menyesuaikan tata letaknya dengan keinginan Anda.
 
 ### Q4. Bisakah saya membuat video tanpa naskah yang sudah jadi?
 

@@ -52,9 +52,14 @@ presenter:
     references: [{role: identity | style, path, sha256}]
 captions:
   preset: b5-instrument-anton-v1
-  font: {path, sha256}       # exact bundled Instrument-Sans-1.ttf
-  title_font: {path, sha256} # exact bundled Anton-0.ttf
+  font: {path, sha256}       # bundled Instrument-Sans-1.ttf by default
+  title_font: {path, sha256} # bundled Anton-0.ttf by default
   semantic_review: actual words, semantic grouping and voice-timing review
+  override:                 # optional; omit when using the defaults
+    kind: user_choice | language_fallback
+    reason, treatment: actual scope and implemented font/effect/layout treatment
+    user_approval: actual user request and its origin # required for user_choice
+    language: target language                       # required for language_fallback
 sound:
   [{kind: ambience | sfx | dialogue | quiet, start, end, reason,
     path, sha256, rights}]  # quiet omits file/rights, explains the quiet beat
@@ -67,7 +72,13 @@ motion:
 
 All paths are local and relative to `scene/`, with no symlinks or path escape. Reference lists may be empty only when none were actually supplied. Do not fabricate source, rights or approval entries. Store private API keys outside the manifest. Sound cues use final-video seconds and name the causal action; cover the timeline with quiet ambience and any explicitly motivated quiet beats, use discrete event SFX rather than a loud loop, and record deliberate quiet rather than omitting sound design. Review voice intelligibility and the encoded mix; no forced voice vendor. See [sound QA](b5-sound-qa.md).
 
-Keep the fixed B5 Instrument Sans caption/Anton headline hierarchy, upper-right semantic block, approved emphasis/color/placement and at most three lines. Build new glyph tiles for the actual script; do not keep the example's words. A complete cue/word review and encoded visual inspection remain required. This gate locks font files and records the review; it does not recognize typography or semantics from video pixels automatically.
+### Font, text-effect and language customization
+
+By default, keep the B5 Instrument Sans caption/Anton headline hierarchy, upper-right semantic block, approved emphasis/color/placement and at most three lines. An **explicit user typography request takes priority**: record it in `captions.override` with `kind: user_choice`, its actual origin in `user_approval`, and the chosen treatment; use a descriptive `preset` for the resulting design. The clear request itself is authorization for that scoped change, not a reason to ask the same question again. Do not invent a user request to excuse an Agent's unrequested restyle.
+
+For a requested language whose glyphs the default fonts do not cover, use `kind: language_fallback`, record the target `language`, reason and adapted treatment, and retain `preset: b5-instrument-anton-v1` as the design hierarchy. Select a licensed, script-capable font without silently choosing another design. Both routes still require local font files and exact SHA-256 values; font or treatment changes invalidate old frame evidence. They do not waive semantic captions, safe bounds, identity, sound, local motion or review gates.
+
+Implement the change in the actual renderer and rebuild glyph tiles for the actual script, rather than changing metadata alone or keeping the example's words. Inspect punctuation, diacritics or CJK glyphs as applicable, clipping, emphasis, readable spacing, semantic groups and actual voice timing in encoded playback. Preserve accepted earlier project versions. This gate locks the declared files and records review; it cannot certify glyph coverage, typography or semantics from pixels automatically.
 
 Motion intervals must bound actual local actor/prop/information progress, with no principal-picture inactivity above 2.5 seconds. Exclude subtitles, title entrances, camera drift, global noise, arbitrary jitter and large full-frame regions. Follow the [left-stage causal action cards](b5-left-stage-motion.md), including contact, consequence, recovery and SFX timing; a moving mouth alone does not rescue a static explaining stage.
 

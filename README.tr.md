@@ -545,7 +545,7 @@ Evet. Stickman Video Director, MIT lisansıyla %100 ücretsiz ve açık kaynakl�
 
 **Örneklere mümkün olduğunca yakın sonuçlar için Codex’i öneririm.** B Modu örnek videolarını Codex’te hazırlayıp test ettim; kendiniz kod yazmanız gerekmez. Skill başka agent ortamlarına da kurulabilir, ancak model, araç yapılandırması ve yürütme biçimindeki farklar sonucu etkileyebilir.
 
-Örneklerimde GPT’nin yerleşik görsel modelini kullanıyorum; ek bir görsel üretim API’si yapılandırmadım. Diğer ajanlarda, o ortamda bulunan görsel araçlarını kullanın. Gerçek kişilere veya karmaşık karakterlere dayanan B5 sunucuları için üretilmiş ya da onaylanmış görseller gerekir; kodla çizilmiş genel bir yüzle değiştirilemez. Ses bilgileri örneklerin kaynağını belirtir, belirli bir sağlayıcıyı zorunlu kılmaz. Gerekirse ajanınızdan seçtiğiniz hizmeti yapılandırmasını isteyin ve tam videodan önce kısa bir örneği kontrol edin.
+Örneklerimde GPT’nin yerleşik görsel modelini kullanıyorum; ek bir görsel üretim API’si yapılandırmadım. Diğer ajanlarda, o ortamda bulunan görsel araçlarını kullanın. Gerçek kişilere veya karmaşık karakterlere dayanan B5 sunucuları için üretilmiş ya da onaylanmış görseller gerekir; kodla çizilmiş genel bir yüzle değiştirilemez. Ses bilgileri örneklerin kaynağını belirtir, belirli bir sağlayıcıyı zorunlu kılmaz. Gerekirse ajanınızdan seçtiğiniz hizmeti yapılandırmasını isteyin ve tam videodan önce kısa bir örneği kontrol edin. Stil ön ayarları birer başlangıç noktasıdır, kısıtlama değildir: ajanınızdan yazı tiplerini, metin efektlerini veya video dilini değiştirip yerleşimi isteğinize göre uyarlamasını isteyebilirsiniz.
 
 ### Q4. Hazır bir senaryo olmadan video yapabilir miyim?
 

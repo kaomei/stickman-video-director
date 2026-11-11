@@ -287,6 +287,17 @@ for name in selected:
     }
     neutrality, motion_copy = production_copy[active][:5], production_copy[active][5:]
     assert all(token in faq_answers[2] for token in neutrality), (name, "localized model/voice neutrality")
+    typography_copy = {
+        "en": ("defaults, not restrictions", "fonts, text effects, or the video language", "adapt the layout"),
+        "zh-CN": ("画风预设不是限制", "字体、文字动效或视频语言", "适配排版"),
+        "ja": ("初期設定であり、制限ではありません", "フォント、文字の演出、動画の言語", "レイアウトを調整"),
+        "ko": ("기본값이지 제한이 아닙니다", "글꼴, 텍스트 효과, 영상 언어", "레이아웃을 맞출"),
+        "fr": ("points de départ, pas des restrictions", "polices, les effets de texte ou la langue", "adapter la mise en page"),
+        "pt-BR": ("pontos de partida, não restrições", "fontes, efeitos de texto ou o idioma", "adaptar o layout"),
+        "tr": ("başlangıç noktasıdır, kısıtlama değildir", "yazı tiplerini, metin efektlerini veya video dilini", "yerleşimi isteğinize göre"),
+        "id": ("titik awal, bukan batasan", "font, efek teks, atau bahasa video", "menyesuaikan tata letaknya"),
+    }
+    assert all(token in faq_answers[2] for token in typography_copy[active]), (name, "localized typography/language customization")
     visual_row = text.splitlines()[104]
     assert all(token in visual_row for token in motion_copy), (name, "local animation is not camera/text-only")
     for style_id, next_marker, voice in (("b1", '<a id="b2"></a>', "Bodi"), ("b2", '<a id="b3"></a>', "Fola"), ("b3", '<!-- b3:section:end -->', "Bodi")):
