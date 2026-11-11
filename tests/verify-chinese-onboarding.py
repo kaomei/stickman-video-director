@@ -48,7 +48,8 @@ assert mode_rows[0] == '|  | <div align="center">A · 导演模式</div> | <div 
 assert mode_rows[1] == "|:---:|:---|:---|", "Keep explanatory columns left-aligned"
 assert len(mode_rows) == 7 and mode_rows[-1].startswith('| **产出** |'), "Keep five explanatory rows without the redundant Start row"
 assert all('align="center"' not in row for row in mode_rows[2:]), "Do not center the explanatory body text"
-assert "插画分镜＋微动画" in mode_comparison and "插画轮播" not in mode_comparison, "Describe B as illustrated scenes rather than a slideshow; do not impose B1's drawing style on every B style"
+assert "插画分镜＋局部动画" in mode_comparison and "插画轮播" not in mode_comparison, "Describe B as illustrated scenes rather than a slideshow; do not impose B1's drawing style on every B style"
+assert "仅有镜头移动或文字入场，不算画面微动画" in mode_comparison
 assert "一次安装，按需选择" not in cn, "Keep the removed mode-selection sentence out of the introduction"
 quick_start_intro = cn.split('<a id="quick-start"></a>', 1)[1].split('<a id="director-start"></a>', 1)[0]
 assert "想尽可能接近展示案例，建议优先使用 Codex。" in quick_start_intro
@@ -98,7 +99,7 @@ faq_answers = re.split(r"^### Q\d+\. .+\n", faq, flags=re.M)[1:]
 required_copy = (
     ("MIT 开源协议", "$30–$60", "没有任何订阅费", "按需支付官方 API 费用"),
     ("**B · 全自动模式**", "代码驱动", "人物素材图", "不同场景中复用", "**A · 导演模式**", "火柴人角色参考图"),
-    ("**推荐使用 Codex，以尽可能接近案例效果。**", "制作和测试", "其他 Agent", "GPT 内置模型", "没有额外配置生图 API"),
+    ("**推荐使用 Codex，以尽可能接近案例效果。**", "制作和测试", "其他 Agent", "GPT 内置生图模型", "没有额外配置生图 API", "不能用代码头像替代", "不绑定服务商"),
     ("公众号长文", "前 3 秒爆款黄金钩子", "6 幕式标准分镜"),
     ("**视觉叙事心理学**", "**黄金 3 秒钩子**", "**爆款视觉隐喻**", "**卡点与节奏留白**", "Casually Explained"),
     ("搬运重复内容（Reused Content）", "高价值原创内容", "YouTube 创作者收益计划（YPP）", "TikTok 创作者基金"),

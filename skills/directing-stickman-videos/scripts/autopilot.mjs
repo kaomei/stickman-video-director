@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {ROOT, STYLES, FFMPEG, FFPROBE, run, probe, loadProject, outputDir, save, json, hashFile, groupWords} from './autopilot-core.mjs';
 import {BRIAN} from './b4-runtime.mjs';
+import {B4_HOOK} from './b4-opening.mjs';
 import {initB5} from './character-explainer.mjs';
 
 const [command, ...args] = process.argv.slice(2);
@@ -13,7 +14,8 @@ async function main() {
     for (const [name, exe] of [['ffmpeg', FFMPEG], ['ffprobe', FFPROBE]]) try { run(exe, ['-version']); checks[name] = true; } catch { checks[name] = false; }
     try { await import('@napi-rs/canvas'); checks.canvas = true; } catch { checks.canvas = false; }
     try { await import('sharp'); checks.sharp = true; } catch { checks.sharp = false; }
-    checks.fonts = ['Caveat.ttf', 'NotoSans.ttf'].every(f => { const file = path.join(ROOT, 'assets/fonts', f); return fs.existsSync(file) && fs.statSync(file).size > 10000; });
+    checks.fonts = ['Caveat.ttf', 'NotoSans.ttf', 'Nunito.ttf'].every(f => { const file = path.join(ROOT, 'assets/fonts', f); return fs.existsSync(file) && fs.statSync(file).size > 10000; });
+    checks.b4_hook_font = fs.existsSync(path.join(ROOT, 'assets/fonts/Nunito.ttf')) && hashFile(path.join(ROOT, 'assets/fonts/Nunito.ttf')) === B4_HOOK.font_sha256;
     console.log(JSON.stringify({checks, gemini_key_present: Boolean(process.env.GEMINI_API_KEY), network_checked: false, note: 'Key presence is not quota/billing verification'}, null, 2));
     if (Object.values(checks).some(v => !v)) process.exitCode = 1;
   } else if (command === 'probe') console.log(JSON.stringify(probe(path.resolve(args[0])), null, 2));
@@ -25,7 +27,7 @@ async function main() {
     const dir = path.resolve(args[0]); if (fs.existsSync(dir)) throw new Error('Project directory already exists; will not overwrite');
     if (dir.startsWith(ROOT + path.sep)) throw new Error('Create projects outside the installed Skill');
     fs.mkdirSync(dir, {recursive: true});
-    save(path.join(dir, 'project.json'), {version: 1, style, width: 1280, height: 720, fps: 30, voice: {path: 'narration.wav', lead: 0, tail: 0, ...(style === 'B4' ? BRIAN : {})}, captions: [], shots: [], sfx: [], ...(style === 'B3' ? {television: {enabled: true, intensity: 0.45}} : {}), ...(style === 'B4' ? {ambience: [], dialogue: [], audio_cuts: []} : {})});
+    save(path.join(dir, 'project.json'), {version: 1, style, width: 1280, height: 720, fps: 30, voice: {path: 'narration.wav', lead: 0, tail: 0, ...(style === 'B4' ? BRIAN : {})}, captions: [], shots: [], sfx: [], ...(style === 'B3' ? {television: {enabled: true, intensity: 0.45}} : {}), ...(style === 'B4' ? {ambience: [], dialogue: [], audio_cuts: [], opening: {version: 1, preset: B4_HOOK.id, shadow: '', setup: '', payoff: '', picture: {before: '', after: '', meaning: '', region: {}}}} : {})});
     console.log(JSON.stringify({project: path.join(dir, 'project.json'), stage: 'scaffold; add approved narration, aligned captions and authored scenes before rendering'}));
   } else if (command === 'captions') {
     if (!args[0] || !args[1]) throw new Error('Aligned word input and output file required');
@@ -39,7 +41,12 @@ async function main() {
     if (scoped && (!Number.isFinite(seconds) || seconds <= 0 || seconds > 60)) throw new Error('Preview length must be greater than 0 and at most 60 seconds');
     let p;
     if (command !== 'approve') p = loadProject(args[0], scoped ? {seconds} : {});
-    if (command === 'validate') { const {painter} = await import('./autopilot-render.mjs'); const draw = await painter(p); for (const cue of p.captions) draw(Math.min(p.rangeEnd - 0.001, (cue.start + cue.end) / 2)); console.log(JSON.stringify({valid: true, fingerprint: p.fingerprint, duration: p.duration, checked_seconds: p.rangeEnd, shots: p.shots.length})); return; }
+    if (command === 'validate') {
+      const {painter} = await import('./autopilot-render.mjs'); const draw = await painter(p);
+      for (const cue of p.captions) draw(Math.min(p.rangeEnd - 0.001, (cue.start + cue.end) / 2));
+      const opening_visual = p.style === 'B4' ? await (await import('./b4-opening-visual-check.mjs')).checkB4OpeningPaint(p, {draw, picture: await painter(p, {pictureOnly: true})}) : undefined;
+      console.log(JSON.stringify({valid: true, fingerprint: p.fingerprint, duration: p.duration, checked_seconds: p.rangeEnd, shots: p.shots.length, ...(opening_visual ? {opening_visual} : {})})); return;
+    }
     const base = p?.base ?? path.dirname(fs.realpathSync(path.resolve(args[0])));
     const out = outputDir(p ?? {base, inputs: []}), approvalPath = path.join(out, 'approval.json'), reportPath = path.join(out, 'preview-report.json');
     let report, reviewed;
@@ -54,6 +61,12 @@ async function main() {
       if (report.fingerprint !== reviewed.fingerprint || report.output !== path.join(out, 'preview.mp4') || !fs.existsSync(report.output) || hashFile(report.output) !== report.output_sha256) throw new Error(error);
       if (reviewed.style === 'B4' && report.opening_audio?.status !== 'diagnostic_pass' &&
         !(typeof reviewed.opening_audio_override === 'string' && reviewed.opening_audio_override.trim())) throw new Error('B4 opening audio needs review; repair it or record a story-motivated opening_audio_override before approval');
+      if (reviewed.style === 'B4') {
+        if (report.opening_visual?.output_sha256 !== report.output_sha256 || !['diagnostic_pass', 'user_exception'].includes(report.opening_visual?.status)) throw new Error('B4 opening visual evidence missing; render and review the current preview again');
+        const {painter} = await import('./autopilot-render.mjs');
+        // Recheck the actual MP4; an edited report must not waive the gate.
+        await (await import('./b4-opening-visual-check.mjs')).checkB4OpeningFile(reviewed, report.output, {draw: await painter(reviewed), picture: await painter(reviewed, {pictureOnly: true})});
+      }
     }
     if (command === 'approve') {
       const note = option('--note', ''); if (!note.trim()) throw new Error('A note recording genuine user approval is required');

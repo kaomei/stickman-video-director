@@ -40,7 +40,7 @@ test('new B5 scaffolds have no account watermark or creator-handle tile by defau
 });
 test('B5 rejects incomplete frame sequences before encoding and does not overwrite output',()=>{const out=path.join(tmp,'delivery');const r=run('character-explainer.mjs','encode',path.join(tmp,'project'),'--frames-dir',path.join(tmp,'frames'),'--audio',path.join(ROOT,'assets/b5/approved-sample.mp4'),'--output',out,'--approval-note','Technical negative fixture only');assert.notEqual(r.status,0);assert.match(r.stderr,/Full sequence required/);assert(!fs.existsSync(out))});
 test('B5 contract scopes multi-line captions, recognition approval and no abstract anxiety circles',()=>{const motion=fs.readFileSync(path.join(ROOT,'references/b5-avatar-motion.md'),'utf8'),contract=fs.readFileSync(path.join(ROOT,'references/b5-character-explainer.md'),'utf8');assert.match(motion,/up to three semantic lines/);assert.match(motion,/No meaningless anxiety bubbles/);assert.match(motion,/static approval before rigging/);assert.match(contract,/not phoneme-accurate/);assert.match(contract,/not a finished new-topic video/)});
-test('B5 encoder completes a tiny technical round-trip without re-rendering the approved film',async()=>{
+test('B5 encoder rejects a fabricated frame-only new story without production evidence',async()=>{
  const crypto=await import('node:crypto'),sha=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
  const project=path.join(tmp,'encode-fixture');initB5(project);
  const cfg={width:320,height:180,fps:2,duration:1};fs.writeFileSync(path.join(project,'scene/config.json'),JSON.stringify(cfg));
@@ -52,6 +52,6 @@ test('B5 encoder completes a tiny technical round-trip without re-rendering the 
  const audio=path.join(tmp,'technical-silence.wav');const synth=spawnSync(process.env.FFMPEG||'ffmpeg',['-v','error','-f','lavfi','-i','anullsrc=r=48000:cl=stereo','-t','1',audio],{encoding:'utf8'});assert.equal(synth.status,0,synth.stderr);
  const output=path.join(tmp,'encoded');const args=['encode',project,'--frames-dir',frames,'--audio',audio,'--output',output];
  const denied=run('character-explainer.mjs',...args);assert.notEqual(denied.status,0);assert.match(denied.stderr,/genuine current user approval/);assert(!fs.existsSync(output));
- const r=run('character-explainer.mjs',...args,'--approval-note','Technical fixture within the authorized B5 release validation; not approval of a new creative film.');assert.equal(r.status,0,r.stderr);
- const delivery=JSON.parse(fs.readFileSync(path.join(output,'delivery.json')));assert.equal(delivery.full_decode,'pass');assert.equal(delivery.output_sha256,sha(path.join(output,'video.mp4')));const video=delivery.metadata.streams.find(s=>s.codec_type==='video');assert.equal(video.width,320);assert.equal(video.height,180);assert.equal(+video.nb_frames,2);
+ const r=run('character-explainer.mjs',...args,'--approval-note','Technical fixture only, not creative approval.');assert.notEqual(r.status,0);
+ assert.match(r.stderr,/new stories require scene\/production\.json/);assert(!fs.existsSync(output));
 });

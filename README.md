@@ -102,7 +102,7 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 | **Approach** | **You control production; AI plans the shots.** Get storyboards and prompts, then generate clips and edit them yourself. | **Give it a topic or a brief; get a finished video.** Automate illustrations, voiceover, captions, subtle animation, and video assembly. |
 | **Length** | **Short-first**, typically 30 seconds–3 minutes. Longer videos can be built scene by scene. | **Long-form-first**, especially narrated videos of **10 minutes or more**. Also works for shorts and episodic stories. |
 | **Tools** | Plan with a Skill-compatible AI assistant, generate clips in your preferred video generator (Google Flow, Runway, Luma, Kling, etc.), then assemble in CapCut or Premiere. | Run in **Codex, Claude Code**, or another AI coding agent that can read and write files, call tools, and execute commands to connect generation with local rendering. |
-| **Visuals** | **Generated animated clips**, with character movement, camera direction, and interactions. | **Illustrated scenes with subtle animation**, using cuts, pans, and zooms to support the narration rather than generating a full-motion clip for every scene. |
+| **Visuals** | **Generated animated clips**, with character movement, camera direction, and interactions. | **Illustrated scenes with local animation**: expressions, character reactions, and prop movement support the narration alongside cuts, pans, and zooms. Camera movement or text entrances alone do not count as picture animation. |
 | **Output** | A director's treatment, storyboards, scene-by-scene video prompts, and sound design. | **A complete video file with voiceover, captions, and subtle animation.** |
 
 Both workflows can start with a raw topic, a web link, or a full script. Customize your aspect ratio (9:16, 16:9, 1:1), narration language, and voiceover freely. The lengths above are recommendations, not hard limits.
@@ -341,7 +341,7 @@ Like a friend sketching an idea as they explain it. Expressive faces, black line
   </tr>
   <tr>
     <td align="center">Hand-drawn characters · Key text · Subtle animation</td>
-    <td align="center">Bodi voiceover · Expressive faces · Subtle animation</td>
+    <td align="center">Google Gemini · Bodi voiceover · Expressive faces · Subtle animation</td>
   </tr>
 </table>
 
@@ -367,7 +367,7 @@ Why does your mind get louder the harder you try to sleep? Inspired by YouTube's
   </tr>
   <tr>
     <td align="center">Bedtime thoughts · Scenic cutaways · Gentle motion</td>
-    <td align="center">Everyday distractions · Colorful scenes · Fola narration</td>
+    <td align="center">Google Gemini · Everyday distractions · Colorful scenes · Fola narration</td>
   </tr>
 </table>
 
@@ -394,7 +394,7 @@ Like stumbling across a curious late-night broadcast. Inspired by YouTube's [@Br
   </tr>
   <tr>
     <td align="center">Fictional suspense · Scene changes · TV texture</td>
-    <td align="center">Animal behavior · Local reactions · Bodi narration</td>
+    <td align="center">Google Gemini · Animal behavior · Local reactions · Bodi narration</td>
   </tr>
 </table>
 <!-- b3:section:end -->
@@ -543,7 +543,7 @@ Yes. Stickman Video Director is 100% free and open-source under the MIT license.
 
 **I recommend Codex for results closest to the examples.** I created and tested the B Mode showcase videos in Codex; you do not need to write code yourself. Other agents can install the Skill, but differences in models, tool configuration, and execution can affect the results.
 
-For images, I use GPT's built-in model without a separate image-generation API. Start with a short sample to check the style and results before making the full video.
+My examples use GPT's built-in model without a separate image-generation API. Other agents should use their available image tools; B5 real-person or complex hosts need generated or approved image assets, not code-drawn substitutes. Voice credits describe the examples, not a required provider. Ask your agent to configure your preferred service, then check a short sample before making the full video.
 
 ### Q4. Can I make a video without an existing script?
 

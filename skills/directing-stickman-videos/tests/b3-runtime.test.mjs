@@ -14,6 +14,7 @@ function fixture(t) {
   run(FFMPEG, ['-v', 'error', '-f', 'lavfi', '-i', 'sine=frequency=310:duration=0.85', '-y', path.join(dir, 'voice.wav')]);
   const project = {version: 1, style: 'B3', width: 640, height: 360, fps: 12,
     television: {enabled: false}, voice: {path: 'voice.wav'},
+    ambience: [{path: 'voice.wav', start: 0, end: .85, gain: .01}], // Offline synthetic bed only.
     captions: [{start: 0.1, end: 0.75, text: 'A local interaction.'}],
     shots: [{start: 0, end: 0.85, layers: [
       {type: 'group', x: 100, y: 100, alpha: 0.5, children: [

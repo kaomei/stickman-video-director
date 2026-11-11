@@ -102,7 +102,7 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 | **Temel yaklaşım** | **Kontrol sizde, yönetmenlik planı yapay zekâda**: sahne planı ve istemler hazırlanır; klip üretimini ve kurguyu siz yönetirsiniz. | **Bir konu veya ihtiyaç verin, bitmiş videoyu alın**: çizimler, seslendirme, altyazı, mikro animasyonlar ve video birleştirme otomatik tamamlanır. |
 | **Süre** | **Kısa videolar için ideal**; örneğin 30 saniye–3 dakika. Daha uzun içerikler de bölüm bölüm hazırlanabilir. | **Uzun videolar öncelikli**; özellikle **10 dakika ve üzeri** seslendirmeli içeriklere uygun. Kısa videolar ve bölümlü hikâyeler de yapılabilir. |
 | **Araçlar** | Skill uyumlu bir yapay zekâ asistanıyla planlayın, klipleri tercih ettiğiniz video üreticisinde (Google Flow, Runway, Luma, Kling vb.) oluşturun, ardından CapCut veya Premiere’de birleştirin. | **Codex veya Claude Code** gibi dosya okuyup yazabilen, araç kullanabilen ve komut çalıştırabilen bir yapay zekâ kodlama ajanı; medya üretimini yerel video birleştirmeyle buluşturur. |
-| **Görsel anlatım** | **Bölüm bölüm üretilen animasyonlar**: karakter hareketleri, kamera düzeni ve karakterler arası etkileşim ön plandadır. | **Çizimli sahne planı + mikro animasyon**: kesmeler, yakınlaşmalar ve kaydırmalar anlatıcıyı takip eder; her bölüm için baştan sona hareketli video üretmek gerekmez. |
+| **Görsel anlatım** | **Bölüm bölüm üretilen animasyonlar**: karakter hareketleri, kamera düzeni ve karakterler arası etkileşim ön plandadır. | **Çizimli sahne planı + yerel animasyon**: yüz ifadeleri, karakter tepkileri ve nesne hareketleri anlatıma eşlik eder; kesmeler, yakınlaşmalar ve kaydırmalarla desteklenir. Yalnızca kamera hareketi veya yazı girişi, sahne animasyonu sayılmaz. |
 | **Çıktı** | Yönetmen önerisi, sahne planı, bölüm bazında video istemleri ve ses tasarımı. | **Seslendirme, altyazı ve mikro animasyon içeren eksiksiz video dosyası.** |
 
 Her iki iş akışı da ham bir konu, web bağlantısı veya tam bir senaryoyla başlayabilir. En-boy oranını (9:16, 16:9, 1:1), anlatım dilini ve seslendirmeyi özgürce seçin. Yukarıdaki süreler öneridir, kesin sınırlar değildir.
@@ -344,7 +344,7 @@ Bir arkadaşınız anlatırken çiziyormuş gibi. İfadeli yüzler, siyah çizgi
   </tr>
   <tr>
     <td align="center">El çizimi karakterler · Vurgulu metin · Mikro animasyon</td>
-    <td align="center">Bodi seslendirmesi · Canlı ifadeler · Mikro animasyon</td>
+    <td align="center">Google Gemini · Bodi seslendirmesi · Canlı ifadeler · Mikro animasyon</td>
   </tr>
 </table>
 
@@ -370,7 +370,7 @@ Uyumaya çalıştıkça zihniniz neden daha çok konuşur? YouTube’daki [@Psyc
   </tr>
   <tr>
     <td align="center">Uyku öncesi düşünceler · Ortam kesmeleri · Yumuşak hareketler</td>
-    <td align="center">Gündelik dikkat dağıtıcılar · Renkli sahneler · Fola anlatımı</td>
+    <td align="center">Google Gemini · Gündelik dikkat dağıtıcılar · Renkli sahneler · Fola anlatımı</td>
   </tr>
 </table>
 
@@ -397,7 +397,7 @@ Gece yarısı ilginç bir yayına rastlamak gibi. YouTube’daki [@BradikininVid
   </tr>
   <tr>
     <td align="center">Kurgu gerilim · Sahne geçişleri · TV dokusu</td>
-    <td align="center">Hayvan davranışları · Yerel tepkiler · Bodi anlatımı</td>
+    <td align="center">Google Gemini · Hayvan davranışları · Yerel tepkiler · Bodi anlatımı</td>
   </tr>
 </table>
 <!-- b3:section:end -->
@@ -545,7 +545,7 @@ Evet. Stickman Video Director, MIT lisansıyla %100 ücretsiz ve açık kaynakl�
 
 **Örneklere mümkün olduğunca yakın sonuçlar için Codex’i öneririm.** B Modu örnek videolarını Codex’te hazırlayıp test ettim; kendiniz kod yazmanız gerekmez. Skill başka agent ortamlarına da kurulabilir, ancak model, araç yapılandırması ve yürütme biçimindeki farklar sonucu etkileyebilir.
 
-Görseller için GPT’nin yerleşik modelini kullanıyorum; ek bir görsel üretim API’si yapılandırmadım. Videonun tamamına geçmeden önce kısa bir örnekle stili ve sonucu kontrol edin.
+Örneklerimde GPT’nin yerleşik görsel modelini kullanıyorum; ek bir görsel üretim API’si yapılandırmadım. Diğer ajanlarda, o ortamda bulunan görsel araçlarını kullanın. Gerçek kişilere veya karmaşık karakterlere dayanan B5 sunucuları için üretilmiş ya da onaylanmış görseller gerekir; kodla çizilmiş genel bir yüzle değiştirilemez. Ses bilgileri örneklerin kaynağını belirtir, belirli bir sağlayıcıyı zorunlu kılmaz. Gerekirse ajanınızdan seçtiğiniz hizmeti yapılandırmasını isteyin ve tam videodan önce kısa bir örneği kontrol edin.
 
 ### Q4. Hazır bir senaryo olmadan video yapabilir miyim?
 

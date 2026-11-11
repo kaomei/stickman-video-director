@@ -37,6 +37,23 @@ test('opening escalation gives setup/payoff hierarchy and a real picture-state c
   assert.ok(read('SKILL.md').includes('first-three-second visual escalation gate'));
 });
 
+test('fixed B4 typography routes to bundled licensed font and actual encoded visual gates', () => {
+  for (const text of ['b4-hook-v1', 'Nunito 900', 'warm-white setup', 'larger coral payoff',
+    '1.035→1', '0.2 seconds', 'Noto Sans', 'not a pixel-identical',
+    'Zero or nonzero keyframes', 'approve', 'MP4']) {
+    assert.ok(opening.includes(text), text);
+  }
+  const runtime = read('references/autopilot-runtime.md');
+  for (const text of ['scripts/b4-opening.mjs', 'preview-opening-visual.json',
+    'preview-opening-contact-sheet.png', 'user_exception', 'not just a self-declared',
+    'does not generate media', 'two coherent matching-frame picture states']) {
+    assert.ok(runtime.includes(text), text);
+  }
+  assert.ok(read('SKILL.md').includes('scripts/b4-opening.mjs'));
+  assert.ok(read('references/b4-repeatability-check.md').includes('not creative acceptance'));
+  assert.ok(read('assets/fonts/README.md').includes('SIL Open Font License'));
+});
+
 test('sound uses minimum motivated layers with honest local acceptance', () => {
   for (const text of ['No default ringtone', 'Three functional layers do not need to run at once', 'redundant hiss', 'Brian remains the fixed narrator', 'full encoded mix', 'Static policy tests', 'physical listening/device checks as pending', 'no automatic gallery replacement']) {
     assert.ok(opening.includes(text), text);

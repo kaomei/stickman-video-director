@@ -153,7 +153,7 @@ Resolve the topic/source, audience, purpose, duration, ratio, B-style and narrat
 
 ### 2. Configuration check
 
-Run the documented local `doctor` check and inspect the user's chosen image and voice services. Resolve each setting as **explicit user choice → selected B-style default → B common fallback**, as defined in Autopilot. Check that resolved provider/voice first; for new B1 projects without a user override this is Google Gemini/Bodi. Do not ask the user to choose a platform again merely because they accepted defaults. Summarize actual findings in plain language, separating **ready**, **missing** and **not yet verified**:
+Run the documented local `doctor` check and inspect the user's chosen image and voice services. Resolve each setting as **explicit user choice → selected B-style contract → available configured route**, as defined in Autopilot. B1/B2/B3/B5 showcase voices are references, not mandatory providers or voices; B4 retains its Brian contract. Reuse accepted recordings or a suitable configured route and help configure the user's selection when needed. Do not repeat a resolved platform choice. Summarize actual findings in plain language, separating **ready**, **missing** and **not yet verified**:
 
 - Local composition: Node 20+, FFmpeg/FFprobe, renderer dependencies and suitable fonts. If something is missing, name that component, explain its role briefly, and give the next platform-appropriate installation/configuration step. Install project dependencies only with the host's normal permissions; after a repair, verify the affected check again.
 - Image and voice generation: reuse an available configured tool or authenticated interface if suitable. Do not demand a Gemini API key when the chosen browser/native tool does not use one. If image generation is not configured and no service was chosen, guide selection of an available image service. For a chosen service with no built-in integration, follow [selected-provider execution](autopilot.md#selected-provider-execution): inspect available routes and, within scope, adapt in the project before offering replacement or manual handoff. For narration, check the resolved provider/voice and explain only the missing login, access or configuration; do not require Bodi when the user or selected style specifies another voice. For API adapters use environment variables, never pasted secret values. Do not silently replace the selected voice/service with local OS TTS.
@@ -162,8 +162,8 @@ Run the documented local `doctor` check and inspect the user's chosen image and 
 State the smallest next fix, not just "configuration failed" or a raw terminal dump. For example:
 
 > 已完成：本地合成工具检查通过，已确认横屏 16:9 和 B1 极简手绘风。
-> 还缺什么：生图服务尚未选择；默认 Google Gemini/Bodi 的模型访问和额度还未验证。
-> 下一步：先确认使用哪种生图工具；配音按默认 Bodi 路径继续检查，只有缺少访问权限或配置时再带你补齐。暂不调用付费生成，脚本可以先继续准备。
+> 还缺什么：可用生图工具尚未确认；所选配音服务的模型访问和额度还未验证。
+> 下一步：先检查当前 Agent 可用的生图工具和所选配音路径，缺少配置再补齐。案例配音不要求照搬，暂不调用付费生成，脚本可以先继续准备。
 
 If the host cannot read/write files or execute commands, explain that Autopilot cannot render here and offer a compatible environment or Director mode. Do not silently switch modes or call a prompt package a finished film.
 
@@ -171,7 +171,7 @@ If the host cannot read/write files or execute commands, explain that Autopilot 
 
 Show the short outline/script, design, caption treatment and voice choices required by Autopilot. State what needs confirmation before generating media, and identify any service/cost blockers still open. Follow the settings order above; B1's caption and voice defaults do not constrain another B style. Verify the selected provider/model/voice as described in Autopilot; check Bodi availability only when Bodi is selected. Narration and synchronized subtitles are required. Carry the approved voice and assets forward unchanged.
 
-For B, explain the selected service/model and named voice, not a custom descriptive voice profile. Use that voice as provided with no added style/direction instructions; follow Autopilot's voice-led rule for every B style.
+For B, explain the selected service/model and named voice, not a custom narrator profile. Use the native voice without added style/direction instructions by default. B4 alone permits story-motivated secondary-role acting under its audio contract; do not automatically retune or regenerate accepted narration.
 
 ### 4. Approximately 20-second sample
 

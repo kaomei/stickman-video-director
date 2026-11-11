@@ -20,9 +20,9 @@ Apply the common sharpness, language, source and icon checks. B1 evidence insert
 
 ## B1 captions and sound
 
-Use the selected B1 caption treatment from the style reference: at 1280×720, 34px phrase captions in the bottom safe band, at most two readable lines; scale/recompose for other sizes and languages. Preserve scene text as the stronger focal point and review at phone size. Natural semantic cue/line breaks and actual-word timing come from the B common checklist, not a fixed word-count split.
+Use the fixed B1 caption treatment: bundled Noto Sans, weight 600, 34px on the 1280-wide design plane, one semantic line in the bottom safe band (landscape baseline y=660). Recompose for other ratios/languages; do not replace access captions with handwritten scene headings. Preserve scene text as the stronger focal point and review at phone size. Natural semantic breaks and actual-word timing come from the B common checklist, not a fixed word-count split. A language glyph fallback or actual user-approved restyle must be recorded, not silently substituted.
 
-New B1 projects default to English with native Google Gemini Bodi at 1×, without extra style/direction prompts. Preserve accepted audio, including the earlier Sadaltager example; no automatic revoice when defaults change. Other B styles choose independently. Use restrained original/licensed, action-specific taps, paper, reveals, impacts or transitions. Mix below intelligible narration; BGM is optional, not A's mandatory piano. Listen to the actual output; technical checks cannot prove the sound matches the baseline.
+Sample voice credits: Ryan V4 uses Google Gemini Bodi; the earlier V15 uses Google Gemini Sadaltager. These are references, not prerequisites: honor the user's selected voice/service and help configure it if needed. Preserve accepted audio at native rate. Use a quiet story-appropriate continuous bed with restrained original/licensed, action-specific taps, paper, reveals, impacts or transitions; motivated AUDIO CUT is allowed. Mix below intelligible narration; BGM is optional, not A's mandatory piano. Listen to the actual output; technical checks cannot prove the sound matches the baseline.
 
 ## B1 reference comparison and full-film handoff
 

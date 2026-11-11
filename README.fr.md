@@ -102,7 +102,7 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 | **Principe** | **Vous gardez la main, l’IA prépare la mise en scène** : elle crée le découpage et les prompts ; vous contrôlez la génération des séquences et le montage. | **Donnez un sujet ou un objectif, récupérez une vidéo** : illustrations, voix off, sous-titres, micro-animations et assemblage sont automatisés. |
 | **Durée** | **Idéal pour les formats courts**, par exemple de 30 secondes à 3 minutes. Les formats plus longs se construisent séquence par séquence. | **Pensé pour les formats longs**, notamment les vidéos avec voix off de **10 minutes et plus**. Convient aussi aux formats courts et aux séries narratives. |
 | **Outils** | Préparez les plans avec un assistant IA compatible avec les Skills, générez les séquences dans votre outil vidéo préféré (Google Flow, Runway, Luma, Kling, etc.), puis assemblez-les dans CapCut ou Premiere. | Un agent de développement IA comme **Codex ou Claude Code**, capable de lire et d’écrire des fichiers, d’appeler des outils et d’exécuter des commandes, pour relier génération des médias et assemblage local. |
-| **Rendu** | **Séquences animées générées une par une** : gestes, mise en scène et interactions entre personnages. | **Illustrations de storyboard + micro-animations** : changements de plan, zooms et panoramiques accompagnent la narration, sans générer une animation complète pour chaque séquence. |
+| **Rendu** | **Séquences animées générées une par une** : gestes, mise en scène et interactions entre personnages. | **Illustrations de storyboard + animations locales** : expressions, réactions et mouvements d’objets accompagnent la narration, avec des coupes, zooms et panoramiques. Les seuls mouvements de caméra ou apparitions de texte ne comptent pas comme animation de la scène. |
 | **Livrable** | Proposition de réalisation, storyboard, prompts vidéo par séquence et indications sonores. | **Un fichier vidéo complet avec voix off, sous-titres et micro-animations.** |
 
 Les deux méthodes peuvent partir d’un sujet brut, d’un lien web ou d’un script complet. Choisissez librement le format (9:16, 16:9, 1:1), la langue de narration et la voix off. Les durées ci-dessus sont des recommandations, pas des limites strictes.
@@ -345,7 +345,7 @@ Comme un ami qui dessine en expliquant. Visages expressifs, lignes noires et que
   </tr>
   <tr>
     <td align="center">Personnages dessinés à la main · Mots-clés · Micro-animations</td>
-    <td align="center">Voix off Bodi · Expressions vivantes · Micro-animations</td>
+    <td align="center">Google Gemini · Voix off Bodi · Expressions vivantes · Micro-animations</td>
   </tr>
 </table>
 
@@ -371,7 +371,7 @@ Pourquoi votre esprit s’agite-t-il davantage quand vous cherchez le sommeil ? 
   </tr>
   <tr>
     <td align="center">Pensées du soir · Plans de décor · Mouvements doux</td>
-    <td align="center">Distractions quotidiennes · Décors colorés · Narration Fola</td>
+    <td align="center">Google Gemini · Distractions quotidiennes · Décors colorés · Narration Fola</td>
   </tr>
 </table>
 
@@ -398,7 +398,7 @@ Comme tomber sur une étrange émission nocturne. Inspirés de [@BradikininVideo
   </tr>
   <tr>
     <td align="center">Suspense fictif · Changements de scène · Texture TV</td>
-    <td align="center">Comportement animal · Réactions locales · Voix Bodi</td>
+    <td align="center">Google Gemini · Comportement animal · Réactions locales · Voix Bodi</td>
   </tr>
 </table>
 <!-- b3:section:end -->
@@ -546,7 +546,7 @@ Oui. Stickman Video Director est 100 % gratuit et open source sous licence MIT. 
 
 **Pour vous rapprocher des exemples, je recommande Codex.** J’y ai réalisé et testé les démonstrations du mode B ; vous n’avez pas besoin de coder. Le Skill s’installe aussi dans d’autres agents, mais les modèles, la configuration des outils et le mode d’exécution peuvent modifier le résultat.
 
-Pour les images, j’utilise le modèle intégré à GPT, sans API supplémentaire. Commencez par un court extrait pour valider le style et le résultat avant de réaliser la vidéo complète.
+Mes exemples utilisent le modèle d’image intégré à GPT, sans API supplémentaire. Avec un autre agent, utilisez les outils d’image disponibles dans son environnement. Pour un présentateur B5 représentant une personne réelle ou un personnage complexe, il faut une image générée ou validée, pas un visage de remplacement dessiné par code. Les crédits vocaux décrivent les exemples et n’imposent aucun fournisseur. Au besoin, demandez à votre agent de configurer le service choisi, puis validez un court extrait avant la vidéo complète.
 
 ### Q4. Puis-je créer une vidéo sans script déjà rédigé ?
 

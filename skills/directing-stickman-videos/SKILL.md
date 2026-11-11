@@ -7,20 +7,20 @@ description: "Turn topics, requirements, articles or scripts into stickman video
 
 ## Two modes, one Skill
 
-Keep the existing installation/name. Honor known choices; ask one short question if the requested deliverable is ambiguous. Before planning, read [mode execution boundaries](references/mode-execution-boundaries.md), then the selected route:
+Keep the installation/name. Honor known choices; clarify ambiguous deliverables once. Before planning, read [mode execution boundaries](references/mode-execution-boundaries.md), then the selected route:
 
 - **A · Director / A1–A5:** approved proposals and standalone video prompts. A1 maps to Style 1 light/dark, A2 to Style 2/2A/2B, A3–A5 to Styles 3–5. Follow the unchanged contract below.
 - **A6 · Amber Noir:** read [A6](references/amber-noir.md) when selected, before planning; bypass the A1–A5 contract below. It owns reference-guided execution, Gemini Puck narration and finishing.
-- **B · Autopilot:** read [Autopilot](references/autopilot.md), then B1 [Minimal Line Art](references/b1-minimal-handdrawn.md), B2 [Colorful Hand-Drawn](references/b2-colorful-handdrawn.md), or B3 [Retro TV](references/b3-television.md). A finished local video includes narration, semantic captions, illustrations, meaningful motion and SFX. Inspect B3's bundled implementation examples before authoring; original-video excerpts are not redistributed. Disclose missing private-original comparison rather than treating accepted examples as the style authority.
-- **B4 · Survival Thriller:** read [B4](references/b4-survival-storytelling.md), [audio direction](references/b4-audio-direction.md), [opening direction](references/b4-opening-direction.md) and [production check](references/b4-repeatability-check.md). Preserve the white-glove reference lock; limb animation is not a completion requirement. Apply the first-three-second visual escalation gate and, for horror, the story-led horror visibility gate. Use fixed Brian, first-frame sound/early narration, a subtle continuous bed and causal SFX. Select B4 in the shared installed runtime. No silent title pad, automatic narrator substitution or alias to another style.
+- **B · Autopilot:** read [Autopilot](references/autopilot.md), then B1 [Minimal Line Art](references/b1-minimal-handdrawn.md), B2 [Colorful Hand-Drawn](references/b2-colorful-handdrawn.md), or B3 [Retro TV](references/b3-television.md). Deliver narration, semantic captions, illustrations, meaningful motion and SFX. Inspect B3's bundled implementation examples; disclose unavailable private-original comparison rather than treating examples as style authority.
+- **B4 · Survival Thriller:** read [B4](references/b4-survival-storytelling.md), [audio direction](references/b4-audio-direction.md), [opening direction](references/b4-opening-direction.md) and [production check](references/b4-repeatability-check.md). Preserve the white-glove reference lock; limb animation is not a completion requirement. Apply the first-three-second visual escalation gate and story-led horror visibility gate. Use `scripts/b4-opening.mjs` for fixed `b4-hook-v1` typography and local animation; inspect encoded intermediate frames. Use Brian, first-frame sound/early narration, a quiet bed and causal SFX in the shared runtime. No silent title pad, automatic narrator substitution or style alias.
 
 - **B5 · Character Explainer:** read [B5](references/b5-character-explainer.md) and [left-stage choreography](references/b5-left-stage-motion.md) before authoring. No B1–B4 alias.
 
-A and B share installation, not production contracts. The rules from **A · Director** to the end apply only to A1–A5, not to A6 or any B style. Each B owns its visuals, captions, voice, pacing and SFX; never default to B1 or import A's setup, ten-second clips, approval or visible-text rules. Preserve unrelated styles when revising one route.
+A and B share installation, not production contracts. Rules from **A · Director** onward apply only to A1–A5, not to A6 or any B style. Each B owns its visuals, captions, voice, pacing and SFX; no B1 fallback or A setup/clip/approval/text rules. Preserve unrelated styles.
 
-B supports topics, promotion briefs, posts, articles and scripts. English narration is default; explicit language/voice choices prevail. Follow [selected-provider execution](references/autopilot.md#selected-provider-execution) before declaring a non-default service unsupported: a missing bundled adapter is not a provider prohibition. Use the selected native named TTS voice without added voice/style descriptions by default; B4 permits story-motivated secondary-role acting, not automatic narrator tuning. Read the required [story-led sound system](references/autopilot-sound-system.md). Never automatically revoice accepted media.
+B accepts topics, briefs, articles and scripts. English narration defaults; explicit language/voice choices prevail. Follow [selected-provider execution](references/autopilot.md#selected-provider-execution): a missing adapter is not a provider prohibition. Use native named TTS without added style descriptions; B4 permits secondary-role acting, not automatic narrator tuning. Read the [story-led sound system](references/autopilot-sound-system.md). Never automatically revoice accepted media.
 
-Captions: B1–B4 single-line; B5 up to three semantic lines. Apply the [common gate](references/autopilot-production-qa.md#natural-captions-and-semantic-sound). A unchanged.
+Captions: B1–B4 single-line; B5 up to three semantic lines. Apply fixed style typography and actual local motion/audio checks in the [common gate](references/autopilot-production-qa.md#natural-captions-and-semantic-sound). B1/B2/B3/B5 voice credits are illustrative; Brian remains B4-only. New B5 real/complex presenters require an available image tool or approved supplied raster, not code-face substitutes; follow the [production gate](references/b5-production-gate.md).
 
 All B styles: native **16:9 and 9:16**, under the [dual-format gate](references/autopilot-production-qa.md#native-landscape-and-portrait).
 
@@ -28,7 +28,7 @@ All B styles: native **16:9 and 9:16**, under the [dual-format gate](references/
 
 Read [first-use and stage guidance](references/getting-started.md) after verified installation or on first invocation. Use the conversation/requested guidance language independently of video language or README edition. Reuse choices; do not replay welcome or add approvals. Follow **A5 proactive character guidance** and **Optional A character references** there without changing voice rules.
 
-Read [optional finishing](references/thumbnail-publishing-kit.md) after final-video approval or a packaging request; offer once, never block delivery.
+Read [optional finishing](references/thumbnail-publishing-kit.md) after video approval or a packaging request; offer once, never block delivery.
 
 ## A · Director
 

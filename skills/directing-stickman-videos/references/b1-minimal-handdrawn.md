@@ -10,7 +10,7 @@ The current public B1 showcase uses this **Ryan V4 / native Bodi** baseline. The
 - Expressive hand-drawn stick figures with fine, slightly irregular black pen outlines. Follow the B1 character-and-acting standard below. The original three-pose sheet belongs to the included demo, not a fixed pose library for new productions.
 - Hand-drawn colored props, marker accents and curved arrows; limited warm yellow/red/green plus ink/navy. Use recognizable, detailed-enough objects, diagrams and relevant marks rather than crude placeholder symbols. A coherent licensed icon family can support the drawings. Real screenshots may appear briefly as evidence in restrained rounded frames with fine outlines, light shadows and small accents; keep those frames subordinate to the hand-drawn world. Follow the checklist for sharpness, language and factual checks.
 - Large, short in-scene text is the visual focal point. The original accepted demo used Chalkboard on macOS; the portable package includes OFL Caveat as a fallback, not a claim of pixel-identical typography. For other scripts/languages configure a readable licensed font with the required glyphs.
-- At 1280×720, use 34px short phrase-based captions in the bottom safe band (baseline y=666 in the accepted sample), with readable contrast. Keep the sample's hand-lettered hierarchy: large short scene text with selective bold/color/underlining as the focal point, quieter captions below. Scale for other ratios/resolutions; verify on a phone. Avoid crowding text, faces or evidence into the caption band.
+- At 1280×720, use the runtime's Noto Sans 600, 34px short phrase captions in the bottom safe band (baseline y=660), with readable contrast. The accepted historical sample's six-pixel offset is not a new typography preset. Keep the sample's hand-lettered hierarchy: large short scene text with selective bold/color/underlining as the focal point, quieter captions below. Scale for other ratios/resolutions; verify on a phone. Avoid crowding text, faces or evidence into the caption band.
 
 ## Stick-figure features and acting — B1 only
 
@@ -24,7 +24,7 @@ Before generating new B1 character assets, inspect the packaged [proportion and 
 
 ## Rhythm and sound
 
-For new B1 projects, default to English narration with Google Gemini **Bodi**, as in the current baseline, unless the user chooses otherwise. Use the native named voice without added style/direction instructions; leave those fields empty. These are B1 defaults, not requirements for other B styles. Preserve existing approved recordings, including the older V15 sample's original **Sadaltager** recording; do not regenerate them to match a new-project default.
+Voice reference only: Ryan V4 uses Google Gemini **Bodi**; the older V15 uses Google Gemini **Sadaltager**. A new B1 project may use the user's chosen or available configured TTS service/voice. Help configure that route rather than requiring Gemini. Keep the selected voice's native rate and default treatment; preserve existing accepted recordings without automatic regeneration.
 
 Voice leads at native **1×** speed. Retain natural pace and pauses; target duration is not permission to stretch speech. Character shots occupy roughly **60–70% of direct screen time** for the approved B1 promotional format, not 60–70% of image area and not a hard requirement for every possible story. Include character-free closeups and reading holds with purposeful picture progression. Fit pictures and information reveals to the actual spoken meaning, not speech to prebuilt slides.
 

@@ -7,6 +7,7 @@ import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import assert from 'node:assert/strict';
+import {validateB5Production, checkB5Motion} from './b5-production-quality.mjs';
 const require=createRequire(import.meta.url);
 export const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const PACK=path.join(ROOT,'assets/b5');
@@ -35,19 +36,23 @@ export function checkBaseline(){
 }
 async function main(){
  const [action,...args]=process.argv.slice(2),opt=(k,d)=>args.includes(k)?args[args.indexOf(k)+1]:d;
- if(action==='--help'||!action){console.log('B5 Character Explainer\ninit DIR\ncheck\nframes PROJECT_DIR --output NEW_DIR (--frames 0,55,... | --all) --trusted-code\nencode PROJECT_DIR --frames-dir DIR --audio APPROVED_MIX --output NEW_DIR --approval-note ACTUAL_USER_APPROVAL\nNo arbitrary avatar auto-rigging, mixing or generation.');return}
+ if(action==='--help'||!action){console.log('B5 Character Explainer\ninit DIR\ncheck\nvalidate PROJECT_DIR\nframes PROJECT_DIR --output NEW_DIR (--frames 0,55,... | --all) --trusted-code\nencode PROJECT_DIR --frames-dir DIR --audio APPROVED_MIX --output NEW_DIR --approval-note ACTUAL_USER_APPROVAL\nNew stories require scene/production.json. No arbitrary avatar auto-rigging, mixing or generation.');return}
  if(action==='init'){console.log(JSON.stringify(initB5(args[0])));return}
  if(action==='check'){console.log(JSON.stringify(checkBaseline(),null,2));return}
+ if(action==='validate'){console.log(JSON.stringify(validateB5Production(config(args[0]),PACK),null,2));return}
  if(action==='frames'){
   if(!args.includes('--trusted-code'))throw Error('Inspect local scene code first, then explicitly pass --trusted-code');
-  const {dir,c,n}=config(args[0]);const indexes=args.includes('--all')?Array.from({length:n},(_,i)=>i):(opt('--frames','').split(',').filter(Boolean).map(Number));assert(indexes.length>0&&new Set(indexes).size===indexes.length,'Choose unique frame indices');assert(indexes.every(f=>Number.isInteger(f)&&f>=0&&f<n),'Invalid frame index');
-  const out=fresh(opt('--output'),[dir]),before=fingerprint(dir),sharp=require('sharp'),renderer=require(path.join(dir,'scene/renderer.cjs'));
+  const project=config(args[0]),{dir,c,n}=project,quality=validateB5Production(project,PACK);const indexes=args.includes('--all')?Array.from({length:n},(_,i)=>i):(opt('--frames','').split(',').filter(Boolean).map(Number));assert(indexes.length>0&&new Set(indexes).size===indexes.length,'Choose unique frame indices');assert(indexes.every(f=>Number.isInteger(f)&&f>=0&&f<n),'Invalid frame index');
+  const before=fingerprint(dir),sharp=require('sharp'),renderer=require(path.join(dir,'scene/renderer.cjs'));
+  const production=await checkB5Motion(quality,renderer,sharp);
+  const out=fresh(opt('--output'),[dir]);
   for(const f of indexes)await sharp(renderer.frame(f/c.fps)).png().toFile(path.join(out,String(f).padStart(6,'0')+'.png'));assert.equal(fingerprint(dir),before,'Project changed during render');
-  fs.writeFileSync(path.join(out,'frames.json'),JSON.stringify({style:'B5',project:dir,input_sha256:before,frames:indexes,complete:indexes.length===n,config:c,files:indexes.map(f=>{const name=String(f).padStart(6,'0')+'.png';return {name,sha256:hash(path.join(out,name))}})},null,2)+'\n');console.log(JSON.stringify({output:out,frames:indexes.length,complete:indexes.length===n}));return
+  fs.writeFileSync(path.join(out,'frames.json'),JSON.stringify({style:'B5',project:dir,input_sha256:before,production,frames:indexes,complete:indexes.length===n,config:c,files:indexes.map(f=>{const name=String(f).padStart(6,'0')+'.png';return {name,sha256:hash(path.join(out,name))}})},null,2)+'\n');console.log(JSON.stringify({output:out,frames:indexes.length,complete:indexes.length===n}));return
  }
  if(action==='encode'){
   const {dir,c,n}=config(args[0]),frameDir=path.resolve(opt('--frames-dir')),ledger=read(path.join(frameDir,'frames.json')),audio=fs.realpathSync(opt('--audio')),note=opt('--approval-note','').trim();assert(note,'Record genuine current user approval; never manufacture it');assert.equal(ledger.project,dir);assert.equal(ledger.input_sha256,fingerprint(dir),'Project changed; review/render frames again');assert(ledger.complete&&ledger.frames.length===n,'Full sequence required');assert.deepEqual([...ledger.frames].sort((a,b)=>a-b),Array.from({length:n},(_,i)=>i));assert.equal(ledger.files.length,n);
   assert.deepEqual(ledger.files.map(f=>f.name).sort(),Array.from({length:n},(_,i)=>String(i).padStart(6,'0')+'.png'));for(const f of ledger.files){const target=path.join(frameDir,f.name);assert(!fs.lstatSync(target).isSymbolicLink());assert.equal(hash(target),f.sha256)}const meta=probe(audio);assert(meta.streams.some(s=>s.codec_type==='audio'),'Audio stream required');assert(Math.abs(+meta.format.duration-c.duration)<.25,'Final mix duration must match approved scene timing');
+  const quality=validateB5Production({dir,c},PACK);if(quality.mode==='new_story'){assert.equal(ledger.production?.manifest_sha256,quality.manifest_sha256,'Production checks missing/stale; render frames again');assert(Array.isArray(ledger.production?.motion_samples),'Picture motion evidence missing');assert.equal(hash(audio),quality.mix_sha256,'Encode the reviewed final mix, not a different audio file');}
   const out=fresh(opt('--output'),[dir,frameDir,audio]),mp4=path.join(out,'video.mp4');command(ffmpeg,['-v','error','-nostdin','-n','-framerate',String(c.fps),'-i',path.join(frameDir,'%06d.png'),'-i',audio,'-map','0:v:0','-map','1:a:0','-t',String(c.duration),'-c:v','libx264','-crf','18','-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-movflags','+faststart',mp4]);command(ffmpeg,['-v','error','-i',mp4,'-f','null','-']);
   fs.writeFileSync(path.join(out,'delivery.json'),JSON.stringify({style:'B5',output:mp4,output_sha256:hash(mp4),audio_input_sha256:hash(audio),project_fingerprint:ledger.input_sha256,approval_note:note,metadata:probe(mp4),full_decode:'pass',creative_review:'required; encoding is not creative acceptance'},null,2)+'\n');console.log(JSON.stringify({output:mp4,folder:out,full_decode:'pass'}));return
  }
