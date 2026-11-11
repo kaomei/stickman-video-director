@@ -543,7 +543,7 @@ Yes. Stickman Video Director is 100% free and open-source under the MIT license.
 
 **I recommend Codex for results closest to the examples.** I created and tested the B Mode showcase videos in Codex; you do not need to write code yourself. Other agents can install the Skill, but differences in models, tool configuration, and execution can affect the results.
 
-My examples use GPT's built-in model without a separate image-generation API. Other agents should use their available image tools; B5 real-person or complex hosts need generated or approved image assets, not code-drawn substitutes. Voice credits describe the examples, not a required provider. Ask your agent to configure your preferred service, then check a short sample before making the full video.
+My examples use GPT's built-in model without a separate image-generation API. Other agents should use their available image tools; B5 real-person or complex hosts need generated or approved image assets, not code-drawn substitutes. Voice credits describe the examples, not a required provider. Ask your agent to configure your preferred service, then check a short sample before making the full video. Style presets are defaults, not restrictions: ask your agent to change fonts, text effects, or the video language and adapt the layout to your request.
 
 ### Q4. Can I make a video without an existing script?
 

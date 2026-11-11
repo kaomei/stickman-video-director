@@ -81,8 +81,18 @@ assert "(b3-television.md)" in autopilot and "(references/b3-television.md)" in 
 assert "unit tests" in b3.lower() and "not animation quality or acceptance" in b3
 assert "currently accepts B1/B2 only" not in b3
 
+# Presets remain defaults, with explicit user choices and script-aware fallback.
+b5_gate = (refs / "b5-production-gate.md").read_text()
+assert "Font, text-effect and language customization" in b5_gate
+for token in ("user_choice", "language_fallback", "user_approval", "semantic_review", "captions.override"):
+    assert token in b5_gate, f"Missing B5 customization contract: {token}"
+assert "caption_override" in autopilot and "opening.user_override" in autopilot
+assert "b5-production-gate.md#font-text-effect-and-language-customization" in autopilot
+for name in ("b5-avatar-motion.md", "b5-character-explainer.md"):
+    assert "b5-production-gate.md#font-text-effect-and-language-customization" in (refs / name).read_text(), name
+
 # New links stay portable and inside the single installed Skill.
-for source in (common_path, refs / "autopilot.md", refs / "b1-production-qa.md", refs / "b2-colorful-handdrawn.md", refs / "b3-television.md"):
+for source in (common_path, refs / "autopilot.md", refs / "b1-production-qa.md", refs / "b2-colorful-handdrawn.md", refs / "b3-television.md", refs / "b5-production-gate.md", refs / "b5-avatar-motion.md", refs / "b5-character-explainer.md"):
     assert "/Users/" not in source.read_text()
     for link in re.findall(r"\]\(([^)]+)\)", source.read_text()):
         if "://" in link:

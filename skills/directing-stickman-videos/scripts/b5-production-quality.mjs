@@ -55,10 +55,21 @@ export function validateB5Production({dir, c}, pack) {
   need(Array.isArray(s.references), 'record identity/style references (empty only if none were actually supplied)');
   for (const ref of s.references) { need(['identity', 'style'].includes(ref.role), 'label reference role'); lockedFile(scene, ref); }
   const captions = q.captions;
-  need(captions?.preset === 'b5-instrument-anton-v1' && text(captions.semantic_review), 'retain B5 Instrument Sans/Anton treatment and review semantic, voice-aligned caption groups');
+  need(text(captions?.semantic_review), 'review semantic, voice-aligned caption groups even with a typography override');
+  const override = captions.override;
+  if (override !== undefined) {
+    need(override && ['user_choice', 'language_fallback'].includes(override.kind) && text(override.reason), 'caption override needs a scoped kind and reason');
+    if (override.kind === 'user_choice') {
+      need(text(override.user_approval) && text(override.treatment), 'record the actual user typography request/origin and chosen treatment; do not invent approval');
+    } else {
+      need(text(override.language) && text(override.treatment), 'language font fallback needs the target language and adapted treatment');
+    }
+  }
+  const userChoice = override?.kind === 'user_choice';
+  need(userChoice ? text(captions.preset) : captions.preset === 'b5-instrument-anton-v1', 'retain B5 Instrument Sans/Anton treatment unless the user explicitly requests another preset');
   for (const [key, name] of [['font', 'Instrument-Sans-1.ttf'], ['title_font', 'Anton-0.ttf']]) {
     const f = lockedFile(scene, captions[key]);
-    need(sha(f) === sha(path.join(pack, 'example/assets/fonts', name)), 'fixed B5 font changed: ' + key);
+    if (!override) need(sha(f) === sha(path.join(pack, 'example/assets/fonts', name)), 'fixed B5 font changed without an explicit typography choice or language fallback: ' + key);
   }
   need(Array.isArray(q.sound) && q.sound.length, 'record a story-specific sound ledger, including motivated quiet beats');
   for (const cue of q.sound) {
@@ -85,7 +96,8 @@ export function validateB5Production({dir, c}, pack) {
     need(m.start - end <= 2.500001, 'principal picture inactive for over 2.5 seconds'); end = Math.max(end, m.end);
   }
   need(c.duration - end <= 2.500001, 'principal picture inactive for over 2.5 seconds');
-  return {mode: 'new_story', manifest_sha256: sha(manifest), mix_sha256: q.mix.sha256, presenter: {path: a.path, file, sha256: a.sha256, source: s.type, kind: a.kind, approvedRigReuse}, motion: intervals,
+  return {mode: 'new_story', manifest_sha256: sha(manifest), mix_sha256: q.mix.sha256, presenter: {path: a.path, file, sha256: a.sha256, source: s.type, kind: a.kind, approvedRigReuse},
+    captions: {preset: captions.preset, font_sha256: captions.font.sha256, title_font_sha256: captions.title_font.sha256, override: override || null}, motion: intervals,
     limits: 'Metadata and sampled pixel checks are not likeness, semantic-caption, final visibility, licensing or listening certification; review actual playback'};
 }
 export async function checkB5Motion(evidence, renderer, sharp) {

@@ -550,7 +550,7 @@ Sim. O Stickman Video Director é 100% gratuito e de código aberto sob a licen�
 
 **Para chegar o mais perto possível dos exemplos, recomendo o Codex.** Foi nele que produzi e testei os vídeos de demonstração do modo B; você não precisa programar. O Skill também pode ser instalado em outros agentes, mas diferenças nos modelos, na configuração das ferramentas e na execução podem alterar o resultado.
 
-Meus exemplos usam o modelo de imagem integrado ao GPT, sem configurar uma API adicional. Em outros agentes, use as ferramentas de imagem disponíveis no ambiente. Apresentadores B5 baseados em pessoas reais ou personagens complexos precisam de imagens geradas ou aprovadas, não de rostos substitutos desenhados por código. Os créditos de voz identificam os exemplos, sem exigir um fornecedor. Se necessário, peça ao agente para configurar o serviço escolhido e confira uma amostra curta antes de produzir o vídeo completo.
+Meus exemplos usam o modelo de imagem integrado ao GPT, sem configurar uma API adicional. Em outros agentes, use as ferramentas de imagem disponíveis no ambiente. Apresentadores B5 baseados em pessoas reais ou personagens complexos precisam de imagens geradas ou aprovadas, não de rostos substitutos desenhados por código. Os créditos de voz identificam os exemplos, sem exigir um fornecedor. Se necessário, peça ao agente para configurar o serviço escolhido e confira uma amostra curta antes de produzir o vídeo completo. Os estilos predefinidos são pontos de partida, não restrições: peça ao agente para mudar fontes, efeitos de texto ou o idioma do vídeo e adaptar o layout ao seu pedido.
 
 ### Q4. Posso fazer um vídeo sem ter um roteiro pronto?
 
