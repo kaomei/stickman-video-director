@@ -7,6 +7,8 @@ import {spawnSync} from 'node:child_process';
 import {ROOT, FFMPEG, run, save, loadProject, hashFile, probe} from '../scripts/autopilot-core.mjs';
 import {BRIAN, appendB4Audio} from '../scripts/b4-runtime.mjs';
 import {painter} from '../scripts/autopilot-render.mjs';
+import {createCanvas} from '@napi-rs/canvas';
+import {makeB4Opening} from '../scripts/b4-opening.mjs';
 
 const cli = path.join(ROOT, 'scripts/autopilot.mjs');
 const command = args => spawnSync(process.execPath, [cli, ...args], {encoding: 'utf8', timeout: 120000});
@@ -16,16 +18,20 @@ function fixture(t) {
   // Tones identify timing/mixing independently of any paid service or human voice.
   for (const [name, frequency, duration] of [['voice', 440, 3.2], ['bed', 880, 3.2], ['effect', 1320, 1], ['role', 1760, 1]])
     run(FFMPEG, ['-v', 'error', '-f', 'lavfi', '-i', `sine=frequency=${frequency}:duration=${duration}`, '-y', path.join(dir, `${name}.wav`)]);
-  fs.copyFileSync(path.join(ROOT, 'assets/b4/reference-01-motor-room.png'), path.join(dir, 'scene.png'));
+  // Synthetic same-composition door states; no person or limb motion required.
+  for (const [name, open] of [['scene', false], ['after', true]]) {
+    const c = createCanvas(1280, 720), ctx = c.getContext('2d');
+    ctx.fillStyle = '#101720'; ctx.fillRect(0, 0, 1280, 720);
+    ctx.fillStyle = '#52606b'; ctx.fillRect(800, 100, 300, 440);
+    ctx.fillStyle = open ? '#bf493b' : '#1c232b'; ctx.fillRect(900, 130, open ? 90 : 6, 370);
+    fs.writeFileSync(path.join(dir, `${name}.png`), c.toBuffer('image/png'));
+  }
+  const hook = makeB4Opening({setup: 'WOULD YOU', payoff: 'OPEN IT?', before: 'scene.png', after: 'after.png', meaning: 'Synthetic door gap opens; not a creative acceptance fixture', duration: 1.6});
   const project = {version: 1, style: 'B4', width: 640, height: 360, fps: 15,
     voice: {path: 'voice.wav', ...BRIAN},
     captions: [{start: 0, end: 1.55, text: 'The door was locked.'}, {start: 1.6, end: 3.2, text: 'Then the handle moved.'}],
-    shots: [{start: 0, end: 1.6, layers: [
-      {type: 'image', path: 'scene.png', x: 0, y: 0, w: 1280},
-      {type: 'shadow', x: 0, y: 0, w: 760, h: 610},
-      {type: 'text', text: 'WOULD YOU', x: 80, y: 100, size: 70},
-      {type: 'text', text: 'OPEN IT?', x: 80, y: 210, size: 90, from: .5}],
-    }, {start: 1.6, end: 3.2, layers: [
+    opening: hook.opening,
+    shots: [hook.shot, {start: 1.6, end: 3.2, layers: [
       {type: 'image', path: 'scene.png', x: -250, y: -100, w: 1600,
         keys: [{t: 0, x: -250}, {t: 1, x: -230}]}]}],
     ambience: [{path: 'bed.wav', start: 0, end: 3.2, gain: .1, fadeOut: .5}],
@@ -59,6 +65,7 @@ test('B4 CLI initializes an external project with Brian and separate production 
   assert.equal(p.style, 'B4');
   assert.deepEqual(p.voice, {path: 'narration.wav', lead: 0, tail: 0, ...BRIAN});
   for (const key of ['ambience', 'dialogue', 'audio_cuts', 'sfx']) assert.deepEqual(p[key], []);
+  assert.equal(p.opening.version, 1); assert.equal(p.opening.picture.before, '');
   assert.equal(p.television, undefined);
   assert.notEqual(command(['init', dir, '--style', 'B4']).status, 0);
 });
@@ -105,8 +112,18 @@ test('B4 rejects long unapproved shots, silent lead pads, bed gaps and doubled m
 
 test('B4 fields and artwork cannot leak into B1–B3', t => {
   const f = fixture(t);
+  const original = structuredClone(f.project);
   for (const style of ['B1', 'B2', 'B3']) {
-    f.project.style = style; f.write(); assert.throws(() => loadProject(f.file), /belong to B4 only/);
+    Object.assign(f.project, structuredClone(original));
+    f.project.style = style; f.write();
+    assert.throws(() => loadProject(f.file), /B4 identity only/);
+    f.project.voice = {path: 'voice.wav'}; f.write();
+    assert.throws(() => loadProject(f.file), /B4 opening choreography belongs to B4 only/);
+    delete f.project.opening;
+    for (const shot of f.project.shots) shot.layers = [{type: 'shadow', x: 0, y: 0, w: 100, h: 100}];
+    f.write(); assert.throws(() => loadProject(f.file), /Unknown layer.*shadow/);
+    for (const shot of f.project.shots) shot.layers = [{type: 'text', text: 'Hook', x: 10, y: 10, b4Hook: 'top'}];
+    f.write(); assert.throws(() => loadProject(f.file), /Fixed B4 hook typography belongs to B4 text only/);
   }
 });
 
@@ -114,7 +131,7 @@ test('B4 preview keeps full-program fade timing and skips unproduced future medi
   const f = fixture(t);
   f.project.dialogue[0].time = 1.7; f.project.dialogue[0].path = 'not-produced.wav'; f.write();
   assert.throws(() => loadProject(f.file), /not-produced/);
-  const p = loadProject(f.file, {seconds: 1.2});
+  const p = loadProject(f.file, {seconds: 1.6});
   assert.deepEqual(p.dialogue, []); assert.deepEqual(p.sfx, []);
   const args = [], filters = [], voices = [], backgrounds = [];
   appendB4Audio(p, args, filters, voices, backgrounds, 2);
@@ -142,6 +159,9 @@ test('B4 CLI previews, approval-bound full rendering and cache reuse work with a
   r = command(['render', f.file]); assert.equal(r.status, 0, r.stderr);
   const full = report(f, 'film');
   assert.equal(full.opening_audio.status, 'diagnostic_pass');
+  assert.equal(full.opening_visual.status, 'diagnostic_pass');
+  assert.equal(full.opening_visual.output_sha256, full.output_sha256);
+  assert.ok(fs.existsSync(full.opening_visual.contact_sheet));
   assert.equal(full.original_voice_sha256, voiceHash); assert.equal(full.original_voice_duration, 3.2);
   assert.deepEqual(full.audio_tracks, {ambience: 1, dialogue: 1, file_sfx: 1, cuts: 0});
   assert.equal(probe(full.output).streams.filter(s => s.codec_type === 'audio').length, 1);

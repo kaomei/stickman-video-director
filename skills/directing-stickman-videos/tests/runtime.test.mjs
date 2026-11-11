@@ -16,6 +16,8 @@ function fixture(t) {
   t.after(() => fs.rmSync(dir, {recursive: true, force: true}));
   run(FFMPEG, ['-v', 'error', '-f', 'lavfi', '-i', 'sine=frequency=310:duration=0.85', '-y', path.join(dir, 'voice.wav')]);
   const project = {version: 1, style: 'B1', width: 640, height: 360, fps: 12, voice: {path: 'voice.wav'}, captions: [{start: 0.1, end: 0.7, text: 'Offline test.'}], shots: [{start: 0, end: 0.4, layers: [{type: 'text', text: 'A GOOD IDEA', x: 80, y: 110, size: 60, bold: true}, {type: 'image', path: '@b1/idea-bulb-crayon.png', x: 400, y: 280, w: 180, keys: [{t: 0, x: 400}, {t: 0.3, x: 450}]}]}, {start: 0.4, end: 0.85, layers: [{type: 'pose', pose: 1, x: 650, y: 40, w: 400}, {type: 'text', text: 'BECOMES A VIDEO.', x: 60, y: 200, w: 550, size: 54}]}], sfx: [{time: 0.2, kind: 'tap', gain: 0.02}]};
+  // Synthetic low-level bed for offline plumbing only, not a production sound choice.
+  project.ambience = [{path: 'voice.wav', start: 0, end: .85, gain: .01}];
   const file = path.join(dir, 'project.json'); save(file, project);
   return {dir, project, file};
 }
@@ -173,7 +175,9 @@ test('reviewed content and global settings still invalidate sample approval', t 
   r = command(['approve', f.file, '--note', 'Synthetic test approval only; not user production.']); assert.equal(r.status, 0, r.stderr);
   const original = structuredClone(f.project);
   for (const mutate of [p => p.shots[0].layers[0].text = 'CHANGED', p => p.grid = false, p => p.captionSize = 40, p => p.captions[0].text = 'Changed.', p => p.sfx[0].gain = 0.03, p => p.width = 800]) {
-    const changed = structuredClone(original); mutate(changed); save(f.file, changed);
+    const changed = structuredClone(original); mutate(changed);
+    if (changed.captionSize) changed.caption_override = {reason: 'Synthetic approval fingerprint test', user_approval: 'Engineering fixture only, not a creative approval'};
+    save(f.file, changed);
     r = command(['render', f.file]); assert.notEqual(r.status, 0); assert.match(r.stderr, /invalidated/);
   }
   save(f.file, original);

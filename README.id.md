@@ -102,7 +102,7 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 | **Cara kerja** | **Anda mengendalikan produksi, AI menyusun arahan:** dapatkan storyboard dan prompt, lalu atur sendiri pembuatan klip dan editing. | **Berikan topik atau kebutuhan, terima video jadi:** ilustrasi, narasi, subtitle, animasi ringan, dan penggabungan video dikerjakan otomatis. |
 | **Durasi** | **Diutamakan untuk video pendek**, misalnya 30 detik–3 menit; video lebih panjang juga bisa dibuat per bagian. | **Diutamakan untuk video panjang**, terutama video bernarasi **10 menit ke atas**; juga mendukung video pendek dan cerita bersambung. |
 | **Alat** | Rencanakan dengan asisten AI yang mendukung Skill, buat klip di generator video pilihan Anda (Google Flow, Runway, Luma, Kling, dan lainnya), lalu susun di CapCut atau Premiere. | Dijalankan melalui agen seperti **Codex atau Claude Code** yang dapat membaca dan menulis file, memakai alat, serta menjalankan perintah untuk menghubungkan pembuatan materi dengan penggabungan video lokal. |
-| **Visual** | **Animasi per adegan:** berfokus pada gerakan, arahan kamera, dan interaksi karakter. | **Storyboard ilustrasi + animasi ringan:** pergantian adegan, zoom, dan pergeseran kamera mengikuti narasi, tanpa harus menghasilkan animasi penuh untuk setiap bagian. |
+| **Visual** | **Animasi per adegan:** berfokus pada gerakan, arahan kamera, dan interaksi karakter. | **Storyboard ilustrasi + animasi lokal:** ekspresi, reaksi karakter, dan gerakan objek mengikuti narasi, didukung pergantian adegan, zoom, dan pergeseran kamera. Gerakan kamera atau kemunculan teks saja tidak dihitung sebagai animasi adegan. |
 | **Hasil** | Rancangan penyutradaraan, storyboard, prompt video per bagian, dan arahan suara. | **File video lengkap dengan narasi, subtitle, dan animasi ringan.** |
 
 Kedua alur kerja bisa dimulai dari topik mentah, tautan web, atau naskah lengkap. Pilih rasio aspek (9:16, 16:9, 1:1), bahasa narasi, dan suara dengan bebas. Durasi di atas adalah rekomendasi, bukan batas mutlak.
@@ -350,7 +350,7 @@ Seperti teman yang menggambar sambil menjelaskan. Wajah ekspresif, garis hitam, 
   </tr>
   <tr>
     <td align="center">Karakter gambar tangan · Teks utama · Animasi ringan</td>
-    <td align="center">Narasi Bodi · Ekspresi hidup · Animasi ringan</td>
+    <td align="center">Google Gemini · Narasi Bodi · Ekspresi hidup · Animasi ringan</td>
   </tr>
 </table>
 
@@ -376,7 +376,7 @@ Kenapa pikiran justru makin ramai saat Anda berusaha tidur? Terinspirasi oleh [@
   </tr>
   <tr>
     <td align="center">Pikiran sebelum tidur · Potongan pemandangan · Gerakan lembut</td>
-    <td align="center">Distraksi sehari-hari · Latar berwarna · Narasi Fola</td>
+    <td align="center">Google Gemini · Distraksi sehari-hari · Latar berwarna · Narasi Fola</td>
   </tr>
 </table>
 
@@ -403,7 +403,7 @@ Seperti tak sengaja menemukan siaran aneh larut malam. Terinspirasi oleh [@Bradi
   </tr>
   <tr>
     <td align="center">Suspense fiksi · Pergantian adegan · Tekstur TV</td>
-    <td align="center">Perilaku hewan · Reaksi lokal · Narasi Bodi</td>
+    <td align="center">Google Gemini · Perilaku hewan · Reaksi lokal · Narasi Bodi</td>
   </tr>
 </table>
 <!-- b3:section:end -->
@@ -551,7 +551,7 @@ Ya. Stickman Video Director 100% gratis dan open source dengan lisensi MIT. Anda
 
 **Agar hasilnya sedekat mungkin dengan contoh, saya merekomendasikan Codex.** Video contoh Mode B saya buat dan uji di Codex; Anda tidak perlu menulis kode sendiri. Skill juga dapat dipasang di agent lain, tetapi perbedaan model, konfigurasi alat, dan cara eksekusi dapat memengaruhi hasilnya.
 
-Untuk gambar, saya memakai model bawaan GPT tanpa menyiapkan API tambahan. Buat sampel pendek terlebih dahulu untuk memeriksa gaya dan hasilnya sebelum melanjutkan video lengkap.
+Contoh saya memakai model gambar bawaan GPT tanpa menyiapkan API tambahan. Agen lain dapat memakai alat gambar yang tersedia di lingkungannya. Pembawa acara B5 berupa orang nyata atau karakter kompleks harus memakai gambar yang dihasilkan atau sudah disetujui, bukan wajah pengganti yang digambar dengan kode. Kredit suara menunjukkan sumber contoh, bukan layanan yang wajib dipakai. Bila perlu, minta agen mengatur layanan pilihan Anda, lalu periksa sampel pendek sebelum membuat video lengkap.
 
 ### Q4. Bisakah saya membuat video tanpa naskah yang sudah jadi?
 

@@ -5,8 +5,11 @@ import {once} from 'node:events';
 import {createCanvas, loadImage, GlobalFonts} from '@napi-rs/canvas';
 import {ROOT, FFMPEG, sha, hashFile, save, probe, run, mediaPath, fontPaths, outputDir, designPlane, loadProject} from './autopilot-core.mjs';
 import {walkLayers, drawB3Shape, televisionFinish} from './b3-graphics.mjs';
-import {appendB4Audio} from './b4-runtime.mjs';
+import {appendAudioTracks} from './b4-runtime.mjs';
+import {checkBStyleMotionPaint} from './b-style-quality.mjs';
 import {checkOpeningFile} from './b4-opening-audio-check.mjs';
+import {checkB4OpeningPaint, checkB4OpeningFile} from './b4-opening-visual-check.mjs';
+import {B4_HOOK} from './b4-opening.mjs';
 
 const clamp = x => Math.max(0, Math.min(1, x));
 const ease = x => { x = clamp(x); return x * x * (3 - 2 * x); };
@@ -34,16 +37,26 @@ function wrap(ctx, text, maxWidth) {
   if (line) lines.push(line);
   return lines;
 }
-export async function painter(p) {
+export async function painter(p, {pictureOnly = false} = {}) {
   const fonts = fontPaths(p);
   const plane = designPlane(p), captionBand = plane.height - 110;
   if (!GlobalFonts.registerFromPath(fonts.hand, 'B1Hand') || !GlobalFonts.registerFromPath(fonts.caption, 'B1Caption')) throw new Error('Font registration failed');
+  if (fonts.hook && !GlobalFonts.registerFromPath(fonts.hook, B4_HOOK.family)) throw new Error('B4 opening: fixed rounded font registration failed; no fallback is allowed');
   const canvas = createCanvas(p.width, p.height), ctx = canvas.getContext('2d');
   const sceneCopy = p.style === 'B3' ? createCanvas(p.width, p.height) : null;
   const images = new Map();
   for (const s of p.shots) for (const l of walkLayers(s.layers)) if (['image', 'pose'].includes(l.type)) {
     const f = mediaPath(p.base, l.type === 'pose' ? '@b1/character-pose-sheet-v6.png' : l.path);
     if (!images.has(f)) images.set(f, await loadImage(f));
+  }
+  if (p.style === 'B4' && !p.opening?.user_override) {
+    const layers = p.shots[0].layers, o = p.opening;
+    const setup = layers.find(l => l.id === o.setup), payoff = layers.find(l => l.id === o.payoff);
+    for (const [l, limit] of [[setup, payoff.y - 18], [payoff, captionBand - 18]]) {
+      ctx.font = `${B4_HOOK.weight} ${l.size}px ${B4_HOOK.family}`;
+      const lines = wrap(ctx, l.text, l.w);
+      if (lines.length > 2 || l.y + lines.length * l.size * B4_HOOK.line_height > limit) throw new Error('B4 opening: title blocks overlap or overflow; shorten the approved group with permission, or adjust its size/spacing within the fixed treatment');
+    }
   }
   function stroke(points, width, color, progress = 1) {
     const lengths = points.slice(1).map((pt, i) => Math.hypot(pt[0] - points[i][0], pt[1] - points[i][1]));
@@ -52,23 +65,29 @@ export async function painter(p) {
     for (let i = 0; i < lengths.length && left > 0; i++) { const f = Math.min(1, left / Math.max(0.001, lengths[i])); ctx.lineTo(points[i][0] + (points[i + 1][0] - points[i][0]) * f, points[i][1] + (points[i + 1][1] - points[i][1]) * f); left -= lengths[i]; }
     ctx.stroke();
   }
-  return function frame(t) {
+  return function frame(t, {omitIds = [], focusIds = [], hookSettled = false} = {}) {
     ctx.resetTransform(); ctx.clearRect(0, 0, p.width, p.height); ctx.scale(p.width / plane.width, p.width / plane.width);
     ctx.fillStyle = ['B3', 'B4'].includes(p.style) ? '#111316' : p.style === 'B2' ? '#f4f0e5' : '#FDFDFC'; ctx.fillRect(0, 0, plane.width, plane.height);
-    if (p.style === 'B1' && p.grid !== false) {
+    if (!focusIds.length && p.style === 'B1' && p.grid !== false) {
       ctx.beginPath(); ctx.strokeStyle = 'rgba(76,90,105,.036)'; ctx.lineWidth = 0.8;
       for (let x = 32.5; x < plane.width; x += 64) { ctx.moveTo(x, 0); ctx.lineTo(x, captionBand - 1); }
       for (let y = 16.5; y < captionBand; y += 64) { ctx.moveTo(0, y); ctx.lineTo(plane.width, y); } ctx.stroke();
     }
     const shot = p.shots.find(s => t >= s.start && t < s.end) || p.shots.at(-1);
-    function paintLayers(layers) { for (const layer of layers) {
+    function paintLayers(layers, selectedParent = false) { for (const layer of layers) {
+      if (omitIds.includes(layer.id)) continue;
+      const selected = selectedParent || focusIds.includes(layer.id);
+      if (focusIds.length && !selected && !(layer.children && [...walkLayers(layer.children)].some(l => focusIds.includes(l.id)))) continue;
+      if (pictureOnly && layer.type !== 'image') continue;
       const dt = t - shot.start;
       if (dt < (layer.from || 0) || dt >= (layer.to ?? Infinity)) continue;
       const l = keyState(layer, dt), x = l.x || 0, y = l.y || 0, w = l.w || 200;
+      // Used by the diagnostic to compare the actual settle with a frozen title.
+      if (hookSettled && l.b4Hook === 'payoff') { l.scaleX = 1; l.scaleY = 1; }
       ctx.save(); ctx.globalAlpha *= clamp(l.alpha ?? 1); ctx.translate(x, y);
       const px = l.pivotX || 0, py = l.pivotY || 0;
       ctx.translate(px, py); ctx.rotate(l.angle || 0); ctx.scale(l.scaleX ?? 1, l.scaleY ?? 1); ctx.translate(-px, -py);
-      if (l.type === 'group') paintLayers(l.children);
+      if (l.type === 'group') paintLayers(l.children, selected);
       else if (['path', 'rect', 'ellipse'].includes(l.type)) drawB3Shape(ctx, l);
       else if (l.type === 'image') {
         const img = images.get(mediaPath(p.base, l.path)), h = l.h || w * img.height / img.width;
@@ -84,9 +103,20 @@ export async function painter(p) {
         gradient.addColorStop(1, 'rgba(10,12,14,0)');
         ctx.fillStyle = gradient; ctx.fillRect(0, 0, w, l.h);
       } else if (l.type === 'text') {
-        const size = l.size || 52; ctx.font = `${l.bold ? 700 : 400} ${size}px ${['B3', 'B4'].includes(p.style) ? 'B1Caption' : 'B1Hand'}`; ctx.fillStyle = l.color || (['B3', 'B4'].includes(p.style) ? '#e9eaea' : '#191916'); ctx.textBaseline = 'top';
+        const hook = p.style === 'B4' && ['setup', 'payoff'].includes(l.b4Hook);
+        const size = l.size || 52; ctx.font = `${hook ? B4_HOOK.weight : l.bold ? 700 : 400} ${size}px ${hook ? B4_HOOK.family : ['B3', 'B4'].includes(p.style) ? 'B1Caption' : 'B1Hand'}`; ctx.fillStyle = hook ? B4_HOOK[l.b4Hook] : l.color || (['B3', 'B4'].includes(p.style) ? '#e9eaea' : '#191916'); ctx.textBaseline = 'top';
         const lines = wrap(ctx, l.text, l.w || 1080 - x);
-        lines.forEach((s, i) => ctx.fillText(s, 0, i * size * 1.15));
+        lines.forEach((s, i) => {
+          const y = i * size * B4_HOOK.line_height;
+          if (hook) {
+            ctx.lineJoin = 'round'; ctx.lineWidth = 2;
+            ctx.strokeStyle = B4_HOOK.shadow; ctx.fillStyle = B4_HOOK.shadow;
+            ctx.strokeText(s, 2, y + 3.3); ctx.fillText(s, 2, y + 3.3);
+            ctx.strokeStyle = B4_HOOK.outline; ctx.strokeText(s, 0, y);
+            ctx.fillStyle = B4_HOOK[l.b4Hook];
+          }
+          ctx.fillText(s, 0, y);
+        });
       } else {
         let points = l.points;
         if (l.type === 'underline') points = [[0, 1], [w * 0.25, -1], [w * 0.55, 2], [w, -2]];
@@ -97,12 +127,12 @@ export async function painter(p) {
       ctx.restore();
     } }
     paintLayers(shot.layers);
-    if (sceneCopy && p.television?.enabled !== false) {
+    if (!focusIds.length && sceneCopy && p.television?.enabled !== false) {
       sceneCopy.getContext('2d').drawImage(canvas, 0, 0);
       televisionFinish(ctx, sceneCopy, p.width, p.height, p.television?.intensity ?? 0.45);
     }
     const cue = p.captions.find(c => t >= c.start && t < c.end);
-    if (cue) {
+    if (cue && !pictureOnly && !focusIds.length) {
       ctx.font = `${p.style === 'B2' ? 500 : 600} ${p.captionSize || (p.style === 'B2' ? 40 : 34)}px B1Caption`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       if (/[\r\n]/.test(cue.text)) throw new Error('B captions allow at most one line; split the timed cue at a semantic boundary');
       const lines = wrap(ctx, p.style === 'B3' ? cue.text.toUpperCase() : cue.text, 1120);
@@ -183,6 +213,9 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     }
     const cache = path.join(out, 'cache'); fs.mkdirSync(cache, {recursive: true});
     const frame = await painter(p), clips = []; let reused = 0;
+    const motionEvidence = await checkBStyleMotionPaint(p, frame);
+    const picture = p.style === 'B4' ? await painter(p, {pictureOnly: true}) : null;
+    if (p.style === 'B4') await checkB4OpeningPaint(p, {draw: frame, picture});
     const rendererHash = sha(['autopilot-render.mjs', 'b3-graphics.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f))).join(':'));
     for (const [i, shot] of p.shots.entries()) {
       const first = Math.round(shot.start * p.fps), last = Math.min(count, i === p.shots.length - 1 ? count : Math.round(shot.end * p.fps)); if (last <= first) continue;
@@ -202,12 +235,12 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     const args = ['-v', 'error', '-y', '-f', 'concat', '-safe', '1', '-i', list, '-i', p.voicePath];
     const trim = p.voiceTrimStart ? `atrim=start=${p.voiceTrimStart},asetpts=PTS-STARTPTS,` : '';
     const filters = [`[1:a]${trim}adelay=${Math.round(p.lead * 1000)}:all=1,apad,atrim=0:${count / p.fps}[voice]`], mixes = ['[voice]'], backgrounds = [];
-    const effects = p.style === 'B4' ? backgrounds : mixes; let idx = 2;
+    const effects = backgrounds; let idx = 2;
     if (p.sfx?.some(s => s.kind !== 'file')) { const f = path.join(cache, 'sfx.wav'); makeSfx(p, f, count / p.fps); args.push('-i', f); effects.push(`[${idx++}:a]`); }
-    if (p.style === 'B4') idx = appendB4Audio(p, args, filters, mixes, backgrounds, idx);
+    idx = appendAudioTracks(p, args, filters, mixes, backgrounds, idx);
     if (p.music) { args.push('-stream_loop', '-1', '-i', mediaPath(p.base, p.music.path)); filters.push(`[${idx++}:a]volume=${p.music.gain}[music]`); effects.push('[music]'); }
     if (backgrounds.length) {
-      const cuts = p.audio_cuts.map(cut => `volume=0:enable='gte(t,${cut.start})*lt(t,${cut.end})'`);
+      const cuts = (p.audio_cuts || []).map(cut => `volume=0:enable='gte(t,${cut.start})*lt(t,${cut.end})'`);
       filters.push(`${backgrounds.join('')}amix=inputs=${backgrounds.length}:normalize=0:duration=longest${cuts.length ? ',' + cuts.join(',') : ''}[background]`);
       mixes.push('[background]');
     }
@@ -222,13 +255,17 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     for (let i = 0; i < 9; i++) sc.drawImage(frame(Math.min(duration - 1 / p.fps, (i + 0.5) * duration / 9)), (i % 3) * 320, Math.floor(i / 3) * 180, 320, 180);
     fs.writeFileSync(path.join(out, `${kind}-contact-sheet.png`), sheet.toBuffer('image/png'));
     const info = probe(target), report = {fingerprint: p.fingerprint, preview_seconds: full ? null : duration, output: target, output_sha256: hashFile(target), original_voice_sha256: hashFile(p.voicePath), original_voice_duration: p.voiceDuration, voice_rate: 'unchanged; leading/trailing padding only', frames: count, duration: Number(info.format.duration), cache_hits: reused, shot_count: clips.length, full_decode: 'pass', caption_count: cues.length, human_review: 'required; technical checks are not acceptance', inputs: p.inputs};
+    report.local_motion = motionEvidence;
+    report.audio_tracks = {ambience: p.ambience.length, dialogue: p.dialogue.length, file_sfx: p.sfx.filter(s => s.kind === 'file').length, cuts: p.audio_cuts.length};
     if (p.style === 'B4') {
       report.voice_trim_start_seconds = p.voiceTrimStart;
       report.voice_rate = 'unchanged; explicit leading source trim/padding only';
       report.opening_audio = checkOpeningFile(target, FFMPEG);
+      report.opening_visual = await checkB4OpeningFile(p, target, {draw: frame, picture}, {contactSheet: path.join(out, `${kind}-opening-contact-sheet.png`)});
       report.voice_identity = {name: p.voice.name, id: p.voice.id, evidence: 'project metadata; source identity must be verified before generation'};
       report.audio_tracks = {ambience: p.ambience.length, dialogue: p.dialogue.length, file_sfx: p.sfx.filter(s => s.kind === 'file').length, cuts: p.audio_cuts.length};
       save(path.join(out, `${kind}-opening-audio.json`), report.opening_audio);
+      save(path.join(out, `${kind}-opening-visual.json`), report.opening_visual);
     }
     save(reportPath, report); done('complete'); return report;
   } catch (e) { done(`failed: ${e.message}`); throw e; }

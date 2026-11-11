@@ -6,7 +6,7 @@
 
 Accept a topic/script and a chosen or uploaded presenter. Produce a recognizable abstract cartoon head on a simple stick body, speaking at bottom right; the left stage tells the idea through energetic anonymous stickmen, oversized objects and causal physical comedy. Warm paper, dark ink, restrained red accents, large editorial titles and voice-aligned captions form one composition. This is not a realistic talking-head treatment or an abstract motion-graphics template.
 
-**Keep the two roles separate.** The [image/SVG decision](b5-avatar-motion.md#when-to-generate-an-image-when-to-code) applies only to the bottom-right presenter: reuse accepted assets first; prefer native image generation for new real people or complex anime/cartoon/IP identities, and consider SVG for simple original geometric characters. Both new routes require static approval before a speaking test. The left stage always uses anonymous code-animated stickmen; choosing a presenter does not recast those actors.
+**Keep the two roles separate.** The [image/SVG decision](b5-avatar-motion.md#when-to-generate-an-image-when-to-code) applies only to the bottom-right presenter: reuse accepted assets first; new real people or complex anime/cartoon/IP identities require the current Agent's available image tool or accepted supplied raster art, while simple original geometric characters may use SVG. Codex is not required. With no image tool, configure/import an image instead of substituting a code-drawn face. Both new routes require static approval before a speaking test. The left stage always uses anonymous code-animated stickmen; choosing a presenter does not recast those actors.
 
 Read [avatar and motion direction](b5-avatar-motion.md), the mandatory [left-stage action contract](b5-left-stage-motion.md), [sound and acceptance](b5-sound-qa.md), the [common B sound system](autopilot-sound-system.md) and the bundled [provenance](../assets/b5/CREDITS.md) before production. Inspect the complete [approved sample](../assets/b5/approved-sample.mp4), then the [true-frame contact sheet](../assets/b5/reference/contact-sheet.jpg) and code, not only thumbnails. These assets are implementation references, not authorization to reuse a character, person's likeness, voice or account mark in any context.
 
@@ -32,6 +32,7 @@ From the installed Skill directory, run `npm ci` and `node scripts/autopilot.mjs
 ```sh
 node scripts/autopilot.mjs init /absolute/new-project --style B5
 node scripts/character-explainer.mjs check
+node scripts/character-explainer.mjs validate /absolute/new-project
 node scripts/character-explainer.mjs frames /absolute/new-project --output /absolute/new-frame-check --frames 0,55,128,226,390,580 --trusted-code
 ```
 
@@ -39,7 +40,9 @@ node scripts/character-explainer.mjs frames /absolute/new-project --output /abso
 
 Those existing helpers still initialize/check the Spider-Man scaffold, not a Jensen story generator. Validate the additional local baseline with `node --test tests/b5-local-baseline.test.mjs`. Its self-contained `scene/` can be copied to an external project for an authorized adaptation; never edit the locked baseline in place. Neither passing test suite replaces story-specific choreography, listening or user review.
 
-For a new story, replace the sample script/timings/glyph tiles, scenes, identity and sound plan as required. **No account watermark or test label by default**: leave `account` empty. Add branding only when the user explicitly requests their own mark; never copy a reference creator's handle. The immutable approved media may show historical example branding, which is not a style requirement. The bundled glyph atlas contains only this sample's words; rebuild tiles for new text rather than substituting blank or overflowing text. Recompute `speech-levels.json` from the approved **dry speech**, not BGM/SFX; its amplitude/word-onset mouth animation is a heuristic, not phoneme-accurate lip sync. Adapt expressions/gestures without stretching the accepted face.
+For a new story, replace the sample script/timings/glyph tiles, scenes, identity and sound plan as required, and provide the [production manifest](b5-production-gate.md). Only the byte-identical historical scene bypasses that new-story gate. **No account watermark or test label by default**: leave `account` empty. Add branding only when the user explicitly requests their own mark; never copy a reference creator's handle. The immutable approved media may show historical example branding, which is not a style requirement. The bundled glyph atlas contains only this sample's words; rebuild tiles for new text rather than substituting blank or overflowing text. Recompute `speech-levels.json` from the approved **dry speech**, not BGM/SFX; its amplitude/word-onset mouth animation is a heuristic, not phoneme-accurate lip sync. Adapt expressions/gestures without stretching the accepted face.
+
+Sample voice credits are not requirements: the Spider-Man example uses **The Pharaoh 3** through the owner's selected service; the Jensen example uses **The Pharaoh 3** through **AI33**; Crazy Mei B5.2 uses **Claire**. Do not infer an unrecorded provider from a voice name. Use the user's selected available route, help configure it if needed, and preserve accepted audio. These credits do not authorize paid generation or force another Agent to use the same platform.
 
 After the user reviews the current preview and authorizes the full film, render all frames with `--all`, then encode with the same helper:
 

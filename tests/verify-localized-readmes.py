@@ -274,6 +274,24 @@ for name in selected:
         assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 0, 0, 3, 0, 2], (name, "approved FAQ list formatting")
     faq_answers = re.split(r"^### Q\d+\. .+\n", faq, flags=re.M)[1:]
     assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 0, 0, 3, 0, 2], (name, "localized FAQ bullet parity")
+    # Model neutrality and real local motion must not disappear in translation.
+    production_copy = {
+        "en": ("Other agents", "available image tools", "B5", "not code-drawn substitutes", "not a required provider", "local animation", "prop movement", "alone do not count"),
+        "zh-CN": ("其他 Agent", "可用的生图工具", "B5", "不能用代码头像替代", "不绑定服务商", "局部动画", "道具动作", "不算画面微动画"),
+        "ja": ("他のエージェント", "使える画像生成ツール", "B5", "コードで描いた代用の顔は使いません", "サービスの指定ではありません", "部分アニメーション", "小道具の動き", "だけでは"),
+        "ko": ("다른 에이전트", "이미지 도구", "B5", "코드로 그린 대체 얼굴은 허용하지 않습니다", "특정 서비스를 요구하지 않습니다", "부분 애니메이션", "소품 움직임", "만으로는"),
+        "fr": ("autre agent", "outils d’image disponibles", "B5", "pas un visage de remplacement dessiné par code", "n’imposent aucun fournisseur", "animations locales", "mouvements d’objets", "ne comptent pas"),
+        "pt-BR": ("outros agentes", "ferramentas de imagem disponíveis", "B5", "não de rostos substitutos desenhados por código", "sem exigir um fornecedor", "animações locais", "movimentos de objetos", "não conta"),
+        "tr": ("Diğer ajanlarda", "görsel araçlarını", "B5", "kodla çizilmiş genel bir yüzle değiştirilemez", "sağlayıcıyı zorunlu kılmaz", "yerel animasyon", "nesne hareketleri", "sayılmaz"),
+        "id": ("Agen lain", "alat gambar yang tersedia", "B5", "bukan wajah pengganti yang digambar dengan kode", "bukan layanan yang wajib", "animasi lokal", "gerakan objek", "tidak dihitung"),
+    }
+    neutrality, motion_copy = production_copy[active][:5], production_copy[active][5:]
+    assert all(token in faq_answers[2] for token in neutrality), (name, "localized model/voice neutrality")
+    visual_row = text.splitlines()[104]
+    assert all(token in visual_row for token in motion_copy), (name, "local animation is not camera/text-only")
+    for style_id, next_marker, voice in (("b1", '<a id="b2"></a>', "Bodi"), ("b2", '<a id="b3"></a>', "Fola"), ("b3", '<!-- b3:section:end -->', "Bodi")):
+        style_section = section(text, style_id, next_marker)
+        assert re.search(r'<td align="center">Google Gemini · [^<]*' + voice, style_section), (name, style_id, "verified sample platform and voice")
     for answer, tokens in zip(faq_answers, (("MIT", "API"), ("B", "A"), ("Codex", "GPT"), ("3", "6"), ("SFX", "Casually Explained"), ("YouTube", "YPP"), ("Codex", "Claude Code", "Cursor"))):
         assert all(token in answer for token in tokens), (name, "localized FAQ topic parity", tokens)
     assert "MIT" in faq and "API" in faq and "YouTube" in faq and "Codex" in faq and "Claude Code" in faq, name

@@ -62,7 +62,10 @@ for fixture in ("night-library", "coastal-station"):
     checker.validate_plan(skill, skill / ("tests/fixtures/a6-" + fixture + ".plan.json"))
 for readme in root.glob("README*.md"):
     assert "Route 2 · Renoise MCP (explicit choice)" not in readme.read_text()
-    assert "utm_source=crazykaomei-aini-202610" not in readme.read_text()
+    # The owner-approved API Partners row may use this referral URL; it must not
+    # become a mandatory A6 production route.
+    a6_section = readme.read_text().split('<a id="a6"></a>', 1)[1].split('<a id="b-styles"></a>', 1)[0]
+    assert "utm_source=crazykaomei-aini-202610" not in a6_section
 
 finishing = (skill / "references/a6-finishing.md").read_text()
 for text in ("Gemini TTS · Puck", "curious, exploratory", "ALL CAPS",

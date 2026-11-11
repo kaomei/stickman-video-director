@@ -102,7 +102,7 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 | **Proposta** | **Você controla a produção, a IA cuida da direção:** recebe storyboard e prompts e decide como gerar e editar os clipes. | **Passe um tema ou pedido e receba o vídeo pronto:** ilustrações, narração, legendas, microanimações e montagem automática. |
 | **Duração** | **Pensado primeiro para vídeos curtos**, como 30 segundos a 3 minutos; também permite produzir vídeos maiores por trechos. | **Pensado primeiro para vídeos longos**, especialmente narrados de **10 minutos ou mais**; também faz vídeos curtos e histórias em episódios. |
 | **Ferramentas** | Planeje com um assistente de IA compatível com Skills, gere os clipes no seu gerador de vídeo preferido (Google Flow, Runway, Luma, Kling etc.) e depois monte tudo no CapCut ou Premiere. | Roda em agentes como **Codex e Claude Code**, capazes de ler e gravar arquivos, usar ferramentas e executar comandos para conectar a geração de materiais à montagem local. |
-| **Visual** | **Animação gerada por trecho:** foco em ações, direção de câmera e interação entre personagens. | **Cenas ilustradas + microanimações:** cortes, aproximações e movimentos de câmera acompanham a narração, sem precisar gerar uma animação completa para cada trecho. |
+| **Visual** | **Animação gerada por trecho:** foco em ações, direção de câmera e interação entre personagens. | **Cenas ilustradas + animações locais:** expressões, reações dos personagens e movimentos de objetos acompanham a narração, com cortes, aproximações e movimentos de câmera. Apenas mover a câmera ou fazer o texto aparecer não conta como animação da cena. |
 | **Entrega** | Proposta de direção, storyboard, prompts de vídeo por trecho e design de som. | **Arquivo de vídeo completo, com narração, legendas e microanimações.** |
 
 Os dois fluxos podem começar com um tema inicial, um link da web ou um roteiro completo. Escolha livremente a proporção de tela (9:16, 16:9, 1:1), o idioma da narração e a voz. As durações acima são recomendações, não limites rígidos.
@@ -349,7 +349,7 @@ Como um amigo desenhando enquanto explica. Rostos expressivos, linhas pretas e p
   </tr>
   <tr>
     <td align="center">Personagens à mão · Texto em destaque · Microanimações</td>
-    <td align="center">Narração Bodi · Expressões marcantes · Microanimações</td>
+    <td align="center">Google Gemini · Narração Bodi · Expressões marcantes · Microanimações</td>
   </tr>
 </table>
 
@@ -375,7 +375,7 @@ Por que a mente faz mais barulho quando você tenta dormir? Inspirado no [@Psych
   </tr>
   <tr>
     <td align="center">Pensamentos antes de dormir · Cortes de cenário · Movimentos suaves</td>
-    <td align="center">Distrações cotidianas · Cenários coloridos · Narração Fola</td>
+    <td align="center">Google Gemini · Distrações cotidianas · Cenários coloridos · Narração Fola</td>
   </tr>
 </table>
 
@@ -402,7 +402,7 @@ Como encontrar uma transmissão curiosa de madrugada. Inspirados no [@Bradikinin
   </tr>
   <tr>
     <td align="center">Suspense fictício · Mudanças de cena · Textura de TV</td>
-    <td align="center">Comportamento animal · Reações locais · Narração Bodi</td>
+    <td align="center">Google Gemini · Comportamento animal · Reações locais · Narração Bodi</td>
   </tr>
 </table>
 <!-- b3:section:end -->
@@ -550,7 +550,7 @@ Sim. O Stickman Video Director é 100% gratuito e de código aberto sob a licen�
 
 **Para chegar o mais perto possível dos exemplos, recomendo o Codex.** Foi nele que produzi e testei os vídeos de demonstração do modo B; você não precisa programar. O Skill também pode ser instalado em outros agentes, mas diferenças nos modelos, na configuração das ferramentas e na execução podem alterar o resultado.
 
-Para as imagens, uso o modelo integrado ao GPT, sem configurar uma API adicional. Faça primeiro uma amostra curta para conferir o estilo e o resultado antes de produzir o vídeo completo.
+Meus exemplos usam o modelo de imagem integrado ao GPT, sem configurar uma API adicional. Em outros agentes, use as ferramentas de imagem disponíveis no ambiente. Apresentadores B5 baseados em pessoas reais ou personagens complexos precisam de imagens geradas ou aprovadas, não de rostos substitutos desenhados por código. Os créditos de voz identificam os exemplos, sem exigir um fornecedor. Se necessário, peça ao agente para configurar o serviço escolhido e confira uma amostra curta antes de produzir o vídeo completo.
 
 ### Q4. Posso fazer um vídeo sem ter um roteiro pronto?
 

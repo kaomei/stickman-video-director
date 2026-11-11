@@ -121,13 +121,15 @@ for requirement in ("建议你先自行生成", "advice only", "Do not bundle or
 # Per-style defaults stay inside one installation; B1 is not all of B.
 autopilot = (skill / "references/autopilot.md").read_text()
 b1 = (skill / "references/b1-minimal-handdrawn.md").read_text()
-priority = "explicit user choice → selected B-style default → B common fallback"
+priority = "explicit user choice → selected B-style contract → available configured route"
 assert priority in autopilot and priority in guide.read_text()
 assert "visuals, captions, voice, pacing and SFX" in entry
 assert "caption font/size/placement" in autopilot
-assert "B1 defaults, not requirements for other B styles" in b1
-assert "Google Gemini **Bodi**" in b1 and "original **Sadaltager** recording" in b1
-assert "without added style/direction instructions" in b1
+assert "B1 is separate from all A-style generation prompts and other B styles" in b1
+assert "Google Gemini **Bodi**" in b1 and "Google Gemini **Sadaltager**" in b1
+assert "Voice reference only" in b1 and "rather than requiring Gemini" in b1
+assert "native rate and default treatment" in b1
+assert "showcase voices are references, not mandatory providers or voices" in guide_text
 print("First-use wiring, proactive A5 reference guidance and single-Skill identity passed; other Director bytes preserved.")
 print("Independent B-style settings, defaults precedence and unchanged demo-voice policy passed.")
 print("Eight-language catalog destinations, shared anchors and English fallback instruction checks passed.")

@@ -47,12 +47,13 @@ for boundary in (
     "Preserve all spoken words and order",
     "noun phrases, verbs with necessary objects",
     "numbers/units and phrasal verbs",
-    "rather than a second line or mechanically smaller/squeezed type",
+    "within the selected style's line limit or successive cues",
+    "not mechanically smaller/squeezed type",
     "neighboring cues for broken meaning",
     "each cue starts at its own first aligned spoken word",
     "same detail standard throughout the entire film",
     "excluding the subtitle band",
-    "validator does not automatically enforce these creative gates",
+    "they do not automatically enforce these creative gates",
     "no new paid calls",
 ):
     assert boundary in common, f"Missing boundary: {boundary}"
@@ -68,7 +69,8 @@ assert "not the independently shared B" in manifest["scope"]["not_inherited_scop
 runtime = (refs / "autopilot-runtime.md").read_text()
 b2 = (refs / "b2-colorful-handdrawn.md").read_text()
 assert "accepts `style: B1`, `B2`, `B3` and `B4`" in runtime
-assert "## B4 production tracks" in runtime
+assert "## Shared B1–B4 production tracks" in runtime
+assert "The local track arrays below also work in B1/B2/B3" in runtime
 assert "(b2-colorful-handdrawn.md)" in autopilot
 assert "independent local illustration-and-micro-animation style" in b2
 assert "Fola" in b2 and "ivory paper label" in b2

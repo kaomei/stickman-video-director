@@ -21,9 +21,12 @@ test('B entry and setup reach one shared selected-provider execution route', () 
 });
 
 test('explicit choice wins without rewriting defaults or reopening accepted audio', () => {
-  assert.match(common, /explicit user choice → selected B-style default → B common fallback/);
-  assert.match(common, /Google Gemini \*\*Bodi\*\*/);
-  assert.match(common, /original \*\*Sadaltager\*\* recording/);
+  assert.match(common, /explicit user choice → selected B-style contract → available configured route/);
+  assert.match(common, /B1\/B2\/B3\/B5 sample voice credits are references, not required providers\/voices/);
+  const b1 = read('references/b1-minimal-handdrawn.md');
+  assert.match(b1, /Google Gemini \*\*Bodi\*\*/);
+  assert.match(b1, /older V15 uses Google Gemini \*\*Sadaltager\*\*/);
+  assert.match(b1, /preserve existing accepted recordings without automatic regeneration/);
   assert.match(route, /without changing the settings priority/);
   assert.match(route, /Keep the approved words, named voice, native rate, style and accepted media/);
   assert.match(route, /explicit voice override/);
