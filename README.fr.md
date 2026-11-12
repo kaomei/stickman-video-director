@@ -575,19 +575,20 @@ Non. Vous n’avez besoin ni d’une carte RTX haut de gamme ni de connaissances
 
 <a id="road-to-10000-stars--creator-ecosystem"></a>
 
-## ⭐ En route vers 10,000 Stars et un écosystème de créateurs
+## ⭐ En route vers 20,000 Stars et un écosystème de créateurs
 
 **Chaque étoile alimente la prochaine nouveauté !** Ensemble, nous construisons un studio 100 % gratuit et open source pour aider les créateurs solo à gérer des chaînes sans montrer leur visage, sans abonnement SaaS à 50 $/mois.
 
 - [x] **1,000 Stars** : lancement du mode Director + 5 styles visuels de base
 - [x] **3,000 Stars** : lancement du mode AutoPilot pour générer des vidéos en un clic
-- [ ] **🔥 5,000 Stars** :
-  - 5–10 nouveaux styles visuels
-  - Éditeur par lots en un clic pour YouTube Shorts et TikTok
-- [ ] **7,500 Stars** :
+- [x] **6,000 Stars** : Plus de 10 nouveaux styles visuels de qualité déjà disponibles
+- [ ] **🔥 10,000 Stars** :
   - Bibliothèque de plus de 1,000 prompts de scripts YouTube viraux
   - Plus de 200 effets sonores et transitions libres de redevances et sans risque Content ID
-- [ ] **10,000 Stars** : lancement du Web Studio officiel tout-en-un
+  - Éditeur par lots en un clic pour YouTube Shorts et TikTok
+- [ ] **20,000 Stars** :
+  - lancement de Stickman AI Studio — de l’idée à la vidéo finale, en pilote automatique
+  - D’autres surprises nous attendent — découvrons-les ensemble
 
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">

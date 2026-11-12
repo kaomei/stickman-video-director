@@ -573,19 +573,20 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 
 <a id="road-to-10000-stars--creator-ecosystem"></a>
 
-## ⭐ 10,000 Stars를 향한 여정과 크리에이터 생태계
+## ⭐ 20,000 Stars를 향한 여정과 크리에이터 생태계
 
 **Star 하나하나가 다음 업데이트의 원동력입니다!** 월 50달러의 SaaS 구독 없이도 1인 크리에이터가 얼굴을 공개하지 않는 채널을 운영할 수 있도록, 100% 무료 오픈 소스 스튜디오를 함께 만들고 있습니다.
 
 - [x] **1,000 Stars**: Director 모드 + 5가지 핵심 스타일 출시
 - [x] **3,000 Stars**: 클릭 한 번으로 영상을 생성하는 AutoPilot 모드 출시
-- [ ] **🔥 5,000 Stars**:
-  - 5–10가지 신규 스타일 공개
-  - YouTube Shorts와 TikTok용 원클릭 일괄 편집기
-- [ ] **7,500 Stars**:
+- [x] **6,000 Stars**: 10가지 이상의 고품질 신규 스타일 출시 완료
+- [ ] **🔥 10,000 Stars**:
   - 1,000개 이상의 바이럴 YouTube 대본 프롬프트 모음
   - 200개 이상의 로열티 프리·Content ID 안전 효과음과 전환 효과
-- [ ] **10,000 Stars**: 공식 올인원 Web Studio 출시
+  - YouTube Shorts와 TikTok용 원클릭 일괄 편집기
+- [ ] **20,000 Stars**:
+  - Stickman AI Studio 출시 — 아이디어부터 완성된 영상까지, 전 과정을 자동으로
+  - 더 많은 놀라움, 함께 기대해요~
 
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">

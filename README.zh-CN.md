@@ -572,19 +572,20 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 <a id="road-to-10000-stars--creator-ecosystem"></a>
 
-## ⭐ 迈向 10,000 Stars 与创作者生态
+## ⭐ 迈向 20,000 Stars 与创作者生态
 
 **每一颗 Star，都为下一次更新添一把火！** 我们正在一起打造一个 100% 免费、开源的工作室，帮助独立创作者运营不露脸频道，无需每月支付 50 美元的 SaaS 订阅费。
 
 - [x] **1,000 Stars**：已推出导演模式 + 5 种核心画风
 - [x] **3,000 Stars**：已推出全自动模式，一键生成视频
-- [ ] **🔥 5,000 Stars**：
-  - 上线 5–10 种新画风
-  - 推出适用于 YouTube Shorts 与 TikTok 的一键批量编辑器
-- [ ] **7,500 Stars**：
+- [x] **6,000 Stars**：已上线 10+ 优质新画风
+- [ ] **🔥 10,000 Stars**：
   - 提供 1,000+ 条爆款 YouTube 脚本提示词库
   - 提供 200+ 款免版税、可安全通过 Content ID 的音效与转场
-- [ ] **10,000 Stars**：推出官方一体化 Web Studio
+  - 推出适用于 YouTube Shorts 与 TikTok 的一键批量编辑器
+- [ ] **20,000 Stars**：
+  - 推出 Stickman AI 视频工作台——从创意到成片，全程自动化
+  - 更多惊喜，一起期待吧～
 
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
