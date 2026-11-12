@@ -5,6 +5,8 @@ import crypto from 'node:crypto';
 const sha = f => crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
 const read = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 const text = x => typeof x === 'string' && x.trim().length > 0;
+// baseline-lock.json paths are posix; the path API returns native separators on Windows
+const toPosix = p => p.split(/[\\/]/).join('/');
 const need = (ok, why) => { if (!ok) throw Error('B5 production: ' + why); };
 function files(dir) {
   return fs.readdirSync(dir, {withFileTypes: true}).flatMap(e => {
@@ -23,7 +25,7 @@ function lockedFile(scene, item) {
 }
 function exactLegacy(scene, pack) {
   const expected = read(path.join(pack, 'baseline-lock.json')).files.filter(f => f.path.startsWith('example/'));
-  const actual = files(scene).map(f => path.relative(scene, f)).sort();
+  const actual = files(scene).map(f => toPosix(path.relative(scene, f))).sort();
   return JSON.stringify(actual) === JSON.stringify(expected.map(f => f.path.slice(8)).sort()) &&
     expected.every(f => sha(path.join(scene, f.path.slice(8))) === f.sha256);
 }
