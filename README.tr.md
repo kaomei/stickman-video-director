@@ -574,19 +574,20 @@ Hayır. Üst düzey bir RTX ekran kartına veya kodlama bilgisine ihtiyacınız 
 
 <a id="road-to-10000-stars--creator-ecosystem"></a>
 
-## ⭐ 10,000 Stars’a doğru ve içerik üreticisi ekosistemi
+## ⭐ 20,000 Stars’a doğru ve içerik üreticisi ekosistemi
 
 **Her yıldız bir sonraki yeniliğe güç verir!** Tek başına içerik üretenlerin aylık 50 dolarlık SaaS abonelikleri olmadan yüzlerini göstermedikleri kanallar yönetebilmesi için birlikte %100 ücretsiz, açık kaynaklı bir stüdyo kuruyoruz.
 
 - [x] **1,000 Stars**: Director Mode + 5 temel görsel stil yayımlandı
 - [x] **3,000 Stars**: tek tıkla video üreten AutoPilot Mode yayımlandı
-- [ ] **🔥 5,000 Stars**:
-  - 5–10 yeni görsel stil
-  - YouTube Shorts ve TikTok için tek tıkla toplu düzenleyici
-- [ ] **7,500 Stars**:
+- [x] **6,000 Stars**: 10’dan fazla yüksek kaliteli yeni görsel stil yayımlandı
+- [ ] **🔥 10,000 Stars**:
   - 1,000’den fazla viral YouTube senaryosu isteminden oluşan arşiv
   - 200’den fazla telifsiz, Content ID açısından güvenli ses efekti ve geçiş
-- [ ] **10,000 Stars**: resmî hepsi bir arada Web Studio’nun açılışı
+  - YouTube Shorts ve TikTok için tek tıkla toplu düzenleyici
+- [ ] **20,000 Stars**:
+  - Stickman AI Studio’nun açılışı — fikirden tamamlanmış videoya, otomatik pilotta
+  - Daha fazla sürpriz yolda — birlikte heyecanla bekleyelim
 
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">

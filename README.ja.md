@@ -572,19 +572,20 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
 
 <a id="road-to-10000-stars--creator-ecosystem"></a>
 
-## ⭐ 10,000 Starsへの道とクリエイターエコシステム
+## ⭐ 20,000 Starsへの道とクリエイターエコシステム
 
 **一つひとつのStarが、次のリリースの力に！** 月額50ドルのSaaSを契約せずに、一人でも顔出しなしのチャンネルを運営できるよう、100%無料・オープンソースのスタジオをみんなで作っています。
 
 - [x] **1,000 Stars**：Directorモード + 5つの基本画風を公開
 - [x] **3,000 Stars**：ワンクリックで動画を生成するAutoPilotモードを公開
-- [ ] **🔥 5,000 Stars**：
-  - 5–10種類の新しい画風を追加
-  - YouTube Shorts・TikTok向けのワンクリック一括編集ツール
-- [ ] **7,500 Stars**：
+- [x] **6,000 Stars**：高品質な新しい画風を10種類以上公開済み
+- [ ] **🔥 10,000 Stars**：
   - 1,000本以上のバイラルYouTube台本用プロンプト集
   - 200種類以上のロイヤリティフリーでContent IDにも安心な効果音・トランジション
-- [ ] **10,000 Stars**：公式オールインワンWeb Studioを公開
+  - YouTube Shorts・TikTok向けのワンクリック一括編集ツール
+- [ ] **20,000 Stars**：
+  - Stickman AI Studioを公開 — アイデアから完成動画まで、すべて自動で
+  - これからのサプライズも、一緒に楽しみにしましょう～
 
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
