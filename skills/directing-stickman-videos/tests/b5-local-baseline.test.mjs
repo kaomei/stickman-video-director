@@ -14,15 +14,17 @@ const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const lock=read(path.join(base,'baseline-lock.json')),contract=read(path.join(base,'acceptance.json'));
 const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 const list=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?list(path.join(d,e.name)):[path.join(d,e.name)]);
+// baseline-lock.json is written with posix separators; path API calls return the native separator
+const toPosix=p=>p.split(/[\\/]/).join('/');
 
 test('Jensen baseline has an exact closed lock, explicit B5 release approval and bounded rights claims',()=>{
   assert.equal(contract.publication_authorized,true);assert.equal(contract.public_rights_cleared,false);
   assert.match(contract.publication_approval,/2026-11-10/);
   assert.match(contract.rights_review_scope,/Finished editorial composite/);
   assert.equal(lock.video_sha256,'b46c272512277096d7cc3f85a435d52d4657887c68050b15ec555071fd8da387');
-  const actual=list(base).map(p=>path.relative(base,p)).filter(p=>p!=='baseline-lock.json').sort();
+  const actual=list(base).map(p=>toPosix(path.relative(base,p))).filter(p=>p!=='baseline-lock.json').sort();
   assert.deepEqual(actual,lock.files.map(f=>f.path).sort());
-  for(const f of lock.files){assert(!path.isAbsolute(f.path)&&!f.path.split(path.sep).includes('..'));assert.equal(sha(path.join(base,f.path)),f.sha256,f.path);}
+  for(const f of lock.files){assert(!path.isAbsolute(f.path)&&!toPosix(f.path).split('/').includes('..'));assert.equal(sha(path.join(base,f.path)),f.sha256,f.path);}
   assert.equal(sha(path.join(base,'approved-sample.mp4')),lock.video_sha256);
 });
 
