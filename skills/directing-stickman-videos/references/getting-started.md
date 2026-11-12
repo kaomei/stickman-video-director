@@ -10,7 +10,7 @@ Give a readable quick-start, not just a greeting or two mode names. Show it once
 
 ### A practical first-use explanation
 
-With no brief yet, use short headings like a README quick-start. Explain the actual deliverable, suitable content/duration, tools to prepare, production sequence and a copyable request. Distinguish what the assistant does from what the user needs to do. Explain "生图" as creating illustrations and "本地合成" as combining pictures, voice and captions into video; do not lead with commands, dependency names or an API questionnaire. Treat durations as recommendations, not enforced limits.
+With no brief yet, give a brief welcome: a one-sentence verified installation/check summary, the two deliverables, public style links and one short copyable request. Keep the generic explanation around 200–400 Chinese characters or a comparable short paragraph in another language; the example below is a ceiling, not text to replay verbatim. Explain tools, production stages, suitable durations and mode-specific examples only after the route is known. Distinguish assistant work from user choices; explain technical terms plainly and keep durations advisory. Do not lead with an API questionnaire, dependency versions, test totals, font hashes or host maintenance commands. Summarize successful checks; show an actionable failure or missing capability when relevant. Do not call dependency checks a successful composition test.
 
 Proactively show where to choose a style: link the public GitHub catalogs shown below, explain that the user can watch samples and reply with a style code such as A3 or B1. Do not wait for "where do I choose?" or substitute an installed reference-file path for the public catalog. With no mode selected, show both links; with a known mode but no style, show only its relevant link. If a style is already supplied, acknowledge it and continue without requiring another catalog visit or selection. Published B choices are B1, B2, B3, B4 and B5. B5 · Character Explainer has its own code-authored route: read [B5](b5-character-explainer.md), initialize with `--style B5`, and use `scripts/character-explainer.mjs` for frame rendering and encoding. B1–B4 use the bundled manifest runtime with their own visuals, voices and audio contracts. Offer B4 from the public catalog, initialize it explicitly with `--style B4`, and keep project media outside the installed Skill. Do not offer unpublished experiments as ready choices.
 
@@ -37,53 +37,26 @@ Adapt this Chinese example to the actual environment and installation status:
 
 ### 欢迎使用火柴人视频 Skill
 
-给我一个话题、需求、文章链接或故事脚本，就可以开始。**不用先写好完整文案**，我会帮你整理内容，再按你选的模式往下做。一次安装即可使用下面两种模式。
+给我一个话题、需求、文章链接或脚本就能开始，不用先写好完整文案。
 
-**画风在这里选择：**[导演模式画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#a-styles) · [全自动模式画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#b-styles)。打开看样片，选好后把画风编号（如 **A3** 或 **B1**）告诉我即可，不用下载画风包或重新安装。
+#### A · 导演模式：先拿分镜与提示词
 
-#### A · 导演模式：先拿分镜和提示词，自己掌控生成与剪辑
+A1–A5 适合自己掌控片段生成和剪辑。先确认导演提案，再拿逐段提示词；写方案无需先配置生图或视频 API。
 
-- **适合做什么**：TikTok / Shorts、反转短剧、需要人物互动和具体动作的故事；可以先做 30 秒，也适合 1～3 分钟短片。
-- **你会拿到什么**：故事提案、分段旁白、画面分镜，以及可以逐条复制使用的视频生成提示词。
-- **需要准备什么**：在支持 Skill 的 AI 助手里和我沟通；生成视频时使用 Google Flow 等工具，最后在剪映等软件里完成剪辑。写提案和提示词不需要先配置 API。
-- **怎么进行**：给话题和需求 → 我给故事提案 → 你确认或修改 → 按需确认人物三视图 → 我给逐段分镜提示词 → 你生成片段并剪辑。
+#### B · 全自动模式：确认样片后拿完整视频
 
-**可选：先定人物，再做分镜。** 想让人物更一致，或做专属形象的视频，可以先设计符合所选画风的火柴人，确认三视图（正面、侧面、背面）。已有确认的角色参考图可直接复用，不需要定制时可跳过。生成每段视频时，在支持参考图的工具中都附上已确认的角色图；参考图是额外辅助，不替代原有提示词，也不改变画风规则，最终仍需检查各段人物是否一致。
+由我串起插画、配音、字幕和本地合成。先检查可用通道、确认脚本与约 20 秒有声样片，再按授权制作 MP4。
 
-可以直接这样说：
-
-```text
-使用导演模式/A模式，把下面的话题、文案或需求做成火柴人视频：
-[填写话题、粘贴文案，也可以直接描述需求]
-需求：横屏 16:9，采用 A3「史前洞穴风」，先做 30 秒。
-先给我导演提案，确认后再输出逐段视频提示词。
-```
-
-如需专属角色，可以再补一句：“先帮我设计符合所选画风的火柴人，确认三视图，再给分镜提示词。”
-
-#### B · 全自动模式：确认样片后，自动做完整视频
-
-- **适合做什么**：YouTube 知识讲解、产品宣传、故事解说和连续故事短剧；可以先试 20 秒，再做 5～10 分钟或更长的内容，不用逐段手动拼装。
-- **你会拿到什么**：配好旁白、字幕、微动画和音效的完整 MP4 视频，以及字幕文件。画面以插画、重点文字和微动画配合讲述。
-- **需要准备什么**：在 Codex、Claude Code 等能操作文件、执行命令的环境中使用；还需要可用的生图、配音服务，以及把素材合成视频的本地工具。我会先检查已有配置，只带你补缺少的部分。
-- **怎么进行**：给内容和需求 → 检查配置 → 确认脚本、画风和声音 → 看约 20 秒有声样片 → 确认后自动制作整片 → 拿到视频文件。
-
-两种模式都可在**你确认成片满意后**，选择继续制作匹配当前画风的封面、标题、简介与置顶评论；也可以直接结束。不需要重新选模式或复制一套提示词；可用的生图工具与费用会另行确认，发布账号不会被自动操作。
+**画风在这里选择：**[导演模式画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#a-styles) · [全自动模式画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#b-styles)。看样片后回复编号即可，无需重新安装。
 
 可以直接这样说：
 
 ```text
-使用全自动模式/B模式，把这篇文章做成适合 YouTube 的 5 分钟宣传视频。
-横屏 16:9，用 B1「极简手绘风」，英文旁白，配好字幕和音效。
-先帮我检查生图、配音和视频合成配置，再给我脚本与 20 秒有声样片。
-文章链接：[粘贴链接]
+把这个话题或链接做成火柴人视频：[内容]。
+我想拿到[分镜提示词 / 完整视频]，横屏 16:9，先给方案。
 ```
 
-#### 现在怎么开始？
-
-直接发来**内容＋想拿到的结果**就行，例如：“我想做一个介绍这个工具的 YouTube 视频，希望自动拿到完整成片。”也可以补充时长、横竖屏、画风、语言和音色；没想好的部分，我会接着引导，不需要一次填完所有选项。A 模式的旁白和声音设计沿用原有规则；B 模式按所选画风配置字幕和配音，B1 默认英语和 Google Gemini 的 Bodi 音色，你也可以指定其他语言、平台或音色。不同 B 画风可以有各自的默认配置，但都会配好旁白和字幕。
-
-如果工具还没配好，可以先说：**“我想用全自动模式，但不知道怎么配置，先帮我检查。”** 我会说明哪些能用了、哪些还缺，以及具体怎么补；涉及收费的生成会先说明，不会因为安装好了就直接开始付费制作。
+选定模式后再展开工具、流程和具体示例。已有明确需求就直接继续，不用重选；安装完成不会自动开始付费制作。
 
 ### Adapt instead of replaying the README
 
@@ -123,7 +96,7 @@ Keep all existing setup, style, voice and revision rules unchanged. A global cha
 
 ### Optional A character references
 
-Character references are optional support for stronger visual consistency or a personalized character, not a new setup requirement for all A users. Explain the option in first-use guidance; if the user has not chosen it, continue the ordinary Director workflow without blocking on a three-view sheet or adding an approval gate. This section is A-only; it does not impose a reference workflow on B.
+Character references are optional support for stronger visual consistency or a personalized character, not a new setup requirement for all A users. Explain the option after an A1–A5 selection; if the user has not chosen it, continue the ordinary Director workflow without blocking on a three-view sheet or adding an approval gate. This section is A-only; it does not impose a reference workflow on B.
 
 When chosen, help define a character within the selected A style's permitted variations and confirm front, side and back views before delivering final clip prompts. Reuse suitable user-approved references rather than requiring new images. Include the character/reference plan in Phase A; a reference that changes an already approved global design follows the existing proposal-revision rule. Keep fixed style anchors, anatomy and character constraints intact: do not silently override them to copy an incompatible reference. Explain any conflict and resolve it with the user.
 
@@ -153,17 +126,18 @@ Resolve the topic/source, audience, purpose, duration, ratio, B-style and narrat
 
 ### 2. Configuration check
 
-Run the documented local `doctor` check and inspect the user's chosen image and voice services. Resolve each setting as **explicit user choice → selected B-style contract → available configured route**, as defined in Autopilot. B1/B2/B3/B5 showcase voices are references, not mandatory providers or voices; B4 retains its Brian contract. Reuse accepted recordings or a suitable configured route and help configure the user's selection when needed. Do not repeat a resolved platform choice. Summarize actual findings in plain language, separating **ready**, **missing** and **not yet verified**:
+Run the documented local `doctor` check; use `doctor --smoke` before reporting actual local composition verified. Inspect the user's chosen image, voice and caption-alignment routes separately. Resolve each setting as **explicit user choice → selected B-style contract → available configured route**, as defined in Autopilot. B1/B2/B3/B5 showcase voices are references, not mandatory providers or voices; B4 retains its Brian contract. Reuse accepted recordings or a suitable configured route and help configure the user's selection when needed. Do not repeat a resolved platform choice. Summarize actual findings in plain language, separating **ready**, **missing** and **not yet verified**:
 
 - Local composition: Node 20+, FFmpeg/FFprobe, renderer dependencies and suitable fonts. If something is missing, name that component, explain its role briefly, and give the next platform-appropriate installation/configuration step. Install project dependencies only with the host's normal permissions; after a repair, verify the affected check again.
 - Image and voice generation: reuse an available configured tool or authenticated interface if suitable. Do not demand a Gemini API key when the chosen browser/native tool does not use one. If image generation is not configured and no service was chosen, guide selection of an available image service. For a chosen service with no built-in integration, follow [selected-provider execution](autopilot.md#selected-provider-execution): inspect available routes and, within scope, adapt in the project before offering replacement or manual handoff. For narration, check the resolved provider/voice and explain only the missing login, access or configuration; do not require Bodi when the user or selected style specifies another voice. For API adapters use environment variables, never pasted secret values. Do not silently replace the selected voice/service with local OS TTS.
-- Evidence and cost: `doctor` checks local dependencies and key presence, not login, model access, quota or billing. Report those as unverified unless separately checked; an account subscription or an environment variable alone does not make generation ready. Disclose the planned billable calls/cost and obtain authorization before making them. Do not make a paid test call simply to populate the checklist.
+- Caption alignment: verify actual TTS word timestamps, supplied aligned captions or an available aligner independently of narration. Audio-only TTS does not establish synchronized subtitles. If local Whisper/model files are absent, report that optional route as missing; do not download a model or invent a cloud alignment service. Continue script/preparation work while the chosen alignment route is unresolved.
+- Evidence and cost: default `doctor` checks local dependencies, optional Python features and key presence; only a passing `--smoke` verifies the temporary B1 local pipeline. It does not verify another style, login, model access, quota or billing. Report those as unverified unless separately checked; an account subscription or an environment variable alone does not make generation ready. Disclose the planned billable calls/cost and obtain authorization before making them. Do not make a paid test call simply to populate the checklist.
 
 State the smallest next fix, not just "configuration failed" or a raw terminal dump. For example:
 
-> 已完成：本地合成工具检查通过，已确认横屏 16:9 和 B1 极简手绘风。
-> 还缺什么：可用生图工具尚未确认；所选配音服务的模型访问和额度还未验证。
-> 下一步：先检查当前 Agent 可用的生图工具和所选配音路径，缺少配置再补齐。案例配音不要求照搬，暂不调用付费生成，脚本可以先继续准备。
+> 已完成：本地依赖检查通过，已确认横屏 16:9 和 B1 极简手绘风。
+> 还缺什么：实际合成、生图、所选配音服务和字幕对齐尚未验证。
+> 下一步：先做离线合成自检并检查当前 Agent 的可用通道，只补实际缺项；暂不调用付费生成，脚本可以继续准备。
 
 If the host cannot read/write files or execute commands, explain that Autopilot cannot render here and offer a compatible environment or Director mode. Do not silently switch modes or call a prompt package a finished film.
 

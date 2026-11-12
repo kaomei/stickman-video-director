@@ -149,11 +149,9 @@ Tolong pasangkan Skill ini:
 https://github.com/kaomei/stickman-video-director
 
 Setelah berhasil dipasang, segera baca SKILL.md yang terpasang.
-Jelaskan dengan bahasa sederhana hasil dari kedua mode,
-alat yang diperlukan, serta alur pembuatannya.
-Berikan contoh permintaan yang bisa saya sesuaikan.
-Berdasarkan kebutuhan saya, jelaskan apa yang masih kurang
-dan langkah berikutnya secara konkret.
+Mulai dengan ringkasan hasil kedua mode, tautan gaya, dan langkah berikutnya.
+Jelaskan alat, alur, dan contoh hanya untuk mode yang saya pilih.
+Ringkas hasil pemeriksaan; jelaskan kekurangan dan cara melengkapinya.
 ```
 
 <a id="director-start"></a>

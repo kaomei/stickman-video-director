@@ -149,9 +149,9 @@ Install this Skill for me:
 https://github.com/kaomei/stickman-video-director
 
 Once installed, read the installed SKILL.md right away.
-Explain what each mode produces, the tools it needs, and the workflow
-in plain language, with examples I can copy.
-Based on what I want to make, tell me what is missing and exactly what to do next.
+Start with a brief summary of both deliverables, style links and the next step.
+Expand tools, workflows and examples only for the mode I choose.
+Summarize environment checks; explain any missing item and how to resolve it.
 ```
 
 <a id="director-start"></a>

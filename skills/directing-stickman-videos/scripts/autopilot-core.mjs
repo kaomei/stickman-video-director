@@ -13,6 +13,9 @@ export const STYLES = ['B1', 'B2', 'B3', 'B4'];
 export const FFMPEG = process.env.FFMPEG || 'ffmpeg';
 export const FFPROBE = process.env.FFPROBE || 'ffprobe';
 export const sha = value => crypto.createHash('sha256').update(value).digest('hex');
+const canonicalJSON = value => JSON.stringify(value, (_key, item) =>
+  item && typeof item === 'object' && !Array.isArray(item)
+    ? Object.fromEntries(Object.keys(item).sort().map(key => [key, item[key]])) : item);
 export const hashFile = file => sha(fs.readFileSync(file));
 export const json = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 export function save(file, value) {
@@ -86,8 +89,14 @@ export function loadProject(file, {seconds} = {}) {
   if (p.style === 'B3') for (const type of ['group', 'path', 'rect', 'ellipse']) types.add(type);
   for (const [i, shot] of shots.entries()) {
     number(shot.start, 'shot start'); number(shot.end, 'shot end');
+    if (i && shot.start < shots[i - 1].start) throw new Error('Shot start order must be chronological');
     if (Math.abs(shot.start - end) > 0.002 || shot.end <= shot.start) throw new Error(`Shot ${i}: gap/overlap or nonpositive duration`);
     end = shot.end;
+    if (shot.transition !== undefined) {
+      const tr = shot.transition;
+      if (!i || !tr || typeof tr !== 'object' || Array.isArray(tr) || Object.keys(tr).some(k => !['type', 'duration', 'reason'].includes(k)) || tr.type !== 'dissolve' || typeof tr.reason !== 'string' || !tr.reason.trim()) throw new Error('A transition requires a preceding shot, dissolve type and story reason');
+      number(tr.duration, 'transition duration', 1 / p.fps, Math.min(.3, (shot.end - shot.start) / 2, (shots[i - 1].end - shots[i - 1].start) / 2));
+    }
     if (p.style === 'B4' && shot.end - shot.start > 3.000001 &&
       !(shot.kind === 'exceptional_hold' && typeof shot.user_approval === 'string' && shot.user_approval.trim() && typeof shot.reason === 'string' && shot.reason.trim())) throw new Error('B4 narrative shots must be at most 3 seconds; exceptional holds require user_approval and reason');
     if (!Array.isArray(shot.layers) || !shot.layers.length) throw new Error(`Shot ${i} has no layers`);
@@ -143,7 +152,10 @@ export function loadProject(file, {seconds} = {}) {
   if (p.style === 'B4' && hashFile(fontPaths(project).hook) !== B4_HOOK.font_sha256) throw new Error('B4 opening: bundled rounded font changed; restore the fixed font instead of silently substituting it');
   const inputs = [...assets].sort().map(f => ({path: f, sha256: hashFile(f)}));
   const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-quality.mjs', 'b-style-motion-geometry.mjs', 'b4-runtime.mjs', ...(p.style === 'B4' ? ['b4-style-lock.mjs', 'b4-opening-audio-check.mjs', 'b4-opening.mjs', 'b4-opening-visual-check.mjs'] : [])].map(f => hashFile(path.join(ROOT, 'scripts', f)));
-  return {...project, inputs, fingerprint: sha(JSON.stringify({project: timeline, rangeEnd, inputs, engine}))};
+  // Only this reserved bookkeeping container is excluded; unknown settings stay bound.
+  const approvedTimeline = {...timeline};
+  delete approvedTimeline.metadata;
+  return {...project, inputs, fingerprint: sha(canonicalJSON({project: approvedTimeline, rangeEnd, inputs, engine}))};
 }
 export function outputDir(p) {
   const output = path.join(p.base, 'output');
@@ -162,6 +174,7 @@ export function outputDir(p) {
 }
 export function groupWords(data, lead = 0) {
   number(lead, 'caption lead', 0, 5);
+  const sentenceEnd = /[.!?。！？]["'”’」』)]*$/;
   if (!Array.isArray(data.words) || !data.words.length) throw new Error('Aligned words required');
   const cues = []; let words = [], start, end = 0;
   function flush() { if (words.length) cues.push({start: start + lead, end: end + lead, text: words.join(' ').replace(/\s+([,.!?;:])/g, '$1')}); words = []; }
@@ -171,7 +184,12 @@ export function groupWords(data, lead = 0) {
     if (words.length && (w.start - end > 0.4 || words.length >= 8 || w.end - start > 3.5 || [...words, w.word].join(' ').length > 58)) flush();
     if (!words.length) start = w.start;
     words.push(w.word.trim()); end = w.end;
-    if (/[.!?]$/.test(w.word)) flush();
+    if (sentenceEnd.test(w.word.trim())) flush();
   }
-  flush(); return cues;
+  flush();
+  for (let i = 0; i < cues.length - 1; i++) {
+    const gap = cues[i + 1].start - cues[i].end;
+    if (gap > 0 && gap <= .12 && !sentenceEnd.test(cues[i].text)) cues[i].end = cues[i + 1].start;
+  }
+  return cues;
 }

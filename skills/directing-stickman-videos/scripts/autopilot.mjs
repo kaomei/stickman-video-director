@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
-import {ROOT, STYLES, FFMPEG, FFPROBE, run, probe, loadProject, outputDir, save, json, hashFile, groupWords} from './autopilot-core.mjs';
+import {ROOT, STYLES, probe, loadProject, outputDir, save, json, hashFile, groupWords} from './autopilot-core.mjs';
 import {BRIAN} from './b4-runtime.mjs';
 import {B4_HOOK} from './b4-opening.mjs';
 import {initB5} from './character-explainer.mjs';
@@ -10,14 +10,10 @@ const [command, ...args] = process.argv.slice(2);
 const option = (flag, fallback) => args.includes(flag) ? args[args.indexOf(flag) + 1] : fallback;
 async function main() {
   if (command === 'doctor') {
-    const checks = {node: Number(process.versions.node.split('.')[0]) >= 20};
-    for (const [name, exe] of [['ffmpeg', FFMPEG], ['ffprobe', FFPROBE]]) try { run(exe, ['-version']); checks[name] = true; } catch { checks[name] = false; }
-    try { await import('@napi-rs/canvas'); checks.canvas = true; } catch { checks.canvas = false; }
-    try { await import('sharp'); checks.sharp = true; } catch { checks.sharp = false; }
-    checks.fonts = ['Caveat.ttf', 'NotoSans.ttf', 'Nunito.ttf'].every(f => { const file = path.join(ROOT, 'assets/fonts', f); return fs.existsSync(file) && fs.statSync(file).size > 10000; });
-    checks.b4_hook_font = fs.existsSync(path.join(ROOT, 'assets/fonts/Nunito.ttf')) && hashFile(path.join(ROOT, 'assets/fonts/Nunito.ttf')) === B4_HOOK.font_sha256;
-    console.log(JSON.stringify({checks, gemini_key_present: Boolean(process.env.GEMINI_API_KEY), network_checked: false, note: 'Key presence is not quota/billing verification'}, null, 2));
-    if (Object.values(checks).some(v => !v)) process.exitCode = 1;
+    const {doctor} = await import('./autopilot-doctor.mjs');
+    const report = await doctor({runSmoke: args.includes('--smoke')});
+    console.log(JSON.stringify(report, null, 2));
+    if (Object.values(report.checks).some(v => !v)) process.exitCode = 1;
   } else if (command === 'probe') console.log(JSON.stringify(probe(path.resolve(args[0])), null, 2));
   else if (command === 'init') {
     if (!args[0]) throw new Error('Project directory required');
@@ -78,6 +74,6 @@ async function main() {
       if (a.preview_fingerprint !== reviewed.fingerprint || a.preview_seconds !== report.preview_seconds || a.preview_sha256 !== report.output_sha256) throw new Error('Approval invalidated; preview and user approval required again');
     }
     const {render} = await import('./autopilot-render.mjs'); console.log(JSON.stringify(await render(p, {full: command === 'render', seconds, replace: args.includes('--replace')}), null, 2));
-  } else throw new Error('Commands: doctor | probe FILE | init DIR | captions WORDS OUTPUT [--lead N] | validate PROJECT [--seconds N] | preview PROJECT [--seconds N] [--replace] | approve PROJECT --note TEXT | render PROJECT [--replace]');
+  } else throw new Error('Commands: doctor [--smoke] | probe FILE | init DIR | captions WORDS OUTPUT [--lead N] | validate PROJECT [--seconds N] | preview PROJECT [--seconds N] [--replace] | approve PROJECT --note TEXT | render PROJECT [--replace]');
 }
 main().catch(e => { console.error(e.message); process.exitCode = 1; });

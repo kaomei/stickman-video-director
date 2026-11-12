@@ -13,6 +13,7 @@ import {checkB4OpeningPaint, checkB4OpeningFile} from './b4-opening-visual-check
 import {B4_HOOK} from './b4-opening.mjs';
 
 const clamp = x => Math.max(0, Math.min(1, x));
+const FRAME_EPSILON = 1e-6;
 function wrap(ctx, text, maxWidth) {
   const parts = /\s/.test(text) ? text.split(/\s+/) : [...text];
   const separator = /\s/.test(text) ? ' ' : '';
@@ -32,6 +33,7 @@ export async function painter(p, {pictureOnly = false} = {}) {
   if (!GlobalFonts.registerFromPath(fonts.hand, 'B1Hand') || !GlobalFonts.registerFromPath(fonts.caption, 'B1Caption')) throw new Error('Font registration failed');
   if (fonts.hook && !GlobalFonts.registerFromPath(fonts.hook, B4_HOOK.family)) throw new Error('B4 opening: fixed rounded font registration failed; no fallback is allowed');
   const canvas = createCanvas(p.width, p.height), ctx = canvas.getContext('2d');
+  const transitionCopy = p.shots.some(s => s.transition) ? createCanvas(p.width, p.height) : null;
   const sceneCopy = p.style === 'B3' ? createCanvas(p.width, p.height) : null;
   const images = new Map();
   for (const s of p.shots) for (const l of walkLayers(s.layers)) if (['image', 'pose'].includes(l.type)) {
@@ -54,7 +56,18 @@ export async function painter(p, {pictureOnly = false} = {}) {
     for (let i = 0; i < lengths.length && left > 0; i++) { const f = Math.min(1, left / Math.max(0.001, lengths[i])); ctx.lineTo(points[i][0] + (points[i + 1][0] - points[i][0]) * f, points[i][1] + (points[i + 1][1] - points[i][1]) * f); left -= lengths[i]; }
     ctx.stroke();
   }
-  return function frame(t, {omitIds = [], focusIds = [], hookSettled = false, principalMotionOnly = false, freezeAncestorsAt} = {}) {
+  return function frame(t, options = {}) {
+    const {omitIds = [], focusIds = [], hookSettled = false, principalMotionOnly = false, freezeAncestorsAt, skipTransition = false, hideCaptions = false} = options;
+    const at = t + FRAME_EPSILON / p.fps;
+    const shot = p.shots.findLast(s => at >= s.start) || p.shots[0];
+    let blend;
+    if (shot.transition && !skipTransition && !focusIds.length && !pictureOnly && t < shot.start + shot.transition.duration) {
+      const previous = p.shots[p.shots.indexOf(shot) - 1];
+      const lastFrame = (Math.ceil(shot.start * p.fps - FRAME_EPSILON) - 1) / p.fps;
+      transitionCopy.getContext('2d').drawImage(frame(Math.max(previous.start, lastFrame), {...options, skipTransition: true, hideCaptions: true}), 0, 0);
+      const progress = clamp((t - shot.start) / shot.transition.duration);
+      blend = progress * progress * (3 - 2 * progress);
+    }
     ctx.resetTransform(); ctx.clearRect(0, 0, p.width, p.height); ctx.scale(p.width / plane.width, p.width / plane.width);
     ctx.fillStyle = ['B3', 'B4'].includes(p.style) ? '#111316' : p.style === 'B2' ? '#f4f0e5' : '#FDFDFC'; ctx.fillRect(0, 0, plane.width, plane.height);
     if (!focusIds.length && p.style === 'B1' && p.grid !== false) {
@@ -62,14 +75,14 @@ export async function painter(p, {pictureOnly = false} = {}) {
       for (let x = 32.5; x < plane.width; x += 64) { ctx.moveTo(x, 0); ctx.lineTo(x, captionBand - 1); }
       for (let y = 16.5; y < captionBand; y += 64) { ctx.moveTo(0, y); ctx.lineTo(plane.width, y); } ctx.stroke();
     }
-    const shot = p.shots.find(s => t >= s.start && t < s.end) || p.shots.at(-1);
     function paintLayers(layers, selectedParent = false) { for (const layer of layers) {
       if (omitIds.includes(layer.id)) continue;
       if (principalMotionOnly && ['text', 'shadow'].includes(layer.type)) continue;
       const selected = selectedParent || focusIds.includes(layer.id);
       if (focusIds.length && !selected && !(layer.children && [...walkLayers(layer.children)].some(l => focusIds.includes(l.id)))) continue;
       if (pictureOnly && layer.type !== 'image') continue;
-      const dt = t - shot.start;
+      // A tolerated tiny join gap holds the outgoing pose, even with explicit to.
+      const dt = Math.max(0, Math.min(t - shot.start, shot.end - shot.start - FRAME_EPSILON / p.fps));
       if (dt < (layer.from || 0) || dt >= (layer.to ?? Infinity)) continue;
       // Isolate the declared local action: an animated ancestor/camera cannot
       // supply its pixel difference. Visibility still follows the actual time.
@@ -124,8 +137,12 @@ export async function painter(p, {pictureOnly = false} = {}) {
       sceneCopy.getContext('2d').drawImage(canvas, 0, 0);
       televisionFinish(ctx, sceneCopy, p.width, p.height, p.television?.intensity ?? 0.45);
     }
+    if (blend !== undefined) {
+      ctx.save(); ctx.resetTransform(); ctx.globalAlpha = 1 - blend;
+      ctx.drawImage(transitionCopy, 0, 0); ctx.restore();
+    }
     const cue = p.captions.find(c => t >= c.start && t < c.end);
-    if (cue && !pictureOnly && !focusIds.length) {
+    if (cue && !hideCaptions && !pictureOnly && !focusIds.length) {
       ctx.font = `${p.style === 'B2' ? 500 : 600} ${p.captionSize || (p.style === 'B2' ? 40 : 34)}px B1Caption`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       if (/[\r\n]/.test(cue.text)) throw new Error('B captions allow at most one line; split the timed cue at a semantic boundary');
       const lines = wrap(ctx, p.style === 'B3' ? cue.text.toUpperCase() : cue.text, 1120);
@@ -164,8 +181,10 @@ function makeSfx(p, file, duration) {
   let seed = 8731; const noise = () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296 * 2 - 1; };
   for (const s of p.sfx || []) {
     if (s.kind === 'file') continue;
+    seed = Number.parseInt(sha(JSON.stringify({time: s.time, kind: s.kind, gain: s.gain})).slice(0, 8), 16);
     const len = s.kind === 'jingle' ? 0.52 : s.kind === 'chime' ? 0.55 : s.kind === 'paper' ? 0.22 : 0.12;
-    for (let i = 0; i < len * rate; i++) {
+    const cueCount = Math.ceil(len * rate), count = Math.min(cueCount, n - Math.round(s.time * rate));
+    for (let i = 0; i < count; i++) {
       const index = Math.round(s.time * rate) + i; if (index >= n) break;
       const t = i / rate, env = Math.exp(-t * (s.kind === 'chime' ? 8 : 25));
       let value = s.kind === 'paper' ? noise() : s.kind === 'tap' ? noise() * 0.6 + Math.sin(t * 2 * Math.PI * 170) * 0.4 : Math.sin(2 * Math.PI * (s.kind === 'chime' ? 880 : 500 - 900 * t) * t);
@@ -177,7 +196,8 @@ function makeSfx(p, file, duration) {
           if (q >= 0) value += (Math.sin(2 * Math.PI * f * q) * 0.55 + Math.sin(2 * Math.PI * f * 1.73 * q) * 0.25 + Math.sin(2 * Math.PI * f * 2.31 * q) * 0.12) * Math.exp(-q * 18);
         }
       }
-      samples[index] += value * (s.kind === 'jingle' ? 1 : env) * s.gain;
+      const edge = Math.max(0, Math.min(1, i / (rate * .002), (cueCount - 1 - i) / (rate * .005)));
+      samples[index] += value * (s.kind === 'jingle' ? 1 : env) * s.gain * edge;
     }
   }
   const bytes = Buffer.alloc(44 + n * 2); bytes.write('RIFF'); bytes.writeUInt32LE(bytes.length - 8, 4); bytes.write('WAVEfmt ', 8); bytes.writeUInt32LE(16, 16); bytes.writeUInt16LE(1, 20); bytes.writeUInt16LE(1, 22); bytes.writeUInt32LE(rate, 24); bytes.writeUInt32LE(rate * 2, 28); bytes.writeUInt16LE(2, 32); bytes.writeUInt16LE(16, 34); bytes.write('data', 36); bytes.writeUInt32LE(n * 2, 40);
@@ -211,20 +231,27 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     if (p.style === 'B4') await checkB4OpeningPaint(p, {draw: frame, picture});
     const rendererHash = sha(['autopilot-render.mjs', 'b3-graphics.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f))).join(':'));
     for (const [i, shot] of p.shots.entries()) {
-      const first = Math.round(shot.start * p.fps), last = Math.min(count, i === p.shots.length - 1 ? count : Math.round(shot.end * p.fps)); if (last <= first) continue;
+      const first = i ? Math.ceil(shot.start * p.fps - FRAME_EPSILON) : 0;
+      const last = Math.min(count, i === p.shots.length - 1 ? count : Math.ceil(p.shots[i + 1].start * p.fps - FRAME_EPSILON)); if (last <= first) continue;
+      const previous = shot.transition ? p.shots[i - 1] : undefined;
       const files = new Set(Object.values(fontPaths(p)));
-      for (const layer of walkLayers(shot.layers)) {
+      for (const layer of walkLayers([...shot.layers, ...(previous?.layers || [])])) {
         if (layer.type === 'image') files.add(mediaPath(p.base, layer.path));
         if (layer.type === 'pose') files.add(mediaPath(p.base, '@b1/character-pose-sheet-v6.png'));
       }
-      const key = sha(JSON.stringify({shot, first, last, style: p.style, television: p.television, width: p.width, height: p.height, fps: p.fps, captions: p.captions.filter(c => c.end > first / p.fps && c.start < last / p.fps), captionSize: p.captionSize, grid: p.grid, inputs: p.inputs.filter(f => files.has(f.path)), rendererHash}));
+      const key = sha(JSON.stringify({shot, previous, first, last, style: p.style, television: p.television, width: p.width, height: p.height, fps: p.fps, captions: p.captions.filter(c => c.end > first / p.fps && c.start < last / p.fps), captionSize: p.captionSize, grid: p.grid, inputs: p.inputs.filter(f => files.has(f.path)), rendererHash}));
       const clip = path.join(cache, `${key}.mp4`); let valid = false;
       if (fs.existsSync(clip)) try { const info = probe(clip); valid = Number(info.streams[0].nb_frames) === last - first; } catch {}
       if (valid) reused++; else { done(`rendering shot ${i + 1}/${p.shots.length}`); const tmp = path.join(cache, `${key}.partial.mp4`); await encode(p, frame, first, last - first, tmp); fs.renameSync(tmp, clip); }
-      clips.push(clip); process.stdout.write(JSON.stringify({shot: i + 1, total: p.shots.length, cache_hit: valid}) + '\n');
+      clips.push({file: clip, first, last}); process.stdout.write(JSON.stringify({shot: i + 1, total: p.shots.length, cache_hit: valid}) + '\n');
     }
     done('assembling original-speed voice, captions and SFX');
-    const list = path.join(cache, 'concat.txt'); fs.writeFileSync(list, clips.map(f => `file '${path.basename(f)}'`).join('\n') + '\n');
+    const list = path.join(cache, 'concat.txt');
+    fs.writeFileSync(list, clips.map(c => {
+      // Concat uses microseconds: compensate on absolute boundaries, not per clip.
+      const duration = (Math.round(c.last * 1e6 / p.fps) - Math.round(c.first * 1e6 / p.fps)) / 1e6;
+      return `file '${path.basename(c.file)}'\nduration ${duration.toFixed(6)}`;
+    }).join('\n') + '\n');
     const args = ['-v', 'error', '-y', '-f', 'concat', '-safe', '1', '-i', list, '-i', p.voicePath];
     const trim = p.voiceTrimStart ? `atrim=start=${p.voiceTrimStart},asetpts=PTS-STARTPTS,` : '';
     const filters = [`[1:a]${trim}adelay=${Math.round(p.lead * 1000)}:all=1,apad,atrim=0:${count / p.fps}[voice]`], mixes = ['[voice]'], backgrounds = [];
@@ -247,7 +274,9 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     const sheet = createCanvas(960, 540), sc = sheet.getContext('2d');
     for (let i = 0; i < 9; i++) sc.drawImage(frame(Math.min(duration - 1 / p.fps, (i + 0.5) * duration / 9)), (i % 3) * 320, Math.floor(i / 3) * 180, 320, 180);
     fs.writeFileSync(path.join(out, `${kind}-contact-sheet.png`), sheet.toBuffer('image/png'));
-    const info = probe(target), report = {fingerprint: p.fingerprint, preview_seconds: full ? null : duration, output: target, output_sha256: hashFile(target), original_voice_sha256: hashFile(p.voicePath), original_voice_duration: p.voiceDuration, voice_rate: 'unchanged; leading/trailing padding only', frames: count, duration: Number(info.format.duration), cache_hits: reused, shot_count: clips.length, full_decode: 'pass', caption_count: cues.length, human_review: 'required; technical checks are not acceptance', inputs: p.inputs};
+    const info = probe(target), video = info.streams.find(s => s.codec_type === 'video');
+    if (Number(video?.nb_frames) !== count || video.avg_frame_rate !== `${p.fps}/1`) throw new Error('Encoded frame count/rate mismatch; check exact shot boundaries rather than inserting or dropping frames');
+    const report = {fingerprint: p.fingerprint, preview_seconds: full ? null : duration, output: target, output_sha256: hashFile(target), original_voice_sha256: hashFile(p.voicePath), original_voice_duration: p.voiceDuration, voice_rate: 'unchanged; leading/trailing padding only', frames: count, duration: Number(info.format.duration), cache_hits: reused, shot_count: clips.length, full_decode: 'pass', caption_count: cues.length, human_review: 'required; technical checks are not acceptance', inputs: p.inputs};
     report.local_motion = motionEvidence;
     report.audio_tracks = {ambience: p.ambience.length, dialogue: p.dialogue.length, file_sfx: p.sfx.filter(s => s.kind === 'file').length, cuts: p.audio_cuts.length};
     if (p.style === 'B4') {

@@ -5,6 +5,7 @@ Run from this installed Skill's directory. No second Skill or repository is need
 ```bash
 npm ci
 node scripts/autopilot.mjs doctor
+node scripts/autopilot.mjs doctor --smoke
 node scripts/autopilot.mjs init /absolute/path/my-video
 ```
 
@@ -43,6 +44,16 @@ All media paths are relative to `project.json` (or absolute local paths); `@b1/�
 This is an excerpt, not a complete valid film: full-film shots must cover the actual voice length plus lead/tail **without gaps/overlap**. A scoped preview needs coverage and available media only through its requested end; later shots may be unproduced or absent. Narration and timed subtitles are required for both preview and full film. Use `probe` to get actual duration. Captions use the final video time including lead. `voice.speed` is not accepted: keep the original rate. Optional `voice.contains_sfx: true` marks an already mixed master; do not add duplicate effects. Optional `music: {path, gain}` adds a licensed track, looping it under the narration; gain must be 0–0.2. The default is no background music, not a forced piano track.
 
 Layers: `image` (local PNG/JPEG, contain-fit within optional `h`), `pose` (B1 only: original three-pose atlas, indices 0–2), `text`, `line` (`points` array), `arrow`, `underline`. Design coordinates are 1280 units wide and `1280 × outputHeight / outputWidth` high (720 for 16:9; about 2275.56 for 9:16), uniformly scaled without stretching characters. Recompose portrait scenes explicitly; changing output dimensions alone does not design a vertical composition. Keep the bottom 110 design units clear for captions. Use `from`/`to` (shot-relative seconds) for selective visibility. `keys` are increasing shot-relative timestamps with optional numeric `x`, `y`, `w`, `angle` (radians), `alpha` and `progress`; values interpolate with smoothstep. For genuine local motion use separate layers or authored pose sprites. Images do not gain inferred limb motion automatically. Text `w` is its maximum width; B1–B4 subtitles allow at most one visible line. Explicit line breaks or width-induced wrapping fail validation/rendering: regroup into successive meaning/actual-pause based cues, without clipping or automatic shrinking. B5 uses its separate presenter-caption route with up to three semantic lines. The runtime enforces fit, not semantic quality; review the [common caption gate](autopilot-production-qa.md#natural-captions-and-semantic-sound). All styles are included in shot-cache identity so switching style cannot reuse another style's frames.
+
+### Cut, caption and sound continuity
+
+A hard cut remains the default. For an intentional scene/time bridge, the incoming shot can set `"transition": {"type": "dissolve", "duration": 0.2, "reason": "The scene changes while narration continues"}`. It needs a preceding shot; duration is at least one frame, at most 0.3s and at most half either adjacent shot. The outgoing last picture frame blends into the new picture without moving cut times or speech. Current captions are drawn once after the blend. Avoid dissolving incompatible faces/poses or every cut; use action/screen-direction matches and motivated hard cuts where appropriate. A dissolve does not count as local character action or waive B4 opening/style checks.
+
+Shot cache boundaries follow actual frame sampling, including off-grid cuts; a dissolve also binds the preceding picture and media. Concatenation uses each shot's exact frame duration rather than rounded container estimates. Encoded frame count/rate must match the requested timeline. Author a consistent 30fps for production (or an explicitly requested supported rate) and inspect encoded transition frames rather than increasing FPS to disguise editorial faults.
+
+`captions` preserves actual word onsets and bridges at most 120ms between unfinished phrase cues to avoid a one-frame blank. Sentence-ending punctuation and longer pauses remain; supplied project captions are not retimed automatically. Review semantics, including speakers and intentional silence; this helper does not infer meaning or create alignment. Keep subtitles stable through picture changes instead of fading/popping every cue.
+
+File-backed ambience/dialogue/SFX default to tiny 3ms/5ms edge fades, capped to half the source interval; explicit `fadeIn`/`fadeOut`, including zero, take precedence. Preview fade timing stays tied to the full source interval. Procedural SFX have bounded 2ms/5ms zero-ended envelopes. These are click guards, not scene crossfades: author overlapping beds and longer fades when the story needs them, retaining deliberate AUDIO CUT. Sources, narration rate and accepted audio files are not rewritten; changed final mixes still require the existing sample review.
 
 ## B3 layered artwork
 
@@ -124,7 +135,7 @@ Only a genuine explicit user choice may set `opening.user_override` with the sco
 
 ## Commands
 
-- `doctor`: dependency/font/key presence only; no network and no key values.
+- `doctor [--smoke]`: offline dependency/font checks and optional Python-feature diagnostics; no network or key values. Add `--smoke` to test actual local composition.
 - `probe FILE`: duration and media streams.
 - `init DIR`: create a non-overwriting project scaffold; it is not production-ready until voice, captions and shots are filled.
 - `validate PROJECT [--seconds N]`: check real files, audio duration, shot coverage, cue timing, layers and SFX. Default is the complete film; `--seconds 20` checks only the sample range.
@@ -134,6 +145,14 @@ Only a genuine explicit user choice may set `opening.user_override` with the sco
 - `render PROJECT`: validate all full-film media/timing, verify the scoped sample approval, then resume full local composition. Later-shot completion does not itself require re-approving an unchanged sample.
 
 `scripts/align_captions.py AUDIO --output WORDS.json` uses optional `openai-whisper` and an already cached `base` model. Set `--model NAME`, `--language en`, `--device cpu` as appropriate. `--allow-model-download` explicitly permits model download; otherwise it stops if absent. Do not install or download multi-GB models automatically. Already supplied aligned captions need no Whisper dependency.
+
+### Doctor evidence and optional features
+
+The default `doctor` checks dependencies, not a finished render: `capabilities.local_composition.status` stays `not_checked` (or `blocked` when dependencies are missing). `doctor --smoke` renders a one-second synthetic B1 diagnostic through the production renderer, including drawn text/image, captions, ambience and SFX, H.264/AAC encoding, subtitle sidecars and decode verification. Its temporary project is removed after success/failure; no user project is approved or modified. A `ready` result covers this local diagnostic only, not another style's creative acceptance, a production film or external services. A failed requested smoke exits nonzero even when version checks pass.
+
+`optional` reports Python 3, importable Pillow, installed Whisper/PyTorch modules and presence of the cached `base` model. Use `AUTOPILOT_PYTHON` to select the diagnostic interpreter; otherwise try `python3`, then `python`. Run Python helpers with that same interpreter: the variable does not change their invocation or install dependencies. These optional gaps do not fail the B renderer check. Module/model presence remains `not_verified` for local alignment: doctor never imports Whisper/PyTorch, loads/downloads a model or performs alignment. A6 finishing separately requires its project-specific fonts, synchronized media and Python/Pillow preflight.
+
+Image generation, narration and caption alignment are separate capabilities and remain `not_verified`. Inspect actual host tools and the selected service; verify actual word timestamps or another alignment route before promising synchronized captions. Summarize successful checks briefly; show only actionable gaps unless the user requests diagnostic details. Key presence is informational and never proves access, quota or billing.
 
 ## Optional Gemini API adapters
 
@@ -157,3 +176,5 @@ The original procedural SFX kinds are `tap`, `paper`, `pop`, `chime` and `jingle
 Each shot is cached by its content, its own visual assets, overlapping captions, fonts, renderer version and timing—not every image in the film. Cache hits are probed before reuse. After interruption rerun the same command; do not delete the cache or resynthesize audio. `output/checkpoint.json` records the active stage and shot count. A project-local lock prevents simultaneous rendering. A stale lock is removed only when its recorded process is no longer running.
 
 Reports contain input/output SHA-256, original voice duration/rate policy, actual frames, codec/ratio, caption checks, full decode result and cached-shot reuse. Preview reports also record the reviewed range. They do not certify human listening, factual accuracy or user acceptance. Changing the reviewed sample's content/assets/captions/SFX, the narration track or global production settings invalidates approval; adding or revising only later shots does not. The whole narration file is fingerprinted conservatively, so replacing or extending it requires review even if the opening sounds unchanged. Changes to the approved script, creative scope or billable work still need the relevant authorization; a matching fingerprint is not new permission. Old reports without a scoped range require a fresh preview/review, not an inferred approval.
+
+B1–B4 fingerprints canonicalize object-key order while preserving array order, exact text, timing, assets and engine hashes. Reserve top-level `metadata` only for non-render bookkeeping such as progress timestamps; it is excluded from the fingerprint. Keep narration, captions, scene settings and approval/cost evidence outside that container. Unknown settings remain conservatively fingerprinted. A renderer/engine update still invalidates previous previews: generate/review a current preview rather than copying an old approval or using an automation bypass. This change does not alter B5's separate code/project fingerprint contract.

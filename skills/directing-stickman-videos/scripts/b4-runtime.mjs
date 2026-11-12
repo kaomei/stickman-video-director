@@ -42,6 +42,7 @@ export function prepareAudioTracks(p, {base, duration, rangeEnd, assets, mediaPa
     number(item.fadeIn ?? 0, 'fade in', 0, length); number(item.fadeOut ?? 0, 'fade out', 0, length);
     assets.add(source);
     return {...item, ...(bed ? {end: Math.min(item.end, rangeEnd)} : {}),
+      fadeIn: item.fadeIn ?? Math.min(.003, length / 2), fadeOut: item.fadeOut ?? Math.min(.005, length / 2),
       source, offset, length: Math.min(length, rangeEnd - start), envelopeLength: length, start};
   };
   const ambience = active(p.ambience, 'start').map(item => clip(item, true));

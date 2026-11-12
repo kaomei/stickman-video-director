@@ -4,6 +4,10 @@ Required for **every B style**, before shot planning, sample review and full-fil
 
 ## Plan from meaning and actual narration
 
+### Editorial continuity
+
+For each cut, record its purpose and picture/audio/caption handoff. Use action, prop, gaze or screen-direction continuity where suitable; retain deliberate contrast cuts, B4 shocks and AUDIO CUT. For a scene/time bridge, B1–B4's manifest runtime supports a bounded authored dissolve; B5 uses its authored scene code. Use a dissolve only when appropriate, not on every shot or between incompatible face states. Keep current captions crisp, bridge tiny unfinished-phrase gaps without erasing real pauses, and carry a relevant bed across the cut or author a short overlap/fade. SFX must land on the action and use clean source edges; avoid restarting the same bed or adding a cue simply because a caption changed. Inspect several encoded frames on both sides of the cut and listen to the adjacent full mix. Compare at the same frame rate, duration and narration speed. Frame/code checks do not prove that a handoff feels natural; preserve listening and user sample review.
+
 Maintain a compact project-local shot ledger: spoken phrase and actual word times; idea to communicate; focal subject/action/expression; short scene text; timed meaningful picture events; evidence source/language/date; caption phrases; SFX event; and connection to the next shot. Cover the body and ending as well as the opening. This is production evidence, not another intake questionnaire.
 
 Make actions, objects, diagrams and marks explain the spoken idea. A control needs visible operation/contact, a choice distinguishable alternatives, and an outcome a visible result. Preserve approved identities while varying acting and viewpoint; do not illustrate every sentence with a recycled presenter/laptop. Time reveals to the corresponding speech, allowing purposeful anticipation/reaction. Pictures follow the real voice; never stretch speech, add dead air or revoice accepted narration to fit a visual template.

@@ -149,9 +149,9 @@ Bu Skill’i benim için kur:
 https://github.com/kaomei/stickman-video-director
 
 Kurulum başarılı olunca kurulan SKILL.md dosyasını hemen oku.
-İki modun çıktılarını, gerekli araçları ve üretim adımlarını anlaşılır biçimde açıkla.
-Doğrudan kullanabileceğim örnek istekler ver.
-İhtiyacıma göre nelerin eksik olduğunu ve sıradaki somut adımı söyle.
+Önce iki modun çıktılarını, stil bağlantılarını ve sonraki adımı kısaca anlat.
+Araçları, iş akışını ve örnekleri yalnızca seçtiğim mod için ayrıntılandır.
+Ortam kontrollerini özetle; eksikleri ve nasıl giderileceğini açıkla.
 ```
 
 <a id="director-start"></a>

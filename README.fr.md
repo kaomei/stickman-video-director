@@ -149,9 +149,9 @@ Installe ce Skill pour moi :
 https://github.com/kaomei/stickman-video-director
 
 Une fois l’installation réussie, lis immédiatement le fichier SKILL.md installé.
-Explique simplement les livrables, les outils nécessaires et le déroulement des deux modes.
-Donne-moi des exemples de demandes prêts à l’emploi.
-Selon mon projet, indique ce qui manque encore et la prochaine étape concrète.
+Commence par un bref résumé des livrables, les liens des styles et la prochaine étape.
+Détaille les outils, le déroulement et les exemples pour le mode que je choisis.
+Résume les vérifications ; explique les éléments manquants et comment les compléter.
 ```
 
 <a id="director-start"></a>

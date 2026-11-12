@@ -169,12 +169,28 @@ test('tail edits preserve sample approval and invalidate only dependent shot cac
   assert.equal(hashFile(path.join(f.dir, 'output/preview.mp4')), sample);
   assert.equal(hashFile(path.join(f.dir, 'output/approval.json')), approval);
 });
+test('JSON key ordering and reserved metadata preserve a genuinely recorded preview approval', t => {
+  const f = fixture(t);
+  let r = command(['preview', f.file, '--seconds', '0.4']); assert.equal(r.status, 0, r.stderr);
+  r = command(['approve', f.file, '--note', 'Synthetic approval regression only; not user production.']); assert.equal(r.status, 0, r.stderr);
+  const preview = hashFile(path.join(f.dir, 'output/preview.mp4'));
+  const approval = hashFile(path.join(f.dir, 'output/approval.json'));
+  const reverse = value => Array.isArray(value) ? value.map(reverse) : value && typeof value === 'object' ? Object.fromEntries(Object.entries(value).reverse().map(([key, item]) => [key, reverse(item)])) : value;
+  for (const changed of [reverse(f.project), {...f.project, metadata: {updated_at: '2026-11-12T00:00:00Z', progress: {step: 3}}}, {...f.project, metadata: {updated_at: '2026-11-12T01:00:00Z'}}]) {
+    save(f.file, changed);
+    r = command(['preview', f.file, '--seconds', '0.4']); assert.equal(r.status, 0, r.stderr);
+    assert.equal(JSON.parse(r.stdout).reused, true);
+    r = command(['render', f.file]); assert.equal(r.status, 0, r.stderr);
+    assert.equal(hashFile(path.join(f.dir, 'output/preview.mp4')), preview);
+    assert.equal(hashFile(path.join(f.dir, 'output/approval.json')), approval);
+  }
+});
 test('reviewed content and global settings still invalidate sample approval', t => {
   const f = fixture(t);
   let r = command(['preview', f.file, '--seconds', '0.4']); assert.equal(r.status, 0, r.stderr);
   r = command(['approve', f.file, '--note', 'Synthetic test approval only; not user production.']); assert.equal(r.status, 0, r.stderr);
   const original = structuredClone(f.project);
-  for (const mutate of [p => p.shots[0].layers[0].text = 'CHANGED', p => p.grid = false, p => p.captionSize = 40, p => p.captions[0].text = 'Changed.', p => p.sfx[0].gain = 0.03, p => p.width = 800]) {
+  for (const mutate of [p => p.shots[0].layers[0].text = 'CHANGED', p => p.grid = false, p => p.captionSize = 40, p => p.captions[0].text = 'Changed.', p => p.captions[0].start += .001, p => p.shots[0].layers.reverse(), p => p.sfx[0].gain = 0.03, p => p.width = 800, p => p.unrecognized_setting = 'conservatively fingerprinted']) {
     const changed = structuredClone(original); mutate(changed);
     if (changed.captionSize) changed.caption_override = {reason: 'Synthetic approval fingerprint test', user_approval: 'Engineering fixture only, not a creative approval'};
     save(f.file, changed);

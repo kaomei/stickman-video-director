@@ -90,7 +90,9 @@ assert (root / "tests/scenarios/first-use-guidance.md").is_file()
 welcome = guide_text.split("### 欢迎使用火柴人视频 Skill\n", 1)[1].split("### Adapt instead of replaying the README", 1)[0]
 assert "#### A · 导演模式：" in welcome and "#### B · 全自动模式：" in welcome
 assert not re.search(r"\b(?:Director|Autopilot)\b|自动成片", welcome)
-assert "A 模式的旁白和声音设计沿用原有规则" in welcome
+assert "A1–A5" in welcome, "Do not apply the prompt-only deliverable to A6"
+visible_welcome = re.sub(r"\]\([^)]+\)", "]", welcome)
+assert len(visible_welcome) <= 650, "Keep the generic welcome brief; expand after route selection"
 assert "稳定男声默认" not in welcome, "Do not misstate A's source-appropriate voice selection"
 
 # Optional A references remain reachable without any additional Director changes.
@@ -102,7 +104,7 @@ for requirement in ("not a new setup requirement", "front, side and back views",
                     "when the chosen tool supports reference images", "not a consistency guarantee",
                     "not replace, shorten or globally rewrite", "fixed character anchor"):
     assert requirement in a_reference, requirement
-assert "按需确认人物三视图" in welcome and "三视图（正面、侧面、背面）" in welcome
+assert "front, side and back views" in a_reference, "Keep optional character guidance in the selected A route"
 
 # A5 recommends references proactively, while preserving a non-blocking text route.
 assert "A5 proactive character guidance" in entry
