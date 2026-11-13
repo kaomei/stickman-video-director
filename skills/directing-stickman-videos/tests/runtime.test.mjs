@@ -93,10 +93,10 @@ test('caption overflow fails rather than silently clipping', async t => {
   const f = fixture(t); f.project.captions[0].text = 'A very long caption phrase. '.repeat(8); save(f.file, f.project);
   const r = command(['validate', f.file]); assert.notEqual(r.status, 0); assert.match(r.stderr, /one line/);
 });
-test('B1/B3 reject uncovered caption and scene glyphs before an OS font fallback can hide the change', async t => {
+test('B1/B2/B3 reject uncovered caption and scene glyphs before an OS font fallback can hide the change', async t => {
   const f = fixture(t);
   f.project.shots.forEach(s => s.layers = [{type:'text',text:'LOCAL SCENE',x:80,y:110}]);
-  for (const style of ['B1','B3']) {
+  for (const style of ['B1','B2','B3']) {
     f.project.style = style;
     f.project.captions[0].text = '不要出警'; save(f.file,f.project);
     await assert.rejects(painter(loadProject(f.file)), new RegExp(`${style} caption.*lacks glyphs`));

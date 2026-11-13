@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import {fileURLToPath} from 'node:url';
+import {fileURLToPath,pathToFileURL} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {referenceInputs,planBStyleReference,buildBStyleReferenceEvidence,verifyBStyleReferenceReview} from '../scripts/b-style-reference-review.mjs';
 
@@ -44,8 +44,8 @@ const verify=f=>verifyBStyleReferenceReview(f.p,{file:f.file,evidenceDir:f.out,r
 function setReview(f,fn) {const r=review(f);fn(r);write(f.reviewFile,r);}
 
 test('portable references verify their manifest locks; plans cover the entire submitted range without requiring a renderer',()=>{
-  for(const style of ['B1','B3']) {
-    const inputs=referenceInputs(style);assert.ok(inputs.length>=6);assert.ok(inputs.every(f=>path.isAbsolute(f)&&fs.statSync(f).isFile()));
+  for(const style of ['B1','B2','B3']) {
+    const inputs=referenceInputs(style);assert.ok(inputs.length>=(style==='B2'?5:6));assert.ok(inputs.every(f=>path.isAbsolute(f)&&fs.statSync(f).isFile()));
     const p=project(style),plan=planBStyleReference(p);assert.equal(plan.shots.length,2);assert.equal(plan.shots.at(-1).end_frame,24);
     p.shots[1].start=.5;assert.throws(()=>planBStyleReference(p),/gap or overlap/);
     p.shots[1].start=.4;p.shots[1].end=.7;assert.throws(()=>planBStyleReference(p),/tail/);
@@ -54,17 +54,49 @@ test('portable references verify their manifest locks; plans cover the entire su
   assert.deepEqual(referenceInputs('B4'),[]);assert.equal(planBStyleReference({style:'B4'}),null);
 });
 
-for(const style of ['B1','B3'])test(`${style} produces unknown review, bound full-shot evidence and protocol-only positive acceptance`,async t=>{
+for(const style of ['B1','B2','B3'])test(`${style} produces unknown review, bound full-shot evidence and protocol-only positive acceptance`,async t=>{
   const f=await fixture(t,style),template=read(f.ledger.template_file);
   assert.equal(f.ledger.status,'pending_independent_review');assert.equal(f.ledger.artifacts.length,8);
   assert.equal(template.full_playback.status,'unknown');assert.deepEqual(template.full_playback.viewed_ranges,[]);
   assert.ok(template.shots.every(s=>Object.values(s.checks).every(c=>c.status==='unknown'&&c.observations.length===0&&c.comparisons.length===0)));
   fs.copyFileSync(f.ledger.template_file,f.reviewFile);await assert.rejects(()=>verify(f),/independent reviewer|pending|unknown/);
   review(f);const a=await verify(f);assert.equal(a.status,'sample_target_review_passed');assert.equal(a.equivalence,'available_samples_reviewed');assert.equal(a.user_acceptance,'not_inferred');assert.equal(a.output_sha256,hash(f.file));
-  if(style==='B3') {
+  if(style==='B2'||style==='B3') {
     setReview(f,r=>r.baseline_comparisons.pop());await assert.rejects(()=>verify(f),/required available reference/);
+  }
+  if(style==='B3') {
     setReview(f,r=>{r.shots[0].checks.sound.comparisons[0]={reference_id:'b3-accepted-dog-motion',start:0,end:.1,detail:'Synthetic deliberate attempt to compare audio to a silent excerpt.'};});await assert.rejects(()=>verify(f),/audible reference/);
   }
+});
+
+test('B2 has its own criteria; a sampled board cannot stand in for motion, staging or sound',async t=>{
+  const f=await fixture(t,'B2');
+  assert.deepEqual(f.ledger.plan.checks,['color_handdrawn_design','semantic_motion_states','contact_continuity','composition_progression','typography_captions','timing_pacing','sound']);
+  assert.deepEqual(f.ledger.references.filter(r=>r.required_comparison).map(r=>r.id),['b2-colorful-sleep','b2-colorful-phone-weather']);
+  const board=f.ledger.references.find(r=>r.id==='b2-approved-style-board');assert.equal(board.kind,'image');assert.equal(board.has_audio,false);assert.equal(board.required_comparison,false);
+  const still={reference_id:board.id,start:null,end:null,detail:'Synthetic protocol comparison to the sampled appearance board; no motion or listening claim.'};
+  setReview(f,r=>r.shots[0].checks.color_handdrawn_design.comparisons=[still]);assert.equal((await verify(f)).status,'sample_target_review_passed');
+  for(const k of ['semantic_motion_states','contact_continuity','composition_progression']) {
+    setReview(f,r=>r.shots[0].checks[k].comparisons=[still]);await assert.rejects(()=>verify(f),/requires a video reference/);
+  }
+  setReview(f,r=>r.shots[0].checks.sound.comparisons=[still]);await assert.rejects(()=>verify(f),/audible reference/);
+  setReview(f,r=>{r.shots[0].checks.semantic_motion_states.status='unmet';});await assert.rejects(()=>verify(f),/not eligible/);
+  setReview(f,r=>{delete r.shots[0].checks.color_handdrawn_design;r.shots[0].checks.television_finish={status:'pass',observations:[],comparisons:[]};});await assert.rejects(()=>verify(f),/every style-specific/);
+});
+
+test('a portable B2 installation requires both full sources and verifies the board identity and media locks',async t=>{
+  const dir=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'b2-reference-package-test-')));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
+  const scripts=path.join(dir,'scripts'),assets=path.join(dir,'assets','b2');fs.mkdirSync(scripts,{recursive:true});fs.mkdirSync(path.dirname(assets),{recursive:true});
+  const moduleFile=path.join(scripts,'b-style-reference-review.mjs');fs.copyFileSync(path.join(ROOT,'scripts/b-style-reference-review.mjs'),moduleFile);fs.cpSync(path.join(ROOT,'assets/b2'),assets,{recursive:true});
+  const portable=await import(pathToFileURL(moduleFile).href),pubFile=path.join(assets,'public-showcase.json'),boardFile=path.join(assets,'approved-style-board.json'),originalPub=fs.readFileSync(pubFile),originalBoard=fs.readFileSync(boardFile);
+  assert.equal(portable.referenceInputs('B2').length,5);
+  fs.unlinkSync(pubFile);assert.throws(()=>portable.referenceInputs('B2'),/file missing/);fs.writeFileSync(pubFile,originalPub);
+  let pub=read(pubFile);pub.evidence.pop();write(pubFile,pub);assert.throws(()=>portable.referenceInputs('B2'),/both B2 public full samples/);fs.writeFileSync(pubFile,originalPub);
+  pub=read(pubFile);pub.evidence[1].id='invented-replacement';write(pubFile,pub);assert.throws(()=>portable.referenceInputs('B2'),/missing B2 public full sample/);fs.writeFileSync(pubFile,originalPub);
+  let board=read(boardFile);board.source_sha256='0'.repeat(64);write(boardFile,board);assert.throws(()=>portable.referenceInputs('B2'),/locked accepted phone/);fs.writeFileSync(boardFile,originalBoard);
+  const boardMedia=path.join(assets,'approved-style-board.jpg');fs.appendFileSync(boardMedia,'deliberate stale board');assert.throws(()=>portable.referenceInputs('B2'),/reference hash mismatch/);fs.copyFileSync(path.join(ROOT,'assets/b2/approved-style-board.jpg'),boardMedia);
+  pub=read(pubFile);pub.evidence[0].path='../../../escape.mp4';write(pubFile,pub);assert.throws(()=>portable.referenceInputs('B2'),/escapes the installed/);fs.writeFileSync(pubFile,originalPub);
+  fs.appendFileSync(path.join(assets,read(pubFile).evidence[0].path),'deliberate stale full sample');assert.throws(()=>portable.referenceInputs('B2'),/reference hash mismatch/);
 });
 
 test('unknown, failed, blank, unrelated, incomplete and non-independent records cannot pass',async t=>{
@@ -97,9 +129,9 @@ test('unknown, failed, blank, unrelated, incomplete and non-independent records 
   setReview(f,r=>{r.shots[0].checks.sound.comparisons[0]={reference_id:'b1-ryan-contact-sheet',start:null,end:null,detail:'Synthetic sound comparison to an inaudible sheet is deliberately invalid.'};});await assert.rejects(()=>verify(f),/audible reference/);
 });
 
-test('limited capability records disclose unmet fidelity without waiving captions, timing or sound',async t=>{
-  const f=await fixture(t,'B3',p=>{p.reference_review.capability={mode:'limited',environment:'Synthetic local-only fixture with no anatomy rigging tool.',limitations:[{capability:'Layered character rigging',observed:'Synthetic probe has no editable limb assets or rig controls.',impact:'The complex supported step cannot reach the available sample acting quality.'}]};});
-  setReview(f,r=>{r.shots[0].checks.semantic_action.status='unmet';});
+for(const style of ['B2','B3'])test(`${style} limited capability records disclose unmet fidelity without waiving captions, timing or sound`,async t=>{
+  const f=await fixture(t,style,p=>{p.reference_review.capability={mode:'limited',environment:'Synthetic local-only fixture with no editable prop animation controls.',limitations:[{capability:'Layered prop-state animation',observed:'Synthetic probe exposes a flattened prop with no editable state controls.',impact:'The intended prop-state progression cannot reach the available sample quality.'}]};});
+  setReview(f,r=>{r.shots[0].checks[style==='B2'?'semantic_motion_states':'semantic_action'].status='unmet';});
   const a=await verify(f);assert.equal(a.status,'best_effort_limited');assert.equal(a.equivalence,'not_sample_equivalent');assert.equal(a.unmet_effect_criteria.length,1);assert.equal(a.user_acceptance,'not_inferred');
   for(const k of ['typography_captions','timing_pacing','sound']) {setReview(f,r=>r.shots[0].checks[k].status='unmet');await assert.rejects(()=>verify(f),/not eligible/);}
   f.p.reference_review.capability.limitations=[];await assert.rejects(()=>verify(f),/observed capability limitations/);
@@ -118,8 +150,8 @@ test('missing author may render evidence but cannot accept; actual media metadat
   p.width=160;p.fingerprint='a different current fingerprint';await assert.rejects(()=>buildBStyleReferenceEvidence(p,{...f.args,out}),/matching project fingerprint/);
 });
 
-test('stale project, plan, source and rewritten artifact manifests cannot be laundered into acceptance',async t=>{
-  const f=await fixture(t);review(f);
+for(const style of ['B1','B2'])test(`${style} stale project, plan, source and rewritten artifact manifests cannot be laundered into acceptance`,async t=>{
+  const f=await fixture(t,style);review(f);
   await assert.rejects(()=>verifyBStyleReferenceReview(f.p,{file:f.file,evidenceDir:f.out,reviewFile:f.reviewFile,projectFingerprint:'new project fingerprint'}),/stale evidence/);
   f.p.captions[0].text='Changed after extraction';await assert.rejects(()=>verify(f),/stale evidence/);f.p.captions[0].text='Synthetic protocol fixture only.';
   const ledgerFile=f.ledger.ledger_file,originalLedger=fs.readFileSync(ledgerFile),originalReview=fs.readFileSync(f.reviewFile);

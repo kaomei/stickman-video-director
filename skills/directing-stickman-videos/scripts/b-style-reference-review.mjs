@@ -11,6 +11,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EPS = 1e-7;
 const CHECKS = {
   B1: ['drawing_character','semantic_acting','contact_continuity','composition_evidence','typography_captions','timing_pacing','sound'],
+  B2: ['color_handdrawn_design','semantic_motion_states','contact_continuity','composition_progression','typography_captions','timing_pacing','sound'],
   B3: ['silhouette_design','semantic_action','contact_occlusion','composition_editing','television_finish','typography_captions','timing_pacing','sound'],
 };
 const BASIC = new Set(['typography_captions','timing_pacing','sound']);
@@ -57,7 +58,7 @@ function safeReference(base,relative) {
 }
 
 function referenceSet(style) {
-  need(CHECKS[style],'only B1 and B3 have this reference gate');
+  need(CHECKS[style],'only B1, B2 and B3 have this reference gate');
   const manifests=[], refs=[];
   const manifest=relative=>{const f=localFile(path.join(ROOT,relative));manifests.push({path:f,sha256:hash(f)});return {data:read(f),base:path.dirname(f)};};
   const add=(base,item,extra)=>{
@@ -78,6 +79,17 @@ function referenceSet(style) {
     need(full.data.schema==='b1-production-standard-v1'&&full.data.standard_id==='b1-2026-10-24-longform-v4','unexpected B1 long-form identity');
     const sheet=full.data.evidence.find(e=>e.path==='approved-2026-10-24-longform-contact-sheet.jpg');need(sheet,'missing B1 long-form sheet');
     add(full.base,sheet,{id:'b1-full-v4-contact-sheet',kind:'image',role:'approved_longform_sampled_sheet',limitations:['Full V4 film is not bundled. This sampled sheet cannot establish continuous long-form motion or audio.']});
+  } else if(style==='B2') {
+    const pub=manifest('assets/b2/public-showcase.json');
+    need(pub.data.schema===1&&pub.data.style==='B2'&&pub.data.path_base==='manifest_directory','unexpected B2 public showcase manifest');
+    need(Array.isArray(pub.data.evidence)&&pub.data.evidence.length===2,'both B2 public full samples must be locked');
+    for(const id of ['b2-colorful-sleep','b2-colorful-phone-weather']) {
+      const item=pub.data.evidence.find(e=>e.id===id);need(item?.kind==='video'&&item.role==='public_showcase'&&Number.isFinite(item.duration)&&item.duration>0,'missing B2 public full sample');
+      add(pub.base,item,{id,kind:'video',role:'public_showcase',duration:item.duration,has_audio:true,required_comparison:true,limitations:[...(pub.data.limitations||[]),...(item.limitations||[])]});
+    }
+    const board=manifest('assets/b2/approved-style-board.json');
+    need(board.data.board==='approved-style-board.jpg'&&board.data.source_sha256===refs.find(r=>r.id==='b2-colorful-phone-weather').sha256,'B2 sampled board must name the locked accepted phone/weather source');
+    add(board.base,{path:board.data.board,sha256:board.data.board_sha256},{id:'b2-approved-style-board',kind:'image',role:'approved_style_board',limitations:['Sampled still board supports drawing, color and caption appearance only; it cannot demonstrate continuous action, timing or sound.']});
   } else {
     const m=manifest('assets/b3/reference-manifest.json');
     need(m.data.schema==='b3-public-reference-lock-v1'&&m.data.style==='B3','unexpected B3 reference manifest');
@@ -130,7 +142,8 @@ export function planBStyleReference(p) {
   const capability=rr?.capability??{mode:'sample_target',environment:null,limitations:[]};
   need(capability&&['sample_target','limited'].includes(capability.mode)&&Array.isArray(capability.limitations),'capability needs sample_target/limited mode and limitations array');
   const refs=referenceSet(p.style);
-  return {schema:1,style:p.style,author_id:rr?.author_id??null,capability,width:p.width,height:p.height,fps:p.fps,scope_start:0,scope_end,frame_count:total,shots,caption_sha256:digest(JSON.stringify(p.captions||[])),reference_ids:refs.references.map(r=>r.id),checks:CHECKS[p.style],limits:[...LIMITS,...(p.style==='B1'?['The complete approved Full V4 film is unavailable in this bundle; only sampled long-form compositions are comparable.']:['The primary private study video is not bundled; public implementations do not establish exact original-source replication.'])]};
+  const styleLimits={B1:['The complete approved Full V4 film is unavailable in this bundle; only sampled long-form compositions are comparable.'],B2:['The accepted B2 board contains sampled stills, not motion or sound evidence. Both bundled full public implementations are the available effect targets, not mandatory stories, characters or scene sequences.'],B3:['The primary private study video is not bundled; public implementations do not establish exact original-source replication.']};
+  return {schema:1,style:p.style,author_id:rr?.author_id??null,capability,width:p.width,height:p.height,fps:p.fps,scope_start:0,scope_end,frame_count:total,shots,caption_sha256:digest(JSON.stringify(p.captions||[])),reference_ids:refs.references.map(r=>r.id),checks:CHECKS[p.style],limits:[...LIMITS,...styleLimits[p.style]]};
 }
 
 function binding(p,fingerprint) {
@@ -153,7 +166,7 @@ function probe(p,source,ffprobe) {
   const fps=rate(v?.r_frame_rate),scope=p.rangeEnd??p.duration,duration=Number(v?.duration??info.format.duration),expected=Math.ceil(scope*p.fps-EPS);
   need(v?.width===p.width&&v?.height===p.height&&Math.abs(fps-p.fps)<1e-6,'actual video dimensions/fps differ from the current project');
   need(Number.isFinite(duration)&&Math.abs(duration-scope)<=1/p.fps+.01&&Math.abs(Number(v.start_time??0))<.01,'actual video timing differs from the submitted scope');
-  need(audio.length>0,'final B1/B3 video must retain actual narration/mix audio');
+  need(audio.length>0,'final B1/B2/B3 video must retain actual narration/mix audio');
   let frames=Number(v.nb_frames);
   if(!Number.isInteger(frames)) {
     const counted=JSON.parse(command(ffprobe,['-v','error','-count_frames','-select_streams','v:0','-show_entries','stream=nb_read_frames','-of','json',source]));frames=Number(counted.streams?.[0]?.nb_read_frames);
@@ -200,7 +213,7 @@ function template(plan,video_sha256,evidence_sha256,references) {
 }
 
 export async function buildBStyleReferenceEvidence(p,{file:source,out,projectFingerprint,ffmpeg=process.env.FFMPEG||'ffmpeg',ffprobe=process.env.FFPROBE||'ffprobe'}) {
-  const plan=planBStyleReference(p);need(plan,'B1/B3 project required');
+  const plan=planBStyleReference(p);need(plan,'B1/B2/B3 project required');
   source=localFile(source);out=localDir(out,true);
   const output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint),project_inputs=currentInputs(p),project_file_sha256=projectFileHash(p),references=referenceSet(p.style),timing=probe(p,source,ffprobe),metadata=timing.metadata,artifacts=[];
   command(ffmpeg,['-v','error','-xerror','-i',source,'-map','0:v:0','-map','0:a:0','-f','null','-']);
@@ -247,7 +260,7 @@ function capability(plan) {
 }
 
 export async function verifyBStyleReferenceReview(p,{file:source,evidenceDir,reviewFile,projectFingerprint,ffmpeg=process.env.FFMPEG||'ffmpeg',ffprobe=process.env.FFPROBE||'ffprobe'}) {
-  const plan=planBStyleReference(p);need(plan,'B1/B3 project required');capability(plan);
+  const plan=planBStyleReference(p);need(plan,'B1/B2/B3 project required');capability(plan);
   source=localFile(source);evidenceDir=localDir(evidenceDir);reviewFile=localFile(reviewFile);
   const ledgerFile=localFile(path.join(evidenceDir,'evidence.json')),evidence_sha256=hash(ledgerFile),review_sha256=hash(reviewFile),ledger=read(ledgerFile),review=read(reviewFile),output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint),project_inputs=currentInputs(p),project_file_sha256=projectFileHash(p),plan_sha256=digest(JSON.stringify(plan)),references=referenceSet(p.style);
   need(ledger.schema===1&&ledger.status==='pending_independent_review'&&ledger.style===p.style&&ledger.output===source&&ledger.output_sha256===output_sha256&&ledger.project_fingerprint===project_fingerprint&&ledger.plan_sha256===plan_sha256&&same(ledger.plan,plan),'stale evidence, current video, project or plan binding');
@@ -286,7 +299,7 @@ export async function verifyBStyleReferenceReview(p,{file:source,evidenceDir,rev
       if(effect||k==='sound') {
         need(Array.isArray(c.comparisons)&&c.comparisons.length>0,'shot '+s.id+' '+k+' requires a concrete reference comparison');
         for(const cc of c.comparisons)comparison(cc,references.references,{sound:k==='sound'});
-        if(['semantic_acting','contact_continuity','semantic_action','contact_occlusion','composition_editing','television_finish'].includes(k))need(c.comparisons.some(cc=>references.references.find(r=>r.id===cc.reference_id)?.kind==='video'),'motion/contact/editing comparison requires a video reference, not just a still');
+        if(['semantic_acting','semantic_motion_states','contact_continuity','composition_progression','semantic_action','contact_occlusion','composition_editing','television_finish'].includes(k))need(c.comparisons.some(cc=>references.references.find(r=>r.id===cc.reference_id)?.kind==='video'),'motion/contact/editing comparison requires a video reference, not just a still');
       }
       if(c.status==='unmet')unmet.push({shot:s.id,criterion:k,observations:c.observations,comparisons:c.comparisons});
     }

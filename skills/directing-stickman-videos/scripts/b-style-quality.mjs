@@ -2,6 +2,7 @@
 import path from 'node:path';
 import {walkLayers} from './b3-graphics.mjs';
 import {isSceneScaleMotion} from './b-style-motion-geometry.mjs';
+import {requireB4Glyphs} from './b4-font-coverage.mjs';
 
 export const CAPTION_PRESETS = Object.freeze({B1: 34, B2: 40, B3: 34});
 const text = x => typeof x === 'string' && x.trim().length > 0;
@@ -21,6 +22,11 @@ export function prepareBStyleQuality(p, {root, hashFile, mediaPath}) {
     // A scoped script/language fallback may replace glyph coverage, not restyle the video.
     if (!(changedFont && !changedSize && override?.kind === 'language_fallback' && text(override.language) && text(override.reason)))
       throw Error(`${p.style} caption preset invalidated: use the bundled Noto Sans/${CAPTION_PRESETS[p.style]} treatment or record caption_override reason and actual user_approval`);
+    const renderedText = p.captions.map(c => p.style === 'B3' ? c.text.toUpperCase() : c.text).join(' ');
+    let needsCoverage = false;
+    try { requireB4Glyphs(path.join(root, 'assets/fonts/NotoSans.ttf'), renderedText, 'default caption', p.style); }
+    catch (error) { if (!error.message.includes('selected font lacks glyphs')) throw error; needsCoverage = true; }
+    if (!needsCoverage) throw Error(`${p.style} caption preset invalidated: language_fallback requires actual missing glyphs in the current caption scope; restyling needs actual user_approval`);
   }
   const intervals = [], ids = new Set();
   for (const shot of p.shots) for (const {layer, ancestors} of layerTree(shot.layers)) {

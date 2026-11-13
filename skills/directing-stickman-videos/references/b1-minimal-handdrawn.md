@@ -4,7 +4,7 @@ The user-approved **Ryan V4** preview (2026-10-23) remains the B1 drawing, chara
 
 The current public B1 showcase uses this **Ryan V4 / native Bodi** baseline. The earlier original-speed Sadaltager **V15** remains available as an archived example, not the current production target. Do not replace or revoice accepted showcase media automatically.
 
-Apply the mandatory [B1/B3 reference-effect acceptance protocol](b1-b3-reference-acceptance.md) in Codex, Claude Code and similarly complete production environments: target the actual accepted sample's effect through story-specific artwork, acting, motion, captions and sound. Verify real capability and the encoded result; an environment name or runnable demo is not a quality guarantee. Genuine tool limitations may yield a disclosed limited best effort, never a sample-equivalent pass. The full film retains the sample's standard.
+Apply the mandatory [B1/B2/B3 reference-effect acceptance protocol](b1-b2-b3-reference-acceptance.md) in Codex, Claude Code and similarly complete production environments: target the actual accepted sample's effect through story-specific artwork, acting, motion, captions and sound. Verify real capability and the encoded result; an environment name or runnable demo is not a quality guarantee. Genuine tool limitations may yield a disclosed limited best effort, never a sample-equivalent pass. The full film retains the sample's standard.
 
 ## Visual language
 

@@ -43,7 +43,7 @@ function reviewFor(f, which) {
   return {file,review,evidence,dir,write:()=>save(file,review)};
 }
 
-for (const style of ['B1','B3']) test(`${style} CLI keeps technical output pending and binds both sample and whole-film reviews`, t => {
+for (const style of ['B1','B2','B3']) test(`${style} CLI keeps technical output pending and binds both sample and whole-film reviews`, t => {
   const f = fixture(t,style);
   const validation = passed(command('validate',f.file,'--seconds','.6'));
   assert.equal(validation.status,'technical_only');
@@ -70,6 +70,12 @@ for (const style of ['B1','B3']) test(`${style} CLI keeps technical output pendi
   rejected(command('approve',f.file,'--note',note,'--visual-review',path.join(f.out,'preview-reference/review-template.json')),/unknown|review|independent/i);
 
   const sample = reviewFor(f,'preview');
+  if (style === 'B2') {
+    assert.deepEqual(sample.evidence.references.filter(r => r.required_comparison).map(r => r.id).sort(), ['b2-colorful-phone-weather','b2-colorful-sleep']);
+    const omittedReference = sample.review.baseline_comparisons.pop(); sample.write();
+    rejected(command('approve',f.file,'--note',note,'--visual-review',sample.file),/required.*reference|comparison.*missing/i);
+    sample.review.baseline_comparisons.push(omittedReference); sample.write();
+  }
   sample.review.reviewer.id = f.project.reference_review.author_id; sample.write();
   rejected(command('approve',f.file,'--note',note,'--visual-review',sample.file),/independent|author/i);
   sample.review.reviewer.id = 'synthetic-independent-reviewer'; sample.write();
@@ -101,6 +107,7 @@ for (const style of ['B1','B3']) test(`${style} CLI keeps technical output pendi
   full.review.shots.push(tail); full.write();
   const accepted = passed(command('accept-visual',f.file,'--review',full.file));
   assert.equal(accepted.status,'sample_target_review_passed');
+  assert.equal(accepted.equivalence,'available_samples_reviewed');
   assert.equal(accepted.user_acceptance,'not_inferred');
   assert.equal(json(path.join(f.out,'film-reference-acceptance.json')).output_sha256,hashFile(path.join(f.out,'film.mp4')));
   const originalFilm = fs.readFileSync(path.join(f.out,'film.mp4'));
@@ -111,16 +118,16 @@ for (const style of ['B1','B3']) test(`${style} CLI keeps technical output pendi
   rejected(command('accept-visual',f.file,'--review',full.file),/Film changed|current reference evidence/i);
 });
 
-test('B3 limited capability remains an explicit non-equivalent result and cannot waive captions, pacing or sound', t => {
-  const f = fixture(t,'B3','limited');
+for (const [style, effect] of [['B2','color_handdrawn_design'],['B3','silhouette_design']]) test(`${style} limited capability remains an explicit non-equivalent result and cannot waive captions, pacing or sound`, t => {
+  const f = fixture(t,style,'limited');
   const preview = passed(command('preview',f.file,'--seconds','.6'));
   assert.equal(preview.delivery_ready,false);
   const sample = reviewFor(f,'preview');
-  sample.review.shots[0].checks.silhouette_design.status='unmet'; sample.write();
+  sample.review.shots[0].checks[effect].status='unmet'; sample.write();
   passed(command('approve',f.file,'--note',note,'--visual-review',sample.file));
   passed(command('render',f.file));
   const full = reviewFor(f,'film');
-  full.review.shots.forEach(s => {s.checks.silhouette_design.status='unmet';}); full.write();
+  full.review.shots.forEach(s => {s.checks[effect].status='unmet';}); full.write();
   for (const key of ['typography_captions','timing_pacing','sound']) {
     full.review.shots[1].checks[key].status='unmet'; full.write();
     rejected(command('accept-visual',f.file,'--review',full.file),/pass|unmet|caption|timing|sound/i);
@@ -131,6 +138,24 @@ test('B3 limited capability remains an explicit non-equivalent result and cannot
   assert.equal(accepted.status,'best_effort_limited');
   assert.equal(accepted.equivalence,'not_sample_equivalent');
   assert.equal(accepted.user_acceptance,'not_inferred');
+});
+
+test('B2 caption fallback cannot silently restyle covered text or waive actual glyph coverage', t => {
+  const f = fixture(t,'B2');
+  f.project.captionFont = path.join(ROOT,'assets/fonts/Caveat.ttf'); f.write();
+  rejected(command('validate',f.file,'--seconds','.6'),/caption preset/i);
+  f.project.caption_override = {kind:'language_fallback',language:'English',reason:'Synthetic necessity regression; the default font already covers these captions.'}; f.write();
+  rejected(command('validate',f.file,'--seconds','.6'),/caption preset|missing|glyph|fallback/i);
+
+  // A declared restyle approval tests the protocol branch only, not real consent.
+  f.project.caption_override = {reason:'Synthetic explicit-restyle regression only.',user_approval:note}; f.write();
+  assert.equal(passed(command('validate',f.file,'--seconds','.6')).delivery_ready,false);
+
+  f.project.caption_override = {kind:'language_fallback',language:'zh-Hans',reason:'Synthetic missing-glyph fixture; this selected replacement is deliberately insufficient.'};
+  f.project.captions[0].text = '不要出警'; f.write();
+  rejected(command('validate',f.file,'--seconds','.6'),/B2 caption.*lacks glyphs/i);
+  f.project.captionSize = 24; f.write();
+  rejected(command('validate',f.file,'--seconds','.6'),/caption preset/i);
 });
 
 test('missing B1 author/capability information may render a candidate but cannot pass review', t => {

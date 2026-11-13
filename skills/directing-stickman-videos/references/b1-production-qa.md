@@ -2,7 +2,7 @@
 
 Required companion to [B1 · 极简手绘风](b1-minimal-handdrawn.md). First apply the [B common production and acceptance checklist](autopilot-production-qa.md) before planning, sample review and delivery. All B styles share its opening-30s hook, meaning-led staging, 2.5-second principal-picture progress, evidence/icons, natural caption phrasing and whole-film quality gates. This supplement adds **B1-only visual/audio defaults and accepted examples**; A and other B styles do not inherit those defaults or assets. Explicit user choices may customize B1 settings without silently dropping the B common quality floor.
 
-Also apply the mandatory [B1/B3 reference-effect acceptance protocol](b1-b3-reference-acceptance.md): actually play/listen to Ryan V4, compare the encoded sample and full film, and record independent review separately from user approval. Complete production environments must target comparable effects; real tool limitations require observed evidence and an explicitly limited result rather than promoting the fixture or an encode pass to accepted quality. Equivalent language-specific design is required, not the identical English font.
+Also apply the mandatory [B1/B2/B3 reference-effect acceptance protocol](b1-b2-b3-reference-acceptance.md): actually play/listen to Ryan V4, compare the encoded sample and full film, and record independent review separately from user approval. Complete production environments must target comparable effects; real tool limitations require observed evidence and an explicitly limited result rather than promoting the fixture or an encode pass to accepted quality. Equivalent language-specific design is required, not the identical English font.
 
 ## B1 acting and visual hierarchy
 

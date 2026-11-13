@@ -39,8 +39,8 @@ export async function painter(p, {pictureOnly = false} = {}) {
     for (const s of p.shots) for (const l of walkLayers(s.layers)) if (l.type === 'text') requireB4Glyphs(l.b4Hook ? fonts.hook : l.b4Type === 'cinematic' ? fonts.cinematic : l.b4Type === 'handwritten' ? fonts.hand : fonts.caption, l.text, `text ${l.id}`);
     for (const [i, cue] of p.captions.entries()) requireB4Glyphs(fonts.caption, cue.text, `caption ${i}`);
   }
-  if (['B1', 'B3'].includes(p.style)) {
-    for (const s of p.shots) for (const l of walkLayers(s.layers)) if (l.type === 'text') requireB4Glyphs(p.style === 'B1' ? fonts.hand : fonts.caption, l.text, `text ${l.id ?? ''}`, p.style);
+  if (['B1', 'B2', 'B3'].includes(p.style)) {
+    for (const s of p.shots) for (const l of walkLayers(s.layers)) if (l.type === 'text') requireB4Glyphs(p.style === 'B3' ? fonts.caption : fonts.hand, l.text, `text ${l.id ?? ''}`, p.style);
     for (const [i, cue] of p.captions.entries()) requireB4Glyphs(fonts.caption, p.style === 'B3' ? cue.text.toUpperCase() : cue.text, `caption ${i}`, p.style);
   }
   const canvas = createCanvas(p.width, p.height), ctx = canvas.getContext('2d');
@@ -236,7 +236,7 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
         const previous = JSON.parse(fs.readFileSync(reportPath));
         if (previous.fingerprint === p.fingerprint && previous.frames === count && previous.output_sha256 === hashFile(target)) return {
           ...previous,
-          ...(['B1', 'B3'].includes(p.style) ? {delivery_ready: false, visual_acceptance: 'pending_independent_review', reference_review: {...previous.reference_review, status: 'pending_independent_review'}} : {}),
+          ...(['B1', 'B2', 'B3'].includes(p.style) ? {delivery_ready: false, visual_acceptance: 'pending_independent_review', reference_review: {...previous.reference_review, status: 'pending_independent_review'}} : {}),
           reused: true,
         };
       }
@@ -288,7 +288,7 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     const info = probe(target), report = {fingerprint: p.fingerprint, preview_seconds: full ? null : duration, output: target, output_sha256: hashFile(target), original_voice_sha256: hashFile(p.voicePath), original_voice_duration: p.voiceDuration, voice_rate: 'unchanged; leading/trailing padding only', frames: count, duration: Number(info.format.duration), cache_hits: reused, shot_count: clips.length, full_decode: 'pass', caption_count: cues.length, human_review: 'required; technical checks are not acceptance', inputs: p.inputs};
     report.local_motion = motionEvidence;
     report.audio_tracks = {ambience: p.ambience.length, dialogue: p.dialogue.length, file_sfx: p.sfx.filter(s => s.kind === 'file').length, cuts: p.audio_cuts.length};
-    if (['B1', 'B3'].includes(p.style)) {
+    if (['B1', 'B2', 'B3'].includes(p.style)) {
       const evidenceOut = path.join(out, `${kind}-reference`);
       fs.rmSync(evidenceOut, {recursive: true, force: true}); fs.mkdirSync(evidenceOut);
       report.reference_review = await buildBStyleReferenceEvidence(p, {file: target, out: evidenceOut, projectFingerprint: p.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});

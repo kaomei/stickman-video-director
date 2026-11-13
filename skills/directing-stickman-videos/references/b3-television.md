@@ -2,7 +2,7 @@
 
 Read after [Autopilot](autopilot.md) and its [shared production QA](autopilot-production-qa.md). This is B3 of the existing Skill, not a newly named Skill or permission to remake media. The user accepted the dog-behavior v6 and chair/clothes v1 examples. Preserve those recordings and films; they were authored in project-local renderers. The bundled declarative runtime now supports the underlying layered mechanisms, but does not automatically reproduce their art or certify a new story's quality. Apply these decisions only to B3; preserve A/B1/B2.
 
-The mandatory [B1/B3 reference-effect acceptance protocol](b1-b3-reference-acceptance.md) makes the actual public sample's effect the production target in Codex, Claude Code and similarly complete environments. Verify available tools and rendered results, not the host's name. A genuine capability shortfall may produce a disclosed limited best effort, never a sample-equivalent pass; preserve the same target through the full film and adapt equivalent design to each story/language.
+The mandatory [B1/B2/B3 reference-effect acceptance protocol](b1-b2-b3-reference-acceptance.md) makes the actual public sample's effect the production target in Codex, Claude Code and similarly complete environments. Verify available tools and rendered results, not the host's name. A genuine capability shortfall may produce a disclosed limited best effort, never a sample-equivalent pass; preserve the same target through the full film and adapt equivalent design to each story/language.
 
 ## Reusable production entry
 

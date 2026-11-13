@@ -27,7 +27,7 @@ async function main() {
     const dir = path.resolve(args[0]); if (fs.existsSync(dir)) throw new Error('Project directory already exists; will not overwrite');
     if (dir.startsWith(ROOT + path.sep)) throw new Error('Create projects outside the installed Skill');
     fs.mkdirSync(dir, {recursive: true});
-    save(path.join(dir, 'project.json'), {version: 1, style, width: 1280, height: 720, fps: 30, voice: {path: 'narration.wav', lead: 0, tail: 0, ...(style === 'B4' ? BRIAN : {})}, captions: [], shots: [], sfx: [], ...(['B1', 'B3'].includes(style) ? {reference_review: {author_id: '', capability: {mode: 'sample_target', environment: '', limitations: []}}} : {}), ...(style === 'B3' ? {television: {enabled: true, intensity: 0.45}} : {}), ...(style === 'B4' ? {ambience: [], dialogue: [], audio_cuts: [], opening: {version: 1, preset: B4_HOOK.id, shadow: '', setup: '', payoff: '', picture: {before: '', after: '', meaning: '', region: {}}}} : {})});
+    save(path.join(dir, 'project.json'), {version: 1, style, width: 1280, height: 720, fps: 30, voice: {path: 'narration.wav', lead: 0, tail: 0, ...(style === 'B4' ? BRIAN : {})}, captions: [], shots: [], sfx: [], ...(['B1', 'B2', 'B3'].includes(style) ? {reference_review: {author_id: '', capability: {mode: 'sample_target', environment: '', limitations: []}}} : {}), ...(style === 'B3' ? {television: {enabled: true, intensity: 0.45}} : {}), ...(style === 'B4' ? {ambience: [], dialogue: [], audio_cuts: [], opening: {version: 1, preset: B4_HOOK.id, shadow: '', setup: '', payoff: '', picture: {before: '', after: '', meaning: '', region: {}}}} : {})});
     console.log(JSON.stringify({project: path.join(dir, 'project.json'), stage: 'scaffold; add approved narration, aligned captions and authored scenes before rendering'}));
   } else if (command === 'captions') {
     if (!args[0] || !args[1]) throw new Error('Aligned word input and output file required');
@@ -46,12 +46,12 @@ async function main() {
       for (const cue of p.captions) draw(Math.min(p.rangeEnd - 0.001, (cue.start + cue.end) / 2));
       const opening_visual = p.style === 'B4' ? await (await import('./b4-opening-visual-check.mjs')).checkB4OpeningPaint(p, {draw, picture: await painter(p, {pictureOnly: true})}) : undefined;
       const typography = p.style === 'B4' ? await (await import('./b4-typography-review.mjs')).checkB4TypographyPaint(p, {draw}) : undefined;
-      console.log(JSON.stringify({typography, valid: true, ...(['B1', 'B3'].includes(p.style) ? {status: 'technical_only', visual_acceptance: 'not_reviewed', delivery_ready: false} : {}), fingerprint: p.fingerprint, duration: p.duration, checked_seconds: p.rangeEnd, shots: p.shots.length, ...(opening_visual ? {opening_visual} : {})})); return;
+      console.log(JSON.stringify({typography, valid: true, ...(['B1', 'B2', 'B3'].includes(p.style) ? {status: 'technical_only', visual_acceptance: 'not_reviewed', delivery_ready: false} : {}), fingerprint: p.fingerprint, duration: p.duration, checked_seconds: p.rangeEnd, shots: p.shots.length, ...(opening_visual ? {opening_visual} : {})})); return;
     }
     const base = p?.base ?? path.dirname(fs.realpathSync(path.resolve(args[0])));
     const out = outputDir(p ?? {base, inputs: []}), approvalPath = path.join(out, 'approval.json'), reportPath = path.join(out, 'preview-report.json');
     if (command === 'accept-visual') {
-      if (!['B1', 'B3'].includes(p.style)) throw new Error('accept-visual is the B1/B3 sample-effect review gate');
+      if (!['B1', 'B2', 'B3'].includes(p.style)) throw new Error('accept-visual is the B1/B2/B3 sample-effect review gate');
       if (!option('--review')) throw new Error('accept-visual requires --review REVIEW_JSON');
       const reviewFile = fs.realpathSync(path.resolve(option('--review'))), filmReport = json(path.join(out, 'film-report.json'));
       if (filmReport.fingerprint !== p.fingerprint || filmReport.output !== path.join(out, 'film.mp4') || hashFile(filmReport.output) !== filmReport.output_sha256) throw new Error('Film changed; render current reference evidence again');
@@ -80,9 +80,9 @@ async function main() {
       reviewed = loadProject(args[0], {seconds: report.preview_seconds});
       outputDir(reviewed);
       if (report.fingerprint !== reviewed.fingerprint || report.output !== path.join(out, 'preview.mp4') || !fs.existsSync(report.output) || hashFile(report.output) !== report.output_sha256) throw new Error(error);
-      if (['B1', 'B3'].includes(reviewed.style)) {
+      if (['B1', 'B2', 'B3'].includes(reviewed.style)) {
         visualReviewFile = command === 'approve' ? option('--visual-review') : json(approvalPath).visual_review_file;
-        if (!visualReviewFile) throw new Error('B1/B3 preview requires independent sample-effect review: approve --visual-review REVIEW_JSON');
+        if (!visualReviewFile) throw new Error('B1/B2/B3 preview requires independent sample-effect review: approve --visual-review REVIEW_JSON');
         visualReviewFile = fs.realpathSync(path.resolve(visualReviewFile));
         if (command === 'render' && hashFile(visualReviewFile) !== json(approvalPath).visual_review_sha256) throw new Error('Sample-effect review changed; review and approve current preview again');
         referenceAcceptance = await (await import('./b-style-reference-review.mjs')).verifyBStyleReferenceReview(reviewed, {file: report.output, evidenceDir: path.join(out, 'preview-reference'), reviewFile: visualReviewFile, projectFingerprint: reviewed.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
