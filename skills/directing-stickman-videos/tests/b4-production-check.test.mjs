@@ -112,6 +112,21 @@ test('rejects word-staggered remainder, missing shadow and false blanket opening
   f.data.opening.user_override = true;
   assert.throws(() => f.run(), /Opening/);
 });
+test('native portrait ledger records its real layout and refuses landscape half-shadow claims', t => {
+  const f = fixture(t);
+  f.data.width = 1080; f.data.height = 1920;
+  assert.throws(() => f.run(), /Opening/);
+  f.data.opening = {...f.data.opening, preset: 'b4-portrait-poster-v1', layout: 'portrait-poster', left_half_shadow: false,
+    top_breathing_space: true, lower_picture_unobscured: true, native_portrait_art: true, whole_payoff_settle: true, short_emphasis_line: true};
+  assert.equal(f.run().status, 'technical_only', 'recorded facts do not certify actual playback or aesthetics');
+  for (const field of ['top_breathing_space', 'lower_picture_unobscured', 'native_portrait_art', 'whole_payoff_settle', 'short_emphasis_line']) {
+    f.data.opening[field] = false; assert.throws(() => f.run(), /Opening/); f.data.opening[field] = true;
+  }
+  f.data.opening.left_half_shadow = true; assert.throws(() => f.run(), /Opening/);
+  f.data.opening.left_half_shadow = false; f.data.width = '1080'; assert.throws(() => f.run(), /Opening/);
+  f.data.height = 720; f.data.width = 1280;
+  assert.throws(() => f.run(), /Opening/);
+});
 test('rejects stale references, abbreviated prompts and reused film art in a fresh test', t => {
   const f = fixture(t); f.data.assets[0].references = ['dispatch-office'];
   assert.throws(() => f.run(), /canonical reference/);

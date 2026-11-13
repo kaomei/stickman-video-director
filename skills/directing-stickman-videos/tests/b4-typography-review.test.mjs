@@ -35,7 +35,7 @@ function drawFixture(p,{staticBody=false,staticCaption=false,movingBackground=fa
     return canvas;
   };
 }
-function fixture(t){const dir=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'b4-typography-')));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));const p=project(),draw=drawFixture(p),source=path.join(dir,'video.mp4');
+function fixture(t,{portrait=false}={}){const dir=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'b4-typography-')));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));const p=project();if(portrait){p.height=568;p.captions=[];}const draw=drawFixture(p),source=path.join(dir,'video.mp4');
   const encode=(file,paint)=>{const prefix=path.join(dir,'frame-');for(let i=0;i<18;i++)fs.writeFileSync(prefix+String(i).padStart(2,'0')+'.png',paint(i/12).toBuffer('image/png'));run(['-framerate','12','-i',prefix+'%02d.png','-c:v','libx264','-crf','16','-pix_fmt','yuv420p','-y',file]);};
   encode(source,draw);const out=path.join(dir,'evidence');fs.mkdirSync(out);const reviewFile=path.join(dir,'review.json');return {dir,p,draw,source,out,reviewFile,encode,options:{file:source,draw,out,projectFingerprint:p.fingerprint,ffmpeg,ffprobe}};}
 function syntheticReview(f){const r=read(path.join(f.out,'review-template.json'));r.reviewer={id:'synthetic-independent-agent',kind:'agent',method:'Synthetic protocol fixture; no actual aesthetic or user review',independent:true};
@@ -116,4 +116,27 @@ test('caption evidence retains source audio and deterministic provenance verific
   const ledger=await buildB4TypographyEvidence(f.p,f.options),clip=ledger.artifacts.find(a=>a.id==='caption-0-continuous');assert.equal(clip.audio,'source_if_present');
   const r=spawnSync(ffprobe,['-v','error','-show_streams','-of','json',path.join(f.out,clip.file)],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);assert.ok(JSON.parse(r.stdout).streams.some(s=>s.codec_type==='audio'));
   syntheticReview(f);assert.equal((await verify(f)).status,'independent_visual_review_pass');
+});
+
+test('portrait acceptance requires phone-size normal-speed source playback with honest device limits, including custom renderers',async t=>{
+  const f=fixture(t,{portrait:true}),ledger=await buildB4TypographyEvidence(f.p,f.options),template=read(ledger.template_file);
+  assert.equal(template.portrait_viewing.status,'unknown');
+  assert.equal(template.portrait_viewing.real_device.checked,null);
+  let r=syntheticReview(f);await assert.rejects(()=>verify(f),/portrait phone-size playback/);
+  r.portrait_viewing={status:'pass',display_width:360,display_height:639,playback_speed:1,platform:'Synthetic desktop portrait player; no real viewing claim',real_device:{checked:false,limitation:'Synthetic fixture only; no physical device inspected.'},observations:[{time:.5,detail:'Synthetic phone-size source observation for schema testing; no aesthetic judgment.',evidence_ids:['source-video']}]};
+  const valid=structuredClone(r);
+  for(const [mutate,pattern] of [
+    [x=>{delete x.portrait_viewing;},/portrait phone-size playback/],
+    [x=>{x.portrait_viewing.display_width=1080;},/portrait phone-size playback/],
+    [x=>{x.portrait_viewing.display_height=360;},/portrait phone-size playback/],
+    [x=>{x.portrait_viewing.playback_speed=2;},/portrait phone-size playback/],
+    [x=>{x.portrait_viewing.platform='';},/portrait phone-size playback/],
+    [x=>{x.portrait_viewing.real_device.limitation='';},/simulated-device limitation/],
+    [x=>{x.portrait_viewing.observations[0].evidence_ids=['body-moment-mid'];},/reference source-video/],
+  ]) {r=structuredClone(valid);mutate(r);write(f.reviewFile,r);await assert.rejects(()=>verify(f),pattern);}
+  write(f.reviewFile,valid);const accepted=await verify(f);
+  assert.equal(accepted.status,'independent_visual_review_pass');
+  assert.deepEqual(accepted.portrait_viewing,valid.portrait_viewing);
+  assert.equal(accepted.user_acceptance,'not_inferred');
+  assert.match(accepted.limits.join(' '),/declared, not authenticated/);
 });
