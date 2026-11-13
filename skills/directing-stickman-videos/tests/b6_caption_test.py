@@ -115,5 +115,81 @@ class CaptionContract(unittest.TestCase):
         self.assertEqual(hashlib.sha256((self.base / captions.FONT_FILE).read_bytes()).hexdigest(), captions.FONT_SHA256)
 
 
+class ArchivoCaptionContract(unittest.TestCase):
+    """Public OFL profile is explicit; it does not impersonate original V44 ink."""
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory(prefix='b6-caption-archivo-')
+        cls.base = Path(cls.tmp.name)
+        target = cls.base / captions.ARCHIVO_FONT_FILE
+        target.parent.mkdir(parents=True)
+        shutil.copyfile(ROOT / 'assets/fonts/ArchivoBlack.ttf', target)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def test_public_variant_keeps_geometry_paint_and_switch_contract(self):
+        font_fields = {'profile', 'font_family', 'font_file', 'font_sha256'}
+        for ratio, width, height in [('9:16', 720, 1280), ('9:16', 1080, 1920),
+                                     ('16:9', 1280, 720), ('16:9', 1920, 1080)]:
+            with self.subTest(ratio=ratio, width=width):
+                original = captions.default_profile(ratio, width, height)
+                public = captions.default_profile(ratio, width, height, font_variant='archivo-black')
+                self.assertEqual({k: v for k, v in original.items() if k not in font_fields},
+                                 {k: v for k, v in public.items() if k not in font_fields})
+                self.assertEqual(public['font_family'], 'Archivo Black')
+                self.assertEqual(public['font_file'], 'fonts/ArchivoBlack.ttf')
+                self.assertEqual(public['font_sha256'], captions.ARCHIVO_FONT_SHA256)
+                if ratio == '16:9':
+                    with self.assertRaisesRegex(ValueError, 'native_layout_reason'):
+                        captions.validate_profile(public, ratio, width, height, self.base)
+                    public['native_layout_reason'] = 'Independently authored native public-font test.'
+                self.assertEqual(captions.validate_profile(public, ratio, width, height, self.base), public)
+
+    def test_three_actual_rasters_match_measured_reference_widths_at_same_size(self):
+        # The long phrases use native landscape space; they are not squeezed into
+        # the narrower portrait semantic-caption safe zone or horizontally scaled.
+        profile = captions.default_profile('16:9', 1280, 720, 'archivo-black')
+        profile['native_layout_reason'] = 'Same-size font comparison in native landscape safe space.'
+        renderer = captions.CaptionRenderer(self.base, '16:9', 1280, 720, profile)
+        measured = {'anyway.': (221, 48), 'He sold the Eiffel Tower.': (642, 48),
+                    'He gave her two pieces.': (629, 58)}
+        self.assertEqual((profile['font_size'], profile['stroke'], profile['baseline'], profile['band']),
+                         (47, 4, 620, [568, 664]))
+        for text, (width, height) in measured.items():
+            with self.subTest(text=text):
+                layer, bounds = renderer.raster(text)
+                self.assertEqual((bounds[2]-bounds[0], bounds[3]-bounds[1]), (width, height))
+                self.assertEqual(layer.size, (1280, 720))
+
+    def test_unknown_or_mixed_named_profiles_and_false_font_identity_are_rejected(self):
+        public = captions.default_profile('9:16', 720, 1280, 'archivo-black')
+        original = captions.default_profile('9:16', 720, 1280)
+        with self.assertRaisesRegex(ValueError, 'Unknown B6 caption font variant'):
+            captions.default_profile('9:16', 720, 1280, 'unlocked-fallback')
+        with self.assertRaisesRegex(ValueError, 'Unknown B6 caption profile'):
+            captions.validate_profile({**public, 'profile': 'arbitrary-substitute-v1'}, '9:16', 720, 1280)
+        for key in ('profile', 'font_family', 'font_file', 'font_sha256'):
+            with self.subTest(key=key), self.assertRaisesRegex(ValueError, 'differs from primary contract'):
+                captions.validate_profile({**public, key: original[key]}, '9:16', 720, 1280)
+        target = self.base / captions.ARCHIVO_FONT_FILE
+        data = target.read_bytes()
+        try:
+            shutil.copyfile(ROOT / 'assets/fonts/Nunito.ttf', target)
+            with self.assertRaisesRegex(ValueError, 'font identity differs'):
+                captions.validate_profile(public, '9:16', 720, 1280, self.base)
+        finally:
+            target.write_bytes(data)
+        # Even the approved public font cannot silently enter the old profile.
+        with tempfile.TemporaryDirectory(prefix='b6-caption-mislabeled-') as directory:
+            base = Path(directory)
+            target = base / captions.FONT_FILE
+            target.parent.mkdir(parents=True)
+            shutil.copyfile(self.base / captions.ARCHIVO_FONT_FILE, target)
+            with self.assertRaisesRegex(ValueError, 'font identity differs'):
+                captions.validate_profile(original, '9:16', 720, 1280, base)
+
+
 if __name__ == '__main__':
     unittest.main()

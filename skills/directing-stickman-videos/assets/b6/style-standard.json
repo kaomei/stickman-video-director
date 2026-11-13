@@ -198,5 +198,62 @@
     "landscape": "The listed 16:9 coordinates are an unapproved local starting proposal, not observed V44 facts. Author a native_layout_reason and separately review native composition; size/baseline/band can be deliberately redesigned for this ratio. native_layout_reason is a scene-specific authored field; an empty template reason remains pending.",
     "language_or_explicit_override": "When this font lacks required glyphs, or the user explicitly requests another subtitle design, record the language/user direction, exact intentional deviation and native review. Do not silently substitute a font/layout or claim an exact default-profile match.",
     "semantic_timing": "Break from meaning and actual approved speech. V44 cue count/mean duration are observations, not quotas. Preserve complete phrases and original voice speed."
+  },
+  "public_caption_profiles": {
+    "archivo-black": {
+      "9:16": {
+        "profile": "eiffel-v44-portrait-archivo-black-v1",
+        "native_design": "9:16",
+        "font_family": "Archivo Black",
+        "font_file": "fonts/ArchivoBlack.ttf",
+        "font_sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+        "font_size": 47,
+        "stroke": 4,
+        "fill": "#ffffff",
+        "stroke_fill": "#171319",
+        "supersampling": 3,
+        "resample": "lanczos",
+        "anchor": "ms",
+        "side": 44,
+        "switch": "hard_cut",
+        "autoshrink": false,
+        "pop": false,
+        "baseline": 914,
+        "band": [
+          864,
+          951
+        ]
+      },
+      "16:9": {
+        "profile": "b6-landscape-native-archivo-black-v1",
+        "native_design": "16:9",
+        "font_family": "Archivo Black",
+        "font_file": "fonts/ArchivoBlack.ttf",
+        "font_sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+        "font_size": 47,
+        "stroke": 4,
+        "fill": "#ffffff",
+        "stroke_fill": "#171319",
+        "supersampling": 3,
+        "resample": "lanczos",
+        "anchor": "ms",
+        "side": 44,
+        "switch": "hard_cut",
+        "autoshrink": false,
+        "pop": false,
+        "baseline": 620,
+        "band": [
+          568,
+          664
+        ]
+      }
+    }
+  },
+  "public_caption_profile_policy": {
+    "default_new_story_variant": "archivo-black",
+    "authorization": "Project owner explicitly approved Archivo Black as the redistributable public caption alternative on 2026-11-13.",
+    "relation_to_primary": "The original Sample 1 Arial Black caption profiles and hashes above remain unchanged. Archivo Black is a separately named implemented public alternative, not a claim of exact original font pixels. All other primary drawing, motion, space, speech timing and review requirements remain in force.",
+    "font_license": "SIL Open Font License 1.1; copied with the font into each new-story project.",
+    "legacy_reproduction": "The frozen Hong Kong V90 engine remains unchanged and provisions its original font aliases locally; this new-story font is outside engine/."
   }
 }

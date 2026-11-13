@@ -53,11 +53,11 @@
     }
   ],
   "caption": {
-    "profile": "b6-landscape-native-v1",
+    "profile": "b6-landscape-native-archivo-black-v1",
     "native_design": "16:9",
-    "font_family": "Arial Black",
-    "font_file": "engine/source/fonts/ArialBlack.ttf",
-    "font_sha256": "7d7db3ad96a31373c1437c6ab14266f6605495544c8e663558b047521174c42e",
+    "font_family": "Archivo Black",
+    "font_file": "fonts/ArchivoBlack.ttf",
+    "font_sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
     "font_size": 47,
     "stroke": 4,
     "fill": "#ffffff",

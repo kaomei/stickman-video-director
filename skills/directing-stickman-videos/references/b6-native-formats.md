@@ -39,7 +39,7 @@ Keep one primary attention cue at a time. An opening track, a foreground walk an
 
 Review the ending as carefully as the opening: consecutive beats must add a spatial or emotional fact. Use motivated changes among a relationship two-shot, prop/contact detail, reaction and wider consequence rather than repeating the same face crop with another zoom. Keep screen direction, gaze and action phase continuous; camera richness comes from the set and staging, not character wobble or nonuniform image stretching.
 
-Caption geometry is a native composition constraint, not a last-minute bottom overlay. Apply the [portrait renderer contract and landscape boundary](b6-sample-1-acceptance.md#portrait-caption-renderer-fixed-reference-facts): Sample 1's English portrait uses baseline 914 at 720×1280; the visible glyph center and the baseline differ. Reserve face/hand/prop space around that band. The landscape starting profile is not an approved V44 coordinate standard. Review the actual native output and record any explicit user/language deviation.
+Caption geometry is a native composition constraint, not a last-minute bottom overlay. Apply the [portrait renderer contract and landscape boundary](b6-sample-1-acceptance.md#portrait-caption-renderer-fixed-reference-facts): B6’s approved Archivo Black default retains Sample 1’s portrait baseline 914 at 720×1280; the visible glyph center and the baseline differ. Reserve face/hand/prop space around that band. The landscape starting profile is not an approved V44 coordinate standard. Review the actual native output and record any explicit user/language deviation.
 
 ## Saved implementation and review
 

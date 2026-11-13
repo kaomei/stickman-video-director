@@ -20,6 +20,8 @@ async function main() {
     if (option('--style') === 'B6') {
       const r = spawnSync(option('--python', process.env.B6_PYTHON || 'python3'), ['-c', 'import sys,numpy,PIL,cv2; assert sys.version_info >= (3,9); print("ok")'], {encoding: 'utf8'});
       checks.b6_python_paint_dependencies = r.status === 0;
+      const {checkPublicCaptionFont} = await import('./b6-fonts.mjs');
+      try { checks.b6_public_caption_font = checkPublicCaptionFont(ROOT).ok; } catch { checks.b6_public_caption_font = false; }
       const {checkPack} = await import('./b6-dynamic-meme.mjs');
       try { checks.b6_complete_pack = checkPack().ok; } catch { checks.b6_complete_pack = false; }
     }

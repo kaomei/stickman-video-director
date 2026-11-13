@@ -202,7 +202,7 @@ def caption_binding(context, report, preview):
     require(contract.get('renderer_sha256') == context.inputs.get('caption_renderer.py')
             == sha(local(context.base, 'caption_renderer.py')),
             'Caption rasterizer must be project-local, fingerprinted and bound to the actual report')
-    require(contract.get('font_sha256') == captions.FONT_SHA256
+    require(contract.get('font_sha256') == profile['font_sha256']
             and contract.get('cues_sha256') == context.inputs.get(context.project['captions']),
             'Caption font/cue identity changed since rendering')
     start, end = math.ceil(preview['start'] * 30), math.ceil(preview['end'] * 30)

@@ -55,6 +55,12 @@ class Production(unittest.TestCase):
             f.write_bytes(original+b'\n# Caption implementation changed\n')
             self.assertNotEqual(runtime.load(self.base,'16:9').fingerprint,before.fingerprint)
         finally:f.write_bytes(original)
+    def test_selected_public_caption_font_is_pinned_even_if_inputs_omits_it(self):
+        p=json.loads(self.original);p['inputs']=[];(self.base/'project.json').write_text(json.dumps(p))
+        c=runtime.load(self.base,'16:9')
+        self.assertEqual(c.plan['caption']['profile'],'b6-landscape-native-archivo-black-v1')
+        self.assertIn('fonts/ArchivoBlack.ttf',c.inputs)
+        self.assertEqual(c.inputs['fonts/ArchivoBlack.ttf'],c.plan['caption']['font_sha256'])
     def test_portrait_load_rejects_42px_bottom180_and_legacy_raster_settings(self):
         file=self.base/'formats/landscape.json';original=file.read_bytes();project=json.loads(self.original)
         project['formats']={'9:16':'formats/landscape.json'}
@@ -63,7 +69,7 @@ class Production(unittest.TestCase):
         (self.base/'project.json').write_text(json.dumps(project))
         try:
             plan=json.loads(original);plan.update(ratio='9:16',native_design='9:16',width=720,height=1280,cast_inventory=[])
-            profile=runtime.caption_helper().default_profile('9:16',720,1280)
+            profile=runtime.caption_helper().default_profile('9:16',720,1280,'archivo-black')
             plan['caption']=profile;file.write_text(json.dumps(plan))
             self.assertEqual(runtime.load(self.base,'9:16').plan['caption']['baseline'],914)
             for key,value in [('font_size',42),('bottom',180),('anchor','mm'),('fill','#fffdf8'),('supersampling',1)]:

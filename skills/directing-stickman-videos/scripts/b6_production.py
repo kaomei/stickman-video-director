@@ -9,7 +9,7 @@ sys.dont_write_bytecode=True
 TRUSTED_PUPPET_RUNTIME_SHA256='adc4bd4ddcbe2bb184381d080e99ebe1f4bd1beb3b0b6b1a841930ae15d5bed8'
 FROZEN_V90_EXAMPLE_SHA256={
     'scene':'dffaba09358cfdeafc9a3a04f29483910f4a8667159fbdbd60094b9185239947',
-    'native_plan':'686f146ddc5207302d4c96d88056346883bc86c0209c7960ac99a820fbd1891d',
+    'native_plan':'c0cdbfa77603936aa69ffdf3f211b28566fd14292172593fd63324a9d749620c',
     'engine_manifest':'5b717ae1309e1a7b29e17dd12c0382dcec5521e10977003915f2fd026b5cc0fd',
     'source_fixture':'0a72e56eaa011f3daa4f5aceac281b7a8ff1d633807a0da475eb2ec562254236',
 }
@@ -134,7 +134,7 @@ def load(base,ratio):
     audio=local(base,p['voice']['path']);require(sha(audio)==p['voice']['sha256'],'Voice fingerprint changed')
     meta=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(audio)]))
     require(any(s['codec_type']=='audio' for s in meta['streams']) and abs(float(meta['format']['duration'])-p['duration'])<.12,'Full audio duration differs from project')
-    files=['project.json','run.py','caption_renderer.py',p['scene'],p['story'],p['captions'],p['voice']['path'],p['formats'][ratio],*p.get('inputs',[])]
+    files=['project.json','run.py','caption_renderer.py',p['scene'],p['story'],p['captions'],p['voice']['path'],p['formats'][ratio],plan['caption']['font_file'],*p.get('inputs',[])]
     if p.get('quality_target'):
         files.extend(['motion_review.py','b6_space.py'])
         files.append(p['quality_target'])

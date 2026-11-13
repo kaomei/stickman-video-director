@@ -20,7 +20,8 @@ assert "(references/autopilot.md)" in entry.split("## A · Director", 1)[0]
 assert "(autopilot-production-qa.md)" in autopilot
 assert "(autopilot-production-qa.md#whole-film-delivery-gate)" in autopilot
 assert "before shot planning, sample review and full-film delivery" in autopilot
-assert "Style defaults customize expression, not waive this common quality floor" in autopilot
+# Preserve the published e48202bc picture-review rule, not its older wording.
+assert "Style defaults customize expression, not waive the required picture review; they do not impose one caption design or voice ID on every style" in autopilot
 assert "**every B style**" in common and "A does not inherit it" in common
 
 # Protect the explicit quality subjects and the non-shortcut boundaries.

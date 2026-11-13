@@ -381,9 +381,9 @@
     },
     {
       "path": "production/example-landscape.json",
-      "sha256": "686f146ddc5207302d4c96d88056346883bc86c0209c7960ac99a820fbd1891d",
+      "sha256": "c0cdbfa77603936aa69ffdf3f211b28566fd14292172593fd63324a9d749620c",
       "purpose": "Mature-engine production authoring interface and 7.5s reusable action example; pending user review",
-      "bytes": 3145
+      "bytes": 3149
     },
     {
       "path": "production/example-scene.py",
@@ -417,7 +417,7 @@
     },
     {
       "path": "style-standard.json",
-      "sha256": "f54dd741d4cc9123dcd0769a638dbb08986d2dcee691e952417178d4c884ef36",
+      "sha256": "e8103b7d353a14bb7584ebfd1da708f76e22b2da7dc80f30a13d89c3507e4f57",
       "role": "Canonical installed primary reference, portrait preference, style criteria and required review checks"
     }
   ]

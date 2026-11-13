@@ -9,7 +9,6 @@ import shutil
 import subprocess
 import tempfile
 import unittest
-from b6_test_fonts import require_reference_arial_black
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -29,17 +28,17 @@ class MotionReview(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         captions = runtime.caption_helper()
-        reference_font = require_reference_arial_black(captions.FONT_SHA256)
+        reference_font = ROOT / 'assets/fonts/ArchivoBlack.ttf'
         cls.tmp = tempfile.TemporaryDirectory(prefix='b6-motion-review-test-')
         cls.base = Path(cls.tmp.name).resolve()
         b = cls.base
         (b / 'scene.py').write_text('# Isolated contract fixture, not a user film.\n')
         shutil.copyfile(ROOT / 'scripts/b6_caption.py', b / 'caption_renderer.py')
-        font = b / 'engine/source/fonts/ArialBlack.ttf'
+        font = b / 'fonts/ArchivoBlack.ttf'
         font.parent.mkdir(parents=True)
         shutil.copyfile(reference_font, font)
         captions = runtime.caption_helper()
-        profile = captions.default_profile('16:9', 320, 180)
+        profile = captions.default_profile('16:9', 320, 180, font_variant='archivo-black')
         profile['native_layout_reason'] = 'Synthetic native test frame; no visual approval claimed.'
         cue = {'start': 0, 'end': 1, 'text': 'Fixture.'}
         review.save(b / 'captions.json', [cue])
@@ -139,6 +138,15 @@ class MotionReview(unittest.TestCase):
     def test_completed_bound_record_passes_contract_only(self):
         self.completed_fixture()
         self.assertEqual(self.validate()['status'], 'reviewer_passed_not_automatic_aesthetic_judgment')
+
+    def test_caption_contract_uses_the_validated_open_font_identity(self):
+        report = review.read(self.base / 'report.json')
+        preview = report['time_range']
+        bound = review.caption_binding(self.context, report, preview)
+        self.assertEqual(bound['font_sha256'], self.context.plan['caption']['font_sha256'])
+        report['caption_contract']['font_sha256'] = runtime.caption_helper().FONT_SHA256
+        with self.assertRaisesRegex(ValueError, 'font/cue identity'):
+            review.caption_binding(self.context, report, preview)
 
     def test_all_35_subchecks_are_mandatory_even_when_every_parent_passes(self):
         self.completed_fixture()

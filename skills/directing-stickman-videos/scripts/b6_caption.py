@@ -9,6 +9,15 @@ import math
 
 FONT_SHA256 = '7d7db3ad96a31373c1437c6ab14266f6605495544c8e663558b047521174c42e'
 FONT_FILE = 'engine/source/fonts/ArialBlack.ttf'
+ARCHIVO_FONT_SHA256 = 'dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180'
+ARCHIVO_FONT_FILE = 'fonts/ArchivoBlack.ttf'
+FONT_VARIANTS = {
+    'arial-black': dict(font_family='Arial Black', font_file=FONT_FILE, font_sha256=FONT_SHA256,
+                        portrait_profile='eiffel-v44-portrait-v1', landscape_profile='b6-landscape-native-v1'),
+    'archivo-black': dict(font_family='Archivo Black', font_file=ARCHIVO_FONT_FILE, font_sha256=ARCHIVO_FONT_SHA256,
+                          portrait_profile='eiffel-v44-portrait-archivo-black-v1',
+                          landscape_profile='b6-landscape-native-archivo-black-v1'),
+}
 COMMON = dict(font_family='Arial Black', font_file=FONT_FILE, font_sha256=FONT_SHA256,
               fill='#ffffff', stroke_fill='#171319', supersampling=3, resample='lanczos',
               anchor='ms', switch='hard_cut', autoshrink=False, pop=False)
@@ -19,7 +28,9 @@ def require(ok, message):
         raise ValueError(message)
 
 
-def default_profile(ratio, width, height):
+def default_profile(ratio, width, height, font_variant='arial-black'):
+    require(font_variant in FONT_VARIANTS, 'Unknown B6 caption font variant')
+    font = FONT_VARIANTS[font_variant]
     require(ratio in ('9:16', '16:9'), 'Choose a native B6 caption ratio')
     rw, rh = map(int, ratio.split(':'))
     require(width > 0 and height > 0 and abs(width / height - rw / rh) < .001,
@@ -31,7 +42,9 @@ def default_profile(ratio, width, height):
               'band': [864, 951] if portrait else [568, 664]}
     scaled = {key: ([round(x * scale) for x in value] if isinstance(value, list) else round(value * scale))
               for key, value in values.items()}
-    result = dict(COMMON, profile='eiffel-v44-portrait-v1' if portrait else 'b6-landscape-native-v1',
+    result = dict(COMMON, font_family=font['font_family'], font_file=font['font_file'],
+                  font_sha256=font['font_sha256'],
+                  profile=font['portrait_profile' if portrait else 'landscape_profile'],
                   native_design=ratio, **scaled)
     if not portrait:
         result['native_layout_reason'] = ''
@@ -40,7 +53,12 @@ def default_profile(ratio, width, height):
 
 def validate_profile(profile, ratio, width, height, base=None):
     require(isinstance(profile, dict), 'Explicit native caption profile required')
-    expected = default_profile(ratio, width, height)
+    # Only the two explicitly named, independently fingerprinted implementations
+    # are accepted. An arbitrary family/path/SHA cannot opt into a weaker gate.
+    variant = next((name for name, font in FONT_VARIANTS.items()
+                    if profile.get('profile') in (font['portrait_profile'], font['landscape_profile'])), None)
+    require(variant is not None, 'Unknown B6 caption profile; choose a locked named font variant')
+    expected = default_profile(ratio, width, height, variant)
     require('bottom' not in profile, 'Legacy caption bottom/mm positioning is not the V44 baseline contract')
     fixed = set(expected) - ({'native_layout_reason', 'font_size', 'stroke', 'side', 'baseline', 'band'} if ratio == '16:9' else set())
     for key in fixed:
@@ -61,9 +79,9 @@ def validate_profile(profile, ratio, width, height, base=None):
     if base is not None:
         base = Path(base).resolve()
         font = (base / profile['font_file']).resolve()
-        require(font.is_relative_to(base) and font.is_file(), 'Project-local Arial Black font missing')
-        require(hashlib.sha256(font.read_bytes()).hexdigest() == FONT_SHA256,
-                'B6 caption font identity differs from V44 Arial Black')
+        require(font.is_relative_to(base) and font.is_file(), 'Project-local ' + expected['font_family'] + ' font missing')
+        require(hashlib.sha256(font.read_bytes()).hexdigest() == expected['font_sha256'],
+                'B6 caption font identity differs from locked ' + expected['font_family'])
     return dict(profile)
 
 

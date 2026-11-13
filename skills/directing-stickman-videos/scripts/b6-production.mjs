@@ -4,20 +4,23 @@ import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {initHK} from './b6-hong-kong.mjs';
+import {checkPublicCaptionFont,provisionPublicCaptionFont} from './b6-fonts.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const opt=(a,k,d)=>a.includes(k)?a[a.indexOf(k)+1]:d;
 const save=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
 
-export function initProduction(dir,ratio) {
+export function initProduction(dir,ratio,fontOptions) {
   if(!['16:9','9:16','both'].includes(ratio))throw new Error('B6 requires --ratio 16:9, 9:16 or both before storyboarding');
   dir=path.resolve(dir);
   if(fs.existsSync(dir))throw new Error('Project exists; will not overwrite');
   let ancestor=path.dirname(dir);while(!fs.existsSync(ancestor))ancestor=path.dirname(ancestor);
   const real=fs.realpathSync(ancestor);
   if(real===ROOT||real.startsWith(ROOT+path.sep))throw new Error('Create projects outside the installed Skill');
+  checkPublicCaptionFont(ROOT);
   // Copy the complete, tested paint/rig/compositor, never the six-second blocking renderer.
-  initHK(path.join(dir,'engine'),'16:9');
+  initHK(path.join(dir,'engine'),'16:9',fontOptions);
+  const publicFont=provisionPublicCaptionFont(dir,ROOT);
   fs.copyFileSync(path.join(ROOT,'scripts/b6_production.py'),path.join(dir,'run.py'));
   fs.copyFileSync(path.join(ROOT,'scripts/b6_motion_review.py'),path.join(dir,'motion_review.py'));
   fs.copyFileSync(path.join(ROOT,'scripts/b6_space.py'),path.join(dir,'b6_space.py'));
@@ -34,7 +37,7 @@ export function initProduction(dir,ratio) {
   const formats={};
   for(const r of ratio==='both'?['16:9','9:16']:[ratio]) {
     const name=r==='16:9'?'landscape':'portrait';formats[r]=`formats/${name}.json`;
-    const caption=structuredClone(standard.caption_profiles[r]);
+    const caption=structuredClone(standard.public_caption_profiles[publicFont.variant][r]);
     if(r==='16:9')caption.native_layout_reason='';
     save(path.join(dir,formats[r]),{ratio:r,native_design:r,width:r==='16:9'?1280:720,height:r==='16:9'?720:1280,shots:[],cast_inventory:[],caption});
   }
@@ -42,8 +45,8 @@ export function initProduction(dir,ratio) {
   fs.mkdirSync(path.join(dir,'characters'));
   save(path.join(dir,'characters.json'),{schema:'b6-character-registry/1',actors:[],rigid_cast:[]});
   save(path.join(dir,'story.json'),{narration:'',beats:[],status:'awaiting_story_authoring'});
-  save(path.join(dir,'project.json'),{version:2,style:'B6',renderer:'b6-production-v1',stage:'needs_authoring',duration:null,fps:30,scene:'scene.py',story:'story.json',captions:'captions.json',formats,voice:null,bindings:null,character_system:{schema:'b6-character-system/1',registry:'characters.json'},quality_target:'quality-target.json',inputs:['motion_review.py','b6_space.py','caption_renderer.py','b6_puppet.py'],review:{status:'pending',art:null,acting:null,sound:null}});
-  return {project:path.join(dir,'project.json'),renderer:'b6-production-v1',formats:Object.keys(formats),stage:'Agent must author the requested story, native scene code, paintings, calibrated actions and sound before preview; no placeholder video or approval created',workflow:'references/b6-installed-production.md',engine:'Complete portable V90 source, art, binding, fonts and voice copied to engine/. Reuse suitable art/actions; new identities and actions need calibration.'};
+  save(path.join(dir,'project.json'),{version:2,style:'B6',renderer:'b6-production-v1',stage:'needs_authoring',duration:null,fps:30,scene:'scene.py',story:'story.json',captions:'captions.json',formats,voice:null,bindings:null,character_system:{schema:'b6-character-system/1',registry:'characters.json'},quality_target:'quality-target.json',caption_font_variant:publicFont.variant,inputs:['motion_review.py','b6_space.py','caption_renderer.py','b6_puppet.py',...publicFont.inputs],review:{status:'pending',art:null,acting:null,sound:null}});
+  return {project:path.join(dir,'project.json'),renderer:'b6-production-v1',formats:Object.keys(formats),caption_font_variant:publicFont.variant,stage:'Agent must author the requested story, native scene code, paintings, calibrated actions and sound before preview; no placeholder video or approval created',workflow:'references/b6-installed-production.md',engine:'Complete portable V90 source, art, binding, locally provisioned legacy fonts and voice copied to engine/. New-story captions use the explicit bundled Archivo Black profile in fonts/; Sample 1 Arial Black remains the separate original reference profile.'};
 }
 
 export function runProduction(command,args) {

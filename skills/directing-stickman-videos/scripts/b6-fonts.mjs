@@ -4,6 +4,37 @@ import os from 'node:os';
 import crypto from 'node:crypto';
 
 const sha = p => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+export const PUBLIC_CAPTION_FONT = Object.freeze({
+  variant: 'archivo-black', family: 'Archivo Black',
+  source: 'assets/fonts/ArchivoBlack.ttf', path: 'fonts/ArchivoBlack.ttf',
+  sha256: 'dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180',
+  licenseSource: 'assets/fonts/OFL-ArchivoBlack.txt', licensePath: 'fonts/OFL-ArchivoBlack.txt',
+  licenseSha256: '4cafdbbd100af37a23805af09b7068e4daafb4516dc3d6d52436f4a9d7b4c0d3',
+});
+
+export function checkPublicCaptionFont(skillRoot) {
+  for (const [rel, digest] of [[PUBLIC_CAPTION_FONT.source, PUBLIC_CAPTION_FONT.sha256],
+                             [PUBLIC_CAPTION_FONT.licenseSource, PUBLIC_CAPTION_FONT.licenseSha256]]) {
+    const file = path.join(skillRoot, rel);
+    if (!fs.existsSync(file) || !fs.statSync(file).isFile()) throw new Error('B6 bundled Archivo Black font/license missing: ' + rel);
+    if (sha(file) !== digest) throw new Error('B6 bundled Archivo Black font/license fingerprint mismatch: ' + rel);
+  }
+  return {ok: true, variant: PUBLIC_CAPTION_FONT.variant, sha256: PUBLIC_CAPTION_FONT.sha256,
+          license_sha256: PUBLIC_CAPTION_FONT.licenseSha256};
+}
+
+export function provisionPublicCaptionFont(projectDir, skillRoot) {
+  checkPublicCaptionFont(skillRoot);
+  const base = path.resolve(projectDir);
+  const inputs = [PUBLIC_CAPTION_FONT.path, PUBLIC_CAPTION_FONT.licensePath];
+  for (const rel of inputs) if (fs.existsSync(path.join(base, rel))) throw new Error('B6 public font target exists; will not overwrite: ' + rel);
+  fs.mkdirSync(path.join(base, 'fonts'), {recursive: true});
+  for (const [source, dest] of [[PUBLIC_CAPTION_FONT.source, PUBLIC_CAPTION_FONT.path],
+                              [PUBLIC_CAPTION_FONT.licenseSource, PUBLIC_CAPTION_FONT.licensePath]]) {
+    fs.copyFileSync(path.join(skillRoot, source), path.join(base, dest));
+  }
+  return {variant: PUBLIC_CAPTION_FONT.variant, inputs};
+}
 const SPECS = [
   {target: 'Arial.ttf', names: ['Arial.ttf', 'arial.ttf'], fallback: 'NotoSans.ttf'},
   {target: 'ArialBlack.ttf', names: ['Arial Black.ttf', 'ArialBlack.ttf', 'ariblk.ttf'], fallback: 'Nunito.ttf'},

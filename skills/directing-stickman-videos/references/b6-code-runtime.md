@@ -1,6 +1,6 @@
 # B6 dedicated painted-world code route
 
-**Production default:** follow [installed production](b6-installed-production.md) and the [Sample 1 detailed acceptance matrix](b6-sample-1-acceptance.md). The production path copies a locked caption renderer/profile as well as the scene/rig/space tools; the legacy scaffold's caption defaults are not Sample 1 portrait values. Normal `init --style B6` now creates a standalone `b6-production-v1` authoring project with the full painted V90 engine, not the simplified starter below. The following `b6-painted-world-v1` API remains available only through explicit `--example blocking-calibration` for internal primitive/format tests. Do not present it as a finished B6 film or the default new-story path.
+**Production default:** follow [installed production](b6-installed-production.md) and the [Sample 1 detailed acceptance matrix](b6-sample-1-acceptance.md). The production path copies the approved Archivo Black caption renderer/profile as well as the scene/rig/space tools; the legacy scaffold's caption defaults are not Sample 1 portrait values. Normal `init --style B6` now creates a standalone `b6-production-v1` authoring project with the full painted V90 engine, not the simplified starter below. The following `b6-painted-world-v1` API remains available only through explicit `--example blocking-calibration` for internal primitive/format tests. Do not present it as a finished B6 film or the default new-story path.
 
 ## Portable production space helper
 
