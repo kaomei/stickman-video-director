@@ -7,6 +7,8 @@ import {walkLayers, validateB3, visibleLayers} from './b3-graphics.mjs';
 import {prepareB4, prepareAudioTracks} from './b4-runtime.mjs';
 import {prepareBStyleQuality} from './b-style-quality.mjs';
 import {B4_HOOK, planB4Opening} from './b4-opening.mjs';
+import {planB4Typography} from './b4-typography-review.mjs';
+import {referenceInputs} from './b-style-reference-review.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const STYLES = ['B1', 'B2', 'B3', 'B4'];
@@ -45,12 +47,33 @@ export function fontPaths(project) {
   return {
     hand: project.font ? mediaPath(project.base, project.font) : process.env.AUTOPILOT_FONT ? mediaPath(project.base, process.env.AUTOPILOT_FONT) : path.join(ROOT, 'assets/fonts/Caveat.ttf'),
     caption: project.captionFont ? mediaPath(project.base, project.captionFont) : path.join(ROOT, 'assets/fonts/NotoSans.ttf'),
-    ...(project.style === 'B4' ? {hook: path.join(ROOT, 'assets/fonts/Nunito.ttf')} : {}),
+    ...(project.style === 'B4' ? {hook: path.join(ROOT, 'assets/fonts/Nunito.ttf'), cinematic: path.join(ROOT, 'assets/fonts/Anton.ttf')} : {}),
   };
 }
 export function designPlane(project) {
   // One uniform scale keeps round heads and lettering undistorted in portrait.
   return {width: 1280, height: 1280 * project.height / project.width};
+}
+function scopeB4Typography(p, rangeEnd) {
+  const typography = p.typography;
+  if (!typography || typeof typography !== 'object' || Array.isArray(typography)) return typography;
+  const shotFor = value => Number.isInteger(value) ? p.shots[value] : p.shots.find(s => s.id === value);
+  const beforeEnd = entry => !Number.isFinite(entry?.times?.entry) || entry.times.entry < rangeEnd;
+  const sourceInScope = (value, layerId) => {
+    const shot = shotFor(value);
+    // Unknown references remain in the scoped plan so validation rejects them.
+    if (!shot || !Number.isFinite(shot.start)) return true;
+    if (shot.start >= rangeEnd) return false;
+    if (layerId === undefined) return true;
+    const layer = [...walkLayers(shot.layers || [])].find(l => l.id === layerId);
+    return !layer || shot.start + (layer.from ?? 0) < rangeEnd;
+  };
+  const result = {...typography};
+  if (Array.isArray(result.moments)) result.moments = result.moments.filter(m => sourceInScope(m?.shot) && beforeEnd(m));
+  if (Array.isArray(result.image_text)) result.image_text = result.image_text.filter(item => sourceInScope(item?.shot, item?.layer_id));
+  if (Array.isArray(result.caption_groups)) result.caption_groups = result.caption_groups.filter(g => beforeEnd(g) &&
+    !(Array.isArray(g?.cue_indices) && g.cue_indices.length && g.cue_indices.every(i => p.captions[i] && p.captions[i].start >= rangeEnd)));
+  return result;
 }
 export function loadProject(file, {seconds} = {}) {
   file = fs.realpathSync(path.resolve(file));
@@ -95,7 +118,17 @@ export function loadProject(file, {seconds} = {}) {
     for (const l of walkLayers(shot.layers)) {
       if (!types.has(l.type)) throw new Error(`Unknown layer ${l.type}`);
       const b4Title = p.style === 'B4' && l.type === 'text' && ['setup', 'payoff'].includes(l.b4Hook);
-      if (p.style !== 'B3' && ['children', 'commands', 'radius', 'fill', 'stroke', ...(!b4Title ? ['pivotX', 'pivotY', 'scaleX', 'scaleY'] : [])].some(k => l[k] !== undefined)) throw new Error('B3 artwork properties cannot be used in another style');
+      const b4Type = p.style === 'B4' && l.type === 'text' && ['cinematic', 'handwritten', 'localized'].includes(l.b4Type);
+      if (l.b4Type !== undefined && !b4Type) throw new Error('B4 text treatment must be cinematic, handwritten or localized');
+      if (b4Title && b4Type) throw new Error('B4 hook preset and body typography must use separate layers');
+      if (b4Type) {
+        for (const state of [l, ...(l.keys || [])]) {
+          if (state.scaleX !== undefined || state.scaleY !== undefined) {
+            if (!Number.isFinite(state.scaleX) || state.scaleX <= 0 || state.scaleX !== state.scaleY) throw new Error('B4 text must preserve letter proportions with uniform positive scaleX/scaleY');
+          }
+        }
+      }
+      if (p.style !== 'B3' && ['children', 'commands', 'radius', 'fill', 'stroke', ...(!b4Title && !b4Type ? ['pivotX', 'pivotY', 'scaleX', 'scaleY'] : [])].some(k => l[k] !== undefined)) throw new Error('B3 artwork properties cannot be used in another style');
       if (l.b4Hook !== undefined && !b4Title) throw new Error('Fixed B4 hook typography belongs to B4 text only');
       for (const k of ['x', 'y', 'w', 'h', 'size', 'angle', 'alpha', 'progress', 'lineWidth']) if (l[k] !== undefined) number(l[k], k, -10000, 10000);
       if (l.w !== undefined && l.w <= 0 || l.size !== undefined && l.size <= 0) throw new Error('Layer dimensions must be positive');
@@ -112,7 +145,7 @@ export function loadProject(file, {seconds} = {}) {
         if (key.t <= previous) throw new Error('Key times must increase');
         previous = key.t;
         for (const k of Object.keys(key)) {
-          if (!['t', 'x', 'y', 'w', 'angle', 'alpha', 'progress', ...(p.style === 'B3' || b4Title ? ['scaleX', 'scaleY'] : [])].includes(k)) throw new Error(`Unsupported keyframe property: ${k}`);
+          if (!['t', 'x', 'y', 'w', 'angle', 'alpha', 'progress', ...(p.style === 'B3' || b4Title || b4Type ? ['scaleX', 'scaleY'] : [])].includes(k)) throw new Error(`Unsupported keyframe property: ${k}`);
           number(key[k], k, -10000, 10000);
           if (k === 'w' && key[k] <= 0 || ['alpha', 'progress'].includes(k) && (key[k] < 0 || key[k] > 1)) throw new Error('Invalid size/opacity/progress keyframe');
           if (['scaleX', 'scaleY'].includes(k) && (key[k] <= 0 || key[k] > 100)) throw new Error('Invalid artwork scale keyframe');
@@ -135,14 +168,15 @@ export function loadProject(file, {seconds} = {}) {
   for (const s of sfx) { number(s.time, 'SFX time', 0, duration); number(s.gain, 'SFX gain', 0, s.kind === 'file' ? 1 : 0.3); if (!['tap', 'paper', 'pop', 'chime', 'jingle', 'file'].includes(s.kind)) throw new Error('Unknown SFX'); }
   if (p.music) { assets.add(mediaPath(base, p.music.path)); number(p.music.gain, 'music gain', 0, 0.2); }
   const b4 = (p.style === 'B4' ? prepareB4 : prepareAudioTracks)({...p, sfx}, {base, duration, rangeEnd, assets, mediaPath, probe});
-  const timeline = {...p, shots, captions, sfx, ...b4};
+  const timeline = {...p, ...(scoped && p.style === 'B4' && p.typography !== undefined ? {typography: scopeB4Typography(p, rangeEnd)} : {}), shots, captions, sfx, ...b4};
   const project = {...timeline, file, base, voicePath, voiceDuration, voiceTrimStart, lead, tail, duration, rangeEnd};
   project.motion_intervals = prepareBStyleQuality(project, {root: ROOT, hashFile, mediaPath});
-  if (p.style === 'B4') planB4Opening(project, {hashFile, mediaPath});
+  if (p.style === 'B4') { planB4Opening(project, {hashFile, mediaPath}); planB4Typography(project); }
   for (const f of Object.values(fontPaths(project))) { if (!fs.existsSync(f)) throw new Error(`Missing font: ${f}`); assets.add(f); }
   if (p.style === 'B4' && hashFile(fontPaths(project).hook) !== B4_HOOK.font_sha256) throw new Error('B4 opening: bundled rounded font changed; restore the fixed font instead of silently substituting it');
+  if (['B1', 'B2', 'B3'].includes(p.style)) for (const f of referenceInputs(p.style)) assets.add(f);
   const inputs = [...assets].sort().map(f => ({path: f, sha256: hashFile(f)}));
-  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-quality.mjs', 'b-style-motion-geometry.mjs', 'b4-runtime.mjs', ...(p.style === 'B4' ? ['b4-style-lock.mjs', 'b4-opening-audio-check.mjs', 'b4-opening.mjs', 'b4-opening-visual-check.mjs'] : [])].map(f => hashFile(path.join(ROOT, 'scripts', f)));
+  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-quality.mjs', 'b-style-motion-geometry.mjs', 'b4-runtime.mjs', ...(['B1', 'B2', 'B3'].includes(p.style) ? ['b-style-reference-review.mjs', 'b4-font-coverage.mjs'] : []), ...(p.style === 'B4' ? ['b4-style-lock.mjs', 'b4-opening-audio-check.mjs', 'b4-opening.mjs', 'b4-opening-visual-check.mjs', 'b4-typography-review.mjs', 'b4-font-coverage.mjs'] : [])].map(f => hashFile(path.join(ROOT, 'scripts', f)));
   return {...project, inputs, fingerprint: sha(JSON.stringify({project: timeline, rangeEnd, inputs, engine}))};
 }
 export function outputDir(p) {

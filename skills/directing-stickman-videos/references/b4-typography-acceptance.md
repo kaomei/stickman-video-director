@@ -1,0 +1,87 @@
+# B4 · Story-adapted typography and encoded visual acceptance
+
+Required with [opening direction](b4-opening-direction.md), the [drawing contract](b4-survival-storytelling.md) and [runtime](autopilot-runtime.md#b4-fixed-opening). Apply only to B4. This contract covers opening questions, rule/number cards, warnings and written notes, choices/CTA, and semantic captions in every language. Preserve approved words, actual speech, drawing identity and reveal order.
+
+## Default and authorized story adaptation
+
+`b4-hook-v1` remains the default opening: rounded heavy type, warm-white setup, larger coral payoff, dark outline/offset shadow and whole-payoff scale-settle. This default coexists with an explicitly authorized story-adapted treatment. Reuse the user's existing scoped instruction to adapt typography; do not ask again merely to implement that authorized direction. Record the treatment and its story purpose. Never invent user authorization, replace the default silently, or describe an exception as a pass of the default-preset diagnostic.
+
+An authorized adaptation must achieve the design and playback criteria below. A font change, larger size, generic bold text or successful encode cannot establish that result. Another language does not have to imitate an English font's letter shapes. Choose a licensed font or authored lettering with correct glyphs, shaping and punctuation, then preserve equivalent hierarchy, weight, contrast, material character and reading rhythm in that script. Missing-glyph fallback, mechanically compressed lettering and English word-by-word timing imposed on another language fail.
+
+Keep the opening's two semantic groups and whole-remainder reveal when using that question structure. A condensed headline or hand-lettered note does not authorize a word/letter typewriter on the second question group, rewriting copy, or delaying narration. The separate principal-picture progression gate still applies: animated type cannot stand in for the required picture change.
+
+## What the supplied still references establish
+
+The four supplied images inform static design qualities. They do **not** identify an exact font, prove how the text moved, or approve a new film. Extract the useful construction, then adapt it to the current story:
+
+| Reference construction | Story-adapted use and rejection boundary |
+| --- | --- |
+| Narrow, heavy poster lettering; cream/dark split; deep offset shadow, as in “NOT HONKING” / “YOUR MOVE” | Give the dominant phrase a deliberate silhouette, compact optical spacing, clear light/dark hierarchy and a controlled directional shadow. Preserve counters and stable proportions. Reject a generic bold line with an arbitrary drop shadow or a shadow that muddies the words. |
+| Thick coral hand-drawn underline | Place a purposeful rough-edged accent under the exact semantic emphasis. Its width, direction and overlap must support reading. Reject a decorative stripe crossing critical strokes, a mechanically repeated mark under every cue, or an accent unrelated to the story beat. |
+| “RULE 01” number/label hierarchy | Distinguish the structural number, label and instruction through scale, weight, placement and space. The viewer must read the intended order immediately. Reject equally loud elements, a crowded number badge, or an invented rule added only to justify the design. |
+| Hand-lettered board warning, as in “DO NOT DISPATCH” | Use story-supported writing, board/paper edges and restrained ink/paint irregularity as one coherent object or editorial treatment. Preserve legibility and the distinction between in-world evidence and editorial text. Reject a polished HUD pasted into the drawing, illegible distress or an invented factual note. |
+
+Equivalent refined lettering, hierarchy and surface finish within B4's drawing language are valid. These are construction references, not a requirement to paste the same words, font, palette split, note prop or all four effects into every story. Restrained flat texture and text extrusion/shadow must remain compatible with the outlined 2D scene; do not turn the illustration into glossy 3D material rendering.
+
+## Design each text function before rendering
+
+For every dominant text moment, record its exact words, function, focal region, reading order, story intention, chosen treatment and timing against actual speech/action. Use a small coherent family of treatments across the film. Establish a clear primary phrase and quieter supporting information rather than giving every line headline scale.
+
+- **Opening:** make the setup/payoff relationship readable; stage the complete payoff as one semantic block. A story-adapted poster treatment still needs deliberate spacing, silhouette, contrast and readable hold.
+- **Rule/number:** separate structural numbering from the instruction. Reveal a complete meaningful instruction or successive semantic groups; do not split a noun phrase, verb/object, proper name or number/unit merely to fill a layout.
+- **Warning/note:** make authored writing belong to its board, paper or editorial space. Keep the crucial prohibition readable through texture, shadow, compositing and motion. A note visible only in a final still is insufficient playback evidence.
+- **Choice/CTA:** give the choice or invitation a clear focal hierarchy and a motivated emphasis. Preserve the story's stakes; do not turn the ending into a generic advertising badge or invent an option absent from the script.
+- **Semantic captions, including non-English:** follow actual speech and meaningful pauses, with complete phrases, correct script shaping and the B4 single-line/safe-area rules. Ordinary short captions may use restrained local reveal/emphasis and a calm readable hold; they do not need poster weight, heavy texture or continuous shaking. A caption promoted into the dominant headline must meet that headline's hierarchy and motion standard. Avoid duplicate subtitles over a card that already presents the same words.
+
+Inspect the real output at normal playback size. Thin strokes, crowded counters, badly fitted accents, clipping, broken script joins, unreadable dark-on-dark text, intrusive shadow and unintended overlaps are failures even when every string and layer is present.
+
+## Local micro-animation is a visual requirement
+
+Each dominant text moment needs a designed **entry → emphasis → settle/readable hold** that can be seen in the text or its own local treatment in the encoded film. Use the story's tone to select restrained whole-block settling, a local mark draw-on, controlled shadow/depth resolution, board/ink reveal or an equivalent coherent treatment. Do not prescribe one effect to every story or infer animation from the reference stills.
+
+The entrance must establish the intended reading order, the emphasis must direct attention to the meaningful phrase, and the settled state must retain stable letter proportions and enough readable time. These stages may be subtle; they must remain perceptible after encoding at playback size. Inspect intermediate frames for broken glyphs, doubled writing, mask cuts, shadow detachment and unstable baselines. Review continuous playback for pacing and a clean return to a calm hold.
+
+Reject any of the following as a substitute for this requirement:
+
+- changing only the font, color, size or final layout;
+- a plain opacity fade, static before/after switch or appearance timestamp without designed local emphasis and settling;
+- background/camera movement, grain, glow or unrelated picture motion while the text itself remains an untreated overlay;
+- keyframe counts or tiny/offscreen changes that are not perceptible in the final film;
+- continuous jitter, letter deformation or overlapping bounces that damage reading.
+
+Do not keep text moving just to satisfy a quota. Once the designed emphasis resolves, a stable readable hold is desirable. For short ordinary captions, restrained semantic progression may be enough when actual playback clearly communicates the entry, emphasis where needed, and readable settled phrase. Neither heavy decoration nor per-word bouncing is mandatory. Keep animation subordinate to meaning, actual voice and the scene's action.
+
+## Register the complete authored text
+
+Use the project's B4 `typography` declaration to identify the actual `author_id` and all authored dominant-text `moments`. Each moment has an `id`, a `shot` (existing shot ID or zero-based index), exact text-bearing `layer_ids`, a `region: {x, y, w, h}` on the 1280-wide design plane, `times: {entry, mid, settled, hold}` in absolute video seconds, `intent` and `treatment`. Register text embedded in images in `image_text` with `shot`, `layer_id` and exact visible `text`; a flattened sign/board is not exempt from review. Text-layer IDs must be globally unique, and explicit moments cover the known text layers exactly once. Reserve `caption-N` IDs for automatic caption cues; do not use them for authored text/image layers or custom caption groups. Do not omit difficult moments to manufacture a passing review.
+
+The default legacy opening is registered automatically when explicit `moments` are absent; acceptance still requires a real `typography.author_id`. Body text requires explicit moments. `entry < mid < settled <= hold` must fit the shot/review range and preserve distinct encoded entry/intermediate/settled frames. Every grouped text member must be visible within its declared region at `mid` and `settled`; a hidden, off-region or occluded member cannot borrow another member's pass. Later text needs its own moment. The four times identify evidence phases, not automatic animation instructions: author the actual local keys and readable hold.
+
+For B4 text layers, `b4Type: cinematic` selects bundled Anton, `handwritten` selects Caveat or the declared project `font`, and `localized` uses the declared `captionFont`. The default hook keeps its Nunito preset. Glyph preflight checks the actual selected font; a font label alone does not guarantee coverage or acceptable shaping. These are implementation tools, not automatic aesthetic passes or a requirement to use Anton/Caveat in every language.
+
+Semantic captions are included automatically as `caption-N` moments for every actual cue, with a restrained alpha/lift entrance, settling and stable hold. Custom `typography.caption_groups` may group multiple complete semantic cues with ordered `cue_indices`, but must cover every cue exactly once and provide the same moment region/times/intent/treatment. Grouping changes the visual-review unit; each actual cue still receives independent pixel diagnostics and encoded phase/continuous evidence in `caption_diagnostics`, so an animated cue cannot conceal a static or missing neighboring cue. Do not claim caption coverage merely because dominant title layers were registered. The default caption entrance cannot substitute for a designed dominant headline; semantic boundaries and speech alignment still require actual review.
+
+## Encoded evidence and independent acceptance
+
+Paint/check diagnostics can expose missing coverage, bad geometry or absent local changes. They do not establish design quality or visual acceptance. Review the **actual final MP4 for the submitted preview or complete film**, not only a canvas image, source keyframes or contact sheet. `preview` and `render` create `output/preview-typography/` and `output/film-typography/` respectively: `evidence.json`, `review-template.json`, `<moment>-<phase>.png` for `entry/mid/settled/hold`, and `<moment>-continuous.mp4`. Each continuous clip covers every member's complete actual visible span within the submitted scope, including any visibility before `entry` or after `hold`; the four selected phase frames cannot shorten that coverage. Evidence is extracted from the encoded source and bound to its output hash, the project fingerprint and text plan. A still cannot prove micro-animation or timing.
+
+An independent human or agent who actually inspects that evidence must review every moment. The reviewer identity must differ from the author identity; a second name on the author's own uninspected template is not independent review. Use normal-speed playback with the real sound for timing, and inspect the local clip and necessary full-size frames for shape and material details. Observe the whole submitted range so attractive selected moments cannot hide unreadable captions or untreated cards.
+
+Work from the generated unknown template. Its `full_playback` starts as `{"status":"unknown","viewed_ranges":[],"observations":[]}`; each criterion starts as `{"status":"unknown","observations":[]}`. Preserve the generated `author_id`, `output_sha256` and `evidence_sha256`. Fill the actual independent reviewer identity/method, not a fictional reviewer or an automatically supplied pass.
+
+For each moment, record all six criteria below with specific `observations: [{time, detail, evidence_ids}]`, using actual video seconds and evidence IDs from the ledger. Every criterion must reference that moment's `<moment>-continuous` clip; phase PNGs may supplement it. `full_playback.viewed_ranges` must cover the entire submitted scope, and its observations reference `source-video`, the actual MP4. Pure status words such as “pass,” “good” or “已检查,” source-code descriptions and a final screenshot alone are not observations.
+
+| Required criterion | Pass evidence and reasons to return the moment |
+| --- | --- |
+| `story_fit` | The typography's function, tone and emphasis belong to this story and preserve its facts/reveal order. Return an unrelated template, invented note/rule, or decorative treatment that overpowers the event. |
+| `hierarchy` | Reading order, primary/supporting scale, spacing and contrast are clear at playback size. Return generic equal-weight lines, crowded counters, ambiguous number/label order or competing accents. |
+| `material_finish` | Letter edges, outline/shadow, rough mark or writing surface are intentional and coherent with B4; inspect intermediate and settled states. Return pasted UI, muddy depth, accidental clipping, broken glyphs or uncontrolled distress. |
+| `micro_animation` | Actual local entry, meaningful emphasis and clean settling/hold are visible in the continuous clip. Return font-only changes, plain fades, static endpoints, background-only motion or unreadable jitter. |
+| `readability` | Complete semantic phrases, correct language shaping, safe areas and sufficient contrast/hold survive the real frame and composition. Return missing/duplicated words, broken phrases, clipping, obscured actions or illegible marks. |
+| `timing` | Reading progression, emphasis and hold match actual voice/story action without rushing, idle delay or a forced narration pause. Return mistimed reveal, premature disappearance, competing duplicate captions or a hold too short to read. |
+
+Unknown, failed, missing or unobserved criteria and any blocking issue keep the visual review pending. Correct the affected composition/timing, rebuild the changed range and regenerate its evidence. Any change to the bound video, authored typography or evidence invalidates the corresponding review; do not reuse a stale passing record.
+
+After real independent review and genuine user preview approval, use `node scripts/autopilot.mjs approve PROJECT --note "record the actual user approval" --text-review REVIEW_JSON`. A note is a record of an approval that happened; the text review does not grant remaining-production authorization. Full rendering rechecks the bound preview review, and the complete film needs its own review before `node scripts/autopilot.mjs accept-text PROJECT --review FILE`. This writes `output/film-typography-acceptance.json` with `status: independent_visual_review_pass` and `user_acceptance: not_inferred`; it does not turn the film report's pending indicator into whole-film/user acceptance.
+
+Acceptance rechecks actual MP4 phase behavior, artifact hashes and artifacts re-extracted from the current source, exact moment/criterion coverage and declared independent review. Reviewer identity, actual watching and aesthetic judgment remain recorded declarations, not authenticated facts. Embedded text must be declared and visually checked; the tool does not certify detection of undeclared text. Do not handwrite a ready-made passing file, mark an unknown template accepted, or treat command success as proof that a reviewer watched. If a custom renderer cannot supply the common draw/registry adapter and actual-MP4 evidence, retain unreviewed status rather than assert acceptance. Full-film text review does not imply user approval or waive the existing picture, audio and production gates.

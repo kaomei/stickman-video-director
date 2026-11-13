@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "style": "B2",
+  "path_base": "manifest_directory",
+  "provenance": "Unchanged copies of the repository's current public README B2 full samples, bundled here for portable installed-skill comparison.",
+  "evidence": [
+    {
+      "id": "b2-colorful-sleep",
+      "path": "public-showcases/b2-colorful-sleep.mp4",
+      "sha256": "ff918555b4a9d36596eea942f55b7d4e398210c496aa9cb919c7bb48aa78766e",
+      "kind": "video",
+      "role": "public_showcase",
+      "repository_source_path": "assets/readme/b2-colorful-sleep.mp4",
+      "duration": 20.0,
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "audio": {
+        "codec": "aac",
+        "sample_rate": 48000,
+        "channels": 1,
+        "treatment": "Existing public mix retained unchanged; no revoice or retiming."
+      },
+      "limitations": [
+        "A complete public implementation is an effect target, not an executable production project or a mandatory story/cast/scene sequence."
+      ]
+    },
+    {
+      "id": "b2-colorful-phone-weather",
+      "path": "public-showcases/b2-colorful-phone-weather.mp4",
+      "sha256": "b03f6c963f71639a146f1ea209140675306967468482efd1620580bf7d6aa2e6",
+      "kind": "video",
+      "role": "public_showcase",
+      "repository_source_path": "assets/readme/b2-colorful-phone-weather.mp4",
+      "duration": 61.9,
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "audio": {
+        "codec": "aac",
+        "sample_rate": 24000,
+        "channels": 1,
+        "treatment": "Existing public mix retained unchanged; no revoice or retiming."
+      },
+      "limitations": [
+        "A complete public implementation is an effect target, not an executable production project or a mandatory story/cast/scene sequence.",
+        "Its fingerprint matches B2-Phone-Weather-Full-v4.mp4 recorded in approved-style-board.json. The board contains sampled frames and cannot establish continuous timing or sound."
+      ]
+    }
+  ],
+  "limitations": [
+    "The approved board is sampled visual evidence from the accepted phone/weather v4 implementation, not a clean illustration master, executable project or proof of motion/listening.",
+    "The bundled full samples permit actual picture, caption, timing and sound comparison; their availability does not certify a new film automatically.",
+    "Packaging an existing public sample does not grant a new license to reuse its narration, story, music or scene sequence in a new production.",
+    "Fingerprints and media metadata establish identity and portability, not aesthetic acceptance or proof that a reviewer played/listened to the sample."
+  ]
+}

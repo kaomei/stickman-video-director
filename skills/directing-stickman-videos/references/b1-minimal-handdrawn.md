@@ -4,6 +4,8 @@ The user-approved **Ryan V4** preview (2026-10-23) remains the B1 drawing, chara
 
 The current public B1 showcase uses this **Ryan V4 / native Bodi** baseline. The earlier original-speed Sadaltager **V15** remains available as an archived example, not the current production target. Do not replace or revoice accepted showcase media automatically.
 
+Apply the mandatory [B1/B2/B3 reference-effect acceptance protocol](b1-b2-b3-reference-acceptance.md) in Codex, Claude Code and similarly complete production environments: target the actual accepted sample's effect through story-specific artwork, acting, motion, captions and sound. Verify real capability and the encoded result; an environment name or runnable demo is not a quality guarantee. Genuine tool limitations may yield a disclosed limited best effort, never a sample-equivalent pass. The full film retains the sample's standard.
+
 ## Visual language
 
 - Near-white warm paper `#FDFDFC` with an extremely faint broad square grid, not pure white, beige parchment or prominent texture. At 1280×720 use 64px spacing, `rgba(76,90,105,.036)` and 0.8px lines above y=610; keep the bottom 110px caption band the same solid paper color. Scale this treatment for other resolutions/ratios rather than stretching it. Do not add visible grain or stronger texture by default.

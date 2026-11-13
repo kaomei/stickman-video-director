@@ -147,6 +147,8 @@ At handoff, retain the full standalone style, cast, action and voice instruction
 
 Read [Autopilot](autopilot.md), its [runtime configuration](autopilot-runtime.md) and the selected B-style reference before production.
 
+For B1/B2/B3, also read the mandatory [reference-effect acceptance protocol](b1-b2-b3-reference-acceptance.md). In Codex, Claude Code and similarly complete production environments, target actual effects comparable to the available public samples through story-specific artwork, acting, local motion, editing, language-adapted design, semantic captions and sound. Check real tools rather than assuming a host name guarantees quality. Genuine tool limitations may yield a clearly disclosed best effort, not a sample-equivalent pass; neither fixtures nor technical success replace actual sample/full-film review.
+
 ### 1. Brief and source
 
 Resolve the topic/source, audience, purpose, duration, ratio, B-style and narration choices. Accept a topic, requirement, article/post/news link or script; the user need not write a story first. Use supplied choices; propose reasonable creative details for confirmation rather than presenting a long blank questionnaire. If a link cannot be read, ask for its text or screenshots and explain what source material is still missing. Never fill the gap with invented facts.
@@ -175,9 +177,13 @@ For B, explain the selected service/model and named voice, not a custom narrator
 
 ### 4. Approximately 20-second sample
 
+B1/B2/B3 use the generated `output/preview-reference/` evidence and independent unknown review template before `approve --visual-review FILE`; record either actual sample-target review or the explicitly limited result. Compare available full reference clips, not just stills or fixtures. This review is separate from the user's exact-sample approval requested below; see the [shared protocol](b1-b2-b3-reference-acceptance.md#runtime-evidence-and-commands).
+
 Make and inspect the representative sample with narration, subtitles, acting/micro-animation and SFX. Only the sample range needs finished shots/media at this stage. Link the playable result. Say what was technically checked and ask the user to review the actual picture and sound. Request approval of this exact sample and authorization for the remaining production, with any remaining cost explained. Do not run `approve` based on technical success alone. If revisions are requested, keep valid audio/assets and revise only the affected scope; update the preview/approval when its scoped fingerprint changes, not merely because later shots were completed. Changes to the approved script, global settings or cost still need the corresponding authorization.
 
 ### 5. Full production and delivery
+
+For B1/B2/B3, review every shot and the complete actual mix against the same target, then run `accept-visual PROJECT --review FILE` with the independently completed `output/film-reference/` review. Retain limited status and observed shortfalls through delivery. A sample pass, file hash or successful render does not establish full-film equivalence or user acceptance.
 
 After genuine sample/full-production approval, render the rest with pictures following the approved original-speed narration. Give updates at meaningful production stages; do not wait for a new confirmation after each shot. On interruption or failure, explain completed outputs and the exact blocked step, inspect existing jobs/cache and resume valid work rather than resubmitting blindly.
 

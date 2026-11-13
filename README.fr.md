@@ -317,7 +317,6 @@ Et si, au réveil, tout coûtait dix mille fois moins cher ? L’inspiration vis
 
 De nouveaux styles spécialisés pour le mode Director sont en cours d’entraînement. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
 
----
 
 <a id="b-styles"></a>
 
@@ -403,6 +402,8 @@ Comme tomber sur une étrange émission nocturne. Inspirés de [@BradikininVideo
 </table>
 <!-- b3:section:end -->
 
+---
+
 <!-- b4:section:start -->
 <a id="b4"></a>
 
@@ -430,6 +431,8 @@ Un compte à rebours. Un appel nocturne. Une règle à ne jamais enfreindre. Ins
 </table>
 
 <!-- b4:section:end -->
+
+---
 
 <!-- b5:section:start -->
 <a id="b5"></a>
@@ -460,7 +463,6 @@ Faites de votre avatar préféré la voix de votre chaîne ; l’utilisation de 
 <!-- b5:section:end -->
 
 
----
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

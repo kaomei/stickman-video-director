@@ -131,12 +131,19 @@ for name in selected:
     roadmap, planned, community = ecosystem_sections[1:4]
     assert not re.search(r"^(?:### |---\s*$)", ecosystem, re.M), (name, "consistent section headings, no extra thick rules")
     assert planned.startswith("🔮 ") and community.startswith("💬 "), (name, "semantic icons match peer section headings")
+    assert "20,000 Stars" in roadmap.splitlines()[0], (name, "current 20,000-Star roadmap heading")
     milestones = re.findall(r"^- \[([x ])\] \*\*(?:🔥 )?([0-9,]+) Stars\*\*", roadmap, re.M)
-    assert milestones == [("x", "1,000"), ("x", "3,000"), (" ", "5,000"), (" ", "7,500"), (" ", "10,000")], (name, "approved milestone states")
-    assert len(re.findall(r"^  - ", roadmap, re.M)) == 4, (name, "four nested milestone deliverables")
+    assert milestones == [("x", "1,000"), ("x", "3,000"), ("x", "6,000"), (" ", "10,000"), (" ", "20,000")], (name, "approved milestone states")
+    assert "- [ ] **🔥 10,000 Stars**" in roadmap, (name, "current highlighted 10,000-Star milestone")
+    milestone_blocks = re.split(r"(?=^- \[[x ]\] \*\*)", roadmap, flags=re.M)[1:]
+    assert [len(re.findall(r"^  - ", block, re.M)) for block in milestone_blocks] == [0, 0, 0, 3, 2], (name, "three 10,000-Star and two 20,000-Star deliverables")
     mode_names = ("导演模式", "全自动模式") if name == "README.zh-CN.md" else ("Director", "AutoPilot")
-    for token in (*mode_names, "5–10", "1,000", "200", "YouTube Shorts", "TikTok", "Content", "Web Studio"):
+    for token in mode_names:
         assert token in roadmap, (name, "roadmap deliverable", token)
+    for token in ("1,000", "200", "YouTube Shorts", "TikTok", "Content"):
+        assert token in milestone_blocks[3], (name, "10,000-Star deliverable", token)
+    studio_name = "Stickman AI 视频工作台" if name == "README.zh-CN.md" else "Stickman AI Studio"
+    assert studio_name in milestone_blocks[4], (name, "20,000-Star studio deliverable")
     assert "api.star-history.com/svg" in roadmap, (name, "chart after roadmap and before styles")
     assert '<a id="whats-next"></a>' in roadmap, (name, "retained navigation anchor before planned styles")
     assert len(re.findall(r"^- \*\*.*?\*\* — ", planned, re.M)) == 6, (name, "six planned visual styles")

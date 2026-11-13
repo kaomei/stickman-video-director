@@ -31,13 +31,14 @@ assert "### A · 导演模式：逐段生成分镜提示词" in cn
 assert "### B · 全自动模式：一句话生成长片" in cn
 
 sections = ("## 🎬 两种视频制作模式", "## 🧭 开始使用", "## 🎨 A · 导演模式画风一览",
-            "## 🤖 B · 全自动模式画风一览", "## ❓ 常见问题解答 (FAQ)", "## ⭐ 迈向 10,000 Stars 与创作者生态",
+            "## 🤖 B · 全自动模式画风一览", "## ❓ 常见问题解答 (FAQ)", "## ⭐ 迈向 20,000 Stars 与创作者生态",
             "## 🔮 计划中的画风", "## 💬 社区与投稿", "## 📄 许可证")
 assert [cn.index(s) for s in sections] == sorted(cn.index(s) for s in sections)
 assert "## 接下来做什么" not in cn, "Keep the removed next-steps heading out of the footer"
 assert "## Star 增长曲线" not in cn, "Use a reader-focused footer heading; retain the chart itself"
-footer = cn.split("## ⭐ 迈向 10,000 Stars 与创作者生态", 1)[1].split("## 📄 许可证", 1)[0]
-footer_items = ("**每一颗 Star", "- [x] **1,000 Stars**", "- [ ] **10,000 Stars**",
+footer = cn.split("## ⭐ 迈向 20,000 Stars 与创作者生态", 1)[1].split("## 📄 许可证", 1)[0]
+footer_items = ("**每一颗 Star", "- [x] **1,000 Stars**", "- [x] **3,000 Stars**",
+                "- [x] **6,000 Stars**", "- [ ] **🔥 10,000 Stars**", "- [ ] **20,000 Stars**",
                 '<div align="center">', '<a id="whats-next"></a>', "## 🔮 计划中的画风",
                 "## 💬 社区与投稿", "🔔 *在 X 上关注")
 assert [footer.index(s) for s in footer_items] == sorted(footer.index(s) for s in footer_items), "Place roadmap before the unchanged chart, then styles, submissions and the X follow link"

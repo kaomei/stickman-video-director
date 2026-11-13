@@ -51,7 +51,7 @@ test('B5 encoder rejects a fabricated frame-only new story without production ev
  fs.writeFileSync(path.join(frames,'frames.json'),JSON.stringify({style:'B5',project:fs.realpathSync(project),input_sha256:fingerprint,frames:[0,1],complete:true,config:cfg,files:[0,1].map(i=>{const name=String(i).padStart(6,'0')+'.png';return {name,sha256:sha(path.join(frames,name))}})}));
  const audio=path.join(tmp,'technical-silence.wav');const synth=spawnSync(process.env.FFMPEG||'ffmpeg',['-v','error','-f','lavfi','-i','anullsrc=r=48000:cl=stereo','-t','1',audio],{encoding:'utf8'});assert.equal(synth.status,0,synth.stderr);
  const output=path.join(tmp,'encoded');const args=['encode',project,'--frames-dir',frames,'--audio',audio,'--output',output];
- const denied=run('character-explainer.mjs',...args);assert.notEqual(denied.status,0);assert.match(denied.stderr,/genuine current user approval/);assert(!fs.existsSync(output));
+ const denied=run('character-explainer.mjs',...args);assert.notEqual(denied.status,0);assert.match(denied.stderr,/new stories require scene\/production\.json/);assert(!fs.existsSync(output));
  const r=run('character-explainer.mjs',...args,'--approval-note','Technical fixture only, not creative approval.');assert.notEqual(r.status,0);
  assert.match(r.stderr,/new stories require scene\/production\.json/);assert(!fs.existsSync(output));
 });

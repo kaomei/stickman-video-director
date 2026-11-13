@@ -314,7 +314,6 @@ A1、A2、A3…の番号で追加し、それぞれの画風に対応するア�
 
 新しい特化型のディレクタースタイルをトレーニング中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、5,000 Stars での解放を応援してください！
 
----
 
 <a id="b-styles"></a>
 
@@ -400,6 +399,8 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
 </table>
 <!-- b3:section:end -->
 
+---
+
 <!-- b4:section:start -->
 <a id="b4"></a>
 
@@ -427,6 +428,8 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
 </table>
 
 <!-- b4:section:end -->
+
+---
 
 <!-- b5:section:start -->
 <a id="b5"></a>
@@ -457,7 +460,6 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
 <!-- b5:section:end -->
 
 
----
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

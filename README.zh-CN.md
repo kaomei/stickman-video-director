@@ -313,7 +313,6 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 新的专用导演画风正在训练中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，一起在 5,000 Stars 时解锁！
 
----
 
 <a id="b-styles"></a>
 
@@ -399,6 +398,8 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 </table>
 <!-- b3:section:end -->
 
+---
+
 <!-- b4:section:start -->
 <a id="b4"></a>
 
@@ -426,6 +427,8 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 </table>
 
 <!-- b4:section:end -->
+
+---
 
 <!-- b5:section:start -->
 <a id="b5"></a>
@@ -457,7 +460,6 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 
 
----
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

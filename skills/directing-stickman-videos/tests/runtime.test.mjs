@@ -7,6 +7,7 @@ import {spawnSync} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
 import {ROOT, FFMPEG, run, save, loadProject, groupWords, hashFile, probe, designPlane} from '../scripts/autopilot-core.mjs';
 import {keyState, render, painter} from '../scripts/autopilot-render.mjs';
+import {writeSyntheticReferenceReview} from './helpers/reference-review.mjs';
 
 const cli = path.join(ROOT, 'scripts/autopilot.mjs');
 const command = args => spawnSync(process.execPath, [cli, ...args], {encoding: 'utf8', timeout: 120000});
@@ -17,6 +18,7 @@ function fixture(t) {
   run(FFMPEG, ['-v', 'error', '-f', 'lavfi', '-i', 'sine=frequency=310:duration=0.85', '-y', path.join(dir, 'voice.wav')]);
   const project = {version: 1, style: 'B1', width: 640, height: 360, fps: 12, voice: {path: 'voice.wav'}, captions: [{start: 0.1, end: 0.7, text: 'Offline test.'}], shots: [{start: 0, end: 0.4, layers: [{type: 'text', text: 'A GOOD IDEA', x: 80, y: 110, size: 60, bold: true}, {type: 'image', path: '@b1/idea-bulb-crayon.png', x: 400, y: 280, w: 180, keys: [{t: 0, x: 400}, {t: 0.3, x: 450}]}]}, {start: 0.4, end: 0.85, layers: [{type: 'pose', pose: 1, x: 650, y: 40, w: 400}, {type: 'text', text: 'BECOMES A VIDEO.', x: 60, y: 200, w: 550, size: 54}]}], sfx: [{time: 0.2, kind: 'tap', gain: 0.02}]};
   // Synthetic low-level bed for offline plumbing only, not a production sound choice.
+  project.reference_review = {author_id: 'synthetic-runtime-author', capability: {mode: 'sample_target', environment: 'Local synthetic regression fixture', limitations: []}};
   project.ambience = [{path: 'voice.wav', start: 0, end: .85, gain: .01}];
   const file = path.join(dir, 'project.json'); save(file, project);
   return {dir, project, file};
@@ -82,7 +84,7 @@ test('render is resumable, produces captioned A/V and requires exact preview app
   assert.equal(second.cache_hits, 2); assert.equal(first.frames, Math.ceil(0.85 * 12)); assert.equal(hashFile(path.join(f.dir, 'voice.wav')), source);
   const info = probe(first.output); assert.ok(info.streams.some(s => s.codec_type === 'audio')); assert.ok(info.streams.some(s => s.codec_type === 'video')); assert.equal(Number(info.streams.find(s => s.codec_type === 'video').nb_frames), first.frames);
   assert.ok(fs.existsSync(path.join(f.dir, 'output/preview.srt'))); assert.ok(fs.existsSync(path.join(f.dir, 'output/preview-contact-sheet.png')));
-  r = command(['approve', f.file, '--note', 'Synthetic engineering fixture approval only; not a real user video']); assert.equal(r.status, 0, r.stderr);
+  r = command(['approve', f.file, '--visual-review', writeSyntheticReferenceReview(f.dir), '--note', 'Synthetic engineering fixture approval only; not a real user video']); assert.equal(r.status, 0, r.stderr);
   r = command(['render', f.file]); assert.equal(r.status, 0, r.stderr);
   f.project.shots[0].layers[0].text = 'CHANGED'; save(f.file, f.project);
   r = command(['render', f.file]); assert.notEqual(r.status, 0); assert.match(r.stderr, /invalidated/);
@@ -90,6 +92,19 @@ test('render is resumable, produces captioned A/V and requires exact preview app
 test('caption overflow fails rather than silently clipping', async t => {
   const f = fixture(t); f.project.captions[0].text = 'A very long caption phrase. '.repeat(8); save(f.file, f.project);
   const r = command(['validate', f.file]); assert.notEqual(r.status, 0); assert.match(r.stderr, /one line/);
+});
+test('B1/B2/B3 reject uncovered caption and scene glyphs before an OS font fallback can hide the change', async t => {
+  const f = fixture(t);
+  f.project.shots.forEach(s => s.layers = [{type:'text',text:'LOCAL SCENE',x:80,y:110}]);
+  for (const style of ['B1','B2','B3']) {
+    f.project.style = style;
+    f.project.captions[0].text = '不要出警'; save(f.file,f.project);
+    await assert.rejects(painter(loadProject(f.file)), new RegExp(`${style} caption.*lacks glyphs`));
+    f.project.captions[0].text = 'A readable phrase.';
+    f.project.shots[0].layers[0].text = '不要出警'; save(f.file,f.project);
+    await assert.rejects(painter(loadProject(f.file)), new RegExp(`${style} text.*lacks glyphs`));
+    f.project.shots[0].layers[0].text = 'LOCAL SCENE';
+  }
 });
 test('B captions reject two-line wrapping and explicit breaks across styles', async t => {
   const f = fixture(t);
@@ -123,7 +138,7 @@ test('sample validation/rendering/approval do not require unproduced later media
   save(f.file, f.project);
   let r = command(['validate', f.file, '--seconds', '0.4']); assert.equal(r.status, 0, r.stderr);
   r = command(['preview', f.file, '--seconds', '0.4']); assert.equal(r.status, 0, r.stderr);
-  r = command(['approve', f.file, '--note', 'Synthetic test approval only; not user production.']); assert.equal(r.status, 0, r.stderr);
+  r = command(['approve', f.file, '--visual-review', writeSyntheticReferenceReview(f.dir), '--note', 'Synthetic test approval only; not user production.']); assert.equal(r.status, 0, r.stderr);
   r = command(['render', f.file]); assert.notEqual(r.status, 0); assert.match(r.stderr, /later\.png/);
   fs.copyFileSync(path.join(ROOT, 'assets/b1/calendar-crayon.png'), path.join(f.dir, 'later.png'));
   r = command(['render', f.file]); assert.equal(r.status, 0, r.stderr);
@@ -153,7 +168,7 @@ test('tail edits preserve sample approval and invalidate only dependent shot cac
   f.project.shots[1].layers = [{type: 'image', path: 'later.png', x: 80, y: 110, w: 100}];
   save(f.file, f.project);
   let r = command(['preview', f.file, '--seconds', '0.4']); assert.equal(r.status, 0, r.stderr);
-  r = command(['approve', f.file, '--note', 'Synthetic test approval only; not user production.']); assert.equal(r.status, 0, r.stderr);
+  r = command(['approve', f.file, '--visual-review', writeSyntheticReferenceReview(f.dir), '--note', 'Synthetic test approval only; not user production.']); assert.equal(r.status, 0, r.stderr);
   r = command(['render', f.file]); assert.equal(r.status, 0, r.stderr);
   const sample = hashFile(path.join(f.dir, 'output/preview.mp4'));
   const approval = hashFile(path.join(f.dir, 'output/approval.json'));
@@ -172,7 +187,7 @@ test('tail edits preserve sample approval and invalidate only dependent shot cac
 test('reviewed content and global settings still invalidate sample approval', t => {
   const f = fixture(t);
   let r = command(['preview', f.file, '--seconds', '0.4']); assert.equal(r.status, 0, r.stderr);
-  r = command(['approve', f.file, '--note', 'Synthetic test approval only; not user production.']); assert.equal(r.status, 0, r.stderr);
+  r = command(['approve', f.file, '--visual-review', writeSyntheticReferenceReview(f.dir), '--note', 'Synthetic test approval only; not user production.']); assert.equal(r.status, 0, r.stderr);
   const original = structuredClone(f.project);
   for (const mutate of [p => p.shots[0].layers[0].text = 'CHANGED', p => p.grid = false, p => p.captionSize = 40, p => p.captions[0].text = 'Changed.', p => p.sfx[0].gain = 0.03, p => p.width = 800]) {
     const changed = structuredClone(original); mutate(changed);

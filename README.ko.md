@@ -315,7 +315,6 @@ A1, A2, A3… 순으로 추가하며, 각 스타일에 맞는 애니메이션 �
 
 새로운 특화 Director 스타일을 훈련하고 있습니다. [프로젝트에 Star를 눌러](#road-to-10000-stars--creator-ecosystem) 5,000 Stars 달성 시 공개될 수 있도록 응원해 주세요!
 
----
 
 <a id="b-styles"></a>
 
@@ -401,6 +400,8 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 </table>
 <!-- b3:section:end -->
 
+---
+
 <!-- b4:section:start -->
 <a id="b4"></a>
 
@@ -428,6 +429,8 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 </table>
 
 <!-- b4:section:end -->
+
+---
 
 <!-- b5:section:start -->
 <a id="b5"></a>
@@ -458,7 +461,6 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 <!-- b5:section:end -->
 
 
----
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

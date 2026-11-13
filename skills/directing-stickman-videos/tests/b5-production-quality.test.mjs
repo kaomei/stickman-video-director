@@ -160,7 +160,7 @@ test('B5 rejects static/fake raster/missing render-path evidence and samples rea
   await assert.rejects(checkB5Motion(f.validate(),{...f.render,productionAssets:[f.lock('fake.png')]},sharp),/corrupt|invalid|pngload|header|input/i);
 });
 
-test('B5 custom-font frames/encode retain rendered captions, evidence and reviewed mix without paid calls', async t => {
+test('B5 technical success with a static custom caption produces only a candidate, never a visual pass', async t => {
   const f = await fixture(t);
   fs.copyFileSync(path.join(root,'assets/fonts/NotoSans.ttf'),path.join(f.scene,'custom.ttf'));
   f.q.captions.font=f.lock('custom.ttf');
@@ -183,9 +183,19 @@ test('B5 custom-font frames/encode retain rendered captions, evidence and review
   const printed=await sharp(path.join(frameDir,'000000.png')).extract({left:150,top:130,width:160,height:35}).removeAlpha().raw().toBuffer();
   let red=0;for(let i=0;i<printed.length;i+=3)if(printed[i]>130&&printed[i+1]<110&&printed[i+2]<110)red++;
   assert(red>20,'custom-font caption tile must appear in the rendered frame');
-  const args=['encode',f.dir,'--frames-dir',frameDir,'--audio',path.join(f.scene,'mix.wav'),'--output',path.join(f.tmp,'delivery'),'--approval-note','Synthetic engineering encode only; not user creative approval'];
+  const args=['encode',f.dir,'--frames-dir',frameDir,'--audio',path.join(f.scene,'mix.wav'),'--output',path.join(f.tmp,'candidate')];
   r=run(args); assert.equal(r.status,0,r.stderr);
-  assert.equal(JSON.parse(fs.readFileSync(path.join(f.tmp,'delivery/delivery.json'))).full_decode,'pass');
+  const candidate=JSON.parse(fs.readFileSync(path.join(f.tmp,'candidate/candidate.json')));
+  assert.equal(candidate.full_decode,'pass');
+  assert.equal(candidate.status,'pending_visual_review');
+  assert.equal(candidate.visual_acceptance,'not_reviewed');
+  assert.equal(JSON.parse(r.stdout).status,'pending_visual_review');
+  assert(!fs.existsSync(path.join(f.tmp,'candidate/delivery.json')),'encoding must not create an accepted delivery');
+  const evidence=path.join(f.tmp,'no-evidence');
+  r=run(['review-pack',f.dir,'--candidate-dir',path.join(f.tmp,'candidate'),'--output',evidence]);
+  assert.notEqual(r.status,0,'static caption engineering fixture cannot acquire a visual pass without a plan and actual review');
+  assert.match(r.stderr,/visual-plan/);
+  assert(!fs.existsSync(evidence));
   fs.copyFileSync(path.join(f.scene,'mix.wav'),path.join(f.tmp,'other.wav')); fs.appendFileSync(path.join(f.tmp,'other.wav'),'different bytes');
   const wrong=[...args]; wrong[wrong.indexOf('--audio')+1]=path.join(f.tmp,'other.wav'); wrong[wrong.indexOf('--output')+1]=path.join(f.tmp,'wrong');
   r=run(wrong); assert.notEqual(r.status,0); assert.match(r.stderr,/reviewed final mix/);

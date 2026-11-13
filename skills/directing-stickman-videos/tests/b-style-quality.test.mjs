@@ -40,9 +40,15 @@ for (const style of ['B1','B2','B3']) {
     reset(); layer().w=1280; f.write(); assert.throws(()=>loadProject(f.file),/full-frame/);
     reset(); layer().motion.camera=true; f.write(); assert.throws(()=>loadProject(f.file),/do not count/);
     reset(); f.project.captionFont=path.join(ROOT,'assets/fonts/Caveat.ttf'); f.write(); assert.throws(()=>loadProject(f.file),/caption preset/);
-    f.project.caption_override={kind:'language_fallback',language:'synthetic glyph coverage fixture',reason:'Engineering fixture only'};
-    f.write(); assert.equal(loadProject(f.file).captionFont,f.project.captionFont);
+    f.project.caption_override={kind:'language_fallback',language:'zh-CN',reason:'Synthetic coverage check only; not production approval'};
+    f.write(); assert.throws(()=>loadProject(f.file),/actual missing glyphs/);
+    f.project.captions[0].text='不要出警'; f.write();
+    // A real default-font gap permits the fallback request, but a replacement
+    // lacking those glyphs must still fail before any pixels are rendered.
+    assert.equal(loadProject(f.file).captionFont,f.project.captionFont);
+    await assert.rejects(painter(loadProject(f.file)),/caption.*lacks glyphs/);
     f.project.captionSize=20;f.write();assert.throws(()=>loadProject(f.file),/caption preset/);
+    f.project.captions[0].text='One coherent phrase.';
     delete f.project.captionFont;delete f.project.caption_override;f.project.captionSize=CAPTION_PRESETS[style];f.write();
     const p=loadProject(f.file),draw=await painter(p),e=await checkBStyleMotionPaint(p,draw);
     assert.ok(e.intervals[0].changed_pixels>=8);

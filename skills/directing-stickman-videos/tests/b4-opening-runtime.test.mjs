@@ -174,11 +174,52 @@ test('B4 checks actual title visibility/overflow and preserves native portrait p
 });
 
 test('B4 explicit visual exception is reported, not falsely certified as a motion pass', async t => {
-  const f = fixture(t); f.project.opening = {user_override: 'Synthetic explicit user choice: static memorial opening'}; f.write();
+  const f = fixture(t); f.project.opening.user_override = 'Synthetic explicit user choice: static memorial opening'; f.write();
   const report = await f.check();
   assert.equal(report.status, 'user_exception'); assert.match(report.reason, /static memorial/);
   // A visual exception never grants an audio exception.
   f.project.voice.lead = .3; f.project.shots[0].end = 3.3; f.project.shots[0].kind = 'exceptional_hold';
   f.project.shots[0].reason = 'Synthetic fixture'; f.project.shots[0].user_approval = 'Synthetic fixture'; f.write();
   assert.throws(() => loadProject(f.file), /silent title pad/);
+});
+
+test('B4 selected fonts cannot silently fall back for uncovered language glyphs', async () => {
+  const {requireB4Glyphs} = await import('../scripts/b4-font-coverage.mjs');
+  assert.doesNotThrow(() => requireB4Glyphs(path.join(ROOT, 'assets/fonts/Anton.ttf'), 'YOUR MOVE. RULE 01', 'poster'));
+  assert.throws(() => requireB4Glyphs(path.join(ROOT, 'assets/fonts/Anton.ttf'), '不要出警', 'poster'), /lacks glyphs.*explicit story-matched font/);
+});
+
+test('B4 localized captions animate as whole semantic cues and can be isolated from the scene', async t => {
+  const f = fixture(t), p = loadProject(f.file), draw = await painter(p);
+  const raw = at => Buffer.from(draw(at, {focusIds:['caption-0']}).getContext('2d').getImageData(0, 0, p.width, p.height).data);
+  assert.notDeepEqual(raw(0), raw(1 / p.fps));
+  assert.notDeepEqual(raw(1 / p.fps), raw(.2));
+  assert.deepEqual(raw(.2), raw(1), 'readable hold should settle without constant jitter');
+  const hidden = Buffer.from(draw(1, {focusIds:['__b4_typography_empty__']}).getContext('2d').getImageData(0, 0, p.width, p.height).data);
+  assert.notDeepEqual(raw(1), hidden, 'isolation retains the actual subtitle');
+});
+
+test('B4 preview evidence remains pending and approve refuses absent or unknown independent text review', async t => {
+  const f = fixture(t); f.project.typography = {author_id:'fixture-author'}; f.write();
+  const r = command(['preview', f.file, '--seconds','3']); assert.equal(r.status, 0, r.stderr);
+  const report = JSON.parse(fs.readFileSync(path.join(f.dir, 'output/preview-report.json')));
+  assert.equal(report.typography.status, 'pending_independent_review');
+  assert.equal(report.visual_acceptance, 'pending_independent_review');
+  const absent = command(['approve',f.file,'--note','Synthetic approval']);
+  assert.notEqual(absent.status,0); assert.match(absent.stderr,/independent typography review/);
+  const unknown = command(['approve',f.file,'--note','Synthetic approval','--text-review',report.typography.template_file]);
+  assert.notEqual(unknown.status,0); assert.match(unknown.stderr,/independent reviewer|pending|failed/);
+  assert.equal(fs.existsSync(path.join(f.dir,'output/approval.json')),false);
+});
+
+test('B4 story-specific display treatments retain text proportions and render a distinct local finish', async t => {
+  const f=fixture(t), {planB4Typography}=await import('../scripts/b4-typography-review.mjs');
+  const hook=planB4Typography(loadProject(f.file)).moments.find(m=>m.id==='opening-hook');
+  const warning={id:'warning',type:'text',text:'DO NOT DISPATCH',b4Type:'cinematic',x:700,y:410,w:500,size:50,keys:[{t:0,y:422},{t:.3,y:410}]};
+  f.project.shots[0].layers.push(warning);
+  f.project.typography={author_id:'fixture-author',moments:[hook,{id:'warning',shot:0,layer_ids:['warning'],region:{x:680,y:390,w:580,h:130},times:{entry:0,mid:1/15,settled:.3,hold:2.8},intent:'Warning board in the story world',treatment:'Narrow heavy poster with layered cream ink and dark offset shadow'}]};f.write();
+  const p=loadProject(f.file), draw=await painter(p), cinematic=draw(1,{focusIds:['warning']}).toBuffer('image/png');
+  const hand=structuredClone(p);hand.shots[0].layers.at(-1).b4Type='handwritten';
+  assert.notDeepEqual(cinematic,(await painter(hand))(1,{focusIds:['warning']}).toBuffer('image/png'));
+  warning.scaleX=1.2;warning.scaleY=1;f.write();assert.throws(()=>loadProject(f.file),/letter proportions/);
 });
