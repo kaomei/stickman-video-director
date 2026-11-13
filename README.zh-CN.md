@@ -76,14 +76,19 @@
 <strong>角色解说风</strong><br>
 <a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 角色解说：为什么不愿开口求助，个性主讲人与火柴人小剧场" width="90%"></a>
 </td>
-<td width="50%" align="center"><a href="#a7"><strong>敬请期待…</strong></a></td>
+<!-- b6:hero:start -->
+<td width="50%" align="center">
+<strong>动感 Meme 风</strong><br>
+<a href="#b6"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · 动感 Meme 风" width="90%"></a>
+</td>
+<!-- b6:hero:end -->
 </tr>
 <!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**11 种画风 · 实测样片 · 免费开源**
+**12 种画风 · 实测样片 · 免费开源**
 
 ⭐ **为项目点个 Star，及时关注下一批画风和新功能解锁。**
 
@@ -457,6 +462,36 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 </table>
 
 <!-- b5:section:end -->
+
+---
+
+<!-- b6:section:start -->
+<a id="b6"></a>
+
+### B6：动感 Meme 风
+
+夸张的 Meme 表情、不规则手绘线条和柔和色彩，把离奇故事演成有笑点的短动画。宽大的场景让人物、道具和镜头都有活动空间。
+
+- **画面质感**：轻重不一的墨线、哑光颜料和柔和光影，头部、身体与场景保持统一的手绘笔触。**竖屏效果更好**。
+- **动作运镜**：横向跟拍、前后景视差、道具交接和反应特写随剧情衔接，快慢之间留出看清动作与笑点的停顿。
+- **适合内容**：历史奇闻、骗局故事、荒诞喜剧，以及结尾有反转的短故事。
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">样片 1：卖掉埃菲尔铁塔的人</th>
+    <th width="50%" align="center">样片 2：90 年代香港 · 菠萝包与街机</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="样片 1：卖掉埃菲尔铁塔的人" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="样片 2：90 年代香港 · 菠萝包与街机" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">16:9 横版 · 63.2 秒 · 英文配音与字幕</td>
+    <td align="center">16:9 横版 · 20 秒 · 英文配音与字幕</td>
+  </tr>
+</table>
+
+<!-- b6:section:end -->
 
 
 

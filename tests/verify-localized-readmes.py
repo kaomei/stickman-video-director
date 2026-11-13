@@ -46,7 +46,7 @@ def section(text, start, end):
     return text.split(f'<a id="{start}"></a>', 1)[1].split(end, 1)[0]
 
 expected_images = images(cn)
-assert len(expected_images) == 43 and len(set(expected_images)) == 33
+assert len(expected_images) == 46 and len(set(expected_images)) == 35
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 local_a6_previews = {
     "assets/readme/previews/style-6-amber-noir-mcp.gif",
@@ -57,6 +57,8 @@ local_a6_previews = {
     "assets/readme/previews/b3-tv-night-signal.gif",
     "assets/readme/previews/b4-dispatch.gif",
     "assets/readme/previews/b4-death-clock.gif",
+    "assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif",
+    "assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif",
 }
 for url in expected_images:
     if "/previews/" in url:
@@ -176,7 +178,7 @@ for name in selected:
     hero = text.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
     rows = re.findall(r"<tr>(.*?)</tr>", hero, re.S)
     gallery_styles = re.findall(r'href="#([^"]+)"><img', hero)
-    assert gallery_styles == ["a1", "a2", "a3", "a4", "style-5", "b1", "a6", "b2", "b3", "b4", "b5"], name
+    assert gallery_styles == ["a1", "a2", "a3", "a4", "style-5", "b1", "a6", "b2", "b3", "b4", "b5", "b6"], name
     # Owner rule: two columns, odd last card left + Coming Soon right;
     # even card counts fill the grid without a placeholder. No spanning rows.
     assert len(rows) == (len(gallery_styles) + 1) // 2, name
@@ -188,10 +190,10 @@ for name in selected:
     if placeholders:
         assert placeholders == [cells[-1]] and "<img" in cells[-2], name
         assert re.search(r'<a href="#a7"><strong>[^<]+</strong></a>', cells[-1]), name
-    assert text.count('width="90%"') == 11 and text.count('width="360"') == 22, name
+    assert text.count('width="90%"') == 12 and text.count('width="360"') == 24, name
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
-    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "B1", "B2", "B3", "B4", "B5"], (name, "published style catalog plus A7 teaser")
+    assert style_ids == ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "B1", "B2", "B3", "B4", "B5", "B6"], (name, "published style catalog plus A7 teaser")
     a6 = section(text, "a6", '<a id="a7"></a>')
     assert len(re.findall(r"^- \*\*", a6, re.M)) == 2, (name, "A6 advantages and use cases")
     assert re.findall(r'<a href="([^"]+\.mp4)">', a6) == list(a6_videos), name
@@ -199,7 +201,7 @@ for name in selected:
     assert "Tested Flow workflow:" not in text and "Click either GIF" not in text, name
     assert "Veo 3.1 Fast" not in a6, (name, "operational model guidance stays in Skill")
     assert "Omni" not in a6, (name, "A6 does not inherit the legacy model")
-    assert re.search(r"\*\*10[^\n]+\*\*", text) and "11 visual options" not in text, (name, "eleven A+B visual styles")
+    assert re.search(r"\*\*12[^\n]+\*\*", text), (name, "twelve A+B visual styles")
     placeholder = section(text, "a7", '<a id="b-styles"></a>')
     assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1 and "5,000" in placeholder, (name, "A7 roadmap CTA retained")
     assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 2, (name, "A7 unlock link plus roadmap navigation")
@@ -223,7 +225,7 @@ for name in selected:
     assert re.findall(r'<a href="([^"]+\.mp4)">', b4) == ["assets/readme/b4-dispatch.mp4", "assets/readme/b4-death-clock.mp4"], name
     assert all(token in b4 for token in ("Brian", "@BeanieSurvives")), (name, "B4 identity, voice and reference")
     assert len(re.findall(r"^- \*\*", b4, re.M)) == 3, (name, "B4 visuals, sound and use cases")
-    assert not re.search(r"^### B[6-9]", text, re.M), (name, "B6+ excluded")
+    assert not re.search(r"^### B[7-9]", text, re.M), (name, "unpublished B7+ excluded")
     b5 = section(text, "b5", '<!-- b5:section:end -->')
     assert re.findall(r'<a href="([^"]+\.mp4)">', b5) == ["assets/readme/b5-character-explainer.mp4", "assets/readme/b5-character-explainer-crazymei.mp4"], name
     assert len(re.findall(r"^- \*\*", b5, re.M)) == 3, name
@@ -239,6 +241,17 @@ for name in selected:
     for video in re.findall(r'<a href="([^"]+\.mp4)">', b5):
         assert (root / video).is_file(), (name, video)
     assert "Character Explainer Style" not in text, name
+    b6 = section(text, "b6", '<!-- b6:section:end -->')
+    b6_videos = ["assets/readme/b6-dynamic-meme-eiffel-16x9.mp4", "assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"]
+    assert re.findall(r'<a href="([^"]+\.mp4)">', b6) == b6_videos, (name, "approved B6 landscape pair")
+    assert b6.count('<th width="50%"') == 2 and b6.count('width="360"') == 2, (name, "paired B6 gallery")
+    assert len(re.findall(r"^- \*\*", b6, re.M)) == 3, (name, "B6 visuals, motion and use cases")
+    assert "16:9" in b6 and re.search(r"63[.,]2", b6) and "20" in b6, (name, "B6 sample metadata")
+    portrait_terms = {"en": "Works best in portrait", "zh-CN": "竖屏效果更好", "ja": "縦型（9:16）のほうが効果的", "ko": "세로형(9:16)", "fr": "meilleur en format vertical", "pt-BR": "melhor no formato vertical", "tr": "Dikey formatta (9:16)", "id": "Hasil terbaik dalam format vertikal"}
+    assert portrait_terms[active] in b6, (name, "localized portrait preference")
+    assert images(hero)[-1].endswith("/b6-dynamic-meme-eiffel-16x9.gif"), (name, "B6 animated homepage card")
+    for video in b6_videos:
+        assert (root / video).is_file(), (name, video)
     if is_english:
         teasers = {
             "A": "New specialized director styles are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!",
@@ -251,7 +264,7 @@ for name in selected:
             next_id, _, title = entries[-1]
             assert title == "Coming soon…", (name, series, "placeholder follows the latest released style")
             assert f"### {next_id}: Coming soon…\n\n{teaser}" in text, (name, series, "approved placeholder copy")
-        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Line Art"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV"), ("B4", "Survival Thriller"), ("B5", "Character Explainer")], (name, "approved B style names")
+        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Line Art"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV"), ("B4", "Survival Thriller"), ("B5", "Character Explainer"), ("B6", "Dynamic Meme Animation")], (name, "approved B style names")
         assert "<strong>Retro TV</strong><br>" in hero and "Retro TV Style" not in text, (name, "concise English B3 name in gallery and section")
     for variant in ("A1.1", "A1.2", "A2.1", "A2.2"):
         assert variant in text, (name, variant)
@@ -311,8 +324,8 @@ for name in selected:
         "id": ("titik awal, bukan batasan", "font, efek teks, atau bahasa video", "menyesuaikan tata letaknya"),
     }
     assert all(token in faq_answers[2] for token in typography_copy[active]), (name, "localized typography/language customization")
-    visual_row = text.splitlines()[104]
-    assert all(token in visual_row for token in motion_copy), (name, "local animation is not camera/text-only")
+    visual_rows = [line for line in section(text, "creation-modes", '<a id="quick-start"></a>').splitlines() if line.startswith("|")]
+    assert any(all(token in row for token in motion_copy) for row in visual_rows), (name, "local animation is not camera/text-only")
     for style_id, next_marker, voice in (("b1", '<a id="b2"></a>', "Bodi"), ("b2", '<a id="b3"></a>', "Fola"), ("b3", '<!-- b3:section:end -->', "Bodi")):
         style_section = section(text, style_id, next_marker)
         assert re.search(r'<td align="center">Google Gemini · [^<]*' + voice, style_section), (name, style_id, "verified sample platform and voice")
@@ -381,7 +394,7 @@ for name in selected:
     if is_english:
         approved_mode_intro = (
             '<div align="center">\n\n'
-            '**11 visual styles · Tested examples · Free and open source**\n\n'
+            '**12 visual styles · Tested examples · Free and open source**\n\n'
             '⭐ **Star the project to catch the next style drop and feature unlocks.**\n\n'
             '[Get started](#quick-start) · [Styles & Demos](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)\n\n'
             '</div>\n\n'

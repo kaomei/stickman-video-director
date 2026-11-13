@@ -1,0 +1,398 @@
+{
+  "status": "frozen_assets_and_bounded_action_envelope_passed",
+  "new_ai_calls": 0,
+  "paid_calls": 0,
+  "passed": [
+    "all_sprite_and_cuff_hashes",
+    "all_12_sockets_inside_true_sleeve_alpha",
+    "unit_exit_normals",
+    "fixed_64_62_bones",
+    "uniform_head_scaling",
+    "explicit_facing_and_depth_layers",
+    "V44_3.6px_stroke_at_180_184_head",
+    "no_baked_limbs_by_construction",
+    "930_authored_path_actual_pixel_gates",
+    "180_fixture_target_kinematics",
+    "48_outside_envelope_rejections",
+    "all_30_art_png_fingerprints_unchanged"
+  ],
+  "packages": [
+    {
+      "id": "kiosk_keeper",
+      "package": "historical-source:b6-limb-system-implementation/characters/kiosk_keeper/package.json",
+      "package_sha256": "baf5909ab0cc84ffcb449fdad3f9ea87bacdaa8410e27b1f2c57259f460623cc",
+      "views": {
+        "front": {
+          "facing": "forward",
+          "arms": {
+            "left": {
+              "socket": [
+                -60.781199215099086,
+                -208.3282011773514
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "front",
+              "normal": [
+                -0.5547001962252291,
+                0.8320502943378437
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                85,
+                110
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            },
+            "right": {
+              "socket": [
+                60.781199215099086,
+                -208.3282011773514
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "front",
+              "normal": [
+                0.5547001962252291,
+                0.8320502943378437
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                70,
+                95
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            }
+          },
+          "head_width": 180.0,
+          "body_sha": "034bcf2fedf2de2a0be9c78104e80c285a269f93a89990f48bb5cb0b6dbe7aa1"
+        },
+        "three_quarter": {
+          "facing": "right",
+          "arms": {
+            "left": {
+              "socket": [
+                -45.441999331252575,
+                -210.92996111456605
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "back",
+              "normal": [
+                -0.5145001671868565,
+                0.8574902786415114
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                85,
+                110
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            },
+            "right": {
+              "socket": [
+                51.19327977313405,
+                -207.26788032139604
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "front",
+              "normal": [
+                0.5766800567164864,
+                0.8169700803490114
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                70,
+                95
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            }
+          },
+          "head_width": 180.0,
+          "body_sha": "ae31b8a651d9a47533e47b430908927af3ebbdc8493ca4e1b34c9b924ae547a0"
+        },
+        "side": {
+          "facing": "right",
+          "arms": {
+            "left": {
+              "socket": [
+                -28.88000423998728,
+                -213.39199321602035
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "back",
+              "normal": [
+                -0.5299989400031799,
+                0.8479983040050879
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                85,
+                110
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            },
+            "right": {
+              "socket": [
+                26.6,
+                -208.2
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "front",
+              "normal": [
+                0.6,
+                0.8
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                45,
+                106
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            }
+          },
+          "head_width": 180.0,
+          "body_sha": "5fb53eb1d9b0c9f106f0e714b0fcc456e835522cfec002879ef519b3fe1c1c06"
+        }
+      }
+    },
+    {
+      "id": "parcel_runner",
+      "package": "historical-source:b6-limb-system-implementation/characters/parcel_runner/package.json",
+      "package_sha256": "ea4daf4c49186aa1ff9455d1511dc4c41360a609683dabbac02fb3f8e94fb1d9",
+      "views": {
+        "front": {
+          "facing": "forward",
+          "arms": {
+            "left": {
+              "socket": [
+                -60.781199215099086,
+                -208.3282011773514
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "front",
+              "normal": [
+                -0.5547001962252291,
+                0.8320502943378437
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                85,
+                110
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            },
+            "right": {
+              "socket": [
+                60.781199215099086,
+                -208.3282011773514
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "front",
+              "normal": [
+                0.5547001962252291,
+                0.8320502943378437
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                70,
+                95
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            }
+          },
+          "head_width": 184.0,
+          "body_sha": "10a152611a23384c5037040b7e9840c3c8e55b1295921a288ea82a836ba827ab"
+        },
+        "three_quarter": {
+          "facing": "left",
+          "arms": {
+            "left": {
+              "socket": [
+                -51.19327977313405,
+                -207.26788032139604
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "front",
+              "normal": [
+                -0.5766800567164864,
+                0.8169700803490114
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                72,
+                120
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            },
+            "right": {
+              "socket": [
+                45.441999331252575,
+                -210.92996111456605
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "back",
+              "normal": [
+                0.5145001671868565,
+                0.8574902786415114
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                70,
+                95
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            }
+          },
+          "head_width": 184.0,
+          "body_sha": "15871c07e2dcbc6402ad8d54097d541676fa854f4d3b3d75b152b9ce5824cf73"
+        },
+        "side": {
+          "facing": "left",
+          "arms": {
+            "left": {
+              "socket": [
+                -26.6,
+                -208.2
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "front",
+              "normal": [
+                -0.6,
+                0.8
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                85,
+                110
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            },
+            "right": {
+              "socket": [
+                28.88000423998728,
+                -213.39199321602035
+              ],
+              "socket_cuff_alpha": 255,
+              "layer": "back",
+              "normal": [
+                0.5299989400031799,
+                0.8479983040050879
+              ],
+              "lengths": [
+                64,
+                62
+              ],
+              "ink_width": 3.6,
+              "hand_radius": 7.4,
+              "upper_angle_range_deg": [
+                70,
+                95
+              ],
+              "elbow_bend_range_deg": [
+                5,
+                115
+              ]
+            }
+          },
+          "head_width": 184.0,
+          "body_sha": "43b70b46f98d89a5341f3d108cde26c2ed3fc9a3286eca6fcd992f81f386ad61"
+        }
+      }
+    }
+  ],
+  "action_envelope_validation": {
+    "report": "historical-source:b6-limb-system-implementation/characters/action-envelope-report.json",
+    "sha256": "0f0026a6689bf8ff7b3e0be2f06c426ec8526d1c2c365ecd1cac9fda4f311d52",
+    "pixel_frames": 930,
+    "fixture_geometry_frames": 180,
+    "negative_boundary_rejections": 48,
+    "errors": 0,
+    "all_30_art_pngs_unchanged": true
+  }
+}

@@ -76,14 +76,19 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <strong>Explicação com personagem</strong><br>
 <a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 sobre pedir ajuda, com apresentador animado e bonecos-palito expressivos" width="90%"></a>
 </td>
-<td width="50%" align="center"><a href="#a7"><strong>Em breve…</strong></a></td>
+<!-- b6:hero:start -->
+<td width="50%" align="center">
+<strong>Dynamic Meme Animation</strong><br>
+<a href="#b6"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+</td>
+<!-- b6:hero:end -->
 </tr>
 <!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**11 estilos visuais · Exemplos testados · Grátis e de código aberto**
+**12 estilos visuais · Exemplos testados · Grátis e de código aberto**
 
 ⭐ **Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.**
 
@@ -465,6 +470,38 @@ Transforme seu avatar favorito no apresentador do canal; o uso de personagens co
 </table>
 
 <!-- b5:section:end -->
+
+---
+
+<!-- b6:section:start -->
+<a id="b6"></a>
+
+### B6: Dynamic Meme Animation
+
+Expressões de meme, traços soltos à mão e cores suaves transformam histórias curiosas em animações curtas e vivas. Cenários amplos dão espaço aos personagens, objetos e movimentos de câmera.
+
+**O resultado é melhor no formato vertical (9:16).** A [versão vertical do exemplo 1](skills/directing-stickman-videos/assets/b6/reference/eiffel-portrait-v44.mp4) é o padrão rigoroso de aprovação do visual e dos movimentos, incluindo a espessura dos braços; a tabela abaixo mostra as versões horizontais. O exemplo 2 complementa a referência de rigging sem substituir esse padrão visual.
+
+- **Visual**: Contornos de tinta irregulares, pintura fosca e luz suave; rosto e corpo seguem o mesmo traço.
+- **Movimento**: Travellings laterais, profundidade em camadas, entrega de objetos e closes de reação acompanham a história, com pausas para entender cada gag.
+- **Ideal para**: Curiosidades históricas, golpes, comédia absurda e histórias curtas com reviravolta.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Exemplo 1: O homem que vendeu a Torre Eiffel</th>
+    <th width="50%" align="center">Exemplo 2: Hong Kong dos anos 1990 · Pães e fliperamas</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="Exemplo 1: O homem que vendeu a Torre Eiffel" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Exemplo 2: Hong Kong dos anos 1990 · Pães e fliperamas" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">16:9 · 63,2 segundos · Narração e legendas em inglês</td>
+    <td align="center">16:9 · 20 segundos · Narração e legendas em inglês</td>
+  </tr>
+</table>
+
+<!-- b6:section:end -->
 
 
 

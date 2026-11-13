@@ -1,0 +1,11 @@
+{
+  "narration": "This started at the arcade. He lost. Lost again. Then took it personally. So the bun's getting cold. Still needs another rematch.",
+  "status": "library_recomposition_test_pending_review",
+  "beats": [
+    "establish_arcade",
+    "losing_again",
+    "cold_bun",
+    "rematch"
+  ],
+  "purpose": "Tests installed new timeline/scene-code entry. Reuses existing performance and approved voice; not proof of arbitrary new-character fitting."
+}

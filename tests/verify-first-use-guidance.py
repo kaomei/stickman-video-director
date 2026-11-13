@@ -19,19 +19,21 @@ for source in (skill / "SKILL.md", guide):
             assert (source.parent / target).is_file(), f"Broken reference: {source}: {target}"
 
 # Normalize only the exact owner-directed A5 baseline summary; preserve every other
-# Director byte and the original baseline digest.
+# Director byte against the published e48202bc45717fd329ec1eca702fe8696faca357 baseline.
 legacy = "## A · Director\n" + entry.split("## A · Director\n", 1)[1]
 original_a5 = "  - `Style 5 (Historical Cartoon / 历史卡通风)`: white-filled round heads, simple black oval eyes and thin black stick limbs in era-specific costume, with cel shading and full-color painterly historical settings"
 revised_a5 = "  - `Style 5 (Historical Cartoon / 历史卡通风)`: white heads with connected short white necks, expressive faces, black stick limbs and compact fingerless palms, period dress and cel-shaded historical settings"
 assert legacy.count(revised_a5) == 1, "Missing exact owner-directed A5 baseline summary"
 legacy = legacy.replace(revised_a5, original_a5, 1)
-assert hashlib.sha256(legacy.encode()).hexdigest() == "f710612be73c952fb130d891b0650388ec5ae89469cae95eda8e147eec18b73e"
+assert hashlib.sha256(legacy.encode()).hexdigest() == "cd5253393c2110fe5f50359477a03f43691a0cc16b426addf592dc7e490dbebe"
 # A6 adds only a selection-time reference router; legacy Director stays frozen.
-assert len(entry.encode()) <= 15000, "Keep the new workflow detail in references"
+# The published base entry is 16,732 bytes; allow the additive B6 router while
+# retaining a compact entry budget. Detailed workflow stays in references.
+assert len(entry.encode()) <= 20000, "Keep the new workflow detail in references"
 boundaries = skill / "references/mode-execution-boundaries.md"
 assert "(references/mode-execution-boundaries.md)" in entry and boundaries.is_file()
 assert "Before planning" in entry
-assert "Published B choices are B1, B2, B3, B4 and B5" in guide_text
+assert "Published B choices are B1, B2, B3, B4, B5 and B6" in guide_text
 assert "scripts/character-explainer.mjs" in guide_text
 assert "B1–B4 use the bundled manifest runtime" in guide_text
 assert "not an accepted `style: B4` CLI value" not in guide_text

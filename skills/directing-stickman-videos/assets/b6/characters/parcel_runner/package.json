@@ -1,0 +1,1020 @@
+{
+  "schema": "b6-puppet/1",
+  "character_id": "parcel_runner",
+  "display_name": "Pip · Parcel runner",
+  "coordinate_system": {
+    "feet_origin": [
+      0,
+      0
+    ],
+    "x": "right",
+    "y": "down",
+    "units": "local painted stage pixels",
+    "body_origin": "fixed pelvis with separately world-planted ankles"
+  },
+  "views": {
+    "front": {
+      "facing": "forward",
+      "sprites": {
+        "body": {
+          "path": "front/body.png",
+          "sha256": "10a152611a23384c5037040b7e9840c3c8e55b1295921a288ea82a836ba827ab",
+          "image_to_local": [
+            [
+              0.3333333333333333,
+              0,
+              -90
+            ],
+            [
+              0,
+              0.3333333333333333,
+              -270
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        "head": {
+          "path": "front/head.png",
+          "sha256": "514ff00697d25d1a49ae0d0f56358b5f16b2927482b48aa3800e48d9994960f9",
+          "image_to_local": [
+            [
+              0.4433734939759036,
+              0,
+              -92.0
+            ],
+            [
+              0,
+              0.4433734939759036,
+              -382.2457831325301
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        }
+      },
+      "arms": {
+        "left": {
+          "socket": [
+            -60.781199215099086,
+            -208.3282011773514
+          ],
+          "exit_normal": [
+            -0.5547001962252291,
+            0.8320502943378437
+          ],
+          "exit_center": [
+            -63.0,
+            -205.0
+          ],
+          "outlet_segment": [
+            [
+              -72.0,
+              -211.0
+            ],
+            [
+              -54.0,
+              -199.0
+            ]
+          ],
+          "cuff_depth": 4,
+          "lengths": [
+            64,
+            62
+          ],
+          "pole": -1,
+          "upper_angle_range_deg": [
+            85,
+            110
+          ],
+          "elbow_bend_range_deg": [
+            5,
+            115
+          ],
+          "max_ik_offset": 80,
+          "ink_width": 3.6,
+          "hand_radius": 7.4,
+          "depth": "near",
+          "layer": "front",
+          "cuff": {
+            "path": "front/cuff-left.png",
+            "sha256": "45c76e806daaf053cf35086d4e9b15fca360472bd714b7bc1fde7e5ad2da54f8",
+            "image_to_local": [
+              [
+                0.3333333333333333,
+                0,
+                -90
+              ],
+              [
+                0,
+                0.3333333333333333,
+                -270
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          "poses": {
+            "rest": [
+              90,
+              10
+            ],
+            "reach": [
+              105,
+              65
+            ],
+            "offer": [
+              90,
+              110
+            ],
+            "receive": [
+              102,
+              95
+            ],
+            "retract": [
+              95,
+              40
+            ]
+          }
+        },
+        "right": {
+          "socket": [
+            60.781199215099086,
+            -208.3282011773514
+          ],
+          "exit_normal": [
+            0.5547001962252291,
+            0.8320502943378437
+          ],
+          "exit_center": [
+            63.0,
+            -205.0
+          ],
+          "outlet_segment": [
+            [
+              54.0,
+              -199.0
+            ],
+            [
+              72.0,
+              -211.0
+            ]
+          ],
+          "cuff_depth": 4,
+          "lengths": [
+            64,
+            62
+          ],
+          "pole": 1,
+          "upper_angle_range_deg": [
+            70,
+            95
+          ],
+          "elbow_bend_range_deg": [
+            5,
+            115
+          ],
+          "max_ik_offset": 80,
+          "ink_width": 3.6,
+          "hand_radius": 7.4,
+          "depth": "near",
+          "layer": "front",
+          "cuff": {
+            "path": "front/cuff-right.png",
+            "sha256": "0065f8654cd3bde8fa05c44d7ea18ad22a91cfbc8f5dbb97a91aa8792d333529",
+            "image_to_local": [
+              [
+                0.3333333333333333,
+                0,
+                -90
+              ],
+              [
+                0,
+                0.3333333333333333,
+                -270
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          "poses": {
+            "rest": [
+              90,
+              10
+            ],
+            "reach": [
+              75,
+              65
+            ],
+            "offer": [
+              90,
+              110
+            ],
+            "receive": [
+              78,
+              95
+            ],
+            "retract": [
+              85,
+              40
+            ]
+          }
+        }
+      },
+      "legs": {
+        "left": {
+          "hip": [
+            -18,
+            -92
+          ],
+          "ankle": [
+            -20,
+            -10.4
+          ],
+          "lengths": [
+            41,
+            41
+          ],
+          "ink_width": 3.6,
+          "foot_size": [
+            14,
+            5
+          ],
+          "foot_forward": 1,
+          "plant_y": 0
+        },
+        "right": {
+          "hip": [
+            22,
+            -92
+          ],
+          "ankle": [
+            24,
+            -10.4
+          ],
+          "lengths": [
+            41,
+            41
+          ],
+          "ink_width": 3.6,
+          "foot_size": [
+            14,
+            5
+          ],
+          "foot_forward": 1,
+          "plant_y": 0
+        }
+      },
+      "ink_color": "#4a2e2e",
+      "arm_depth_order": [
+        "left",
+        "right"
+      ],
+      "metadata": {
+        "facing": "forward",
+        "garment_has_baked_limbs": false,
+        "head": {
+          "source": "buyer-greedy-head",
+          "head_center": [
+            0,
+            -300
+          ],
+          "head_width": 184.0,
+          "uniform_scale": 0.4433734939759036,
+          "local_alpha_extent": [
+            -92.0,
+            -382.2457831325301,
+            92.0,
+            -217.75421686746986
+          ]
+        },
+        "body_extent": [
+          -72,
+          -258,
+          72,
+          -96
+        ],
+        "view_authorship": "Independent local silhouette and short-sleeve polygons; no frontal x-squeeze",
+        "tested_scope": {
+          "five_authored_presets": [
+            "rest",
+            "reach",
+            "offer",
+            "receive",
+            "retract"
+          ],
+          "sample_rate_fps": 30,
+          "transition_samples_per_action": 31,
+          "main_fixture_use": "preset trajectories only; this view is not used by the main transfer fixture",
+          "envelope_meaning": "Finite rejection guardrail around observed paths, not approval of every upper/bend combination; contact, true-cuff outlet, bone, silhouette visibility and continuity gates remain mandatory",
+          "guaranteed_gait": false,
+          "guaranteed_back_view": false
+        }
+      }
+    },
+    "three_quarter": {
+      "facing": "left",
+      "sprites": {
+        "body": {
+          "path": "three_quarter/body.png",
+          "sha256": "15871c07e2dcbc6402ad8d54097d541676fa854f4d3b3d75b152b9ce5824cf73",
+          "image_to_local": [
+            [
+              0.3333333333333333,
+              0,
+              -89.66666666666667
+            ],
+            [
+              0,
+              0.3333333333333333,
+              -270
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        "head": {
+          "path": "three_quarter/head.png",
+          "sha256": "7251a29080c378b1eb0084aa461b7d6a3aa62959c08567aff1d75d110d269a2d",
+          "image_to_local": [
+            [
+              0.45098039215686275,
+              0,
+              -92.0
+            ],
+            [
+              0,
+              0.45098039215686275,
+              -384.3333333333333
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        }
+      },
+      "arms": {
+        "left": {
+          "socket": [
+            -51.19327977313405,
+            -207.26788032139604
+          ],
+          "exit_normal": [
+            -0.5766800567164864,
+            0.8169700803490114
+          ],
+          "exit_center": [
+            -53.5,
+            -204.0
+          ],
+          "outlet_segment": [
+            [
+              -45.0,
+              -198.0
+            ],
+            [
+              -62.0,
+              -210.0
+            ]
+          ],
+          "cuff_depth": 4,
+          "lengths": [
+            64,
+            62
+          ],
+          "pole": -1,
+          "upper_angle_range_deg": [
+            72,
+            120
+          ],
+          "elbow_bend_range_deg": [
+            5,
+            115
+          ],
+          "max_ik_offset": 80,
+          "ink_width": 3.6,
+          "hand_radius": 7.4,
+          "depth": "near",
+          "layer": "front",
+          "cuff": {
+            "path": "three_quarter/cuff-left.png",
+            "sha256": "5abce3005cdcbca2796d2f99fbfa7a31569423b75cb9731bc0f01c1d727e97f9",
+            "image_to_local": [
+              [
+                0.3333333333333333,
+                0,
+                -89.66666666666667
+              ],
+              [
+                0,
+                0.3333333333333333,
+                -270
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          "poses": {
+            "rest": [
+              90,
+              10
+            ],
+            "reach": [
+              105,
+              65
+            ],
+            "offer": [
+              90,
+              110
+            ],
+            "receive": [
+              102,
+              95
+            ],
+            "retract": [
+              95,
+              40
+            ]
+          }
+        },
+        "right": {
+          "socket": [
+            45.441999331252575,
+            -210.92996111456605
+          ],
+          "exit_normal": [
+            0.5145001671868565,
+            0.8574902786415114
+          ],
+          "exit_center": [
+            47.5,
+            -207.5
+          ],
+          "outlet_segment": [
+            [
+              55.0,
+              -212.0
+            ],
+            [
+              40.0,
+              -203.0
+            ]
+          ],
+          "cuff_depth": 4,
+          "lengths": [
+            64,
+            62
+          ],
+          "pole": 1,
+          "upper_angle_range_deg": [
+            70,
+            95
+          ],
+          "elbow_bend_range_deg": [
+            5,
+            115
+          ],
+          "max_ik_offset": 80,
+          "ink_width": 3.6,
+          "hand_radius": 7.4,
+          "depth": "far",
+          "layer": "back",
+          "cuff": {
+            "path": "three_quarter/cuff-right.png",
+            "sha256": "412c9bd3be25447950c905a83306f39c399d5e1f821f14d768302940ae949f72",
+            "image_to_local": [
+              [
+                0.3333333333333333,
+                0,
+                -89.66666666666667
+              ],
+              [
+                0,
+                0.3333333333333333,
+                -270
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          "poses": {
+            "rest": [
+              90,
+              10
+            ],
+            "reach": [
+              75,
+              65
+            ],
+            "offer": [
+              90,
+              110
+            ],
+            "receive": [
+              78,
+              95
+            ],
+            "retract": [
+              85,
+              40
+            ]
+          }
+        }
+      },
+      "legs": {
+        "left": {
+          "hip": [
+            -20,
+            -92
+          ],
+          "ankle": [
+            -22,
+            -10.4
+          ],
+          "lengths": [
+            41,
+            41
+          ],
+          "ink_width": 3.6,
+          "foot_size": [
+            14,
+            5
+          ],
+          "foot_forward": -1,
+          "plant_y": 0
+        },
+        "right": {
+          "hip": [
+            14,
+            -92
+          ],
+          "ankle": [
+            16,
+            -10.4
+          ],
+          "lengths": [
+            41,
+            41
+          ],
+          "ink_width": 3.6,
+          "foot_size": [
+            14,
+            5
+          ],
+          "foot_forward": -1,
+          "plant_y": 0
+        }
+      },
+      "ink_color": "#4a2e2e",
+      "arm_depth_order": [
+        "right",
+        "left"
+      ],
+      "metadata": {
+        "facing": "left",
+        "garment_has_baked_limbs": false,
+        "head": {
+          "source": "buyer-head",
+          "head_center": [
+            0,
+            -300
+          ],
+          "head_width": 184.0,
+          "uniform_scale": 0.45098039215686275,
+          "local_alpha_extent": [
+            -92.0,
+            -384.3333333333333,
+            92.0,
+            -215.66666666666666
+          ]
+        },
+        "body_extent": [
+          -72,
+          -258,
+          72,
+          -96
+        ],
+        "view_authorship": "Independent local silhouette and short-sleeve polygons; no frontal x-squeeze",
+        "tested_scope": {
+          "five_authored_presets": [
+            "rest",
+            "reach",
+            "offer",
+            "receive",
+            "retract"
+          ],
+          "sample_rate_fps": 30,
+          "transition_samples_per_action": 31,
+          "main_fixture_use": "stationary authored turn and shared paper transfer",
+          "envelope_meaning": "Finite rejection guardrail around observed paths, not approval of every upper/bend combination; contact, true-cuff outlet, bone, silhouette visibility and continuity gates remain mandatory",
+          "guaranteed_gait": false,
+          "guaranteed_back_view": false
+        }
+      }
+    },
+    "side": {
+      "facing": "left",
+      "sprites": {
+        "body": {
+          "path": "side/body.png",
+          "sha256": "43b70b46f98d89a5341f3d108cde26c2ed3fc9a3286eca6fcd992f81f386ad61",
+          "image_to_local": [
+            [
+              0.3333333333333333,
+              0,
+              -89.66666666666667
+            ],
+            [
+              0,
+              0.3333333333333333,
+              -270
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        "head": {
+          "path": "side/head.png",
+          "sha256": "b97758940113d53cbd053f9af1649ce790403ada08f88e8b58bc46da0a7f8670",
+          "image_to_local": [
+            [
+              0.49066666666666664,
+              0,
+              -92.0
+            ],
+            [
+              0,
+              0.49066666666666664,
+              -391.75466666666665
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        }
+      },
+      "arms": {
+        "left": {
+          "socket": [
+            -26.6,
+            -208.2
+          ],
+          "exit_normal": [
+            -0.6,
+            0.8
+          ],
+          "exit_center": [
+            -29.0,
+            -205.0
+          ],
+          "outlet_segment": [
+            [
+              -21.0,
+              -199.0
+            ],
+            [
+              -37.0,
+              -211.0
+            ]
+          ],
+          "cuff_depth": 4,
+          "lengths": [
+            64,
+            62
+          ],
+          "pole": -1,
+          "upper_angle_range_deg": [
+            85,
+            110
+          ],
+          "elbow_bend_range_deg": [
+            5,
+            115
+          ],
+          "max_ik_offset": 80,
+          "ink_width": 3.6,
+          "hand_radius": 7.4,
+          "depth": "near",
+          "layer": "front",
+          "cuff": {
+            "path": "side/cuff-left.png",
+            "sha256": "2f7c580fbf4ea8c931d9c6295781fd1cb14d3c17bdfe7d65449cf9750d92822b",
+            "image_to_local": [
+              [
+                0.3333333333333333,
+                0,
+                -89.66666666666667
+              ],
+              [
+                0,
+                0.3333333333333333,
+                -270
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          "poses": {
+            "rest": [
+              90,
+              10
+            ],
+            "reach": [
+              105,
+              65
+            ],
+            "offer": [
+              90,
+              110
+            ],
+            "receive": [
+              102,
+              95
+            ],
+            "retract": [
+              95,
+              40
+            ]
+          }
+        },
+        "right": {
+          "socket": [
+            28.88000423998728,
+            -213.39199321602035
+          ],
+          "exit_normal": [
+            0.5299989400031799,
+            0.8479983040050879
+          ],
+          "exit_center": [
+            31.0,
+            -210.0
+          ],
+          "outlet_segment": [
+            [
+              39.0,
+              -215.0
+            ],
+            [
+              23.0,
+              -205.0
+            ]
+          ],
+          "cuff_depth": 4,
+          "lengths": [
+            64,
+            62
+          ],
+          "pole": 1,
+          "upper_angle_range_deg": [
+            70,
+            95
+          ],
+          "elbow_bend_range_deg": [
+            5,
+            115
+          ],
+          "max_ik_offset": 80,
+          "ink_width": 3.6,
+          "hand_radius": 7.4,
+          "depth": "far",
+          "layer": "back",
+          "cuff": {
+            "path": "side/cuff-right.png",
+            "sha256": "4f5b568208725e105ea16e4c443fffc8937e92e0993974a6c16f98339d5a1788",
+            "image_to_local": [
+              [
+                0.3333333333333333,
+                0,
+                -89.66666666666667
+              ],
+              [
+                0,
+                0.3333333333333333,
+                -270
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          "poses": {
+            "rest": [
+              90,
+              10
+            ],
+            "reach": [
+              75,
+              65
+            ],
+            "offer": [
+              90,
+              110
+            ],
+            "receive": [
+              78,
+              95
+            ],
+            "retract": [
+              85,
+              40
+            ]
+          }
+        }
+      },
+      "legs": {
+        "left": {
+          "hip": [
+            -13,
+            -92
+          ],
+          "ankle": [
+            -15,
+            -10.4
+          ],
+          "lengths": [
+            41,
+            41
+          ],
+          "ink_width": 3.6,
+          "foot_size": [
+            14,
+            5
+          ],
+          "foot_forward": -1,
+          "plant_y": 0
+        },
+        "right": {
+          "hip": [
+            11,
+            -92
+          ],
+          "ankle": [
+            13,
+            -10.4
+          ],
+          "lengths": [
+            41,
+            41
+          ],
+          "ink_width": 3.6,
+          "foot_size": [
+            14,
+            5
+          ],
+          "foot_forward": -1,
+          "plant_y": 0
+        }
+      },
+      "ink_color": "#4a2e2e",
+      "arm_depth_order": [
+        "right",
+        "left"
+      ],
+      "metadata": {
+        "facing": "left",
+        "garment_has_baked_limbs": false,
+        "head": {
+          "source": "buyer-side-head",
+          "head_center": [
+            0,
+            -300
+          ],
+          "head_width": 184.0,
+          "uniform_scale": 0.49066666666666664,
+          "local_alpha_extent": [
+            -92.0,
+            -391.75466666666665,
+            92.0,
+            -208.24533333333332
+          ]
+        },
+        "body_extent": [
+          -72,
+          -258,
+          72,
+          -96
+        ],
+        "view_authorship": "Independent local silhouette and short-sleeve polygons; no frontal x-squeeze",
+        "tested_scope": {
+          "five_authored_presets": [
+            "rest",
+            "reach",
+            "offer",
+            "receive",
+            "retract"
+          ],
+          "sample_rate_fps": 30,
+          "transition_samples_per_action": 31,
+          "main_fixture_use": "preset trajectories only; this view is not used by the main transfer fixture",
+          "envelope_meaning": "Finite rejection guardrail around observed paths, not approval of every upper/bend combination; contact, true-cuff outlet, bone, silhouette visibility and continuity gates remain mandatory",
+          "guaranteed_gait": false,
+          "guaranteed_back_view": false
+        }
+      }
+    }
+  },
+  "shared_sprites": {
+    "hand": {
+      "path": "hand.png",
+      "sha256": "3d370aa7731c2a2f667050abfbaa881e77b4d2e811964e55e35a8b699838f590"
+    },
+    "shoe-left": {
+      "path": "shoe-left.png",
+      "sha256": "fd55a0fbf736d278809e1fc177ff6a2b972b5d219745c2fcbaf90e8dbe029d7a"
+    },
+    "shoe-right": {
+      "path": "shoe-right.png",
+      "sha256": "cd0361401ef9b6550f2e81f860c0347412ddaac95ebf9869a391de140d23ad53"
+    }
+  },
+  "style": {
+    "reference": "B6 Sample1 Eiffel V44",
+    "head": "Approved irregular white meme silhouette and local palette adaptation",
+    "limbs": "Same stable 3.6px local ink width on both arm segments and legs, 7.4px hand radius at 180/184px head width; no baking into clothes",
+    "paint": "Source matte pigment variation, soft warm highlights and purple face shadow; fixed texture in character space"
+  },
+  "provenance": {
+    "method": "Local code repaint/adaptation of existing approved raster heads, hands, shoes and pigment texture; garments newly drawn in code",
+    "new_ai_image_calls": 0,
+    "new_ai_video_calls": 0,
+    "paid_calls": 0,
+    "derivation": [
+      {
+        "view": "front",
+        "head_source": "buyer-greedy-head",
+        "garment": "Code-authored clothing contour filled with source hero-body matte pigment variation; no head/hand/arm/leg baked into garment",
+        "sleeves": "Two explicitly traced sleeve polygon masks share garment image_to_local; per-arm normal and exit segment recorded"
+      },
+      {
+        "view": "three_quarter",
+        "head_source": "buyer-head",
+        "garment": "Code-authored clothing contour filled with source hero-body matte pigment variation; no head/hand/arm/leg baked into garment",
+        "sleeves": "Two explicitly traced sleeve polygon masks share garment image_to_local; per-arm normal and exit segment recorded"
+      },
+      {
+        "view": "side",
+        "head_source": "buyer-side-head",
+        "garment": "Code-authored clothing contour filled with source hero-body matte pigment variation; no head/hand/arm/leg baked into garment",
+        "sleeves": "Two explicitly traced sleeve polygon masks share garment image_to_local; per-arm normal and exit segment recorded"
+      }
+    ]
+  },
+  "required_views": [
+    "front",
+    "three_quarter",
+    "side"
+  ],
+  "tested_scope": {
+    "status": "bounded stationary action fixture; not a complete locomotion library",
+    "supported_tested_actions": [
+      "stationary authored front/three_quarter/side view change",
+      "five configured rest/reach/offer/receive/retract trajectories",
+      "main-fixture paper pick-up, shared transfer and withdrawal"
+    ],
+    "test_fps": 30,
+    "main_fixture_frames": 180,
+    "fixture_source": "demo/puppet-test-scene.py",
+    "unverified": [
+      "walking gait",
+      "running",
+      "back view",
+      "arbitrary prop targets",
+      "arbitrary upper/bend combinations inside numeric joint limits"
+    ],
+    "change_requirement": "A new view, silhouette, target path, gait or limb occlusion requires fresh geometry, alpha, contact and continuity validation; never widen ranges to make a failing target pass."
+  }
+}

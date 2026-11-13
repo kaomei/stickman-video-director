@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "style": "B6",
+  "renderer": "b6-hk-v90-v1",
+  "example": "hong-kong-v90",
+  "ratio": "16:9",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 20,
+  "entry": "source/work/hk-v90-unified-arms/animate.py",
+  "bindings": "character-bindings.json",
+  "story": "story.json",
+  "captions": "captions.json",
+  "scene_plan": "scene-plan.json",
+  "voice": {
+    "name": "The Pharaoh 3",
+    "path": "audio/master.m4a",
+    "sha256": "611e431541688153cd3e545d7b9f15af0f0c5875cdafa5306bf9c58a42f9bc9b",
+    "speed": 1,
+    "original_aac_sha256": "513336cc0a4e46e636972e896afd6667e103457db0e7e0af1cf8cbee11c77294"
+  },
+  "review": {
+    "status": "pending_user_review",
+    "reference_video_sha256": "b5d906f9eed6b72d93825306049d7a9b4e7475424de4cd262ab23f79d719484a"
+  },
+  "source_only": true
+}

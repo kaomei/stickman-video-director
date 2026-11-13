@@ -1,0 +1,742 @@
+{
+  "status": "passed",
+  "fps": 30,
+  "authored_path_pixel_frames": 930,
+  "fixture_geometry_frames": 180,
+  "all_poses_and_paths_checked": [
+    "rest",
+    "reach",
+    "offer",
+    "receive",
+    "retract"
+  ],
+  "fixture_source": "historical-source:b6-limb-system-implementation/demo/puppet-test-scene.py",
+  "fixture_sha256": "28c305b7f3f217dc071bdf4788b20e1ff79b2d670cb9a8bcc7579e8afe01cd77",
+  "runtime_sha256": "8efb28848c0fe20614cb1b11c6db720932db98d2a7d71359511dee5684f32b7a",
+  "packages": {
+    "kiosk_keeper": {
+      "path": "historical-source:b6-limb-system-implementation/characters/kiosk_keeper/package.json",
+      "sha256": "baf5909ab0cc84ffcb449fdad3f9ea87bacdaa8410e27b1f2c57259f460623cc"
+    },
+    "parcel_runner": {
+      "path": "historical-source:b6-limb-system-implementation/characters/parcel_runner/package.json",
+      "sha256": "ea4daf4c49186aa1ff9455d1511dc4c41360a609683dabbac02fb3f8e94fb1d9"
+    }
+  },
+  "declared_scope": "Stationary authored three-view turn, configured five action trajectories and actual main-fixture contact targets only. Gait, back view and arbitrary angle combinations not guaranteed.",
+  "measurements": [
+    {
+      "character": "kiosk_keeper",
+      "view": "front",
+      "arm": "left",
+      "preset": {
+        "count": 155,
+        "upper": [
+          90.0,
+          105.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "fixture": {
+        "count": 9,
+        "upper": [
+          90.0,
+          90.0
+        ],
+        "bend": [
+          9.999999999999975,
+          9.999999999999975
+        ]
+      },
+      "declared_upper": [
+        85,
+        110
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "front",
+      "arm": "right",
+      "preset": {
+        "count": 155,
+        "upper": [
+          75.0,
+          90.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "fixture": {
+        "count": 9,
+        "upper": [
+          90.0,
+          90.0
+        ],
+        "bend": [
+          9.999999999999975,
+          9.999999999999975
+        ]
+      },
+      "declared_upper": [
+        70,
+        95
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "three_quarter",
+      "arm": "left",
+      "preset": {
+        "count": 155,
+        "upper": [
+          90.0,
+          105.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "fixture": {
+        "count": 6,
+        "upper": [
+          90.0,
+          90.0
+        ],
+        "bend": [
+          9.999999999999975,
+          9.999999999999975
+        ]
+      },
+      "declared_upper": [
+        85,
+        110
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "three_quarter",
+      "arm": "right",
+      "preset": {
+        "count": 155,
+        "upper": [
+          75.0,
+          90.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "fixture": {
+        "count": 6,
+        "upper": [
+          90.0,
+          90.0
+        ],
+        "bend": [
+          9.999999999999975,
+          9.999999999999975
+        ]
+      },
+      "declared_upper": [
+        70,
+        95
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "side",
+      "arm": "left",
+      "preset": {
+        "count": 155,
+        "upper": [
+          90.0,
+          105.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "fixture": {
+        "count": 165,
+        "upper": [
+          90.0,
+          90.0
+        ],
+        "bend": [
+          9.999999999999975,
+          9.999999999999975
+        ]
+      },
+      "declared_upper": [
+        85,
+        110
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "side",
+      "arm": "right",
+      "preset": {
+        "count": 155,
+        "upper": [
+          75.0,
+          90.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "fixture": {
+        "count": 165,
+        "upper": [
+          50.83871924775469,
+          100.4771884562628
+        ],
+        "bend": [
+          9.999999999999975,
+          70.67900217817683
+        ]
+      },
+      "declared_upper": [
+        45,
+        106
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    },
+    {
+      "character": "parcel_runner",
+      "view": "front",
+      "arm": "left",
+      "preset": {
+        "count": 155,
+        "upper": [
+          90.0,
+          105.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "declared_upper": [
+        85,
+        110
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    },
+    {
+      "character": "parcel_runner",
+      "view": "front",
+      "arm": "right",
+      "preset": {
+        "count": 155,
+        "upper": [
+          75.0,
+          90.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "declared_upper": [
+        70,
+        95
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    },
+    {
+      "character": "parcel_runner",
+      "view": "three_quarter",
+      "arm": "right",
+      "preset": {
+        "count": 155,
+        "upper": [
+          75.0,
+          90.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "fixture": {
+        "count": 180,
+        "upper": [
+          90.0,
+          90.0
+        ],
+        "bend": [
+          9.999999999999975,
+          9.999999999999975
+        ]
+      },
+      "declared_upper": [
+        70,
+        95
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    },
+    {
+      "character": "parcel_runner",
+      "view": "three_quarter",
+      "arm": "left",
+      "preset": {
+        "count": 155,
+        "upper": [
+          90.0,
+          105.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "fixture": {
+        "count": 180,
+        "upper": [
+          77.0653076878937,
+          114.72252161450399
+        ],
+        "bend": [
+          9.99999999999994,
+          85.7433030895399
+        ]
+      },
+      "declared_upper": [
+        72,
+        120
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    },
+    {
+      "character": "parcel_runner",
+      "view": "side",
+      "arm": "right",
+      "preset": {
+        "count": 155,
+        "upper": [
+          75.0,
+          90.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "declared_upper": [
+        70,
+        95
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    },
+    {
+      "character": "parcel_runner",
+      "view": "side",
+      "arm": "left",
+      "preset": {
+        "count": 155,
+        "upper": [
+          90.0,
+          105.0
+        ],
+        "bend": [
+          10.0,
+          110.0
+        ]
+      },
+      "declared_upper": [
+        85,
+        110
+      ],
+      "declared_bend": [
+        5,
+        115
+      ]
+    }
+  ],
+  "pixel_checks": [
+    {
+      "character": "kiosk_keeper",
+      "view": "front",
+      "action": "rest",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8635408418103186,
+        "forearm": 0.8521941019096527,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "front",
+      "action": "reach",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8598811519122352,
+        "forearm": 0.8499096976835492,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "front",
+      "action": "offer",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8538101938002088,
+        "forearm": 0.8499120940131396,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "front",
+      "action": "receive",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8616544078778451,
+        "forearm": 0.8497528830313015,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "front",
+      "action": "retract",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8542364622038131,
+        "forearm": 0.8491996233521657,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "three_quarter",
+      "action": "rest",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8552087592567353,
+        "forearm": 0.853071719366984,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "three_quarter",
+      "action": "reach",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8535269392434085,
+        "forearm": 0.847717743849379,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "three_quarter",
+      "action": "offer",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8477084416180024,
+        "forearm": 0.8519461789840286,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "three_quarter",
+      "action": "receive",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8621918801353311,
+        "forearm": 0.8503659736744987,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "three_quarter",
+      "action": "retract",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8484697045416686,
+        "forearm": 0.8482591346530006,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "side",
+      "action": "rest",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8485756890959123,
+        "forearm": 0.8528336103974611,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "side",
+      "action": "reach",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8485756890959123,
+        "forearm": 0.8495040107770497,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "side",
+      "action": "offer",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.840612461375271,
+        "forearm": 0.8503877870083688,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "side",
+      "action": "receive",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.860063780765064,
+        "forearm": 0.8504765903189191,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "kiosk_keeper",
+      "view": "side",
+      "action": "retract",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.840612461375271,
+        "forearm": 0.8494789292506956,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "front",
+      "action": "rest",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8560955205719066,
+        "forearm": 0.8527806235569353,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "front",
+      "action": "reach",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8560955205719066,
+        "forearm": 0.8443639167309175,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "front",
+      "action": "offer",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8496311506578448,
+        "forearm": 0.8440887651743602,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "front",
+      "action": "receive",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8589450231829951,
+        "forearm": 0.8423855999248039,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "front",
+      "action": "retract",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8495351318396586,
+        "forearm": 0.8422073722785083,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "three_quarter",
+      "action": "rest",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8497232023360505,
+        "forearm": 0.8527808735744492,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "three_quarter",
+      "action": "reach",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8486982176531419,
+        "forearm": 0.8428122050959421,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "three_quarter",
+      "action": "offer",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8424686701545199,
+        "forearm": 0.8426939851275455,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "three_quarter",
+      "action": "receive",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8520488098824948,
+        "forearm": 0.8422977958272623,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "three_quarter",
+      "action": "retract",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8424686701545199,
+        "forearm": 0.8453955387615798,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "side",
+      "action": "rest",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.7915880455292471,
+        "forearm": 0.8437049104026065,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "side",
+      "action": "reach",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.7897481768977698,
+        "forearm": 0.8429766359548442,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "side",
+      "action": "offer",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.7842750799739232,
+        "forearm": 0.846203753998431,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "side",
+      "action": "receive",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.8515668782091088,
+        "forearm": 0.8446870271438718,
+        "hand": 1.0
+      }
+    },
+    {
+      "character": "parcel_runner",
+      "view": "side",
+      "action": "retract",
+      "sampled_frames": 31,
+      "minimum_visible_fraction": {
+        "upper": 0.7857903706859821,
+        "forearm": 0.8426973333751135,
+        "hand": 1.0
+      }
+    }
+  ],
+  "errors": [],
+  "negative_boundary_tests": {
+    "expected_rejections": 48,
+    "actual_rejections": 48
+  }
+}

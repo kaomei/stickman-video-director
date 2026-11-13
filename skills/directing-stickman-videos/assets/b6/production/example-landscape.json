@@ -1,0 +1,120 @@
+{
+  "ratio": "16:9",
+  "native_design": "16:9",
+  "width": 1280,
+  "height": 720,
+  "shots": [
+    {
+      "id": "arcade-cause",
+      "start": 0,
+      "end": 4.866666666666666,
+      "composition": "Wide arcade controls and two actors with clear near/far arms",
+      "action": "Joystick/button contact, loss and reaction at native action speed; last pose settles",
+      "camera": {
+        "intent": "Established arcade world projection, not a cropped movie"
+      },
+      "transition": "Object cut to uneaten bun"
+    },
+    {
+      "id": "cold-bun",
+      "start": 4.866666666666666,
+      "end": 6.2,
+      "composition": "Bun foreground with seated cast behind it",
+      "action": "Independent restaurant patrons and static contact-state bun",
+      "camera": {
+        "intent": "New lateral truck over real painted world",
+        "keys": [
+          [
+            0,
+            832,
+            619,
+            2.08
+          ],
+          [
+            1.3333333333333333,
+            866,
+            619,
+            2.08
+          ]
+        ]
+      },
+      "transition": "Food/control ironic match cut"
+    },
+    {
+      "id": "rematch",
+      "start": 6.2,
+      "end": 7.5,
+      "composition": "Wide rematch, cabinet and both actors",
+      "action": "Native-speed pressing and friend reaction; final pose hold",
+      "camera": {
+        "intent": "Original world-space lateral rematch camera"
+      },
+      "transition": "Readable settle"
+    }
+  ],
+  "caption": {
+    "profile": "b6-landscape-native-archivo-black-v1",
+    "native_design": "16:9",
+    "font_family": "Archivo Black",
+    "font_file": "fonts/ArchivoBlack.ttf",
+    "font_sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+    "font_size": 47,
+    "stroke": 4,
+    "fill": "#ffffff",
+    "stroke_fill": "#171319",
+    "supersampling": 3,
+    "resample": "lanczos",
+    "anchor": "ms",
+    "side": 44,
+    "switch": "hard_cut",
+    "autoshrink": false,
+    "pop": false,
+    "baseline": 620,
+    "band": [
+      568,
+      664
+    ],
+    "native_layout_reason": "Authored native 1280x720 arcade/booth framing keeps the baseline below hands and preserves room for one semantic phrase; pending decoded AV review."
+  },
+  "cast_inventory": [
+    {
+      "id": "strong",
+      "role": "Black-shirt lead in reused painted arcade/booth performance",
+      "shot_ids": [
+        "arcade-cause",
+        "cold-bun",
+        "rematch"
+      ]
+    },
+    {
+      "id": "friend",
+      "role": "Floral-shirt supporting actor in reused arcade/booth performance",
+      "shot_ids": [
+        "arcade-cause",
+        "cold-bun",
+        "rematch"
+      ]
+    },
+    {
+      "id": "kitchen-cook",
+      "role": "Painted kitchen background cook; include wherever actually visible",
+      "shot_ids": [
+        "cold-bun"
+      ]
+    },
+    {
+      "id": "tea-patron",
+      "role": "Background tea drinker from V65 painted layers",
+      "shot_ids": [
+        "cold-bun"
+      ]
+    },
+    {
+      "id": "paper-patron",
+      "role": "Background newspaper reader from V65 painted layers",
+      "shot_ids": [
+        "cold-bun"
+      ]
+    }
+  ]
+}

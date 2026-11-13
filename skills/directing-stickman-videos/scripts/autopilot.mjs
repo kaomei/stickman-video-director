@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import {spawnSync} from 'node:child_process';
 import {ROOT, STYLES, FFMPEG, FFPROBE, run, probe, loadProject, outputDir, save, json, hashFile, groupWords} from './autopilot-core.mjs';
 import {BRIAN} from './b4-runtime.mjs';
 import {B4_HOOK} from './b4-opening.mjs';
@@ -16,14 +17,23 @@ async function main() {
     try { await import('sharp'); checks.sharp = true; } catch { checks.sharp = false; }
     checks.fonts = ['Caveat.ttf', 'NotoSans.ttf', 'Nunito.ttf'].every(f => { const file = path.join(ROOT, 'assets/fonts', f); return fs.existsSync(file) && fs.statSync(file).size > 10000; });
     checks.b4_hook_font = fs.existsSync(path.join(ROOT, 'assets/fonts/Nunito.ttf')) && hashFile(path.join(ROOT, 'assets/fonts/Nunito.ttf')) === B4_HOOK.font_sha256;
+    if (option('--style') === 'B6') {
+      const r = spawnSync(option('--python', process.env.B6_PYTHON || 'python3'), ['-c', 'import sys,numpy,PIL,cv2; assert sys.version_info >= (3,9); print("ok")'], {encoding: 'utf8'});
+      checks.b6_python_paint_dependencies = r.status === 0;
+      const {checkPublicCaptionFont} = await import('./b6-fonts.mjs');
+      try { checks.b6_public_caption_font = checkPublicCaptionFont(ROOT).ok; } catch { checks.b6_public_caption_font = false; }
+      const {checkPack} = await import('./b6-dynamic-meme.mjs');
+      try { checks.b6_complete_pack = checkPack().ok; } catch { checks.b6_complete_pack = false; }
+    }
     console.log(JSON.stringify({checks, gemini_key_present: Boolean(process.env.GEMINI_API_KEY), network_checked: false, note: 'Key presence is not quota/billing verification'}, null, 2));
     if (Object.values(checks).some(v => !v)) process.exitCode = 1;
   } else if (command === 'probe') console.log(JSON.stringify(probe(path.resolve(args[0])), null, 2));
   else if (command === 'init') {
     if (!args[0]) throw new Error('Project directory required');
     const style = option('--style', 'B1');
+    if (style === 'B6') { const {initB6} = await import('./b6-dynamic-meme.mjs'); console.log(JSON.stringify(initB6(args[0], option('--ratio'), option('--example')))); return; }
     if (style === 'B5') { console.log(JSON.stringify(initB5(args[0]))); return; }
-    if (!STYLES.includes(style)) throw new Error('Choose style B1, B2, B3, B4 or B5');
+    if (!STYLES.includes(style)) throw new Error('Choose style B1, B2, B3, B4, B5 or B6');
     const dir = path.resolve(args[0]); if (fs.existsSync(dir)) throw new Error('Project directory already exists; will not overwrite');
     if (dir.startsWith(ROOT + path.sep)) throw new Error('Create projects outside the installed Skill');
     fs.mkdirSync(dir, {recursive: true});
@@ -34,7 +44,11 @@ async function main() {
     if (fs.existsSync(args[1])) throw new Error('Caption output exists; will not overwrite');
     save(args[1], groupWords(json(args[0]), Number(option('--lead', 0))));
     console.log(JSON.stringify({output: path.resolve(args[1])}));
-  } else if (['validate', 'preview', 'approve', 'render', 'accept-text', 'accept-picture', 'accept-visual'].includes(command)) {
+  } else if (['validate', 'preview', 'approve', 'render', 'accept-text', 'accept-picture', 'accept-visual', 'review-pack', 'check-review'].includes(command)) {
+    const possibleProject = args[0] && path.resolve(args[0]);
+    const possibleB6 = possibleProject && (fs.statSync(possibleProject).isDirectory() ? path.join(possibleProject, 'project.json') : possibleProject);
+    if (possibleB6 && json(possibleB6).style === 'B6') { const {runB6} = await import('./b6-dynamic-meme.mjs'); console.log(JSON.stringify(await runB6(command, args), null, 2)); return; }
+    if (['review-pack', 'check-review'].includes(command)) throw new Error('Motion review commands currently apply to the B6 production renderer only');
     if (args[0] && json(path.resolve(args[0])).style === 'B5') throw new Error('B5 uses the code-authored route: node scripts/character-explainer.mjs --help; not the B1–B4 manifest renderer');
     const scoped = command === 'preview' || command === 'validate' && args.includes('--seconds');
     const seconds = scoped ? Number(option('--seconds', 20)) : undefined;
@@ -129,6 +143,6 @@ async function main() {
       if (a.preview_fingerprint !== reviewed.fingerprint || a.preview_seconds !== report.preview_seconds || a.preview_sha256 !== report.output_sha256) throw new Error('Approval invalidated; preview and user approval required again');
     }
     const {render} = await import('./autopilot-render.mjs'); console.log(JSON.stringify(await render(p, {full: command === 'render', seconds, replace: args.includes('--replace')}), null, 2));
-  } else throw new Error('Commands: doctor | probe FILE | init DIR | captions WORDS OUTPUT [--lead N] | validate PROJECT [--seconds N] | preview PROJECT [--seconds N] [--replace] | approve PROJECT --note TEXT [--visual-review REVIEW_JSON] [--text-review REVIEW_JSON] [--picture-review REVIEW_JSON] | render PROJECT [--replace] | accept-text PROJECT --review REVIEW_JSON | accept-picture PROJECT --review REVIEW_JSON | accept-visual PROJECT --review REVIEW_JSON');
+  } else throw new Error('Commands: doctor | probe FILE | init DIR | review-pack B6_PROJECT --ratio R --report FILE --output outputs/review | check-review B6_PROJECT --ratio R --review FILE | captions WORDS OUTPUT [--lead N] | validate PROJECT [--seconds N] | preview PROJECT [--seconds N] [--replace] | approve PROJECT --note TEXT [--visual-review REVIEW_JSON] [--text-review REVIEW_JSON] [--picture-review REVIEW_JSON] | render PROJECT [--replace] | accept-text PROJECT --review REVIEW_JSON | accept-picture PROJECT --review REVIEW_JSON | accept-visual PROJECT --review REVIEW_JSON');
 }
 main().catch(e => { console.error(e.message); process.exitCode = 1; });

@@ -1,0 +1,259 @@
+{
+  "version": 3,
+  "preferred_ratio": "9:16",
+  "reference": {
+    "id": "sample-1-eiffel-portrait-v44",
+    "path": "reference/eiffel-portrait-v44.mp4",
+    "sha256": "b0047f5889a7ca1fd47097d8c8b3db054ef412e2f4a7297d3fe04fc1083e5d79",
+    "ratio": "9:16",
+    "role": "User-confirmed strict primary B6 drawing and animation standard: Sample 1 portrait. Sample 2 V90 is secondary binding/engineering evidence, not a replacement style or limb-weight target.",
+    "segments": [
+      {
+        "start": 0,
+        "end": 2.8,
+        "purpose": "Primary character proportions, limb stroke and meme expression in the opening transaction"
+      },
+      {
+        "start": 5.35,
+        "end": 9,
+        "purpose": "Spatial entry, staging, painted light and character/contact scale"
+      },
+      {
+        "start": 41.08,
+        "end": 43.04,
+        "purpose": "Independent carriage travel and camera tracking through a broad painted world"
+      }
+    ]
+  },
+  "style_standard": {
+    "authority": "User explicitly selected Sample 1 portrait as the favorite and strict acceptance standard on 2026-11-13",
+    "limb_line_weight": "Preserve Sample 1's visibly heavier single painted arm/leg stroke relative to the character. Compare similar views at matched head width; record the frames and normalization. Never inherit Sample 2 V90's finer wire-like limbs as the new-story default, invent a universal pixel width, or change body/camera scale to hide the difference.",
+    "drawing": "Match irregular pressure-varying ink, unified head/body brushwork, sparse asymmetric meme expressions and matte painted shapes. Keep stick limbs rather than flesh-filled anatomical forearms.",
+    "light": "Match soft painted light, readable value/midtone separation, localized restrained bloom, pale colored contact/underside shadows and matte material edges. Texture density follows visual hierarchy and remains local to artwork; a global warm/grain/blur filter does not establish the look.",
+    "animation": "Match its readable action/contact/release, emotional beats, broad layered space, motivated spatial camera work and rhythm. A valid skeleton or repeated flat zoom is insufficient.",
+    "format": "Portrait 9:16 works best. Landscape requires its own native composition and camera plan while preserving the primary drawing and performance standard; portrait preference does not change a user's requested ratio.",
+    "secondary_reference": "Hong Kong V90 supplies tested binding mechanics and an unchanged reproduction project. Its thinner lines and engineering pass do not supersede the primary style or approve a new performance.",
+    "space_richness": "Match the primary film’s broad usable world and changing spatial relationships: a move should expose meaningful new regions, depth-layer responses or foreground occlusion rather than repeatedly enlarging the same flat storefront. Demonstrate this in the representative segment; every individual shot need not travel or contain all layers.",
+    "performance": "Match the primary film’s readable, purposeful performance: preparation, decisive action or contact, release/recovery, supported body/shoulder/weight change, and timed gaze/emotion. Wrist-only gestures, slow inert posing and decorative torso sway do not establish that quality. A motivated still hold remains valid.",
+    "captions": "For portrait, use the exact English Sample 1 caption profile and actual decoded verification: Arial Black47/4 at720x1280, white/#171319, baseline914, band864..951, side44, 3xLanczos, immediate semantic phrase cuts. Preserved/synced is separate from matched. Landscape and explicit language/user deviations require their own documented native design/review.",
+    "supporting_cast": "All active identities/views and scene branches share the same drawing/binding constraints. Review sleeve exits, near/far arm ownership, purposeful occlusion, support/contact and gait/vehicle mechanics in actual encoded output, including background cast."
+  },
+  "required_checks": [
+    "space_depth",
+    "camera_purpose",
+    "body_action",
+    "expression_gaze",
+    "rhythm_continuity",
+    "drawing_anatomy",
+    "limb_line_weight",
+    "native_audio_captions"
+  ],
+  "regressions": [
+    "Sample 2 V90's thinner limbs must not replace Sample 1 portrait's relative stroke weight or painted brushwork.",
+    "A technically valid encode with same-storefront reframing and weak wrist-only acting must not be delivered as a completed B6 quality pass.",
+    "Known animation or spatial-richness failures must be repaired and re-reviewed; pending/needs_repair is not a completed local test unless the user explicitly requests an interim version.",
+    "Single-line, safe, synced or unchanged captions do not establish Sample 1 matching. At720x1280,42px/mm/y1100 differs from locked47px/ms/baseline914 and must fail the portrait profile.",
+    "A broad passed review category cannot cover missing detailed subchecks or a confirmed visible defect; review_correction cannot erase an actual known mismatch.",
+    "A reviewed still asset or successful skeleton trace does not certify every actor, expression, contact, native camera extreme or final encoded shot.",
+    "A global warm/grain/blur filter, constant character rocking or repeated flat zoom cannot replace painted value design, purposeful acting and broad layered-world camera work."
+  ],
+  "acceptance_contract": {
+    "version": 3,
+    "mandatory_capabilities": [
+      "space_depth",
+      "body_action"
+    ],
+    "evaluation": "Actual intended-speed moving preview and primary-reference comparison, supported by decoded neighboring frames and fingerprinted code. No cut-count, universal displacement threshold or synthetic similarity score supplies aesthetic acceptance.",
+    "failure_action": "Continue authorized local dependency repair, animation/space correction, fresh encoding and review until the internal reference-aware standard passes. Preserve failed previews/reviews and link their unresolved findings into the next review pack.",
+    "completion_rule": "Pending or needs_repair is active work, not a completed delivery or a reason to wait for user review. User-requested interim previews, explicit stops and evidenced external blockers remain valid boundaries; no paid/external action is newly authorized.",
+    "required_evidence": [
+      "Original-speed full-range AV playback record",
+      "Observed broad-world/depth/reveal example",
+      "Observed preparation/action/contact-or-peak/recovery/body/emotion example",
+      "Closed prior-rejection repair log with current rendered and implementation evidence",
+      "All 35 detailed subchecks with actual candidate/reference observations",
+      "Locked portrait caption profile, renderer/font/source fingerprints and decoded text/transition evidence",
+      "Full cast/view/near-far limb coverage and contact/cut-neighbor inspection",
+      "Matched-scale drawing/light/material review separate from preserved hashes"
+    ],
+    "required_subcheck_count": 35,
+    "required_subchecks": "Every required_subchecks entry needs a separate verdict, actual observation, reviewed range, candidate/reference playback and fingerprinted implementation evidence. A broad pass cannot hide an omitted/failed subcheck.",
+    "mechanical_vs_perceptual": "Profile/font/source/hash/coverage and evidence freshness checks are mechanical. They cannot certify perceived style, light, natural action, sync or storytelling; actual reference-aware moving/audio review remains mandatory.",
+    "preserved_vs_matched": "Identical approved material proves reuse only; it does not prove primary-reference matching. Confirmed visible defects remain failures until rendered repair and re-observation.",
+    "review_scale": "Review native-size encoded crops/frames and actual original-speed full-range AV. Low-resolution contact sheets locate issues but cannot supply final detail/motion/audio acceptance."
+  },
+  "required_subchecks": {
+    "space_depth": [
+      "world_routes_reveal",
+      "depth_planes_parallax_occlusion",
+      "spatial_staging_scale",
+      "background_independent_activity"
+    ],
+    "camera_purpose": [
+      "motivated_attention_landings",
+      "native_composition_safe_coverage",
+      "actor_similarity_no_warp",
+      "cut_axis_gaze_continuity"
+    ],
+    "body_action": [
+      "anticipation_action_recovery",
+      "shoulder_weight_support",
+      "contact_ownership_release",
+      "stance_swing_or_deliberate_hold"
+    ],
+    "expression_gaze": [
+      "identity_shape_consistency",
+      "emotional_progression",
+      "eyeline_target",
+      "reaction_readable_hold"
+    ],
+    "rhythm_continuity": [
+      "cause_action_reaction",
+      "travel_brake_land_hold",
+      "cut_readability_no_flash",
+      "focus_background_competition"
+    ],
+    "drawing_anatomy": [
+      "irregular_ink_pressure",
+      "unified_head_body_paint",
+      "single_stroke_fixed_limb_ownership",
+      "lighting_bloom_material_depth",
+      "shadows_edges_no_plastic"
+    ],
+    "limb_line_weight": [
+      "matched_head_width_primary_frames",
+      "relative_stroke_pressure",
+      "scale_pose_supporting_cast_consistency"
+    ],
+    "native_audio_captions": [
+      "caption_placement_typography",
+      "caption_semantics_timing",
+      "caption_raster_switch",
+      "actual_voice_sync_readability",
+      "original_speed_voice_identity",
+      "voice_music_foley_hierarchy",
+      "final_media_identity_av_playback"
+    ]
+  },
+  "caption_profiles": {
+    "9:16": {
+      "profile": "eiffel-v44-portrait-v1",
+      "native_design": "9:16",
+      "font_family": "Arial Black",
+      "font_file": "engine/source/fonts/ArialBlack.ttf",
+      "font_sha256": "7d7db3ad96a31373c1437c6ab14266f6605495544c8e663558b047521174c42e",
+      "font_size": 47,
+      "stroke": 4,
+      "fill": "#ffffff",
+      "stroke_fill": "#171319",
+      "supersampling": 3,
+      "resample": "lanczos",
+      "anchor": "ms",
+      "side": 44,
+      "switch": "hard_cut",
+      "autoshrink": false,
+      "pop": false,
+      "baseline": 914,
+      "band": [
+        864,
+        951
+      ]
+    },
+    "16:9": {
+      "profile": "b6-landscape-native-v1",
+      "native_design": "16:9",
+      "font_family": "Arial Black",
+      "font_file": "engine/source/fonts/ArialBlack.ttf",
+      "font_sha256": "7d7db3ad96a31373c1437c6ab14266f6605495544c8e663558b047521174c42e",
+      "font_size": 47,
+      "stroke": 4,
+      "fill": "#ffffff",
+      "stroke_fill": "#171319",
+      "supersampling": 3,
+      "resample": "lanczos",
+      "anchor": "ms",
+      "side": 44,
+      "switch": "hard_cut",
+      "autoshrink": false,
+      "pop": false,
+      "baseline": 620,
+      "band": [
+        568,
+        664
+      ]
+    }
+  },
+  "caption_profile_policy": {
+    "reference_dimensions": {
+      "9:16": [
+        720,
+        1280
+      ],
+      "16:9": [
+        1280,
+        720
+      ]
+    },
+    "portrait": "Confirmed English Sample 1 renderer contract; scale geometry/type/stroke uniformly with portrait native resolution. Baseline is not the visible glyph center. No legacy bottom/mm layout, per-cue shrinking, pop, extra shadow or unintended blank flashing between continuous cues. Real speech pauses may have intentional cue gaps.",
+    "landscape": "The listed 16:9 coordinates are an unapproved local starting proposal, not observed V44 facts. Author a native_layout_reason and separately review native composition; size/baseline/band can be deliberately redesigned for this ratio. native_layout_reason is a scene-specific authored field; an empty template reason remains pending.",
+    "language_or_explicit_override": "When this font lacks required glyphs, or the user explicitly requests another subtitle design, record the language/user direction, exact intentional deviation and native review. Do not silently substitute a font/layout or claim an exact default-profile match.",
+    "semantic_timing": "Break from meaning and actual approved speech. V44 cue count/mean duration are observations, not quotas. Preserve complete phrases and original voice speed."
+  },
+  "public_caption_profiles": {
+    "archivo-black": {
+      "9:16": {
+        "profile": "eiffel-v44-portrait-archivo-black-v1",
+        "native_design": "9:16",
+        "font_family": "Archivo Black",
+        "font_file": "fonts/ArchivoBlack.ttf",
+        "font_sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+        "font_size": 47,
+        "stroke": 4,
+        "fill": "#ffffff",
+        "stroke_fill": "#171319",
+        "supersampling": 3,
+        "resample": "lanczos",
+        "anchor": "ms",
+        "side": 44,
+        "switch": "hard_cut",
+        "autoshrink": false,
+        "pop": false,
+        "baseline": 914,
+        "band": [
+          864,
+          951
+        ]
+      },
+      "16:9": {
+        "profile": "b6-landscape-native-archivo-black-v1",
+        "native_design": "16:9",
+        "font_family": "Archivo Black",
+        "font_file": "fonts/ArchivoBlack.ttf",
+        "font_sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+        "font_size": 47,
+        "stroke": 4,
+        "fill": "#ffffff",
+        "stroke_fill": "#171319",
+        "supersampling": 3,
+        "resample": "lanczos",
+        "anchor": "ms",
+        "side": 44,
+        "switch": "hard_cut",
+        "autoshrink": false,
+        "pop": false,
+        "baseline": 620,
+        "band": [
+          568,
+          664
+        ]
+      }
+    }
+  },
+  "public_caption_profile_policy": {
+    "default_new_story_variant": "archivo-black",
+    "authorization": "Project owner explicitly approved Archivo Black as the redistributable public caption alternative on 2026-11-13.",
+    "relation_to_primary": "The original Sample 1 Arial Black caption profiles and hashes above remain unchanged. Archivo Black is a separately named implemented public alternative, not a claim of exact original font pixels. All other primary drawing, motion, space, speech timing and review requirements remain in force.",
+    "font_license": "SIL Open Font License 1.1; copied with the font into each new-story project.",
+    "legacy_reproduction": "The frozen Hong Kong V90 engine remains unchanged and provisions its original font aliases locally; this new-story font is outside engine/."
+  }
+}

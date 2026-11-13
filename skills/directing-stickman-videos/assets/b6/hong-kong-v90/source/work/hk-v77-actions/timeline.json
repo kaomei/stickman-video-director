@@ -1,0 +1,159 @@
+{
+  "duration": 20,
+  "fps": 30,
+  "dialogue": [
+    {
+      "start": 3.02,
+      "end": 4.52,
+      "role": "owner",
+      "voice": "Daniel",
+      "text": "Your friend's paying.",
+      "caption": "Your friend's paying."
+    },
+    {
+      "start": 5.02,
+      "end": 6.4,
+      "role": "customer",
+      "voice": "Eddy (英语（美国）)",
+      "text": "He's paying?",
+      "caption": "He's paying?"
+    },
+    {
+      "start": 7.07,
+      "end": 8.45,
+      "role": "friend",
+      "voice": "Daniel",
+      "text": "Go on. Eat.",
+      "caption": "Go on. Eat."
+    },
+    {
+      "start": 10.6,
+      "end": 11.95,
+      "role": "friend",
+      "voice": "Daniel",
+      "text": "You lose. Again.",
+      "caption": "You lose. Again."
+    },
+    {
+      "start": 14.1,
+      "end": 16.55,
+      "role": "customer",
+      "voice": "Eddy (英语（美国）)",
+      "text": "When you lose, I'll eat.",
+      "caption": "When you lose, I'll eat."
+    },
+    {
+      "start": 18.4,
+      "end": 19.45,
+      "role": "friend",
+      "voice": "Daniel",
+      "text": "Not yet.",
+      "caption": "Not yet."
+    }
+  ],
+  "captions": [
+    [
+      3.02,
+      4.52,
+      "Your friend's paying."
+    ],
+    [
+      5.02,
+      6.4,
+      "He's paying?"
+    ],
+    [
+      7.07,
+      8.45,
+      "Go on. Eat."
+    ],
+    [
+      10.6,
+      11.33,
+      "You lose."
+    ],
+    [
+      11.33,
+      11.95,
+      "Again."
+    ],
+    [
+      14.1,
+      15.39,
+      "When you lose,"
+    ],
+    [
+      15.39,
+      16.55,
+      "I'll eat."
+    ],
+    [
+      18.4,
+      19.45,
+      "Not yet."
+    ]
+  ],
+  "effects": [
+    {
+      "time": 2.4,
+      "type": "door"
+    },
+    {
+      "time": 3.22,
+      "type": "bag"
+    },
+    {
+      "time": 4.26,
+      "type": "paper"
+    },
+    {
+      "time": 5.3,
+      "type": "sting"
+    },
+    {
+      "time": 7.42,
+      "type": "plate"
+    },
+    {
+      "time": 9.0,
+      "type": "memory"
+    },
+    {
+      "time": 9.85,
+      "type": "button"
+    },
+    {
+      "time": 9.9,
+      "type": "coin"
+    },
+    {
+      "time": 10.15,
+      "type": "button"
+    },
+    {
+      "time": 10.87,
+      "type": "button"
+    },
+    {
+      "time": 11.17,
+      "type": "button"
+    },
+    {
+      "time": 11.9,
+      "type": "gameover"
+    },
+    {
+      "time": 13.7,
+      "type": "memory"
+    },
+    {
+      "time": 17.1,
+      "type": "tap"
+    },
+    {
+      "time": 19.02,
+      "type": "plate"
+    }
+  ],
+  "version": "V77"
+}

@@ -1,0 +1,424 @@
+{
+  "version": 1,
+  "style": "B6",
+  "name": "Dynamic Meme Animation / 动感 Meme 风",
+  "scope": "B6 installable production package; publication authorized by the project owner on 2026-11-13. New stories still require native planning and actual media review.",
+  "provenance": "User-directed AI still artwork and deterministic cutouts from the Eiffel project; animated by code. No Instagram source frames or source soundtrack redistributed in this pack.",
+  "acceptance": {
+    "v21b_character": "user-confirmed drawing baseline",
+    "v37_walk": "user-confirmed straighter-leg direction",
+    "v44_film": "User explicitly selected Sample 1 portrait V44 as the favorite and strict primary drawing/animation acceptance standard on 2026-11-13, including its heavier relative limb stroke; not approval of new films.",
+    "v45_landscape": "delivered, awaiting explicit user review; not a native-format approval transfer",
+    "primary_standard": "style-standard.json; Sample 1 portrait V44 overrides Sample 2 V90 for drawing, relative limb weight, soft light and animation quality. Portrait 9:16 works best."
+  },
+  "assets": [
+    {
+      "path": "paint/hero-body.png",
+      "sha256": "ebdf213e29b267b2019fa4807d169000f327d06ed9dc5f1694a2051669d009f9",
+      "bytes": 331254,
+      "source_project_relative": "work/eiffel-preview-20s/space-camera-v29/layers/hero-body.png",
+      "size": [
+        436,
+        628
+      ]
+    },
+    {
+      "path": "paint/hero-head.png",
+      "sha256": "1f43f2a99e94a3c1620e13161490fb65525ea2c8bde9ef5ddc85f3fdd63805f5",
+      "bytes": 319084,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/hero-head.png",
+      "size": [
+        562,
+        486
+      ]
+    },
+    {
+      "path": "paint/hero-front-head.png",
+      "sha256": "4c2f0586a0efbd9c517611c744b91e945fd0339020a4b2f886e39c65cd26494c",
+      "bytes": 165717,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/hero-front-head.png",
+      "size": [
+        369,
+        323
+      ]
+    },
+    {
+      "path": "paint/hero-side-head.png",
+      "sha256": "f3c62269e7f25f132551f2bb59bc131fee91c1eaeb7494dbde552289948b3b5a",
+      "bytes": 150523,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/hero-side-head.png",
+      "size": [
+        352,
+        327
+      ]
+    },
+    {
+      "path": "paint/hero-side-body.png",
+      "sha256": "3968d84186286ba1275c67d503e5b7feab9bbf9a4c59f4a5d8c3cf7172393b54",
+      "bytes": 107122,
+      "source_project_relative": "work/eiffel-preview-20s/space-camera-v29/layers/hero-side-body.png",
+      "size": [
+        203,
+        403
+      ]
+    },
+    {
+      "path": "paint/hero-back-head.png",
+      "sha256": "a50ce0625507fed8936f005e518fcc51f8b39aa62c722917b44f396c793cb901",
+      "bytes": 146054,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/hero-back-head.png",
+      "size": [
+        346,
+        324
+      ]
+    },
+    {
+      "path": "paint/hero-back-body.png",
+      "sha256": "2f9a144f08028d597f9fcdd7edac5257c5a311177c64e821ca4ee07af553010a",
+      "bytes": 146826,
+      "source_project_relative": "work/eiffel-preview-20s/space-camera-v29/layers/hero-back-body.png",
+      "size": [
+        298,
+        410
+      ]
+    },
+    {
+      "path": "paint/buyer-body.png",
+      "sha256": "8fe0ab11496fb7139be0a1f646c547ca59b9e309967a16f04a14b64155aad7a4",
+      "bytes": 222304,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/buyer-body.png",
+      "size": [
+        386,
+        386
+      ]
+    },
+    {
+      "path": "paint/buyer-head.png",
+      "sha256": "f70a7c73a8d489cc5fb00d38697a2fa33870ca61955f279d3a31c322bbf9f273",
+      "bytes": 224632,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/buyer-head.png",
+      "size": [
+        408,
+        374
+      ]
+    },
+    {
+      "path": "paint/buyer-greedy-head.png",
+      "sha256": "bc13d818ee1dd81ce4c3931f8f6917e9813321e037d6eeb602593d86e0e1bfa9",
+      "bytes": 232301,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/buyer-greedy-head.png",
+      "size": [
+        415,
+        371
+      ]
+    },
+    {
+      "path": "paint/buyer-side-body.png",
+      "sha256": "07b49425c7f23706c1b8f0792b7622ce836c80c3176cea9eb0c786ea3e4b8f63",
+      "bytes": 170107,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/buyer-side-body.png",
+      "size": [
+        312,
+        386
+      ]
+    },
+    {
+      "path": "paint/buyer-side-head.png",
+      "sha256": "f523cac45ae256a9edf39224f0850251c341e554a54b65d19142389c326fc6c7",
+      "bytes": 203280,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/buyer-side-head.png",
+      "size": [
+        375,
+        374
+      ]
+    },
+    {
+      "path": "paint/hero-hand.png",
+      "sha256": "3d370aa7731c2a2f667050abfbaa881e77b4d2e811964e55e35a8b699838f590",
+      "bytes": 5071,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/hero-hand.png",
+      "size": [
+        61,
+        61
+      ]
+    },
+    {
+      "path": "paint/shoe-left.png",
+      "sha256": "fd55a0fbf736d278809e1fc177ff6a2b972b5d219745c2fcbaf90e8dbe029d7a",
+      "bytes": 8607,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/shoe-left.png",
+      "size": [
+        127,
+        48
+      ]
+    },
+    {
+      "path": "paint/shoe-right.png",
+      "sha256": "cd0361401ef9b6550f2e81f860c0347412ddaac95ebf9869a391de140d23ad53",
+      "bytes": 9828,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/shoe-right.png",
+      "size": [
+        102,
+        58
+      ]
+    },
+    {
+      "path": "paint/letter.png",
+      "sha256": "cdbb6deb3eb41bf7c5fc48d10ccf53f2ee5ea933e3723924c4513a111b99217c",
+      "bytes": 213822,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/letter.png",
+      "size": [
+        368,
+        445
+      ]
+    },
+    {
+      "path": "paint/table.png",
+      "sha256": "5e546e739eb21d3ea1122b9518432d93bab7c539ea83cb959305780c84d42df8",
+      "bytes": 250448,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/table.png",
+      "size": [
+        500,
+        384
+      ]
+    },
+    {
+      "path": "paint/coins.png",
+      "sha256": "0a4525f9826b6fba301c545f19571d72a8f30f54a3d44817e624867342cdc439",
+      "bytes": 193652,
+      "source_project_relative": "work/eiffel-preview-20s/style-animation-v22/layers/coins.png",
+      "size": [
+        448,
+        298
+      ]
+    },
+    {
+      "path": "paint/ink-stroke.png",
+      "sha256": "7c152ce54b2ce4278143a63ec209330505bed5714c4d5b3a71f2fe29ff8b2428",
+      "bytes": 4262,
+      "source_project_relative": "work/eiffel-preview-20s/space-camera-v29/layers/ink-stroke.png",
+      "size": [
+        19,
+        129
+      ]
+    },
+    {
+      "path": "paint/hotel-panorama.png",
+      "sha256": "b1071cdd85f08ba06dd6137d6ddf4bf7b933d872b0f64387cf2d60b49b77ade8",
+      "bytes": 2236767,
+      "source_project_relative": "work/eiffel-wide-full-v35/assets/hotel-panorama.png",
+      "size": [
+        2172,
+        724
+      ]
+    },
+    {
+      "path": "paint/study-panorama.png",
+      "sha256": "0fbd76d8efbbd26431d8531099cad0aedf6f103e980d8a688712a892cdee35ca",
+      "bytes": 2206156,
+      "source_project_relative": "work/eiffel-wide-full-v35/assets/study-panorama.png",
+      "size": [
+        2172,
+        724
+      ]
+    },
+    {
+      "path": "paint/foreign-panorama.png",
+      "sha256": "d3c5fb0f3203c64b992bd367410ee3b4851a93542353fc43bd4605c9967c9fa0",
+      "bytes": 2593721,
+      "source_project_relative": "work/eiffel-wide-full-v35/assets/foreign-panorama.png",
+      "size": [
+        2172,
+        724
+      ]
+    },
+    {
+      "path": "paint/paris-panorama.png",
+      "sha256": "add28a0940ba591573103edf37ab0640346463e336bd424b5cf3d8a136bbb35f",
+      "bytes": 2238166,
+      "source_project_relative": "work/eiffel-street-v34/assets/paris-panorama.png",
+      "size": [
+        2172,
+        724
+      ]
+    },
+    {
+      "path": "paint/carriage-body.png",
+      "sha256": "8663645bf6a81a7b03985f656b97b68b7c0664c7f73ab1927e1969bad84c4f6a",
+      "bytes": 1579806,
+      "source_project_relative": "work/eiffel-street-v34/assets/carriage-body.png",
+      "size": [
+        1774,
+        887
+      ]
+    },
+    {
+      "path": "paint/wheel-0.png",
+      "sha256": "dfe6ef84899053c8eeed85c6a3266af7661a5153b820c982b760596f6d6d92dd",
+      "bytes": 186195,
+      "source_project_relative": "work/eiffel-street-v34/assets/wheel-0.png",
+      "size": [
+        339,
+        339
+      ]
+    },
+    {
+      "path": "paint/wheel-1.png",
+      "sha256": "9f81c130a139966f7bb711a81d968f07185bfceb5a03e2c33a0491c6a11ade59",
+      "bytes": 185596,
+      "source_project_relative": "work/eiffel-street-v34/assets/wheel-1.png",
+      "size": [
+        351,
+        351
+      ]
+    },
+    {
+      "path": "paint/horse-leg-0.png",
+      "sha256": "3408727ce200d1bc6d31d063fdba4332e4038a7d45997a51ed9f528eda4e8396",
+      "bytes": 42313,
+      "source_project_relative": "work/eiffel-street-v34/assets/horse-leg-0.png",
+      "size": [
+        199,
+        277
+      ]
+    },
+    {
+      "path": "paint/horse-leg-1.png",
+      "sha256": "536b2bc485b3dfcab28a4d7439bd567873ae4d5f549436255c24ba51358ddf72",
+      "bytes": 37936,
+      "source_project_relative": "work/eiffel-street-v34/assets/horse-leg-1.png",
+      "size": [
+        110,
+        275
+      ]
+    },
+    {
+      "path": "paint/horse-leg-2.png",
+      "sha256": "e4e2c9c3da7f472f0b3c292714b82d4a1aac3a9d988615679de92def424ddfda",
+      "bytes": 50019,
+      "source_project_relative": "work/eiffel-street-v34/assets/horse-leg-2.png",
+      "size": [
+        162,
+        272
+      ]
+    },
+    {
+      "path": "paint/horse-leg-3.png",
+      "sha256": "b5655748228e61a18acce5d8c0b57beb5d6e85cbe8dc20a53f9627ae9552701c",
+      "bytes": 45568,
+      "source_project_relative": "work/eiffel-street-v34/assets/horse-leg-3.png",
+      "size": [
+        155,
+        259
+      ]
+    },
+    {
+      "path": "paint/foreground-lamp.png",
+      "sha256": "54b2416aea627556caca4e4680e70c99f2fe77aa18c90bc3e49994571edbd641",
+      "bytes": 14918,
+      "source_project_relative": "work/eiffel-street-v34/assets/foreground-lamp.png",
+      "size": [
+        165,
+        1100
+      ]
+    },
+    {
+      "path": "paint/carriage-rig.json",
+      "sha256": "b6661d31319bb872dd9d833058e46f3c895a3dffe1ee3f7bba16a232ca5ecf56",
+      "bytes": 4357,
+      "source_project_relative": "work/eiffel-street-v34/assets/rig.json"
+    },
+    {
+      "path": "reference/approved-character-v21b.png",
+      "sha256": "1437e6ac129d6d8dbd38b38b6142a0c2e99552a8913989034a3fc2dbd9b2c7da",
+      "bytes": 1641134,
+      "source_project_relative": "outputs/eiffel-meme-style-v21/V21b-短侧分人物静帧.png",
+      "size": [
+        1024,
+        1536
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "path": "starter/landscape.json",
+      "sha256": "c480b3400648db7b3dd89f4a02c6560203978786fe7a7012d4d21ce4f8037f76",
+      "role": "unapproved technical blocking scaffold, no narration"
+    },
+    {
+      "path": "starter/portrait.json",
+      "sha256": "4fc6d5f1ec5fef162b19ba43a4d5c57b5f12d306fec9deedc4edbee504989532",
+      "role": "unapproved technical blocking scaffold, no narration"
+    },
+    {
+      "path": "starter/scene.mjs",
+      "sha256": "204a3faa0819af7a2d4774dcc8dc9ace31bbcf3acd7920a9138e65dfcc1cd711",
+      "role": "unapproved technical blocking scaffold, no narration"
+    },
+    {
+      "path": "starter/story.json",
+      "sha256": "0b660fe10e189f3cb9f50f1eb89feb978e06dc834325918c2f3325d4921280f1",
+      "role": "unapproved technical blocking scaffold, no narration"
+    },
+    {
+      "path": "reference/portrait-v44-excerpt.mp4",
+      "sha256": "ccdedea5d70b38483ba1bfdb85ca3f44a0256c2843243ff60992e92239c372db",
+      "role": "8s excerpt of the user-selected strict primary portrait V44 standard; new films still need their own review",
+      "reencoded_picture": true,
+      "audio": "existing AAC stream copied, no new synthesis"
+    },
+    {
+      "path": "reference/landscape-v45-excerpt.mp4",
+      "sha256": "82b24b6601353b38461147bc0f81da39076c50797b85f33e11c38aa987d28560",
+      "role": "8s excerpt of existing project film; V45 awaits explicit user review",
+      "reencoded_picture": true,
+      "audio": "existing AAC stream copied, no new synthesis"
+    },
+    {
+      "path": "production/example-captions.json",
+      "sha256": "9ce069ca37fe33ccc4a496c53f4012b9081394cf73363bb3dadd39ef99c88965",
+      "purpose": "Mature-engine production authoring interface and 7.5s reusable action example; pending user review"
+    },
+    {
+      "path": "production/example-landscape.json",
+      "sha256": "c0cdbfa77603936aa69ffdf3f211b28566fd14292172593fd63324a9d749620c",
+      "purpose": "Mature-engine production authoring interface and 7.5s reusable action example; pending user review",
+      "bytes": 3149
+    },
+    {
+      "path": "production/example-scene.py",
+      "sha256": "dffaba09358cfdeafc9a3a04f29483910f4a8667159fbdbd60094b9185239947",
+      "purpose": "Mature-engine production authoring interface and 7.5s reusable action example; pending user review"
+    },
+    {
+      "path": "production/example-story.json",
+      "sha256": "a43e05ec1242369514f9f8a228193c8b874898fb17d3851c45425b3dd5b5b692",
+      "purpose": "Mature-engine production authoring interface and 7.5s reusable action example; pending user review"
+    },
+    {
+      "path": "production/scene.py",
+      "sha256": "b2704ecc363bbc8ee9f0d35dcf2b3c840b5cbead7413ee56be8b2d0f7e7de2b5",
+      "purpose": "Mature-engine production authoring interface and 7.5s reusable action example; pending user review"
+    },
+    {
+      "path": "reference/hong-kong-v90-20s.mp4",
+      "sha256": "b5d906f9eed6b72d93825306049d7a9b4e7475424de4cd262ab23f79d719484a",
+      "purpose": "Secondary binding/engineering reference and unchanged V90 reproduction; its finer limbs do not replace Sample 1 portrait stroke weight or approve a new film"
+    },
+    {
+      "path": "reference/eiffel-16x9.mp4",
+      "sha256": "677ca4b45197a9545e1c161f964ef5b5b0b47ea130b99d2121e40584f24ad5e9",
+      "role": "Paris/Eiffel 16:9 motion and space comparison reference; prior review status remains as recorded in acceptance; never new-film footage or approval"
+    },
+    {
+      "path": "reference/eiffel-portrait-v44.mp4",
+      "sha256": "b0047f5889a7ca1fd47097d8c8b3db054ef412e2f4a7297d3fe04fc1083e5d79",
+      "role": "Full exact Sample 1 portrait V44; user-selected strict primary B6 drawing, limb-weight and animation standard"
+    },
+    {
+      "path": "style-standard.json",
+      "sha256": "e8103b7d353a14bb7584ebfd1da708f76e22b2da7dc80f30a13d89c3507e4f57",
+      "role": "Canonical installed primary reference, portrait preference, style criteria and required review checks"
+    }
+  ]
+}

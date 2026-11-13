@@ -1,0 +1,75 @@
+{
+  "status": "local_code_asset_adaptation_for_user_review",
+  "reference": "V44 approved paint chain; no approval of these new characters implied",
+  "source_assets": {
+    "hero-body": {
+      "path": "historical-source:eiffel-preview-20s/style-animation-v22/layers/hero-body.png",
+      "sha256": "4455bffa61075c120cc1be44f563a8dc50346e2ac809afe8c147375535cbbbfc",
+      "role": "Approved V44 local raster asset chain; no new model generation"
+    },
+    "hero-front-head": {
+      "path": "historical-source:eiffel-preview-20s/style-animation-v22/layers/hero-front-head.png",
+      "sha256": "4c2f0586a0efbd9c517611c744b91e945fd0339020a4b2f886e39c65cd26494c",
+      "role": "Approved V44 local raster asset chain; no new model generation"
+    },
+    "hero-head": {
+      "path": "historical-source:eiffel-preview-20s/style-animation-v22/layers/hero-head.png",
+      "sha256": "1f43f2a99e94a3c1620e13161490fb65525ea2c8bde9ef5ddc85f3fdd63805f5",
+      "role": "Approved V44 local raster asset chain; no new model generation"
+    },
+    "hero-side-head": {
+      "path": "historical-source:eiffel-preview-20s/style-animation-v22/layers/hero-side-head.png",
+      "sha256": "f3c62269e7f25f132551f2bb59bc131fee91c1eaeb7494dbde552289948b3b5a",
+      "role": "Approved V44 local raster asset chain; no new model generation"
+    },
+    "hero-hand": {
+      "path": "historical-source:eiffel-preview-20s/style-animation-v22/layers/hero-hand.png",
+      "sha256": "3d370aa7731c2a2f667050abfbaa881e77b4d2e811964e55e35a8b699838f590",
+      "role": "Approved V44 local raster asset chain; no new model generation"
+    },
+    "shoe-left": {
+      "path": "historical-source:eiffel-preview-20s/style-animation-v22/layers/shoe-left.png",
+      "sha256": "fd55a0fbf736d278809e1fc177ff6a2b972b5d219745c2fcbaf90e8dbe029d7a",
+      "role": "Approved V44 local raster asset chain; no new model generation"
+    },
+    "shoe-right": {
+      "path": "historical-source:eiffel-preview-20s/style-animation-v22/layers/shoe-right.png",
+      "sha256": "cd0361401ef9b6550f2e81f860c0347412ddaac95ebf9869a391de140d23ad53",
+      "role": "Approved V44 local raster asset chain; no new model generation"
+    },
+    "buyer-greedy-head": {
+      "path": "historical-source:eiffel-preview-20s/style-animation-v22/layers/buyer-greedy-head.png",
+      "sha256": "bc13d818ee1dd81ce4c3931f8f6917e9813321e037d6eeb602593d86e0e1bfa9",
+      "role": "Approved V44 local raster asset chain; no new model generation"
+    },
+    "buyer-head": {
+      "path": "historical-source:eiffel-preview-20s/style-animation-v22/layers/buyer-head.png",
+      "sha256": "f70a7c73a8d489cc5fb00d38697a2fa33870ca61955f279d3a31c322bbf9f273",
+      "role": "Approved V44 local raster asset chain; no new model generation"
+    },
+    "buyer-side-head": {
+      "path": "historical-source:eiffel-preview-20s/style-animation-v22/layers/buyer-side-head.png",
+      "sha256": "f523cac45ae256a9edf39224f0850251c341e554a54b65d19142389c326fc6c7",
+      "role": "Approved V44 local raster asset chain; no new model generation"
+    }
+  },
+  "generated_packages": [
+    {
+      "path": "historical-source:b6-limb-system-implementation/characters/kiosk_keeper/package.json",
+      "sha256": "baf5909ab0cc84ffcb449fdad3f9ea87bacdaa8410e27b1f2c57259f460623cc"
+    },
+    {
+      "path": "historical-source:b6-limb-system-implementation/characters/parcel_runner/package.json",
+      "sha256": "ea4daf4c49186aa1ff9455d1511dc4c41360a609683dabbac02fb3f8e94fb1d9"
+    }
+  ],
+  "new_ai_calls": 0,
+  "new_paid_calls": 0,
+  "published": false,
+  "generator": {
+    "path": "historical-source:b6-limb-system-implementation/make_character_packages.py",
+    "sha256": "73e45662af2f4b6db37b3002e8be1a0145bb3d1e910d976608bb7db42b05d663"
+  },
+  "head_scope": "Existing source geometry and meme expressions retained, palette locally adapted; not presented as newly AI-drawn multi-angle art.",
+  "body_scope": "Independent short-sleeve garment contours; no arms/hands/legs baked in. Profile far/near sleeve masks are separate alpha assets."
+}
