@@ -475,7 +475,7 @@ Sevdiğiniz avatarı kanalınızın sunucusuna dönüştürün; tanınmış kara
 
 Abartılı meme ifadeleri, serbest el çizgileri ve yumuşak renkler, sıra dışı hikâyeleri canlı kısa animasyonlara dönüştürür. Geniş sahneler karakterlere, nesnelere ve kameraya hareket alanı açar.
 
-**Dikey formatta (9:16) daha iyi sonuç verir.** [Örnek 1’in dikey sürümü](skills/directing-stickman-videos/assets/b6/reference/eiffel-portrait-v44.mp4), kol kalınlığı dâhil görsel stil ve hareket için kesin kabul standardıdır; aşağıdaki tabloda yatay sürümler gösterilir. Örnek 2, bu stil standardının yerine geçmeden rigging referansını tamamlar.
+**Dikey formatta (9:16) daha iyi sonuç verir.**
 
 - **Görünüm**: Düzensiz mürekkep çizgileri, mat boyama ve yumuşak ışık; yüz ve beden aynı el çizimi tarzını korur.
 - **Hareket**: Yanal takip, katmanlı derinlik, nesne alışverişi ve tepki yakın planları hikâyeyi izler; her esprinin anlaşılması için duraklamalar bırakır.
