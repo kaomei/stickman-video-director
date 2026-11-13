@@ -493,8 +493,13 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 <!-- b6:section:end -->
 
+---
 
+<a id="b7"></a>
 
+### B7：待更新…
+
+新的全自动画风与代码动画正在准备中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，一起在 5,000 Stars 时解锁！
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

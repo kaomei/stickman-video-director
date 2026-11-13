@@ -495,8 +495,13 @@ Expressive meme faces, loose hand-drawn lines and soft colors turn unusual stori
 
 <!-- b6:section:end -->
 
+---
 
+<a id="b7"></a>
 
+### B7: Coming soon…
+
+New Autopilot styles and procedural animations are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

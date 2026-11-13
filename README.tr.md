@@ -498,7 +498,13 @@ Abartılı meme ifadeleri, serbest el çizgileri ve yumuşak renkler, sıra dı�
 
 <!-- b6:section:end -->
 
+---
 
+<a id="b7"></a>
+
+### B7: Yakında…
+
+Yeni Autopilot stilleri ve kod tabanlı animasyonlar hazırlanıyor. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

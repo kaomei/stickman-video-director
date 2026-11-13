@@ -79,7 +79,11 @@ The page should feel energetic, modern, and creator-friendly while remaining rea
 
 The homepage style gallery always uses two equal-width columns in every language. Add new styles in pairs of cells, not in a full-width or centered `colspan` row. If the number of published style cards is odd, place the last style on the left and a localized **Coming Soon…** placeholder on the right, linked to the next Director style teaser. If the number is even, use both cells for styles and omit the placeholder. The placeholder does not count as a style or visual option.
 
-Current example: seven published style cards, ending with A6 Amber Noir on the left and an A7 Coming Soon placeholder on the right. All nine README files (default English plus eight language versions) must keep the same gallery structure, media order and style counts. Operational model and setup guidance belongs in the Skill interaction, not in an extra A6 README workflow paragraph.
+Current example: twelve published style cards, ending with B5 Character Explainer and B6 Dynamic Meme Animation, with no empty homepage gallery cell. All nine README files (default English plus eight language versions) must keep the same gallery structure, media order and style counts. Operational model and setup guidance belongs in the Skill interaction, not in an extra A6 README workflow paragraph.
+
+### Next-style teaser rule (owner-confirmed 2026-11-13)
+
+The detailed A and B catalogs must each end with exactly one localized **Coming soon…** teaser for the next unpublished number. Currently these are A7 and B7. Whenever a style is published, replace that numbered teaser with the approved style section and append the following numbered teaser in every README. Preserve its anchor and roadmap CTA. The teaser belongs after the last published style and before the following peer section; it must contain no sample media and must not count toward the published style total or create an extra homepage card. This rule is independent of the odd/even homepage gallery layout. `tests/verify-localized-readmes.py` derives the next number from the published homepage cards and rejects missing, duplicate, skipped or unadvanced teasers in either series.
 
 ## Verification
 

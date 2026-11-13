@@ -504,7 +504,13 @@ Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut 
 
 <!-- b6:section:end -->
 
+---
 
+<a id="b7"></a>
+
+### B7: Segera hadir…
+
+Gaya Autopilot dan animasi berbasis kode yang baru sedang disiapkan. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk membukanya saat mencapai 5,000 Stars!
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>
