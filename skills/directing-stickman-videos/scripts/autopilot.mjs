@@ -34,7 +34,7 @@ async function main() {
     if (fs.existsSync(args[1])) throw new Error('Caption output exists; will not overwrite');
     save(args[1], groupWords(json(args[0]), Number(option('--lead', 0))));
     console.log(JSON.stringify({output: path.resolve(args[1])}));
-  } else if (['validate', 'preview', 'approve', 'render'].includes(command)) {
+  } else if (['validate', 'preview', 'approve', 'render', 'accept-text'].includes(command)) {
     if (args[0] && json(path.resolve(args[0])).style === 'B5') throw new Error('B5 uses the code-authored route: node scripts/character-explainer.mjs --help; not the B1–B4 manifest renderer');
     const scoped = command === 'preview' || command === 'validate' && args.includes('--seconds');
     const seconds = scoped ? Number(option('--seconds', 20)) : undefined;
@@ -45,11 +45,23 @@ async function main() {
       const {painter} = await import('./autopilot-render.mjs'); const draw = await painter(p);
       for (const cue of p.captions) draw(Math.min(p.rangeEnd - 0.001, (cue.start + cue.end) / 2));
       const opening_visual = p.style === 'B4' ? await (await import('./b4-opening-visual-check.mjs')).checkB4OpeningPaint(p, {draw, picture: await painter(p, {pictureOnly: true})}) : undefined;
-      console.log(JSON.stringify({valid: true, fingerprint: p.fingerprint, duration: p.duration, checked_seconds: p.rangeEnd, shots: p.shots.length, ...(opening_visual ? {opening_visual} : {})})); return;
+      const typography = p.style === 'B4' ? await (await import('./b4-typography-review.mjs')).checkB4TypographyPaint(p, {draw}) : undefined;
+      console.log(JSON.stringify({typography, valid: true, fingerprint: p.fingerprint, duration: p.duration, checked_seconds: p.rangeEnd, shots: p.shots.length, ...(opening_visual ? {opening_visual} : {})})); return;
     }
     const base = p?.base ?? path.dirname(fs.realpathSync(path.resolve(args[0])));
     const out = outputDir(p ?? {base, inputs: []}), approvalPath = path.join(out, 'approval.json'), reportPath = path.join(out, 'preview-report.json');
-    let report, reviewed;
+    if (command === 'accept-text') {
+      if (p.style !== 'B4') throw new Error('accept-text is the B4 typography review gate');
+      if (!option('--review')) throw new Error('accept-text requires --review REVIEW_JSON');
+      const reviewFile = fs.realpathSync(path.resolve(option('--review')));
+      const filmReport = json(path.join(out, 'film-report.json'));
+      if (filmReport.fingerprint !== p.fingerprint || filmReport.output !== path.join(out, 'film.mp4') || hashFile(filmReport.output) !== filmReport.output_sha256) throw new Error('Film changed; render current evidence again');
+      const {painter} = await import('./autopilot-render.mjs');
+      const acceptance = await (await import('./b4-typography-review.mjs')).verifyB4TypographyReview(p, {file: filmReport.output, draw: await painter(p), evidenceDir: path.join(out, 'film-typography'), reviewFile, projectFingerprint: p.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
+      const acceptedPath = path.join(out, 'film-typography-acceptance.json'); save(acceptedPath, acceptance);
+      console.log(JSON.stringify({typography_acceptance: acceptedPath, scope: 'typography only; other visual/audio and user acceptance remain required'})); return;
+    }
+    let report, reviewed, textAcceptance, textReviewFile;
     if (command === 'approve' || command === 'render') {
       if (command === 'render' && (!fs.existsSync(approvalPath) || !fs.existsSync(reportPath))) throw new Error('Full production requires user-approved preview');
       if (!fs.existsSync(reportPath)) throw new Error('Render and review a preview first');
@@ -66,11 +78,16 @@ async function main() {
         const {painter} = await import('./autopilot-render.mjs');
         // Recheck the actual MP4; an edited report must not waive the gate.
         await (await import('./b4-opening-visual-check.mjs')).checkB4OpeningFile(reviewed, report.output, {draw: await painter(reviewed), picture: await painter(reviewed, {pictureOnly: true})});
+        textReviewFile = command === 'approve' ? option('--text-review') : json(approvalPath).text_review_file;
+        if (!textReviewFile) throw new Error('B4 preview requires independent typography review: approve --text-review REVIEW_JSON');
+        textReviewFile = fs.realpathSync(path.resolve(textReviewFile));
+        if (command === 'render' && hashFile(textReviewFile) !== json(approvalPath).text_review_sha256) throw new Error('Typography review changed; review and approve current preview again');
+        textAcceptance = await (await import('./b4-typography-review.mjs')).verifyB4TypographyReview(reviewed, {file: report.output, draw: await painter(reviewed), evidenceDir: path.join(out, 'preview-typography'), reviewFile: textReviewFile, projectFingerprint: reviewed.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
       }
     }
     if (command === 'approve') {
       const note = option('--note', ''); if (!note.trim()) throw new Error('A note recording genuine user approval is required');
-      save(approvalPath, {preview_fingerprint: reviewed.fingerprint, preview_seconds: report.preview_seconds, preview_sha256: report.output_sha256, note, approved_at: new Date().toISOString()});
+      save(approvalPath, {...(textAcceptance ? {text_review_file: textReviewFile, text_review_sha256: hashFile(textReviewFile), typography_acceptance: textAcceptance} : {}), preview_fingerprint: reviewed.fingerprint, preview_seconds: report.preview_seconds, preview_sha256: report.output_sha256, note, approved_at: new Date().toISOString()});
       console.log(JSON.stringify({approval: approvalPath})); return;
     }
     if (command === 'render') {
@@ -78,6 +95,6 @@ async function main() {
       if (a.preview_fingerprint !== reviewed.fingerprint || a.preview_seconds !== report.preview_seconds || a.preview_sha256 !== report.output_sha256) throw new Error('Approval invalidated; preview and user approval required again');
     }
     const {render} = await import('./autopilot-render.mjs'); console.log(JSON.stringify(await render(p, {full: command === 'render', seconds, replace: args.includes('--replace')}), null, 2));
-  } else throw new Error('Commands: doctor | probe FILE | init DIR | captions WORDS OUTPUT [--lead N] | validate PROJECT [--seconds N] | preview PROJECT [--seconds N] [--replace] | approve PROJECT --note TEXT | render PROJECT [--replace]');
+  } else throw new Error('Commands: doctor | probe FILE | init DIR | captions WORDS OUTPUT [--lead N] | validate PROJECT [--seconds N] | preview PROJECT [--seconds N] [--replace] | approve PROJECT --note TEXT [--text-review REVIEW_JSON] | render PROJECT [--replace] | accept-text PROJECT --review REVIEW_JSON');
 }
 main().catch(e => { console.error(e.message); process.exitCode = 1; });

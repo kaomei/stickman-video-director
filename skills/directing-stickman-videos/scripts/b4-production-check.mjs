@@ -120,7 +120,8 @@ export function checkB4Production(ledgerFile, {planning = false, skillRoot} = {}
     file(cue.file, cue.sha256, cue.id, true);
   }
   return {schema: 'b4-production-check-v1', mode: planning ? 'planning_only' : 'evidence_check',
-    status: 'pass', renderer_support: lock.cli_supported, duration_seconds: duration / data.fps,
+    status: 'technical_only', typography_visual_acceptance: 'not_reviewed', delivery_ready: false,
+    renderer_support: lock.cli_supported, duration_seconds: duration / data.fps,
     asset_count: assets.size, shot_count: data.shots.length, pending,
     aesthetic_review: 'not performed', physical_listening: 'not performed',
     human_acceptance: 'not implied', provenance: 'self-reported; verify provider/source records separately'};

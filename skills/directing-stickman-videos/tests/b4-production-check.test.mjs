@@ -4,6 +4,8 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
 import {checkB4Production} from '../scripts/b4-production-check.mjs';
 
 const hash = data => crypto.createHash('sha256').update(data).digest('hex');
@@ -36,9 +38,29 @@ function fixture(t) {
 
 test('portable evidence check reports B4 runtime support without claiming aesthetic acceptance', t => {
   const result = fixture(t).run();
-  assert.equal(result.status, 'pass');
+  assert.equal(result.status, 'technical_only');
+  assert.equal(result.typography_visual_acceptance, 'not_reviewed');
+  assert.equal(result.delivery_ready, false);
   assert.equal(result.renderer_support, true);
   assert.equal(result.physical_listening, 'not performed');
+});
+test('CLI success reports only technical checks and never visual acceptance or delivery readiness', t => {
+  const f = fixture(t); f.run();
+  const cli = fileURLToPath(new URL('../scripts/b4-production-check.mjs', import.meta.url));
+  for (const args of [[], ['--planning']]) {
+    const run = spawnSync(process.execPath, [cli, path.join(f.root, 'ledger.json'), ...args], {encoding: 'utf8'});
+    assert.equal(run.status, 0, run.stderr);
+    const report = JSON.parse(run.stdout);
+    assert.equal(report.status, 'technical_only');
+    assert.equal(report.typography_visual_acceptance, 'not_reviewed');
+    assert.equal(report.delivery_ready, false);
+    assert.equal(report.human_acceptance, 'not implied');
+  }
+  f.data.voice.sha256 = '0'.repeat(64);
+  assert.throws(() => f.run(), /fingerprint/);
+  const invalid = spawnSync(process.execPath, [cli, path.join(f.root, 'ledger.json')], {encoding: 'utf8'});
+  assert.notEqual(invalid.status, 0);
+  assert.match(invalid.stderr, /fingerprint/);
 });
 test('requires a script and recorded authorization even when planning media', t => {
   const f = fixture(t); const script = f.data.script;
@@ -60,13 +82,13 @@ test('requires voice input to refer to the exact authorized script, including in
   const f = fixture(t); f.data.voice.input_script_sha256 = '0'.repeat(64);
   assert.throws(() => f.run({planning: true}), /Voice input script fingerprint/);
   f.data.voice.input_script_sha256 = f.data.script.sha256;
-  assert.equal(f.run().status, 'pass');
+  assert.equal(f.run().status, 'technical_only');
 });
 test('rejects wrong Brian ID, accepts explicit user recasting without renaming it Brian', t => {
   const f = fixture(t); f.data.voice.id = 'other-id';
   assert.throws(() => f.run(), /verified Brian/);
   f.data.voice.name = 'User selected actor'; f.data.voice.user_override = 'User requested this actor';
-  assert.equal(f.run().status, 'pass');
+  assert.equal(f.run().status, 'technical_only');
 });
 test('rejects a shot over three seconds and crop-only pseudo-cuts', t => {
   const f = fixture(t); f.data.shots[0].end_frame = 91; f.data.shots[1].start_frame = 91;
@@ -81,7 +103,7 @@ test('rejects missing shot coverage and an ordinary unapproved long hold', t => 
   f.data.shots = [{...f.data.shots[0], end_frame: 180, kind: 'exceptional_hold', reason: 'reading'}];
   assert.throws(() => f.run(), /exceeds 3 seconds/);
   f.data.shots[0].user_approval = 'User explicitly asked for six-second reading hold';
-  assert.equal(f.run().status, 'pass');
+  assert.equal(f.run().status, 'technical_only');
 });
 test('rejects word-staggered remainder, missing shadow and false blanket opening override', t => {
   const f = fixture(t); f.data.opening.remainder_entrance = 'word_by_word';
@@ -110,7 +132,7 @@ test('rejects undeclared ambience gap; allows motivated AUDIO CUT', t => {
   const f = fixture(t); f.data.ambience[0].end_frame = 120;
   assert.throws(() => f.run(), /coverage/);
   f.data.audio_cuts = [{start_frame: 120, end_frame: 180, reason: 'door closes', return_trigger: 'end of programme'}];
-  assert.equal(f.run().status, 'pass');
+  assert.equal(f.run().status, 'technical_only');
 });
 test('rejects empty consequential SFX, uncleared rights and unreviewed critical effect', t => {
   const f = fixture(t); const cue = f.data.critical_sfx[0];
@@ -126,6 +148,9 @@ test('planning allows missing generated media but cannot be reported as delivery
   f.data.critical_sfx[0].review = 'pending';
   const result = f.run({planning: true});
   assert.equal(result.mode, 'planning_only');
+  assert.equal(result.status, 'technical_only');
+  assert.equal(result.typography_visual_acceptance, 'not_reviewed');
+  assert.equal(result.delivery_ready, false);
   assert.equal(result.pending.length, 2);
   assert.throws(() => f.run(), /ENOENT/);
 });

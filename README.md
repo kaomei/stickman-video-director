@@ -313,7 +313,6 @@ What if you woke up and everything cost ten thousand times less? The visual insp
 
 New specialized director styles are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!
 
----
 
 <a id="b-styles"></a>
 
@@ -399,6 +398,8 @@ Like stumbling across a curious late-night broadcast. Inspired by YouTube's [@Br
 </table>
 <!-- b3:section:end -->
 
+---
+
 <!-- b4:section:start -->
 <a id="b4"></a>
 
@@ -426,6 +427,8 @@ A countdown. A late-night call. A rule you must never break. Ordinary places bec
 </table>
 
 <!-- b4:section:end -->
+
+---
 
 <!-- b5:section:start -->
 <a id="b5"></a>
@@ -457,7 +460,6 @@ Give your favorite avatar a starring role—permission is required to use well-k
 
 
 
----
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

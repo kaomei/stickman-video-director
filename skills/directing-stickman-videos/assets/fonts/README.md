@@ -10,3 +10,5 @@ Build provenance: Google Fonts' upstream `Nunito[wght].ttf` (SHA-256 `bb55a5ca5c
 The accepted B4 sample used system Arial Rounded Bold. That proprietary font is not redistributed here. Nunito 900 preserves a rounded heavy visual grammar portably, with the preset's warm-white/coral colors, outline, shadow and uniform scale-settle; it is not pixel-identical to the original font. Do not silently substitute a system sans-serif if this asset is absent or changed: repair the installation instead.
 
 The bundled face supports Latin, Cyrillic and Vietnamese hook copy. Uncovered scripts require an explicit user-agreed localized font treatment and review; the default gate rejects silent fallback. This font lock is scoped to B4 opening title layers, not other B styles or all synchronized captions.
+
+Anton.ttf is the bundled OFL narrow display option for explicitly authored B4 cinematic text (see OFL-Anton.txt). It does not replace the B4 opening preset or provide glyphs for every language.

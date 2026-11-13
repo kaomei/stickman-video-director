@@ -316,7 +316,6 @@ Uyandığınızda her şey on bin kat ucuzlamış olsa? Görsel ilham, YouTube�
 
 Yeni uzmanlaşmış Director stilleri şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
 
----
 
 <a id="b-styles"></a>
 
@@ -402,6 +401,8 @@ Gece yarısı ilginç bir yayına rastlamak gibi. YouTube’daki [@BradikininVid
 </table>
 <!-- b3:section:end -->
 
+---
+
 <!-- b4:section:start -->
 <a id="b4"></a>
 
@@ -429,6 +430,8 @@ Bir geri sayım. Gece gelen bir telefon. Asla çiğnememeniz gereken bir kural. 
 </table>
 
 <!-- b4:section:end -->
+
+---
 
 <!-- b5:section:start -->
 <a id="b5"></a>
@@ -459,7 +462,6 @@ Sevdiğiniz avatarı kanalınızın sunucusuna dönüştürün; tanınmış kara
 <!-- b5:section:end -->
 
 
----
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

@@ -321,7 +321,6 @@ E se você acordasse e tudo custasse dez mil vezes menos? A inspiração visual 
 
 Novos estilos especializados para o modo Director estão em treinamento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
 
----
 
 <a id="b-styles"></a>
 
@@ -407,6 +406,8 @@ Como encontrar uma transmissão curiosa de madrugada. Inspirados no [@Bradikinin
 </table>
 <!-- b3:section:end -->
 
+---
+
 <!-- b4:section:start -->
 <a id="b4"></a>
 
@@ -434,6 +435,8 @@ Uma contagem regressiva. Uma ligação de madrugada. Uma regra que você nunca d
 </table>
 
 <!-- b4:section:end -->
+
+---
 
 <!-- b5:section:start -->
 <a id="b5"></a>
@@ -464,7 +467,6 @@ Transforme seu avatar favorito no apresentador do canal; o uso de personagens co
 <!-- b5:section:end -->
 
 
----
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

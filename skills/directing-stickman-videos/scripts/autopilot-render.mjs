@@ -11,6 +11,8 @@ import {checkBStyleMotionPaint} from './b-style-quality.mjs';
 import {checkOpeningFile} from './b4-opening-audio-check.mjs';
 import {checkB4OpeningPaint, checkB4OpeningFile} from './b4-opening-visual-check.mjs';
 import {B4_HOOK} from './b4-opening.mjs';
+import {requireB4Glyphs} from './b4-font-coverage.mjs';
+import {checkB4TypographyPaint, buildB4TypographyEvidence} from './b4-typography-review.mjs';
 
 const clamp = x => Math.max(0, Math.min(1, x));
 function wrap(ctx, text, maxWidth) {
@@ -31,6 +33,11 @@ export async function painter(p, {pictureOnly = false} = {}) {
   const plane = designPlane(p), captionBand = plane.height - 110;
   if (!GlobalFonts.registerFromPath(fonts.hand, 'B1Hand') || !GlobalFonts.registerFromPath(fonts.caption, 'B1Caption')) throw new Error('Font registration failed');
   if (fonts.hook && !GlobalFonts.registerFromPath(fonts.hook, B4_HOOK.family)) throw new Error('B4 opening: fixed rounded font registration failed; no fallback is allowed');
+  if (fonts.cinematic && !GlobalFonts.registerFromPath(fonts.cinematic, 'B4Cinematic')) throw new Error('B4 cinematic font registration failed');
+  if (p.style === 'B4') {
+    for (const s of p.shots) for (const l of walkLayers(s.layers)) if (l.type === 'text') requireB4Glyphs(l.b4Hook ? fonts.hook : l.b4Type === 'cinematic' ? fonts.cinematic : l.b4Type === 'handwritten' ? fonts.hand : fonts.caption, l.text, `text ${l.id}`);
+    for (const [i, cue] of p.captions.entries()) requireB4Glyphs(fonts.caption, cue.text, `caption ${i}`);
+  }
   const canvas = createCanvas(p.width, p.height), ctx = canvas.getContext('2d');
   const sceneCopy = p.style === 'B3' ? createCanvas(p.width, p.height) : null;
   const images = new Map();
@@ -97,7 +104,9 @@ export async function painter(p, {pictureOnly = false} = {}) {
         ctx.fillStyle = gradient; ctx.fillRect(0, 0, w, l.h);
       } else if (l.type === 'text') {
         const hook = p.style === 'B4' && ['setup', 'payoff'].includes(l.b4Hook);
-        const size = l.size || 52; ctx.font = `${hook ? B4_HOOK.weight : l.bold ? 700 : 400} ${size}px ${hook ? B4_HOOK.family : ['B3', 'B4'].includes(p.style) ? 'B1Caption' : 'B1Hand'}`; ctx.fillStyle = hook ? B4_HOOK[l.b4Hook] : l.color || (['B3', 'B4'].includes(p.style) ? '#e9eaea' : '#191916'); ctx.textBaseline = 'top';
+        const treatment = p.style === 'B4' ? l.b4Type : undefined;
+        const family = hook ? B4_HOOK.family : treatment === 'cinematic' ? 'B4Cinematic' : treatment === 'handwritten' ? 'B1Hand' : ['B3', 'B4'].includes(p.style) ? 'B1Caption' : 'B1Hand';
+        const size = l.size || 52; ctx.font = `${hook ? B4_HOOK.weight : treatment === 'cinematic' ? 400 : l.bold ? 700 : 400} ${size}px ${family}`; ctx.fillStyle = hook ? B4_HOOK[l.b4Hook] : l.color || (['B3', 'B4'].includes(p.style) ? '#e9eaea' : '#191916'); ctx.textBaseline = 'top';
         const lines = wrap(ctx, l.text, l.w || 1080 - x);
         lines.forEach((s, i) => {
           const y = i * size * B4_HOOK.line_height;
@@ -107,6 +116,17 @@ export async function painter(p, {pictureOnly = false} = {}) {
             ctx.strokeText(s, 2, y + 3.3); ctx.fillText(s, 2, y + 3.3);
             ctx.strokeStyle = B4_HOOK.outline; ctx.strokeText(s, 0, y);
             ctx.fillStyle = B4_HOOK[l.b4Hook];
+          }
+          if (treatment) {
+            // A restrained poster/ink finish; story fit is decided from actual playback.
+            ctx.lineJoin = 'round'; ctx.lineWidth = treatment === 'handwritten' ? 1 : 2;
+            ctx.fillStyle = '#101b25'; ctx.strokeStyle = '#101b25';
+            ctx.strokeText(s, 3, y + 5); ctx.fillText(s, 3, y + 5);
+            ctx.strokeText(s, 0, y);
+            const ink = ctx.createLinearGradient(0, y, 0, y + size);
+            ink.addColorStop(0, l.color || '#f4ecd7'); ink.addColorStop(.62, l.color || '#f4ecd7');
+            ink.addColorStop(.63, l.color || '#c8bfa6'); ink.addColorStop(1, l.color || '#c8bfa6');
+            ctx.fillStyle = ink;
           }
           ctx.fillText(s, 0, y);
         });
@@ -124,8 +144,14 @@ export async function painter(p, {pictureOnly = false} = {}) {
       sceneCopy.getContext('2d').drawImage(canvas, 0, 0);
       televisionFinish(ctx, sceneCopy, p.width, p.height, p.television?.intensity ?? 0.45);
     }
-    const cue = p.captions.find(c => t >= c.start && t < c.end);
-    if (cue && !pictureOnly && !focusIds.length) {
+    const cueIndex = p.captions.findIndex(c => t >= c.start && t < c.end), cue = p.captions[cueIndex];
+    const cueId = `caption-${cueIndex}`;
+    if (cue && !pictureOnly && !omitIds.includes(cueId) && (!focusIds.length || focusIds.includes(cueId))) {
+      ctx.save();
+      if (p.style === 'B4') {
+        const entrance = clamp((t - cue.start) / .16), ease = 1 - (1 - entrance) ** 3;
+        ctx.globalAlpha *= entrance; ctx.translate(0, 12 * (1 - ease));
+      }
       ctx.font = `${p.style === 'B2' ? 500 : 600} ${p.captionSize || (p.style === 'B2' ? 40 : 34)}px B1Caption`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       if (/[\r\n]/.test(cue.text)) throw new Error('B captions allow at most one line; split the timed cue at a semantic boundary');
       const lines = wrap(ctx, p.style === 'B3' ? cue.text.toUpperCase() : cue.text, 1120);
@@ -143,7 +169,7 @@ export async function painter(p, {pictureOnly = false} = {}) {
         ctx.strokeText(s, 640, y); ctx.fillStyle = p.style === 'B4' ? '#f8f5ed' : p.style === 'B3' ? '#f4f5f5' : '#20231F'; ctx.fillText(s, 640, y);
         ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
       });
-      ctx.textAlign = 'left';
+      ctx.textAlign = 'left'; ctx.restore();
     }
     return canvas;
   };
@@ -208,7 +234,7 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     const frame = await painter(p), clips = []; let reused = 0;
     const motionEvidence = await checkBStyleMotionPaint(p, frame);
     const picture = p.style === 'B4' ? await painter(p, {pictureOnly: true}) : null;
-    if (p.style === 'B4') await checkB4OpeningPaint(p, {draw: frame, picture});
+    if (p.style === 'B4') { await checkB4OpeningPaint(p, {draw: frame, picture}); await checkB4TypographyPaint(p, {draw: frame}); }
     const rendererHash = sha(['autopilot-render.mjs', 'b3-graphics.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f))).join(':'));
     for (const [i, shot] of p.shots.entries()) {
       const first = Math.round(shot.start * p.fps), last = Math.min(count, i === p.shots.length - 1 ? count : Math.round(shot.end * p.fps)); if (last <= first) continue;
@@ -255,6 +281,10 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
       report.voice_rate = 'unchanged; explicit leading source trim/padding only';
       report.opening_audio = checkOpeningFile(target, FFMPEG);
       report.opening_visual = await checkB4OpeningFile(p, target, {draw: frame, picture}, {contactSheet: path.join(out, `${kind}-opening-contact-sheet.png`)});
+      const evidenceOut = path.join(out, `${kind}-typography`);
+      fs.rmSync(evidenceOut, {recursive: true, force: true}); fs.mkdirSync(evidenceOut);
+      report.typography = await buildB4TypographyEvidence(p, {file: target, draw: frame, out: evidenceOut, projectFingerprint: p.fingerprint, ffmpeg: FFMPEG});
+      report.visual_acceptance = 'pending_independent_review';
       report.voice_identity = {name: p.voice.name, id: p.voice.id, evidence: 'project metadata; source identity must be verified before generation'};
       report.audio_tracks = {ambience: p.ambience.length, dialogue: p.dialogue.length, file_sfx: p.sfx.filter(s => s.kind === 'file').length, cuts: p.audio_cuts.length};
       save(path.join(out, `${kind}-opening-audio.json`), report.opening_audio);
