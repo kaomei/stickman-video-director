@@ -472,7 +472,7 @@ Give your favorite avatar a starring role—permission is required to use well-k
 
 Expressive meme faces, loose hand-drawn lines and soft colors turn unusual stories into lively short cartoons. Wide scenes give characters, props and camera moves room to play.
 
-**Works best in portrait (9:16).** The [portrait version of Example 1](skills/directing-stickman-videos/assets/b6/reference/eiffel-portrait-v44.mp4) is the strict visual and motion acceptance standard, including arm thickness; the table below shows landscape versions. Example 2 provides a supplementary rigging reference without replacing that style baseline.
+**Works best in portrait (9:16).**
 
 - **Visuals**: Irregular ink lines, matte painted colors and soft light; faces and bodies share the same hand-drawn style.
 - **Motion**: Lateral tracking, layered depth, handoffs and reaction close-ups follow the story, with clear pauses for each visual punchline.

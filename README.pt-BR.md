@@ -480,7 +480,7 @@ Transforme seu avatar favorito no apresentador do canal; o uso de personagens co
 
 Expressões de meme, traços soltos à mão e cores suaves transformam histórias curiosas em animações curtas e vivas. Cenários amplos dão espaço aos personagens, objetos e movimentos de câmera.
 
-**O resultado é melhor no formato vertical (9:16).** A [versão vertical do exemplo 1](skills/directing-stickman-videos/assets/b6/reference/eiffel-portrait-v44.mp4) é o padrão rigoroso de aprovação do visual e dos movimentos, incluindo a espessura dos braços; a tabela abaixo mostra as versões horizontais. O exemplo 2 complementa a referência de rigging sem substituir esse padrão visual.
+**O resultado é melhor no formato vertical (9:16).**
 
 - **Visual**: Contornos de tinta irregulares, pintura fosca e luz suave; rosto e corpo seguem o mesmo traço.
 - **Movimento**: Travellings laterais, profundidade em camadas, entrega de objetos e closes de reação acompanham a história, com pausas para entender cada gag.

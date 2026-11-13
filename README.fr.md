@@ -476,7 +476,7 @@ Faites de votre avatar préféré la voix de votre chaîne ; l’utilisation de 
 
 Des expressions de meme, des traits dessinés à la main et des couleurs douces transforment les récits insolites en courts dessins animés pleins de vie. Les décors larges laissent de la place aux personnages, aux accessoires et à la caméra.
 
-**Le rendu est meilleur en format vertical (9:16).** La [version verticale de l’exemple 1](skills/directing-stickman-videos/assets/b6/reference/eiffel-portrait-v44.mp4) sert de référence stricte pour le style et les mouvements, y compris l’épaisseur des bras ; le tableau ci-dessous présente les versions horizontales. L’exemple 2 complète la référence de rigging sans remplacer ce standard visuel.
+**Le rendu est meilleur en format vertical (9:16).**
 
 - **Image**: Traits d’encre irréguliers, aplats peints mats et lumière douce ; visages et corps partagent le même dessin.
 - **Mouvement**: Travellings latéraux, profondeur par plans, échanges d’objets et gros plans de réaction suivent le récit, avec des pauses pour lire chaque gag.

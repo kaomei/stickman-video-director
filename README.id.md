@@ -481,7 +481,7 @@ Jadikan avatar favorit Anda pembawa acara di kanal Anda; penggunaan karakter ter
 
 Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut menghidupkan kisah unik menjadi animasi pendek. Latar yang luas memberi ruang gerak bagi tokoh, properti, dan kamera.
 
-**Hasil terbaik dalam format vertikal (9:16).** [Versi vertikal Contoh 1](skills/directing-stickman-videos/assets/b6/reference/eiffel-portrait-v44.mp4) menjadi standar ketat untuk gaya visual dan gerak, termasuk ketebalan lengan; tabel di bawah menampilkan versi horizontal. Contoh 2 hanya melengkapi referensi rigging, tanpa menggantikan standar gaya tersebut.
+**Hasil terbaik dalam format vertikal (9:16).**
 
 - **Visual**: Garis tinta tidak beraturan, warna cat matte, dan cahaya lembut; wajah serta tubuh memakai gaya gambar tangan yang sama.
 - **Gerak**: Pelacakan menyamping, kedalaman berlapis, penyerahan benda, dan close-up reaksi mengikuti cerita, dengan jeda agar setiap aksi dan lelucon terbaca.
