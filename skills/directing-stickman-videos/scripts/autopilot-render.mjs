@@ -13,6 +13,7 @@ import {checkB4OpeningPaint, checkB4OpeningFile} from './b4-opening-visual-check
 import {B4_HOOK, B4_PORTRAIT, portraitHook, hookFamily, hookWeight, hookRows} from './b4-opening.mjs';
 import {requireB4Glyphs} from './b4-font-coverage.mjs';
 import {checkB4TypographyPaint, buildB4TypographyEvidence} from './b4-typography-review.mjs';
+import {checkB4PicturePaint, buildB4PictureEvidence} from './b4-picture-review.mjs';
 import {buildBStyleReferenceEvidence} from './b-style-reference-review.mjs';
 import {bStyleCaptionLayout, planBStylePortrait} from './b-style-portrait.mjs';
 import {checkBStylePortraitPaint} from './b-style-portrait-paint.mjs';
@@ -291,7 +292,7 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
           const cached = {
             ...previous,
             ...(['B1', 'B2', 'B3'].includes(p.style) ? {delivery_ready: false, visual_acceptance: 'pending_independent_review', reference_review: {...previous.reference_review, status: 'pending_independent_review'}} : {}),
-            ...(p.style === 'B4' ? {delivery_ready: false, visual_acceptance: 'pending_independent_review', typography: {...previous.typography, status: 'pending_independent_review'}} : {}),
+            ...(p.style === 'B4' ? {delivery_ready: false, visual_acceptance: 'pending_independent_review', typography: {...previous.typography, status: 'pending_independent_review', delivery_ready: false}, picture_motion: {...previous.picture_motion, status: 'pending_independent_review', diagnostic_status: 'technical_only', scope: 'picture only', delivery_ready: false}} : {}),
             reused: true,
           };
           // Cached pixels are reusable; an edited report is never review authority.
@@ -306,7 +307,7 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     const motionEvidence = await checkBStyleMotionPaint(p, frame);
     const portraitEvidence = await checkBStylePortraitPaint(p, frame);
     const picture = p.style === 'B4' ? await painter(p, {pictureOnly: true}) : null;
-    if (p.style === 'B4') { await checkB4OpeningPaint(p, {draw: frame, picture}); await checkB4TypographyPaint(p, {draw: frame}); }
+    if (p.style === 'B4') { await checkB4OpeningPaint(p, {draw: frame, picture}); await checkB4TypographyPaint(p, {draw: frame}); await checkB4PicturePaint(p, {draw: frame, picture}); }
     const rendererHash = sha(['autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-portrait.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f))).join(':'));
     for (const [i, shot] of p.shots.entries()) {
       const first = Math.round(shot.start * p.fps), last = Math.min(count, i === p.shots.length - 1 ? count : Math.round(shot.end * p.fps)); if (last <= first) continue;
@@ -366,6 +367,10 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
       fs.rmSync(evidenceOut, {recursive: true, force: true}); fs.mkdirSync(evidenceOut);
       report.typography = await buildB4TypographyEvidence(p, {file: target, draw: frame, out: evidenceOut, projectFingerprint: p.fingerprint, ffmpeg: FFMPEG});
       report.typography.status = 'pending_independent_review';
+      const pictureOut = path.join(out, `${kind}-picture`);
+      fs.rmSync(pictureOut, {recursive: true, force: true}); fs.mkdirSync(pictureOut);
+      report.picture_motion = await buildB4PictureEvidence(p, {file: target, draw: frame, picture, out: pictureOut, projectFingerprint: p.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
+      report.picture_motion.status = 'pending_independent_review';
       report.visual_acceptance = 'pending_independent_review';
       report.delivery_ready = false;
       report.voice_identity = {name: p.voice.name, id: p.voice.id, evidence: 'project metadata; source identity must be verified before generation'};

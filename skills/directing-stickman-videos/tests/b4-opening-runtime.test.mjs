@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {createCanvas} from '@napi-rs/canvas';
-import {ROOT, FFMPEG, run, save, loadProject, hashFile} from '../scripts/autopilot-core.mjs';
+import {ROOT, FFMPEG, FFPROBE, run, save, loadProject, hashFile} from '../scripts/autopilot-core.mjs';
 import {BRIAN} from '../scripts/b4-runtime.mjs';
 import {B4_HOOK, makeB4Opening} from '../scripts/b4-opening.mjs';
 import {painter} from '../scripts/autopilot-render.mjs';
@@ -46,6 +46,14 @@ function fixture(t) {
   const project = {version: 1, style: 'B4', width: 640, height: 360, fps: 15,
     voice: {path: 'tone.wav', ...BRIAN}, captions: [{start: 0, end: 3, text: 'Synthetic timing fixture.'}],
     opening: hook.opening, shots: [hook.shot], ambience: [{path: 'tone.wav', start: 0, end: 3, gain: .02}], sfx: [], dialogue: [], audio_cuts: []};
+  const after = hook.shot.layers.find(layer => layer.id === hook.opening.picture.after), change = after.from, reveal = B4_HOOK.reveal_seconds;
+  project.picture_motion = {author_id: 'synthetic-opening-fixture-author', shots: [{shot: 0, kind: 'state_reveal',
+    intent: 'Synthetic door state visibly changes; no story-quality acceptance is asserted', before: 'Door closed', after: 'Door opening visible',
+    layer_ids: [hook.opening.picture.before, hook.opening.picture.after], region: hook.opening.picture.region,
+    times: {before: Math.floor((change - .1) * project.fps) / project.fps,
+      mid: Math.round((change + reveal / 2) * project.fps) / project.fps,
+      after: Math.ceil((change + reveal + .05) * project.fps) / project.fps,
+      hold: Math.floor(Math.min(hook.shot.end - .08, change + reveal + .4) * project.fps) / project.fps}}]};
   const file = path.join(dir, 'project.json'), write = () => save(file, project); write();
   const check = async () => { const p = loadProject(file); return checkB4OpeningPaint(p, {draw: await painter(p), picture: await painter(p, {pictureOnly: true})}); };
   return {dir, file, project, write, art, check, layer: id => project.shots[0].layers.find(l => l.id === id)};
@@ -174,8 +182,9 @@ test('B4 explicit visual exception is reported, not falsely certified as a motio
   const report = await f.check();
   assert.equal(report.status, 'user_exception'); assert.match(report.reason, /static memorial/);
   // A visual exception never grants an audio exception.
-  f.project.voice.lead = .3; f.project.shots[0].end = 3.3; f.project.shots[0].kind = 'exceptional_hold';
-  f.project.shots[0].reason = 'Synthetic fixture'; f.project.shots[0].user_approval = 'Synthetic fixture'; f.write();
+  f.project.voice.lead = .3;
+  // Keep every shot within the hard cap so this fixture isolates the audio gate.
+  f.project.shots.push({start: 3, end: 3.3, layers: [{type: 'image', path: 'before.png', x: 0, y: 0, w: 640, h: 360}]}); f.write();
   assert.throws(() => loadProject(f.file), /silent title pad/);
 });
 
@@ -195,16 +204,19 @@ test('B4 localized captions animate as whole semantic cues and can be isolated f
   assert.notDeepEqual(raw(1), hidden, 'isolation retains the actual subtitle');
 });
 
-test('B4 preview evidence remains pending and approve refuses absent or unknown independent text review', async t => {
+test('B4 preview evidence remains pending and unknown independent text or picture review cannot grant acceptance', async t => {
   const f = fixture(t); f.project.typography = {author_id:'fixture-author'}; f.write();
   const r = command(['preview', f.file, '--seconds','3']); assert.equal(r.status, 0, r.stderr);
   const report = JSON.parse(fs.readFileSync(path.join(f.dir, 'output/preview-report.json')));
   assert.equal(report.typography.status, 'pending_independent_review');
+  assert.equal(report.picture_motion.status, 'pending_independent_review');
+  assert.equal(report.picture_motion.diagnostic_status, 'technical_only');
+  assert.equal(report.picture_motion.delivery_ready, false);
   assert.equal(report.visual_acceptance, 'pending_independent_review');
   assert.equal(report.delivery_ready, false);
   // Reusing valid encoded pixels must not inherit forged acceptance in its report.
   const reportPath = path.join(f.dir, 'output/preview-report.json');
-  save(reportPath, {...report, delivery_ready:true, visual_acceptance:'accepted', typography:{...report.typography,status:'accepted'}});
+  save(reportPath, {...report, delivery_ready:true, visual_acceptance:'accepted', typography:{...report.typography,status:'accepted'}, picture_motion:{...report.picture_motion,status:'accepted',delivery_ready:true}});
   const reused = command(['preview', f.file, '--seconds','3']); assert.equal(reused.status,0,reused.stderr);
   const reusedReport = JSON.parse(reused.stdout);
   assert.equal(reusedReport.reused,true);
@@ -212,11 +224,25 @@ test('B4 preview evidence remains pending and approve refuses absent or unknown 
   assert.equal(reusedReport.delivery_ready,false);
   assert.equal(reusedReport.visual_acceptance,'pending_independent_review');
   assert.equal(reusedReport.typography.status,'pending_independent_review');
+  assert.equal(reusedReport.picture_motion.status,'pending_independent_review');
+  assert.equal(reusedReport.picture_motion.delivery_ready,false);
   assert.deepEqual(JSON.parse(fs.readFileSync(reportPath)),reusedReport,'persisted evidence must not retain forged acceptance either');
   const absent = command(['approve',f.file,'--note','Synthetic approval']);
   assert.notEqual(absent.status,0); assert.match(absent.stderr,/independent typography review/);
   const unknown = command(['approve',f.file,'--note','Synthetic approval','--text-review',report.typography.template_file]);
   assert.notEqual(unknown.status,0); assert.match(unknown.stderr,/independent reviewer|pending|failed/);
+  const pictureUnknown = JSON.parse(fs.readFileSync(report.picture_motion.template_file, 'utf8'));
+  assert.equal(pictureUnknown.full_playback.status, 'unknown');
+  assert.ok(pictureUnknown.shots.every(shot => Object.values(shot.checks).every(check => check.status === 'unknown')));
+  // A distinct synthetic reviewer identity cannot turn an unperformed review into acceptance.
+  pictureUnknown.reviewer = {id: 'synthetic-independent-negative-fixture', kind: 'agent',
+    method: 'Negative validation fixture only; actual review deliberately remains unknown', independent: true};
+  const pictureReview = path.join(f.dir, 'unknown-picture-review.json'); save(pictureReview, pictureUnknown);
+  const p = loadProject(f.file), {verifyB4PictureReview} = await import('../scripts/b4-picture-review.mjs');
+  const painterDraw = await painter(p), pictureDraw = await painter(p, {pictureOnly: true});
+  await assert.rejects(() => verifyB4PictureReview(p, {file: report.output, draw: painterDraw,
+    picture: pictureDraw, evidenceDir: path.dirname(report.picture_motion.ledger_file), reviewFile: fs.realpathSync(pictureReview),
+    projectFingerprint: p.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE}), /complete picture playback is pending\/failed/);
   assert.equal(fs.existsSync(path.join(f.dir,'output/approval.json')),false);
 });
 

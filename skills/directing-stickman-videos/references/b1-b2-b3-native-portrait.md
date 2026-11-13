@@ -22,6 +22,8 @@ For each shot, state the portrait intent: what the eye reads first, where the pr
 
 B2 and B3 keep their own motion and editing language. B2's contextual prop/information changes and restrained reactions must retain its warm illustrated world; B3's supported local action, progressive relationships and clean silhouettes must survive its television finish. A ratio change must not replace either with B1 line art, a generic poster, or stronger global effects. Review the complete semantic action, rather than requiring constant raised arms or continuous limb cycling.
 
+For B3, also apply the [semantic-line and purposeful-motion contract](b3-semantic-motion.md): re-author each connector from its actual source to target after the portrait layout changes, preserve its meaning/direction and readable reveal order, and check the whole path at 1× phone size. Local-anchor geometry and safe boxes cannot prove that the intended object is identified correctly or that the final CRT/overlap/caption placement leaves the connection intelligible. Include every event/graphic and the complete visible inventory in independent review; do not reuse landscape review as portrait acceptance.
+
 The `b123-native-portrait-v1` preset uses these **portrait-only** caption defaults:
 
 | Style | Typeface and weight | Design size | At 320px display width | At 360px display width |

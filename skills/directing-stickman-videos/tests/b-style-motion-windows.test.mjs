@@ -56,3 +56,18 @@ test('B3 title-only group motion cannot rescue a static principal picture',async
 test('B3 inherited group visibility limits motion coverage',()=>{
   assert.throws(()=>prepare(project('B3',{type:'group',from:3,children:[image()]})),/inactive/);
 });
+
+function semanticProject({end=4,role}={}) {
+  const layer=image('explained-prop'),p=project('B3',layer);
+  p.captions=[{start:0,end:4,text:'Synthetic motion coverage fixture only.'}];
+  p.shots[0].b3_semantics={events:[{id:'change',cue_index:0,kind:'action',layer_ids:[layer.id],start:0,end,before:'Synthetic prop starts at its initial position.',after:'Synthetic prop reaches its new position.',purpose:'Synthetic protocol for useful event coverage, not a creative claim.'}],graphics:role?[{id:layer.id,role}]:[]};
+  return p;
+}
+test('B3 counts only meaningful event windows rather than an entire off-event loop',()=>{
+  assert.throws(()=>prepare(semanticProject({end:.5})),/inactive/);
+  const p=prepare(semanticProject());
+  assert.deepEqual(p.motion_intervals.map(({start,end})=>({start,end})),[{start:0,end:4}]);
+});
+test('B3 decoration and emphasis cannot supply principal motion even with action metadata',()=>{
+  for(const role of ['decoration','emphasis'])assert.throws(()=>prepare(semanticProject({role})),/inactive/);
+});

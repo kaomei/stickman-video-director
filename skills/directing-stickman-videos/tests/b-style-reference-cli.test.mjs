@@ -34,6 +34,11 @@ function fixture(t, style, mode = 'sample_target') {
     captions:[{start:0,end:.6,text:'A synthetic opening.'},{start:.6,end:1.2,text:'A synthetic ending.'}],
     shots:[{start:0,end:.6,layers:[layer('opening-prop')]},{start:.6,end:1.2,layers:[layer('ending-prop')]}],
     ambience:[{path:'voice.wav',start:0,end:1.2,gain:.01}],sfx:[{time:.2,kind:'tap',gain:.01}]};
+  if(style==='B3')for(const [i,s] of project.shots.entries()) {
+    s.layers[0].motion={role:'prop',reason:'Synthetic prop displacement tests the semantic protocol only.'};
+    s.layers[0].keys[0].t=.1; // Keep an actual encoded initial state in each short shot.
+    s.b3_semantics={events:[{id:'move-'+i,cue_index:i,kind:'action',layer_ids:[s.layers[0].id],start:s.start+.1,end:s.start+.5,before:'Synthetic prop begins at its authored left position.',after:'Synthetic prop reaches its authored right position.',purpose:'Synthetic movement protocol, not an actual explanatory video.'}],graphics:[]};
+  }
   const file = path.join(dir,'project.json'), write = () => save(file,project); write();
   return {dir,file,project,write,out:path.join(dir,'output')};
 }

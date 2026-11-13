@@ -32,6 +32,14 @@ function fixture(t) {
   const hook = makeB4Opening(recipe), project = {version: 1, style: 'B4', width: 360, height: 640, fps: 15,
     voice: {path: 'tone.wav', ...BRIAN}, captions: [{start: 0, end: 3, text: 'Synthetic timing fixture.'}],
     opening: hook.opening, shots: [hook.shot], ambience: [{path: 'tone.wav', start: 0, end: 3, gain: .02}], sfx: [], dialogue: [], audio_cuts: []};
+  const after = hook.shot.layers.find(layer => layer.id === hook.opening.picture.after), change = after.from, reveal = B4_HOOK.reveal_seconds;
+  project.picture_motion = {author_id: 'synthetic-portrait-fixture-author', shots: [{shot: 0, kind: 'state_reveal',
+    intent: 'Synthetic lower-window threat reveal; no aesthetic acceptance is asserted', before: 'Window contains no visible red threat', after: 'Local red threat is visible',
+    layer_ids: [hook.opening.picture.before, hook.opening.picture.after], region: hook.opening.picture.region,
+    times: {before: Math.floor((change - .1) * project.fps) / project.fps,
+      mid: Math.round((change + reveal / 2) * project.fps) / project.fps,
+      after: Math.ceil((change + reveal + .05) * project.fps) / project.fps,
+      hold: Math.floor(Math.min(hook.shot.end - .08, change + reveal + .4) * project.fps) / project.fps}}]};
   const file = path.join(dir, 'project.json'), write = () => save(file, project); write();
   const paints = async () => { const p = loadProject(file); return {p, draw: await painter(p), picture: await painter(p, {pictureOnly: true})}; };
   const check = async () => { const {p, ...painters} = await paints(); return checkB4OpeningPaint(p, painters); };
@@ -137,6 +145,9 @@ test('B4 native portrait CLI preview completes rawvideo encoding and full curren
   assert.equal(report.opening_visual.status,'diagnostic_pass');
   assert.equal(report.opening_visual.preset,B4_PORTRAIT.id);
   assert.equal(report.typography.status,'pending_independent_review');
+  assert.equal(report.picture_motion.status,'pending_independent_review');
+  assert.equal(report.picture_motion.diagnostic_status,'technical_only');
+  assert.equal(report.picture_motion.delivery_ready,false);
   assert.equal(report.visual_acceptance,'pending_independent_review');
   assert.equal(report.delivery_ready,false);
   assert.ok(fs.existsSync(report.typography.template_file));

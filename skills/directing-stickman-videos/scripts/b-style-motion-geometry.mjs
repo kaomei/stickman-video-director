@@ -98,3 +98,24 @@ export function isSceneScaleMotion(layer, ancestors, times, plane = {width: 1280
     return !!box && box.maxX - box.minX >= plane.width * .9;
   });
 }
+
+// Read-only geometry for B3 connector diagnostics. This deliberately exposes the
+// same transforms as the painter without changing the scene-scale motion gate.
+// Bounds describe authored artwork boxes, not decoded image ink or occlusion.
+export function bStyleGeometryAt(layer, ancestors = [], time = 0) {
+  let matrix = identity, visible = true;
+  for (const item of [...ancestors, layer]) {
+    const state = keyState(item, time);
+    visible = visible && active(state, time);
+    matrix = multiply(matrix, transform(state));
+  }
+  const state = keyState(layer, time);
+  const local = layer.type === 'group'
+    ? (layer.children || []).reduce((box, child) => union(box, artworkBounds(child, identity, time)), null)
+    : localBounds(state);
+  return {matrix, visible, local_bounds: visible ? local : null};
+}
+
+export function bStyleTransformPoint([x, y], matrix) {
+  return [matrix[0] * x + matrix[2] * y + matrix[4], matrix[1] * x + matrix[3] * y + matrix[5]];
+}

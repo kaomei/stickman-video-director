@@ -1,6 +1,26 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+// Populate only synthetic protocol fixtures, never production review records.
+export function fillSyntheticB3Review(review,plan) {
+  if(!plan.b3_semantics)return;
+  for(const item of review.shots) {
+    const s=plan.shots.find(s=>s.id===item.id),semantic=plan.b3_semantics.shots.find(s=>s.id===item.id);
+    if(!semantic||!item.b3_semantics)continue;
+    const detail='Synthetic semantic protocol fixture; actual media meaning and viewing are not asserted.';
+    const observation=(time,phase)=>({time,phase,detail,evidence_ids:[s.id+'-continuous']});
+    for(const c of item.b3_semantics.events) {
+      const e=semantic.events.find(e=>e.id===c.id);
+      Object.assign(c,{status:'pass',spoken_meaning:detail,contribution:detail,observations:[observation(e.start,'before'),observation((e.start+e.end)/2,'during'),observation(e.end,'after')]});
+    }
+    for(const c of item.b3_semantics.graphics) {
+      const g=semantic.graphics.find(g=>g.id===c.id);
+      Object.assign(c,{status:'pass',use:detail,observations:[{time:Math.max(s.start,g.review_start??s.start,g.geometry?.completed_start??s.start),detail,evidence_ids:[s.id+'-continuous']}],
+        ...(g.role==='connector'?{observed_source_id:g.source.layer_id,observed_target_id:g.target.layer_id,observed_relation:detail,observed_direction:g.directed?'source_to_target':'undirected'}:{})});
+    }
+  }
+}
+
 // Synthetic protocol data for offline CLI regressions only. This helper does not
 // watch/listen, judge artwork, approve a user's sample or establish style quality.
 // Production reviews must be completed independently from actual media playback.
@@ -29,6 +49,7 @@ export function writeSyntheticReferenceReview(dir, kind = 'preview') {
       check.comparisons = [compare(key==='sound' && audible?audible:first)];
     }
   });
+  fillSyntheticB3Review(review,evidence.plan);
   const file = path.join(dir,`${kind}-synthetic-review.json`);
   fs.writeFileSync(file,JSON.stringify(review,null,2)+'\n');
   return file;
