@@ -6,6 +6,7 @@ import os from 'node:os';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
+import {planBStylePortrait, isBStylePortrait} from './b-style-portrait.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EPS = 1e-7;
@@ -15,6 +16,8 @@ const CHECKS = {
   B3: ['silhouette_design','semantic_action','contact_occlusion','composition_editing','television_finish','typography_captions','timing_pacing','sound'],
 };
 const BASIC = new Set(['typography_captions','timing_pacing','sound']);
+const PORTRAIT_CHECKS = ['native_composition','caption_readability','action_visibility','platform_safe_area'];
+const PORTRAIT_ASPECTS = ['caption_readability','scene_legibility','action_contact','platform_occlusion'];
 const LIMITS = [
   'Hashes, decoded artifacts and complete coverage establish current-media provenance, not aesthetic equivalence.',
   'Reviewer identity, independence, actual viewing/listening and capability limitations are declarations, not authenticated facts.',
@@ -57,7 +60,7 @@ function safeReference(base,relative) {
   need(resolved.startsWith(ROOT+path.sep),'reference escapes the installed Skill');return localFile(resolved);
 }
 
-function referenceSet(style) {
+function referenceSet(style, project = {}) {
   need(CHECKS[style],'only B1, B2 and B3 have this reference gate');
   const manifests=[], refs=[];
   const manifest=relative=>{const f=localFile(path.join(ROOT,relative));manifests.push({path:f,sha256:hash(f)});return {data:read(f),base:path.dirname(f)};};
@@ -109,13 +112,25 @@ function referenceSet(style) {
       }
     }
   }
+  if (isBStylePortrait({...project, style})) {
+    const key=style.toLowerCase(), baseline_id=key+'-native-portrait-2026-11-13';
+    const m=manifest('assets/'+key+'/portrait-approved-2026-11-13.json');
+    need(m.data.schema==='b123-approved-native-portrait-v1'&&m.data.style===style&&m.data.baseline_id===baseline_id,'unexpected approved native portrait identity');
+    const video=m.data.video, poster=m.data.poster;
+    need(video?.path==='portrait-approved-2026-11-13.mp4'&&video.duration===10&&video.width===720&&video.height===1280&&video.fps===30&&video.has_audio===true,'approved native portrait needs the exact ten-second 720x1280/30fps audible sample');
+    need(m.data.user_acceptance?.status==='approved'&&concrete(m.data.user_acceptance.scope),'approved native portrait needs its exact-sample user acceptance scope');
+    need(poster?.path==='portrait-approved-2026-11-13.jpg','approved native portrait poster is missing');
+    const limitations=['User approval covers this exact ten-second effect sample, not unseen full films or future outputs.',...(m.data.limitations||[])];
+    add(m.base,video,{id:baseline_id,kind:'video',role:'approved_native_portrait_effect',duration:video.duration,has_audio:true,required_comparison:true,limitations});
+    add(m.base,poster,{id:baseline_id+'-poster',kind:'image',role:'approved_native_portrait_poster',limitations:['Static poster supports appearance only; it cannot replace continuous portrait playback.',...limitations]});
+  }
   return {manifests,references:refs};
 }
 
 /** Files returned here belong in the caller's content fingerprint. */
-export function referenceInputs(style) {
+export function referenceInputs(style, project = {}) {
   if(!CHECKS[style])return [];
-  const r=referenceSet(style);return [...new Set([...r.manifests,...r.references].map(x=>x.path))];
+  const r=referenceSet(style,project);return [...new Set([...r.manifests,...r.references].map(x=>x.path))];
 }
 
 export function planBStyleReference(p) {
@@ -141,9 +156,10 @@ export function planBStyleReference(p) {
   need(rr===undefined||(rr&&typeof rr==='object'&&!Array.isArray(rr)),'reference_review must be an object');
   const capability=rr?.capability??{mode:'sample_target',environment:null,limitations:[]};
   need(capability&&['sample_target','limited'].includes(capability.mode)&&Array.isArray(capability.limitations),'capability needs sample_target/limited mode and limitations array');
-  const refs=referenceSet(p.style);
+  const refs=referenceSet(p.style,p);
   const styleLimits={B1:['The complete approved Full V4 film is unavailable in this bundle; only sampled long-form compositions are comparable.'],B2:['The accepted B2 board contains sampled stills, not motion or sound evidence. Both bundled full public implementations are the available effect targets, not mandatory stories, characters or scene sequences.'],B3:['The primary private study video is not bundled; public implementations do not establish exact original-source replication.']};
-  return {schema:1,style:p.style,author_id:rr?.author_id??null,capability,width:p.width,height:p.height,fps:p.fps,scope_start:0,scope_end,frame_count:total,shots,caption_sha256:digest(JSON.stringify(p.captions||[])),reference_ids:refs.references.map(r=>r.id),checks:CHECKS[p.style],limits:[...LIMITS,...styleLimits[p.style]]};
+  const portrait=planBStylePortrait(p);
+  return {schema:1,style:p.style,author_id:rr?.author_id??null,capability,width:p.width,height:p.height,fps:p.fps,scope_start:0,scope_end,frame_count:total,shots,caption_sha256:digest(JSON.stringify(p.captions||[])),reference_ids:refs.references.map(r=>r.id),checks:CHECKS[p.style],...(portrait?{portrait}:{}),limits:[...LIMITS,...styleLimits[p.style]]};
 }
 
 function binding(p,fingerprint) {
@@ -209,16 +225,18 @@ function extract(source,a,plan,ffmpeg,target) {
 function template(plan,video_sha256,evidence_sha256,references) {
   return {schema:1,style:plan.style,author_id:plan.author_id,capability:plan.capability,reviewer:{id:'',kind:'agent',method:'',independent:false},video_sha256,evidence_sha256,
     full_playback:{status:'unknown',viewed_ranges:[],observations:[]},baseline_comparisons:references.filter(r=>r.required_comparison).map(r=>({reference_id:r.id,start:null,end:null,observations:[]})),
-    shots:plan.shots.map(s=>({id:s.id,checks:Object.fromEntries(plan.checks.map(k=>[k,{status:'unknown',observations:[],comparisons:[]}]))})),blocking_issues:[],limits:plan.limits};
+    ...(plan.portrait?{portrait_viewing:{status:'unknown',display_width:null,display_height:null,playback_speed:null,platform:'',real_device:{checked:null,limitation:''},viewed_ranges:[],observations:[]}}:{}),
+    shots:plan.shots.map(s=>({id:s.id,checks:Object.fromEntries(plan.checks.map(k=>[k,{status:'unknown',observations:[],comparisons:[]}])) ,
+      ...(plan.portrait?{portrait_checks:Object.fromEntries(PORTRAIT_CHECKS.map(k=>[k,{status:'unknown',observations:[]}]))}:{})})),blocking_issues:[],limits:plan.limits};
 }
 
 export async function buildBStyleReferenceEvidence(p,{file:source,out,projectFingerprint,ffmpeg=process.env.FFMPEG||'ffmpeg',ffprobe=process.env.FFPROBE||'ffprobe'}) {
   const plan=planBStyleReference(p);need(plan,'B1/B2/B3 project required');
   source=localFile(source);out=localDir(out,true);
-  const output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint),project_inputs=currentInputs(p),project_file_sha256=projectFileHash(p),references=referenceSet(p.style),timing=probe(p,source,ffprobe),metadata=timing.metadata,artifacts=[];
+  const output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint),project_inputs=currentInputs(p),project_file_sha256=projectFileHash(p),references=referenceSet(p.style,p),timing=probe(p,source,ffprobe),metadata=timing.metadata,artifacts=[];
   command(ffmpeg,['-v','error','-xerror','-i',source,'-map','0:v:0','-map','0:a:0','-f','null','-']);
   for(const a of descriptors(plan,timing))artifacts.push({...a,sha256:extract(source,a,plan,ffmpeg,path.join(out,a.file))});
-  need(hash(source)===output_sha256&&projectFileHash(p)===project_file_sha256&&same(currentInputs(p),project_inputs)&&same(planBStyleReference(p),plan)&&same(referenceSet(p.style),references),'source, project inputs/plan or reference changed during evidence build');
+  need(hash(source)===output_sha256&&projectFileHash(p)===project_file_sha256&&same(currentInputs(p),project_inputs)&&same(planBStyleReference(p),plan)&&same(referenceSet(p.style,p),references),'source, project inputs/plan or reference changed during evidence build');
   const ledger_file=path.join(out,'evidence.json'),template_file=path.join(out,'review-template.json');
   const ledger={schema:1,status:'pending_independent_review',style:plan.style,output:source,output_sha256,project_fingerprint,project_inputs,plan_sha256:digest(JSON.stringify(plan)),scope:{start:0,end:plan.scope_end},metadata,plan,references:references.references,reference_manifests:references.manifests,artifacts,evidence_dir:out,ledger_file,template_file,limits:plan.limits};
   write(ledger_file,ledger);write(template_file,template(plan,output_sha256,hash(ledger_file),references.references));return ledger;
@@ -249,6 +267,19 @@ function playback(full,plan,ids) {
   need(covered>=plan.scope_end-EPS,'playback ranges omit the submitted tail');
   observations(full.observations,{scope:[0,plan.scope_end],ids,continuous:'source-video'});
 }
+function portraitPlayback(viewing,plan) {
+  need(viewing?.status==='pass'&&Number.isFinite(viewing.display_width)&&viewing.display_width>=320&&viewing.display_width<=480&&Number.isFinite(viewing.display_height)&&viewing.display_height>viewing.display_width&&Math.abs(viewing.display_height-viewing.display_width*plan.height/plan.width)<=1&&viewing.playback_speed===1&&concrete(viewing.platform),'portrait phone-size playback record is pending/invalid; record the actual 320–480px-wide display, preserved aspect, normal speed and concrete target platform');
+  need(typeof viewing.real_device?.checked==='boolean'&&(viewing.real_device.checked||concrete(viewing.real_device.limitation)),'portrait playback must record whether a real device was checked and disclose a concrete simulated-device limitation');
+  // A phone-size observation of a still or unrelated clip cannot stand in for
+  // complete playback of the encoded source at the recorded viewing size.
+  playback(viewing,plan,new Set(['source-video']));
+  const aspects=new Set();
+  for(const observation of viewing.observations) {
+    need(PORTRAIT_ASPECTS.includes(observation.aspect),'portrait phone-size observation must identify caption_readability, scene_legibility, action_contact or platform_occlusion');
+    aspects.add(observation.aspect);
+  }
+  need(PORTRAIT_ASPECTS.every(aspect=>aspects.has(aspect)),'portrait phone-size playback must explicitly observe captions, scene legibility, action/contact and target-platform occlusion');
+}
 function capability(plan) {
   need(text(plan.author_id),'acceptance requires the actual reference_review.author_id');
   const c=plan.capability;need(concrete(c.environment),'acceptance requires the actual production environment');
@@ -262,7 +293,7 @@ function capability(plan) {
 export async function verifyBStyleReferenceReview(p,{file:source,evidenceDir,reviewFile,projectFingerprint,ffmpeg=process.env.FFMPEG||'ffmpeg',ffprobe=process.env.FFPROBE||'ffprobe'}) {
   const plan=planBStyleReference(p);need(plan,'B1/B2/B3 project required');capability(plan);
   source=localFile(source);evidenceDir=localDir(evidenceDir);reviewFile=localFile(reviewFile);
-  const ledgerFile=localFile(path.join(evidenceDir,'evidence.json')),evidence_sha256=hash(ledgerFile),review_sha256=hash(reviewFile),ledger=read(ledgerFile),review=read(reviewFile),output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint),project_inputs=currentInputs(p),project_file_sha256=projectFileHash(p),plan_sha256=digest(JSON.stringify(plan)),references=referenceSet(p.style);
+  const ledgerFile=localFile(path.join(evidenceDir,'evidence.json')),evidence_sha256=hash(ledgerFile),review_sha256=hash(reviewFile),ledger=read(ledgerFile),review=read(reviewFile),output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint),project_inputs=currentInputs(p),project_file_sha256=projectFileHash(p),plan_sha256=digest(JSON.stringify(plan)),references=referenceSet(p.style,p);
   need(ledger.schema===1&&ledger.status==='pending_independent_review'&&ledger.style===p.style&&ledger.output===source&&ledger.output_sha256===output_sha256&&ledger.project_fingerprint===project_fingerprint&&ledger.plan_sha256===plan_sha256&&same(ledger.plan,plan),'stale evidence, current video, project or plan binding');
   const timing=probe(p,source,ffprobe);
   need(same(ledger.scope,{start:0,end:plan.scope_end})&&same(ledger.project_inputs,project_inputs)&&same(ledger.metadata,timing.metadata)&&same(ledger.references,references.references)&&same(ledger.reference_manifests,references.manifests),'stale scope, project inputs, metadata or bundled reference binding');
@@ -279,6 +310,7 @@ export async function verifyBStyleReferenceReview(p,{file:source,evidenceDir,rev
   const reviewer=review.reviewer;need(reviewer&&text(reviewer.id)&&reviewer.id!==plan.author_id&&['human','agent'].includes(reviewer.kind)&&reviewer.independent===true&&concrete(reviewer.method),'a declared independent reviewer distinct from the author is required');
   need(Array.isArray(review.blocking_issues)&&review.blocking_issues.length===0,'blocking quality issues remain');
   const ids=new Set(ledger.artifacts.map(a=>a.id));ids.add('source-video');playback(review.full_playback,plan,ids);
+  if(plan.portrait)portraitPlayback(review.portrait_viewing,plan);
   need(Array.isArray(review.baseline_comparisons)&&review.baseline_comparisons.length>0,'actual reference playback comparisons are required');
   const compared=new Set();
   for(const c of review.baseline_comparisons) {
@@ -292,6 +324,14 @@ export async function verifyBStyleReferenceReview(p,{file:source,evidenceDir,rev
   for(const s of plan.shots) {
     const item=review.shots.find(x=>x.id===s.id);need(item?.checks&&same(Object.keys(item.checks).sort(),plan.checks.slice().sort()),'each shot needs every style-specific review criterion');
     const local=new Set(ledger.artifacts.filter(a=>a.shot===s.id).map(a=>a.id));local.add('source-video');
+    if(plan.portrait) {
+      need(item.portrait_checks&&same(Object.keys(item.portrait_checks).sort(),PORTRAIT_CHECKS.slice().sort()),'each portrait shot needs native_composition, caption_readability, action_visibility and platform_safe_area review');
+      for(const k of PORTRAIT_CHECKS) {
+        const c=item.portrait_checks[k];
+        need(c?.status==='pass','portrait shot '+s.id+' '+k+' is pending/failed; limited mode cannot waive portrait readability, action or safe-area checks');
+        observations(c.observations,{scope:[s.start,s.end],ids:local,continuous:s.id+'-continuous'});
+      }
+    }
     for(const k of plan.checks) {
       const c=item.checks[k],effect=!BASIC.has(k),limited=plan.capability.mode==='limited'&&effect;
       need(c&&(c.status==='pass'||(limited&&c.status==='unmet')),'shot '+s.id+' '+k+' is unknown, failed or not eligible for a limited exception');
@@ -304,7 +344,7 @@ export async function verifyBStyleReferenceReview(p,{file:source,evidenceDir,rev
       if(c.status==='unmet')unmet.push({shot:s.id,criterion:k,observations:c.observations,comparisons:c.comparisons});
     }
   }
-  need(hash(source)===output_sha256&&hash(ledgerFile)===evidence_sha256&&hash(reviewFile)===review_sha256&&projectFileHash(p)===project_file_sha256&&same(currentInputs(p),project_inputs)&&same(planBStyleReference(p),plan)&&same(referenceSet(p.style),references),'video, evidence, review, project inputs/plan or references changed during acceptance');
+  need(hash(source)===output_sha256&&hash(ledgerFile)===evidence_sha256&&hash(reviewFile)===review_sha256&&projectFileHash(p)===project_file_sha256&&same(currentInputs(p),project_inputs)&&same(planBStyleReference(p),plan)&&same(referenceSet(p.style,p),references),'video, evidence, review, project inputs/plan or references changed during acceptance');
   const limited=plan.capability.mode==='limited';
-  return {schema:1,status:limited?'best_effort_limited':'sample_target_review_passed',equivalence:limited?'not_sample_equivalent':'available_samples_reviewed',style:p.style,output:source,output_sha256,project_fingerprint,plan_sha256,evidence_sha256,review_sha256,scope:ledger.scope,capability:plan.capability,reviewer,unmet_effect_criteria:unmet,user_acceptance:'not_inferred',limits:plan.limits};
+  return {schema:1,status:limited?'best_effort_limited':'sample_target_review_passed',equivalence:limited?'not_sample_equivalent':'available_samples_reviewed',style:p.style,output:source,output_sha256,project_fingerprint,plan_sha256,evidence_sha256,review_sha256,scope:ledger.scope,capability:plan.capability,reviewer,...(plan.portrait?{portrait_viewing:review.portrait_viewing}:{}),unmet_effect_criteria:unmet,user_acceptance:'not_inferred',limits:plan.limits};
 }

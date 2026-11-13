@@ -1,0 +1,74 @@
+{
+  "schema": "b123-approved-native-portrait-v1",
+  "style": "B3",
+  "baseline_id": "b3-native-portrait-2026-11-13",
+  "video": {
+    "path": "portrait-approved-2026-11-13.mp4",
+    "sha256": "b0f54650e2c05137269d5e177447e1e0394c81945b5643da5c8c3ffcb2ec10ea",
+    "duration": 10,
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "frames": 300,
+    "has_audio": true
+  },
+  "poster": {
+    "path": "portrait-approved-2026-11-13.jpg",
+    "sha256": "91f1c4b4d0ce2976c69093c615aa1c88ed781034dc69ee3bc75ca426d39e0998",
+    "source_time": 6.4,
+    "role": "Encoded-frame browsing still; not evidence of continuous motion."
+  },
+  "audio": {
+    "stream": "a:0",
+    "codec": "aac",
+    "digest_format": "ffmpeg stream copy to ADTS, no audio reencoding",
+    "sha256": "40cd398895dc6b1a95b8f76c49162d57310ba1c51c5f53122a290900b863671b",
+    "playback_speed": 1
+  },
+  "user_acceptance": {
+    "status": "approved",
+    "recorded_at": "2026-11-13T07:50:59.105806+00:00",
+    "statement": "B1可以了，B2/3也都很好，这个效果没有问题，接下来该怎么做？",
+    "scope": "These exact 10-second effect samples; not unseen full films or future outputs"
+  },
+  "publication_visibility": "internal_skill_reference_no_readme_showcase",
+  "provenance": {
+    "landscape_reference": {
+      "path": "public-showcases/b3-tv-night-signal.mp4",
+      "sha256": "d9718e1c3d9c2322639cb4e4804abad0a8dac8ab73d30d4e2177e3cf7e34c178"
+    },
+    "source_interval": {
+      "start": 0,
+      "end": 9.75
+    },
+    "portrait_method": "Native portrait rearrangement of original layered artwork and rendering functions, retaining source story, voice and sound.",
+    "tail": {
+      "duration": 0.25,
+      "detail": "Continue the original static close-up and procedural CRT noise for0.25s; fade only the quiet source interval9.70–9.75s over50ms, then append silence; omit the following clause."
+    },
+    "sample_video_copy": "Exact approved video bytes; no reencoding during reference packaging."
+  },
+  "style_features": [
+    "Retain original TV Night Signal white-outline-on-black identity, layered CRT grain and restrained bloom.",
+    "Reuse original house and character rendering grammar, original scene transitions and procedural television finish.",
+    "Native portrait staging keeps the narrative action and clean uppercase captions readable without changing into a poster style.",
+    "Approved sample lettering retains original Inter-based typography; this encoded video does not redistribute font files."
+  ],
+  "verification": {
+    "exact_approved_sha256": "pass",
+    "width": 720,
+    "height": 1280,
+    "duration": 10,
+    "fps": 30,
+    "frames": 300,
+    "full_decode": "pass",
+    "audio_present": true
+  },
+  "limitations": [
+    "Approval is limited to this exact10-second effect sample.",
+    "A static poster does not establish motion quality.",
+    "User approval is recorded separately from independent full-playback, listening and real-device review; no missing review is inferred.",
+    "Future productions must independently satisfy the complete production and portrait acceptance gates; sample approval does not waive them.",
+    "No font files or source renderer are added by this encoded-reference manifest."
+  ]
+}

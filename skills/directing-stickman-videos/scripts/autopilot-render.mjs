@@ -14,6 +14,8 @@ import {B4_HOOK, B4_PORTRAIT, portraitHook, hookFamily, hookWeight, hookRows} fr
 import {requireB4Glyphs} from './b4-font-coverage.mjs';
 import {checkB4TypographyPaint, buildB4TypographyEvidence} from './b4-typography-review.mjs';
 import {buildBStyleReferenceEvidence} from './b-style-reference-review.mjs';
+import {bStyleCaptionLayout, planBStylePortrait} from './b-style-portrait.mjs';
+import {checkBStylePortraitPaint} from './b-style-portrait-paint.mjs';
 
 const clamp = x => Math.max(0, Math.min(1, x));
 function posterRows(ctx, p, l) {
@@ -43,7 +45,8 @@ function wrap(ctx, text, maxWidth) {
 }
 export async function painter(p, {pictureOnly = false} = {}) {
   const fonts = fontPaths(p);
-  const plane = designPlane(p), captionBand = plane.height - 110;
+  const plane = designPlane(p), captionLayout = bStyleCaptionLayout(p), captionBand = captionLayout.band_top;
+  const portraitPlan = planBStylePortrait(p);
   if (!GlobalFonts.registerFromPath(fonts.hand, 'B1Hand') || !GlobalFonts.registerFromPath(fonts.caption, 'B1Caption')) throw new Error('Font registration failed');
   if (fonts.hook && !GlobalFonts.registerFromPath(fonts.hook, B4_HOOK.family)) throw new Error('B4 opening: fixed rounded font registration failed; no fallback is allowed');
   if (fonts.cinematic && !GlobalFonts.registerFromPath(fonts.cinematic, 'B4Cinematic')) throw new Error('B4 cinematic font registration failed');
@@ -201,21 +204,27 @@ export async function painter(p, {pictureOnly = false} = {}) {
         const entrance = clamp((t - cue.start) / .16), ease = 1 - (1 - entrance) ** 3;
         ctx.globalAlpha *= entrance; ctx.translate(0, 12 * (1 - ease));
       }
-      ctx.font = `${p.style === 'B2' ? 500 : 600} ${p.captionSize || (p.style === 'B2' ? 40 : 34)}px B1Caption`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.font = `${p.style === 'B2' ? 500 : 600} ${captionLayout.font_size}px B1Caption`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       if (/[\r\n]/.test(cue.text)) throw new Error('B captions allow at most one line; split the timed cue at a semantic boundary');
-      const lines = wrap(ctx, p.style === 'B3' ? cue.text.toUpperCase() : cue.text, 1120);
+      const lines = wrap(ctx, p.style === 'B3' ? cue.text.toUpperCase() : cue.text, captionLayout.max_width);
       if (lines.length > 1) throw new Error('B captions allow at most one line; split the timed cue at a semantic boundary');
-      const cy = plane.height - 60;
+      const cy = captionLayout.y, cx = captionLayout.x;
+      if (portraitPlan) {
+        const m = ctx.measureText(lines[0]), safe = portraitPlan.safe_area, pad = p.style === 'B2' ? 0 : 4;
+        if (cx - m.actualBoundingBoxLeft - pad < safe.x || cx + m.actualBoundingBoxRight + pad > safe.x + safe.w || cy - m.actualBoundingBoxAscent - pad < safe.y || cy + m.actualBoundingBoxDescent + pad > safe.y + safe.h)
+          throw Error('B1–B3 portrait: actual caption glyph bounds leave the phone safe area; choose a semantic cue break without shrinking or squeezing type');
+      }
       if (p.style === 'B2') {
         const width = Math.max(...lines.map(s => ctx.measureText(s).width));
-        ctx.fillStyle = 'rgba(249,246,235,.94)'; ctx.beginPath(); ctx.roundRect(640 - width / 2 - 22, cy - 33, width + 44, 66 + (lines.length - 1) * 43, 9); ctx.fill();
-        lines.forEach((s, i) => { ctx.fillStyle = '#38382f'; ctx.fillText(s, 640, cy + i * 43); });
+        const padding = captionLayout.padding_x, boxHeight = captionLayout.box_height;
+        ctx.fillStyle = 'rgba(249,246,235,.94)'; ctx.beginPath(); ctx.roundRect(cx - width / 2 - padding, cy - boxHeight / 2, width + padding * 2, boxHeight + (lines.length - 1) * 43, portraitPlan ? 16 : 9); ctx.fill();
+        lines.forEach((s, i) => { ctx.fillStyle = '#38382f'; ctx.fillText(s, cx, cy + i * 43); });
       } else lines.forEach((s, i) => {
         const y = cy + i * 43;
         ctx.strokeStyle = p.style === 'B4' ? '#303234' : p.style === 'B3' ? '#111316' : '#FDFDFC';
         ctx.lineWidth = ['B3', 'B4'].includes(p.style) ? 3 : 7;
         if (p.style === 'B4') { ctx.shadowColor = 'rgba(0,0,0,.45)'; ctx.shadowBlur = 2; ctx.shadowOffsetY = 2; }
-        ctx.strokeText(s, 640, y); ctx.fillStyle = p.style === 'B4' ? '#f8f5ed' : p.style === 'B3' ? '#f4f5f5' : '#20231F'; ctx.fillText(s, 640, y);
+        ctx.strokeText(s, cx, y); ctx.fillStyle = p.style === 'B4' ? '#f8f5ed' : p.style === 'B3' ? '#f4f5f5' : '#20231F'; ctx.fillText(s, cx, y);
         ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
       });
       ctx.textAlign = 'left'; ctx.restore();
@@ -286,7 +295,7 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
             reused: true,
           };
           // Cached pixels are reusable; an edited report is never review authority.
-          if (p.style === 'B4') save(reportPath, cached);
+          if (['B1', 'B2', 'B3', 'B4'].includes(p.style)) save(reportPath, cached);
           return cached;
         }
       }
@@ -295,9 +304,10 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     const cache = path.join(out, 'cache'); fs.mkdirSync(cache, {recursive: true});
     const frame = await painter(p), clips = []; let reused = 0;
     const motionEvidence = await checkBStyleMotionPaint(p, frame);
+    const portraitEvidence = await checkBStylePortraitPaint(p, frame);
     const picture = p.style === 'B4' ? await painter(p, {pictureOnly: true}) : null;
     if (p.style === 'B4') { await checkB4OpeningPaint(p, {draw: frame, picture}); await checkB4TypographyPaint(p, {draw: frame}); }
-    const rendererHash = sha(['autopilot-render.mjs', 'b3-graphics.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f))).join(':'));
+    const rendererHash = sha(['autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-portrait.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f))).join(':'));
     for (const [i, shot] of p.shots.entries()) {
       const first = Math.round(shot.start * p.fps), last = Math.min(count, i === p.shots.length - 1 ? count : Math.round(shot.end * p.fps)); if (last <= first) continue;
       const files = new Set(Object.values(fontPaths(p)));
@@ -305,7 +315,7 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
         if (layer.type === 'image') files.add(mediaPath(p.base, layer.path));
         if (layer.type === 'pose') files.add(mediaPath(p.base, '@b1/character-pose-sheet-v6.png'));
       }
-      const key = sha(JSON.stringify({shot, first, last, style: p.style, television: p.television, width: p.width, height: p.height, fps: p.fps, captions: p.captions.filter(c => c.end > first / p.fps && c.start < last / p.fps), captionSize: p.captionSize, grid: p.grid, inputs: p.inputs.filter(f => files.has(f.path)), rendererHash}));
+      const key = sha(JSON.stringify({shot, first, last, style: p.style, television: p.television, width: p.width, height: p.height, fps: p.fps, captions: p.captions.filter(c => c.end > first / p.fps && c.start < last / p.fps), captionSize: p.captionSize, ...(portraitEvidence ? {portrait_caption_layout: bStyleCaptionLayout(p)} : {}), grid: p.grid, inputs: p.inputs.filter(f => files.has(f.path)), rendererHash}));
       const clip = path.join(cache, `${key}.mp4`); let valid = false;
       if (fs.existsSync(clip)) try { const info = probe(clip); valid = Number(info.streams[0].nb_frames) === last - first; } catch {}
       if (valid) reused++; else { done(`rendering shot ${i + 1}/${p.shots.length}`); const tmp = path.join(cache, `${key}.partial.mp4`); await encode(p, frame, first, last - first, tmp); fs.renameSync(tmp, clip); }
@@ -338,6 +348,7 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     fs.writeFileSync(path.join(out, `${kind}-contact-sheet.png`), sheet.toBuffer('image/png'));
     const info = probe(target), report = {fingerprint: p.fingerprint, preview_seconds: full ? null : duration, output: target, output_sha256: hashFile(target), original_voice_sha256: hashFile(p.voicePath), original_voice_duration: p.voiceDuration, voice_rate: 'unchanged; leading/trailing padding only', frames: count, duration: Number(info.format.duration), cache_hits: reused, shot_count: clips.length, full_decode: 'pass', caption_count: cues.length, human_review: 'required; technical checks are not acceptance', inputs: p.inputs};
     report.local_motion = motionEvidence;
+    if (portraitEvidence) report.portrait = portraitEvidence;
     report.audio_tracks = {ambience: p.ambience.length, dialogue: p.dialogue.length, file_sfx: p.sfx.filter(s => s.kind === 'file').length, cuts: p.audio_cuts.length};
     if (['B1', 'B2', 'B3'].includes(p.style)) {
       const evidenceOut = path.join(out, `${kind}-reference`);
