@@ -23,7 +23,8 @@ function lockedFile(scene, item) {
 }
 function exactLegacy(scene, pack) {
   const expected = read(path.join(pack, 'baseline-lock.json')).files.filter(f => f.path.startsWith('example/'));
-  const actual = files(scene).map(f => path.relative(scene, f)).sort();
+  // Convert native separators only for manifest comparison; keep filesystem paths native.
+  const actual = files(scene).map(f => path.relative(scene, f).split(path.sep).join('/')).sort();
   return JSON.stringify(actual) === JSON.stringify(expected.map(f => f.path.slice(8)).sort()) &&
     expected.every(f => sha(path.join(scene, f.path.slice(8))) === f.sha256);
 }

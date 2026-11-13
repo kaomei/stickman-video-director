@@ -3,7 +3,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
-import {provisionFonts} from './b6-fonts.mjs';
+import {provisionFonts, verifyProvisionedFontLicenses} from './b6-fonts.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const PACK=path.join(ROOT,'assets/b6/hong-kong-v90');
@@ -19,6 +19,7 @@ function local(base,rel) {
 export function checkHKPack(base=PACK) {
   const m=read(path.join(base,'manifest.json'));
   for(const [rel,digest] of Object.entries(m.files))if(sha(local(base,rel))!==digest)throw new Error('V90 fingerprint mismatch: '+rel);
+  if(fs.existsSync(path.join(base,'font-provenance.json')) || Object.keys(m.files).some(rel=>rel==='font-provenance.json'||rel.startsWith('source/fonts/'))) verifyProvisionedFontLicenses(base,m.files);
   return {ok:true,files:Object.keys(m.files).length,fingerprint:sha(path.join(base,'manifest.json'))};
 }
 export function initHK(dir,ratio,fontOptions) {

@@ -487,7 +487,7 @@ class MotionReview(unittest.TestCase):
         self.completed_fixture()
         args = SimpleNamespace(command='approve', project=str(self.base), ratio='16:9', report='report.json',
                                note='Synthetic earlier decision', review='review/motion-review.json')
-        with patch.object(runtime, 'load', return_value=self.context), patch.object(runtime, 'module', return_value=review):
+        with patch.object(runtime, 'load', return_value=self.context), patch.object(runtime, 'verified_module', return_value=review):
             runtime.run(args)
             first=(self.base/'approval-16x9.json').read_bytes()
             args.note='Synthetic replacement decision'
@@ -498,7 +498,7 @@ class MotionReview(unittest.TestCase):
     def test_approve_requires_creative_review_and_render_rechecks_it(self):
         args = SimpleNamespace(command='approve', project=str(self.base), ratio='16:9', report='report.json',
                                note='Synthetic test-only user-decision fixture', review=None)
-        with patch.object(runtime, 'load', return_value=self.context), patch.object(runtime, 'module', return_value=review):
+        with patch.object(runtime, 'load', return_value=self.context), patch.object(runtime, 'verified_module', return_value=review):
             with self.assertRaisesRegex(ValueError, 'Creative motion review required'):
                 runtime.run(args)
             self.completed_fixture()

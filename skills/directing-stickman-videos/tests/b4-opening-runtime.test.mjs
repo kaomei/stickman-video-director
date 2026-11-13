@@ -11,6 +11,17 @@ import {B4_HOOK, makeB4Opening} from '../scripts/b4-opening.mjs';
 import {painter} from '../scripts/autopilot-render.mjs';
 import {checkB4OpeningPaint, checkB4OpeningFile} from '../scripts/b4-opening-visual-check.mjs';
 
+const isB4HookFont = (input, api = path) => input.sha256 === B4_HOOK.font_sha256 && api.basename(input.path) === 'Nunito.ttf';
+
+test('B4 font input assertion preserves SHA and filename checks on Windows and POSIX', () => {
+  for (const [api, dir] of [[path.win32, 'C:\\skill'], [path.posix, '/skill']]) {
+    const input = {path: api.join(dir, 'assets', 'fonts', 'Nunito.ttf'), sha256: B4_HOOK.font_sha256};
+    assert.ok(isB4HookFont(input, api));
+    assert.equal(isB4HookFont({...input, sha256: 'wrong-sha'}, api), false);
+    assert.equal(isB4HookFont({...input, path: api.join(dir, 'assets', 'fonts', 'other-Nunito.ttf')}, api), false);
+  }
+});
+
 const command = args => spawnSync(process.execPath, [path.join(ROOT, 'scripts/autopilot.mjs'), ...args], {encoding: 'utf8', timeout: 120000});
 test('B4 ships baked heavy glyphs, not a variable font silently rendered at its default weight', () => {
   const font = fs.readFileSync(path.join(ROOT, 'assets/fonts/Nunito.ttf'));
@@ -87,7 +98,7 @@ test('B4 locks rounded typography, colors, hierarchy and the whole-block settle'
     assert.throws(() => loadProject(f.file), /fixed|bundled rounded|covered/);
   }
   Object.assign(f.project, structuredClone(original)); f.write();
-  assert.ok(loadProject(f.file).inputs.some(i => i.sha256 === B4_HOOK.font_sha256 && i.path.endsWith('/Nunito.ttf')));
+  assert.ok(loadProject(f.file).inputs.some(i => isB4HookFont(i)));
 });
 
 test('B4 rejects static renamed assets, camera drift, flash-only and offscreen states', t => {

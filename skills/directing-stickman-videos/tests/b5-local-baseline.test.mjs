@@ -14,15 +14,39 @@ const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const lock=read(path.join(base,'baseline-lock.json')),contract=read(path.join(base,'acceptance.json'));
 const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 const list=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?list(path.join(d,e.name)):[path.join(d,e.name)]);
+const manifestKey=(dir,file,api=path)=>api.relative(dir,file).split(api.sep).join('/');
+function assertLocalEntry(entry,api=path){
+  assert(!api.isAbsolute(entry));
+  assert(!entry.split(api.sep).includes('..'));
+  assert(!entry.replaceAll('\\','/').split('/').includes('..'));
+}
+
+test('B5 lock comparison uses manifest separators without rewriting POSIX filenames',()=>{
+  for(const api of [path.posix,path.win32]){
+    const dir=api.resolve('baseline');
+    assert.equal(manifestKey(dir,api.join(dir,'scene','renderer.cjs'),api),'scene/renderer.cjs');
+  }
+  assert.equal(manifestKey('/baseline','/baseline/literal\\name.cjs',path.posix),'literal\\name.cjs');
+});
+
+test('B5 manifest entries retain native containment checks and reject mixed parent traversal',()=>{
+  for(const api of [path.posix,path.win32]){
+    assert.doesNotThrow(()=>assertLocalEntry('scene/assets/fonts/Anton-0.ttf',api));
+    for(const entry of ['../escape','scene/../../escape','..\\escape','scene\\../escape','scene/..\\escape']){
+      assert.throws(()=>assertLocalEntry(entry,api),entry);
+    }
+    assert.throws(()=>assertLocalEntry(api.resolve('absolute'),api));
+  }
+});
 
 test('Jensen baseline has an exact closed lock, explicit B5 release approval and bounded rights claims',()=>{
   assert.equal(contract.publication_authorized,true);assert.equal(contract.public_rights_cleared,false);
   assert.match(contract.publication_approval,/2026-11-10/);
   assert.match(contract.rights_review_scope,/Finished editorial composite/);
   assert.equal(lock.video_sha256,'b46c272512277096d7cc3f85a435d52d4657887c68050b15ec555071fd8da387');
-  const actual=list(base).map(p=>path.relative(base,p)).filter(p=>p!=='baseline-lock.json').sort();
+  const actual=list(base).map(p=>manifestKey(base,p)).filter(p=>p!=='baseline-lock.json').sort();
   assert.deepEqual(actual,lock.files.map(f=>f.path).sort());
-  for(const f of lock.files){assert(!path.isAbsolute(f.path)&&!f.path.split(path.sep).includes('..'));assert.equal(sha(path.join(base,f.path)),f.sha256,f.path);}
+  for(const f of lock.files){assertLocalEntry(f.path);assert.equal(sha(path.join(base,f.path)),f.sha256,f.path);}
   assert.equal(sha(path.join(base,'approved-sample.mp4')),lock.video_sha256);
 });
 

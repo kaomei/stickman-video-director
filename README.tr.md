@@ -319,7 +319,7 @@ Uyandığınızda her şey on bin kat ucuzlamış olsa? Görsel ilham, YouTube�
 
 ### A7: Yakında…
 
-Yeni uzmanlaşmış Director stilleri şu anda eğitimde. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
+Director moduna özel yeni stiller hazırlanıyor. [Projeye yıldız verin](#road-to-10000-stars--creator-ecosystem) ve gelecek güncellemeleri takip edin!
 
 
 <a id="b-styles"></a>
@@ -504,7 +504,7 @@ Abartılı meme ifadeleri, serbest el çizgileri ve yumuşak renkler, sıra dı�
 
 ### B7: Yakında…
 
-Yeni Autopilot stilleri ve kod tabanlı animasyonlar hazırlanıyor. 5,000 Stars hedefine ulaşıldığında açılmaları için [projeye yıldız verin](#road-to-10000-stars--creator-ecosystem)!
+Yeni Autopilot stilleri ve kod tabanlı animasyonlar hazırlanıyor. [Projeye yıldız verin](#road-to-10000-stars--creator-ecosystem) ve gelecek güncellemeleri takip edin!
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

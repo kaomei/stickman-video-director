@@ -324,7 +324,7 @@ E se você acordasse e tudo custasse dez mil vezes menos? A inspiração visual 
 
 ### A7: Em breve…
 
-Novos estilos especializados para o modo Director estão em treinamento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
+Novos estilos especializados para o modo Director estão em preparação. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) e acompanhe as próximas atualizações!
 
 
 <a id="b-styles"></a>
@@ -509,7 +509,7 @@ Expressões de meme, traços soltos à mão e cores suaves transformam história
 
 ### B7: Em breve…
 
-Novos estilos Autopilot e animações por código estão em desenvolvimento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
+Novos estilos Autopilot e animações por código estão em preparação. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) e acompanhe as próximas atualizações!
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

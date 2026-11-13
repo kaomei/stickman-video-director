@@ -1,6 +1,6 @@
 """Exercise the real new-story entry, not the V90-only reproduction command."""
 from pathlib import Path
-import importlib.util,json,shutil,subprocess,tempfile,unittest
+import hashlib,importlib.util,json,shutil,subprocess,tempfile,unittest
 from types import SimpleNamespace
 ROOT=Path(__file__).resolve().parents[1]
 s=importlib.util.spec_from_file_location('production_runtime',ROOT/'scripts/b6_production.py');runtime=importlib.util.module_from_spec(s);s.loader.exec_module(runtime)
@@ -53,7 +53,12 @@ class Production(unittest.TestCase):
         try:
             self.assertIn('caption_renderer.py',before.inputs)
             f.write_bytes(original+b'\n# Caption implementation changed\n')
+            # Installed validation uses its own trusted caption helper but still pins the project copy.
             self.assertNotEqual(runtime.load(self.base,'16:9').fingerprint,before.fingerprint)
+            spec=importlib.util.spec_from_file_location('b6_edited_caption_project',self.base/'run.py')
+            project_runtime=importlib.util.module_from_spec(spec);spec.loader.exec_module(project_runtime)
+            with self.assertRaisesRegex(ValueError,'Untrusted caption runtime changed'):
+                project_runtime.load(self.base,'16:9')
         finally:f.write_bytes(original)
     def test_selected_public_caption_font_is_pinned_even_if_inputs_omits_it(self):
         p=json.loads(self.original);p['inputs']=[];(self.base/'project.json').write_text(json.dumps(p))
@@ -107,8 +112,11 @@ class Production(unittest.TestCase):
         manifest=self.base/'engine/manifest.json';old_manifest=manifest.read_bytes()
         installed=json.loads(old_manifest)
         self.assertEqual(len(public['files']),85)
-        self.assertEqual(len(installed['files']),89)
-        self.assertEqual(set(installed['files'])-set(public['files']),runtime.LOCAL_FONT_MANIFEST_FILES)
+        provenance=json.loads((self.base/'engine/font-provenance.json').read_text())
+        license_by_font={'NotoSans.ttf':'source/fonts/OFL-NotoSans.txt','Nunito.ttf':'source/fonts/OFL-Nunito.txt'}
+        licenses={license_by_font[row['fallback_font']] for row in provenance['fonts'] if row['kind']=='open-fallback'}
+        self.assertEqual(len(installed['files']),89+len(licenses))
+        self.assertEqual(set(installed['files'])-set(public['files']),runtime.LOCAL_FONT_MANIFEST_FILES|licenses)
         before=runtime.load(self.base,'16:9')
         self.assertEqual(runtime.frozen_engine_manifest_sha(manifest),runtime.FROZEN_V90_EXAMPLE_SHA256['engine_manifest'])
         font=self.base/'engine/source/fonts/Arial.ttf';old_font=font.read_bytes()
@@ -137,6 +145,53 @@ class Production(unittest.TestCase):
             plan.pop('cast_inventory');file.write_text(json.dumps(plan))
             with self.assertRaisesRegex(ValueError,'Explicit native cast_inventory'):runtime.load(self.base,'16:9')
         finally:file.write_bytes(original)
+
+
+class FallbackLicenseIntegrity(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp=tempfile.TemporaryDirectory(prefix='b6-fallback-license-')
+        cls.addClassCleanup(cls.tmp.cleanup)
+        cls.base=Path(cls.tmp.name)/'project'
+        script='import {initProduction} from '+json.dumps((ROOT/'scripts/b6-production.mjs').as_uri())+'; initProduction(process.argv[1], "16:9", {fontDir:process.argv[2], systemDirs:[]});'
+        subprocess.run(['node','--input-type=module','-e',script,str(cls.base),str(Path(cls.tmp.name)/'no-fonts')],check=True,capture_output=True)
+        subprocess.run(['python3',str(ROOT/'scripts/b6_production_example.py'),str(cls.base)],check=True,capture_output=True)
+    def test_fallback_license_bytes_and_manifest_pins_preserve_frozen_core(self):
+        engine=self.base/'engine';manifest=json.loads((engine/'manifest.json').read_text())
+        provenance=json.loads((engine/'font-provenance.json').read_text())
+        self.assertTrue(all(row['kind']=='open-fallback' for row in provenance['fonts']))
+        self.assertEqual(len(manifest['files']),91)
+        for name in ['OFL-NotoSans.txt','OFL-Nunito.txt']:
+            rel='source/fonts/'+name;expected=(ROOT/'assets/fonts'/name).read_bytes()
+            self.assertEqual((engine/rel).read_bytes(),expected)
+            self.assertEqual(manifest['files'][rel],hashlib.sha256(expected).hexdigest())
+            for row in provenance['fonts']:
+                if row['license_path']==rel:self.assertEqual(row['license_sha256'],manifest['files'][rel])
+        self.assertEqual(runtime.frozen_engine_manifest_sha(engine/'manifest.json'),runtime.FROZEN_V90_EXAMPLE_SHA256['engine_manifest'])
+        self.assertEqual(runtime.load(self.base,'16:9').project['duration'],7.5)
+    def test_exported_license_change_missing_file_or_missing_pin_is_rejected(self):
+        engine=self.base/'engine';manifest=engine/'manifest.json';old_manifest=manifest.read_bytes()
+        rel='source/fonts/OFL-NotoSans.txt';license=engine/rel;original=license.read_bytes()
+        for change in ['tamper','delete','unpin']:
+            with self.subTest(change=change):
+                try:
+                    if change=='tamper':license.write_bytes(original+b'\ntampered\n')
+                    elif change=='delete':license.unlink()
+                    else:
+                        data=json.loads(old_manifest);data['files'].pop(rel);manifest.write_text(json.dumps(data))
+                    with self.assertRaisesRegex(ValueError,'license|OFL|Locked engine changed|Missing/escaped'):
+                        runtime.load(self.base,'16:9')
+                finally:license.write_bytes(original);manifest.write_bytes(old_manifest)
+    def test_unlisted_font_directory_content_cannot_bypass_the_frozen_core(self):
+        engine=self.base/'engine';manifest=engine/'manifest.json';original=manifest.read_bytes()
+        rel='source/fonts/unreviewed.py';extra=engine/rel
+        try:
+            extra.write_text('raise RuntimeError("must not execute")\n')
+            data=json.loads(original);data['files'][rel]=hashlib.sha256(extra.read_bytes()).hexdigest();manifest.write_text(json.dumps(data))
+            self.assertNotEqual(runtime.frozen_engine_manifest_sha(manifest),runtime.FROZEN_V90_EXAMPLE_SHA256['engine_manifest'])
+            with self.assertRaisesRegex(ValueError,'Frozen source-reuse engine_manifest changed'):
+                runtime.load(self.base,'16:9')
+        finally:extra.unlink();manifest.write_bytes(original)
 
 
 class CharacterSystemBoundaries(unittest.TestCase):
