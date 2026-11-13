@@ -497,7 +497,13 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
 
 <!-- b6:section:end -->
 
+---
 
+<a id="b7"></a>
+
+### B7: 곧 공개…
+
+새로운 Autopilot 스타일과 코드 애니메이션을 준비하고 있습니다. [프로젝트에 Star를 눌러](#road-to-10000-stars--creator-ecosystem) 5,000 Stars 달성 시 공개될 수 있도록 응원해 주세요!
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

@@ -503,7 +503,13 @@ Expressões de meme, traços soltos à mão e cores suaves transformam história
 
 <!-- b6:section:end -->
 
+---
 
+<a id="b7"></a>
+
+### B7: Em breve…
+
+Novos estilos Autopilot e animações por código estão em desenvolvimento. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) para desbloqueá-los ao chegar a 5,000 Stars!
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

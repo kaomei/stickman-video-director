@@ -496,7 +496,13 @@ Memeらしい大げさな表情、ラフな手描き線、柔らかな色彩で�
 
 <!-- b6:section:end -->
 
+---
 
+<a id="b7"></a>
+
+### B7: 近日公開…
+
+新しい Autopilot 画風とコードアニメーションを準備中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、5,000 Stars での解放を応援してください！
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

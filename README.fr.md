@@ -499,7 +499,13 @@ Des expressions de meme, des traits dessinés à la main et des couleurs douces 
 
 <!-- b6:section:end -->
 
+---
 
+<a id="b7"></a>
+
+### B7 : Bientôt disponible…
+
+De nouveaux styles Autopilot et de nouvelles animations par code sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>
