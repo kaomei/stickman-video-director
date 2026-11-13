@@ -25,7 +25,7 @@ test('B5 requires an action card with actor consequences, not just prop entrance
  }
  assert.match(motion,/setup → anticipation → contact\/constraint → exaggerated consequence → delayed secondary motion → recovery/);
  assert.match(motion,/prop entrance \+ small actor pulse \+ generic burst/);
- assert.match(contract,/Technical render\/IK checks cannot approve the animation/);
+ assert.match(contract,/Technical render\/IK(?:\/pixel)? checks cannot approve the animation/);
 });
 
 test('normal IK safety and bounded comic deformation coexist without becoming a loophole',()=>{

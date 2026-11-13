@@ -30,10 +30,10 @@ secondary_motion: What trails, bends, rattles, catches up or falls next?
 recovery: Recoil/overshoot/settle; final state feeds the next beat.
 sound_event_id: Shared visual contact event, material and source transient.
 hold_if_any: Duration, readable purpose and next change; not filler.
-review_frames: Before / anticipation / contact / extreme / recovery.
+review_frames: Before / anticipation / contact / extreme / delayed response / recovery.
 ```
 
-Keep a project-local cue ledger (for example `left-stage-beats.json`) with these fields or equivalent explicit information. Word anchors stay tied to the accepted voice; do not speed up, regenerate or recast narration to fit a stock gag. This is an authoring/review contract, not a claim that the scaffold automatically validates the ledger or generates new choreography.
+Keep a project-local cue ledger (for example `left-stage-beats.json`) with these fields or equivalent explicit information. Word anchors stay tied to the accepted voice; do not speed up, regenerate or recast narration to fit a stock gag. The ledger directs authoring; the [visual acceptance protocol](b5-visual-acceptance.md) additionally requires complete action coverage, evidence extracted from the final encoded candidate and independent actual-media review. A ledger or nonempty review string alone cannot pass it. The scaffold does not generate new choreography.
 
 **Reject before code** if the card merely says “show a folder, scale in a photo, wiggle the actor, add a burst.” Replace it with a concrete action: an anonymous investigator pulls a stubborn folder, its contents suddenly give way, the body overbalances, sliding photos drag the gaze/body into the next setup. A news metaphor must remain visibly illustrative: no fabricated documents, quotations, dates, romantic acts or evidence. Don't imply that a real person performed the stickman's gag.
 
@@ -49,6 +49,12 @@ Use **setup → anticipation → contact/constraint → exaggerated consequence 
 - Use unequal timing: a legible wind-up, a fast contact, a larger follow-through and a brief settling beat. At 30 fps, roughly 5–9 frames of anticipation, 1–3 frames around contact and 6–15 frames of follow-through can be a starting experiment, not a uniform timing template. Scale to the actual action and speech; do not accelerate the whole timeline to fake energy.
 - Alternate build-up, hit, consequence, pause and escalation. Flag a principal-stage plateau longer than about one second for review. A deliberate held weight, compressed body, trapped pose or comic stare may stay longer if its purpose and exit are explicit. Host mouth motion, subtitle highlighting, camera drift or a looping prop wiggle do not excuse an otherwise idle left stage. Do not turn this flag into compulsory cuts or random motion every second.
 - Keep the cause and its result in a readable frame. A brief stage impact accent may support a hit; it does not replace it. Keep existing camera limits, typography outside camera transforms and meaningful negative space. Never use constant shake, an extra diagram, meaningless anxiety circles or repeated floating labels to manufacture activity.
+
+### Arm and hand poses are part of the action gate
+
+This requirement applies to **left anonymous actors**, independently of the presenter's rest/keyword gestures. Plan what each hand is doing before, during and after every main action. Use a supported resting pose when a hand has no task. Reach, resist, lift, catch or protect with a readable entry, shoulder/body response and recovery or handoff to the next task. Vary the line of action and elbow angles with the force; do not pin both arms overhead, reuse a stock wave or keep rigid symmetrical arms through unrelated beats.
+
+A sustained raised pose can be correct while visibly hanging, holding weight, resisting or trapped. Name that constraint and inspect its continuous interval; a written reason cannot excuse an unsupported picture. Return or transition the arms when the force ends. Review normal bone lengths, plausible bends, one hand per task and actual grips throughout the clip. FX, moving props, mouth motion and captions cannot rescue an actor whose arm pose remains mechanically frozen. Do not add idle flailing just to pass a movement threshold.
 
 ## Normal rig versus comic deformation
 
@@ -78,16 +84,17 @@ This is a distilled production instruction, not a verbatim recovered chat prompt
 
 ## Review gate, not just a successful render
 
-Save the cards, exact code/input fingerprints and review evidence in the user's project. Review the left stage **without sound, captions or presenter distraction**, then in the complete film. A crop or temporary layer isolation is sufficient; don't remake the full movie just for an audit.
+Save the action cards and code/input records in the user's project. Keep candidate, extracted evidence, independent review and delivery directories outside that project so they do not change its input fingerprint. Follow the mandatory [candidate → evidence → independent review → accept protocol](b5-visual-acceptance.md). `encode` is pending, not accepted delivery. Use `review-pack` to extract the left-stage evidence from the final candidate MP4; review it **without sound, captions or presenter distraction**, then watch the complete encoded film with sound. Source-render isolation may help diagnose a problem, but it does not replace final-candidate evidence. Do not remake unaffected media just for an audit.
 
 For each main chain, inspect a motion strip containing before, anticipation, contact, extreme consequence, delayed response and recovery; then watch the continuous interval with lead-in/out. A whole-film contact sheet only locates scenes. Check:
 
 - Can a viewer name what acted on the figure and what changed? Does a reveal change the actor/premise rather than only its label?
 - Are anticipation, fast contact, delayed response and recovery visibly different? No identical pulse easing across all props, teleporting exits or fades standing in for physical action.
 - Do shared hand/prop/ground coordinates coincide? Are weight, silhouette, occlusion and normal/deformed rig states intentional and legible? Are the extreme and recovery clean?
+- Does each arm have a visible task, support or natural rest? Are raised poses motivated through their full duration, with plausible shoulders, elbows, grips and recovery? Do unrelated beats avoid the same rigid overhead pose or repeated wave?
 - Is a long hold purposeful? Does the next beat develop the state rather than repeat it? Is intensity varied rather than exhausting?
 - Does title-aware framing fit both titled and untitled shots? Without a heading, is the actor-and-prop group large and high enough to read, rather than leaving an unused title area above a tiny bottom-strip action? Inspect setup/contact/extreme/recovery and interval boundaries for cropping; keep presenter and captions independent of the stage camera.
 - With sound restored, does the correct material transient coincide with contact, and do consequential/recovery sounds remain audible under voice and music? A waveform alone is not listening evidence.
 - Are accepted presenter, voice, unrelated shots and other styles untouched by a local fix? Is the requested ratio natively composed?
 
-Fail any main chain that is just **prop entrance + small actor pulse + generic burst**, even when it has many cue events, valid IK, new headings and a successful render. Repair the failed interval only. Record unavailable comparison/listening checks and pending user review honestly. Documentation/link tests prove the contract is present; **they do not prove a new video matches CrazyMei**. An updated Skill does not retroactively improve an existing preview.
+Fail any main chain that is just **prop entrance + small actor pulse + generic burst**, even when it has many cue events, valid IK, new headings and a successful render. Every main chain must have observed passing results; missing evidence, an unknown result or a blocking defect keeps the candidate pending. Repair the failed interval only, then bind new evidence and review to the resulting candidate. Record unavailable comparison/listening checks and pending user review honestly. Documentation/link tests prove the contract is present; **they do not prove a new video matches CrazyMei**. An updated Skill does not retroactively improve an existing preview.
