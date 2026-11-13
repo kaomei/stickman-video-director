@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {walkLayers, validateB3, visibleLayers} from './b3-graphics.mjs';
 import {prepareB4, prepareAudioTracks} from './b4-runtime.mjs';
-import {prepareBStyleQuality} from './b-style-quality.mjs';
+import {prepareBStyleQuality, defaultBStyleCaptionFont} from './b-style-quality.mjs';
 import {B4_HOOK, B4_PORTRAIT, portraitHook, planB4Opening} from './b4-opening.mjs';
 import {planB4Typography} from './b4-typography-review.mjs';
 import {referenceInputs} from './b-style-reference-review.mjs';
@@ -46,7 +46,7 @@ const number = (x, name, min = 0, max = Infinity) => {
 export function fontPaths(project) {
   return {
     hand: project.font ? mediaPath(project.base, project.font) : process.env.AUTOPILOT_FONT ? mediaPath(project.base, process.env.AUTOPILOT_FONT) : path.join(ROOT, 'assets/fonts/Caveat.ttf'),
-    caption: project.captionFont ? mediaPath(project.base, project.captionFont) : path.join(ROOT, 'assets/fonts/NotoSans.ttf'),
+    caption: project.captionFont ? mediaPath(project.base, project.captionFont) : defaultBStyleCaptionFont(project, {root: ROOT, mediaPath}),
     ...(project.style === 'B4' ? {hook: path.join(ROOT, 'assets/fonts/Nunito.ttf'), cinematic: path.join(ROOT, 'assets/fonts/Anton.ttf')} : {}),
   };
 }
@@ -98,9 +98,19 @@ export function loadProject(file, {seconds} = {}) {
   if (seconds !== undefined) number(seconds, 'preview length', 0.001, 60);
   const rangeEnd = Math.min(duration, seconds ?? duration);
   const scoped = seconds !== undefined;
-  if (p.captionSize !== undefined) number(p.captionSize, 'caption size', 20, 64);
+  if (p.captionSize !== undefined) number(p.captionSize, 'caption size', 20, ['B1', 'B2', 'B3'].includes(p.style) && p.height > p.width ? 96 : 64);
   if (!Array.isArray(p.shots) || !p.shots.length) throw new Error('Shots required');
-  const shots = scoped ? p.shots.filter(s => s.start < rangeEnd).map(s => ({...s, layers: Array.isArray(s.layers) ? visibleLayers(s.layers, s.start, rangeEnd) : s.layers})) : p.shots;
+  const shots = scoped ? p.shots.filter(s => s.start < rangeEnd).map(s => {
+    const layers = Array.isArray(s.layers) ? visibleLayers(s.layers, s.start, rangeEnd) : s.layers;
+    if (!s.portrait || !['B1', 'B2', 'B3'].includes(p.style) || p.height <= p.width) return {...s, layers};
+    // Prefixes do not load future assets. Scope their native-region references
+    // alongside the visible layer tree; full renders still validate all layers.
+    const ids = new Set([...walkLayers(layers || [])].map(l => l.id));
+    const authoredIds = new Set([...walkLayers(s.layers || [])].map(l => l.id));
+    const keep = id => ids.has(id) || !authoredIds.has(id); // Preserve typos so validation rejects them.
+    const regions = Array.isArray(s.portrait.regions) ? s.portrait.regions.map(r => ({...r, layer_ids: Array.isArray(r.layer_ids) ? r.layer_ids.filter(keep) : r.layer_ids})).filter(r => !Array.isArray(r.layer_ids) || r.layer_ids.length) : s.portrait.regions;
+    return {...s, layers, portrait: {...s.portrait, ...(Array.isArray(s.portrait.background_ids) ? {background_ids: s.portrait.background_ids.filter(keep)} : {}), regions}};
+  }) : p.shots;
   if (!shots.length) throw new Error('Shots required in the preview range');
   let end = 0;
   const assets = new Set([voicePath]);
@@ -175,9 +185,9 @@ export function loadProject(file, {seconds} = {}) {
   for (const f of Object.values(fontPaths(project))) { if (!fs.existsSync(f)) throw new Error(`Missing font: ${f}`); assets.add(f); }
   if (p.style === 'B4' && hashFile(fontPaths(project).hook) !== B4_HOOK.font_sha256) throw new Error('B4 opening: bundled rounded font changed; restore the fixed font instead of silently substituting it');
   if (p.style === 'B4' && portraitHook(project) && hashFile(fontPaths(project).cinematic) !== B4_PORTRAIT.font_sha256) throw new Error('B4 portrait: bundled poster font changed; restore Anton instead of silently substituting it');
-  if (['B1', 'B2', 'B3'].includes(p.style)) for (const f of referenceInputs(p.style)) assets.add(f);
+  if (['B1', 'B2', 'B3'].includes(p.style)) for (const f of referenceInputs(p.style, project)) assets.add(f);
   const inputs = [...assets].sort().map(f => ({path: f, sha256: hashFile(f)}));
-  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-quality.mjs', 'b-style-motion-geometry.mjs', 'b4-runtime.mjs', ...(['B1', 'B2', 'B3'].includes(p.style) ? ['b-style-reference-review.mjs', 'b4-font-coverage.mjs'] : []), ...(p.style === 'B4' ? ['b4-style-lock.mjs', 'b4-opening-audio-check.mjs', 'b4-opening.mjs', 'b4-opening-visual-check.mjs', 'b4-typography-review.mjs', 'b4-font-coverage.mjs'] : [])].map(f => hashFile(path.join(ROOT, 'scripts', f)));
+  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-quality.mjs', 'b-style-motion-geometry.mjs', 'b-style-portrait.mjs', 'b-style-portrait-paint.mjs', 'b4-runtime.mjs', ...(['B1', 'B2', 'B3'].includes(p.style) ? ['b-style-reference-review.mjs', 'b4-font-coverage.mjs'] : []), ...(p.style === 'B4' ? ['b4-style-lock.mjs', 'b4-opening-audio-check.mjs', 'b4-opening.mjs', 'b4-opening-visual-check.mjs', 'b4-typography-review.mjs', 'b4-font-coverage.mjs'] : [])].map(f => hashFile(path.join(ROOT, 'scripts', f)));
   return {...project, inputs, fingerprint: sha(JSON.stringify({project: timeline, rangeEnd, inputs, engine}))};
 }
 export function outputDir(p) {

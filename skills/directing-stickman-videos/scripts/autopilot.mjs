@@ -46,7 +46,8 @@ async function main() {
       for (const cue of p.captions) draw(Math.min(p.rangeEnd - 0.001, (cue.start + cue.end) / 2));
       const opening_visual = p.style === 'B4' ? await (await import('./b4-opening-visual-check.mjs')).checkB4OpeningPaint(p, {draw, picture: await painter(p, {pictureOnly: true})}) : undefined;
       const typography = p.style === 'B4' ? await (await import('./b4-typography-review.mjs')).checkB4TypographyPaint(p, {draw}) : undefined;
-      console.log(JSON.stringify({typography, valid: true, ...(['B1', 'B2', 'B3'].includes(p.style) ? {status: 'technical_only', visual_acceptance: 'not_reviewed', delivery_ready: false} : {}), fingerprint: p.fingerprint, duration: p.duration, checked_seconds: p.rangeEnd, shots: p.shots.length, ...(opening_visual ? {opening_visual} : {})})); return;
+      const portrait = await (await import('./b-style-portrait-paint.mjs')).checkBStylePortraitPaint(p, draw);
+      console.log(JSON.stringify({typography, ...(portrait ? {portrait} : {}), valid: true, ...(['B1', 'B2', 'B3'].includes(p.style) ? {status: 'technical_only', visual_acceptance: 'not_reviewed', delivery_ready: false} : {}), fingerprint: p.fingerprint, duration: p.duration, checked_seconds: p.rangeEnd, shots: p.shots.length, ...(opening_visual ? {opening_visual} : {})})); return;
     }
     const base = p?.base ?? path.dirname(fs.realpathSync(path.resolve(args[0])));
     const out = outputDir(p ?? {base, inputs: []}), approvalPath = path.join(out, 'approval.json'), reportPath = path.join(out, 'preview-report.json');

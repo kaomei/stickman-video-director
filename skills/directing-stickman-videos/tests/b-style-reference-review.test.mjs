@@ -18,13 +18,21 @@ function media(args) {const r=spawnSync(FFMPEG,['-v','error',...args]);assert.eq
 function project(style='B1') {
   return {style,width:160,height:90,fps:30,duration:.8,rangeEnd:.8,shots:[{id:'first',start:0,end:.4,layers:[]},{id:'second',start:.4,end:.8,layers:[]}],captions:[{start:0,end:.8,text:'Synthetic protocol fixture only.'}],reference_review:{author_id:'synthetic-author',capability:{mode:'sample_target',environment:'Local ffmpeg derivative used only for protocol regression; no aesthetic claim.',limitations:[]}}};
 }
+function portraitProject(p) {
+  Object.assign(p,{width:360,height:640});
+  for(const [i,s] of p.shots.entries()) {
+    const id='synthetic-prop-'+i;
+    s.layers=[{id,type:'image',path:'@b1/idea-bulb-crayon.png',x:300,y:500,w:120,h:160}];
+    s.portrait={intent:'Synthetic native portrait places the complete prop inside the phone stage.',regions:[{id:'synthetic-region-'+i,role:'prop',layer_ids:[id],region:{x:280,y:480,w:160,h:200},intent:'Synthetic region includes the complete test prop without overlap.'}]};
+  }
+}
 async function fixture(t,style='B1',mutate=()=>{}) {
   const dir=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'b-style-reference-test-')));
   t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
   const file=path.join(dir,'video.mp4'),out=path.join(dir,'evidence'),reviewFile=path.join(dir,'review.json');fs.mkdirSync(out);
   const source=path.join(ROOT,'assets/b1/approved-2026-10-23.mp4');
-  const r=spawnSync(FFMPEG,['-v','error','-ss','4','-i',source,'-t','0.8','-vf','scale=160:90','-r','30','-frames:v','24','-map','0:v:0','-map','0:a:0','-c:v','libx264','-threads:v','1','-pix_fmt','yuv420p','-c:a','aac','-threads:a','1','-y',file]);assert.equal(r.status,0,String(r.stderr));
   const p=project(style);mutate(p);
+  const r=spawnSync(FFMPEG,['-v','error','-ss','4','-i',source,'-t','0.8','-vf',`scale=${p.width}:${p.height}`,'-r','30','-frames:v','24','-map','0:v:0','-map','0:a:0','-c:v','libx264','-threads:v','1','-pix_fmt','yuv420p','-c:a','aac','-threads:a','1','-y',file]);assert.equal(r.status,0,String(r.stderr));
   const args={file,out,projectFingerprint:'synthetic-fixture-fingerprint',ffmpeg:FFMPEG};
   const ledger=await buildBStyleReferenceEvidence(p,args);
   return {p,dir,file,out,reviewFile,args,ledger};
@@ -33,10 +41,12 @@ function review(f) {
   const r=read(f.ledger.template_file),refs=f.ledger.references,video=refs.find(x=>x.kind==='video'),audible=refs.find(x=>x.has_audio),detail='Synthetic protocol record only; actual aesthetic viewing is not asserted.';
   r.reviewer={id:'synthetic-independent-reviewer',kind:'agent',method:'Synthetic engineering fixture, not real viewing or aesthetic acceptance.',independent:true};
   r.full_playback={status:'pass',viewed_ranges:[{start:0,end:f.ledger.scope.end}],observations:[{time:0,detail,evidence_ids:['source-video']}]};
+  if(f.ledger.plan.portrait)r.portrait_viewing={status:'pass',display_width:360,display_height:640,playback_speed:1,platform:'YouTube Shorts portrait player; synthetic protocol fixture, no actual interface review.',real_device:{checked:false,limitation:'Synthetic protocol fixture only; no physical phone or live platform inspected.'},viewed_ranges:[{start:0,end:f.ledger.scope.end}],observations:['caption_readability','scene_legibility','action_contact','platform_occlusion'].map(aspect=>({aspect,time:0,detail,evidence_ids:['source-video']}))};
   r.baseline_comparisons=refs.filter(x=>x.required_comparison).map(ref=>({reference_id:ref.id,start:0,end:.1,observations:[{time:0,detail,evidence_ids:[ref.id]}]}));
   for(const item of r.shots) {
     const s=f.ledger.plan.shots.find(x=>x.id===item.id);
     for(const [k,c] of Object.entries(item.checks)) Object.assign(c,{status:'pass',observations:[{time:s.start,detail,evidence_ids:[s.id+'-continuous']}],comparisons:[{reference_id:(k==='sound'?audible:video).id,start:0,end:.1,detail}]});
+    for(const c of Object.values(item.portrait_checks||{}))Object.assign(c,{status:'pass',observations:[{time:s.start,detail,evidence_ids:[s.id+'-continuous']}]});
   }
   write(f.reviewFile,r);return r;
 }
@@ -47,6 +57,13 @@ test('portable references verify their manifest locks; plans cover the entire su
   for(const style of ['B1','B2','B3']) {
     const inputs=referenceInputs(style);assert.ok(inputs.length>=(style==='B2'?5:6));assert.ok(inputs.every(f=>path.isAbsolute(f)&&fs.statSync(f).isFile()));
     const p=project(style),plan=planBStyleReference(p);assert.equal(plan.shots.length,2);assert.equal(plan.shots.at(-1).end_frame,24);
+    assert.ok(plan.reference_ids.every(id=>!id.includes('native-portrait')), 'Legacy landscape plans retain their original sample set');
+    const portrait=project(style);portraitProject(portrait);
+    const portraitInputs=referenceInputs(style,portrait), portraitPlan=planBStyleReference(portrait);
+    assert.equal(portraitInputs.length, inputs.length+3, 'Portrait fingerprints bind the approved manifest, video and encoded poster');
+    assert.ok(inputs.every(f=>portraitInputs.includes(f)), 'Original landscape sources remain available for style fidelity');
+    for (const extension of ['json','mp4','jpg']) assert.ok(portraitInputs.includes(path.join(ROOT,'assets',style.toLowerCase(),'portrait-approved-2026-11-13.'+extension)));
+    assert.ok(portraitPlan.reference_ids.includes(style.toLowerCase()+'-native-portrait-2026-11-13'));
     p.shots[1].start=.5;assert.throws(()=>planBStyleReference(p),/gap or overlap/);
     p.shots[1].start=.4;p.shots[1].end=.7;assert.throws(()=>planBStyleReference(p),/tail/);
   }
@@ -54,10 +71,85 @@ test('portable references verify their manifest locks; plans cover the entire su
   assert.deepEqual(referenceInputs('B4'),[]);assert.equal(planBStyleReference({style:'B4'}),null);
 });
 
+for(const style of ['B1','B2','B3'])test(`${style} binds native portrait plans and starts phone/shot review unknown`,async t=>{
+  const f=await fixture(t,style,portraitProject),template=read(f.ledger.template_file);
+  assert.equal(f.ledger.plan.portrait.preset,'b123-native-portrait-v1');
+  assert.equal(f.ledger.plan.portrait.shots.length,2);
+  const portraitId=style.toLowerCase()+'-native-portrait-2026-11-13';
+  const acceptedPortrait=f.ledger.references.find(r=>r.id===portraitId);
+  assert.equal(acceptedPortrait.role,'approved_native_portrait_effect');assert.equal(acceptedPortrait.duration,10);
+  assert.equal(acceptedPortrait.has_audio,true);assert.equal(acceptedPortrait.required_comparison,true);
+  assert.ok(template.baseline_comparisons.some(c=>c.reference_id===portraitId));
+  setReview(f,r=>r.baseline_comparisons=r.baseline_comparisons.filter(c=>c.reference_id!==portraitId));
+  await assert.rejects(()=>verify(f),/required available reference/);
+  assert.equal(template.portrait_viewing.status,'unknown');assert.equal(template.portrait_viewing.real_device.checked,null);
+  assert.deepEqual(template.portrait_viewing.viewed_ranges,[]);assert.deepEqual(template.portrait_viewing.observations,[]);
+  for(const s of template.shots) {
+    assert.deepEqual(Object.keys(s.portrait_checks),['native_composition','caption_readability','action_visibility','platform_safe_area']);
+    assert.ok(Object.values(s.portrait_checks).every(c=>c.status==='unknown'&&c.observations.length===0));
+  }
+  review(f);const accepted=await verify(f);assert.deepEqual(accepted.portrait_viewing,read(f.reviewFile).portrait_viewing);assert.equal(accepted.user_acceptance,'not_inferred');
+  f.p.shots[0].portrait.intent='Synthetic changed native composition after evidence extraction.';
+  await assert.rejects(()=>verify(f),/stale evidence/);
+});
+
+test('portrait review rejects missing phone context, incorrect viewing, omitted scope and unobserved platform/action',async t=>{
+  const f=await fixture(t,'B1',portraitProject);
+  const cases=[
+    [r=>delete r.portrait_viewing,/portrait phone-size playback/],
+    [r=>r.portrait_viewing.status='unknown',/portrait phone-size playback/],
+    [r=>r.portrait_viewing.display_width=1080,/portrait phone-size playback/],
+    [r=>r.portrait_viewing.display_width=319,/portrait phone-size playback/],
+    [r=>r.portrait_viewing.display_height=600,/portrait phone-size playback/],
+    [r=>r.portrait_viewing.playback_speed=2,/portrait phone-size playback/],
+    [r=>r.portrait_viewing.platform='',/portrait phone-size playback/],
+    [r=>r.portrait_viewing.platform='checked',/portrait phone-size playback/],
+    [r=>delete r.portrait_viewing.real_device,/real device/],
+    [r=>r.portrait_viewing.real_device.checked='false',/real device/],
+    [r=>r.portrait_viewing.real_device.limitation='',/simulated-device limitation/],
+    [r=>r.portrait_viewing.real_device.limitation='OK',/simulated-device limitation/],
+    [r=>delete r.portrait_viewing.viewed_ranges,/whole submitted playback/],
+    [r=>r.portrait_viewing.viewed_ranges=[{start:0,end:.4}],/tail/],
+    [r=>r.portrait_viewing.viewed_ranges=[{start:.1,end:.8}],/cover the whole/],
+    [r=>r.portrait_viewing.observations=[],/concrete timed/],
+    [r=>r.portrait_viewing.observations[0].evidence_ids=['shot-0-mid'],/unrelated evidence/],
+    [r=>r.portrait_viewing.observations[0].detail='Pass',/concrete detail/],
+    [r=>r.portrait_viewing.observations[0].time=1,/in-range time/],
+    [r=>delete r.portrait_viewing.observations[0].aspect,/must identify/],
+    [r=>r.portrait_viewing.observations=r.portrait_viewing.observations.filter(o=>o.aspect!=='platform_occlusion'),/explicitly observe/],
+    [r=>r.portrait_viewing.observations=r.portrait_viewing.observations.filter(o=>o.aspect!=='action_contact'),/explicitly observe/],
+  ];
+  for(const [change,error] of cases){setReview(f,change);await assert.rejects(()=>verify(f),error);}
+});
+
+test('every portrait shot requires four non-waivable criteria and its own continuous encoded evidence',async t=>{
+  const f=await fixture(t,'B2',p=>{portraitProject(p);p.reference_review.capability={mode:'limited',environment:'Synthetic flattened source fixture used for protocol coverage, not a quality claim.',limitations:[{capability:'Editable layered prop action',observed:'Synthetic source is a flattened engineering derivative.',impact:'Sample-level prop articulation is deliberately unassessed in this protocol fixture.'}]};});
+  setReview(f,r=>r.shots[0].checks.semantic_motion_states.status='unmet');assert.equal((await verify(f)).status,'best_effort_limited');
+  for(const criterion of ['native_composition','caption_readability','action_visibility','platform_safe_area']) {
+    for(const status of ['unknown','fail','unmet']) {
+      setReview(f,r=>r.shots[0].portrait_checks[criterion].status=status);
+      await assert.rejects(()=>verify(f),/limited mode cannot waive/);
+    }
+    setReview(f,r=>delete r.shots[0].portrait_checks[criterion]);await assert.rejects(()=>verify(f),/each portrait shot/);
+  }
+  const cases=[
+    [r=>delete r.shots[1].portrait_checks,/each portrait shot/],
+    [r=>r.shots[1].portrait_checks.extra={status:'pass',observations:[]},/each portrait shot/],
+    [r=>r.shots[0].portrait_checks.action_visibility.observations=[],/concrete timed/],
+    [r=>r.shots[0].portrait_checks.action_visibility.observations[0].detail='Fine',/concrete detail/],
+    [r=>r.shots[0].portrait_checks.action_visibility.observations[0].time=.7,/in-range time/],
+    [r=>r.shots[0].portrait_checks.action_visibility.observations[0].evidence_ids=['shot-1-continuous'],/unrelated evidence/],
+    [r=>r.shots[0].portrait_checks.action_visibility.observations[0].evidence_ids=['shot-0-mid'],/continuous/],
+    [r=>r.shots[0].portrait_checks.action_visibility.observations[0].evidence_ids=['source-video'],/continuous/],
+  ];
+  for(const [change,error] of cases){setReview(f,change);await assert.rejects(()=>verify(f),error);}
+});
+
 for(const style of ['B1','B2','B3'])test(`${style} produces unknown review, bound full-shot evidence and protocol-only positive acceptance`,async t=>{
   const f=await fixture(t,style),template=read(f.ledger.template_file);
   assert.equal(f.ledger.status,'pending_independent_review');assert.equal(f.ledger.artifacts.length,8);
   assert.equal(template.full_playback.status,'unknown');assert.deepEqual(template.full_playback.viewed_ranges,[]);
+  assert.equal('portrait' in f.ledger.plan,false);assert.equal('portrait_viewing' in template,false);assert.ok(template.shots.every(s=>!('portrait_checks' in s)));
   assert.ok(template.shots.every(s=>Object.values(s.checks).every(c=>c.status==='unknown'&&c.observations.length===0&&c.comparisons.length===0)));
   fs.copyFileSync(f.ledger.template_file,f.reviewFile);await assert.rejects(()=>verify(f),/independent reviewer|pending|unknown/);
   review(f);const a=await verify(f);assert.equal(a.status,'sample_target_review_passed');assert.equal(a.equivalence,'available_samples_reviewed');assert.equal(a.user_acceptance,'not_inferred');assert.equal(a.output_sha256,hash(f.file));
@@ -87,7 +179,7 @@ test('B2 has its own criteria; a sampled board cannot stand in for motion, stagi
 test('a portable B2 installation requires both full sources and verifies the board identity and media locks',async t=>{
   const dir=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'b2-reference-package-test-')));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
   const scripts=path.join(dir,'scripts'),assets=path.join(dir,'assets','b2');fs.mkdirSync(scripts,{recursive:true});fs.mkdirSync(path.dirname(assets),{recursive:true});
-  const moduleFile=path.join(scripts,'b-style-reference-review.mjs');fs.copyFileSync(path.join(ROOT,'scripts/b-style-reference-review.mjs'),moduleFile);fs.cpSync(path.join(ROOT,'assets/b2'),assets,{recursive:true});
+  const moduleFile=path.join(scripts,'b-style-reference-review.mjs');fs.copyFileSync(path.join(ROOT,'scripts/b-style-reference-review.mjs'),moduleFile);fs.copyFileSync(path.join(ROOT,'scripts/b-style-portrait.mjs'),path.join(scripts,'b-style-portrait.mjs'));fs.cpSync(path.join(ROOT,'assets/b2'),assets,{recursive:true});
   const portable=await import(pathToFileURL(moduleFile).href),pubFile=path.join(assets,'public-showcase.json'),boardFile=path.join(assets,'approved-style-board.json'),originalPub=fs.readFileSync(pubFile),originalBoard=fs.readFileSync(boardFile);
   assert.equal(portable.referenceInputs('B2').length,5);
   fs.unlinkSync(pubFile);assert.throws(()=>portable.referenceInputs('B2'),/file missing/);fs.writeFileSync(pubFile,originalPub);
@@ -200,4 +292,26 @@ test('bounded timestamp probing covers a complete available sample across ten-se
   const p=project();Object.assign(p,{width:1280,height:720,duration:21.3,rangeEnd:21.3,shots:[{start:0,end:21.3}]});
   const ledger=await buildBStyleReferenceEvidence(p,{file,out,projectFingerprint:'synthetic-long-probe-fingerprint'});
   assert.equal(ledger.metadata.frames,639);assert.equal(ledger.artifacts.find(a=>a.id==='shot-0-end').frame_index,638);assert.ok(ledger.metadata.max_step_error<.0021);
+});
+
+// A clean installed copy must enforce portrait locks independently of the
+// original workspace, while leaving its legacy landscape call usable.
+test('portable portrait references cannot be omitted, substituted or accepted through stale binding',async t=>{
+  const dir=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'b2-portrait-reference-test-')));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
+  const scripts=path.join(dir,'scripts'),assets=path.join(dir,'assets/b2');fs.mkdirSync(scripts,{recursive:true});fs.mkdirSync(path.dirname(assets),{recursive:true});
+  for(const file of ['b-style-reference-review.mjs','b-style-portrait.mjs'])fs.copyFileSync(path.join(ROOT,'scripts',file),path.join(scripts,file));
+  fs.cpSync(path.join(ROOT,'assets/b2'),assets,{recursive:true});
+  const portable=await import(pathToFileURL(path.join(scripts,'b-style-reference-review.mjs')).href),manifest=path.join(assets,'portrait-approved-2026-11-13.json'),original=fs.readFileSync(manifest),p=project('B2');portraitProject(p);
+  const inputs=portable.referenceInputs('B2',p),fingerprint=()=>inputs.map(f=>[f,hash(f)]);
+  assert.equal(inputs.length,8);assert.equal(portable.referenceInputs('B2').length,5);
+  const before=fingerprint();let data=read(manifest);data.limitations.push('Synthetic changed provenance annotation; not a real new user approval.');write(manifest,data);
+  assert.notDeepEqual(fingerprint(),before,'Accepted-sample metadata participates in the current content fingerprint');fs.writeFileSync(manifest,original);
+  fs.unlinkSync(manifest);assert.throws(()=>portable.referenceInputs('B2',p),/file missing/);assert.equal(portable.referenceInputs('B2').length,5);fs.writeFileSync(manifest,original);
+  for(const change of [d=>d.style='B3',d=>d.baseline_id='invented-portrait']) {data=read(manifest);change(data);write(manifest,data);assert.throws(()=>portable.referenceInputs('B2',p),/portrait identity/);fs.writeFileSync(manifest,original);}
+  data=read(manifest);data.video.duration=11;write(manifest,data);assert.throws(()=>portable.referenceInputs('B2',p),/exact ten-second/);fs.writeFileSync(manifest,original);
+  data=read(manifest);data.user_acceptance.status='pending';write(manifest,data);assert.throws(()=>portable.referenceInputs('B2',p),/user acceptance scope/);fs.writeFileSync(manifest,original);
+  for(const extension of ['jpg','mp4']) {
+    const file=path.join(assets,'portrait-approved-2026-11-13.'+extension),content=fs.readFileSync(file);
+    fs.appendFileSync(file,'deliberately stale portrait sample');assert.throws(()=>portable.referenceInputs('B2',p),/reference hash mismatch/);fs.writeFileSync(file,content);
+  }
 });

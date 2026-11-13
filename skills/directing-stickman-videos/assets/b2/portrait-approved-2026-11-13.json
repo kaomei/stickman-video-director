@@ -1,0 +1,74 @@
+{
+  "schema": "b123-approved-native-portrait-v1",
+  "style": "B2",
+  "baseline_id": "b2-native-portrait-2026-11-13",
+  "video": {
+    "path": "portrait-approved-2026-11-13.mp4",
+    "sha256": "f119bcef6da34435c35c77487724410d8edf2018de36904307d430a203d4066d",
+    "duration": 10,
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "frames": 300,
+    "has_audio": true
+  },
+  "poster": {
+    "path": "portrait-approved-2026-11-13.jpg",
+    "sha256": "4d21b418ec195f26b847242de3a48d8f2323c60ccc0526c5b2c0a18ab14329b5",
+    "source_time": 7.3,
+    "role": "Encoded-frame browsing still; not evidence of continuous motion."
+  },
+  "audio": {
+    "stream": "a:0",
+    "codec": "aac",
+    "digest_format": "ffmpeg stream copy to ADTS, no audio reencoding",
+    "sha256": "bd0ce5a4c083bcc03b2db2c5ac6d1b31c4becc54d6da392e2c1fc583abc1fc9b",
+    "playback_speed": 1
+  },
+  "user_acceptance": {
+    "status": "approved",
+    "recorded_at": "2026-11-13T07:50:59.105806+00:00",
+    "statement": "B1可以了，B2/3也都很好，这个效果没有问题，接下来该怎么做？",
+    "scope": "These exact 10-second effect samples; not unseen full films or future outputs"
+  },
+  "publication_visibility": "internal_skill_reference_no_readme_showcase",
+  "provenance": {
+    "landscape_reference": {
+      "path": "public-showcases/b2-colorful-phone-weather.mp4",
+      "sha256": "b03f6c963f71639a146f1ea209140675306967468482efd1620580bf7d6aa2e6"
+    },
+    "source_interval": {
+      "start": 0,
+      "end": 9.3
+    },
+    "portrait_method": "Native portrait rearrangement of original layered artwork and rendering functions, retaining source story, voice and sound.",
+    "tail": {
+      "duration": 0.7,
+      "detail": "After the completed source clause at9.30s, retain the final caption and continue existing spray/reveal micro-motion with0.70s of silence; omit the following phrase."
+    },
+    "sample_video_copy": "Exact approved video bytes; no reencoding during reference packaging."
+  },
+  "style_features": [
+    "Retain original Phone Weather colorful hand-drawn identity, thin irregular pen lines, sparse face and warm paper.",
+    "Retain original gripping-phone pose, slate-blue door, rust coat, blue diamond rug and cleaning/spray details.",
+    "Native portrait rearrangement preserves original local micro-motion and prop contact, with an ivory paper-label caption treatment.",
+    "Approved sample lettering retains original Avenir Next paper-label captions and Noteworthy/Caveat scene handwriting; system font files are not redistributed."
+  ],
+  "verification": {
+    "exact_approved_sha256": "pass",
+    "width": 720,
+    "height": 1280,
+    "duration": 10,
+    "fps": 30,
+    "frames": 300,
+    "full_decode": "pass",
+    "audio_present": true
+  },
+  "limitations": [
+    "Approval is limited to this exact10-second effect sample.",
+    "A static poster does not establish motion quality.",
+    "User approval is recorded separately from independent full-playback, listening and real-device review; no missing review is inferred.",
+    "Future productions must independently satisfy the complete production and portrait acceptance gates; sample approval does not waive them.",
+    "No font files or source renderer are added by this encoded-reference manifest."
+  ]
+}

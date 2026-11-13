@@ -1,0 +1,74 @@
+{
+  "schema": "b123-approved-native-portrait-v1",
+  "style": "B1",
+  "baseline_id": "b1-native-portrait-2026-11-13",
+  "video": {
+    "path": "portrait-approved-2026-11-13.mp4",
+    "sha256": "1158501e08340f4b01a7ea0ad54da953ae83f1916d841233e8f5b11704d40c83",
+    "duration": 10,
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "frames": 300,
+    "has_audio": true
+  },
+  "poster": {
+    "path": "portrait-approved-2026-11-13.jpg",
+    "sha256": "d1a7eb93e98dc7269f673c990e0d964d9222fcd1c0d70fea0031f21c44f910a7",
+    "source_time": 5.95,
+    "role": "Encoded-frame browsing still; not evidence of continuous motion."
+  },
+  "audio": {
+    "stream": "a:0",
+    "codec": "aac",
+    "digest_format": "ffmpeg stream copy to ADTS, no audio reencoding",
+    "sha256": "6d7524cb5ee542bfcbbf67be2327253305f8ed47a8479d8345358f4dc3030cb8",
+    "playback_speed": 1
+  },
+  "user_acceptance": {
+    "status": "approved",
+    "recorded_at": "2026-11-13T07:50:59.105806+00:00",
+    "statement": "B1可以了，B2/3也都很好，这个效果没有问题，接下来该怎么做？",
+    "scope": "These exact 10-second effect samples; not unseen full films or future outputs"
+  },
+  "publication_visibility": "internal_skill_reference_no_readme_showcase",
+  "provenance": {
+    "landscape_reference": {
+      "path": "approved-2026-10-23.mp4",
+      "sha256": "111c241a836a0c26b27df2cbff3ba5697b97460dbb873b68dd2f6eda2383b3fc"
+    },
+    "source_interval": {
+      "start": 10.98,
+      "end": 20.98
+    },
+    "portrait_method": "Native portrait rearrangement of original layered artwork and rendering functions, retaining source story, voice and sound.",
+    "tail": {
+      "duration": 0,
+      "detail": "Exact 10.98–20.98s source window; no tail fill. The approved sequential-reveal revision reuses prior portrait AAC packets unchanged."
+    },
+    "sample_video_copy": "Exact approved video bytes; no reencoding during reference packaging."
+  },
+  "style_features": [
+    "Retain Ryan V4 slender fine-line character, near-white faint-grid paper and restrained accent palette.",
+    "Hand-drawn Hand titles and captions; approved sample used the host Chalkboard typeface without redistributing that font.",
+    "Semantic reveals build labels, timeline, post cards, arrow and final three cards in sequence while preserving original head/hand/pencil micro-motion.",
+    "Story-specific staging is the reference; the Ryan story, wording and exact card count are not a universal template."
+  ],
+  "verification": {
+    "exact_approved_sha256": "pass",
+    "width": 720,
+    "height": 1280,
+    "duration": 10,
+    "fps": 30,
+    "frames": 300,
+    "full_decode": "pass",
+    "audio_present": true
+  },
+  "limitations": [
+    "Approval is limited to this exact10-second effect sample.",
+    "A static poster does not establish motion quality.",
+    "User approval is recorded separately from independent full-playback, listening and real-device review; no missing review is inferred.",
+    "Future productions must independently satisfy the complete production and portrait acceptance gates; sample approval does not waive them.",
+    "No font files or source renderer are added by this encoded-reference manifest."
+  ]
+}
