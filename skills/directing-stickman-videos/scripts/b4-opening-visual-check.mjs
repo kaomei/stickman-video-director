@@ -48,8 +48,15 @@ export async function checkB4OpeningPaint(p, {draw, picture}) {
   });
   const settle = delta(capture(draw, t.emphasis), pixels(draw(t.emphasis, {hookSettled: true})), plan.title_regions[1]);
   if (settle.mean < .0015 || settle.changed_fraction < .006) fail('fixed payoff settle is not visibly painted; a timed title alone is not emphasis');
+  let accentInk;
+  if (plan.underline_region) {
+    const r = plan.underline_region, settled = capture(draw, t.mark_hold);
+    accentInk = delta(settled, pixels(draw(t.mark_hold, {omitIds: [r.id]})), r);
+    const first = capture(draw, t.mark_start), mid = capture(draw, t.mark_mid);
+    if (accentInk.mean < .01 || accentInk.changed_fraction < .04 || delta(first, mid, r).mean < .005 || delta(mid, settled, r).mean < .005) fail('portrait emphasis line must be visibly hand-drawn and held, not metadata-only');
+  }
   return {...plan, status: 'paint_diagnostic_pass', metrics: {picture_change: pictureChange, held_change: heldChange, outside_change: outside, composite_change: compositeChange, transition_from_before: transitionStart, transition_from_after: transitionEnd},
-    title_ink: titleInk, settle_reference: settle,
+    title_ink: titleInk, settle_reference: settle, ...(accentInk ? {accent_ink: accentInk} : {}),
     human_review: 'required: copy meaning, fear/acting, readability, coherent art/anatomy and audio/visual sync are not established by pixel checks'};
 }
 
@@ -74,6 +81,19 @@ export async function checkB4OpeningFile(p, file, painters, {contactSheet} = {})
       if (d.mean > Math.max(.003, ink.mean * .25) || d.changed_fraction > Math.max(.01, ink.changed_fraction * .35)) fail(`exported ${phase} frame has missing or mistimed title/emphasis; render and review the current opening again`);
       return {id: r.id, ...d};
     });
+    if (report.underline_region) {
+      const r = report.underline_region, d = delta(expected, got, r), ink = report.accent_ink;
+      const omitted = pixels(painters.draw(t, {omitIds: [r.id]})), visibleInk = delta(expected, omitted, r);
+      // A thin coral line loses more chroma detail than large glyphs in 4:2:0.
+      // Bound codec error and separately require the export to match the
+      // actual line better than the composition with that line removed.
+      if (d.mean > Math.max(.003, ink.mean * .45) || d.changed_fraction > Math.max(.01, ink.changed_fraction * .55) ||
+        visibleInk.mean > .01 && d.mean >= delta(omitted, got, r).mean * .65) fail(`exported ${phase} frame has missing or mistimed portrait emphasis line`);
+      if (phase === 'mark_mid') {
+        const endpoints = [report.times.mark_start, report.times.mark_hold].map(at => delta(capture(painters.draw, at), got, r).mean);
+        if (d.mean >= Math.min(...endpoints) * .75) fail('exported portrait emphasis line is frozen or switched, not visibly drawn');
+      }
+    }
     if (phase === 'emphasis') {
       const frozen = pixels(painters.draw(t, {hookSettled: true}));
       const animatedError = delta(expected, got, report.title_regions[1]);

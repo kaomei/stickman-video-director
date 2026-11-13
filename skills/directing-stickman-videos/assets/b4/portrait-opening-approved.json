@@ -1,0 +1,47 @@
+{
+  "schema": "b4-portrait-opening-reference-v1",
+  "preset": "b4-portrait-poster-v1",
+  "approved_on": "2026-11-13",
+  "user_selection": "第一种效果明显更好",
+  "approval_scope": "Portrait opening composition and typography/micro-animation direction of scheme 1; not a new drawing-style baseline, universal story script, audio recast, full-film acceptance or publication authorization.",
+  "reference": {
+    "still": {
+      "path": "portrait-opening-approved.jpg",
+      "sha256": "2e05e219c39f7408669d8fdbfb72848850b37ec02e91c3abed82593acd3d6abe",
+      "width": 1080,
+      "height": 1920,
+      "time": 0.866667
+    },
+    "video": {
+      "path": "portrait-opening-approved.mp4",
+      "sha256": "b1d78c6287d693b23fbe624002419ee17b9ec75d5849e0a34f010b6a0620a540",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "duration": 3.5,
+      "opening_range": [
+        0,
+        1.8
+      ]
+    }
+  },
+  "construction": [
+    "Upper centered setup in rounded heavy type",
+    "Whole payoff block in narrow poster type with primary coral line and quieter cream line",
+    "Controlled ink-tone split and offset shadow; natural letter proportions",
+    "Whole-block entry and uniform 1.035-to-1 settle; one brief hand-drawn accent",
+    "Lower scene keeps face, compact white gloves, clock and emerging story-supported threat legible"
+  ],
+  "source": {
+    "repository": "https://github.com/kaomei/stickman-video-director",
+    "commit": "ac1838dc4552baa135211379d3259bf450ad4d39",
+    "path": "assets/readme/b4-death-clock.mp4",
+    "sha256": "d63dbf0036c1f9bfea757c32136143f0b7998afec45579591c7cfe2541bfaddf",
+    "range": [
+      0,
+      3.5
+    ],
+    "treatment": "Native portrait editorial recomposition of existing published artwork and original continuous mix; no new narration or generated artwork."
+  },
+  "reuse_boundary": "Use the composition, hierarchy, material finish and motion grammar. Do not copy the Death Clock characters, question, clock, menace or English glyph shapes into unrelated stories. New production requires story-specific native portrait artwork and semantic text in the chosen language."
+}

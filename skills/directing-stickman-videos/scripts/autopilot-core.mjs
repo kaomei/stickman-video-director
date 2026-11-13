@@ -6,7 +6,7 @@ import {spawnSync} from 'node:child_process';
 import {walkLayers, validateB3, visibleLayers} from './b3-graphics.mjs';
 import {prepareB4, prepareAudioTracks} from './b4-runtime.mjs';
 import {prepareBStyleQuality} from './b-style-quality.mjs';
-import {B4_HOOK, planB4Opening} from './b4-opening.mjs';
+import {B4_HOOK, B4_PORTRAIT, portraitHook, planB4Opening} from './b4-opening.mjs';
 import {planB4Typography} from './b4-typography-review.mjs';
 import {referenceInputs} from './b-style-reference-review.mjs';
 
@@ -174,6 +174,7 @@ export function loadProject(file, {seconds} = {}) {
   if (p.style === 'B4') { planB4Opening(project, {hashFile, mediaPath}); planB4Typography(project); }
   for (const f of Object.values(fontPaths(project))) { if (!fs.existsSync(f)) throw new Error(`Missing font: ${f}`); assets.add(f); }
   if (p.style === 'B4' && hashFile(fontPaths(project).hook) !== B4_HOOK.font_sha256) throw new Error('B4 opening: bundled rounded font changed; restore the fixed font instead of silently substituting it');
+  if (p.style === 'B4' && portraitHook(project) && hashFile(fontPaths(project).cinematic) !== B4_PORTRAIT.font_sha256) throw new Error('B4 portrait: bundled poster font changed; restore Anton instead of silently substituting it');
   if (['B1', 'B2', 'B3'].includes(p.style)) for (const f of referenceInputs(p.style)) assets.add(f);
   const inputs = [...assets].sort().map(f => ({path: f, sha256: hashFile(f)}));
   const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-quality.mjs', 'b-style-motion-geometry.mjs', 'b4-runtime.mjs', ...(['B1', 'B2', 'B3'].includes(p.style) ? ['b-style-reference-review.mjs', 'b4-font-coverage.mjs'] : []), ...(p.style === 'B4' ? ['b4-style-lock.mjs', 'b4-opening-audio-check.mjs', 'b4-opening.mjs', 'b4-opening-visual-check.mjs', 'b4-typography-review.mjs', 'b4-font-coverage.mjs'] : [])].map(f => hashFile(path.join(ROOT, 'scripts', f)));

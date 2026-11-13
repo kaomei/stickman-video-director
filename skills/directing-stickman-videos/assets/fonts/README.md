@@ -1,6 +1,6 @@
 # B4 opening font
 
-- File: `Nunito.ttf`, a static weight-900 instance used by `b4-hook-v1`. The weight is baked into the glyph outlines, not left to the renderer's variable-font interpretation.
+- File: `Nunito.ttf`, a static weight-900 instance used by landscape `b4-hook-v1` and the setup line of `b4-portrait-poster-v1`. The weight is baked into the glyph outlines, not left to the renderer's variable-font interpretation.
 - Source: [Google Fonts / Nunito](https://github.com/google/fonts/tree/main/ofl/nunito).
 - License: [SIL Open Font License 1.1](OFL-Nunito.txt); the derived static font remains under this license with the original copyright notice.
 - SHA-256: `e67d3588b1bcf9879f814de3696f44d52153a573bf8e41d3be37837e9295ec82`.
@@ -11,4 +11,4 @@ The accepted B4 sample used system Arial Rounded Bold. That proprietary font is 
 
 The bundled face supports Latin, Cyrillic and Vietnamese hook copy. Uncovered scripts require an explicit user-agreed localized font treatment and review; the default gate rejects silent fallback. This font lock is scoped to B4 opening title layers, not other B styles or all synchronized captions.
 
-Anton.ttf is the bundled OFL narrow display option for explicitly authored B4 cinematic text (see OFL-Anton.txt). It does not replace the B4 opening preset or provide glyphs for every language.
+`Anton.ttf` is the bundled OFL narrow display face for the payoff of `b4-portrait-poster-v1` and explicitly authored B4 cinematic text (see [OFL-Anton.txt](OFL-Anton.txt)). Its SHA-256 is `fd9301f2837c99df2be07cc7f0be66e9470f5354d8fcf1606027c67fcd637a53`. Portrait uses it at natural letter proportions with authored semantic lines and measured ink/shadow bounds. It does not replace the landscape rounded opening or provide glyphs for every language; uncovered scripts retain the declared localization and independent encoded-review requirements above.

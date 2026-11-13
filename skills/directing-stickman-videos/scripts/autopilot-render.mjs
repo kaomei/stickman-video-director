@@ -10,12 +10,24 @@ import {appendAudioTracks} from './b4-runtime.mjs';
 import {checkBStyleMotionPaint} from './b-style-quality.mjs';
 import {checkOpeningFile} from './b4-opening-audio-check.mjs';
 import {checkB4OpeningPaint, checkB4OpeningFile} from './b4-opening-visual-check.mjs';
-import {B4_HOOK} from './b4-opening.mjs';
+import {B4_HOOK, B4_PORTRAIT, portraitHook, hookFamily, hookWeight, hookRows} from './b4-opening.mjs';
 import {requireB4Glyphs} from './b4-font-coverage.mjs';
 import {checkB4TypographyPaint, buildB4TypographyEvidence} from './b4-typography-review.mjs';
 import {buildBStyleReferenceEvidence} from './b-style-reference-review.mjs';
 
 const clamp = x => Math.max(0, Math.min(1, x));
+function posterRows(ctx, p, l) {
+  let y = 0;
+  return hookRows(l).map((text, i) => {
+    const size = l.lineSizes?.[i] ?? l.size;
+    ctx.font = `${hookWeight(p, l)} ${size}px ${hookFamily(p, l)}`; ctx.textBaseline = 'alphabetic';
+    const metrics = ctx.measureText(text), x = (l.w - metrics.width) / 2;
+    const row = {text, x, y, size, baseline: y + metrics.actualBoundingBoxAscent,
+      left: x - metrics.actualBoundingBoxLeft, right: x + metrics.actualBoundingBoxRight,
+      bottom: y + metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent};
+    y += size + B4_PORTRAIT.line_gap; return row;
+  });
+}
 function wrap(ctx, text, maxWidth) {
   const parts = /\s/.test(text) ? text.split(/\s+/) : [...text];
   const separator = /\s/.test(text) ? ' ' : '';
@@ -36,7 +48,7 @@ export async function painter(p, {pictureOnly = false} = {}) {
   if (fonts.hook && !GlobalFonts.registerFromPath(fonts.hook, B4_HOOK.family)) throw new Error('B4 opening: fixed rounded font registration failed; no fallback is allowed');
   if (fonts.cinematic && !GlobalFonts.registerFromPath(fonts.cinematic, 'B4Cinematic')) throw new Error('B4 cinematic font registration failed');
   if (p.style === 'B4') {
-    for (const s of p.shots) for (const l of walkLayers(s.layers)) if (l.type === 'text') requireB4Glyphs(l.b4Hook ? fonts.hook : l.b4Type === 'cinematic' ? fonts.cinematic : l.b4Type === 'handwritten' ? fonts.hand : fonts.caption, l.text, `text ${l.id}`);
+    for (const s of p.shots) for (const l of walkLayers(s.layers)) if (l.type === 'text') requireB4Glyphs(l.b4Hook ? portraitHook(p) && l.b4Hook === 'payoff' ? fonts.cinematic : fonts.hook : l.b4Type === 'cinematic' ? fonts.cinematic : l.b4Type === 'handwritten' ? fonts.hand : fonts.caption, l.text, `text ${l.id}`);
     for (const [i, cue] of p.captions.entries()) requireB4Glyphs(fonts.caption, cue.text, `caption ${i}`);
   }
   if (['B1', 'B2', 'B3'].includes(p.style)) {
@@ -53,7 +65,24 @@ export async function painter(p, {pictureOnly = false} = {}) {
   if (p.style === 'B4' && !p.opening?.user_override) {
     const layers = p.shots[0].layers, o = p.opening;
     const setup = layers.find(l => l.id === o.setup), payoff = layers.find(l => l.id === o.payoff);
-    for (const [l, limit] of [[setup, payoff.y - 18], [payoff, captionBand - 18]]) {
+    if (portraitHook(p)) {
+      const picture = p.opening.picture.region;
+      for (const id of [p.opening.picture.before, p.opening.picture.after]) {
+        const l = layers.find(l => l.id === id), img = images.get(mediaPath(p.base, l.path));
+        if (Math.abs(img.width / img.height - p.width / p.height) > .002) throw new Error('B4 portrait: before/after must be native matching portrait artwork; no letterboxed or stretched landscape image');
+      }
+      for (const l of [setup, payoff]) {
+        const rows = posterRows(ctx, p, l), scale = l === payoff ? B4_HOOK.settle_scale : 1, px = l.pivotX ?? 0, py = l.pivotY ?? 0;
+        for (const r of rows) {
+          // Include the real selected glyph bearings, offset shadow and the
+          // widest animated scale. Never make a title fit by squeezing it.
+          const left = l.x + px + (r.left - 3 - px) * scale, right = l.x + px + (r.right + 12 - px) * scale;
+          const top = l.y + py + (r.y - 3 - py) * scale, bottom = l.y + py + (r.bottom + 14 - py) * scale;
+          const limit = l === setup ? payoff.y - 24 : picture.y - 56;
+          if (r.left < 0 || r.right > l.w || left < 64 || right > 1216 || top < 64 || bottom > limit || bottom > captionBand - 24) throw new Error('B4 portrait: measured title/shadow bounds overlap or overflow the safe top area; revise semantic lines or their sizes without stretching');
+        }
+      }
+    } else for (const [l, limit] of [[setup, payoff.y - 18], [payoff, captionBand - 18]]) {
       ctx.font = `${B4_HOOK.weight} ${l.size}px ${B4_HOOK.family}`;
       const lines = wrap(ctx, l.text, l.w);
       if (lines.length > 2 || l.y + lines.length * l.size * B4_HOOK.line_height > limit) throw new Error('B4 opening: title blocks overlap or overflow; shorten the approved group with permission, or adjust its size/spacing within the fixed treatment');
@@ -102,13 +131,28 @@ export async function painter(p, {pictureOnly = false} = {}) {
         const img = images.get(mediaPath(p.base, '@b1/character-pose-sheet-v6.png')), sw = img.width / 3;
         ctx.drawImage(img, l.pose * sw, 0, sw, img.height, 0, 0, w, w * img.height / sw);
       } else if (l.type === 'shadow') {
-        const gradient = ctx.createLinearGradient(0, 0, w, 0);
+        const gradient = ctx.createLinearGradient(0, 0, l.direction === 'down' ? 0 : w, l.direction === 'down' ? l.h : 0);
         gradient.addColorStop(0, 'rgba(10,12,14,.96)');
         gradient.addColorStop(.55, 'rgba(10,12,14,.8)');
         gradient.addColorStop(1, 'rgba(10,12,14,0)');
         ctx.fillStyle = gradient; ctx.fillRect(0, 0, w, l.h);
       } else if (l.type === 'text') {
         const hook = p.style === 'B4' && ['setup', 'payoff'].includes(l.b4Hook);
+        if (hook && portraitHook(p)) {
+          for (const [i, row] of posterRows(ctx, p, l).entries()) {
+            ctx.font = `${hookWeight(p, l)} ${row.size}px ${hookFamily(p, l)}`; ctx.textBaseline = 'alphabetic'; ctx.lineJoin = 'round';
+            const color = l.lineColors?.[i] ?? l.color;
+            if (l.b4Hook === 'payoff') {
+              ctx.lineWidth = 2; ctx.strokeStyle = B4_PORTRAIT.shadow; ctx.fillStyle = B4_PORTRAIT.shadow;
+              for (let d = 9; d >= 1; d--) { ctx.strokeText(row.text, row.x + d * .8, row.baseline + d); ctx.fillText(row.text, row.x + d * .8, row.baseline + d); }
+              const ink = ctx.createLinearGradient(0, row.y, 0, row.y + row.size);
+              const lower = i ? '#d5cab4' : '#ce6050';
+              ink.addColorStop(0, color); ink.addColorStop(.62, color); ink.addColorStop(.63, lower); ink.addColorStop(1, lower); ctx.fillStyle = ink;
+            } else ctx.fillStyle = color;
+            ctx.fillText(row.text, row.x, row.baseline);
+          }
+          ctx.restore(); continue;
+        }
         const treatment = p.style === 'B4' ? l.b4Type : undefined;
         const family = hook ? B4_HOOK.family : treatment === 'cinematic' ? 'B4Cinematic' : treatment === 'handwritten' ? 'B1Hand' : ['B3', 'B4'].includes(p.style) ? 'B1Caption' : 'B1Hand';
         const size = l.size || 52; ctx.font = `${hook ? B4_HOOK.weight : treatment === 'cinematic' ? 400 : l.bold ? 700 : 400} ${size}px ${family}`; ctx.fillStyle = hook ? B4_HOOK[l.b4Hook] : l.color || (['B3', 'B4'].includes(p.style) ? '#e9eaea' : '#191916'); ctx.textBaseline = 'top';
@@ -234,11 +278,17 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     if (fs.existsSync(target) && !replace) {
       if (fs.existsSync(reportPath)) {
         const previous = JSON.parse(fs.readFileSync(reportPath));
-        if (previous.fingerprint === p.fingerprint && previous.frames === count && previous.output_sha256 === hashFile(target)) return {
-          ...previous,
-          ...(['B1', 'B2', 'B3'].includes(p.style) ? {delivery_ready: false, visual_acceptance: 'pending_independent_review', reference_review: {...previous.reference_review, status: 'pending_independent_review'}} : {}),
-          reused: true,
-        };
+        if (previous.fingerprint === p.fingerprint && previous.frames === count && previous.output_sha256 === hashFile(target)) {
+          const cached = {
+            ...previous,
+            ...(['B1', 'B2', 'B3'].includes(p.style) ? {delivery_ready: false, visual_acceptance: 'pending_independent_review', reference_review: {...previous.reference_review, status: 'pending_independent_review'}} : {}),
+            ...(p.style === 'B4' ? {delivery_ready: false, visual_acceptance: 'pending_independent_review', typography: {...previous.typography, status: 'pending_independent_review'}} : {}),
+            reused: true,
+          };
+          // Cached pixels are reusable; an edited report is never review authority.
+          if (p.style === 'B4') save(reportPath, cached);
+          return cached;
+        }
       }
       throw new Error('Output exists with different/unverified contents; pass --replace to replace renderer-owned output');
     }
@@ -282,8 +332,9 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     const cues = p.captions.filter(c => c.start < duration).map(c => ({...c, end: Math.min(c.end, duration)}));
     fs.writeFileSync(path.join(out, `${kind}.srt`), cues.map((c, i) => `${i + 1}\n${stamp(c.start)} --> ${stamp(c.end)}\n${c.text}\n`).join('\n'));
     fs.writeFileSync(path.join(out, `${kind}.vtt`), 'WEBVTT\n\n' + cues.map(c => `${stamp(c.start, true)} --> ${stamp(c.end, true)}\n${c.text}\n`).join('\n'));
-    const sheet = createCanvas(960, 540), sc = sheet.getContext('2d');
-    for (let i = 0; i < 9; i++) sc.drawImage(frame(Math.min(duration - 1 / p.fps, (i + 0.5) * duration / 9)), (i % 3) * 320, Math.floor(i / 3) * 180, 320, 180);
+    const cellHeight = p.height > p.width ? Math.round(320 * p.height / p.width) : 180;
+    const sheet = createCanvas(960, cellHeight * 3), sc = sheet.getContext('2d');
+    for (let i = 0; i < 9; i++) sc.drawImage(frame(Math.min(duration - 1 / p.fps, (i + 0.5) * duration / 9)), (i % 3) * 320, Math.floor(i / 3) * cellHeight, 320, cellHeight);
     fs.writeFileSync(path.join(out, `${kind}-contact-sheet.png`), sheet.toBuffer('image/png'));
     const info = probe(target), report = {fingerprint: p.fingerprint, preview_seconds: full ? null : duration, output: target, output_sha256: hashFile(target), original_voice_sha256: hashFile(p.voicePath), original_voice_duration: p.voiceDuration, voice_rate: 'unchanged; leading/trailing padding only', frames: count, duration: Number(info.format.duration), cache_hits: reused, shot_count: clips.length, full_decode: 'pass', caption_count: cues.length, human_review: 'required; technical checks are not acceptance', inputs: p.inputs};
     report.local_motion = motionEvidence;
@@ -303,7 +354,9 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
       const evidenceOut = path.join(out, `${kind}-typography`);
       fs.rmSync(evidenceOut, {recursive: true, force: true}); fs.mkdirSync(evidenceOut);
       report.typography = await buildB4TypographyEvidence(p, {file: target, draw: frame, out: evidenceOut, projectFingerprint: p.fingerprint, ffmpeg: FFMPEG});
+      report.typography.status = 'pending_independent_review';
       report.visual_acceptance = 'pending_independent_review';
+      report.delivery_ready = false;
       report.voice_identity = {name: p.voice.name, id: p.voice.id, evidence: 'project metadata; source identity must be verified before generation'};
       report.audio_tracks = {ambience: p.ambience.length, dialogue: p.dialogue.length, file_sfx: p.sfx.filter(s => s.kind === 'file').length, cuts: p.audio_cuts.length};
       save(path.join(out, `${kind}-opening-audio.json`), report.opening_audio);

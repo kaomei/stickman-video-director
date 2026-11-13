@@ -161,16 +161,12 @@ test('B4 encoded checks reject missing picture motion and wrong title timing, ev
   }
 });
 
-test('B4 checks actual title visibility/overflow and preserves native portrait proportions', async t => {
+test('B4 checks actual landscape title visibility and overflow', async t => {
   const f = fixture(t), original = structuredClone(f.project);
   f.project.shots[0].layers.push({type: 'image', path: 'before.png', x: 0, y: 0, w: 650, h: 720}); f.write();
   await assert.rejects(f.check, /title\/emphasis/);
   Object.assign(f.project, structuredClone(original)); f.layer('hook-setup').text = 'THIS APPROVED GROUP IS MUCH TOO LONG TO FIT IN THE LEFT BLOCK'; f.write();
   await assert.rejects(f.check, /overlap or overflow/);
-  Object.assign(f.project, structuredClone(original));
-  const hook = makeB4Opening({setup: 'WOULD YOU', payoff: 'OPEN IT?', before: 'before.png', after: 'after.png', meaning: 'Synthetic portrait test', width: 360, height: 640, region: {x: 800, y: 900, w: 350, h: 500}});
-  f.project.width = 360; f.project.height = 640; f.project.opening = hook.opening; f.project.shots = [hook.shot]; f.write();
-  assert.equal((await f.check()).status, 'paint_diagnostic_pass');
 });
 
 test('B4 explicit visual exception is reported, not falsely certified as a motion pass', async t => {
@@ -205,6 +201,18 @@ test('B4 preview evidence remains pending and approve refuses absent or unknown 
   const report = JSON.parse(fs.readFileSync(path.join(f.dir, 'output/preview-report.json')));
   assert.equal(report.typography.status, 'pending_independent_review');
   assert.equal(report.visual_acceptance, 'pending_independent_review');
+  assert.equal(report.delivery_ready, false);
+  // Reusing valid encoded pixels must not inherit forged acceptance in its report.
+  const reportPath = path.join(f.dir, 'output/preview-report.json');
+  save(reportPath, {...report, delivery_ready:true, visual_acceptance:'accepted', typography:{...report.typography,status:'accepted'}});
+  const reused = command(['preview', f.file, '--seconds','3']); assert.equal(reused.status,0,reused.stderr);
+  const reusedReport = JSON.parse(reused.stdout);
+  assert.equal(reusedReport.reused,true);
+  assert.equal(reusedReport.output_sha256,report.output_sha256);
+  assert.equal(reusedReport.delivery_ready,false);
+  assert.equal(reusedReport.visual_acceptance,'pending_independent_review');
+  assert.equal(reusedReport.typography.status,'pending_independent_review');
+  assert.deepEqual(JSON.parse(fs.readFileSync(reportPath)),reusedReport,'persisted evidence must not retain forged acceptance either');
   const absent = command(['approve',f.file,'--note','Synthetic approval']);
   assert.notEqual(absent.status,0); assert.match(absent.stderr,/independent typography review/);
   const unknown = command(['approve',f.file,'--note','Synthetic approval','--text-review',report.typography.template_file]);

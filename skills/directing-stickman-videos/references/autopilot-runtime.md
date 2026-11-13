@@ -90,15 +90,15 @@ The local track arrays below also work in B1/B2/B3. Keep one subtle continuous e
 - `audio_cuts`: `[{start, end, reason, return_trigger}]` mutes ambience, music and SFX in that interval, preserving narration and role dialogue. Record why the cut exists and what restores sound.
 - A premixed `voice.contains_sfx: true` master must not receive extra ambience, dialogue, SFX, music or cuts. Use either independent tracks or the accepted mixed master, not both.
 
-B4 adds a `shadow` layer with positive `w`/`h` for the left-side feathered half-shadow and the fixed opening interface below. Animate separate story assets when needed; the renderer cannot infer a frightened face or a new threat from a still. Narrative shots are at most 3 seconds; an exceptional hold needs `kind: exceptional_hold`, `reason` and genuine scoped `user_approval`. Meaningful shot changes and creative motion are also reviewed through the [production ledger](b4-repeatability-check.md).
+B4 adds a `shadow` layer with positive `w`/`h` for the landscape half-shadow or portrait upper title field, and the fixed opening interface below. Animate separate story assets when needed; the renderer cannot infer a frightened face or a new threat from a still. Narrative shots are at most 3 seconds; an exceptional hold needs `kind: exceptional_hold`, `reason` and genuine scoped `user_approval`. Meaningful shot changes and creative motion are also reviewed through the [production ledger](b4-repeatability-check.md).
 
 Exports include an encoded opening-audio diagnostic. Approval is blocked on a flagged opening unless it is repaired or has a recorded story-motivated exception. Check actual playback and early **narration**, not just a token sound at frame zero. Technical passes do not certify acting, horror, semantic captions or sound quality.
 
 ### B4 fixed opening
 
-Read the [B4 typography acceptance contract](b4-typography-acceptance.md) for story-adapted opening/rule/warning/choice design, all-language semantic captions and independent actual-MP4 review. `b4-hook-v1` below remains the default. Reuse an existing explicit story-adaptation instruction; do not ask for a duplicate confirmation. A localized design must preserve correct script shaping and equivalent hierarchy/finish, rather than force every language into one English font. Painted checks remain diagnostics, not visual acceptance.
+Read the [B4 typography acceptance contract](b4-typography-acceptance.md) for story-adapted opening/rule/warning/choice design, all-language semantic captions and independent actual-MP4 review. The defaults are `b4-hook-v1` for landscape and `b4-portrait-poster-v1` for portrait. Reuse an existing explicit story-adaptation instruction; do not ask for a duplicate confirmation. A localized design must preserve correct script shaping and equivalent hierarchy/finish, rather than force every language into one English font. Painted checks remain diagnostics, not visual acceptance.
 
-`b4-hook-v1` is a rendering preset, not a prose suggestion: bundled Nunito 900, warm-white setup, larger coral payoff, fixed dark outline/offset shadow, left half-shadow and a whole-payoff uniform 1.035→1 scale-settle over 0.2 seconds. Font integrity is checked; no silent default-font substitution. See the [font source/license and script coverage](../assets/fonts/README.md). The current default interface requires two coherent matching-frame picture states with a 0.3-second animated local expression/prop/environment reveal on the right, then at least 0.5 seconds of readable hold. The base remains visible while the changed state uses explicit alpha 0→1 keys; matching unchanged pixels keep the body and scene stable. Both an intermediate painted frame and its encoded MP4 equivalent must retain the animation. No limb rig is required. A hard switch between stills, different filenames, camera drift/shake, a global flash, tiny/offscreen changes or title-only animation do not pass. Avoid doubled facial features: choose a coherent local emergence/prop reveal rather than dissolving unrelated poses.
+The landscape `b4-hook-v1` is a rendering preset, not a prose suggestion: bundled Nunito 900, warm-white setup, larger coral payoff, fixed dark outline/offset shadow, left half-shadow and a whole-payoff uniform 1.035→1 scale-settle over 0.2 seconds. Font integrity is checked; no silent default-font substitution. See the [font source/license and script coverage](../assets/fonts/README.md). Both presets require two coherent matching-frame picture states with a 0.3-second animated local expression/prop/environment reveal in the story picture, then at least 0.5 seconds of readable hold. The base remains visible while the changed state uses explicit alpha 0→1 keys; matching unchanged pixels keep the body and scene stable. Both an intermediate painted frame and its encoded MP4 equivalent must retain the animation. No limb rig is required. A hard switch between stills, different filenames, camera drift/shake, a global flash, tiny/offscreen changes or title-only animation do not pass. Avoid doubled facial features: choose a coherent local emergence/prop reveal rather than dissolving unrelated poses.
 
 Create an external `approved-opening.json` from already approved words and actual project assets, for example:
 
@@ -116,15 +116,34 @@ Create an external `approved-opening.json` from already approved words and actua
 }
 ```
 
-This is an interface example, **not** approved copy or reusable story art. Paths resolve relative to the video project. `region` uses the runtime's 1280-wide design plane and must frame the actual changed subject outside the caption area. Use the target native ratio and coherent composition; do not stretch a landscape still to portrait. The helper does not generate media, rewrite a script or spend credits:
+For portrait, the same helper selects `b4-portrait-poster-v1` when `height > width`: rounded setup above a condensed poster payoff, cream/coral hierarchy, controlled depth and a short emphasis line; the principal picture occupies the lower field. Follow the [selected native portrait reference](b4-opening-direction.md#native-portrait-opening). Author two semantic payoff lines explicitly when appropriate; both lines remain one animated block. For example:
+
+```json
+{
+  "setup": "WHAT IF YOU SAW",
+  "payoff": "DEATH COMING?",
+  "payoffLines": ["DEATH", "COMING?"],
+  "lineSizes": [242, 162],
+  "payoffAt": 0.3,
+  "before": "art/portrait-before.png",
+  "after": "art/portrait-after.png",
+  "meaning": "Record the actual lower-picture threat or prop reveal",
+  "width": 1080,
+  "height": 1920,
+  "duration": 3,
+  "region": {"x": 320, "y": 960, "w": 640, "h": 540}
+}
+```
+
+These are interface examples, **not** approved copy or reusable story art. Paths resolve relative to the video project. `region` and line sizes use the runtime's 1280-wide design plane and must frame the actual changed subject outside the title and caption areas. `payoffLines` must preserve the complete payoff text; do not mechanically split words or compress glyphs. Use the target native ratio and coherent composition; the portrait preset requires matching native portrait picture states and does not stretch a landscape still. The helper does not generate media, rewrite a script or spend credits:
 
 ```bash
 node scripts/b4-opening.mjs /absolute/project/approved-opening.json /absolute/project/opening-layers.json
 ```
 
-Merge the returned `opening` descriptor and `shot` as the video's first shot, preserving later shots, narration and captions. The output is non-overwriting. Set the payoff's `from` and the two key times together to match the approved spoken phrase, leaving the full payoff readable; keep its fixed scale values/duration. Set the picture's `from` and two alpha-key times together (0→1 over 0.3 seconds), retaining the base through the shot, and choose the review region for the actual action. Each text group must fit at most two semantic lines without overlap. Rechoose semantic line breaks or layout within the preset before changing approved words; do not silently rewrite them to fit.
+Merge the returned `opening` descriptor and `shot` as the video's first shot, preserving later shots, narration and captions. The output is non-overwriting. For portrait, set `payoffAt` against the approved spoken phrase; the helper moves the emphasis line after it. When editing layers, move the payoff's `from` and both key times together, and the underline's `from`/keys with it (start 0.1 seconds after payoff, draw over 0.28 seconds). Leave the full payoff readable and keep its fixed scale values/duration. Set the picture's `from` and two alpha-key times together (0→1 over 0.3 seconds), retaining the base through the shot, and choose the review region for the actual action. Each text group must fit at most two semantic lines without overlap. Rechoose semantic line breaks or layout within the preset before changing approved words; do not silently rewrite them to fit.
 
-`validate` paints the opening and tests title visibility/settle plus localized held picture change, rather than counting keys. `preview` and `render` then decode six phase frames from the actual MP4 and compare them to that authored composition. Outputs include `preview-opening-visual.json`, `preview-opening-contact-sheet.png` (or `final-…`) and `opening_visual` in the export report. `approve` rechecks the current encoded MP4, not just a self-declared `pass` or file hash. Review playback, contact sheet and body/contact details for actual meaning, acting, fear, reading order and sync; pixel checks do not prove these qualities.
+`validate` paints the opening and tests title visibility/settle plus localized held picture change, rather than counting keys. `preview` and `render` then decode phase frames from the actual MP4 and compare them to that authored composition. Outputs include `preview-opening-visual.json`, `preview-opening-contact-sheet.png` (or `final-…`) and `opening_visual` in the export report. `approve` rechecks the current encoded MP4, not just a self-declared `pass` or file hash. Review playback, contact sheet and body/contact details for actual meaning, acting, fear, reading order and sync; pixel checks do not prove these qualities. For portrait, also watch the complete encoded opening at approximately 360×640: natural letter shapes, breathing space, full-word reading, visible picture evidence and the whole-payoff settle must remain convincing at phone size. Use the existing independent text-review criteria; technical success does not supply a creative pass.
 
 The separate [B4 text review](b4-typography-acceptance.md#register-the-complete-authored-text) covers the opening, all registered body/image text and every semantic caption. `preview`/`render` save encoded phase frames, local clips, `evidence.json` and an unknown `review-template.json` under `output/preview-typography/` or `output/film-typography/`. B4 `approve` additionally requires `--text-review REVIEW_JSON` from a real independent reviewer. After full-film review, `accept-text PROJECT --review FILE` records typography acceptance separately; neither paint diagnostics nor that record implies whole-film/user acceptance. See the linked contract for author/registry fields, all-language shaping, six review criteria and evidence limits.
 

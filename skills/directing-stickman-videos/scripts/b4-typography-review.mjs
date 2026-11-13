@@ -6,6 +6,7 @@ import os from 'node:os';
 import crypto from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {createRequire} from 'node:module';
+import {portraitHook, hookHeight} from './b4-opening.mjs';
 
 const require=createRequire(import.meta.url);
 let canvasRuntime;
@@ -89,8 +90,10 @@ export function planB4Typography(p) {
     if (setup && payoff) {
       const s = p.shots[0], ls = [...layers(s.layers)], a = ls.find(l=>l.id===setup.id), b=ls.find(l=>l.id===payoff.id);
       const end = Math.min(s.end,scope_end), mid = frameAt(payoff.start,context)/p.fps, settled = frameAt(payoff.start+.2,context)/p.fps;
-      add({id:'opening-hook',shot:0,layer_ids:[a.id,b.id],region:{x:Math.max(0,Math.min(a.x,b.x)-18),y:Math.max(0,a.y-18),w:Math.min(650,1280)-Math.max(0,Math.min(a.x,b.x)-18),h:Math.min(h-110,b.y+b.size*2.3+30)-Math.max(0,a.y-18)},
-        times:{entry:Math.min(mid-1/p.fps,Math.ceil(.12*p.fps)/p.fps),mid,settled,hold:(Math.ceil(end*p.fps)-1)/p.fps},intent:'Read the approved setup, then the whole payoff as one story hook.',treatment:'Fixed rounded warm-white setup, coral payoff, whole-block settle and readable hold.'},'hook',registry.map(l=>l.id),[s.start,end]);
+      const portrait = portraitHook(p), top = Math.max(0,a.y-24);
+      const hookRegion = portrait ? {x:64,y:top,w:1152,h:b.y+hookHeight(b)+50-top} : {x:Math.max(0,Math.min(a.x,b.x)-18),y:Math.max(0,a.y-18),w:Math.min(650,1280)-Math.max(0,Math.min(a.x,b.x)-18),h:Math.min(h-110,b.y+b.size*2.3+30)-Math.max(0,a.y-18)};
+      add({id:'opening-hook',shot:0,layer_ids:[a.id,b.id],region:hookRegion,
+        times:{entry:Math.min(mid-1/p.fps,Math.ceil(.12*p.fps)/p.fps),mid,settled,hold:(Math.ceil(end*p.fps)-1)/p.fps},intent:'Read the approved setup, then the whole payoff as one story hook.',treatment:portrait ? 'Native portrait poster: centered Nunito setup; explicit Anton semantic lines, coral/cream depth and one uniform whole-block settle above unobscured story art.' : 'Fixed rounded warm-white setup, coral payoff, whole-block settle and readable hold.'},'hook',registry.map(l=>l.id),[s.start,end]);
     }
   } else {
     need(Array.isArray(typography.moments), 'typography.moments must be an array');
@@ -117,7 +120,7 @@ export function planB4Typography(p) {
     const a=Math.max(0,Math.ceil(c.start*p.fps-EPS)), z=Math.ceil(c.end*p.fps-EPS)-1, settled=Math.min(z,a+Math.max(2,Math.ceil(.16*p.fps)));
     add({id:c.id,layer_ids:[c.id],region:{x:60,y:Math.max(0,h-118),w:1160,h:Math.min(h,118)},times:{entry:a/p.fps,mid:(a+1)/p.fps,settled:settled/p.fps,hold:z/p.fps},intent:'Read the complete timed semantic cue: '+c.text,treatment:'Restrained whole-cue alpha/lift entrance, followed by a stable readable hold.'},'caption',[c.id],[c.start,c.end],cues,!!captionGroups);
   }
-  return {schema:1,status:'planned',author_id:typography?.author_id ?? null,width:p.width,height:p.height,fps:p.fps,scope_start:0,scope_end,registry,captions:cues,moments,caption_diagnostics,limits:LIMITS};
+  return {schema:1,status:'planned',author_id:typography?.author_id ?? null,width:p.width,height:p.height,fps:p.fps,scope_start:0,scope_end,registry,captions:cues,moments,caption_diagnostics,...(p.height>p.width?{viewing_profile:'portrait-phone'}:{}),limits:LIMITS};
 }
 
 const diagnosticMoments=plan=>[...plan.moments,...plan.caption_diagnostics];
@@ -164,15 +167,20 @@ function probeSource(p,source,ffprobe) {
   return {width:v.width,height:v.height,fps:p.fps,duration:Number(v.duration??m.format.duration)};
 }
 async function checkFile(p,source,draw,ffmpeg) {
-  const {loadImage}=canvasAPI();
+  const {loadImage,createCanvas}=canvasAPI();
   const diagnostic=checkB4TypographyPaint(p,{draw}),plan=diagnostic.plan,width=Math.min(160,Math.max(1,Math.round(160*p.width/p.height))),height=Math.round(width*p.height/p.width),n=Math.ceil(plan.scope_end*p.fps-EPS);
-  const chunkSize=Math.max(1,Math.min(p.fps*5,Math.floor(32*1024*1024/(width*height*4))));
+  // Decode native pixels, then downsample both sides with the same Canvas
+  // kernel. Mixing FFmpeg bilinear with Canvas filtering falsely flags dense
+  // portrait glyph edges; changing the tolerance would hide real differences.
+  const sourceFrameBytes=p.width*p.height*4,chunkSize=Math.max(1,Math.min(p.fps*5,Math.floor(32*1024*1024/sourceFrameBytes)));
+  const decoded=createCanvas(p.width,p.height),decodedContext=decoded.getContext('2d'),decodedPixels=decodedContext.createImageData(p.width,p.height);
   let max_mean=0;
   for(let start=0;start<n;start+=chunkSize) {
-    const count=Math.min(chunkSize,n-start),raw=command(ffmpeg,['-v','error','-ss',String(start/p.fps),'-i',source,'-map','0:v:0','-vf',`scale=${width}:${height}:flags=bilinear`,'-frames:v',String(count),'-pix_fmt','rgba','-f','rawvideo','pipe:1'],count*width*height*4+1024*1024);
-    need(raw.length===count*width*height*4,'actual output must contain every current final-video frame');
+    const count=Math.min(chunkSize,n-start),raw=command(ffmpeg,['-v','error','-ss',String(start/p.fps),'-i',source,'-map','0:v:0','-frames:v',String(count),'-pix_fmt','rgba','-f','rawvideo','pipe:1'],count*sourceFrameBytes+1024*1024);
+    need(raw.length===count*sourceFrameBytes,'actual output must contain every current final-video frame');
     for(let j=0;j<count;j++) {
-    const i=start+j,actual={width,height,data:raw.subarray(j*width*height*4,(j+1)*width*height*4)},authored=snapshot(draw(i/p.fps),width),d=diff(actual,authored,{x:0,y:0,w:1280,h:1280*p.height/p.width});
+    decodedPixels.data.set(raw.subarray(j*sourceFrameBytes,(j+1)*sourceFrameBytes));decodedContext.putImageData(decodedPixels,0,0);
+    const i=start+j,actual=snapshot(decoded,width),authored=snapshot(draw(i/p.fps),width),d=diff(actual,authored,{x:0,y:0,w:1280,h:1280*p.height/p.width});
     need(d.mean<=.03&&d.fraction<=.09,'exported frame '+i+' does not match current authored composition');max_mean=Math.max(max_mean,d.mean);
     for(const m of diagnosticMoments(plan)) if(i>=m.clip_start_frame&&i<m.clip_end_frame) {
       const local=diff(actual,authored,m.region);need(local.mean<=.04&&local.fraction<=.18,'exported typography frame '+i+' differs for '+m.id);
@@ -220,7 +228,9 @@ function binding(p,projectFingerprint) {
 }
 function template(plan,output_sha256,evidence_sha256,artifacts) {
   return {schema:1,author_id:plan.author_id,reviewer:{id:'',kind:'agent',method:'',independent:false},output_sha256,evidence_sha256,
-    full_playback:{status:'unknown',viewed_ranges:[],observations:[]},moments:plan.moments.map(m=>({id:m.id,checks:Object.fromEntries(CHECKS.map(k=>[k,{status:'unknown',observations:[]}]))})),blocking_issues:[],evidence_ids:artifacts.map(a=>a.id),limits:LIMITS};
+    full_playback:{status:'unknown',viewed_ranges:[],observations:[]},
+    ...(plan.viewing_profile==='portrait-phone'?{portrait_viewing:{status:'unknown',display_width:null,display_height:null,playback_speed:null,platform:'',real_device:{checked:null,limitation:''},observations:[]}}:{}),
+    moments:plan.moments.map(m=>({id:m.id,checks:Object.fromEntries(CHECKS.map(k=>[k,{status:'unknown',observations:[]}]))})),blocking_issues:[],evidence_ids:artifacts.map(a=>a.id),limits:LIMITS};
 }
 export async function buildB4TypographyEvidence(p,{file:source,draw,out,projectFingerprint,ffmpeg=process.env.FFMPEG||'ffmpeg',ffprobe=process.env.FFPROBE||'ffprobe'}) {
   source=file(source);const output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint),plan=planB4Typography(p);need(plan,'B4 project required');
@@ -263,6 +273,12 @@ export async function verifyB4TypographyReview(p,{file:source,draw,evidenceDir,r
   const full=review.full_playback;need(full?.status==='pass'&&Array.isArray(full.viewed_ranges)&&full.viewed_ranges.length,'complete playback is pending/failed');
   let covered=0;for(const r of [...full.viewed_ranges].sort((a,b)=>a.start-b.start)){need(Number.isFinite(r.start)&&Number.isFinite(r.end)&&r.start>=0&&r.end>r.start&&r.end<=plan.scope_end+EPS&&r.start<=covered+EPS,'playback ranges omit current review scope');covered=Math.max(covered,r.end);}need(covered>=plan.scope_end-EPS,'complete playback omits current review tail');
   const artifacts=new Set(ledger.artifacts.map(a=>a.id));artifacts.add('source-video');observations(full.observations,{scope:[0,plan.scope_end],artifacts,continuous:'source-video',full:true});
+  if(plan.viewing_profile==='portrait-phone') {
+    const v=review.portrait_viewing;
+    need(v?.status==='pass'&&Number.isFinite(v.display_width)&&v.display_width>=320&&v.display_width<=480&&Number.isFinite(v.display_height)&&v.display_height>v.display_width&&Math.abs((v.display_width/v.display_height)/(p.width/p.height)-1)<=.03&&v.playback_speed===1&&text(v.platform),'portrait phone-size playback record is pending/invalid; declare the actual 320–480px-wide portrait display, preserved aspect, normal speed and target platform');
+    need(typeof v.real_device?.checked==='boolean'&&(v.real_device.checked||text(v.real_device.limitation)),'portrait playback must record whether a real device was checked and disclose any simulated-device limitation');
+    observations(v.observations,{scope:[0,plan.scope_end],artifacts,continuous:'source-video',full:true});
+  }
   need(Array.isArray(review.moments)&&same(review.moments.map(m=>m.id).sort(),plan.moments.map(m=>m.id).sort()),'review must cover every principal typography moment exactly once');
   for(const m of plan.moments) {
     const item=review.moments.find(x=>x.id===m.id);need(item.checks&&same(Object.keys(item.checks).sort(),CHECKS.slice().sort()),'moment requires all six independent review checks');
@@ -270,5 +286,5 @@ export async function verifyB4TypographyReview(p,{file:source,draw,evidenceDir,r
     for(const k of CHECKS){const c=item.checks[k];need(c?.status==='pass','moment '+m.id+' '+k+' is pending/failed');observations(c.observations,{scope:[m.clip_start_frame/p.fps,m.clip_end_frame/p.fps],artifacts:local,continuous:m.id+'-continuous'});}
   }
   need(hash(source)===output_sha256&&hash(ledgerFile)===evidence_sha256&&hash(reviewFile)===review_sha256&&digest(JSON.stringify(planB4Typography(p)))===plan_sha256,'media/evidence/review/plan changed during acceptance');
-  return {schema:1,status:'independent_visual_review_pass',output:source,output_sha256,project_fingerprint,plan_sha256,evidence_sha256,review_sha256,scope:ledger.scope,reviewer,user_acceptance:'not_inferred',limits:LIMITS};
+  return {schema:1,status:'independent_visual_review_pass',output:source,output_sha256,project_fingerprint,plan_sha256,evidence_sha256,review_sha256,scope:ledger.scope,reviewer,...(plan.viewing_profile==='portrait-phone'?{portrait_viewing:review.portrait_viewing}:{}),user_acceptance:'not_inferred',limits:LIMITS};
 }
