@@ -75,6 +75,8 @@ Use bundled Noto Sans: B1 weight 600/34 design units, B2 weight 500/40 on the iv
 
 B1–B3 local actor/prop/information layers need a project-unique `id` and `motion: {role, reason}` plus effective keys. Over 2.5 seconds without principal-picture motion fails. No-op keys, caption/title entrances, shadow effects or a full-frame camera move do not count, including scene-scale group wrappers and inherited scaling. A local actor group remains supported. The render checks rolling isolated-layer pixel windows with a conservative 0.25s timing margin, excluding text/shadows and freezing ancestor transforms; a tiny drift across a long key span cannot satisfy the whole span. Geometry uses conservative artwork bounds (supply image `h` for its actual aspect). Reports record window evidence, not proof of contact, final visibility/occlusion or meaningful acting. Review encoded playback with the shot ledger; do not add arbitrary motion to game the test.
 
+<a id="b4-production-tracks"></a>
+
 ## Shared B1–B4 production tracks
 
 `init DIR --style B4` uses the same validate/preview/approve/render pipeline. It sets the verified Brian name/ID, zero title padding, and separate `ambience`, `dialogue` and `audio_cuts` arrays. Supply story-specific image layers rather than the B1 atlas; B4 has no B1 grid/paper or B3 television treatment. The bundled reference lock is checked when loading a B4 project.
