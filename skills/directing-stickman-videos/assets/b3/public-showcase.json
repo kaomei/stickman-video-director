@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "style": "B3",
+  "path_base": "manifest_directory",
+  "provenance": "Unchanged copies of the repository's current public README B3 full samples, bundled here for portable installed-skill comparison.",
+  "evidence": [
+    {
+      "id": "b3-tv-night-signal",
+      "path": "public-showcases/b3-tv-night-signal.mp4",
+      "sha256": "d9718e1c3d9c2322639cb4e4804abad0a8dac8ab73d30d4e2177e3cf7e34c178",
+      "kind": "video",
+      "role": "public_showcase",
+      "repository_source_path": "assets/readme/b3-tv-night-signal.mp4",
+      "duration": 22.3,
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "audio": {"codec": "aac", "sample_rate": 48000, "channels": 1, "treatment": "Existing public mix retained unchanged; no revoice or retiming."},
+      "limitations": [
+        "A complete accepted public implementation is an effect target, not the private original channel reference or an executable production project.",
+        "This full sample has a different fingerprint from B3-After-Dark-Preview-v1.mp4 in reference-manifest.json; do not claim the legacy chair excerpt was decoded from this file."
+      ]
+    },
+    {
+      "id": "b3-tv-dog",
+      "path": "public-showcases/b3-tv-dog.mp4",
+      "sha256": "66c1c49ded3fc6e37d05e9d6e4d4c3aad3a77e117e36f23ee24bc3da14f7d1be",
+      "kind": "video",
+      "role": "public_showcase",
+      "repository_source_path": "assets/readme/b3-tv-dog.mp4",
+      "duration": 27.833333,
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "audio": {"codec": "aac", "sample_rate": 48000, "channels": 1, "treatment": "Existing public mix retained unchanged; no revoice or retiming."},
+      "limitations": [
+        "A complete accepted public implementation is an effect target, not the private original channel reference or an executable production project.",
+        "Its fingerprint matches B3-Dog-Motion-Polish-v6.mp4 recorded in reference-manifest.json; the legacy dog excerpt is a silent detail extracted from that accepted implementation."
+      ]
+    }
+  ],
+  "limitations": [
+    "The private original television reference remains unbundled; source-exact replication cannot be certified from these accepted implementations.",
+    "Public sample availability does permit direct review of their actual picture, timing, captions and sound. Missing private-original access does not waive that comparison.",
+    "Packaging an existing public sample does not grant a new license to redistribute third-party source footage or reuse its narration, story, music or scene sequence in a new production.",
+    "Fingerprints and media metadata establish identity and portability, not the aesthetic quality of a new film or proof that a reviewer played/listened to it."
+  ]
+}

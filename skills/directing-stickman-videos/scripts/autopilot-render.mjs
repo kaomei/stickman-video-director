@@ -3,7 +3,7 @@ import path from 'node:path';
 import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import {createCanvas, loadImage, GlobalFonts} from '@napi-rs/canvas';
-import {ROOT, FFMPEG, sha, hashFile, save, probe, run, mediaPath, fontPaths, outputDir, designPlane, loadProject} from './autopilot-core.mjs';
+import {ROOT, FFMPEG, FFPROBE, sha, hashFile, save, probe, run, mediaPath, fontPaths, outputDir, designPlane, loadProject} from './autopilot-core.mjs';
 import {walkLayers, drawB3Shape, televisionFinish, keyState} from './b3-graphics.mjs';
 export {keyState} from './b3-graphics.mjs';
 import {appendAudioTracks} from './b4-runtime.mjs';
@@ -13,6 +13,7 @@ import {checkB4OpeningPaint, checkB4OpeningFile} from './b4-opening-visual-check
 import {B4_HOOK} from './b4-opening.mjs';
 import {requireB4Glyphs} from './b4-font-coverage.mjs';
 import {checkB4TypographyPaint, buildB4TypographyEvidence} from './b4-typography-review.mjs';
+import {buildBStyleReferenceEvidence} from './b-style-reference-review.mjs';
 
 const clamp = x => Math.max(0, Math.min(1, x));
 function wrap(ctx, text, maxWidth) {
@@ -37,6 +38,10 @@ export async function painter(p, {pictureOnly = false} = {}) {
   if (p.style === 'B4') {
     for (const s of p.shots) for (const l of walkLayers(s.layers)) if (l.type === 'text') requireB4Glyphs(l.b4Hook ? fonts.hook : l.b4Type === 'cinematic' ? fonts.cinematic : l.b4Type === 'handwritten' ? fonts.hand : fonts.caption, l.text, `text ${l.id}`);
     for (const [i, cue] of p.captions.entries()) requireB4Glyphs(fonts.caption, cue.text, `caption ${i}`);
+  }
+  if (['B1', 'B3'].includes(p.style)) {
+    for (const s of p.shots) for (const l of walkLayers(s.layers)) if (l.type === 'text') requireB4Glyphs(p.style === 'B1' ? fonts.hand : fonts.caption, l.text, `text ${l.id ?? ''}`, p.style);
+    for (const [i, cue] of p.captions.entries()) requireB4Glyphs(fonts.caption, p.style === 'B3' ? cue.text.toUpperCase() : cue.text, `caption ${i}`, p.style);
   }
   const canvas = createCanvas(p.width, p.height), ctx = canvas.getContext('2d');
   const sceneCopy = p.style === 'B3' ? createCanvas(p.width, p.height) : null;
@@ -227,7 +232,14 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
   const done = value => save(path.join(out, 'checkpoint.json'), {stage: value, kind, fingerprint: p.fingerprint, pid: process.pid, updated_at: new Date().toISOString()});
   try {
     if (fs.existsSync(target) && !replace) {
-      if (fs.existsSync(reportPath)) { const previous = JSON.parse(fs.readFileSync(reportPath)); if (previous.fingerprint === p.fingerprint && previous.frames === count && previous.output_sha256 === hashFile(target)) return {...previous, reused: true}; }
+      if (fs.existsSync(reportPath)) {
+        const previous = JSON.parse(fs.readFileSync(reportPath));
+        if (previous.fingerprint === p.fingerprint && previous.frames === count && previous.output_sha256 === hashFile(target)) return {
+          ...previous,
+          ...(['B1', 'B3'].includes(p.style) ? {delivery_ready: false, visual_acceptance: 'pending_independent_review', reference_review: {...previous.reference_review, status: 'pending_independent_review'}} : {}),
+          reused: true,
+        };
+      }
       throw new Error('Output exists with different/unverified contents; pass --replace to replace renderer-owned output');
     }
     const cache = path.join(out, 'cache'); fs.mkdirSync(cache, {recursive: true});
@@ -276,6 +288,13 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     const info = probe(target), report = {fingerprint: p.fingerprint, preview_seconds: full ? null : duration, output: target, output_sha256: hashFile(target), original_voice_sha256: hashFile(p.voicePath), original_voice_duration: p.voiceDuration, voice_rate: 'unchanged; leading/trailing padding only', frames: count, duration: Number(info.format.duration), cache_hits: reused, shot_count: clips.length, full_decode: 'pass', caption_count: cues.length, human_review: 'required; technical checks are not acceptance', inputs: p.inputs};
     report.local_motion = motionEvidence;
     report.audio_tracks = {ambience: p.ambience.length, dialogue: p.dialogue.length, file_sfx: p.sfx.filter(s => s.kind === 'file').length, cuts: p.audio_cuts.length};
+    if (['B1', 'B3'].includes(p.style)) {
+      const evidenceOut = path.join(out, `${kind}-reference`);
+      fs.rmSync(evidenceOut, {recursive: true, force: true}); fs.mkdirSync(evidenceOut);
+      report.reference_review = await buildBStyleReferenceEvidence(p, {file: target, out: evidenceOut, projectFingerprint: p.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
+      report.visual_acceptance = 'pending_independent_review';
+      report.delivery_ready = false;
+    }
     if (p.style === 'B4') {
       report.voice_trim_start_seconds = p.voiceTrimStart;
       report.voice_rate = 'unchanged; explicit leading source trim/padding only';

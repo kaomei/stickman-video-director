@@ -1,14 +1,14 @@
 import fs from 'node:fs';
 
 // Inspect the selected font itself: OS font fallback must not silently change a language's treatment.
-export function requireB4Glyphs(file, text, label) {
+export function requireB4Glyphs(file, text, label, style = 'B4') {
   const b = fs.readFileSync(file), tables = new Map();
   for (let i = 0; i < b.readUInt16BE(4); i++) {
     const at = 12 + 16 * i;
     tables.set(b.toString('ascii', at, at + 4), b.readUInt32BE(at + 8));
   }
   const cmap = tables.get('cmap');
-  if (cmap === undefined) throw new Error(`B4 ${label}: selected font has no cmap`);
+  if (cmap === undefined) throw new Error(`${style} ${label}: selected font has no cmap`);
   const maps = [];
   for (let i = 0; i < b.readUInt16BE(cmap + 2); i++) {
     const r = cmap + 4 + i * 8, platform = b.readUInt16BE(r), encoding = b.readUInt16BE(r + 2);
@@ -34,5 +34,5 @@ export function requireB4Glyphs(file, text, label) {
     });
   }
   const missing = [...new Set([...text].filter(c => !/\s/u.test(c) && !maps.some(has => has(c.codePointAt(0)))))];
-  if (missing.length) throw new Error(`B4 ${label}: selected font lacks glyphs ${missing.slice(0, 8).join(' ')}; choose an explicit story-matched font with full language coverage`);
+  if (missing.length) throw new Error(`${style} ${label}: selected font lacks glyphs ${missing.slice(0, 8).join(' ')}; choose an explicit story-matched font with full language coverage`);
 }

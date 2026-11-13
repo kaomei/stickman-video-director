@@ -2,6 +2,8 @@
 
 Required for **every B style**, before shot planning, sample review and full-film delivery. This is the common quality floor, not a shared drawing style. A does not inherit it. Each B style keeps its own character/visual language, caption design, pacing character and SFX treatment; those choices must still meet this checklist. B1/B2/B3/B5 showcase voice credits are illustrative: honor the user's selected available route and help configure it if needed. B4 keeps its scoped Brian contract. Future styles need their own reference and runtime support before use. Do not copy B1 assets, background, voice ID or typography into them.
 
+For **B1/B3**, also apply the mandatory [reference-effect acceptance protocol](b1-b3-reference-acceptance.md). Complete production environments such as Codex and Claude Code must target actual sample-comparable design, acting, motion, editing, semantic captions and sound through the full film; fixtures and technical passes do not establish that result. Verify real capabilities. An observed tool limitation permits an explicitly limited best effort, with no sample-equivalent pass or forced unavailable/paid route. Preserve equivalent design and readable semantic timing across languages rather than imposing the identical English font.
+
 ## Plan from meaning and actual narration
 
 Maintain a compact project-local shot ledger: spoken phrase and actual word times; idea to communicate; focal subject/action/expression; short scene text; timed meaningful picture events; evidence source/language/date; caption phrases; SFX event; and connection to the next shot. Cover the body and ending as well as the opening. This is production evidence, not another intake questionnaire.
@@ -56,6 +58,8 @@ Apply the required [B sound system](autopilot-sound-system.md) for **every genre
 ## Whole-film delivery gate
 
 Apply the **same detail standard throughout the entire film**, not just the first 30 seconds or approved sample. Inspect every shot/ledger row, then review the actual final picture and sound from beginning to end:
+
+B1/B3 additionally complete `accept-visual` using the final film's own independently reviewed evidence under the [reference-effect protocol](b1-b3-reference-acceptance.md#runtime-evidence-and-commands). The gate binds actual files, scope and review records; truthful playback, listening and aesthetic comparison remain a reviewer responsibility. `best_effort_limited` never becomes a sample-equivalent claim.
 
 1. **Meaning and continuity:** actions/icons/evidence match narration; facts are supported; hook, body and ending connect. Body/end retain the opening's artwork detail, typography care, evidence sharpness, meaningful motion and sound treatment. No downgrade to low-detail static slides after an attractive hook.
 2. **Picture and repetition:** inspect a chronological contact sheet, necessary encoded full-size frames and both sides of revised cuts. Check focal hierarchy, character/prop contact, safe areas, screenshot clarity/language and distant repetition against the selected style.
