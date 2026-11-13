@@ -9,6 +9,7 @@ import crypto from 'node:crypto';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {referenceInputs,planBStyleReference,buildBStyleReferenceEvidence,verifyBStyleReferenceReview} from '../scripts/b-style-reference-review.mjs';
+import {fillSyntheticB3Review} from './helpers/reference-review.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),FFMPEG=process.env.FFMPEG||'ffmpeg';
 const hash=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
@@ -16,7 +17,7 @@ const read=f=>JSON.parse(fs.readFileSync(f,'utf8'));
 const write=(f,x)=>fs.writeFileSync(f,JSON.stringify(x,null,2)+'\n');
 function media(args) {const r=spawnSync(FFMPEG,['-v','error',...args]);assert.equal(r.status,0,String(r.stderr));}
 function project(style='B1') {
-  return {style,width:160,height:90,fps:30,duration:.8,rangeEnd:.8,shots:[{id:'first',start:0,end:.4,layers:[]},{id:'second',start:.4,end:.8,layers:[]}],captions:[{start:0,end:.8,text:'Synthetic protocol fixture only.'}],reference_review:{author_id:'synthetic-author',capability:{mode:'sample_target',environment:'Local ffmpeg derivative used only for protocol regression; no aesthetic claim.',limitations:[]}}};
+  return {style,width:160,height:90,fps:30,duration:.8,rangeEnd:.8,shots:[{id:'first',start:0,end:.4,layers:[]},{id:'second',start:.4,end:.8,layers:[]}].map(s=>({...s,...(style==='B3'?{b3_semantics:{events:[],graphics:[]}}:{})})),captions:[{start:0,end:.8,text:'Synthetic protocol fixture only.'}],reference_review:{author_id:'synthetic-author',capability:{mode:'sample_target',environment:'Local ffmpeg derivative used only for protocol regression; no aesthetic claim.',limitations:[]}}};
 }
 function portraitProject(p) {
   Object.assign(p,{width:360,height:640});
@@ -48,10 +49,65 @@ function review(f) {
     for(const [k,c] of Object.entries(item.checks)) Object.assign(c,{status:'pass',observations:[{time:s.start,detail,evidence_ids:[s.id+'-continuous']}],comparisons:[{reference_id:(k==='sound'?audible:video).id,start:0,end:.1,detail}]});
     for(const c of Object.values(item.portrait_checks||{}))Object.assign(c,{status:'pass',observations:[{time:s.start,detail,evidence_ids:[s.id+'-continuous']}]});
   }
+  fillSyntheticB3Review(r,f.ledger.plan);
   write(f.reviewFile,r);return r;
 }
 const verify=f=>verifyBStyleReferenceReview(f.p,{file:f.file,evidenceDir:f.out,reviewFile:f.reviewFile,projectFingerprint:f.args.projectFingerprint,ffmpeg:FFMPEG});
 function setReview(f,fn) {const r=review(f);fn(r);write(f.reviewFile,r);}
+function connectorProject(p) {
+  p.shots[0].layers=[
+    {id:'source',type:'rect',x:50,y:50,w:80,h:60},
+    {id:'target',type:'rect',x:300,y:50,w:80,h:60},
+    {id:'link',type:'arrow',x:130,y:80,w:170,from:.05,keys:[{t:.05,progress:0},{t:.2,progress:1}],motion:{role:'information',reason:'Synthetic connector protocol, not a visual explanation.'}},
+  ];
+  p.shots[0].b3_semantics={events:[{id:'route',cue_index:0,kind:'relationship',layer_ids:['link'],start:.05,end:.2,before:'Synthetic objects have no displayed route.',after:'Synthetic source connects to the declared target.',purpose:'Synthetic relational review fixture, not an aesthetic approval.'}],graphics:[{id:'link',role:'connector',event_id:'route',source:{layer_id:'source',x:80,y:30},target:{layer_id:'target',x:0,y:30},relation:'Synthetic source sends a test route to the target.',directed:true}]};
+}
+
+test('B3 legacy candidates cannot be approved without semantic plans',async t=>{
+  const f=await fixture(t,'B3',p=>p.shots.forEach(s=>delete s.b3_semantics));
+  assert.equal(f.ledger.plan.b3_semantics.status,'missing_plan');
+  review(f);await assert.rejects(()=>verify(f),/B3 semantics:.*plan|b3_semantics/);
+});
+
+test('B3 needs complete event and graphic observations, including actual targets and direction',async t=>{
+  const f=await fixture(t,'B3',connectorProject),template=read(f.ledger.template_file);
+  const pending=template.shots[0].b3_semantics;
+  assert.equal(pending.events[0].status,'unknown');assert.equal(pending.graphics[0].status,'unknown');
+  review(f);assert.equal((await verify(f)).status,'sample_target_review_passed');
+  const cases=[
+    [r=>delete r.shots[0].b3_semantics,/per-event and per-graphic/],
+    [r=>r.shots[0].b3_semantics.events=[],/every declared event and graphic/],
+    [r=>r.shots[0].b3_semantics.graphics.push(r.shots[0].b3_semantics.graphics[0]),/exactly once/],
+    [r=>r.shots[0].b3_semantics.events[0].status='unmet',/semantic correctness/],
+    [r=>r.shots[0].b3_semantics.events[0].spoken_meaning='OK',/spoken meaning/],
+    [r=>r.shots[0].b3_semantics.events[0].contribution='',/deletion-test/],
+    [r=>r.shots[0].b3_semantics.events[0].observations.splice(1,1),/before\/during\/after/],
+    [r=>r.shots[0].b3_semantics.events[0].observations[0].time=.3,/actual event timing/],
+    [r=>r.shots[0].b3_semantics.events[0].observations[0].evidence_ids=['shot-0-mid'],/continuous/],
+    [r=>r.shots[0].b3_semantics.graphics[0].role='decoration',/correct-classification/],
+    [r=>r.shots[0].b3_semantics.graphics[0].status='unmet',/no capability waiver/],
+    [r=>r.shots[0].b3_semantics.graphics[0].use='Good',/observed use/],
+    [r=>r.shots[0].b3_semantics.graphics[0].observed_target_id='source',/source\/target differs/],
+    [r=>r.shots[0].b3_semantics.graphics[0].observed_direction='target_to_source',/correct direction/],
+    [r=>r.shots[0].b3_semantics.graphics[0].observed_relation='',/observed relation/],
+    [r=>r.shots[0].b3_semantics.graphics[0].observations[0].time=0,/visible review interval/],
+    [r=>r.shots[0].b3_semantics.graphics[0].observations[0].time=.06,/complete visible relationship/],
+  ];
+  for(const [change,error] of cases){setReview(f,change);await assert.rejects(()=>verify(f),error);}
+});
+
+test('B3 limited capability cannot waive graphic inventory, event purpose or correct targeting',async t=>{
+  const f=await fixture(t,'B3',p=>{connectorProject(p);p.reference_review.capability={mode:'limited',environment:'Synthetic test of a declared limited environment, not a production quality claim.',limitations:[{capability:'Editable artwork rendering',observed:'Synthetic derivative is flattened test media.',impact:'Detailed silhouette fidelity is unassessed by this protocol fixture.'}]};});
+  setReview(f,r=>r.shots[0].checks.silhouette_design.status='unmet');assert.equal((await verify(f)).status,'best_effort_limited');
+  for(const change of [r=>r.shots[0].checks.graphic_inventory.status='unmet',r=>r.shots[0].b3_semantics.events[0].status='unmet',r=>r.shots[0].b3_semantics.graphics[0].observed_target_id='unrelated']){
+    setReview(f,change);await assert.rejects(()=>verify(f),/limited|semantic correctness|source\/target differs/);
+  }
+});
+
+test('B3 an event ending at the shot boundary has no actual encoded result frame',async t=>{
+  const f=await fixture(t,'B3',p=>{connectorProject(p);p.shots[0].b3_semantics.events[0].end=.4;});
+  review(f);await assert.rejects(()=>verify(f),/actual encoded result frame/);
+});
 
 test('portable references verify their manifest locks; plans cover the entire submitted range without requiring a renderer',()=>{
   for(const style of ['B1','B2','B3']) {
@@ -179,7 +235,9 @@ test('B2 has its own criteria; a sampled board cannot stand in for motion, stagi
 test('a portable B2 installation requires both full sources and verifies the board identity and media locks',async t=>{
   const dir=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'b2-reference-package-test-')));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
   const scripts=path.join(dir,'scripts'),assets=path.join(dir,'assets','b2');fs.mkdirSync(scripts,{recursive:true});fs.mkdirSync(path.dirname(assets),{recursive:true});
-  const moduleFile=path.join(scripts,'b-style-reference-review.mjs');fs.copyFileSync(path.join(ROOT,'scripts/b-style-reference-review.mjs'),moduleFile);fs.copyFileSync(path.join(ROOT,'scripts/b-style-portrait.mjs'),path.join(scripts,'b-style-portrait.mjs'));fs.cpSync(path.join(ROOT,'assets/b2'),assets,{recursive:true});
+  const moduleFile=path.join(scripts,'b-style-reference-review.mjs');
+  for(const file of ['b-style-reference-review.mjs','b-style-portrait.mjs','b3-semantic-motion.mjs','b-style-motion-geometry.mjs','b3-graphics.mjs'])fs.copyFileSync(path.join(ROOT,'scripts',file),path.join(scripts,file));
+  fs.cpSync(path.join(ROOT,'assets/b2'),assets,{recursive:true});
   const portable=await import(pathToFileURL(moduleFile).href),pubFile=path.join(assets,'public-showcase.json'),boardFile=path.join(assets,'approved-style-board.json'),originalPub=fs.readFileSync(pubFile),originalBoard=fs.readFileSync(boardFile);
   assert.equal(portable.referenceInputs('B2').length,5);
   fs.unlinkSync(pubFile);assert.throws(()=>portable.referenceInputs('B2'),/file missing/);fs.writeFileSync(pubFile,originalPub);
@@ -299,7 +357,7 @@ test('bounded timestamp probing covers a complete available sample across ten-se
 test('portable portrait references cannot be omitted, substituted or accepted through stale binding',async t=>{
   const dir=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'b2-portrait-reference-test-')));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
   const scripts=path.join(dir,'scripts'),assets=path.join(dir,'assets/b2');fs.mkdirSync(scripts,{recursive:true});fs.mkdirSync(path.dirname(assets),{recursive:true});
-  for(const file of ['b-style-reference-review.mjs','b-style-portrait.mjs'])fs.copyFileSync(path.join(ROOT,'scripts',file),path.join(scripts,file));
+  for(const file of ['b-style-reference-review.mjs','b-style-portrait.mjs','b3-semantic-motion.mjs','b-style-motion-geometry.mjs','b3-graphics.mjs'])fs.copyFileSync(path.join(ROOT,'scripts',file),path.join(scripts,file));
   fs.cpSync(path.join(ROOT,'assets/b2'),assets,{recursive:true});
   const portable=await import(pathToFileURL(path.join(scripts,'b-style-reference-review.mjs')).href),manifest=path.join(assets,'portrait-approved-2026-11-13.json'),original=fs.readFileSync(manifest),p=project('B2');portraitProject(p);
   const inputs=portable.referenceInputs('B2',p),fingerprint=()=>inputs.map(f=>[f,hash(f)]);

@@ -4,6 +4,7 @@ import {walkLayers} from './b3-graphics.mjs';
 import {isSceneScaleMotion} from './b-style-motion-geometry.mjs';
 import {requireB4Glyphs} from './b4-font-coverage.mjs';
 import {planBStylePortrait, bStyleCaptionLayout, isBStylePortrait} from './b-style-portrait.mjs';
+import {planB3Semantics} from './b3-semantic-motion.mjs';
 
 export const CAPTION_PRESETS = Object.freeze({B1: 34, B2: 40, B3: 34});
 const text = x => typeof x === 'string' && x.trim().length > 0;
@@ -25,6 +26,7 @@ export function defaultBStyleCaptionFont(p, {root, mediaPath}) {
 export function prepareBStyleQuality(p, {root, hashFile, mediaPath}) {
   if (!(p.style in CAPTION_PRESETS)) return [];
   planBStylePortrait(p);
+  const b3=planB3Semantics(p);
   const presetSize = bStyleCaptionLayout({...p, captionSize: undefined}).font_size;
   const override = p.caption_override;
   const defaultFont = defaultBStyleCaptionFont(p, {root, mediaPath});
@@ -41,7 +43,7 @@ export function prepareBStyleQuality(p, {root, hashFile, mediaPath}) {
     catch (error) { if (!error.message.includes('selected font lacks glyphs')) throw error; needsCoverage = true; }
     if (!needsCoverage) throw Error(`${p.style} caption preset invalidated: language_fallback requires actual missing glyphs in the current caption scope; restyling needs actual user_approval`);
   }
-  const intervals = [], ids = new Set();
+  let intervals = []; const ids = new Set();
   for (const shot of p.shots) for (const {layer, ancestors} of layerTree(shot.layers)) {
     if (layer.id) { if (ids.has(layer.id)) throw Error('Motion diagnostics require unique layer ids across the project'); ids.add(layer.id); }
     if (!layer.motion) continue;
@@ -63,6 +65,11 @@ export function prepareBStyleQuality(p, {root, hashFile, mediaPath}) {
         if (end > start && Math.abs(b[prop] - a[prop]) >= delta) intervals.push({id: layer.id, start, end, reason: layer.motion.reason});
       }
     }
+  }
+  if(b3) {
+    const plannedIds=new Set(p.shots.filter(s=>s.b3_semantics).flatMap(s=>[...walkLayers(s.layers||[])].map(l=>l.id)));
+    const windows=b3.shots.flatMap(s=>s.eligible_motion_windows||[]);
+    intervals=intervals.flatMap(i=>!plannedIds.has(i.id)?[i]:windows.filter(w=>w.id===i.id).map(w=>({...i,start:Math.max(i.start,w.start),end:Math.min(i.end,w.end)})).filter(w=>w.end>w.start));
   }
   let end = 0;
   for (const item of [...intervals].sort((a, b) => a.start - b.start)) {

@@ -10,6 +10,7 @@ import {painter} from '../scripts/autopilot-render.mjs';
 import {createCanvas} from '@napi-rs/canvas';
 import {makeB4Opening} from '../scripts/b4-opening.mjs';
 import {planB4Typography} from '../scripts/b4-typography-review.mjs';
+import {planB4Picture} from '../scripts/b4-picture-review.mjs';
 
 const cli = path.join(ROOT, 'scripts/autopilot.mjs');
 const command = args => spawnSync(process.execPath, [cli, ...args], {encoding: 'utf8', timeout: 120000});
@@ -33,9 +34,17 @@ function fixture(t) {
     captions: [{start: 0, end: 1.55, text: 'The door was locked.'}, {start: 1.6, end: 3.2, text: 'Then the handle moved.'}],
     opening: hook.opening,
     typography: {author_id: 'synthetic-runtime-author'},
+    picture_motion: {author_id: 'synthetic-runtime-author', shots: [
+      {shot: 0, kind: 'state_reveal', intent: 'Synthetic door opens in its local region.', before: 'The gap is dark.', after: 'The gap reveals a red interior.',
+        layer_ids: ['hook-before', 'hook-after'], region: hook.opening.picture.region,
+        times: {before: 8/15, mid: 12/15, after: 15/15, hold: 20/15}, reuse_reason: 'The two synthetic states continue the same door scene.'},
+      {shot: 1, kind: 'state_reveal', intent: 'Synthetic local door change in the continued scene.', before: 'The gap is dark.', after: 'A wider red gap appears.',
+        layer_ids: ['body-before', 'body-after'], region: {x: 800, y: 100, w: 300, h: 440},
+        times: {before: 25/15, mid: 30/15, after: 34/15, hold: 39/15}, reuse_reason: 'Same door states reused for synthetic runtime protocol, not a real film.'}]},
     shots: [hook.shot, {start: 1.6, end: 3.2, layers: [
-      {type: 'image', path: 'scene.png', x: -250, y: -100, w: 1600,
-        keys: [{t: 0, x: -250}, {t: 1, x: -230}]}]}],
+      {id: 'body-before', type: 'image', path: 'scene.png', x: 0, y: 0, w: 1280},
+      {id: 'body-after', type: 'image', path: 'after.png', x: 0, y: 0, w: 1280, from: .2,
+        keys: [{t: .2, alpha: 0}, {t: .6, alpha: 1}]}]}],
     ambience: [{path: 'bed.wav', start: 0, end: 3.2, gain: .1, fadeOut: .5}],
     dialogue: [{path: 'role.wav', time: .6, gain: .4, role: 'frightened caller'}],
     sfx: [{kind: 'file', path: 'effect.wav', time: 1.8, gain: .3, duration: .7}], audio_cuts: []};
@@ -58,6 +67,17 @@ function syntheticTextReview(f, kind = 'preview') {
     check.observations = [{time: plan.moments.find(m => m.id === moment.id).times.mid, detail: 'Synthetic timed observation for the CLI entrance and settle protocol only.', evidence_ids: [moment.id + '-continuous']}];
   }
   const file = path.join(f.dir, `${kind}-synthetic-review.json`); save(file, review); return file;
+}
+function syntheticPictureReview(f, kind = 'preview') {
+  const r = report(f, kind), p = loadProject(f.file, kind === 'preview' ? {seconds: r.preview_seconds} : {});
+  const plan = planB4Picture(p), review = JSON.parse(fs.readFileSync(path.join(f.dir, 'output', `${kind}-picture`, 'review-template.json')));
+  review.reviewer = {id: 'synthetic-runtime-reviewer', kind: 'agent', method: 'Synthetic engineering protocol only; no real aesthetic watching or user approval', independent: true};
+  review.full_playback = {status: 'pass', viewed_ranges: [{start: 0, end: p.rangeEnd}], observations: [{time: 0, detail: 'Synthetic source playback record for CLI protocol verification only.', evidence_ids: ['source-video']}]};
+  for (const shot of review.shots) for (const check of Object.values(shot.checks)) {
+    const beat = plan.shots.find(s => s.shot === shot.shot);
+    check.status = 'pass'; check.observations = [{time: beat.times.mid, detail: 'Synthetic local change, contact and temporal continuity record for protocol testing only.', evidence_ids: [`shot-${shot.shot}-continuous`]}];
+  }
+  const file = path.join(f.dir, `${kind}-synthetic-picture-review.json`); save(file, review); return file;
 }
 function spectrum(filename, start, duration, frequency) {
   const decoded = spawnSync(FFMPEG, ['-v', 'error', '-i', filename, '-ss', String(start), '-t', String(duration),
@@ -82,6 +102,7 @@ test('B4 CLI initializes an external project with Brian and separate production 
   assert.deepEqual(p.voice, {path: 'narration.wav', lead: 0, tail: 0, ...BRIAN});
   for (const key of ['ambience', 'dialogue', 'audio_cuts', 'sfx']) assert.deepEqual(p[key], []);
   assert.equal(p.opening.version, 1); assert.equal(p.opening.picture.before, '');
+  assert.deepEqual(p.picture_motion, {author_id: '', shots: []});
   assert.equal(p.television, undefined);
   assert.notEqual(command(['init', dir, '--style', 'B4']).status, 0);
 });
@@ -109,12 +130,18 @@ test('B4 requires Brian unless explicitly recast and rejects rate/pitch fields',
   f.project.sfx[0].speed = 1.1; f.write(); assert.throws(() => loadProject(f.file), /native source rate/);
 });
 
-test('B4 rejects long unapproved shots, silent lead pads, bed gaps and doubled mixed masters', t => {
-  const f = fixture(t), original = structuredClone(f.project);
+test('B4 rejects shots over three seconds even with action plans or legacy author-approved hold claims', t => {
+  const f = fixture(t);
   f.project.shots = [{...f.project.shots[0], end: 3.2}]; f.write();
-  assert.throws(() => loadProject(f.file), /at most 3 seconds/);
-  Object.assign(f.project.shots[0], {kind: 'exceptional_hold', reason: 'Synthetic test only', user_approval: 'Synthetic fixture approval'}); f.write();
-  assert.equal(loadProject(f.file).shots.length, 1);
+  f.project.picture_motion.shots = [f.project.picture_motion.shots[0]]; f.write();
+  assert.throws(() => loadProject(f.file), /maximum 3 seconds/);
+  Object.assign(f.project.shots[0], {kind: 'exceptional_hold', user_approval: 'Author claims an exception', reason: 'Reading time'}); f.write();
+  assert.throws(() => loadProject(f.file), /maximum 3 seconds/);
+  assert.throws(() => loadProject(f.file, {seconds: 1.6}), /maximum 3 seconds/);
+});
+
+test('B4 rejects silent lead pads, bed gaps and doubled mixed masters', t => {
+  const f = fixture(t), original = structuredClone(f.project);
   Object.assign(f.project, structuredClone(original)); f.project.voice.lead = .2;
   f.project.shots.at(-1).end += .2; f.write(); assert.throws(() => loadProject(f.file), /silent title pad/);
   Object.assign(f.project, structuredClone(original)); f.project.ambience[0].start = .3; f.write();
@@ -165,15 +192,28 @@ test('B4 paints half-shadow and staged whole text without B1 paper or B3 TV', as
   const invalid = await painter(loadProject(f.file)); assert.throws(() => invalid(.2), /one line/);
 });
 
+test('B4 missing body plan and static body cannot borrow animated captions or the opening pass', t => {
+  const f = fixture(t), original = structuredClone(f.project.picture_motion);
+  f.project.picture_motion.shots.pop(); f.write(); assert.throws(() => loadProject(f.file), /shot 1 is missing/);
+  f.project.picture_motion = original;
+  f.project.shots[1].layers[1].keys = [{t: .2, alpha: 0}, {t: .6, alpha: 0}]; f.write();
+  const r = command(['validate', f.file]); assert.notEqual(r.status, 0); assert.match(r.stderr, /B4 picture.*shot 1/);
+});
+
 test('B4 CLI previews, approval-bound full rendering and cache reuse work with actual encoded tracks', t => {
   const f = fixture(t), voiceHash = hashFile(path.join(f.dir, 'voice.wav'));
   for (const args of [['validate', f.file], ['preview', f.file, '--seconds', '1.6']]) {
     const r = command(args); assert.equal(r.status, 0, r.stderr);
   }
   let r = command(['render', f.file]); assert.notEqual(r.status, 0); assert.match(r.stderr, /user-approved preview/);
-  r = command(['approve', f.file, '--note', 'Synthetic automated test only, not a real user production approval', '--text-review', syntheticTextReview(f)]); assert.equal(r.status, 0, r.stderr);
+  r = command(['approve', f.file, '--note', 'Synthetic protocol only', '--text-review', syntheticTextReview(f)]);
+  assert.notEqual(r.status, 0); assert.match(r.stderr, /independent picture animation review/);
+  r = command(['approve', f.file, '--note', 'Synthetic protocol only', '--text-review', syntheticTextReview(f), '--picture-review', path.join(f.dir, 'output/preview-picture/review-template.json')]);
+  assert.notEqual(r.status, 0); assert.match(r.stderr, /independent reviewer/);
+  r = command(['approve', f.file, '--note', 'Synthetic automated test only, not a real user production approval', '--text-review', syntheticTextReview(f), '--picture-review', syntheticPictureReview(f)]); assert.equal(r.status, 0, r.stderr);
   r = command(['render', f.file]); assert.equal(r.status, 0, r.stderr);
   const full = report(f, 'film');
+  assert.equal(full.picture_motion.status, 'pending_independent_review'); assert.equal(full.picture_motion.delivery_ready, false);
   assert.equal(full.opening_audio.status, 'diagnostic_pass');
   assert.equal(full.opening_visual.status, 'diagnostic_pass');
   assert.equal(full.opening_visual.output_sha256, full.output_sha256);
@@ -188,6 +228,13 @@ test('B4 CLI previews, approval-bound full rendering and cache reuse work with a
   r = command(['accept-text', f.file, '--review', syntheticTextReview(f, 'film')]); assert.equal(r.status, 0, r.stderr);
   const acceptance = JSON.parse(fs.readFileSync(path.join(f.dir, 'output/film-typography-acceptance.json')));
   assert.equal(acceptance.status, 'independent_visual_review_pass'); assert.equal(acceptance.user_acceptance, 'not_inferred');
+  r = command(['accept-picture', f.file, '--review', path.join(f.dir, 'output/film-picture/review-template.json')]);
+  assert.notEqual(r.status, 0); assert.ok(!fs.existsSync(path.join(f.dir, 'output/film-picture-acceptance.json')));
+  r = command(['accept-picture', f.file, '--review', syntheticPictureReview(f, 'film')]); assert.equal(r.status, 0, r.stderr);
+  const pictureAcceptance = JSON.parse(fs.readFileSync(path.join(f.dir, 'output/film-picture-acceptance.json')));
+  assert.equal(pictureAcceptance.status, 'independent_picture_review_pass'); assert.equal(pictureAcceptance.scope, 'picture only'); assert.equal(pictureAcceptance.delivery_ready, false);
+  const bound = JSON.parse(fs.readFileSync(path.join(f.dir, 'output/approval.json'))), originalReview = fs.readFileSync(bound.picture_review_file);
+  fs.appendFileSync(bound.picture_review_file, '\n'); r = command(['render', f.file]); assert.notEqual(r.status, 0); assert.match(r.stderr, /Picture animation review changed/); fs.writeFileSync(bound.picture_review_file, originalReview);
   // Distinct tones survive at source pitch and arrive only at authored times.
   assert.ok(spectrum(full.output, .2, .2, 440) > .1);
   assert.ok(spectrum(full.output, .2, .2, 880) > .009);
@@ -224,7 +271,7 @@ test('B4 encoded silent opening is flagged and cannot be approved without a moti
   r = command(['approve', f.file, '--note', 'Synthetic fixture']); assert.notEqual(r.status, 0); assert.match(r.stderr, /opening audio needs review/);
   f.project.opening_audio_override = 'Synthetic fixture: deliberate story-motivated silence'; f.write();
   r = command(['preview', f.file, '--seconds', '1.6', '--replace']); assert.equal(r.status, 0, r.stderr);
-  r = command(['approve', f.file, '--note', 'Synthetic fixture exception', '--text-review', syntheticTextReview(f)]); assert.equal(r.status, 0, r.stderr);
+  r = command(['approve', f.file, '--note', 'Synthetic fixture exception', '--text-review', syntheticTextReview(f), '--picture-review', syntheticPictureReview(f)]); assert.equal(r.status, 0, r.stderr);
 });
 
 test('B4 explicit source-silence trim repairs onset without changing rate or source', t => {

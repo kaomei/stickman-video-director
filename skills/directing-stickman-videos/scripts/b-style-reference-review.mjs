@@ -7,15 +7,16 @@ import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {planBStylePortrait, isBStylePortrait} from './b-style-portrait.mjs';
+import {planB3Semantics} from './b3-semantic-motion.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EPS = 1e-7;
 const CHECKS = {
   B1: ['drawing_character','semantic_acting','contact_continuity','composition_evidence','typography_captions','timing_pacing','sound'],
   B2: ['color_handdrawn_design','semantic_motion_states','contact_continuity','composition_progression','typography_captions','timing_pacing','sound'],
-  B3: ['silhouette_design','semantic_action','contact_occlusion','composition_editing','television_finish','typography_captions','timing_pacing','sound'],
+  B3: ['silhouette_design','semantic_action','graphic_inventory','contact_occlusion','composition_editing','television_finish','typography_captions','timing_pacing','sound'],
 };
-const BASIC = new Set(['typography_captions','timing_pacing','sound']);
+const BASIC = new Set(['typography_captions','timing_pacing','sound','graphic_inventory']);
 const PORTRAIT_CHECKS = ['native_composition','caption_readability','action_visibility','platform_safe_area'];
 const PORTRAIT_ASPECTS = ['caption_readability','scene_legibility','action_contact','platform_occlusion'];
 const LIMITS = [
@@ -23,6 +24,7 @@ const LIMITS = [
   'Reviewer identity, independence, actual viewing/listening and capability limitations are declarations, not authenticated facts.',
   'Independent agent review does not imply human approval or user acceptance.',
   'Sample-target review compares the available approved examples, not identical plots, voices, pixels or unavailable originals.',
+  'B3 endpoint geometry and authored intentions are diagnostics. Each graphic and motion event still needs actual-MP4 independent review; wrong relationships and meaningless motion cannot receive a limited-capability waiver.',
 ];
 const fail = message => { throw Error('B-style reference review: ' + message); };
 const need = (condition, message) => { if (!condition) fail(message); };
@@ -159,7 +161,8 @@ export function planBStyleReference(p) {
   const refs=referenceSet(p.style,p);
   const styleLimits={B1:['The complete approved Full V4 film is unavailable in this bundle; only sampled long-form compositions are comparable.'],B2:['The accepted B2 board contains sampled stills, not motion or sound evidence. Both bundled full public implementations are the available effect targets, not mandatory stories, characters or scene sequences.'],B3:['The primary private study video is not bundled; public implementations do not establish exact original-source replication.']};
   const portrait=planBStylePortrait(p);
-  return {schema:1,style:p.style,author_id:rr?.author_id??null,capability,width:p.width,height:p.height,fps:p.fps,scope_start:0,scope_end,frame_count:total,shots,caption_sha256:digest(JSON.stringify(p.captions||[])),reference_ids:refs.references.map(r=>r.id),checks:CHECKS[p.style],...(portrait?{portrait}:{}),limits:[...LIMITS,...styleLimits[p.style]]};
+  const b3_semantics=planB3Semantics(p);
+  return {schema:1,style:p.style,author_id:rr?.author_id??null,capability,width:p.width,height:p.height,fps:p.fps,scope_start:0,scope_end,frame_count:total,shots,caption_sha256:digest(JSON.stringify(p.captions||[])),reference_ids:refs.references.map(r=>r.id),checks:CHECKS[p.style],...(portrait?{portrait}:{}),...(b3_semantics?{b3_semantics}:{}),limits:[...LIMITS,...styleLimits[p.style]]};
 }
 
 function binding(p,fingerprint) {
@@ -222,11 +225,19 @@ function extract(source,a,plan,ffmpeg,target) {
   }
   command(ffmpeg,['-v','error','-ss',String(Math.max(0,a.source_start-.000001)),'-i',source,'-map','0:v:0','-map','0:a:0','-frames:v',String(a.end_frame-a.start_frame),'-t',String(a.source_end-a.source_start),'-r',String(plan.fps),'-vf','pad=ceil(iw/2)*2:ceil(ih/2)*2,format=yuv420p','-c:v','libx264','-preset','fast','-crf','23','-threads:v','1','-flags:v','+bitexact','-c:a','aac','-b:a','128k','-threads:a','1','-flags:a','+bitexact','-map_metadata','-1','-movflags','+faststart','-n',target]);return hash(target);
 }
+function b3ReviewTemplate(shot) {
+  return {
+    events:(shot?.events||[]).map(e=>({id:e.id,status:'unknown',spoken_meaning:'',contribution:'',observations:[]})),
+    graphics:(shot?.graphics||[]).map(g=>({id:g.id,role:g.role,status:'unknown',use:'',
+      ...(g.role==='connector'?{observed_source_id:'',observed_target_id:'',observed_relation:'',observed_direction:''}:{}),observations:[]})),
+  };
+}
 function template(plan,video_sha256,evidence_sha256,references) {
   return {schema:1,style:plan.style,author_id:plan.author_id,capability:plan.capability,reviewer:{id:'',kind:'agent',method:'',independent:false},video_sha256,evidence_sha256,
     full_playback:{status:'unknown',viewed_ranges:[],observations:[]},baseline_comparisons:references.filter(r=>r.required_comparison).map(r=>({reference_id:r.id,start:null,end:null,observations:[]})),
     ...(plan.portrait?{portrait_viewing:{status:'unknown',display_width:null,display_height:null,playback_speed:null,platform:'',real_device:{checked:null,limitation:''},viewed_ranges:[],observations:[]}}:{}),
     shots:plan.shots.map(s=>({id:s.id,checks:Object.fromEntries(plan.checks.map(k=>[k,{status:'unknown',observations:[],comparisons:[]}])) ,
+      ...(plan.b3_semantics?{b3_semantics:b3ReviewTemplate(plan.b3_semantics.shots.find(x=>x.id===s.id))}:{}),
       ...(plan.portrait?{portrait_checks:Object.fromEntries(PORTRAIT_CHECKS.map(k=>[k,{status:'unknown',observations:[]}]))}:{})})),blocking_issues:[],limits:plan.limits};
 }
 
@@ -250,6 +261,40 @@ function observations(items,{scope,ids,continuous}) {
     if(o.evidence_ids.includes(continuous))linked=true;
   }
   need(linked,'review must cite its actual continuous clip/source');
+}
+function b3SemanticReview(item,shot,semantic,ids,fps) {
+  const r=item.b3_semantics;
+  need(r&&Array.isArray(r.events)&&Array.isArray(r.graphics),'B3 each shot needs per-event and per-graphic actual-video review');
+  const matches=(items,expected)=>same(items.map(x=>x?.id).sort(),expected.map(x=>x.id).sort());
+  need(matches(r.events,semantic.events)&&matches(r.graphics,semantic.graphics),'B3 review must cover every declared event and graphic exactly once');
+  const continuous=shot.id+'-continuous',scope=[Math.max(shot.start,shot.start_frame/fps),(shot.end_frame-1)/fps];
+  for(const e of semantic.events) {
+    const c=r.events.find(x=>x.id===e.id);
+    need(e.complete!==false&&e.end<=scope[1]+EPS,'B3 preview cuts off a planned event/result; include its complete action and an actual encoded result frame');
+    need(c.status==='pass','B3 event '+e.id+' is pending/failed; capability limits cannot waive semantic correctness');
+    need(concrete(c.spoken_meaning)&&concrete(c.contribution),'B3 event '+e.id+' needs observed spoken meaning and a concrete deletion-test contribution');
+    observations(c.observations,{scope,ids,continuous});
+    for(const phase of ['before','during','after']) {
+      const phaseItems=c.observations.filter(o=>o.phase===phase);
+      need(phaseItems.length>0,'B3 event '+e.id+' needs actual before/during/after observations');
+      for(const o of phaseItems) {
+        need(o.evidence_ids.includes(continuous),'B3 event phases must cite the actual continuous clip');
+        need(phase==='before'?o.time<=e.start+EPS:phase==='after'?o.time>=e.end-EPS:o.time>=e.start-EPS&&o.time<=e.end+EPS,'B3 event observation phase does not match its actual event timing');
+      }
+    }
+    need(c.observations.every(o=>['before','during','after'].includes(o.phase)),'B3 event observation phase must be before, during or after');
+  }
+  for(const g of semantic.graphics) {
+    const c=r.graphics.find(x=>x.id===g.id);
+    need(c.role===g.role&&c.status==='pass'&&concrete(c.use),'B3 graphic '+g.id+' needs an observed use and a passed correct-classification/targeting review; no capability waiver');
+    observations(c.observations,{scope,ids,continuous});
+    need(c.observations.every(o=>o.time>=g.review_start-EPS&&o.time<g.review_end),'B3 graphic observation must fall inside its actual visible review interval');
+    if(g.role==='connector') {
+      need(c.observed_source_id===g.source.layer_id&&c.observed_target_id===g.target.layer_id,'B3 observed connector source/target differs from the declared relationship');
+      need(concrete(c.observed_relation)&&c.observed_direction===(g.directed?'source_to_target':'undirected'),'B3 connector needs its observed relation and correct direction');
+      need(Number.isFinite(g.geometry.completed_start)&&c.observations.some(o=>o.time>=g.geometry.completed_start-EPS&&o.evidence_ids.includes(continuous)),'B3 connector review needs its actual complete visible relationship, not only a partial stroke');
+    }
+  }
 }
 function comparison(c,refs,{sound=false}={}) {
   const ref=refs.find(r=>r.id===c?.reference_id);need(ref,'comparison must name actual available reference media');
@@ -292,6 +337,7 @@ function capability(plan) {
 
 export async function verifyBStyleReferenceReview(p,{file:source,evidenceDir,reviewFile,projectFingerprint,ffmpeg=process.env.FFMPEG||'ffmpeg',ffprobe=process.env.FFPROBE||'ffprobe'}) {
   const plan=planBStyleReference(p);need(plan,'B1/B2/B3 project required');capability(plan);
+  if(p.style==='B3')planB3Semantics(p,{required:true});
   source=localFile(source);evidenceDir=localDir(evidenceDir);reviewFile=localFile(reviewFile);
   const ledgerFile=localFile(path.join(evidenceDir,'evidence.json')),evidence_sha256=hash(ledgerFile),review_sha256=hash(reviewFile),ledger=read(ledgerFile),review=read(reviewFile),output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint),project_inputs=currentInputs(p),project_file_sha256=projectFileHash(p),plan_sha256=digest(JSON.stringify(plan)),references=referenceSet(p.style,p);
   need(ledger.schema===1&&ledger.status==='pending_independent_review'&&ledger.style===p.style&&ledger.output===source&&ledger.output_sha256===output_sha256&&ledger.project_fingerprint===project_fingerprint&&ledger.plan_sha256===plan_sha256&&same(ledger.plan,plan),'stale evidence, current video, project or plan binding');
@@ -324,6 +370,7 @@ export async function verifyBStyleReferenceReview(p,{file:source,evidenceDir,rev
   for(const s of plan.shots) {
     const item=review.shots.find(x=>x.id===s.id);need(item?.checks&&same(Object.keys(item.checks).sort(),plan.checks.slice().sort()),'each shot needs every style-specific review criterion');
     const local=new Set(ledger.artifacts.filter(a=>a.shot===s.id).map(a=>a.id));local.add('source-video');
+    if(plan.b3_semantics)b3SemanticReview(item,s,plan.b3_semantics.shots.find(x=>x.id===s.id),local,plan.fps);
     if(plan.portrait) {
       need(item.portrait_checks&&same(Object.keys(item.portrait_checks).sort(),PORTRAIT_CHECKS.slice().sort()),'each portrait shot needs native_composition, caption_readability, action_visibility and platform_safe_area review');
       for(const k of PORTRAIT_CHECKS) {

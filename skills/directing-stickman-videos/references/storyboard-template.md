@@ -101,7 +101,7 @@ Use at least four relevant devices per row:
 - match cut, shape morph, or motion-matched transition
 - interaction with another figure or oversized object
 
-Require a perceptible visual change every two to three seconds. Make every effect clarify or intensify the spoken idea; omit unrelated spectacle. Avoid abstract liquid morphing.
+Require a perceptible visual change every two to three seconds. For B4, apply its [picture-animation plan and hard three-second shot/state limit](b4-picture-animation.md): every shot and unchanged principal-picture state stays within three seconds, with real local progression and readable short motivated holds. Crops, subtitle updates, micro-zooms and decoration cannot restart unchanged-state dwell; do not evade the limit with empty cuts. Make every effect clarify or intensify the spoken idea; omit unrelated spectacle. Avoid abstract liquid morphing.
 
 ## Palette and text
 
@@ -140,7 +140,7 @@ Do not include final model prompts. A global change invalidates approval and req
 - English narration matches duration (~20–25 words per 10s clip; ~120–150 words for 60s).
 - Exactly N storyboard rows have distinct narrative purposes (N = duration / 10).
 - Every row has three beats, at least four visual devices, audio, and a transition.
-- Visual change occurs approximately every two to three seconds.
+- Visual change occurs approximately every two to three seconds; B4 additionally keeps every shot and unchanged principal-picture state at most three seconds under its per-shot picture-animation and short motivated-hold contract.
 - No more than three saturated accent colors are used (for Style 1) or clean palette rules followed (for Style 2).
 - No technical color notation is present.
 - Any proposed text is clearly separated as a post-production overlay and absent from generated scenes.
