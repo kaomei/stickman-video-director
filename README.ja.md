@@ -317,7 +317,7 @@ A1、A2、A3…の番号で追加し、それぞれの画風に対応するア�
 
 ### A7: 近日公開…
 
-新しい特化型のディレクタースタイルをトレーニング中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、5,000 Stars での解放を応援してください！
+新しい特化型のディレクタースタイルを準備中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、今後の更新をチェックしてください！
 
 
 <a id="b-styles"></a>
@@ -502,7 +502,7 @@ Memeらしい大げさな表情、ラフな手描き線、柔らかな色彩で�
 
 ### B7: 近日公開…
 
-新しい Autopilot 画風とコードアニメーションを準備中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、5,000 Stars での解放を応援してください！
+新しい Autopilot 画風とコードアニメーションを準備中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、今後の更新をチェックしてください！
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

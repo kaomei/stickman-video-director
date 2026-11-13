@@ -11,7 +11,11 @@ test('V90 example copies a complete independent project and rejects damaged inpu
   try {
     assert.throws(()=>initB6(dir,'9:16','hong-kong-v90'),/native 16:9/);
     assert.equal(fs.existsSync(dir),false);
-    initB6(dir,'16:9','hong-kong-v90');assert.equal(checkHKPack(dir).files,89);
+    initB6(dir,'16:9','hong-kong-v90');
+    const provenance=JSON.parse(fs.readFileSync(path.join(dir,'font-provenance.json')));
+    const licenseByFont={'NotoSans.ttf':'source/fonts/OFL-NotoSans.txt','Nunito.ttf':'source/fonts/OFL-Nunito.txt'};
+    const licenses=new Set(provenance.fonts.filter(row=>row.kind==='open-fallback').map(row=>licenseByFont[row.fallback_font]));
+    assert(!licenses.has(undefined));assert.equal(checkHKPack(dir).files,89+licenses.size);
     assert(fs.existsSync(path.join(dir,'font-provenance.json')));
     const valid=await runB6('validate',[dir,'--ratio','16:9']);assert.equal(valid.valid,true);
     assert.throws(()=>initB6(dir,'16:9','hong-kong-v90'),/exists/);

@@ -59,6 +59,8 @@ def verify_next_style_teasers(text, name, gallery_styles, label):
         teaser = re.split(r"^#{1,3} ", text[entries[-1].end():], maxsplit=1, flags=re.M)[0]
         assert teaser.strip() and not images(teaser) and ".mp4" not in teaser, (name, series, "teaser is not a published sample")
         assert teaser.count("](#road-to-10000-stars--creator-ecosystem)") == 1, (name, series, "retain the teaser roadmap link")
+        visible_teaser = re.sub(r"\]\([^)]*\)", "]", teaser)
+        assert not re.search(r"\b\d[\d,.\s]*\s*Stars?\b", visible_teaser, re.I), (name, series, "next-style teaser has no numeric Star unlock promise")
 
 expected_images = images(cn)
 assert len(expected_images) == 46 and len(set(expected_images)) == 35
@@ -228,8 +230,8 @@ for name in selected:
     assert "Omni" not in a6, (name, "A6 does not inherit the legacy model")
     assert re.search(r"\*\*12[^\n]+\*\*", text), (name, "twelve A+B visual styles")
     placeholder = section(text, "a7", '<a id="b-styles"></a>')
-    assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1 and "5,000" in placeholder, (name, "A7 roadmap CTA retained")
-    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A7 and B7 unlock links plus roadmap navigation")
+    assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1, (name, "A7 roadmap CTA retained")
+    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A7 and B7 update links plus roadmap navigation")
     b2 = section(text, "b2", '<!-- b3:section:start -->')
     assert len(re.findall(r"^- \*\*", b2, re.M)) == 2, (name, "B2 advantages and use cases")
     assert re.findall(r'<a href="([^"]+\.mp4)">', b2) == ["assets/readme/b2-colorful-sleep.mp4", "assets/readme/b2-colorful-phone-weather.mp4"], (name, "approved B2 pair in requested order")
@@ -279,8 +281,8 @@ for name in selected:
         assert (root / video).is_file(), (name, video)
     if is_english:
         teasers = {
-            "A": "New specialized director styles are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!",
-            "B": "New Autopilot styles and procedural animations are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!",
+            "A": "New specialized director styles are in preparation. [Star the project](#road-to-10000-stars--creator-ecosystem) to follow future updates.",
+            "B": "New Autopilot styles and procedural animations are in preparation. [Star the project](#road-to-10000-stars--creator-ecosystem) to follow future updates.",
         }
         for series, teaser in teasers.items():
             assert text.count(teaser) == 1, (name, series, "one approved workflow-specific roadmap CTA")

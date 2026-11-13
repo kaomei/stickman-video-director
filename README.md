@@ -316,7 +316,7 @@ What if you woke up and everything cost ten thousand times less? The visual insp
 
 ### A7: Coming soon…
 
-New specialized director styles are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!
+New specialized director styles are in preparation. [Star the project](#road-to-10000-stars--creator-ecosystem) to follow future updates.
 
 
 <a id="b-styles"></a>
@@ -501,7 +501,7 @@ Expressive meme faces, loose hand-drawn lines and soft colors turn unusual stori
 
 ### B7: Coming soon…
 
-New Autopilot styles and procedural animations are currently in training. [Star the project](#road-to-10000-stars--creator-ecosystem) to unlock them at 5,000 Stars!
+New Autopilot styles and procedural animations are in preparation. [Star the project](#road-to-10000-stars--creator-ecosystem) to follow future updates.
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>

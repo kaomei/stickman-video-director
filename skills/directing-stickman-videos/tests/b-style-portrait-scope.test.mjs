@@ -51,6 +51,17 @@ function fixture(t, style, {groupReference = false} = {}) {
 }
 
 const ids = project => [...walkLayers(project.shots[0].layers)].map(layer => layer.id);
+const hasFutureProp = (inputs, dir, api = path) => inputs.some(input => input.path === api.join(dir, 'future-prop.png'));
+
+test('Portrait future-input assertion detects present and absent files on Windows and POSIX', () => {
+  for (const [api, dir] of [[path.win32, 'C:\\project'], [path.posix, '/project']]) {
+    const expected = api.join(dir, 'future-prop.png');
+    assert.equal(hasFutureProp([], dir, api), false);
+    assert.equal(hasFutureProp([{path: api.join(dir, 'early-prop.png')}], dir, api), false);
+    assert.equal(hasFutureProp([{path: expected}], dir, api), true);
+    assert.equal(hasFutureProp([{path: api.join(dir, 'other', 'future-prop.png')}], dir, api), false);
+  }
+});
 
 for (const [name, style, options] of [
   ['B1 flat', 'B1', {}],
@@ -65,13 +76,13 @@ for (const [name, style, options] of [
     assert.deepEqual(shot.portrait.background_ids, []);
     assert.deepEqual(shot.portrait.regions.map(region => region.id), ['shared-region'], 'A future-only region must disappear from the prefix');
     assert.deepEqual(shot.portrait.regions[0].layer_ids, options.groupReference ? ['native-group'] : ['early-actor']);
-    assert.ok(!prefix.inputs.some(input => input.path.endsWith('/future-prop.png')), 'Prefix loading must not read the future-only image');
+    assert.ok(!hasFutureProp(prefix.inputs, f.dir), 'Prefix loading must not read the future-only image');
     const full = loadProject(f.file);
     assert.equal(full.rangeEnd, 3);
     assert.ok(ids(full).includes('late-prop'));
     assert.ok(ids(full).includes('future-background'));
     assert.deepEqual(full.shots[0].portrait, f.project.shots[0].portrait, 'Full loading must preserve every authored region and member');
-    assert.ok(full.inputs.some(input => input.path === path.join(f.dir, 'future-prop.png')));
+    assert.ok(hasFutureProp(full.inputs, f.dir));
     assert.equal(fs.readFileSync(f.file, 'utf8'), original, 'Scoped loading must leave the authored source unchanged');
   });
 }

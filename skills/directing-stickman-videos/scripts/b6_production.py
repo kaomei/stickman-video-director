@@ -7,6 +7,8 @@ import argparse, hashlib, importlib.util, json, math, subprocess, sys
 sys.dont_write_bytecode=True
 # Validation may parse local package data, but must never execute an edited helper.
 TRUSTED_PUPPET_RUNTIME_SHA256='adc4bd4ddcbe2bb184381d080e99ebe1f4bd1beb3b0b6b1a841930ae15d5bed8'
+TRUSTED_CAPTION_RUNTIME_SHA256='5fc03a3f38dce9f55609f2059077125ecc30b7f5fa1d31580f9e007fcf23200b'
+TRUSTED_MOTION_REVIEW_SHA256='e9873884fd348f4f1461e7b04a5301c6fd8aa2f14397468d248652ea2c25e56b'
 FROZEN_V90_EXAMPLE_SHA256={
     'scene':'dffaba09358cfdeafc9a3a04f29483910f4a8667159fbdbd60094b9185239947',
     'native_plan':'c0cdbfa77603936aa69ffdf3f211b28566fd14292172593fd63324a9d749620c',
@@ -22,14 +24,41 @@ LOCAL_FONT_MANIFEST_FILES=frozenset({
     'source/fonts/Arial.ttf','source/fonts/ArialBlack.ttf',
     'source/fonts/CourierNewBold.ttf','font-provenance.json',
 })
+FALLBACK_FONT_LICENSE_FILES={
+    'NotoSans.ttf':'source/fonts/OFL-NotoSans.txt',
+    'Nunito.ttf':'source/fonts/OFL-Nunito.txt',
+}
+def required_font_license_files(base, manifest):
+    require(LOCAL_FONT_MANIFEST_FILES.issubset(manifest['files']),
+            'Installed engine font/provenance entries required')
+    rows=read(local(base,'font-provenance.json')).get('fonts')
+    expected={'source/fonts/Arial.ttf':'NotoSans.ttf',
+              'source/fonts/ArialBlack.ttf':'Nunito.ttf',
+              'source/fonts/CourierNewBold.ttf':'NotoSans.ttf'}
+    require(isinstance(rows,list) and len(rows)==len(expected) and
+            {row.get('path') for row in rows}==set(expected),
+            'Fallback font license requires complete font provenance')
+    licenses=set()
+    for row in rows:
+        if row.get('kind')=='system-local':continue
+        require(row.get('kind')=='open-fallback' and row.get('fallback_font')==expected[row['path']],
+                'Fallback font license has unsupported font provenance')
+        rel=FALLBACK_FONT_LICENSE_FILES[row['fallback_font']]
+        require(row.get('license_path')==rel,'Fallback font license path missing or incorrect: '+rel)
+        require(rel in manifest['files'],'Fallback font license missing from manifest: '+rel)
+        require(row.get('license_sha256')==manifest['files'][rel],
+                'Fallback font license fingerprint mismatch: '+rel)
+        require(sha(local(base,rel))==manifest['files'][rel],
+                'Locked engine changed: fallback font license '+rel)
+        licenses.add(rel)
+    return licenses
 def frozen_engine_manifest_sha(path):
     # The public source is frozen; fonts are provisioned locally at init, then
     # pinned by the complete project manifest and its review fingerprint.
     manifest=read(path)
-    require(LOCAL_FONT_MANIFEST_FILES.issubset(manifest['files']),
-            'Installed engine font/provenance entries required')
+    licenses=required_font_license_files(Path(path).parent,manifest)
     core={**manifest,'files':{rel:digest for rel,digest in manifest['files'].items()
-                             if rel not in LOCAL_FONT_MANIFEST_FILES}}
+                             if rel not in LOCAL_FONT_MANIFEST_FILES | licenses}}
     return hashlib.sha256(json.dumps(core,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 def local(base,rel):
     base=Path(base).resolve()
@@ -38,11 +67,11 @@ def local(base,rel):
 def module(name,p):
     spec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec);sys.modules[name]=m;spec.loader.exec_module(m);return m
 
-def verified_module(name,path,expected_sha):
+def verified_module(name,path,expected_sha,label='character runtime'):
     # Execute exactly the verified source bytes, never a project-local .pyc cache.
     source=Path(path).read_bytes()
     require(hashlib.sha256(source).hexdigest()==expected_sha,
-            'Untrusted character runtime changed; validation refuses to execute the edited project helper')
+            'Untrusted '+label+' changed; validation refuses to execute the edited project helper')
     spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec)
     sys.modules[name]=m;exec(compile(source,str(path),'exec'),m.__dict__);return m
 
@@ -99,7 +128,7 @@ def character_registry(base, project, cast_ids):
 def caption_helper():
     helper=Path(__file__).with_name('caption_renderer.py')
     if not helper.exists():helper=Path(__file__).with_name('b6_caption.py')
-    return module('b6_caption_runtime',helper)
+    return verified_module('b6_caption_runtime',helper,TRUSTED_CAPTION_RUNTIME_SHA256,'caption runtime')
 
 def load(base,ratio):
     base=Path(base).resolve()
@@ -146,6 +175,7 @@ def load(base,ratio):
     files.extend(character_files)
     # Validation checks data/hashes only. Authored modules are imported after --trusted-code.
     manifest=read(local(base,'engine/manifest.json'))
+    required_font_license_files(base/'engine',manifest)
     for rel,digest in manifest['files'].items():
         require(sha(local(base,'engine/'+rel))==digest,'Locked engine changed: '+rel)
     ep=read(local(base,'engine/project.json'));eb=read(local(base,'engine/'+ep['bindings']));ef=sha(base/'engine/manifest.json')
@@ -218,7 +248,7 @@ def run(a):
         helper=Path(__file__).with_name('motion_review.py')
         if not helper.exists():helper=Path(__file__).with_name('b6_motion_review.py')
         require(helper.exists(),'Install the B6 motion-review helper before creative review')
-        return module('b6_motion_review_helper',helper)
+        return verified_module('b6_motion_review_helper',helper,TRUSTED_MOTION_REVIEW_SHA256,'motion-review runtime')
     if a.command=='review-pack':
         require(a.report,'Choose the actual encoded preview --report')
         return motion_review().build_pack(c,a.report,a.output,a.review)

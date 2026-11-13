@@ -14,7 +14,13 @@ test('normal B6 init carries the mature engine, leaves both native plans unappro
   const dir=path.join(tmp,'new-brief');initB6(dir,'both');
   const p=read(path.join(dir,'project.json'));
   assert.equal(p.renderer,'b6-production-v1');assert.equal(p.stage,'needs_authoring');
-  assert.equal(Object.keys(read(path.join(dir,'engine/manifest.json')).files).length,89);
+  const provenance=read(path.join(dir,'engine/font-provenance.json'));
+  const licenseByFont={'NotoSans.ttf':'source/fonts/OFL-NotoSans.txt','Nunito.ttf':'source/fonts/OFL-Nunito.txt'};
+  const licenses=new Set(provenance.fonts.filter(row=>row.kind==='open-fallback').map(row=>licenseByFont[row.fallback_font]));
+  assert(!licenses.has(undefined));
+  const engineFiles=read(path.join(dir,'engine/manifest.json')).files;
+  assert.equal(Object.keys(engineFiles).length,89+licenses.size);
+  for(const rel of licenses)assert(engineFiles[rel]&&fs.existsSync(path.join(dir,'engine',rel)));
   assert(fs.existsSync(path.join(dir,'engine/source/work/hk-v90-unified-arms/rig.py')));
   assert(fs.existsSync(path.join(dir,'engine/font-provenance.json')));
   assert(!fs.existsSync(path.join(dir,'paint')),'must not initialize the old simplified renderer');

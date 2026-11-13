@@ -12,6 +12,8 @@ import importlib.util
 import math
 import subprocess
 
+TRUSTED_CAPTION_RUNTIME_SHA256 = '5fc03a3f38dce9f55609f2059077125ecc30b7f5fa1d31580f9e007fcf23200b'
+
 CHECKS = (
     'space_depth', 'camera_purpose', 'body_action', 'expression_gaze',
     'rhythm_continuity', 'drawing_anatomy', 'limb_line_weight', 'native_audio_captions',
@@ -192,9 +194,13 @@ def caption_binding(context, report, preview):
     helper = Path(__file__).with_name('caption_renderer.py')
     if not helper.exists():
         helper = Path(__file__).with_name('b6_caption.py')
+    # Check before execution and compile those exact bytes, ignoring local .pyc files.
+    source = helper.read_bytes()
+    require(hashlib.sha256(source).hexdigest() == TRUSTED_CAPTION_RUNTIME_SHA256,
+            'Untrusted caption runtime changed; review refuses to execute the edited project helper')
     spec = importlib.util.spec_from_file_location('b6_review_caption_contract', helper)
     captions = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(captions)
+    exec(compile(source, str(helper), 'exec'), captions.__dict__)
     profile = captions.validate_profile(context.plan.get('caption'), context.ratio,
                                         context.plan['width'], context.plan['height'], context.base)
     contract = report.get('caption_contract', {})

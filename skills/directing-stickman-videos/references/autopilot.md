@@ -77,14 +77,39 @@ Prepare only the sample's shots, media and timed subtitles for this stage; unfin
 
 Only after the user explicitly approves that sample and authorizes the remaining production, record the approval:
 
-For B1/B2/B3, add `--visual-review /absolute/reviews/sample-review.json` to `approve`, using the independently completed `output/preview-reference/review-template.json` workflow. After rendering, review `output/film-reference/` and run `accept-visual PROJECT --review FILE` before claiming the film meets the available sample target. Follow the [exact evidence, criteria and limited-result contract](b1-b2-b3-reference-acceptance.md#runtime-evidence-and-commands). B4 instead requires its existing `--text-review`; neither route replaces the real user approval named below.
+The following commands are for the B1–B4 shared runtime; B5 and B6 use their dedicated workflows linked above.
+
+For B1/B2/B3, use `--visual-review /absolute/reviews/sample-review.json`, using the independently completed `output/preview-reference/review-template.json` workflow. After rendering, review `output/film-reference/` and run `accept-visual PROJECT --review FILE` before claiming the film meets the available sample target. Follow the [exact evidence, criteria and limited-result contract](b1-b2-b3-reference-acceptance.md#runtime-evidence-and-commands).
 
 ```bash
-node scripts/autopilot.mjs approve /absolute/project/project.json --note "User approved the sample and authorized the full film"
+node scripts/autopilot.mjs approve /absolute/project/project.json \
+  --visual-review /absolute/reviews/sample-review.json \
+  --note "User approved the sample and authorized the full film"
+node scripts/autopilot.mjs render /absolute/project/project.json
+```
+
+B4 requires **both** `--text-review` and `--picture-review`. Complete the independent [text review](b4-typography-acceptance.md#encoded-evidence-and-independent-acceptance) from `output/preview-typography/review-template.json` and [picture animation review](b4-picture-animation.md#encoded-evidence-and-independent-picture-review) from `output/preview-picture/review-template.json`. Each reviewer must differ from the corresponding author and actually inspect the current encoded MP4 and its generated evidence, covering every text moment, every shot and the full submitted range. For portrait, both tracks also require normal-speed phone-size source playback. Preserve the generated author IDs, hashes and coverage; do not fabricate passing reviews or treat an unknown template as accepted. Neither review replaces actual user sample approval and authorization for the remaining production.
+
+```bash
+node scripts/autopilot.mjs approve /absolute/project/project.json \
+  --text-review /absolute/reviews/b4-preview-text-review.json \
+  --picture-review /absolute/reviews/b4-preview-picture-review.json \
+  --note "User approved the sample and authorized the full film"
 node scripts/autopilot.mjs render /absolute/project/project.json
 ```
 
 Never run `approve` based on your own technical checks. Approval binds the reviewed sample file, its scoped timeline/assets and global production settings, including the exact narration track and voice choice. Completing or revising later shots outside that sample does not by itself invalidate approval. Changes to the reviewed content, narration or global settings require a new sample review; changes to the approved script, scope or cost still require the corresponding user authorization even if a render cache remains valid. Render by cached shots, keeping continuous original-speed narration. Technical checks can use small synthetic fixtures but do not authorize a new paid generation or the user's full film.
+
+For B4, `render` rechecks both bound preview reviews. After rendering, independently review the complete final MP4 anew using `output/film-typography/` and `output/film-picture/`, then record each full-film acceptance separately:
+
+```bash
+node scripts/autopilot.mjs accept-text /absolute/project/project.json \
+  --review /absolute/reviews/b4-film-text-review.json
+node scripts/autopilot.mjs accept-picture /absolute/project/project.json \
+  --review /absolute/reviews/b4-film-picture-review.json
+```
+
+These record only their respective text and picture acceptances. Neither implies the other review passed, audio acceptance, whole-film delivery readiness or actual user acceptance; the remaining production and delivery gates still apply.
 
 Apply the [B common delivery gate](autopilot-production-qa.md#whole-film-delivery-gate) across every shot, including the body and ending; then deliver the MP4, subtitle sidecars and project/checkpoint paths. State what was verified, what still needs listening/human review, and any missing service configuration. Do not publish, upload or change GitHub unless separately requested.
 

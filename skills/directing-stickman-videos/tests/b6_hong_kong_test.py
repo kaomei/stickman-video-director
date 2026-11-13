@@ -21,9 +21,12 @@ class V90BindingTests(unittest.TestCase):
         self.assertEqual(len(public),85)
         self.assertFalse(any(rel.startswith('source/fonts/') or rel=='font-provenance.json' for rel in public))
         self.assertFalse(any(p.is_file() for p in (PACK/'source/fonts').rglob('*')))
-        self.assertEqual(len(installed),89)
+        provenance=json.loads((self.base/'font-provenance.json').read_text())
+        license_by_font={'NotoSans.ttf':'source/fonts/OFL-NotoSans.txt','Nunito.ttf':'source/fonts/OFL-Nunito.txt'}
+        licenses={license_by_font[row['fallback_font']] for row in provenance['fonts'] if row['kind']=='open-fallback'}
+        self.assertEqual(len(installed),89+len(licenses))
         self.assertEqual(set(installed)-set(public),{'source/fonts/Arial.ttf','source/fonts/ArialBlack.ttf',
-                                                   'source/fonts/CourierNewBold.ttf','font-provenance.json'})
+                                                   'source/fonts/CourierNewBold.ttf','font-provenance.json'}|licenses)
         self.assertEqual({rel:installed[rel] for rel in public},public)
         self.assertEqual(len(self.contract['coverage']),600)
     def test_real_frame_and_independent_prop_grip(self):

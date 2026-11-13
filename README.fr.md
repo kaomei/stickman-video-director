@@ -320,7 +320,7 @@ Et si, au réveil, tout coûtait dix mille fois moins cher ? L’inspiration vis
 
 ### A7 : Bientôt disponible…
 
-De nouveaux styles spécialisés pour le mode Director sont en cours d’entraînement. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
+De nouveaux styles spécialisés pour le mode Director sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour suivre les prochaines mises à jour !
 
 
 <a id="b-styles"></a>
@@ -505,7 +505,7 @@ Des expressions de meme, des traits dessinés à la main et des couleurs douces 
 
 ### B7 : Bientôt disponible…
 
-De nouveaux styles Autopilot et de nouvelles animations par code sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour les débloquer à 5,000 Stars !
+De nouveaux styles Autopilot et de nouvelles animations par code sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour suivre les prochaines mises à jour !
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>
