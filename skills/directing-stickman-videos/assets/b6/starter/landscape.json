@@ -1,0 +1,208 @@
+{
+  "ratio": "16:9",
+  "native_design": "16:9",
+  "width": 1280,
+  "height": 720,
+  "captionFile": "formats/landscape-captions.json",
+  "caption": {
+    "fontSize": 47,
+    "stroke": 7,
+    "side": 70,
+    "bottom": 55
+  },
+  "design": "横向双人关系，柜台处在共享中景；镜头从左侧建立位置，沿纸张横移，最后切买家反应。不是竖版裁切。",
+  "shots": [
+    {
+      "id": "L-setup",
+      "beat": "setup",
+      "start": 0,
+      "end": 2,
+      "composition": "Hero on left, buyer on right; show room width and an uninterrupted shared counter plane.",
+      "action": "A short authored side-to-front pose change establishes attention; no automatic rocking.",
+      "transition": "Hold the receiving side as the next shot begins; retain left-to-right transfer direction.",
+      "staging": {
+        "hero": {
+          "x": -240,
+          "y": 0,
+          "z": 120
+        },
+        "buyer": {
+          "x": 240,
+          "y": 0,
+          "z": 120
+        }
+      },
+      "camera": {
+        "intent": "Lateral establish with acceleration and a readable settle.",
+        "keys": [
+          {
+            "t": 0,
+            "x": -230,
+            "y": 510,
+            "z": -2000,
+            "fov": 43
+          },
+          {
+            "t": 1.55,
+            "x": 60,
+            "y": 510,
+            "z": -2000,
+            "fov": 43
+          },
+          {
+            "t": 2,
+            "x": 60,
+            "y": 510,
+            "z": -2000,
+            "fov": 43
+          }
+        ]
+      },
+      "assets": [
+        "hotel-panorama",
+        "hero-body",
+        "hero-head",
+        "hero-side-body",
+        "hero-side-head",
+        "buyer-body",
+        "buyer-head",
+        "buyer-greedy-head",
+        "ink-stroke",
+        "hero-hand",
+        "shoe-left",
+        "shoe-right",
+        "table",
+        "letter",
+        "foreground-lamp"
+      ]
+    },
+    {
+      "id": "L-transfer",
+      "beat": "transfer",
+      "start": 2,
+      "end": 4.2,
+      "composition": "Keep giver, letter and receiving wrist together in a horizontal action triangle.",
+      "action": "Approach at 2.1s, contact at 3s, shared hold to 3.6s, release and recover; one owner after release.",
+      "transition": "Cut from the settled received letter to the buyer's eyeline, not to a new unexplained insert.",
+      "staging": {
+        "hero": {
+          "x": -240,
+          "y": 0,
+          "z": 120
+        },
+        "buyer": {
+          "x": 240,
+          "y": 0,
+          "z": 120
+        }
+      },
+      "camera": {
+        "intent": "Move laterally with the letter, with a small physical dolly and a hold at contact.",
+        "keys": [
+          {
+            "t": 0,
+            "x": -80,
+            "y": 600,
+            "z": -1600,
+            "fov": 42
+          },
+          {
+            "t": 1.1,
+            "x": 80,
+            "y": 600,
+            "z": -1530,
+            "fov": 42
+          },
+          {
+            "t": 2.2,
+            "x": 80,
+            "y": 600,
+            "z": -1530,
+            "fov": 42
+          }
+        ]
+      },
+      "assets": [
+        "hotel-panorama",
+        "hero-body",
+        "hero-head",
+        "hero-side-body",
+        "hero-side-head",
+        "buyer-body",
+        "buyer-head",
+        "buyer-greedy-head",
+        "ink-stroke",
+        "hero-hand",
+        "shoe-left",
+        "shoe-right",
+        "table",
+        "letter",
+        "foreground-lamp"
+      ]
+    },
+    {
+      "id": "L-reaction",
+      "beat": "reaction",
+      "start": 4.2,
+      "end": 6,
+      "composition": "Buyer's face at the right third; retain a sliver of the giver/counter as spatial context.",
+      "action": "Suspicion gives way to a greedy smile; pupils/eyebrows/mouth must change, not the head silhouette alone.",
+      "transition": "Finish the reaction before the next scene; no sub-second SOLD flash.",
+      "staging": {
+        "hero": {
+          "x": -240,
+          "y": 0,
+          "z": 120
+        },
+        "buyer": {
+          "x": 240,
+          "y": 0,
+          "z": 120
+        }
+      },
+      "camera": {
+        "intent": "Motivated reaction cut and a restrained final settle, not another wide-shot zoom.",
+        "keys": [
+          {
+            "t": 0,
+            "x": 120,
+            "y": 730,
+            "z": -1160,
+            "fov": 38
+          },
+          {
+            "t": 0.55,
+            "x": 150,
+            "y": 740,
+            "z": -1120,
+            "fov": 38
+          },
+          {
+            "t": 1.8,
+            "x": 150,
+            "y": 740,
+            "z": -1120,
+            "fov": 38
+          }
+        ]
+      },
+      "assets": [
+        "hotel-panorama",
+        "hero-body",
+        "hero-head",
+        "hero-side-body",
+        "hero-side-head",
+        "buyer-body",
+        "buyer-head",
+        "buyer-greedy-head",
+        "ink-stroke",
+        "hero-hand",
+        "shoe-left",
+        "shoe-right",
+        "table",
+        "letter",
+        "foreground-lamp"
+      ]
+    }
+  ]
+}

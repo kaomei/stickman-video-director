@@ -76,14 +76,19 @@
 <strong>キャラクター解説</strong><br>
 <a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5の助けを求める心理の解説。アニメの語り手と表情豊かな棒人間" width="90%"></a>
 </td>
-<td width="50%" align="center"><a href="#a7"><strong>近日公開…</strong></a></td>
+<!-- b6:hero:start -->
+<td width="50%" align="center">
+<strong>Dynamic Meme Animation</strong><br>
+<a href="#b6"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+</td>
+<!-- b6:hero:end -->
 </tr>
 <!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**11種類の画風 · 制作例あり · 無料・オープンソース**
+**12種類の画風 · 制作例あり · 無料・オープンソース**
 
 ⭐ **プロジェクトに Star を付けて、次の画風追加や新機能の解放をチェックしましょう。**
 
@@ -458,6 +463,38 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
 </table>
 
 <!-- b5:section:end -->
+
+---
+
+<!-- b6:section:start -->
+<a id="b6"></a>
+
+### B6: Dynamic Meme Animation
+
+Memeらしい大げさな表情、ラフな手描き線、柔らかな色彩で、奇妙な物語を生き生きとした短編アニメに。広い背景が、人物・小道具・カメラの動きを支えます。
+
+**縦型（9:16）のほうが効果的です。** [作例1の縦型版](skills/directing-stickman-videos/assets/b6/reference/eiffel-portrait-v44.mp4)を、腕の線の太さも含めた画風と動きの厳密な合格基準とします。下の表は横型版の展示です。作例2はリギングの補助資料であり、この画風基準に置き換えるものではありません。
+
+- **画面**: 不均一なインク線、マットな塗り、柔らかな光。顔と体を同じ手描きのタッチで統一。
+- **動き**: 横移動、前景と背景の視差、物の受け渡し、リアクションの寄りを物語に沿ってつなぎ、動作と笑いが伝わる間を確保。
+- **向いている内容**: 歴史の珍事件、詐欺の物語、不条理コメディ、意外な結末の短編。
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">作例1：エッフェル塔を売った男</th>
+    <th width="50%" align="center">作例2：90年代の香港 · パイナップルパンとゲームセンター</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="作例1：エッフェル塔を売った男" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="作例2：90年代の香港 · パイナップルパンとゲームセンター" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">16:9 · 63.2秒 · 英語ナレーション・字幕</td>
+    <td align="center">16:9 · 20秒 · 英語ナレーション・字幕</td>
+  </tr>
+</table>
+
+<!-- b6:section:end -->
 
 
 

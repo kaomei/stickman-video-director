@@ -1,0 +1,10 @@
+{
+  "purpose": "Unapproved technical blocking scaffold. Replace with the approved story before production; this does not replace the Eiffel narration.",
+  "approval": null,
+  "narration": "",
+  "beats": [
+    {"id":"setup","job":"Establish both people, the counter and the screen direction."},
+    {"id":"transfer","job":"Follow the letter, show contact, shared hold and release."},
+    {"id":"reaction","job":"Let the buyer register the letter, then show a distinct emotional change."}
+  ]
+}

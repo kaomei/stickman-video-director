@@ -76,14 +76,19 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <strong>Penjelasan dengan Karakter</strong><br>
 <a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 tentang meminta bantuan, dengan pembawa acara animasi dan manusia lidi ekspresif" width="90%"></a>
 </td>
-<td width="50%" align="center"><a href="#a7"><strong>Segera Hadir…</strong></a></td>
+<!-- b6:hero:start -->
+<td width="50%" align="center">
+<strong>Dynamic Meme Animation</strong><br>
+<a href="#b6"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+</td>
+<!-- b6:hero:end -->
 </tr>
 <!-- b5:hero:end -->
 </table>
 
 <div align="center">
 
-**11 gaya visual · Contoh yang sudah diuji · Gratis dan open source**
+**12 gaya visual · Contoh yang sudah diuji · Gratis dan open source**
 
 ⭐ **Beri Star pada proyek ini agar tidak ketinggalan gaya dan fitur baru berikutnya.**
 
@@ -466,6 +471,38 @@ Jadikan avatar favorit Anda pembawa acara di kanal Anda; penggunaan karakter ter
 </table>
 
 <!-- b5:section:end -->
+
+---
+
+<!-- b6:section:start -->
+<a id="b6"></a>
+
+### B6: Dynamic Meme Animation
+
+Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut menghidupkan kisah unik menjadi animasi pendek. Latar yang luas memberi ruang gerak bagi tokoh, properti, dan kamera.
+
+**Hasil terbaik dalam format vertikal (9:16).** [Versi vertikal Contoh 1](skills/directing-stickman-videos/assets/b6/reference/eiffel-portrait-v44.mp4) menjadi standar ketat untuk gaya visual dan gerak, termasuk ketebalan lengan; tabel di bawah menampilkan versi horizontal. Contoh 2 hanya melengkapi referensi rigging, tanpa menggantikan standar gaya tersebut.
+
+- **Visual**: Garis tinta tidak beraturan, warna cat matte, dan cahaya lembut; wajah serta tubuh memakai gaya gambar tangan yang sama.
+- **Gerak**: Pelacakan menyamping, kedalaman berlapis, penyerahan benda, dan close-up reaksi mengikuti cerita, dengan jeda agar setiap aksi dan lelucon terbaca.
+- **Cocok untuk**: Keanehan sejarah, kisah penipuan, komedi absurd, dan cerita pendek dengan kejutan di akhir.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Contoh 1: Pria yang menjual Menara Eiffel</th>
+    <th width="50%" align="center">Contoh 2: Hong Kong 1990-an · Roti dan arkade</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="Contoh 1: Pria yang menjual Menara Eiffel" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Contoh 2: Hong Kong 1990-an · Roti dan arkade" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">16:9 · 63,2 detik · Narasi dan takarir bahasa Inggris</td>
+    <td align="center">16:9 · 20 detik · Narasi dan takarir bahasa Inggris</td>
+  </tr>
+</table>
+
+<!-- b6:section:end -->
 
 
 

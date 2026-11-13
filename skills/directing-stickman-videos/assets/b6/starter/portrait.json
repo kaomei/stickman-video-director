@@ -1,0 +1,221 @@
+{
+  "ratio": "9:16",
+  "native_design": "9:16",
+  "width": 720,
+  "height": 1280,
+  "captionFile": "formats/portrait-captions.json",
+  "caption": {
+    "fontSize": 60,
+    "stroke": 9,
+    "side": 55,
+    "bottom": 240
+  },
+  "design": "竖向深景、上部表情与中部道具分区；用更紧的站位、不同镜头时间和上下重心移动重新导演。不是横版裁切。",
+  "shots": [
+    {
+      "id": "P-setup",
+      "beat": "setup",
+      "start": 0,
+      "end": 1.5,
+      "composition": "Two heads share the upper half; the counter and near lamp establish lower depth. Keep right-side UI and caption band clear.",
+      "action": "Give the viewer time to locate both people before the exchange.",
+      "transition": "Cut toward the center paper zone; preserve giver/receiver direction in the narrow frame.",
+      "tableX": 0,
+      "lampX": -700,
+      "staging": {
+        "hero": {
+          "x": -210,
+          "y": 0,
+          "z": 120
+        },
+        "buyer": {
+          "x": 210,
+          "y": 0,
+          "z": 120
+        }
+      },
+      "camera": {
+        "intent": "Depth establish, with a subtle vertical reveal rather than the landscape lateral sweep.",
+        "keys": [
+          {
+            "t": 0,
+            "x": 0,
+            "y": 630,
+            "z": -2450,
+            "fov": 45
+          },
+          {
+            "t": 1.1,
+            "x": 0,
+            "y": 570,
+            "z": -2350,
+            "fov": 45
+          },
+          {
+            "t": 1.5,
+            "x": 0,
+            "y": 570,
+            "z": -2350,
+            "fov": 45
+          }
+        ]
+      },
+      "assets": [
+        "hotel-panorama",
+        "hero-body",
+        "hero-head",
+        "hero-side-body",
+        "hero-side-head",
+        "buyer-body",
+        "buyer-head",
+        "buyer-greedy-head",
+        "ink-stroke",
+        "hero-hand",
+        "shoe-left",
+        "shoe-right",
+        "table",
+        "letter",
+        "foreground-lamp"
+      ]
+    },
+    {
+      "id": "P-transfer",
+      "beat": "transfer",
+      "start": 1.5,
+      "end": 4.5,
+      "composition": "Paper and wrists in the middle third; faces remain in the upper band. The feet may be outside this deliberate closer shot.",
+      "action": "Use the same audio/contact time, but compose the handoff vertically and allow a longer shared-space shot.",
+      "transition": "Follow the receiver's eyeline upward only after the paper has settled.",
+      "tableX": 0,
+      "lampX": -700,
+      "staging": {
+        "hero": {
+          "x": -210,
+          "y": 0,
+          "z": 120
+        },
+        "buyer": {
+          "x": 210,
+          "y": 0,
+          "z": 120
+        }
+      },
+      "camera": {
+        "intent": "A controlled downward move to the paper, then an upward target shift to the buyer; no actor sway.",
+        "keys": [
+          {
+            "t": 0,
+            "x": -25,
+            "y": 680,
+            "z": -2050,
+            "fov": 47
+          },
+          {
+            "t": 1.5,
+            "x": 0,
+            "y": 585,
+            "z": -1980,
+            "fov": 47
+          },
+          {
+            "t": 2.35,
+            "x": 35,
+            "y": 635,
+            "z": -1980,
+            "fov": 47
+          },
+          {
+            "t": 3,
+            "x": 55,
+            "y": 680,
+            "z": -1980,
+            "fov": 47
+          }
+        ]
+      },
+      "assets": [
+        "hotel-panorama",
+        "hero-body",
+        "hero-head",
+        "hero-side-body",
+        "hero-side-head",
+        "buyer-body",
+        "buyer-head",
+        "buyer-greedy-head",
+        "ink-stroke",
+        "hero-hand",
+        "shoe-left",
+        "shoe-right",
+        "table",
+        "letter",
+        "foreground-lamp"
+      ]
+    },
+    {
+      "id": "P-reaction",
+      "beat": "reaction",
+      "start": 4.5,
+      "end": 6,
+      "composition": "One readable face in the upper-middle field; received prop stays below it and clear of the single caption line.",
+      "action": "Hold the emotional change; preserve the same painted facial identity and avoid a jumpy pose loop.",
+      "transition": "Read, react and settle before leaving; no new information is inserted as a flash.",
+      "tableX": 0,
+      "lampX": -700,
+      "staging": {
+        "hero": {
+          "x": -210,
+          "y": 0,
+          "z": 120
+        },
+        "buyer": {
+          "x": 210,
+          "y": 0,
+          "z": 120
+        }
+      },
+      "camera": {
+        "intent": "A native vertical face cut with a short depth settle, separately timed from landscape.",
+        "keys": [
+          {
+            "t": 0,
+            "x": 205,
+            "y": 725,
+            "z": -1450,
+            "fov": 42
+          },
+          {
+            "t": 0.4,
+            "x": 210,
+            "y": 740,
+            "z": -1430,
+            "fov": 42
+          },
+          {
+            "t": 1.5,
+            "x": 210,
+            "y": 740,
+            "z": -1430,
+            "fov": 42
+          }
+        ]
+      },
+      "assets": [
+        "hotel-panorama",
+        "hero-body",
+        "hero-head",
+        "hero-side-body",
+        "hero-side-head",
+        "buyer-body",
+        "buyer-head",
+        "buyer-greedy-head",
+        "ink-stroke",
+        "hero-hand",
+        "shoe-left",
+        "shoe-right",
+        "table",
+        "letter",
+        "foreground-lamp"
+      ]
+    }
+  ]
+}

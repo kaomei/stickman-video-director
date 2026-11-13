@@ -1,0 +1,25 @@
+{
+  "duration": 20,
+  "fps": 30,
+  "dialogue": [
+    {"start": 1.98, "end": 2.88, "role": "customer", "voice": "Eddy (英语（美国）)", "text": "Just a tea.", "caption": "Just a tea."},
+    {"start": 3.04, "end": 4.26, "role": "owner", "voice": "Daniel", "text": "Twenty dollars.", "caption": "Twenty dollars."},
+    {"start": 5.38, "end": 6.78, "role": "customer", "voice": "Eddy (英语（美国）)", "text": "For one tea?", "caption": "For ONE tea?"},
+    {"start": 7.85, "end": 8.96, "role": "owner", "voice": "Daniel", "text": "Tea is five.", "caption": "Tea is five."},
+    {"start": 9.55, "end": 10.98, "role": "owner", "voice": "Daniel", "text": "Fifteen for service.", "caption": "Fifteen for service."},
+    {"start": 11.65, "end": 12.98, "role": "customer", "voice": "Eddy (英语（美国）)", "text": "What service?", "caption": "What service?"},
+    {"start": 13.48, "end": 14.96, "role": "owner", "voice": "Daniel", "text": "Explaining the bill.", "caption": "Explaining the bill."},
+    {"start": 15.66, "end": 17.05, "role": "owner", "voice": "Daniel", "text": "That's another five.", "caption": "That's another five."}
+  ],
+  "effects": [
+    {"time": 1.8, "type": "door"},
+    {"time": 2.62, "type": "bag"},
+    {"time": 3.66, "type": "paper"},
+    {"time": 5.15, "type": "sting"},
+    {"time": 9.35, "type": "paper"},
+    {"time": 11.34, "type": "paper"},
+    {"time": 14.3, "type": "tap"},
+    {"time": 16.25, "type": "cash"},
+    {"time": 17.2, "type": "sting"}
+  ]
+}

@@ -1,0 +1,512 @@
+{
+  "scope": "Local source closure; no original reference movie is required at render time",
+  "files": [
+    {
+      "path": "source/work/eiffel-emotion-full-v41/animate.py",
+      "source_project_relative": "work/eiffel-emotion-full-v41/animate.py",
+      "source_sha256": "5154e52395ecdbbfcbe93f92c43c9e76235f64c0f19328e278ace7a565a7a459",
+      "adaptations": [
+        "Extract only used painted primitives; remove unrelated historical entry points"
+      ]
+    },
+    {
+      "path": "source/work/eiffel-preview-20s/space-camera-v29/animate.py",
+      "source_project_relative": "work/eiffel-preview-20s/space-camera-v29/animate.py",
+      "source_sha256": "3819f413654c96f25fae93728ab8355a75b5efda847496cfefcce30eaa566603",
+      "adaptations": [
+        "Extract only used painted primitives; remove unrelated historical entry points"
+      ]
+    },
+    {
+      "path": "source/work/eiffel-preview-20s/space-camera-v29/layers/ink-stroke.png",
+      "source_project_relative": "work/eiffel-preview-20s/space-camera-v29/layers/ink-stroke.png",
+      "source_sha256": "7c152ce54b2ce4278143a63ec209330505bed5714c4d5b3a71f2fe29ff8b2428",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-action-v59/animate.py",
+      "source_project_relative": "work/hk-1990s-action-v59/animate.py",
+      "source_sha256": "8a01816d0cd86b4f3b0e8193dd4e162c3bd935b0b577e6375e88c7f6008abc96",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-1990s-arm-fix-v60/animate.py",
+      "source_project_relative": "work/hk-1990s-arm-fix-v60/animate.py",
+      "source_sha256": "75a714320463c426ca796561d6c4fdcfa45298f422abc02fe9288ef932cc3340",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-1990s-arm-fix-v60/assets/owner-original-garment.png",
+      "source_project_relative": "work/hk-1990s-arm-fix-v60/assets/owner-original-garment.png",
+      "source_sha256": "78c980cb69a772fdc40bb589e84e4513150a7950c8f0c8a44ead8f3ab5547afd",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-environment-v67/animate.py",
+      "source_project_relative": "work/hk-1990s-environment-v67/animate.py",
+      "source_sha256": "f5de0d8a832f6b47923319821218cd943454ad46e385ff890b052c11a670c292",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-1990s-environment-v67/assets/briefcase-left.png",
+      "source_project_relative": "work/hk-1990s-environment-v67/assets/briefcase-left.png",
+      "source_sha256": "1814ba219dcfe4167afe2ca02ffbe341b6f3bc341308ad002341040eb2b7d3e4",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-environment-v67/assets/briefcase-right.png",
+      "source_project_relative": "work/hk-1990s-environment-v67/assets/briefcase-right.png",
+      "source_sha256": "f18d1d7756ccf8254f074669a1a416d7107c9ebbc801da2425605906ab4b8619",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-environment-v67/assets/briefcase-upper.png",
+      "source_project_relative": "work/hk-1990s-environment-v67/assets/briefcase-upper.png",
+      "source_sha256": "ed15f358516f4c9ded6a6564707eb79af922b670f16985d4aacc7a5bede8324c",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-environment-v67/assets/coral-left.png",
+      "source_project_relative": "work/hk-1990s-environment-v67/assets/coral-left.png",
+      "source_sha256": "65ae6e5b6825886f81c2868b5da8bf6ad0d5de7c66e4559f4f13cd77b98fac39",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-environment-v67/assets/coral-right.png",
+      "source_project_relative": "work/hk-1990s-environment-v67/assets/coral-right.png",
+      "source_sha256": "176f1b0183111f9ec67518fda5a25e2cca2106a91587f0bfc58398f4f4735e43",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-environment-v67/assets/coral-upper.png",
+      "source_project_relative": "work/hk-1990s-environment-v67/assets/coral-upper.png",
+      "source_sha256": "9088c60f41d9b928bf402727db84649d0ce710b8c89d86b9b0bad32c03a1d772",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-environment-v67/assets/layers.json",
+      "source_project_relative": "work/hk-1990s-environment-v67/assets/layers.json",
+      "source_sha256": "34d3e0dceb0bdb975476ea9d5ad18af32e23b616028e8fe0ab37b43b29dcac8b",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-environment-v67/assets/street-separated.png",
+      "source_project_relative": "work/hk-1990s-environment-v67/assets/street-separated.png",
+      "source_sha256": "67f8ff6424b41ab7ad185919b4842eaea6b399713a523df95c245fa3300e09df",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-fast-entry-v58/animate.py",
+      "source_project_relative": "work/hk-1990s-fast-entry-v58/animate.py",
+      "source_sha256": "676c6a84d9fa030ec4714401c6c5e3dee052e30bbb146f0da17d7a5f36923374",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-1990s-kitchen-motion-v64/animate.py",
+      "source_project_relative": "work/hk-1990s-kitchen-motion-v64/animate.py",
+      "source_sha256": "6445503f6d43274e88696a88e504ccc0781c438ae62e10e53eeaeaf2de1e7339",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-1990s-kitchen-motion-v64/assets/chef-body.png",
+      "source_project_relative": "work/hk-1990s-kitchen-motion-v64/assets/chef-body.png",
+      "source_sha256": "6788dfe668a88e30fd80f103b2cc1c8bf7b1c6ccc378568ea8941a34b03466ff",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-kitchen-motion-v64/assets/chef-head.png",
+      "source_project_relative": "work/hk-1990s-kitchen-motion-v64/assets/chef-head.png",
+      "source_sha256": "949d3ac5300c3287b126dc40ee45a5679fbe6567b3e56afe1323760263d395d8",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-kitchen-motion-v64/assets/chef-left-hand.png",
+      "source_project_relative": "work/hk-1990s-kitchen-motion-v64/assets/chef-left-hand.png",
+      "source_sha256": "7cbd434c9946c53a693f5764da8676d81716e4cf9aec318cf5ccfe46a0ef2db4",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-kitchen-motion-v64/assets/chef-right-hand.png",
+      "source_project_relative": "work/hk-1990s-kitchen-motion-v64/assets/chef-right-hand.png",
+      "source_sha256": "a5200c5c385d1fb7295c9c77f65a113f5422fa3818ad843589821efb164bb9ab",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-kitchen-motion-v64/assets/kitchen-clean.png",
+      "source_project_relative": "work/hk-1990s-kitchen-motion-v64/assets/kitchen-clean.png",
+      "source_sha256": "c5b8ecc4b756639ff7c40d7e8c42f521c69196f97828d4f166113421092ed944",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-kitchen-motion-v64/assets/layers.json",
+      "source_project_relative": "work/hk-1990s-kitchen-motion-v64/assets/layers.json",
+      "source_sha256": "7980ac6cc8e4d7677d76d055af9ae73e104272e1e79f938274ed2b907f571bea",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-kitchen-motion-v64/assets/pot-lid.png",
+      "source_project_relative": "work/hk-1990s-kitchen-motion-v64/assets/pot-lid.png",
+      "source_sha256": "8ded6ad4c2df732a77d8643dd56680b59ddae4b0aceb3d59e9b769051d36b61a",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-limbs-v56/animate.py",
+      "source_project_relative": "work/hk-1990s-limbs-v56/animate.py",
+      "source_sha256": "148a1130c7d9eaf4527d01fe51c8685bb09b1546976aa90751d7d114845cd50e",
+      "adaptations": [
+        "Extract only used painted primitives; remove unrelated historical entry points"
+      ]
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/awning.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/awning.png",
+      "source_sha256": "324eb5efac664fbe4f908cd172d89a331122bc1c39b0730bb5787189fafedbaf",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/cafe-clean-generated.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/cafe-clean-generated.png",
+      "source_sha256": "6e5a4653f7f48d62a0ed5fc02257b818c9254a5f5081560f1ac0e12cbaf2e07a",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/crates.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/crates.png",
+      "source_sha256": "7a5217dd33739566e8b2416c0ae0c2e41be8657312fb11a2af44ab576527322e",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/grocery-bag.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/grocery-bag.png",
+      "source_sha256": "c0486feb167a820ee4be3200e14af8796d7109d9a95a239b539ba00e91b49784",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/hero-hand.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/hero-hand.png",
+      "source_sha256": "1ec3442bb377303631868887ee8a26c2ee245acbe10e77476486ba3f87162be3",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/owner-hand.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/owner-hand.png",
+      "source_sha256": "0f6814b002a919a09ea13a163d4b2644f2de04d2a4be81935dcb201c34e55429",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/owner-head.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/owner-head.png",
+      "source_sha256": "5d5578800ce80423bfed881400356070a332d41ab5fe16abc7d21706d9da2391",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/receipt.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/receipt.png",
+      "source_sha256": "4f14bc7605ef8cbcee9d49c6a9673ebadbafde1def165bd859fe88d9473f996e",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/street-body.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/street-body.png",
+      "source_sha256": "68803de4fa5f14824b0ca10c0386c2358e847e07ade821c3fc2a6ff9bdd3fdcb",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/street-head.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/street-head.png",
+      "source_sha256": "62e71ec310c251724233a7b18a821e646d59eb643efa68978b2c39b975921e27",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/street-shoe-a.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/street-shoe-a.png",
+      "source_sha256": "96b39c921caddf389da894d9e844257cefe6ce7b0d26550160803dff72a6fe9f",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/street-shoe-b.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/street-shoe-b.png",
+      "source_sha256": "0f39bd1e55a90a4009dbdbc2954421b968bab088b004a9cd31653ebbbbfbd448",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-motion-v52/assets/taxi.png",
+      "source_project_relative": "work/hk-1990s-motion-v52/assets/taxi.png",
+      "source_sha256": "7e56bd84f46d1efdbeafd3d58771bddad6a45c719053aad84b5e9200a2a540b1",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-overhaul-v57/animate.py",
+      "source_project_relative": "work/hk-1990s-overhaul-v57/animate.py",
+      "source_sha256": "9e7c4ad34f9a2aa42db0d5abbcc7ee5a273dbf6c80b05d71c6c7379ddb55ffa9",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-1990s-overhaul-v57/character.py",
+      "source_project_relative": "work/hk-1990s-overhaul-v57/character.py",
+      "source_sha256": "1467c8938de18b573965a984d362a42c315b9cdad504ab4497af665d72fa2f1e",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-1990s-patrons-v65/animate.py",
+      "source_project_relative": "work/hk-1990s-patrons-v65/animate.py",
+      "source_sha256": "e4c84144d42bc15a44e555a00a1ec1cfa528e6a42b16bd581c0375b1b5da3250",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-1990s-patrons-v65/assets/layers.json",
+      "source_project_relative": "work/hk-1990s-patrons-v65/assets/layers.json",
+      "source_sha256": "80553a22f124a0e496dd49c67a7ac8222f92a58880439e51ae237de8af477b8c",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-patrons-v65/assets/newspaper.png",
+      "source_project_relative": "work/hk-1990s-patrons-v65/assets/newspaper.png",
+      "source_sha256": "3bc7ba72f4d2247ec9c4f64d7effa73d71739d4f7f8cdf6615d288d8dcca46d9",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-patrons-v65/assets/paper-left-hand.png",
+      "source_project_relative": "work/hk-1990s-patrons-v65/assets/paper-left-hand.png",
+      "source_sha256": "5b6d72e5b5a0510000ac345aeddab00d4692af6e66af2a2f53e35e65b5724b55",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-patrons-v65/assets/patrons-clean.png",
+      "source_project_relative": "work/hk-1990s-patrons-v65/assets/patrons-clean.png",
+      "source_sha256": "880891da036218885b6532f4a3fdb2ccb9914649ac559dd5fe2cf575908979c5",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-patrons-v65/assets/tea-cup.png",
+      "source_project_relative": "work/hk-1990s-patrons-v65/assets/tea-cup.png",
+      "source_sha256": "98520bcba2303ff39127a75dc6816e1e1ede4ef29246fe2fbe4acff061bc38ae",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-patrons-v65/assets/tea-shirt.png",
+      "source_project_relative": "work/hk-1990s-patrons-v65/assets/tea-shirt.png",
+      "source_sha256": "19848727674d1d44917eb01c716273c12dec6b77335141bffe7fc206dcf73c26",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-1990s-surprise-pose-v63/animate.py",
+      "source_project_relative": "work/hk-1990s-surprise-pose-v63/animate.py",
+      "source_sha256": "656159a2bde528815d5e51a748cb7961a51570992da088c93cecd5cc25a8d47f",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-1990s-taxi-v68/animate.py",
+      "source_project_relative": "work/hk-1990s-taxi-v68/animate.py",
+      "source_sha256": "d71cbd7de558586119e5e3770423f2cc6968c0f30be39e42e3417eb511ecdd69",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/bun-whole.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/bun-whole.png",
+      "source_sha256": "843617f3f4d5809b84ec6f826c8c264a92c3cd3275b6590eb9f371e27921ecfe",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/near-counter.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/near-counter.png",
+      "source_sha256": "4a483a60300e17c171b673633a262bfd1cc91962265a549bedb4b131f4304e8c",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/patron-cup.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/patron-cup.png",
+      "source_sha256": "811873d6dd93d4d9d01dbb73c4dfb388486829be402adc3416e9286e086ed705",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/patron-paper.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/patron-paper.png",
+      "source_sha256": "9a1b850879276d196f76f5d9c65821599427301e523427c31ce90fca7cb614fb",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/plate.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/plate.png",
+      "source_sha256": "e89628a0c470b61da139d12ee38e2f8c9fda8d6e448637483809aff383853bc1",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/room-clean.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/room-clean.png",
+      "source_sha256": "12e73ef62653a9375d3405c99b5c6ea22f6b6320586ca21a1f6352e7c36bf2e5",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/strong-body.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/strong-body.png",
+      "source_sha256": "2376aaef71b252d6794a6ee6abcb3988225d61c5dd84cb0717958396ba00b140",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/strong-head.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/strong-head.png",
+      "source_sha256": "ec55a96b21eed4f428a9a4125890d92733474e3bed31bc1064710699fc768863",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/strong-speak.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/strong-speak.png",
+      "source_sha256": "fff002463e46447ec723d9a4f04fec1646dd01918ac6b00eb7a8b6906a8f7861",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/strong-tight.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/strong-tight.png",
+      "source_sha256": "89e52cd939cd1bd29adf89680b812964ce62f1676b1ad7b495f1afa64e36bde0",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/table-front.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/table-front.png",
+      "source_sha256": "53060f6dc8f4a173b30bed1a8018c742273d164b1f9fb836addf3225b8f58fe8",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-v68-extension-v75/animate.py",
+      "source_project_relative": "work/hk-v68-extension-v75/animate.py",
+      "source_sha256": "73bd18af1e06ea9ce3a920b9610f4395f8f1bcf454871807b2211b22725fcf4f",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-v68-extension-v75/timeline.json",
+      "source_project_relative": "work/hk-v68-extension-v75/timeline.json",
+      "source_sha256": "d33103f28ee42f3ae9ed57921c7ce6d000e6014c415168f2620853eefbdfc007",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-v76-multiscene/assets/arcade-wide.png",
+      "source_project_relative": "work/hk-v76-multiscene/assets/arcade-wide.png",
+      "source_sha256": "3947149fb1c829c11588f982d4cda0d953b529284308764f948804594d3fc5d5",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-v77-actions/animate.py",
+      "source_project_relative": "work/hk-v77-actions/animate.py",
+      "source_sha256": "a20e14c8e442234f04794211a26c58b30ebae5800febc80f11e4d1c0cbe58aa5",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-v77-actions/timeline.json",
+      "source_project_relative": "work/hk-v77-actions/timeline.json",
+      "source_sha256": "b22a2a4a757c05d3d5acb9b50d79f202d511411eee55b2954b17aada7490e2ca",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-v78-arm-clarity/animate.py",
+      "source_project_relative": "work/hk-v78-arm-clarity/animate.py",
+      "source_sha256": "30e8163f354d5fba4c8ab6da7ba9c8d66043750cc905af5f03ec4599b0ae41a7",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-v80-native-rate/captions.json",
+      "source_project_relative": "work/hk-v80-native-rate/captions.json",
+      "source_sha256": "89b41751b4293097e66f5017c11bdbfbf84bc4011510fd7955f1178698cd32eb",
+      "adaptations": []
+    },
+    {
+      "path": "source/work/hk-v86-booth-arms/animate.py",
+      "source_project_relative": "work/hk-v86-booth-arms/animate.py",
+      "source_sha256": "de4bcfa56043c3e6b0fecdb76d6246186721b5947d38b0dcfe78b227fb5c83af",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-v87-arm-readability/animate.py",
+      "source_project_relative": "work/hk-v87-arm-readability/animate.py",
+      "source_sha256": "98b221cd74b3d9ce283513675b89a735885ddacaf10e96fc57bf38bb21961475",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-v88-ending-camera/animate.py",
+      "source_project_relative": "work/hk-v88-ending-camera/animate.py",
+      "source_sha256": "be3ce4735b7f41b78314b6ad9cf51b5213eca533bd2b8a20f3c625ed93041597",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-v89-counter-opening/animate.py",
+      "source_project_relative": "work/hk-v89-counter-opening/animate.py",
+      "source_sha256": "0016a6d4e71b696abc6b127aa151f87753b8b7b71ac966cbdcc56fac70815c70",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-v90-unified-arms/animate.py",
+      "source_project_relative": "work/hk-v90-unified-arms/animate.py",
+      "source_sha256": "fa94be7ded5527ad83f13248b062150a51a8085b4b9c11a634ecfe1c8ae66806",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-v90-unified-arms/rig.py",
+      "source_project_relative": "work/hk-v90-unified-arms/rig.py",
+      "source_sha256": "4c521d4da9c3eec089cfae03951ed0a8e818ad8b0a7759362c92d5a2f64547f2",
+      "adaptations": [
+        "Remove obsolete direct-run preflight entry point"
+      ]
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/strong-tight-blink.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/strong-tight-blink.png",
+      "source_sha256": "8274c57c703b535b1d46b1e7218574c05b49445aea90426da982703bfa7c72bf",
+      "adaptations": [
+        "Retain short blink and optional original face variants; complete 600-frame dependency closure"
+      ]
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/strong-head-blink.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/strong-head-blink.png",
+      "source_sha256": "71faaa0770e6ddce010d8afc5f699b8d383318a974808231744707270f9b93c7",
+      "adaptations": [
+        "Retain short blink and optional original face variants; complete 600-frame dependency closure"
+      ]
+    },
+    {
+      "path": "source/work/hk-empty-gun-preview-v71/assets/strong-bite.png",
+      "source_project_relative": "work/hk-empty-gun-preview-v71/assets/strong-bite.png",
+      "source_sha256": "8987d41abddca39e8dfc494cd2527ef5ad257f78b3d792b56527e32bab1e34ce",
+      "adaptations": [
+        "Retain short blink and optional original face variants; complete 600-frame dependency closure"
+      ]
+    }
+  ],
+  "font_policy": "Proprietary system fonts are not distributed. Initialization resolves the user's installed faces or records explicit bundled OFL alternatives in the project-local font-provenance.json. Font substitutions require actual caption review; they do not claim pixel identity."
+}

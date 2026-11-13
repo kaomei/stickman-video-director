@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "style": "B6 / Dynamic Meme Animation",
+  "scope": "Repository B6 gallery, published with owner authorization. Exact existing media reuse; no new media-model calls.",
+  "items": [
+    {
+      "id": "eiffel",
+      "title": "The man who sold the Eiffel Tower",
+      "path_base": "repository root",
+      "video": "assets/readme/b6-dynamic-meme-eiffel-16x9.mp4",
+      "sha256": "677ca4b45197a9545e1c161f964ef5b5b0b47ea130b99d2121e40584f24ad5e9",
+      "bytes": 20309438,
+      "duration_seconds": 63.2,
+      "size": [
+        1280,
+        720
+      ],
+      "frame_rate": "30/1",
+      "preview": "assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif",
+      "preview_sha256": "3b619058ee9dd28d89d78abc8f7aa1835d4536f95f99642bdbf85a9229cba4f4",
+      "preview_bytes": 2411838
+    },
+    {
+      "id": "hong-kong-v90",
+      "title": "1990s Hong Kong: pineapple bun and arcade",
+      "path_base": "repository root",
+      "video": "assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4",
+      "sha256": "b5d906f9eed6b72d93825306049d7a9b4e7475424de4cd262ab23f79d719484a",
+      "bytes": 10360849,
+      "duration_seconds": 20.0,
+      "size": [
+        1280,
+        720
+      ],
+      "frame_rate": "30/1",
+      "preview": "assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif",
+      "preview_sha256": "47fa472496af076c1bf63e32f6d84f96892801eea9c74331bf47457df1a25d25",
+      "preview_bytes": 3227633,
+      "version": "V90",
+      "review_status": "Latest delivered preview; user requested local B6 gallery inclusion. Awaiting visual approval; not a universal rig approval.",
+      "source_project_relative": "outputs/hk-v90-unified-arms/Hong-Kong-V90-Unified-Arms-20s.mp4",
+      "original_aac_sha256": "513336cc0a4e46e636972e896afd6667e103457db0e7e0af1cf8cbee11c77294",
+      "voice_captions_camera": "Unchanged exact video copy",
+      "evidence": {
+        "source_report": "outputs/hk-v90-unified-arms/qc-report.json",
+        "frames": 600,
+        "source_opening_reused_frames": 72,
+        "rerendered_frames": 528,
+        "all_animated_arm_branches_use_shared_solver": true,
+        "legacy_solver_calls": 0,
+        "max_fixed_bone_error": 1.2256862191861728e-13,
+        "max_grip_error": 0,
+        "camera_identical_rerendered_frames": 528,
+        "scope": "Arm geometry/contact checks and encoded visual review. Rigid painted background poses are explicit exceptions. Existing leg animation retained; no new all-frame leg validation claimed."
+      },
+      "character_inventory": {
+        "flower": {
+          "scenes": [
+            "counter",
+            "booth",
+            "arcade"
+          ],
+          "binding": "shared_two_bone_v90",
+          "arms": 2
+        },
+        "friend": {
+          "scenes": [
+            "booth",
+            "arcade"
+          ],
+          "binding": "shared_two_bone_v90",
+          "arms": 2
+        },
+        "owner": {
+          "scenes": [
+            "counter"
+          ],
+          "binding": "shared_two_bone_v90",
+          "arms": 2
+        },
+        "chef": {
+          "scenes": [
+            "counter-background"
+          ],
+          "binding": "shared_two_bone_v90",
+          "arms": 2
+        },
+        "tea-guest": {
+          "scenes": [
+            "counter-background"
+          ],
+          "binding": "shared_two_bone_v90",
+          "moving_arms": 1,
+          "other_arm": "original intact painted pose"
+        },
+        "newspaper-guest": {
+          "scenes": [
+            "counter-background"
+          ],
+          "binding": "shared_two_bone_v90 with source-painted upper arms",
+          "arms": 2
+        },
+        "booth-background-guests": {
+          "binding": "original rigid sprite groups; painted hands and props remain attached",
+          "audit": "newspaper and teacup poses inspected"
+        },
+        "street-background-people": {
+          "binding": "source painted rigid poses, source footage reused",
+          "audit": "both arms remain part of source silhouettes"
+        }
+      },
+      "new_paid_calls_for_gallery_update": 0,
+      "preview_excerpt": {
+        "start_seconds": 4,
+        "duration_seconds": 10,
+        "fps": 6,
+        "size": [
+          480,
+          270
+        ],
+        "audio": false
+      }
+    }
+  ],
+  "primary_standard": {
+    "path": "style-standard.json",
+    "reference": "reference/eiffel-portrait-v44.mp4",
+    "sample": "Sample 1 / Eiffel portrait V44",
+    "preferred_ratio": "9:16",
+    "scope": "Strict drawing, relative limb weight, painted light, acting, space/camera and rhythm benchmark; gallery Sample 2 V90 is secondary engineering evidence. Current landscape gallery layout/media remain unchanged."
+  }
+}

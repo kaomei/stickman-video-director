@@ -1,0 +1,52 @@
+{
+  "briefcase-left": {
+    "box": [
+      27,
+      647,
+      53,
+      728
+    ]
+  },
+  "briefcase-right": {
+    "box": [
+      47,
+      645,
+      73,
+      717
+    ]
+  },
+  "briefcase-upper": {
+    "box": [
+      0,
+      530,
+      94,
+      728
+    ]
+  },
+  "coral-left": {
+    "box": [
+      385,
+      648,
+      406,
+      690
+    ]
+  },
+  "coral-right": {
+    "box": [
+      400,
+      649,
+      419,
+      685
+    ]
+  },
+  "coral-upper": {
+    "box": [
+      361,
+      523,
+      440,
+      691
+    ]
+  },
+  "source_path": "historical-source:hk-1990s-motion-v52/assets/street-clean-generated.png",
+  "source_sha256": "dcf06aeace83cf1a48be188414d7230515f28c8704b4f2c5ffe22079ac206359"
+}

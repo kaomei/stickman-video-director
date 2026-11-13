@@ -1,0 +1,92 @@
+{
+  "ratio": "16:9",
+  "design": "Native wide layered sets; retained V90 uniform actor transforms, original authored camera paths and cuts",
+  "source_of_motion": "Bundled Python code, not scene-plan-generated animation",
+  "shots": [
+    {
+      "start_frame": 0,
+      "end_frame": 72,
+      "location": "street",
+      "purpose": "Wide opening; taxi and sparse ambient background motion"
+    },
+    {
+      "start_frame": 72,
+      "end_frame": 114,
+      "location": "counter",
+      "purpose": "Bag contact; layered foreground counter"
+    },
+    {
+      "start_frame": 114,
+      "end_frame": 198,
+      "location": "counter",
+      "purpose": "Receipt exchange and reaction; original V90 camera"
+    },
+    {
+      "start_frame": 198,
+      "end_frame": 270,
+      "location": "booth",
+      "purpose": "Offer pineapple bun; elbow leads hand and plate contact"
+    },
+    {
+      "start_frame": 270,
+      "end_frame": 315,
+      "location": "arcade",
+      "purpose": "Wide arcade establishes both characters and screen"
+    },
+    {
+      "start_frame": 315,
+      "end_frame": 357,
+      "location": "arcade",
+      "purpose": "Medium game action"
+    },
+    {
+      "start_frame": 357,
+      "end_frame": 384,
+      "location": "arcade",
+      "purpose": "CRT insert"
+    },
+    {
+      "start_frame": 384,
+      "end_frame": 411,
+      "location": "arcade",
+      "purpose": "Loss reaction"
+    },
+    {
+      "start_frame": 411,
+      "end_frame": 450,
+      "location": "booth",
+      "purpose": "Return to cafe with continuity"
+    },
+    {
+      "start_frame": 450,
+      "end_frame": 497,
+      "location": "booth",
+      "purpose": "Refusal reaction medium"
+    },
+    {
+      "start_frame": 497,
+      "end_frame": 536,
+      "location": "booth",
+      "purpose": "Cold bun insert"
+    },
+    {
+      "start_frame": 536,
+      "end_frame": 562,
+      "location": "booth",
+      "purpose": "Ego reaction close-up"
+    },
+    {
+      "start_frame": 562,
+      "end_frame": 600,
+      "location": "arcade",
+      "purpose": "Rematch truck with established spatial direction"
+    }
+  ],
+  "portrait": "Not implemented by crop/stretch; requires independently authored assets/plan and reviewed test",
+  "reproduction_test": {
+    "start_frame": 198,
+    "end_frame": 496,
+    "fps": 30,
+    "duration": 9.933333333333334
+  }
+}
