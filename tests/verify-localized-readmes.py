@@ -48,6 +48,10 @@ def section(text, start, end):
 expected_images = images(cn)
 assert len(expected_images) == 46 and len(set(expected_images)) == 35
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
+b6_previews = [
+    pinned + "7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/" + filename
+    for filename in ("b6-dynamic-meme-eiffel-16x9.gif", "b6-dynamic-meme-hong-kong-v90-20s.gif")
+]
 local_a6_previews = {
     "assets/readme/previews/style-6-amber-noir-mcp.gif",
     "assets/readme/previews/style-6-amber-noir-flow.gif",
@@ -57,8 +61,6 @@ local_a6_previews = {
     "assets/readme/previews/b3-tv-night-signal.gif",
     "assets/readme/previews/b4-dispatch.gif",
     "assets/readme/previews/b4-death-clock.gif",
-    "assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif",
-    "assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif",
 }
 for url in expected_images:
     if "/previews/" in url:
@@ -249,7 +251,8 @@ for name in selected:
     assert "16:9" in b6 and re.search(r"63[.,]2", b6) and "20" in b6, (name, "B6 sample metadata")
     portrait_terms = {"en": "Works best in portrait", "zh-CN": "竖屏效果更好", "ja": "縦型（9:16）のほうが効果的", "ko": "세로형(9:16)", "fr": "meilleur en format vertical", "pt-BR": "melhor no formato vertical", "tr": "Dikey formatta (9:16)", "id": "Hasil terbaik dalam format vertikal"}
     assert portrait_terms[active] in b6, (name, "localized portrait preference")
-    assert images(hero)[-1].endswith("/b6-dynamic-meme-eiffel-16x9.gif"), (name, "B6 animated homepage card")
+    assert images(hero)[-1] == b6_previews[0], (name, "B6 homepage preview uses immutable CDN")
+    assert images(b6) == b6_previews, (name, "B6 sample previews use immutable CDN")
     for video in b6_videos:
         assert (root / video).is_file(), (name, video)
     if is_english:

@@ -79,7 +79,7 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 <!-- b6:hero:start -->
 <td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
-<a href="#b6"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
 </tr>
@@ -488,8 +488,8 @@ Des expressions de meme, des traits dessinés à la main et des couleurs douces 
     <th width="50%" align="center">Exemple 2 : Hong Kong des années 1990 · Brioches et arcade</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="Exemple 1 : L’homme qui a vendu la tour Eiffel" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Exemple 2 : Hong Kong des années 1990 · Brioches et arcade" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="Exemple 1 : L’homme qui a vendu la tour Eiffel" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Exemple 2 : Hong Kong des années 1990 · Brioches et arcade" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">16:9 · 63,2 secondes · Narration et sous-titres en anglais</td>

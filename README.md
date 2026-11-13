@@ -79,7 +79,7 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 <!-- b6:hero:start -->
 <td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
-<a href="#b6"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
 </tr>
@@ -484,8 +484,8 @@ Expressive meme faces, loose hand-drawn lines and soft colors turn unusual stori
     <th width="50%" align="center">Example 2: 1990s Hong Kong · Buns and Arcades</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="Example 1: The Man Who Sold the Eiffel Tower" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Example 2: 1990s Hong Kong · Buns and Arcades" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="Example 1: The Man Who Sold the Eiffel Tower" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Example 2: 1990s Hong Kong · Buns and Arcades" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">16:9 · 63.2 seconds · English narration and captions</td>

@@ -79,7 +79,7 @@
 <!-- b6:hero:start -->
 <td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
-<a href="#b6"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
 </tr>
@@ -485,8 +485,8 @@ Memeらしい大げさな表情、ラフな手描き線、柔らかな色彩で�
     <th width="50%" align="center">作例2：90年代の香港 · パイナップルパンとゲームセンター</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="作例1：エッフェル塔を売った男" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="作例2：90年代の香港 · パイナップルパンとゲームセンター" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="作例1：エッフェル塔を売った男" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="作例2：90年代の香港 · パイナップルパンとゲームセンター" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">16:9 · 63.2秒 · 英語ナレーション・字幕</td>

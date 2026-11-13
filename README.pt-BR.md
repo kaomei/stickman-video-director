@@ -79,7 +79,7 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <!-- b6:hero:start -->
 <td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
-<a href="#b6"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
 </tr>
@@ -492,8 +492,8 @@ Expressões de meme, traços soltos à mão e cores suaves transformam história
     <th width="50%" align="center">Exemplo 2: Hong Kong dos anos 1990 · Pães e fliperamas</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="Exemplo 1: O homem que vendeu a Torre Eiffel" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Exemplo 2: Hong Kong dos anos 1990 · Pães e fliperamas" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="Exemplo 1: O homem que vendeu a Torre Eiffel" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Exemplo 2: Hong Kong dos anos 1990 · Pães e fliperamas" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">16:9 · 63,2 segundos · Narração e legendas em inglês</td>

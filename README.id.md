@@ -79,7 +79,7 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <!-- b6:hero:start -->
 <td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
-<a href="#b6"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
 </tr>
@@ -493,8 +493,8 @@ Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut 
     <th width="50%" align="center">Contoh 2: Hong Kong 1990-an · Roti dan arkade</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="Contoh 1: Pria yang menjual Menara Eiffel" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Contoh 2: Hong Kong 1990-an · Roti dan arkade" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="Contoh 1: Pria yang menjual Menara Eiffel" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Contoh 2: Hong Kong 1990-an · Roti dan arkade" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">16:9 · 63,2 detik · Narasi dan takarir bahasa Inggris</td>
