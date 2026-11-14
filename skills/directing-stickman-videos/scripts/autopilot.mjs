@@ -2,11 +2,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
-import {ROOT, STYLES, FFMPEG, FFPROBE, run, probe, loadProject, outputDir, save, json, hashFile, groupWords} from './autopilot-core.mjs';
+import {ROOT, STYLES, FFMPEG, FFPROBE, run, probe, loadProject, outputDir, save, json, hashFile, sha, groupWords} from './autopilot-core.mjs';
 import {BRIAN} from './b4-runtime.mjs';
 import {B4_HOOK, B4_PORTRAIT} from './b4-opening.mjs';
 import {initB5} from './character-explainer.mjs';
 import {installedWorkflow, workflowHint, checkB4InstalledSamples} from './b-style-workflow.mjs';
+import {canonicalJson} from './canonical-json.mjs';
 
 const [command, ...args] = process.argv.slice(2);
 const option = (flag, fallback) => args.includes(flag) ? args[args.indexOf(flag) + 1] : fallback;
@@ -122,7 +123,14 @@ async function main() {
         visualReviewFile = command === 'approve' ? option('--visual-review') : json(approvalPath).visual_review_file;
         if (!visualReviewFile) throw new Error('B1/B2/B3 preview requires independent sample-effect review: approve --visual-review REVIEW_JSON');
         visualReviewFile = fs.realpathSync(path.resolve(visualReviewFile));
-        if (command === 'render' && hashFile(visualReviewFile) !== json(approvalPath).visual_review_sha256) throw new Error('Sample-effect review changed; review and approve current preview again');
+        if (command === 'render') {
+          const a = json(approvalPath);
+          const semantic = a.visual_review_hash_schema === 'canonical-json-v1' && a.visual_review_semantic_sha256 === sha(canonicalJson(json(visualReviewFile)));
+          // Old approvals contain only a byte hash; never infer their old JSON
+          // content after a change. Unknown/incomplete hash schemas fail closed.
+          const legacy = a.visual_review_hash_schema === undefined && a.visual_review_semantic_sha256 === undefined && hashFile(visualReviewFile) === a.visual_review_sha256;
+          if (!semantic && !legacy) throw new Error('Sample-effect review changed; review and approve current preview again');
+        }
         referenceAcceptance = await (await import('./b-style-reference-review.mjs')).verifyBStyleReferenceReview(reviewed, {file: report.output, evidenceDir: path.join(out, 'preview-reference'), reviewFile: visualReviewFile, projectFingerprint: reviewed.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
       }
       if (reviewed.style === 'B4' && report.opening_audio?.status !== 'diagnostic_pass' &&
@@ -146,7 +154,7 @@ async function main() {
     }
     if (command === 'approve') {
       const note = option('--note', ''); if (!note.trim()) throw new Error('A note recording genuine user approval is required');
-      save(approvalPath, {...(referenceAcceptance ? {visual_review_file: visualReviewFile, visual_review_sha256: hashFile(visualReviewFile), reference_acceptance: referenceAcceptance} : {}), ...(textAcceptance ? {text_review_file: textReviewFile, text_review_sha256: hashFile(textReviewFile), typography_acceptance: textAcceptance} : {}), ...(pictureAcceptance ? {picture_review_file: pictureReviewFile, picture_review_sha256: hashFile(pictureReviewFile), picture_acceptance: pictureAcceptance} : {}), preview_fingerprint: reviewed.fingerprint, preview_seconds: report.preview_seconds, preview_sha256: report.output_sha256, note, approved_at: new Date().toISOString()});
+      save(approvalPath, {...(referenceAcceptance ? {visual_review_file: visualReviewFile, visual_review_sha256: hashFile(visualReviewFile), visual_review_hash_schema: 'canonical-json-v1', visual_review_semantic_sha256: sha(canonicalJson(json(visualReviewFile))), reference_acceptance: referenceAcceptance} : {}), ...(textAcceptance ? {text_review_file: textReviewFile, text_review_sha256: hashFile(textReviewFile), typography_acceptance: textAcceptance} : {}), ...(pictureAcceptance ? {picture_review_file: pictureReviewFile, picture_review_sha256: hashFile(pictureReviewFile), picture_acceptance: pictureAcceptance} : {}), preview_fingerprint: reviewed.fingerprint, preview_seconds: report.preview_seconds, preview_sha256: report.output_sha256, note, approved_at: new Date().toISOString()});
       console.log(JSON.stringify({approval: approvalPath})); return;
     }
     if (command === 'render') {

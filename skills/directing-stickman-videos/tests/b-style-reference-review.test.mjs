@@ -236,7 +236,7 @@ test('a portable B2 installation requires both full sources and verifies the boa
   const dir=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'b2-reference-package-test-')));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
   const scripts=path.join(dir,'scripts'),assets=path.join(dir,'assets','b2');fs.mkdirSync(scripts,{recursive:true});fs.mkdirSync(path.dirname(assets),{recursive:true});
   const moduleFile=path.join(scripts,'b-style-reference-review.mjs');
-  for(const file of ['b-style-reference-review.mjs','b-style-portrait.mjs','b3-semantic-motion.mjs','b-style-motion-geometry.mjs','b3-graphics.mjs'])fs.copyFileSync(path.join(ROOT,'scripts',file),path.join(scripts,file));
+  for(const file of ['b-style-reference-review.mjs','canonical-json.mjs','b-style-portrait.mjs','b3-semantic-motion.mjs','b-style-motion-geometry.mjs','b3-graphics.mjs'])fs.copyFileSync(path.join(ROOT,'scripts',file),path.join(scripts,file));
   fs.cpSync(path.join(ROOT,'assets/b2'),assets,{recursive:true});
   const portable=await import(pathToFileURL(moduleFile).href),pubFile=path.join(assets,'public-showcase.json'),boardFile=path.join(assets,'approved-style-board.json'),originalPub=fs.readFileSync(pubFile),originalBoard=fs.readFileSync(boardFile);
   assert.equal(portable.referenceInputs('B2').length,5);
@@ -357,7 +357,7 @@ test('bounded timestamp probing covers a complete available sample across ten-se
 test('portable portrait references cannot be omitted, substituted or accepted through stale binding',async t=>{
   const dir=fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(),'b2-portrait-reference-test-')));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
   const scripts=path.join(dir,'scripts'),assets=path.join(dir,'assets/b2');fs.mkdirSync(scripts,{recursive:true});fs.mkdirSync(path.dirname(assets),{recursive:true});
-  for(const file of ['b-style-reference-review.mjs','b-style-portrait.mjs','b3-semantic-motion.mjs','b-style-motion-geometry.mjs','b3-graphics.mjs'])fs.copyFileSync(path.join(ROOT,'scripts',file),path.join(scripts,file));
+  for(const file of ['b-style-reference-review.mjs','canonical-json.mjs','b-style-portrait.mjs','b3-semantic-motion.mjs','b-style-motion-geometry.mjs','b3-graphics.mjs'])fs.copyFileSync(path.join(ROOT,'scripts',file),path.join(scripts,file));
   fs.cpSync(path.join(ROOT,'assets/b2'),assets,{recursive:true});
   const portable=await import(pathToFileURL(path.join(scripts,'b-style-reference-review.mjs')).href),manifest=path.join(assets,'portrait-approved-2026-11-13.json'),original=fs.readFileSync(manifest),p=project('B2');portraitProject(p);
   const inputs=portable.referenceInputs('B2',p),fingerprint=()=>inputs.map(f=>[f,hash(f)]);

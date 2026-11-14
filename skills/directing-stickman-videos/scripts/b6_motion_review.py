@@ -439,7 +439,7 @@ def build_pack(context, report_rel, output, previous_review=None):
     }
     sections = ['<!doctype html><meta charset="utf-8"><title>B6 motion review</title>',
                 '<style>body{font:16px system-ui;background:#211d20;color:#f7eedf;max-width:1400px;margin:30px auto}video{width:min(100%,600px);max-height:650px}section{border-top:1px solid #766;padding:20px 0}p{max-width:900px}</style>',
-                '<h1>B6 actual-preview review · PENDING</h1><p>Compare actual playback, source implementation and the reference. Technical checks do not establish creative acceptance. Animation performance and spatial richness must pass. Pending or needs-repair findings require continued local correction, re-rendering and review; they are not a completed delivery. Fill motion-review.json only after review. A held shot can be intentional; explain its purpose rather than adding arbitrary movement.</p>']
+                '<h1>B6 actual-preview review · PENDING</h1><p>Compare actual playback, source implementation and the reference. Technical checks do not establish creative acceptance. Animation performance and spatial richness must pass. Complete the original motion-review.json after review; an unfilled form alone does not require repair or re-render. Observed defects still require continued local correction, re-rendering and review; pending or needs-repair reports are not a completed delivery. A held shot can be intentional; explain its purpose rather than adding arbitrary movement.</p>']
     import os
     full_video = os.path.relpath(local(base, preview['path']), out)
     if target.get('style_standard'):
@@ -521,7 +521,11 @@ def _validate_review(context, review_rel, report_rel=None):
                 'Caption switch review needs decoded adjacent before/at/after frames')
         caption_switch_frames.update(file for file in (row.get('before'), row.get('at'), row.get('after')) if file)
     review = data.get('review', {})
-    require(review.get('status') == 'pass' and all(str(review.get(k, '')).strip() for k in ['reviewer', 'method', 'reviewed_at']), 'Motion review pending/needs repair: continue local repairs, re-render and actual playback review; do not mark the task complete')
+    pending_message = ('Motion review pending/needs repair: continue local repairs, re-render and actual playback review; do not mark the task complete'
+                       if unresolved_findings(data) else
+                       'Motion review pending/needs repair: complete actual playback and source review in the original '+review_rel+
+                       '; an unfilled review alone does not require repair or re-render. Do not mark the task complete before the required review is complete')
+    require(review.get('status') == 'pass' and all(str(review.get(k, '')).strip() for k in ['reviewer', 'method', 'reviewed_at']), pending_message)
     require(data.get('remaining_gaps') == [], 'Known quality gaps remain: continue local repair and review')
     require(not data.get('supplemental_audit', {}).get('known_confirmed_defect'),
             'Confirmed actual-media defect remains; implementation repair and fresh playback are required')

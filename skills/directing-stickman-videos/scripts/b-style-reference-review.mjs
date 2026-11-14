@@ -8,6 +8,7 @@ import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {planBStylePortrait, isBStylePortrait} from './b-style-portrait.mjs';
 import {planB3Semantics} from './b3-semantic-motion.mjs';
+import {canonicalJson} from './canonical-json.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EPS = 1e-7;
@@ -32,7 +33,7 @@ const text = x => typeof x === 'string' && !!x.trim();
 const generic = /^(?:pass|passed|ok|okay|good|fine|checked|done|n\/?a|unknown|none|通过|正常|已检查|合格|无|没有)[.!。！\s]*$/iu;
 const concrete = x => text(x) && !generic.test(x.trim());
 const digest = x => crypto.createHash('sha256').update(x).digest('hex');
-const same = (a,b) => JSON.stringify(a) === JSON.stringify(b);
+const same = (a,b) => canonicalJson(a) === canonicalJson(b);
 const read = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 const write = (f,x) => fs.writeFileSync(f, JSON.stringify(x,null,2)+'\n');
 function hash(f) {

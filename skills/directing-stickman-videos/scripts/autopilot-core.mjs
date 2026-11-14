@@ -11,6 +11,7 @@ import {planB4Typography} from './b4-typography-review.mjs';
 import {planB4Picture} from './b4-picture-review.mjs';
 import {referenceInputs} from './b-style-reference-review.mjs';
 import {assertB4StoryAsset} from './b4-asset-origin.mjs';
+import {canonicalJson} from './canonical-json.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const STYLES = ['B1', 'B2', 'B3', 'B4'];
@@ -96,7 +97,16 @@ function scopeB4Picture(p, rangeEnd) {
 }
 export function loadProject(file, {seconds} = {}) {
   file = fs.realpathSync(path.resolve(file));
-  const p = json(file), base = path.dirname(file);
+  const source = json(file), base = path.dirname(file);
+  const canonical = ['B1', 'B2', 'B3'].includes(source.style);
+  // B1–B3 never consume metadata.working_note as artwork, sound or review data.
+  // Exclude this one administrative field, keeping every unknown metadata key.
+  // Normalize the loaded object too: downstream caption/shot plans hash JSON.
+  const p = canonical ? JSON.parse(canonicalJson(source)) : source;
+  if (canonical && p.metadata && typeof p.metadata === 'object' && !Array.isArray(p.metadata)) {
+    delete p.metadata.working_note;
+    if (!Object.keys(p.metadata).length) delete p.metadata;
+  }
   if (p.version !== 1 || !STYLES.includes(p.style)) throw new Error('Expected version 1 and style B1, B2, B3 or B4');
   if (p.style !== 'B3' && p.television !== undefined) throw new Error('Television finish belongs to B3 only');
   if (p.style !== 'B4' && p.opening_audio_override !== undefined) throw new Error('B4 opening audio override belongs to B4 only');
@@ -205,7 +215,7 @@ export function loadProject(file, {seconds} = {}) {
   if (p.style === 'B4' && portraitHook(project) && hashFile(fontPaths(project).cinematic) !== B4_PORTRAIT.font_sha256) throw new Error('B4 portrait: bundled poster font changed; restore Anton instead of silently substituting it');
   if (['B1', 'B2', 'B3'].includes(p.style)) for (const f of referenceInputs(p.style, project)) assets.add(f);
   const inputs = [...assets].sort().map(f => ({path: f, sha256: hashFile(f)}));
-  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-quality.mjs', 'b-style-motion-geometry.mjs', 'b-style-portrait.mjs', 'b-style-portrait-paint.mjs', 'b4-runtime.mjs', ...(['B1', 'B2', 'B3'].includes(p.style) ? ['b-style-reference-review.mjs', 'b4-font-coverage.mjs'] : []), ...(p.style === 'B3' ? ['b3-semantic-motion.mjs'] : []), ...(p.style === 'B4' ? ['b4-style-lock.mjs', 'b4-opening-audio-check.mjs', 'b4-opening.mjs', 'b4-opening-visual-check.mjs', 'b4-typography-review.mjs', 'b4-picture-review.mjs', 'b4-font-coverage.mjs', 'b4-asset-origin.mjs'] : [])].map(f => hashFile(path.join(ROOT, 'scripts', f)));
+  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-quality.mjs', 'b-style-motion-geometry.mjs', 'b-style-portrait.mjs', 'b-style-portrait-paint.mjs', 'b4-runtime.mjs', ...(['B1', 'B2', 'B3'].includes(p.style) ? ['b-style-reference-review.mjs', 'canonical-json.mjs', 'b4-font-coverage.mjs'] : []), ...(p.style === 'B3' ? ['b3-semantic-motion.mjs'] : []), ...(p.style === 'B4' ? ['b4-style-lock.mjs', 'b4-opening-audio-check.mjs', 'b4-opening.mjs', 'b4-opening-visual-check.mjs', 'b4-typography-review.mjs', 'b4-picture-review.mjs', 'b4-font-coverage.mjs', 'b4-asset-origin.mjs'] : [])].map(f => hashFile(path.join(ROOT, 'scripts', f)));
   return {...project, inputs, fingerprint: sha(JSON.stringify({project: timeline, rangeEnd, inputs, engine}))};
 }
 export function outputDir(p) {
