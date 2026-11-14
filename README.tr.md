@@ -159,6 +159,8 @@ Doğrudan kullanabileceğim örnek istekler ver.
 İhtiyacıma göre nelerin eksik olduğunu ve sıradaki somut adımı söyle.
 ```
 
+Kurulum zaman aşımına mı uğradı? macOS/Linux ve Windows için [kurulum sorunlarını giderme kılavuzuna](skills/directing-stickman-videos/references/installation-troubleshooting.md) bakın.
+
 <a id="director-start"></a>
 
 ### A · Director Mode: her bölüm için ayrıntılı video istemleri

@@ -161,6 +161,8 @@ Berdasarkan kebutuhan saya, jelaskan apa yang masih kurang
 dan langkah berikutnya secara konkret.
 ```
 
+Instalasi kehabisan waktu? Lihat [panduan pemecahan masalah instalasi](skills/directing-stickman-videos/references/installation-troubleshooting.md) untuk macOS/Linux dan Windows.
+
 <a id="director-start"></a>
 
 ### A · Director: prompt video per adegan

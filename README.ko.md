@@ -160,6 +160,8 @@ https://github.com/kaomei/stickman-video-director
 다음에 구체적으로 무엇을 하면 되는지도 안내해 줘.
 ```
 
+설치 시간이 초과되면 [설치 문제 해결](skills/directing-stickman-videos/references/installation-troubleshooting.md)(macOS/Linux 및 Windows)을 확인하세요.
+
 <a id="director-start"></a>
 
 ### A · Director 모드: 구간별 영상 프롬프트 만들기

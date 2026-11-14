@@ -159,6 +159,8 @@ Donne-moi des exemples de demandes prêts à l’emploi.
 Selon mon projet, indique ce qui manque encore et la prochaine étape concrète.
 ```
 
+L’installation a expiré ? Consultez le [guide de dépannage](skills/directing-stickman-videos/references/installation-troubleshooting.md) pour macOS/Linux et Windows.
+
 <a id="director-start"></a>
 
 ### A · Director Mode : des prompts de storyboard, séquence par séquence
