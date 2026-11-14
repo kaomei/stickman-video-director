@@ -24,6 +24,26 @@ class Production(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'Frozen source-reuse scene changed'):
                 runtime.load(self.base,'16:9')
         finally:p.write_bytes(original)
+    def test_frozen_source_example_cannot_be_promoted_to_a_new_story_export(self):
+        p=json.loads(self.original);p.pop('technical_fixture',None);p.pop('purpose',None)
+        p['review']={'status':'approved','art':'Reviewed','acting':'Reviewed','sound':'Reviewed'}
+        (self.base/'project.json').write_text(json.dumps(p))
+        self.assertEqual(runtime.load(self.base,'16:9').purpose,'example-reproduction')
+        for command in ('approve','render'):
+            args=SimpleNamespace(command=command,project=str(self.base),ratio='16:9')
+            with self.assertRaisesRegex(ValueError,'technical-only / example-only'):
+                runtime.run(args)
+        self.assertFalse((self.base/'approval-16x9.json').exists())
+    def test_explicit_frozen_example_still_renders_its_actual_diagnostic_frame(self):
+        out=self.base/'outputs/process-scope-example'
+        r=subprocess.run(['python3',str(self.base/'run.py'),'frames',str(self.base),
+                          '--ratio','16:9','--trusted-code','--seconds',str(1/30),
+                          '--output',str(out.relative_to(self.base))],capture_output=True,text=True)
+        self.assertEqual(r.returncode,0,r.stderr)
+        report=json.loads((out/'report.json').read_text())
+        self.assertEqual(report['purpose'],'example-reproduction')
+        self.assertTrue(report['technical_fixture']);self.assertFalse(report['delivery_ready'])
+        self.assertTrue((out/'frame-0000.png').is_file())
     def test_voice_acceleration_is_rejected(self):
         p=json.loads(self.original);p['voice']['speed']=1.1;(self.base/'project.json').write_text(json.dumps(p))
         with self.assertRaisesRegex(ValueError,'original-speed'):runtime.load(self.base,'16:9')

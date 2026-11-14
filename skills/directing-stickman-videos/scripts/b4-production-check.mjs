@@ -7,6 +7,7 @@ import {fileURLToPath} from 'node:url';
 import {isDeepStrictEqual} from 'node:util';
 import {verifyB4StyleLock} from './b4-style-lock.mjs';
 import {B4_HOOK, B4_PORTRAIT} from './b4-opening.mjs';
+import {assertB4StoryAsset} from './b4-asset-origin.mjs';
 
 const digest = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 const nonempty = value => typeof value === 'string' && value.trim().length > 0;
@@ -82,6 +83,7 @@ export function checkB4Production(ledgerFile, {planning = false, skillRoot} = {}
     const prompt = file(asset.prompt_file, asset.prompt_sha256, `${asset.id} prompt`);
     requireThat(prompt.toString('utf8').includes(canonicalPrompt), `${asset.id}: complete canonical style prompt absent`);
     const bytes = file(asset.file, asset.sha256, asset.id, true);
+    if(bytes)assertB4StoryAsset(path.resolve(root,asset.file),{skillRoot});
     assetFingerprints.set(asset.id, bytes ? digest(bytes) : null);
   }
   requireThat(Array.isArray(data.shots) && data.shots.length > 0, 'Missing shots');
@@ -138,6 +140,7 @@ export function checkB4Production(ledgerFile, {planning = false, skillRoot} = {}
           `${label}: motion media fingerprint required, including in planning`);
         const bytes = file(motion.motion_file, motion.motion_sha256, `${label} motion media`, true);
         requireThat(!bytes || bytes.length > 0, `${label}: motion media is empty`);
+        if (bytes) assertB4StoryAsset(path.resolve(root, motion.motion_file), {skillRoot});
         evidencePresent ||= Boolean(bytes);
       }
       requireThat(evidencePresent, `${label}: picture_motion needs an existing fingerprinted plan or media, including in planning`);

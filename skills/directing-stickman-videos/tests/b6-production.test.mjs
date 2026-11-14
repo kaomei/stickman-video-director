@@ -13,7 +13,7 @@ const read=f=>JSON.parse(fs.readFileSync(f,'utf8'));
 test('normal B6 init carries the mature engine, leaves both native plans unapproved, and refuses a placeholder film',async()=>{
   const dir=path.join(tmp,'new-brief');initB6(dir,'both');
   const p=read(path.join(dir,'project.json'));
-  assert.equal(p.renderer,'b6-production-v1');assert.equal(p.stage,'needs_authoring');
+  assert.equal(p.renderer,'b6-production-v1');assert.equal(p.purpose,'production');assert(fs.existsSync(path.join(dir,'b6_asset_roles.py')));assert.equal(p.stage,'needs_authoring');
   const provenance=read(path.join(dir,'engine/font-provenance.json'));
   const licenseByFont={'NotoSans.ttf':'source/fonts/OFL-NotoSans.txt','Nunito.ttf':'source/fonts/OFL-Nunito.txt'};
   const licenses=new Set(provenance.fonts.filter(row=>row.kind==='open-fallback').map(row=>licenseByFont[row.fallback_font]));

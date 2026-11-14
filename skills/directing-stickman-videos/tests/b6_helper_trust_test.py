@@ -35,7 +35,7 @@ class HelperTrust(unittest.TestCase):
                         str(cls.base)], check=True, capture_output=True)
         cls.runtime = module('b6_helper_trust_runtime', cls.base / 'run.py')
         cls.originals = {name: (cls.base / name).read_bytes()
-                         for name in ['caption_renderer.py', 'motion_review.py']}
+                         for name in ['caption_renderer.py', 'motion_review.py', 'b6_asset_roles.py']}
 
     def tearDown(self):
         for name, content in self.originals.items():
@@ -64,6 +64,8 @@ class HelperTrust(unittest.TestCase):
                          hashlib.sha256(self.originals['caption_renderer.py']).hexdigest())
         self.assertEqual(self.runtime.TRUSTED_MOTION_REVIEW_SHA256,
                          hashlib.sha256(self.originals['motion_review.py']).hexdigest())
+        self.assertEqual(self.runtime.TRUSTED_ASSET_ROLES_SHA256,
+                         hashlib.sha256(self.originals['b6_asset_roles.py']).hexdigest())
         review = module('b6_helper_constant_review', self.base / 'motion_review.py')
         self.assertEqual(review.TRUSTED_CAPTION_RUNTIME_SHA256,
                          self.runtime.TRUSTED_CAPTION_RUNTIME_SHA256)
@@ -74,6 +76,13 @@ class HelperTrust(unittest.TestCase):
         data = json.loads(result.stdout.split('RESULT ', 1)[1])
         self.assertTrue(data['valid'])
         self.assertEqual(data['duration'], 7.5)
+
+    def test_validate_rejects_edited_media_role_guard_without_execution(self):
+        with self.edited_helper('b6_asset_roles.py') as marker:
+            result=self.call('validate')
+            self.assertNotEqual(result.returncode,0)
+            self.assertIn('Untrusted asset-role runtime changed',result.stderr)
+            self.assertFalse(marker.exists())
 
     def test_validate_rejects_edited_caption_without_execution(self):
         with self.edited_helper('caption_renderer.py') as marker:
@@ -102,7 +111,7 @@ class HelperTrust(unittest.TestCase):
                     marker.unlink(missing_ok=True)
                     result = self.call(command, *args)
                     self.assertNotEqual(result.returncode, 0)
-                    self.assertIn('Untrusted motion-review runtime changed', result.stderr)
+                    self.assertIn('technical-only' if command=='approve' else 'Untrusted motion-review runtime changed', result.stderr)
                     self.assertFalse(marker.exists())
                     self.assertFalse((self.base / 'approval-16x9.json').exists())
 

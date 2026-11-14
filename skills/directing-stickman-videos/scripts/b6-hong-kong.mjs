@@ -37,7 +37,7 @@ export function initHK(dir,ratio,fontOptions) {
   const manifest=read(path.join(dir,'manifest.json'));
   Object.assign(manifest.files,fonts.hashes);
   fs.writeFileSync(path.join(dir,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
-  return {project:path.join(dir,'project.json'),example:'hong-kong-v90',native_ratio:ratio,stage:'Complete editable source copied; no generation, rendering or user approval inferred',standalone:'python3 run.py validate .; python3 run.py preview . --trusted-code --full-qc'};
+  return {project:path.join(dir,'project.json'),example:'hong-kong-v90',purpose:'example-reproduction',new_story:false,native_ratio:ratio,stage:'Complete editable source copied; no generation, rendering or user approval inferred',standalone:'python3 run.py validate .; python3 run.py preview . --trusted-code --full-qc'};
 }
 export function runHK(command,args) {
   let base=path.resolve(args[0]);if(fs.statSync(base).isFile())base=path.dirname(base);
@@ -61,5 +61,7 @@ export function runHK(command,args) {
   if(r.error)throw r.error;
   if(r.status!==0)throw new Error(r.stderr||r.stdout||'V90 renderer failed');
   if(command==='validate')return JSON.parse(r.stdout);
-  return read(path.join(base,opt(args,'--output','outputs/reproduction'),'report.json'));
+  const reportPath=path.join(base,opt(args,'--output','outputs/reproduction'),'report.json');
+  const report={...read(reportPath),purpose:'example-reproduction',new_story:false,example:'hong-kong-v90',note:'Explicit unchanged V90 reproduction; not evidence of a new-story production.'};
+  fs.writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');return report;
 }

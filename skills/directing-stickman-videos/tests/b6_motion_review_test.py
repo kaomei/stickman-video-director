@@ -55,7 +55,7 @@ class MotionReview(unittest.TestCase):
                                'segments': [{'start': 0, 'end': 1, 'purpose': 'Contract fixture'}]},
                   'required_checks': list(review.CHECKS), 'required_subchecks': {k: list(v) for k, v in review.SUBCHECKS.items()}, 'regressions': ['Wrong elbow direction']}
         review.save(b / 'quality-target.json', target)
-        cls.context = SimpleNamespace(base=b, fingerprint='fixture-fingerprint', ratio='16:9',
+        cls.context = SimpleNamespace(purpose='production', base=b, fingerprint='fixture-fingerprint', ratio='16:9',
                                       project={'duration': 1, 'fps': 30, 'quality_target': 'quality-target.json', 'captions': 'captions.json'}, cues=[cue],
                                       plan={'width': 320, 'height': 180, 'caption': profile, 'cast_inventory': [{'id': 'fixture-actor', 'role': 'Contract fixture only', 'shot_ids': ['contact']}], 'shots': [{'id': 'contact', 'start': 0, 'end': 1}]},
                                       inputs={name: review.sha(b / name) for name in ['scene.py', 'caption_renderer.py', 'captions.json']})

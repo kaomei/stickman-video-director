@@ -288,3 +288,17 @@ test('planning allows missing generated media but cannot be reported as delivery
   assert.equal(result.pending.length, 2);
   assert.throws(() => f.run(), /ENOENT/);
 });
+
+
+test('B4 ledger cannot relabel copied reference bytes as new_generated or waive them in planning',t=>{
+  const f=fixture(t),bytes=fs.readFileSync(new URL('../assets/b4/reference-04-street.png',import.meta.url));
+  f.data.assets[0].file='new-art.png';f.data.assets[0].sha256=f.put('new-art.png',bytes);
+  f.data.assets[0].reuse_reason='Author claims a fresh scene';
+  for(const planning of [false,true])assert.throws(()=>f.run({planning}),/B4 asset origin:.*style_reference street/);
+});
+test('motion media cannot be a renamed approved showcase even with a separate valid motion plan',t=>{
+  const f=fixture(t),bytes=fs.readFileSync(new URL('../assets/b4/portrait-opening-approved.mp4',import.meta.url));
+  const motion=f.data.shots[0].picture_motion;
+  motion.motion_file='new-motion.mp4';motion.motion_sha256=f.put(motion.motion_file,bytes);
+  for(const planning of [false,true])assert.throws(()=>f.run({planning}),/B4 asset origin:.*approved_showcase portrait-opening-video/);
+});
