@@ -4,19 +4,25 @@ import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {ROOT, STYLES, FFMPEG, FFPROBE, run, probe, loadProject, outputDir, save, json, hashFile, groupWords} from './autopilot-core.mjs';
 import {BRIAN} from './b4-runtime.mjs';
-import {B4_HOOK} from './b4-opening.mjs';
+import {B4_HOOK, B4_PORTRAIT} from './b4-opening.mjs';
 import {initB5} from './character-explainer.mjs';
+import {installedWorkflow, workflowHint, checkB4InstalledSamples} from './b-style-workflow.mjs';
 
 const [command, ...args] = process.argv.slice(2);
 const option = (flag, fallback) => args.includes(flag) ? args[args.indexOf(flag) + 1] : fallback;
 async function main() {
-  if (command === 'doctor') {
+  if (command === 'workflow') {
+    console.log(JSON.stringify(installedWorkflow({style: option('--style'), ratio: option('--ratio', '16:9'), project: option('--project')}), null, 2));
+  } else if (command === 'doctor') {
     const checks = {node: Number(process.versions.node.split('.')[0]) >= 20};
     for (const [name, exe] of [['ffmpeg', FFMPEG], ['ffprobe', FFPROBE]]) try { run(exe, ['-version']); checks[name] = true; } catch { checks[name] = false; }
     try { await import('@napi-rs/canvas'); checks.canvas = true; } catch { checks.canvas = false; }
     try { await import('sharp'); checks.sharp = true; } catch { checks.sharp = false; }
     checks.fonts = ['Caveat.ttf', 'NotoSans.ttf', 'Nunito.ttf'].every(f => { const file = path.join(ROOT, 'assets/fonts', f); return fs.existsSync(file) && fs.statSync(file).size > 10000; });
     checks.b4_hook_font = fs.existsSync(path.join(ROOT, 'assets/fonts/Nunito.ttf')) && hashFile(path.join(ROOT, 'assets/fonts/Nunito.ttf')) === B4_HOOK.font_sha256;
+    if (option('--style') === 'B4') {
+      try { checks.b4_approved_effect_samples = checkB4InstalledSamples(); } catch { checks.b4_approved_effect_samples = false; }
+    }
     if (option('--style') === 'B6') {
       const r = spawnSync(option('--python', process.env.B6_PYTHON || 'python3'), ['-c', 'import sys,numpy,PIL,cv2; assert sys.version_info >= (3,9); print("ok")'], {encoding: 'utf8'});
       checks.b6_python_paint_dependencies = r.status === 0;
@@ -31,14 +37,19 @@ async function main() {
   else if (command === 'init') {
     if (!args[0]) throw new Error('Project directory required');
     const style = option('--style', 'B1');
-    if (style === 'B6') { const {initB6} = await import('./b6-dynamic-meme.mjs'); console.log(JSON.stringify(initB6(args[0], option('--ratio'), option('--example')))); return; }
-    if (style === 'B5') { console.log(JSON.stringify(initB5(args[0]))); return; }
+    if (style === 'B6') { const {initB6} = await import('./b6-dynamic-meme.mjs'); const result = initB6(args[0], option('--ratio'), option('--example')); console.log(JSON.stringify({...result, next_workflow: workflowHint(style, option('--ratio'))})); return; }
+    if (style === 'B5') {
+      if (args.includes('--ratio')) throw new Error('B5 init has no ratio conversion; author native scene/config.json and scene code, then use workflow --style B5 --ratio 16:9 or 9:16');
+      console.log(JSON.stringify({...initB5(args[0]), next_workflow: workflowHint(style)})); return;
+    }
     if (!STYLES.includes(style)) throw new Error('Choose style B1, B2, B3, B4, B5 or B6');
+    const ratio = option('--ratio', '16:9');
+    if (!['16:9', '9:16'].includes(ratio)) throw new Error('B1–B4 init requires --ratio 16:9 or 9:16; use separate projects for both native formats');
     const dir = path.resolve(args[0]); if (fs.existsSync(dir)) throw new Error('Project directory already exists; will not overwrite');
     if (dir.startsWith(ROOT + path.sep)) throw new Error('Create projects outside the installed Skill');
     fs.mkdirSync(dir, {recursive: true});
-    save(path.join(dir, 'project.json'), {version: 1, style, width: 1280, height: 720, fps: 30, voice: {path: 'narration.wav', lead: 0, tail: 0, ...(style === 'B4' ? BRIAN : {})}, captions: [], shots: [], sfx: [], ...(['B1', 'B2', 'B3'].includes(style) ? {reference_review: {author_id: '', capability: {mode: 'sample_target', environment: '', limitations: []}}} : {}), ...(style === 'B3' ? {television: {enabled: true, intensity: 0.45}} : {}), ...(style === 'B4' ? {ambience: [], dialogue: [], audio_cuts: [], picture_motion: {author_id: '', shots: []}, opening: {version: 1, preset: B4_HOOK.id, shadow: '', setup: '', payoff: '', picture: {before: '', after: '', meaning: '', region: {}}}} : {})});
-    console.log(JSON.stringify({project: path.join(dir, 'project.json'), stage: 'scaffold; add approved narration, aligned captions and authored scenes before rendering'}));
+    save(path.join(dir, 'project.json'), {version: 1, style, width: ratio === '9:16' ? 720 : 1280, height: ratio === '9:16' ? 1280 : 720, fps: 30, voice: {path: 'narration.wav', lead: 0, tail: 0, ...(style === 'B4' ? BRIAN : {})}, captions: [], shots: [], sfx: [], ...(['B1', 'B2', 'B3'].includes(style) ? {reference_review: {author_id: '', capability: {mode: 'sample_target', environment: '', limitations: []}}} : {}), ...(style === 'B3' ? {television: {enabled: true, intensity: 0.45}} : {}), ...(style === 'B4' ? {ambience: [], dialogue: [], audio_cuts: [], picture_motion: {author_id: '', shots: []}, opening: {version: 1, preset: ratio === '9:16' ? B4_PORTRAIT.id : B4_HOOK.id, shadow: '', setup: '', payoff: '', picture: {before: '', after: '', meaning: '', region: {}}}} : {})});
+    console.log(JSON.stringify({project: path.join(dir, 'project.json'), stage: 'scaffold; add approved narration, aligned captions and authored native scenes before rendering', next_workflow: workflowHint(style, ratio)}));
   } else if (command === 'captions') {
     if (!args[0] || !args[1]) throw new Error('Aligned word input and output file required');
     if (fs.existsSync(args[1])) throw new Error('Caption output exists; will not overwrite');
@@ -143,6 +154,6 @@ async function main() {
       if (a.preview_fingerprint !== reviewed.fingerprint || a.preview_seconds !== report.preview_seconds || a.preview_sha256 !== report.output_sha256) throw new Error('Approval invalidated; preview and user approval required again');
     }
     const {render} = await import('./autopilot-render.mjs'); console.log(JSON.stringify(await render(p, {full: command === 'render', seconds, replace: args.includes('--replace')}), null, 2));
-  } else throw new Error('Commands: doctor | probe FILE | init DIR | review-pack B6_PROJECT --ratio R --report FILE --output outputs/review | check-review B6_PROJECT --ratio R --review FILE | captions WORDS OUTPUT [--lead N] | validate PROJECT [--seconds N] | preview PROJECT [--seconds N] [--replace] | approve PROJECT --note TEXT [--visual-review REVIEW_JSON] [--text-review REVIEW_JSON] [--picture-review REVIEW_JSON] | render PROJECT [--replace] | accept-text PROJECT --review REVIEW_JSON | accept-picture PROJECT --review REVIEW_JSON | accept-visual PROJECT --review REVIEW_JSON');
+  } else throw new Error('Commands: workflow --style B1..B6 [--ratio 16:9|9:16] [--project PATH] | doctor | probe FILE | init DIR | review-pack B6_PROJECT --ratio R --report FILE --output outputs/review | check-review B6_PROJECT --ratio R --review FILE | captions WORDS OUTPUT [--lead N] | validate PROJECT [--seconds N] | preview PROJECT [--seconds N] [--replace] | approve PROJECT --note TEXT [--visual-review REVIEW_JSON] [--text-review REVIEW_JSON] [--picture-review REVIEW_JSON] | render PROJECT [--replace] | accept-text PROJECT --review REVIEW_JSON | accept-picture PROJECT --review REVIEW_JSON | accept-visual PROJECT --review REVIEW_JSON');
 }
 main().catch(e => { console.error(e.message); process.exitCode = 1; });
