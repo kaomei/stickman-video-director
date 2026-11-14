@@ -2,7 +2,7 @@
 """Standalone B6 authored-scene runtime, using the complete painted V90 engine."""
 from pathlib import Path
 from types import SimpleNamespace
-import argparse, hashlib, importlib.util, json, math, subprocess, sys
+import argparse, hashlib, importlib.util, json, math, subprocess, sys, time
 from contextlib import contextmanager
 
 sys.dont_write_bytecode=True
@@ -11,6 +11,9 @@ TRUSTED_PUPPET_RUNTIME_SHA256='adc4bd4ddcbe2bb184381d080e99ebe1f4bd1beb3b0b6b1a8
 TRUSTED_CAPTION_RUNTIME_SHA256='5fc03a3f38dce9f55609f2059077125ecc30b7f5fa1d31580f9e007fcf23200b'
 TRUSTED_ASSET_ROLES_SHA256='ade90e92cad1751bd0b010d508501bba73a41a1ffe6c6018dadd4a368ace9c14'
 TRUSTED_MOTION_REVIEW_SHA256='b2f813cf6d42f65d73053eb75565e6f7ee3f32af7f58600679aa6bd042d921ed'
+TRUSTED_ACTIONS_SHA256='4efcf86cb4f677f1369ca62bb5c87021262c8d92493428f4c91171280760db27'
+TRUSTED_ITERATION_SHA256='37aac116a54c860aaa5dca66ae7dbc0e68ab9bf2d9296e7c1c49c5e11dc8f1b0'
+TRUSTED_PREFLIGHT_SHA256='561c976f7e8be8ab446e37cbbfcf2fa8d99e9c2d24219291a4f036000fe67e2d'
 FROZEN_V90_EXAMPLE_SHA256={
     'scene':'dffaba09358cfdeafc9a3a04f29483910f4a8667159fbdbd60094b9185239947',
     'native_plan':'c0cdbfa77603936aa69ffdf3f211b28566fd14292172593fd63324a9d749620c',
@@ -88,6 +91,9 @@ def verified_module(name,path,expected_sha,label='character runtime'):
             'Untrusted '+label+' changed; validation refuses to execute the edited project helper')
     spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec)
     sys.modules[name]=m;exec(compile(source,str(path),'exec'),m.__dict__);return m
+
+def workflow_helper(base, name, digest):
+    return verified_module('b6_workflow_'+name,local(base,name+'.py'),digest,name)
 
 def character_registry(base, project, cast_ids):
     """Load actual per-view painted puppets; an arm-length JSON is insufficient.
@@ -233,6 +239,8 @@ def load(base,ratio):
     puppet_runtime,character_packages,registry,character_files=character_registry(base,p,cast_ids)
     files.extend(character_files)
     files.append('b6_asset_roles.py')
+    for helper in ['b6_actions.py','b6_iteration.py','b6_character_preflight.py']:
+        if (base/helper).is_file():files.append(helper)
     # Validation checks data/hashes only. Authored modules are imported after --trusted-code.
     manifest=read(local(base,'engine/manifest.json'))
     required_font_license_files(base/'engine',manifest)
@@ -303,7 +311,20 @@ class Engine:
         return self.scene.draw(source_time)
 
 def run(a):
-    base=Path(a.project).resolve();c=load(base,a.ratio);p=c.project
+    began=time.perf_counter();base=Path(a.project).resolve()
+    if a.command=='preflight':
+        # Runs before narration, captions or the scene are authored. No authored
+        # Python is imported; use the same pinned package/alpha validator.
+        runtime=verified_module('b6_preflight_puppet',local(base,'b6_puppet.py'),TRUSTED_PUPPET_RUNTIME_SHA256)
+        helper=workflow_helper(base,'b6_character_preflight',TRUSTED_PREFLIGHT_SHA256)
+        required=read(local(base,a.required_views)) if getattr(a,'required_views',None) else None
+        result=helper.preflight_project(base,runtime_module=runtime,required_views=required)
+        require(result['technical_pass'],'Character preflight failed: '+json.dumps(result,ensure_ascii=False))
+        return result
+    c=load(base,a.ratio);p=c.project;loaded=time.perf_counter()
+    if a.command=='plan-iteration':
+        require(a.report,'Choose the predecessor --report for change comparison')
+        return workflow_helper(base,'b6_iteration',TRUSTED_ITERATION_SHA256).iteration_plan(c,a.report)
     if a.command in ('approve','render'):
         require(c.purpose=='production','B6 '+c.purpose+' is technical-only / example-only: review text or deleted fixture flags cannot authorize a new-story finished export')
     if a.command=='validate':return {'purpose':c.purpose,'delivery_ready':False,'protected_inputs':c.protected_inputs,'valid':True,'renderer':p['renderer'],'fingerprint':c.fingerprint,'ratio':a.ratio,'duration':p['duration']}
@@ -346,7 +367,14 @@ def run(a):
         require(reviewed.get('review') and sha(local(base,reviewed['review']))==reviewed.get('sha256'),'Creative review missing/changed since user approval')
         motion_review().validate_review(c,reviewed['review'])
         start,end=0,round(p['duration']*30)
-    require(a.command!='preview' or end-start<=1800,'Preview at most 60 seconds')
+    require(a.command not in ('preview','draft') or end-start<=1800,'Preview at most 60 seconds')
+    draft=a.command=='draft'
+    iteration=workflow_helper(base,'b6_iteration',TRUSTED_ITERATION_SHA256) if (base/'b6_iteration.py').is_file() else None
+    require(not draft or iteration is not None,'Draft requires the portable iteration helper; initialize with the updated Skill')
+    if iteration is not None:
+        c.viewport=iteration.RenderViewport.from_plan(c.plan,scale=getattr(a,'draft_scale',.5) if draft else 1.)
+    if (base/'b6_actions.py').is_file():
+        c.actions=workflow_helper(base,'b6_actions',TRUSTED_ACTIONS_SHA256)
     out=(base/a.output).resolve();require(out.is_relative_to(base) and not out.exists(),'Choose a fresh project-local output directory')
     c.engine_runtime=module('b6_locked_runtime',base/'engine/run.py')
     reads,outside=c.engine_runtime.resource_audit(base)
@@ -358,7 +386,11 @@ def run(a):
     roles=asset_roles()
     read_scope=roles.actual_reads_scope(base,reads,c.purpose)
     with scene_scope(),read_scope():
+        if hasattr(c,'actions'):c.space=module('b6_project_space',local(base,'b6_space.py'))
         scene=module('b6_authored_scene',local(base,p['scene']))
+    require(not draft or callable(getattr(scene,'draft_frame',None)),
+            'True low-resolution draft needs scene.draft_frame(t, context) using context.viewport; no silent native-render/downscale fallback')
+    draw_frame=scene.draft_frame if draft else scene.frame
     checked_reads=set()
     def check_story_reads():
         fresh={resource_key(rel) for rel in reads}-checked_reads
@@ -369,18 +401,23 @@ def run(a):
         checked_reads.update(fresh)
     from PIL import Image,ImageDraw
     import numpy as np
-    out.mkdir(parents=True);w,h=c.plan['width'],c.plan['height'];thumbs=[];arms=legs=0;maxcontact=0
-    captions=caption_helper();caption_raster=captions.CaptionRenderer(base,a.ratio,w,h,c.plan['caption']);caption_observations={}
+    out.mkdir(parents=True);native_w,native_h=c.plan['width'],c.plan['height']
+    w,h=c.viewport.size if iteration is not None else (native_w,native_h)
+    thumbs=[];arms=legs=0;maxcontact=0
+    captions=caption_helper();caption_raster=captions.CaptionRenderer(base,a.ratio,native_w,native_h,c.plan['caption']);caption_observations={};draft_captions={}
+    timings={'load_seconds':loaded-began,'setup_seconds':time.perf_counter()-loaded,'scene_seconds':0.,'validation_seconds':0.,'caption_seconds':0.,'encoder_write_seconds':0.,'mux_seconds':0.}
     encoder=None
-    if a.command in ['preview','render']:
-        encoder=subprocess.Popen(['ffmpeg','-v','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{w}x{h}','-r','30','-i','-','-an','-c:v','libx264','-preset','fast','-crf','18','-pix_fmt','yuv420p',str(out/'silent.mp4')],stdin=subprocess.PIPE,stderr=open(out/'encode.log','w'))
+    if a.command in ['preview','render','draft']:
+        encoder=subprocess.Popen(['ffmpeg','-v','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{w}x{h}','-r','30','-i','-','-an','-c:v','libx264','-preset','ultrafast' if draft else 'fast','-crf','23' if draft else '18','-pix_fmt','yuv420p',str(out/'silent.mp4')],stdin=subprocess.PIPE,stderr=open(out/'encode.log','w'))
     try:
         with open(out/'limb-frames.jsonl','w') as log:
             for i in range(start,end):
                 t=i/30
                 if e is not None:e.used_source_draw=False;e.source_frame=None;e.rig.reset(i)
+                tick=time.perf_counter()
                 with scene_scope(),read_scope():
-                    rendered=scene.frame(t,c)
+                    rendered=draw_frame(t,c)
+                timings['scene_seconds']+=time.perf_counter()-tick;tick=time.perf_counter()
                 check_story_reads()
                 if c.puppet_runtime is not None:
                     require(isinstance(rendered,c.puppet_runtime.RenderResult),'Character-system scenes must return the final painted RenderResult, including all foreground occluders')
@@ -411,22 +448,35 @@ def run(a):
                     contacts=frame_contacts(e,scene,i,contract)
                     maxcontact=max([maxcontact,*contacts]);arms+=len(e.rig.RECORDS);legs+=len(e.rig.LEGS)
                     log.write(json.dumps({'frame':i,'performance_frame':e.source_frame,'arms':e.rig.RECORDS,'legs':e.rig.LEGS,'contacts':contacts})+'\n')
-                require(im.size==(w,h),'Scene must render at native dimensions; no automatic crop/stretch')
+                require(im.size==(w,h),'Scene must render at requested viewport dimensions; no automatic crop/stretch')
+                timings['validation_seconds']+=time.perf_counter()-tick;tick=time.perf_counter()
                 if c.purpose!='production':
                     badge='B6 DIAGNOSTIC - NOT A FINISHED STORY' if c.purpose=='diagnostic' else 'B6 EXAMPLE REPRODUCTION - NOT A NEW STORY'
                     overlay=ImageDraw.Draw(im);overlay.rectangle((0,0,w,28),fill='#392f2f');overlay.text((8,7),badge,fill='#fff0c5')
                 cue=next((q for q in c.cues if q['start']<=t<q['end']),None)
                 if cue:
-                    bounds=caption_raster.draw(im,cue['text'])
+                    if draft:
+                        if cue['text'] not in draft_captions:
+                            layer,bounds=caption_raster.raster(cue['text'])
+                            draft_captions[cue['text']]=(layer.resize((w,h),Image.Resampling.LANCZOS),bounds)
+                        layer,native_bounds=draft_captions[cue['text']];im.paste(layer,(0,0),layer)
+                        bounds=[round(v*c.viewport.scale,3) for v in native_bounds]
+                    else:bounds=caption_raster.draw(im,cue['text'])
                     key=(cue['start'],cue['end'],cue['text'])
                     caption_observations[key]={**cue,'raster_bounds':bounds}
+                if draft:
+                    overlay=ImageDraw.Draw(im);overlay.rectangle((0,0,w,22),fill='#392f2f');overlay.text((6,5),'B6 DRAFT - NOT FOR FINAL REVIEW',fill='#fff0c5')
+                timings['caption_seconds']+=time.perf_counter()-tick;tick=time.perf_counter()
                 if encoder:encoder.stdin.write(im.tobytes())
+                timings['encoder_write_seconds']+=time.perf_counter()-tick
                 if i in np.linspace(start,end-1,12,dtype=int):
                     im.save(out/f'frame-{i:04}.png');thumbs.append((t,im.resize((320,round(320*h/w)))))
                 if (i-start)%60==0:print(json.dumps({'checked_frame':i,'total':end-start}),flush=True)
         if encoder:
             encoder.stdin.close();require(encoder.wait()==0,'Video encoder failed')
+            tick=time.perf_counter()
             subprocess.run(['ffmpeg','-v','error','-i',str(out/'silent.mp4'),'-ss',str(start/30),'-i',str(c.audio),'-map','0:v:0','-map','1:a:0','-t',str((end-start)/30),'-c:v','copy','-c:a','aac','-b:a','192k','-movflags','+faststart',str(out/'preview.mp4')],check=True)
+            timings['mux_seconds']=time.perf_counter()-tick
             (out/'silent.mp4').unlink()
     finally:
         if encoder and encoder.poll() is None:encoder.kill();encoder.wait()
@@ -437,12 +487,16 @@ def run(a):
     project_reads=check_resource_reads(reads,c.inputs,out.relative_to(base))
     result={'status':'automated_checks_passed_pending_visual_and_user_review','kind':a.command,'technical_fixture':c.purpose!='production','purpose':c.purpose,'delivery_ready':False,'protected_inputs':c.protected_inputs,'ratio':a.ratio,'fingerprint':c.fingerprint,'checked_frames':end-start,'arm_poses_checked':arms,'straight_legs_checked':legs,'max_prop_contact_error_px':maxcontact,'external_media_reads':sorted(outside),'voice_speed':1,'new_story_acceptance':'not implied by reusing a tested performance'}
     result.update(time_range={'start':start/30,'end':end/30},technical_status='pass',creative_status='pending_actual_playback_and_source_review',user_acceptance='not_inferred',review_required='review-pack then check-review; numeric QC never certifies motion quality')
+    result.update(inputs=dict(c.inputs),caption_cues=c.cues,render_profile='draft-viewport-v1' if draft else 'native',dimensions=[w,h],native_dimensions=[native_w,native_h],fps=30,reviewable=not draft)
+    timings['total_seconds']=time.perf_counter()-began;result['timings']={k:round(v,4) for k,v in timings.items()}
+    if draft:
+        result.update(status='draft_only_not_formal_quality_evidence',creative_status='not_assessed_draft',review_required='Native preview plus unchanged 35-item motion/AV review required; draft cannot be approved')
     result['caption_sidecars']=[str((out/name).relative_to(base)) for name in ['captions.srt','captions.vtt']]
-    result['caption_contract']=captions.contract(c.plan['caption'],base/'caption_renderer.py',base/c.plan['caption']['font_file'],sha(base/p['captions']),list(caption_observations.values()))
+    result['draft_caption_observations' if draft else 'caption_contract']=captions.contract(c.plan['caption'],base/'caption_renderer.py',base/c.plan['caption']['font_file'],sha(base/p['captions']),list(caption_observations.values()))
     if encoder:result.update(video=str((out/'preview.mp4').relative_to(base)),video_sha256=sha(out/'preview.mp4'))
     save(out/'report.json',result);save(out/'resource-audit.json',{'project_reads':sorted(project_reads),'external_media_reads':sorted(outside)})
     return result
 
 if __name__=='__main__':
-    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('command',choices=['validate','frames','preview','review-pack','check-review','approve','render']);ap.add_argument('project');ap.add_argument('--ratio',required=True,choices=['16:9','9:16']);ap.add_argument('--trusted-code',action='store_true');ap.add_argument('--start',type=float,default=0);ap.add_argument('--seconds',type=float);ap.add_argument('--output',default='outputs/preview-01');ap.add_argument('--report');ap.add_argument('--review');ap.add_argument('--note',default='')
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('command',choices=['validate','frames','draft','preflight','plan-iteration','preview','review-pack','check-review','approve','render']);ap.add_argument('project');ap.add_argument('--ratio',required=True,choices=['16:9','9:16']);ap.add_argument('--trusted-code',action='store_true');ap.add_argument('--start',type=float,default=0);ap.add_argument('--seconds',type=float);ap.add_argument('--output',default='outputs/preview-01');ap.add_argument('--report');ap.add_argument('--review');ap.add_argument('--note',default='');ap.add_argument('--draft-scale',type=float,choices=[.5,.75],default=.5);ap.add_argument('--required-views')
     print('\nRESULT '+json.dumps(run(ap.parse_args()),ensure_ascii=False))

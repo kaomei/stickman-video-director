@@ -56,10 +56,11 @@ async function main() {
     if (fs.existsSync(args[1])) throw new Error('Caption output exists; will not overwrite');
     save(args[1], groupWords(json(args[0]), Number(option('--lead', 0))));
     console.log(JSON.stringify({output: path.resolve(args[1])}));
-  } else if (['validate', 'preview', 'approve', 'render', 'accept-text', 'accept-picture', 'accept-visual', 'review-pack', 'check-review'].includes(command)) {
+  } else if (['validate', 'preview', 'approve', 'render', 'accept-text', 'accept-picture', 'accept-visual', 'review-pack', 'check-review', 'draft', 'preflight', 'plan-iteration'].includes(command)) {
     const possibleProject = args[0] && path.resolve(args[0]);
     const possibleB6 = possibleProject && (fs.statSync(possibleProject).isDirectory() ? path.join(possibleProject, 'project.json') : possibleProject);
     if (possibleB6 && json(possibleB6).style === 'B6') { const {runB6} = await import('./b6-dynamic-meme.mjs'); console.log(JSON.stringify(await runB6(command, args), null, 2)); return; }
+    if (['draft', 'preflight', 'plan-iteration'].includes(command)) throw new Error('Fast iteration commands apply to the B6 production renderer only');
     if (['review-pack', 'check-review'].includes(command)) throw new Error('Motion review commands currently apply to the B6 production renderer only');
     if (args[0] && json(path.resolve(args[0])).style === 'B5') throw new Error('B5 uses the code-authored route: node scripts/character-explainer.mjs --help; not the B1–B4 manifest renderer');
     const scoped = command === 'preview' || command === 'validate' && args.includes('--seconds');
@@ -162,6 +163,6 @@ async function main() {
       if (a.preview_fingerprint !== reviewed.fingerprint || a.preview_seconds !== report.preview_seconds || a.preview_sha256 !== report.output_sha256) throw new Error('Approval invalidated; preview and user approval required again');
     }
     const {render} = await import('./autopilot-render.mjs'); console.log(JSON.stringify(await render(p, {full: command === 'render', seconds, replace: args.includes('--replace')}), null, 2));
-  } else throw new Error('Commands: workflow --style B1..B6 [--ratio 16:9|9:16] [--project PATH] | doctor | probe FILE | init DIR | review-pack B6_PROJECT --ratio R --report FILE --output outputs/review | check-review B6_PROJECT --ratio R --review FILE | captions WORDS OUTPUT [--lead N] | validate PROJECT [--seconds N] | preview PROJECT [--seconds N] [--replace] | approve PROJECT --note TEXT [--visual-review REVIEW_JSON] [--text-review REVIEW_JSON] [--picture-review REVIEW_JSON] | render PROJECT [--replace] | accept-text PROJECT --review REVIEW_JSON | accept-picture PROJECT --review REVIEW_JSON | accept-visual PROJECT --review REVIEW_JSON');
+  } else throw new Error('Commands: workflow --style B1..B6 [--ratio 16:9|9:16] [--project PATH] | doctor | probe FILE | init DIR | preflight B6_PROJECT --ratio R | draft B6_PROJECT --ratio R --trusted-code [--draft-scale 0.5|0.75] [--output PATH] | plan-iteration B6_PROJECT --ratio R --report FILE | review-pack B6_PROJECT --ratio R --report FILE --output outputs/review | check-review B6_PROJECT --ratio R --review FILE | captions WORDS OUTPUT [--lead N] | validate PROJECT [--seconds N] | preview PROJECT [--seconds N] [--replace] | approve PROJECT --note TEXT [--visual-review REVIEW_JSON] [--text-review REVIEW_JSON] [--picture-review REVIEW_JSON] | render PROJECT [--replace] | accept-text PROJECT --review REVIEW_JSON | accept-picture PROJECT --review REVIEW_JSON | accept-visual PROJECT --review REVIEW_JSON');
 }
 main().catch(e => { console.error(e.message); process.exitCode = 1; });
