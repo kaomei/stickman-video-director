@@ -2,6 +2,8 @@
 
 ## Installation handoff and first invocation
 
+If installation fails while cloning the repository, follow [installation troubleshooting](installation-troubleshooting.md) before continuing the handoff.
+
 A standalone Skill is loaded when invoked; its files do not provide a universal post-install execution hook. When the assistant performs installation, verify it and then read the installed `SKILL.md` and present the introduction in that same conversation. If the user installed through a terminal or another host, present it on the first invocation. Do not add an npm install hook, background task, second Skill or plugin just to display a welcome. Say "installed" only after installation has actually been verified.
 
 Maintain one shared guide, not separate onboarding editions for each README language. Follow an explicit guidance-language request first, otherwise use the user's current conversation language. If that is unclear, use the host/application or local language setting when it is already available; do not scan unrelated settings to infer it. If neither gives a clear language, ask one brief language question. Translate the explanation and examples naturally; keep commands, paths, service/voice identifiers and A/B style codes intact. Guidance language is independent of narration/subtitle language: a Chinese conversation can request an English video, and English-default narration must not force English onboarding. Do not infer guidance language from the README edition or source article alone.

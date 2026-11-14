@@ -159,6 +159,8 @@ in plain language, with examples I can copy.
 Based on what I want to make, tell me what is missing and exactly what to do next.
 ```
 
+Installation timed out? See [installation troubleshooting](skills/directing-stickman-videos/references/installation-troubleshooting.md) for macOS/Linux and Windows.
+
 <a id="director-start"></a>
 
 ### A · Director Mode: scene-by-scene video prompts

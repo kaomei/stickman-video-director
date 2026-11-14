@@ -159,6 +159,8 @@ https://github.com/kaomei/stickman-video-director
 结合我的需求，告诉我还缺什么、下一步具体怎么做。
 ```
 
+安装超时？请看[安装排障](skills/directing-stickman-videos/references/installation-troubleshooting.md)（macOS/Linux 与 Windows）。
+
 <a id="director-start"></a>
 
 ### A · 导演模式：逐段生成分镜提示词

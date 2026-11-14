@@ -22,6 +22,18 @@ def save(p,v): Path(p).write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n'
 def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def require(ok,msg):
     if not ok: raise ValueError(msg)
+def resource_key(path):
+    # Project JSON uses portable slash keys; both unchanged read collectors emit
+    # native separators. Preserve literal backslashes in POSIX filenames.
+    return Path(path).as_posix()
+def check_resource_reads(reads,inputs,output):
+    observed={resource_key(rel) for rel in reads}
+    declared={resource_key(rel) for rel in inputs}
+    output_prefix=resource_key(output).rstrip('/')+'/'
+    undeclared=sorted(rel for rel in observed if not rel.startswith('engine/')
+                      and not rel.startswith(output_prefix) and rel not in declared)
+    require(not undeclared,'Declare project-local code/art dependencies in inputs: '+str(undeclared))
+    return observed
 LOCAL_FONT_MANIFEST_FILES=frozenset({
     'source/fonts/Arial.ttf','source/fonts/ArialBlack.ttf',
     'source/fonts/CourierNewBold.ttf','font-provenance.json',
@@ -123,7 +135,7 @@ def character_registry(base, project, cast_ids):
                     'Version-2 projects require painted head/neck attachment mounts in every registered character view')
         characters[actor['id']]=character
         for asset in sorted(package_path.parent.rglob('*')):
-            if asset.is_file():files.append(str(asset.relative_to(base)))
+            if asset.is_file():files.append(asset.relative_to(base).as_posix())
     for actor in rigid:files.append(actor['source'])
     return runtime,characters,registry,files
 
@@ -214,7 +226,7 @@ def load(base,ratio):
         declared=read(local(base,contract['registry']))
         for actor in declared.get('actors',[]):
             package=local(base,actor['package'].rstrip('/')+'/package.json')
-            declared_character_files.extend(str(f.relative_to(base)) for f in package.parent.rglob('*') if f.is_file())
+            declared_character_files.extend(f.relative_to(base).as_posix() for f in package.parent.rglob('*') if f.is_file())
     # The locked quality movie is permitted for COMPARISON, never an art input.
     story_inputs=[f for f in files if f!=comparison_reference or f in p.get('inputs',[])]
     protected=roles.audit_inputs(base,[*story_inputs,*declared_character_files],purpose)
@@ -230,7 +242,7 @@ def load(base,ratio):
     if p.get('bindings'):
         contract=read(local(base,p['bindings']))
         require(len(contract['coverage'])==round(p['duration']*30) and len(contract['leg_coverage'])==len(contract['coverage']),'New action needs complete per-frame limb inventory')
-    digests={f:sha(local(base,f)) for f in sorted(set(files))};digests['engine/manifest.json']=ef
+    digests={f:sha(local(base,f)) for f in sorted({resource_key(f) for f in files})};digests['engine/manifest.json']=ef
     fingerprint=hashlib.sha256(json.dumps(digests,sort_keys=True).encode()).hexdigest()
     return SimpleNamespace(purpose=purpose,protected_inputs=protected,project=p,plan=plan,cues=cues,audio=audio,fingerprint=fingerprint,inputs=digests,engine_project=ep,engine_bindings=eb,base=base,ratio=ratio,puppet_runtime=puppet_runtime,character_packages=character_packages,character_registry=registry)
 
@@ -345,10 +357,10 @@ def run(a):
         scene=module('b6_authored_scene',local(base,p['scene']))
     checked_reads=set()
     def check_story_reads():
-        fresh=set(reads)-checked_reads
+        fresh={resource_key(rel) for rel in reads}-checked_reads
         # Output data is not a production input; compare-only references read by
         # scene code ARE inputs here and cannot become a background/video layer.
-        source=[rel for rel in fresh if not rel.startswith(str(out.relative_to(base))+'/')]
+        source=[rel for rel in fresh if not rel.startswith(out.relative_to(base).as_posix()+'/')]
         roles.audit_inputs(base,source,c.purpose)
         checked_reads.update(fresh)
     from PIL import Image,ImageDraw
@@ -418,14 +430,13 @@ def run(a):
     for j,(t,im) in enumerate(thumbs):x=j%4*320;y=j//4*tileh;board.paste(im,(x,y+24));d.text((x+6,y+5),f'{t:.2f}s',fill='#382b28')
     board.save(out/'contact-sheet.jpg',quality=95)
     caption_sidecars(out,c.cues,start/30,end/30)
-    undeclared=[f for f in reads if not f.startswith('engine/') and not f.startswith(str(out.relative_to(base))+'/') and f not in c.inputs]
-    require(not undeclared,'Declare project-local code/art dependencies in inputs: '+str(undeclared))
+    project_reads=check_resource_reads(reads,c.inputs,out.relative_to(base))
     result={'status':'automated_checks_passed_pending_visual_and_user_review','kind':a.command,'technical_fixture':c.purpose!='production','purpose':c.purpose,'delivery_ready':False,'protected_inputs':c.protected_inputs,'ratio':a.ratio,'fingerprint':c.fingerprint,'checked_frames':end-start,'arm_poses_checked':arms,'straight_legs_checked':legs,'max_prop_contact_error_px':maxcontact,'external_media_reads':sorted(outside),'voice_speed':1,'new_story_acceptance':'not implied by reusing a tested performance'}
     result.update(time_range={'start':start/30,'end':end/30},technical_status='pass',creative_status='pending_actual_playback_and_source_review',user_acceptance='not_inferred',review_required='review-pack then check-review; numeric QC never certifies motion quality')
     result['caption_sidecars']=[str((out/name).relative_to(base)) for name in ['captions.srt','captions.vtt']]
     result['caption_contract']=captions.contract(c.plan['caption'],base/'caption_renderer.py',base/c.plan['caption']['font_file'],sha(base/p['captions']),list(caption_observations.values()))
     if encoder:result.update(video=str((out/'preview.mp4').relative_to(base)),video_sha256=sha(out/'preview.mp4'))
-    save(out/'report.json',result);save(out/'resource-audit.json',{'project_reads':sorted(reads),'external_media_reads':sorted(outside)})
+    save(out/'report.json',result);save(out/'resource-audit.json',{'project_reads':sorted(project_reads),'external_media_reads':sorted(outside)})
     return result
 
 if __name__=='__main__':

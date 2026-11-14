@@ -272,8 +272,30 @@ for name in selected:
     assert re.findall(r'<a href="([^"]+\.mp4)">', b6) == b6_videos, (name, "approved B6 landscape pair")
     assert b6.count('<th width="50%"') == 2 and b6.count('width="360"') == 2, (name, "paired B6 gallery")
     assert len(re.findall(r"^- \*\*", b6, re.M)) == 3, (name, "B6 visuals, motion and use cases")
-    assert "16:9" in b6 and re.search(r"63[.,]2", b6) and "20" in b6, (name, "B6 sample metadata")
-    portrait_terms = {"en": "Works best in portrait", "zh-CN": "竖屏效果更好", "ja": "縦型（9:16）のほうが効果的", "ko": "세로형(9:16)", "fr": "meilleur en format vertical", "pt-BR": "melhor no formato vertical", "tr": "Dikey formatta (9:16)", "id": "Hasil terbaik dalam format vertikal"}
+    # The approved gallery uses story titles instead of duration/ratio labels.
+    sample_titles = {
+        "en": ["Example 1: The Man Who Sold the Eiffel Tower", "Example 2: 1990s Hong Kong · Buns and Arcades"],
+        "zh-CN": ["样片 1：卖掉埃菲尔铁塔的人", "样片 2：90 年代香港 · 菠萝包与街机"],
+        "ja": ["作例1：エッフェル塔を売った男", "作例2：90年代の香港 · パイナップルパンとゲームセンター"],
+        "ko": ["샘플 1: 에펠탑을 판 남자", "샘플 2: 1990년대 홍콩 · 파인애플번과 오락실"],
+        "fr": ["Exemple 1 : L’homme qui a vendu la tour Eiffel", "Exemple 2 : Hong Kong des années 1990 · Brioches et arcade"],
+        "pt-BR": ["Exemplo 1: O homem que vendeu a Torre Eiffel", "Exemplo 2: Hong Kong dos anos 1990 · Pães e fliperamas"],
+        "tr": ["Örnek 1: Eyfel Kulesi’ni satan adam", "Örnek 2: 1990’lar Hong Kong’u · Çörek ve atari"],
+        "id": ["Contoh 1: Pria yang menjual Menara Eiffel", "Contoh 2: Hong Kong 1990-an · Roti dan arkade"],
+    }
+    assert re.findall(r'<th\b[^>]*>(.*?)</th>', b6) == sample_titles[active], (name, "localized B6 sample titles")
+    assert re.findall(r'<img\b[^>]*\balt="([^"]+)"', b6) == sample_titles[active], (name, "localized B6 sample alt text")
+    # The portrait preference now lives in the visuals bullet, with approved localized wording.
+    portrait_terms = {
+        "en": "with better results in portrait",
+        "zh-CN": "竖屏效果更好",
+        "ja": "縦型でよりよい仕上がりに",
+        "ko": "세로형에서 효과가 더 좋습니다",
+        "fr": "pour un meilleur rendu en format vertical",
+        "pt-BR": "com melhor resultado no formato vertical",
+        "tr": "dikey formatta daha iyi sonuç verir",
+        "id": "hasilnya lebih baik dalam format vertikal",
+    }
     assert portrait_terms[active] in b6, (name, "localized portrait preference")
     assert images(hero)[-1] == b6_previews[0], (name, "B6 homepage preview uses immutable CDN")
     assert images(b6) == b6_previews, (name, "B6 sample previews use immutable CDN")

@@ -161,6 +161,8 @@ Com base no que quero criar, diga o que falta configurar
 e qual é o próximo passo.
 ```
 
+A instalação excedeu o tempo limite? Veja a [solução de problemas de instalação](skills/directing-stickman-videos/references/installation-troubleshooting.md) para macOS/Linux e Windows.
+
 <a id="director-start"></a>
 
 ### A · Director: prompts de vídeo cena por cena

@@ -159,6 +159,8 @@ https://github.com/kaomei/stickman-video-director
 私の作りたい動画に合わせて、足りないものと次にすることも具体的に案内してください。
 ```
 
+インストールがタイムアウトした場合は、[インストールのトラブルシューティング](skills/directing-stickman-videos/references/installation-troubleshooting.md)（macOS/Linux・Windows）をご覧ください。
+
 <a id="director-start"></a>
 
 ### A · Directorモード：クリップごとの動画プロンプトを作る
