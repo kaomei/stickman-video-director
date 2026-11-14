@@ -472,9 +472,7 @@ Give your favorite avatar a starring role—permission is required to use well-k
 
 Expressive meme faces, loose hand-drawn lines and soft colors turn unusual stories into lively short cartoons. Wide scenes give characters, props and camera moves room to play.
 
-**Works best in portrait (9:16).**
-
-- **Visuals**: Irregular ink lines, matte painted colors and soft light; faces and bodies share the same hand-drawn style.
+- **Visuals**: Ink lines of varying weight, matte paint and soft lighting keep the head, body and scenery in a consistent hand-drawn style, **with better results in portrait**.
 - **Motion**: Lateral tracking, layered depth, handoffs and reaction close-ups follow the story, with clear pauses for each visual punchline.
 - **Best for**: Historical oddities, con stories, absurd comedy and short stories with a twist.
 

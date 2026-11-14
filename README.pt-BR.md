@@ -480,9 +480,7 @@ Transforme seu avatar favorito no apresentador do canal; o uso de personagens co
 
 Expressões de meme, traços soltos à mão e cores suaves transformam histórias curiosas em animações curtas e vivas. Cenários amplos dão espaço aos personagens, objetos e movimentos de câmera.
 
-**O resultado é melhor no formato vertical (9:16).**
-
-- **Visual**: Contornos de tinta irregulares, pintura fosca e luz suave; rosto e corpo seguem o mesmo traço.
+- **Visual**: Traços de tinta de espessura variável, pintura fosca e luz suave mantêm a cabeça, o corpo e o cenário no mesmo estilo desenhado à mão, **com melhor resultado no formato vertical**.
 - **Movimento**: Travellings laterais, profundidade em camadas, entrega de objetos e closes de reação acompanham a história, com pausas para entender cada gag.
 - **Ideal para**: Curiosidades históricas, golpes, comédia absurda e histórias curtas com reviravolta.
 

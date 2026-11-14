@@ -481,9 +481,7 @@ Jadikan avatar favorit Anda pembawa acara di kanal Anda; penggunaan karakter ter
 
 Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut menghidupkan kisah unik menjadi animasi pendek. Latar yang luas memberi ruang gerak bagi tokoh, properti, dan kamera.
 
-**Hasil terbaik dalam format vertikal (9:16).**
-
-- **Visual**: Garis tinta tidak beraturan, warna cat matte, dan cahaya lembut; wajah serta tubuh memakai gaya gambar tangan yang sama.
+- **Visual**: Garis tinta dengan ketebalan bervariasi, cat matte, dan pencahayaan lembut menjaga keselarasan gaya gambar tangan pada kepala, tubuh, dan latar; **hasilnya lebih baik dalam format vertikal**.
 - **Gerak**: Pelacakan menyamping, kedalaman berlapis, penyerahan benda, dan close-up reaksi mengikuti cerita, dengan jeda agar setiap aksi dan lelucon terbaca.
 - **Cocok untuk**: Keanehan sejarah, kisah penipuan, komedi absurd, dan cerita pendek dengan kejutan di akhir.
 
