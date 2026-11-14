@@ -628,8 +628,8 @@ Non. Vous n’avez besoin ni d’une carte RTX haut de gamme ni de connaissances
 - [x] **3,000 Stars** : lancement du mode AutoPilot pour générer des vidéos en un clic
 - [x] **6,000 Stars** : Plus de 10 nouveaux styles visuels de qualité déjà disponibles
 - [ ] **🔥 10,000 Stars** :
-  - Bibliothèque de plus de 1,000 prompts de scripts YouTube viraux
-  - Plus de 200 effets sonores et transitions libres de redevances et sans risque Content ID
+  - Plus de 1,000 prompts de scripts YouTube communs aux modes A et B
+  - Plus de 200 effets sonores et transitions audio pour le mode B, avec justificatifs de licence par élément et crédits requis
   - Éditeur par lots en un clic pour YouTube Shorts et TikTok
 - [ ] **20,000 Stars** :
   - lancement de Stickman AI Studio — de l’idée à la vidéo finale, en pilote automatique

@@ -29,6 +29,8 @@ Captions: B1–B4 and B6 single-line; B5 up to three semantic lines. Apply fixed
 
 All B styles: native **16:9 and 9:16**, under the [dual-format gate](references/autopilot-production-qa.md#native-landscape-and-portrait). For **B1–B3 portrait**, also read the [native portrait contract](references/b1-b2-b3-native-portrait.md): ratio-specific readable captions, authored per-shot focal regions, safe-area/visible-action checks and independent 1× phone-size review are required. Use the approved internal 10-second B1/B2/B3 portrait samples as effect targets alongside the landscape references; B1 retains its handwritten hierarchy and sequential element builds, while B2/B3 retain their original visual languages. They are not additional README showcases. Their exact-clip user approval, technical diagnostics and each new output's independent review remain separate; an engineering render does not establish portrait acceptance.
 
+**B mode shared scope:** automatically follow [music sourcing, license verification and credits](references/music-sourcing-and-license.md) whenever a B style uses background music. The [B sound system](references/autopilot-sound-system.md) owns SFX, ambience, sound transitions and mixing across B styles. Neither workflow depends on B9 being published. Preserve style-specific sound choices and approved audio; A does not inherit B audio execution. The planned script-prompt library serves both A and B: reuse ideas and structure through each mode's own script/output contract, without importing B rendering/audio into A or A clip/prompt rules into B. This scope statement does not mean the planned prompt or SFX libraries have shipped.
+
 ## First use and next steps
 
 Read [first-use and stage guidance](references/getting-started.md) after verified installation or on first invocation. Use the conversation/requested guidance language independently of video language or README edition. Reuse choices; do not replay welcome or add approvals. Follow **A5 proactive character guidance** and **Optional A character references** there without changing voice rules.
@@ -117,3 +119,4 @@ Theme, ratio, duration, or style changes require a fresh visual balance check. A
 ## Final check
 
 Apply the checklist in the loaded reference. Repair any failed condition before responding.
+

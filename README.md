@@ -624,8 +624,8 @@ No. You do not need a high-end RTX graphics card or coding knowledge.
 - [x] **3,000 Stars**: Shipped AutoPilot Mode for 1-click video generation
 - [x] **6,000 Stars**: Shipped 10+ high-quality new visual styles
 - [ ] **🔥 10,000 Stars**:
-  - 1,000+ viral YouTube script prompt vault
-  - 200+ royalty-free, Content-ID safe SFX and transitions
+  - 1,000+ YouTube script prompts shared by modes A and B
+  - 200+ SFX and sound transitions for mode B, with item-specific license evidence and required credits
   - 1-click batch editor for YouTube Shorts & TikTok
 - [ ] **20,000 Stars**:
   - Launch Stickman AI Studio — from idea to finished video, on autopilot

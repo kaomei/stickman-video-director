@@ -627,8 +627,8 @@ Hayır. Üst düzey bir RTX ekran kartına veya kodlama bilgisine ihtiyacınız 
 - [x] **3,000 Stars**: tek tıkla video üreten AutoPilot Mode yayımlandı
 - [x] **6,000 Stars**: 10’dan fazla yüksek kaliteli yeni görsel stil yayımlandı
 - [ ] **🔥 10,000 Stars**:
-  - 1,000’den fazla viral YouTube senaryosu isteminden oluşan arşiv
-  - 200’den fazla telifsiz, Content ID açısından güvenli ses efekti ve geçiş
+  - A ve B modları için ortak 1,000’den fazla YouTube senaryosu istemi
+  - B modu için öğe bazında lisans kanıtı ve gerekli atıflarla 200’den fazla ses efekti ve ses geçişi
   - YouTube Shorts ve TikTok için tek tıkla toplu düzenleyici
 - [ ] **20,000 Stars**:
   - Stickman AI Studio’nun açılışı — fikirden tamamlanmış videoya, otomatik pilotta

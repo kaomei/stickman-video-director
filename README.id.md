@@ -633,8 +633,8 @@ Tidak. Anda tidak memerlukan kartu grafis RTX kelas atas atau pengetahuan pemrog
 - [x] **3,000 Stars**: AutoPilot Mode untuk membuat video dalam satu klik telah dirilis
 - [x] **6,000 Stars**: Lebih dari 10 gaya visual baru berkualitas tinggi telah dirilis
 - [ ] **🔥 10,000 Stars**:
-  - Koleksi 1,000+ prompt naskah YouTube viral
-  - 200+ efek suara dan transisi bebas royalti serta aman dari Content ID
+  - Koleksi 1,000+ prompt naskah YouTube untuk mode A dan B
+  - 200+ efek suara dan transisi audio untuk mode B, dengan bukti lisensi tiap aset dan atribusi yang diperlukan
   - Editor massal satu klik untuk YouTube Shorts dan TikTok
 - [ ] **20,000 Stars**:
   - luncurkan Stickman AI Studio — dari ide hingga video siap tayang, serba otomatis

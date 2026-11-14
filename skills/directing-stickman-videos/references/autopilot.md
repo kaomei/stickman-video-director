@@ -1,5 +1,7 @@
 # B · Autopilot 自动成片
 
+For every B style, read the shared [automatic music workflow](music-sourcing-and-license.md) when music is used and the [B sound system](autopilot-sound-system.md) for SFX, ambience, sound transitions and final mix. These are B-wide production rules, independent of any new style release. Script-prompt resources, when available, are shared with A; adapt them through this B contract rather than importing A's clip or prompt-only workflow.
+
 This is mode B of **directing-stickman-videos**, not a second installation. Run in an agent that can read/write files and execute commands. The agent performs research, scriptwriting and visual direction; bundled scripts validate and render the resulting project, not invent factual scripts from an arbitrary URL by themselves.
 
 B has its own production contract and independently defined styles. Do not import Director's proposal/prompt phases, clip-length rules, voice profiles or visual restrictions. Narration and synchronized subtitles are required in every B video.
@@ -114,3 +116,4 @@ These record only their respective text and picture acceptances. Neither implies
 Apply the [B common delivery gate](autopilot-production-qa.md#whole-film-delivery-gate) across every shot, including the body and ending; then deliver the MP4, subtitle sidecars and project/checkpoint paths. State what was verified, what still needs listening/human review, and any missing service configuration. Do not publish, upload or change GitHub unless separately requested.
 
 Once the user confirms the final film is satisfactory, offer the shared optional [Thumbnail & Publishing Kit](thumbnail-publishing-kit.md) unless already accepted, declined or deferred. A successful render or sample approval alone does not trigger this offer. Packaging never withholds the MP4, restarts production or inherits B1's design into another style; an explicit earlier request can produce clearly marked drafts.
+
