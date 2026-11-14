@@ -428,7 +428,7 @@ B1、B2、B3…の番号で追加。各画風に、イラスト絵コンテと�
   </tr>
   <tr>
     <td align="center">Brianの語り · 展開に連動する効果音 · 選択で締めるサスペンス</td>
-    <td align="center">Brianの語り · 恐怖で引き込む映像 · 要点を際立たせる文字演出</td>
+    <td align="center">恐怖で引き込む映像 · 要点を際立たせる文字演出</td>
   </tr>
 </table>
 
@@ -487,8 +487,8 @@ Memeらしい大げさな表情、ラフな手描き線、柔らかな色彩で�
     <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="作例2：90年代の香港 · パイナップルパンとゲームセンター" width="360"></a></td>
   </tr>
   <tr>
-    <td align="center">16:9 · 63.2秒 · 英語ナレーション・字幕</td>
-    <td align="center">16:9 · 20秒 · 英語ナレーション・字幕</td>
+    <td align="center">大げさな表情 · 手描きキャラクターアニメ · 意外な展開</td>
+    <td align="center">The Pharaoh 3の語り · 人物同士のやりとり · 場面転換</td>
   </tr>
 </table>
 

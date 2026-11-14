@@ -427,7 +427,7 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
   </tr>
   <tr>
     <td align="center">Brian 旁白 · 剧情同步音效 · 悬念互动结尾</td>
-    <td align="center">Brian 旁白 · 恐怖视觉钩子 · 重点文字动效</td>
+    <td align="center">恐怖视觉钩子 · 重点文字动效</td>
   </tr>
 </table>
 
@@ -486,8 +486,8 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
     <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="样片 2：90 年代香港 · 菠萝包与街机" width="360"></a></td>
   </tr>
   <tr>
-    <td align="center">16:9 横版 · 63.2 秒 · 英文配音与字幕</td>
-    <td align="center">16:9 横版 · 20 秒 · 英文配音与字幕</td>
+    <td align="center">夸张表情 · 手绘角色动画 · 剧情反转</td>
+    <td align="center">The Pharaoh 3 旁白 · 多人互动 · 场景切换</td>
   </tr>
 </table>
 

@@ -429,7 +429,7 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
   </tr>
   <tr>
     <td align="center">Brian 내레이션 · 전개에 맞춘 효과음 · 긴장감 있는 선택형 결말</td>
-    <td align="center">Brian 내레이션 · 시선을 잡는 공포 오프닝 · 핵심을 강조하는 글자 연출</td>
+    <td align="center">시선을 잡는 공포 오프닝 · 핵심을 강조하는 글자 연출</td>
   </tr>
 </table>
 
@@ -488,8 +488,8 @@ B1, B2, B3… 순으로 추가하며, 각 스타일의 일러스트 스토리보
     <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="샘플 2: 1990년대 홍콩 · 파인애플번과 오락실" width="360"></a></td>
   </tr>
   <tr>
-    <td align="center">16:9 · 63.2초 · 영어 내레이션 및 자막</td>
-    <td align="center">16:9 · 20초 · 영어 내레이션 및 자막</td>
+    <td align="center">과장된 표정 · 손그림 캐릭터 애니메이션 · 반전 있는 이야기</td>
+    <td align="center">The Pharaoh 3 내레이션 · 인물 간 상호작용 · 장면 전환</td>
   </tr>
 </table>
 
