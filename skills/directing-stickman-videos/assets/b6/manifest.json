@@ -397,7 +397,7 @@
     },
     {
       "path": "production/scene.py",
-      "sha256": "b2704ecc363bbc8ee9f0d35dcf2b3c840b5cbead7413ee56be8b2d0f7e7de2b5",
+      "sha256": "1d7e2730551a66fbfcce322b88ee2128a943e8ae092459bbe879c1115d093f47",
       "purpose": "Mature-engine production authoring interface and 7.5s reusable action example; pending user review"
     },
     {
