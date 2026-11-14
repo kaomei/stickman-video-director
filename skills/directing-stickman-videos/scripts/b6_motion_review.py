@@ -49,8 +49,38 @@ def history(context):
 
 
 def active_failure(context):
-    _, data = history(context)
-    return data['ratios'].get(context.ratio, {}).get('active')
+    path, data = history(context)
+    state = data['ratios'].get(context.ratio, {})
+    active = state.get('active')
+    if active:
+        frozen_path = local(context.base, active['path'])
+        require(sha(frozen_path) == active['sha256'], 'Previous review history changed')
+        frozen = read(frozen_path)
+        rows = list(frozen.get('checks', {}).values())
+        rows += [subrow for row in frozen.get('checks', {}).values()
+                 for subrow in row.get('subchecks', {}).values()]
+        rows += frozen.get('shots', []) + frozen.get('regressions', [])
+        requirements = frozen.get('_history_requirements', {})
+        origins = frozen.get('_history_origins', {})
+        # Older versions froze untouched pending forms as failed reviews.
+        # Retire only that exact no-observation case, keeping its immutable
+        # snapshot and event. Inherited repairs and real findings stay active.
+        if (frozen.get('schema_version') == 3 and frozen.get('review', {}).get('status') == 'pending'
+                and rows and all(row.get('status') == 'pending' for row in rows)
+                and not frozen.get('previous_review') and not frozen.get('repair_log')
+                and not frozen.get('remaining_gaps')
+                and not any(str(frozen.get('full_playback', {}).get(field, '')).strip()
+                            for field in ('observed_rhythm', 'observed_audio'))
+                and requirements and set(requirements) == set(origins)
+                and not any(requirements.values())
+                and all(origin == identity(frozen) for origin in origins.values())
+                and not unresolved_findings(frozen)):
+            state['active'] = None
+            state.setdefault('events', []).append({'kind': 'unreviewed_template', 'review': active,
+                'reason': 'Legacy blank pending template contained no observed failure; final review is still required.'})
+            save(path, data)
+            return None
+    return active
 
 
 def identity(data):
@@ -70,6 +100,7 @@ def remember_failure(context, review_rel, data, reason='Observed review is pendi
         return active_failure(context)
     require(sha(local(context.base, data['preview']['path'])) == data['preview']['sha256'],
             'Retain the failed preview before recording its review history')
+    active_failure(context)  # Normalize a legacy blank template before a new real finding.
     path, ledger = history(context)
     state = ledger['ratios'].setdefault(context.ratio, {'active': None, 'events': []})
     active = state['active']
@@ -236,7 +267,14 @@ def unresolved_findings(data):
     findings = {}
     for key, row in rows:
         if row.get('status') not in ('pass', 'not_applicable') or row.get('remaining_gaps') or row.get('confirmed_defect'):
-            observation = row.get('observation') or row.get('observed_action', '')
+            observation = row.get('observation') or next((value for field, value in row.items()
+                if field.startswith('observed_') and isinstance(value, str) and value.strip()), '')
+            # An untouched pending template is unreviewed, not an observed
+            # failure. Keep genuine findings and inherited repair records.
+            if (row.get('status', 'pending') == 'pending' and not observation.strip()
+                    and not row.get('remaining_gaps') and not row.get('confirmed_defect')
+                    and row.get('resolution_requirement') != 'implementation_change'):
+                continue
             if row.get('remaining_gaps'):
                 observation += ' ' + '; '.join(row['remaining_gaps'])
             findings[key] = {**row, 'observation': observation.strip()}
@@ -249,9 +287,12 @@ def unresolved_findings(data):
             if row.get('remaining_gaps'):
                 observation += ' ' + '; '.join(row['remaining_gaps'])
             findings[row['issue']] = {**row, 'observation': observation.strip()}
-    if not findings and data.get('review', {}).get('status') != 'pass':
-        findings['review:overall'] = {'status': data.get('review', {}).get('status', 'pending'),
-                                      'observation': 'Previous overall review was not completed/passed.'}
+    overall = data.get('review', {})
+    if (not findings and overall.get('status', 'pending') != 'pass'
+            and (overall.get('status', 'pending') != 'pending' or overall.get('observation', '').strip()
+                 or overall.get('remaining_gaps') or overall.get('confirmed_defect'))):
+        findings['review:overall'] = {**overall, 'status': overall.get('status', 'pending'),
+                                      'observation': overall.get('observation') or 'Previous overall review was not completed/passed.'}
     if data.get('supplemental_audit', {}).get('known_confirmed_defect') and not findings:
         findings['review:confirmed_defect'] = {'status': 'needs_repair', 'confirmed_defect': True,
                                               'observation': 'Supplemental actual-media audit records a confirmed visible defect.'}

@@ -160,6 +160,81 @@ test('B5 rejects static/fake raster/missing render-path evidence and samples rea
   await assert.rejects(checkB5Motion(f.validate(),{...f.render,productionAssets:[f.lock('fake.png')]},sharp),/corrupt|invalid|pngload|header|input/i);
 });
 
+test('B5 samples return-to-rest and quarter-phase motion without changing the evidence contract', async t => {
+  const f = await fixture(t), q = f.validate();
+  const quarterPeaks=t=>svg(Math.max(0,1-Math.abs(t-1)/.3)+Math.max(0,1-Math.abs(t-3)/.3));
+  for (const picture of [t=>svg(5*t*(1-t/4)), quarterPeaks]) {
+    // The old early/late comparison cannot distinguish either action from rest.
+    const early=await sharp(picture(.4)).raw().toBuffer(), late=await sharp(picture(3.6)).raw().toBuffer();
+    assert.deepEqual(early,late);
+    if(picture===quarterPeaks)assert.deepEqual(await sharp(picture(2)).raw().toBuffer(),early,'adding only the midpoint would still miss these quarter-phase actions');
+    const r=await checkB5Motion(q,{...f.render,qualityFrame:picture},sharp), sample=r.motion_samples[0];
+    assert(sample.changed_pixels>=8);
+    assert.equal(typeof sample.changed_pixels,'number','preserve existing motion_samples consumers');
+    for(const key of ['start','end','role','reason','region'])assert.deepEqual(sample[key],q.motion[0][key]);
+    assert(sample.sample_times.length>=5);
+    assert(sample.sample_times.every((v,i,a)=>v>q.motion[0].start&&v<q.motion[0].end&&(!i||v>a[i-1])));
+    assert.equal(sample.changed_between.length,2);
+    assert(sample.changed_between.every(v=>sample.sample_times.includes(v)));
+  }
+  // Sampling must stay inside a short declared interval, rather than discover
+  // unrelated picture changes before/after it.
+  q.motion=[{...q.motion[0],start:1,end:1.01}];
+  const times=[];
+  const r=await checkB5Motion(q,{...f.render,qualityFrame:t=>{times.push(t);assert(t>1&&t<1.01);return svg(1000*(t-1));}},sharp);
+  assert.deepEqual(r.motion_samples[0].sample_times,times);
+});
+
+test('B5 multi-phase evidence retains per-pair pixel and RGB thresholds and the local ROI', async t => {
+  const f=await fixture(t),q=f.validate();
+  const image=async (count,level)=>{
+    const pixels=Buffer.alloc(320*180*3);
+    for(let x=0;x<count;x++)for(let c=0;c<3;c++)pixels[((30*320+20+x)*3)+c]=level;
+    return sharp(pixels,{raw:{width:320,height:180,channels:3}}).png().toBuffer();
+  };
+  const blank=await image(0,0), seven=await image(7,255), eightAt12=await image(8,12), eightAt13=await image(8,13);
+  for(const bright of [seven,eightAt12])await assert.rejects(checkB5Motion(q,{...f.render,qualityFrame:t=>t<2?blank:bright},sharp),/no visible pixel change/);
+  const pass=await checkB5Motion(q,{...f.render,qualityFrame:t=>t<2?blank:eightAt13},sharp);
+  assert.equal(pass.motion_samples[0].changed_pixels,8);
+  // Different sub-threshold pixel sets cannot be added together to reach 8.
+  const phases=[];
+  for(let k=0;k<5;k++){
+    const pixels=Buffer.alloc(320*180*3);
+    for(let x=0;x<3;x++)for(let c=0;c<3;c++)pixels[((30*320+20+3*k+x)*3)+c]=255;
+    phases.push(await sharp(pixels,{raw:{width:320,height:180,channels:3}}).png().toBuffer());
+  }
+  await assert.rejects(checkB5Motion(q,{...f.render,qualityFrame:t=>phases[Math.min(4,Math.floor(t/4*5))]},sharp),/no visible pixel change/);
+  const outside=t=>Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180"><rect width="320" height="180" fill="#eee8df"/><rect x="${200+t*12}" y="35" width="24" height="40" fill="#202020"/></svg>`);
+  await assert.rejects(checkB5Motion(q,{...f.render,qualityFrame:outside},sharp),/no visible pixel change/);
+});
+
+test('B5 CLI permits a return gesture candidate and monotonic motion but rejects static or camera-only pictures', async t => {
+  const cases=[
+    {name:'return-to-rest',picture:'t=>svg(5*t*(1-t/4))',pass:true,encode:true},
+    {name:'monotonic',picture:'t=>svg(t)',pass:true},
+    {name:'static',picture:'t=>svg(0)',pass:false},
+    {name:'global-camera-only',picture:'t=>svg(t)',quality:'t=>svg(0)',pass:false}
+  ];
+  for(const item of cases)await t.test(item.name,async st=>{
+    const f=await fixture(st),frameDir=path.join(f.tmp,'frames');
+    fs.writeFileSync(path.join(f.scene,'renderer.cjs'),`const svg=${svg.toString()};module.exports={productionAssets:${JSON.stringify([f.lock('presenter.png')])},frame:${item.picture},qualityFrame:${item.quality||item.picture}};`);
+    const r=run(['frames',f.dir,'--output',frameDir,...(item.pass?['--all']:['--frames','0,24,47']),'--trusted-code']);
+    if(!item.pass){assert.notEqual(r.status,0);assert.match(r.stderr,/no visible pixel change/);assert(!fs.existsSync(frameDir));return;}
+    assert.equal(r.status,0,r.stderr);
+    const ledger=JSON.parse(fs.readFileSync(path.join(frameDir,'frames.json')));
+    assert.equal(ledger.frames.length,48);assert.equal(ledger.visual_acceptance,'not_reviewed');
+    assert(ledger.production.motion_samples[0].changed_pixels>=8);
+    if(item.encode){
+      const candidateDir=path.join(f.tmp,'candidate');
+      const encoded=run(['encode',f.dir,'--frames-dir',frameDir,'--audio',path.join(f.scene,'mix.wav'),'--output',candidateDir]);
+      assert.equal(encoded.status,0,encoded.stderr);
+      const candidate=JSON.parse(fs.readFileSync(path.join(candidateDir,'candidate.json')));
+      assert.equal(candidate.status,'pending_visual_review');assert.equal(candidate.visual_acceptance,'not_reviewed');
+      assert(!fs.existsSync(path.join(candidateDir,'delivery.json')),'a sampling repair must not grant final acceptance');
+    }
+  });
+});
+
 test('B5 technical success with a static custom caption produces only a candidate, never a visual pass', async t => {
   const f = await fixture(t);
   fs.copyFileSync(path.join(root,'assets/fonts/NotoSans.ttf'),path.join(f.scene,'custom.ttf'));
