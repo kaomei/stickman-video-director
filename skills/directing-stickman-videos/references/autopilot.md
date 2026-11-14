@@ -33,6 +33,8 @@ For B1/B2/B3, first apply the mandatory [reference-effect acceptance protocol](b
 3. From the installed Skill directory, run `node scripts/autopilot.mjs doctor`. Node 20+, FFmpeg and FFprobe are required. Run `npm ci` here if dependencies are missing. Image/TTS services are the user's configured tools, API adapters or authenticated interfaces, not bundled subscriptions. Check availability and disclose cost before billable calls. Never request a pasted API key: use environment variables. A Gemini consumer subscription is not proof of API quota or billing.
 4. Create a project folder **outside the installed Skill**. Save the brief, approved script, source citations, continuous voice track, character references, scene assets and `project.json`. Keep a checkpoint with stage, fingerprints, approvals, completed outputs, pending jobs and next step. Reuse valid work after interruptions; inspect uncertain provider jobs before retrying.
 
+Every B1–B9 preview and finished film defaults to its own sample-directed captions, meaningful SFX and suitable background music. Run the [actual-output completeness gate](b-delivery-completeness.md) alongside all original style gates; missing components or unreviewed encoded output remain incomplete. Explicit user omissions and motivated short silence follow that contract, not an optional-music shortcut.
+
 ## Selected-provider execution
 
 Apply this route to user-selected image and TTS services without changing the settings priority above or the selected style's quality gates. A **missing bundled adapter is not a provider prohibition**; conversely, permission to choose a service does not prove that integration or access already works.

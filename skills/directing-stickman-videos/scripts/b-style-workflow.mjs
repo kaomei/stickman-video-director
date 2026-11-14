@@ -5,7 +5,7 @@ import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
-const common = ['autopilot.md', 'autopilot-production-qa.md', 'autopilot-sound-system.md'];
+const common = ['autopilot.md', 'autopilot-production-qa.md', 'autopilot-sound-system.md', 'b-delivery-completeness.md'];
 const definitions = {
   B1: {production: ['b1-minimal-handdrawn.md', 'b1-production-qa.md', 'autopilot-runtime.md'], acceptance: ['b1-b2-b3-reference-acceptance.md'], samples: ['assets/b1/approved-2026-10-23.mp4'], author: 'Author story-specific drawing, varied readable acting, contact, sequential semantic builds and handwritten hierarchy; the pose demo is not the production target.'},
   B2: {production: ['b2-colorful-handdrawn.md', 'autopilot-runtime.md'], acceptance: ['b1-b2-b3-reference-acceptance.md'], samples: ['assets/b2/public-showcases/b2-colorful-sleep.mp4', 'assets/b2/public-showcases/b2-colorful-phone-weather.mp4'], author: 'Author warm paper, irregular fine ink, muted colored settings, contextual reactions and meaningful prop/state progression; keep B2 caption labels and do not import B1 acting or B3 finish.'},
@@ -106,6 +106,8 @@ export function installedWorkflow({style, ratio = '16:9', project} = {}) {
     templates.push({phase: 'film', track: 'motion-35-subchecks', path: at('outputs/film-review-01/motion-review.json'), created_by: 'film-review-pack', initial_status: 'pending'});
     commands.push(step('check-film-review', run('check-review', '--report', 'outputs/film-01/report.json', '--review', 'outputs/film-review-01/motion-review.json'), b6Review));
   }
+  commands.push(step('init-delivery-completeness', [process.execPath, existing('scripts/b-delivery-completeness.mjs'), 'init', '--style', style, '--ratio', ratio, '--media', '<CURRENT_ENCODED_MP4>', '--output', '<NEW_COMPLETENESS_REVIEW_JSON>'], 'Every preview and final scope: prepare after encoding; all fields remain unchecked until actual selected-sample comparison, picture playback and encoded-audio listening.'));
+  commands.push(step('check-delivery-completeness', [process.execPath, existing('scripts/b-delivery-completeness.mjs'), 'check', '<COMPLETED_COMPLETENESS_REVIEW_JSON>'], 'Mandatory alongside original style gates before claiming complete delivery; default captions, meaningful SFX and music must actually be present. Missing tools/review/source rights remain incomplete.'));
   const samplePaths = [...def.samples];
   if (ratio === '9:16' && ['B1', 'B2', 'B3'].includes(style)) samplePaths.push(`assets/${style.toLowerCase()}/portrait-approved-2026-11-13.mp4`);
   if (ratio === '9:16' && style === 'B4') samplePaths.push('assets/b4/portrait-opening-approved.mp4');
