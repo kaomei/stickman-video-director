@@ -115,10 +115,22 @@ export async function checkB5Motion(evidence, renderer, sharp) {
   for (const m of evidence.motion) {
     const [left,top,width,height] = m.region, at = u => m.start + (m.end-m.start)*u;
     const pixels = async t => sharp(renderer.qualityFrame(t)).extract({left,top,width,height}).removeAlpha().raw().toBuffer();
-    const a = await pixels(at(.1)), b = await pixels(at(.9)); let changed = 0;
-    for (let i=0;i<a.length;i+=3) if (Math.max(Math.abs(a[i]-b[i]),Math.abs(a[i+1]-b[i+1]),Math.abs(a[i+2]-b[i+2]))>12) changed++;
+    // A purposeful gesture may return to rest: equal early/late poses are not
+    // evidence of a static interval. Keep both original phases and inspect the
+    // interior too, through the same camera/caption-free local picture path.
+    // This remains sampled evidence; brief actions need accurately scoped intervals
+    // and the independent continuous-playback review, not a lower pixel threshold.
+    const times = [.1,.25,.5,.75,.9].map(at), frames = [];
+    for (const t of times) frames.push(await pixels(t));
+    let changed = 0, changedBetween;
+    for (let a=0;a<frames.length;a++) for (let b=a+1;b<frames.length;b++) {
+      let pairChanged = 0;
+      for (let i=0;i<frames[a].length;i+=3) if (Math.max(Math.abs(frames[a][i]-frames[b][i]),Math.abs(frames[a][i+1]-frames[b][i+1]),Math.abs(frames[a][i+2]-frames[b][i+2]))>12) pairChanged++;
+      // Never accumulate separate sub-threshold pairs into a passing score.
+      if (pairChanged > changed) { changed = pairChanged; changedBetween = [times[a],times[b]]; }
+    }
     need(changed >= 8, 'local motion has no visible pixel change: ' + m.reason);
-    samples.push({...m, changed_pixels: changed});
+    samples.push({...m, changed_pixels: changed, sample_times: times, changed_between: changedBetween});
   }
   return {...evidence, motion_samples: samples};
 }

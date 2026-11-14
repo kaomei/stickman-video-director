@@ -82,6 +82,21 @@ class MotionReview(unittest.TestCase):
     def write(self):
         review.save(self.base / 'review/motion-review.json', self.data)
 
+    def freeze_legacy_pending(self):
+        """Recreate the former collector's frozen pending-template record."""
+        self.write()
+        rows = [('check:' + key, row) for key, row in self.data['checks'].items()]
+        rows += [('subcheck:' + key + ':' + subkey, subrow)
+                 for key, row in self.data['checks'].items() for subkey, subrow in row['subchecks'].items()]
+        rows += [('shot:' + row['id'], row) for row in self.data['shots']]
+        rows += [('regression:' + row['issue'], row) for row in self.data['regressions']]
+        rows += [(row['issue'], row) for row in self.data.get('repair_log', [])]
+        findings = [(key, {**row, 'observation': row.get('observation') or row.get('observed_action', '')})
+                    for key, row in rows]
+        with patch.object(review, 'unresolved_findings', return_value=findings):
+            return review.remember_failure(self.context, 'review/motion-review.json', self.data,
+                                           'Legacy pending-template validation rejection')
+
     def completed_fixture(self):
         """Synthetic review records only exercise the gate; not a quality verdict."""
         self.data['review'].update(status='pass', reviewer='Isolated unit-test fixture',
@@ -138,6 +153,141 @@ class MotionReview(unittest.TestCase):
     def test_completed_bound_record_passes_contract_only(self):
         self.completed_fixture()
         self.assertEqual(self.validate()['status'], 'reviewer_passed_not_automatic_aesthetic_judgment')
+
+    def test_blank_pending_check_can_be_completed_in_the_same_form(self):
+        self.write()
+        with self.assertRaisesRegex(ValueError, 'pending/needs repair'):
+            review.validate_review(self.context, 'review/motion-review.json', 'report.json')
+        self.assertIsNone(review.active_failure(self.context))
+        self.assertEqual(review.unresolved_findings(self.data), [])
+        # Neither candidate/source changes nor an invented repair are needed to
+        # finish a form that had no actual finding. This remains a gate fixture.
+        self.completed_fixture()
+        result = review.validate_review(self.context, 'review/motion-review.json', 'report.json')
+        self.assertEqual(result['status'], 'reviewer_passed_not_automatic_aesthetic_judgment')
+
+    def test_overall_pending_alone_does_not_manufacture_a_failure(self):
+        self.completed_fixture()
+        self.data['review']['status'] = 'pending'
+        self.write()
+        with self.assertRaisesRegex(ValueError, 'pending/needs repair'):
+            review.validate_review(self.context, 'review/motion-review.json', 'report.json')
+        self.assertIsNone(review.active_failure(self.context))
+        self.data['review']['status'] = 'pass'
+        self.assertEqual(self.validate()['status'], 'reviewer_passed_not_automatic_aesthetic_judgment')
+
+    def test_legacy_blank_history_can_complete_same_form_without_erasing_its_record(self):
+        old = self.freeze_legacy_pending()
+        frozen_path = review.local(self.base, old['path'])
+        frozen_bytes = frozen_path.read_bytes()
+        self.assertEqual(len(review.read(frozen_path)['_history_origins']), 45)
+        # Upgrading does not turn an unreviewed form into an accepted film.
+        with self.assertRaisesRegex(ValueError, 'pending/needs repair'):
+            review.validate_review(self.context, 'review/motion-review.json', 'report.json')
+        self.assertIsNone(review.active_failure(self.context))
+        self.completed_fixture()
+        self.assertEqual(review.validate_review(self.context, 'review/motion-review.json', 'report.json')['status'],
+                         'reviewer_passed_not_automatic_aesthetic_judgment')
+        self.assertEqual(frozen_path.read_bytes(), frozen_bytes)
+        _, ledger = review.history(self.context)
+        events = ledger['ratios'][self.context.ratio]['events']
+        self.assertEqual([event['kind'] for event in events], ['rejected', 'unreviewed_template'])
+        self.assertEqual(events[1]['review'], old)
+
+    def test_legacy_blank_history_does_not_hide_a_later_real_failure(self):
+        old = self.freeze_legacy_pending()
+        self.data['checks']['body_action'].update(status='needs_repair', observation='Observed unsupported wrist.')
+        self.write()
+        # Also exercise direct import, not only validate/build-pack callers.
+        active = review.remember_failure(self.context, 'review/motion-review.json', self.data)
+        self.assertNotEqual(active, old)
+        self.assertEqual(review.active_failure(self.context), active)
+        frozen = review.read(review.local(self.base, active['path']))
+        self.assertEqual([key for key, _ in review.unresolved_findings(frozen)], ['check:body_action'])
+        destination = 'legacy-new-failure-' + self._testMethodName
+        review.build_pack(self.context, 'report.json', destination)
+        linked = review.read(self.base / destination / 'motion-review.json')
+        self.assertEqual(linked['previous_review'], active)
+        self.assertEqual([row['issue'] for row in linked['repair_log']], ['check:body_action'])
+        self.completed_fixture()
+        with self.assertRaisesRegex(ValueError, 'Known failed review history'):
+            review.validate_review(self.context, 'review/motion-review.json', 'report.json')
+
+    def test_legacy_blank_history_can_finish_without_rechecking_the_pending_form(self):
+        old = self.freeze_legacy_pending()
+        self.completed_fixture()
+        self.assertEqual(review.validate_review(self.context, 'review/motion-review.json', 'report.json')['status'],
+                         'reviewer_passed_not_automatic_aesthetic_judgment')
+        self.assertIsNone(review.active_failure(self.context))
+        self.assertEqual(review.sha(review.local(self.base, old['path'])), old['sha256'])
+
+    def test_legacy_actual_findings_and_inherited_repairs_are_not_retired(self):
+        cases = (
+            ('observed pending', lambda: self.data['checks']['body_action'].update(observation='Observed uncertain grip.')),
+            ('shot camera observation', lambda: self.data['shots'][0].update(observed_camera='Observed an early cut.')),
+            ('explicit needs repair', lambda: self.data['checks']['body_action'].update(status='needs_repair')),
+            ('confirmed pending', lambda: self.data['checks']['body_action'].update(confirmed_defect=True)),
+            ('remaining gap', lambda: self.data['checks']['body_action'].update(remaining_gaps=['Observed unsupported wrist.'])),
+            ('global gap', lambda: self.data.update(remaining_gaps=['Observed missing contact.'])),
+            ('full playback rhythm', lambda: self.data['full_playback'].update(observed_rhythm='Observed a stuttering opening.')),
+            ('full playback audio', lambda: self.data['full_playback'].update(observed_audio='Observed missing dialogue.')),
+            ('supplemental confirmed', lambda: self.data.update(supplemental_audit={'known_confirmed_defect': True})),
+            ('inherited repair', lambda: self.data.update(repair_log=[{'issue': 'check:earlier', 'status': 'pending',
+                'previous_observation': '', 'resolution_requirement': 'observed_resolution'}])),
+        )
+        for label, change in cases:
+            with self.subTest(case=label):
+                self.setUp()
+                change()
+                old = self.freeze_legacy_pending()
+                self.assertEqual(review.active_failure(self.context), old)
+                self.completed_fixture()
+                with self.assertRaisesRegex(ValueError, 'Known failed review history'):
+                    review.validate_review(self.context, 'review/motion-review.json', 'report.json')
+                _, ledger = review.history(self.context)
+                self.assertEqual([event['kind'] for event in ledger['ratios'][self.context.ratio]['events']], ['rejected'])
+
+    def test_observed_pending_and_explicit_defects_remain_in_history(self):
+        cases = (
+            ('subcheck observation', lambda: self.data['checks']['body_action']['subchecks']['contact_ownership_release'].update(
+                observation='Observed uncertain grip ownership; inspect before acceptance.'),
+             'subcheck:body_action:contact_ownership_release'),
+            ('shot camera observation', lambda: self.data['shots'][0].update(
+                observed_camera='Observed a premature camera cut; inspect before acceptance.'), 'shot:contact'),
+            ('explicit needs repair', lambda: self.data['checks']['space_depth'].update(status='needs_repair'), 'check:space_depth'),
+            ('confirmed pending defect', lambda: self.data['checks']['drawing_anatomy'].update(confirmed_defect=True), 'check:drawing_anatomy'),
+            ('pending remaining gap', lambda: self.data['checks']['body_action'].update(remaining_gaps=['Observed unsupported wrist.']), 'check:body_action'),
+            ('global gap', lambda: self.data.update(remaining_gaps=['Observed missing contact.']), 'gap:global:0'),
+            ('supplemental confirmed defect', lambda: self.data.update(supplemental_audit={'known_confirmed_defect': True}), 'review:confirmed_defect'),
+        )
+        for label, change, issue in cases:
+            with self.subTest(case=label):
+                self.setUp()
+                change()
+                self.write()
+                with self.assertRaises(ValueError):
+                    review.validate_review(self.context, 'review/motion-review.json', 'report.json')
+                active = review.active_failure(self.context)
+                self.assertIsNotNone(active)
+                frozen = review.read(review.local(self.base, active['path']))
+                self.assertEqual([key for key, _ in review.unresolved_findings(frozen)], [issue])
+                fresh = 'observed-pending-' + str(len(label)) + '-' + issue.replace(':', '-')
+                review.build_pack(self.context, 'report.json', fresh)
+                pack = review.read(self.base / fresh / 'motion-review.json')
+                self.assertEqual([row['issue'] for row in pack['repair_log']], [issue])
+                # Replacing the form with pass cannot erase the observed finding.
+                self.completed_fixture()
+                with self.assertRaisesRegex(ValueError, 'Known failed review history'):
+                    review.validate_review(self.context, 'review/motion-review.json', 'report.json')
+
+    def test_inherited_pending_repair_is_not_treated_as_a_blank_template(self):
+        self.completed_fixture()
+        issue = 'subcheck:drawing_anatomy:single_stroke_fixed_limb_ownership'
+        self.data['repair_log'] = [{'issue': issue, 'status': 'pending', 'previous_observation': '',
+                                   'resolution_requirement': 'implementation_change'}]
+        findings = review.unresolved_findings(self.data)
+        self.assertEqual([key for key, _ in findings], [issue])
+        self.assertTrue(review.confirmed_requirement(self.data, findings[0][1]))
 
     def test_caption_contract_uses_the_validated_open_font_identity(self):
         report = review.read(self.base / 'report.json')
