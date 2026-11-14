@@ -48,6 +48,35 @@ In each component's report:
 
 Bind the current original style-specific acceptance evidence in `style_specific_acceptance` and retain its independent real checks. That record must carry this exact `style`, `ratio` and `output_sha256`; extract/verify them against the original current-media review records, rather than relabeling old evidence. Preserve a scope index when the original style produces several independent reports. Leave `unresolved_issues` empty only when all findings are repaired. A failed/missing component, missing/unknown review, stale output or source fingerprint, uncovered interval blocks this gate. Unresolved applicable rights block final-delivery acceptance; local-preview component completeness does not clear public/commercial/repository distribution rights. A disclosed limited-toolchain/draft delivery must retain its incomplete status and cannot be called complete or sample-equivalent.
 
+The Agent creates `style_specific_acceptance.evidence` as a fingerprinted JSON index; the user does not fill it. The checker reads the original native report contents, verdicts, media scope and hash links rather than trusting the outer label or an opaque evidence file:
+
+```json
+{
+  "schema": "b-style-acceptance-index/1", "verdict": "pass",
+  "style": "B1", "ratio": "16:9", "output_sha256": "ACTUAL_ENCODED_MP4_SHA256",
+  "reports": [{
+    "kind": "reference",
+    "acceptance": {"file": "/absolute/native-acceptance.json", "sha256": "ACTUAL_FILE_SHA256"},
+    "evidence": {"file": "/absolute/evidence.json", "sha256": "ACTUAL_FILE_SHA256"},
+    "review": {"file": "/absolute/completed-review.json", "sha256": "ACTUAL_FILE_SHA256"}
+  }]
+}
+```
+
+Use the existing native gate outputs without converting them into a generic passing checklist:
+
+| Style | Required `reports[].kind` and original records |
+| --- | --- |
+| B1–B3 | `reference`: native reference acceptance, evidence ledger and completed review. A limited/best-effort receipt does not pass. For a receipt embedded in preview approval JSON, set `acceptance_key: "reference_acceptance"`. |
+| B4 | **Both** `picture` and `typography`, each with its own acceptance, evidence and review. Picture acceptance keeps `scope: "picture only"` plus its native `range`; typography keeps its native time `scope`. Embedded preview keys are `picture_acceptance` and `typography_acceptance`. |
+| B5 | `visual`: native acceptance/delivery JSON, evidence ledger and independent review, including all three full-playback channels. Both actual native statuses `independent_visual_review_pass` and `visual_review_passed` are supported. Agent review does not infer user approval or require the user to fill a new form. |
+| B6 | `motion`: native `check-review` receipt and completed motion `review`, plus a fingerprinted `render_report`; the review's output, ratio, render fingerprint and full playback must match the current production encode. |
+| B7 | `pixel`: native acceptance, evidence ledger and completed review, using its existing `media_sha256`, creative-review, playback and listening fields. |
+| B8 | `greek`: native `review-report` receipt as `acceptance` and the actual encoded sample/film report as `review`; its current MP4 artifact, dimensions and every shot's recorded visual rows must pass. |
+| B9 | `live-sketch`: the completed original six-gate report as `review`, including its format, single-pen, editor-drag and continuous-playback records. Record `output_sha256` in that actual report together with `output_video`, `scope_seconds` and `format`; an old report missing the digest is not current evidence. |
+
+Every indexed file uses absolute `file` and its actual `sha256`. Missing records, unknown kinds, stale inner movie hashes, wrong native dimensions/ratio or failed/pending native criteria block this check even if the index and outer labels say pass. This index locates existing style gates; it neither manufactures their receipt nor replaces their full validators, rights checks or separate user decisions. B7–B9 support here does not publish those pending styles.
+
 ## What a passing check means
 
 The checker verifies current files, scope, candidate and used-source audio stream existence, cue inventories and recorded review completeness. A text/link placeholder cannot stand in for an actual used audio source. Its result is **`recorded_pass`**, not automatic proof that a person/Agent truly listened, that music is perceptually audible, that every cue matches the story, or that a rights claim is correct. The reviewer must inspect the actual media and actual rights evidence honestly. Fabricating a detailed report remains a failure; technical acceptance cannot override missing or poor actual effects. All style-specific creative/technical gates, user approvals and publication boundaries remain separate and mandatory.
