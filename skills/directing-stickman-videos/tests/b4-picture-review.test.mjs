@@ -89,6 +89,10 @@ test('builds actual-media clips and unknown review stays blocked; independent co
   await assert.rejects(verify,/playback.*pending/);
   review.full_playback={status:'pass',viewed_ranges:[{start:0,end:1.6}],observations:[{time:.5,detail:'Synthetic fixture prop moves continuously from left toward the right door; test observation only.',evidence_ids:['source-video']}]};
   for(const check of Object.values(review.shots[0].checks)){check.status='pass';check.observations=[{time:.5,detail:'Synthetic fixture prop crosses the middle position and holds the reached position; test observation only.',evidence_ids:['shot-0-continuous','shot-0-mid']}];}save(reviewFile,review);
+  const origin=review.shots[0].checks.story_asset_origin;assert.ok(origin);
+  delete review.shots[0].checks.story_asset_origin;save(reviewFile,review);await assert.rejects(verify,/story_asset_origin review/);
+  review.shots[0].checks.story_asset_origin={...origin,status:'unknown'};save(reviewFile,review);await assert.rejects(verify,/story_asset_origin.*pending/);
+  review.shots[0].checks.story_asset_origin=origin;save(reviewFile,review);
   const passed=await verify();assert.equal(passed.status,'independent_picture_review_pass');assert.equal(passed.scope,'picture only');assert.equal(passed.delivery_ready,false);
   const clip=path.join(out,'shot-0-continuous.mp4');fs.appendFileSync(clip,'tamper');await assert.rejects(verify,/artifact hash changed/);
   const changed=JSON.parse(fs.readFileSync(ledger.ledger_file));changed.artifacts.find(a=>a.id==='shot-0-continuous').sha256=sha(clip);save(ledger.ledger_file,changed);review.evidence_sha256=sha(ledger.ledger_file);save(reviewFile,review);
@@ -97,6 +101,31 @@ test('builds actual-media clips and unknown review stays blocked; independent co
 test('actual MP4 cannot freeze or replace the authored picture action',async t=>{
   const f=fixture(t),source=f.encode('frozen.mp4',f.painter({frozen:true})),out=path.join(f.dir,'evidence');fs.mkdirSync(out);
   await assert.rejects(()=>buildB4PictureEvidence(f.p,{file:source,draw:f.draw,picture:f.picture,out,projectFingerprint:f.p.fingerprint}),/does not match|differs|loses its actual/);
+});
+test('high-resolution YUV420 chroma edges are compared in the same RGB resize domain as authored frames',async t=>{
+  const f=fixture(t),p=f.p;p.width=1280;p.height=720;
+  p.picture_motion.shots[0].region={x:750,y:130,w:500,h:460};
+  const painter=({frozen=false}={})=>(time,{focusIds=[],omitIds=[]}={})=>{
+    const c=createCanvas(p.width,p.height),ctx=c.getContext('2d');ctx.fillStyle='#171d21';ctx.fillRect(0,0,p.width,p.height);
+    if((!focusIds.length||focusIds.includes('actor'))&&!omitIds.includes('actor')){
+      // Dense colored ink at native resolution reproduces YUV/RGB resize-order
+      // drift without shipping any story, reference image or generated fixture.
+      const palette=['#bb392f','#071b21','#dcb86c'];ctx.fillStyle=palette[0];ctx.fillRect(760,140,480,440);
+      for(let y=140;y<580;y+=14)for(let x=760;x<1240;x+=14){ctx.strokeStyle=palette[(Math.floor(x/14)+Math.floor(y/14))%3];ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+14,y+14);ctx.stroke();}
+      const q=frozen?0:Math.max(0,Math.min(1,(time-.1)/.8));ctx.fillStyle='#f0cfab';ctx.fillRect(790+q*250,320,120,120);
+    }
+    return c;
+  };
+  const draw=painter(),source=f.encode('colored-ink.mp4',draw),expected=createCanvas(320,180);expected.getContext('2d').drawImage(draw(0),0,0,320,180);
+  const authored=expected.getContext('2d').getImageData(0,0,320,180).data;
+  const old=spawnSync('ffmpeg',['-v','error','-i',source,'-frames:v','1','-vf','scale=320:180:flags=area','-pix_fmt','rgba','-f','rawvideo','pipe:1'],{maxBuffer:1024*1024});assert.equal(old.status,0,String(old.stderr));
+  let changed=0,count=0;for(let y=35;y<145;y++)for(let x=190;x<310;x++){const i=(y*320+x)*4,d=(Math.abs(old.stdout[i]-authored[i])+Math.abs(old.stdout[i+1]-authored[i+1])+Math.abs(old.stdout[i+2]-authored[i+2]))/(3*255);changed+=d>.04;count++;}
+  assert.ok(changed/count>.18,'fixture must reproduce the old local chroma-edge false rejection');
+  const out=path.join(f.dir,'evidence');fs.mkdirSync(out);
+  const args={file:source,draw,picture:draw,out,projectFingerprint:p.fingerprint};
+  assert.equal((await buildB4PictureEvidence(p,args)).diagnostic.frames_checked,16);
+  const frozen=f.encode('colored-ink-frozen.mp4',painter({frozen:true})),bad=path.join(f.dir,'bad');fs.mkdirSync(bad);
+  await assert.rejects(()=>buildB4PictureEvidence(p,{...args,file:frozen,out:bad}),/does not match|differs|loses its actual/);
 });
 test('portrait acceptance requires phone-size 1x source-video observation and disclosed device limitation',async t=>{
   const f=fixture(t,{portrait:true}),source=f.encode('portrait.mp4'),out=path.join(f.dir,'evidence');fs.mkdirSync(out);
@@ -113,4 +142,19 @@ test('portrait acceptance requires phone-size 1x source-video observation and di
   review.portrait_viewing.playback_speed=1;review.reviewer.id=review.author_id;save(reviewFile,review);await assert.rejects(verify,/independent reviewer/);
   review.reviewer.id='independent-portrait-fixture';review.full_playback.viewed_ranges=[{start:0,end:.8},{start:1,end:1.6}];save(reviewFile,review);await assert.rejects(verify,/omit current review scope/);
   review.full_playback.viewed_ranges=[{start:0,end:1.6}];review.shots[0].checks.anatomy_contact.observations[0].evidence_ids=['shot-0-mid'];save(reviewFile,review);await assert.rejects(verify,/continuous clip/);
+});
+
+
+test('custom-render picture planning rejects renamed reference resources before picture evidence',t=>{
+  const f=fixture(t),copy=path.join(f.dir,'claimed-new-art.png');
+  fs.copyFileSync(new URL('../assets/b4/reference-04-street.png',import.meta.url),copy);
+  f.p.shots[0].layers[0].path='claimed-new-art.png';f.p.picture_motion.shots[0].reuse_reason='Author claims permission';
+  assert.throws(()=>planB4Picture(f.p),/B4 asset origin:.*style_reference street/);
+});
+test('actual source movie is origin checked by both evidence build and review verification',async t=>{
+  const f=fixture(t),source=path.join(f.dir,'claimed-new-output.mp4'),out=path.join(f.dir,'evidence');fs.mkdirSync(out);
+  fs.copyFileSync(new URL('../assets/b4/portrait-opening-approved.mp4',import.meta.url),source);
+  const args={file:source,draw:f.draw,picture:f.picture,out,projectFingerprint:f.p.fingerprint};
+  await assert.rejects(()=>buildB4PictureEvidence(f.p,args),/B4 asset origin:.*approved_showcase portrait-opening-video/);
+  await assert.rejects(()=>verifyB4PictureReview(f.p,{...args,evidenceDir:out,reviewFile:path.join(f.dir,'not-needed.json')}),/B4 asset origin:.*approved_showcase portrait-opening-video/);
 });

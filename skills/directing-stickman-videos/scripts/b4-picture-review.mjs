@@ -7,18 +7,20 @@ import crypto from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
+import {assertB4StoryAsset} from './b4-asset-origin.mjs';
 
 const require=createRequire(import.meta.url);
 let runtime;
 const canvasAPI=()=>runtime??=require('@napi-rs/canvas');
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const PHASES=['before','mid','after','hold'];
-const CHECKS=['semantic_motion','anatomy_contact','continuity','repetition_pacing'];
+const CHECKS=['semantic_motion','anatomy_contact','continuity','repetition_pacing','story_asset_origin'];
 const KINDS=['local_action','state_reveal','environment','motivated_hold'];
 const LIMITS=[
   'B4 shots have a hard three-second maximum, including motivated holds. Cuts, crops, captions and decorative motion do not establish a new principal-picture state; review continuous state duration across shot boundaries.',
   'Pixel diagnostics establish visible local picture change and current-media provenance, not meaningful acting or aesthetic quality.',
   'Real repetition, narrative causality, coherent anatomy/contact and long-form pacing require independent complete playback.',
+  'Known reference bytes and close whole-image copies are blocked. story_asset_origin independently checks each visible scene against the current story, including crops/composites and old scene or character reuse; a clean hash check does not prove originality.',
   'Reviewer identity, independence, actual playback and judgment are declarations, not authenticated facts.',
   'This is picture-only review. Typography, captions, sound, reference matching and user acceptance remain separate gates.',
   'Tool or model limitations may be disclosed; they do not waive formal B4 requirements.'
@@ -83,7 +85,7 @@ export function planB4Picture(p) {
     need(indices.before<indices.mid&&indices.mid<indices.after&&indices.after<indices.hold&&indices.hold<last,label+' requires distinct actual final-video phase frames');
     need((indices.hold-indices.after)/p.fps>=Math.max(.16,2/p.fps)-EPS,label+' needs at least 0.16 seconds/two frames of readable hold after the state change');
     need(m.layer_ids.every(id=>{const l=images.find(l=>l.id===id);return PHASES.some(k=>indices[k]/p.fps>=s.start+(l.from||0)-EPS&&indices[k]/p.fps<Math.min(s.end,s.start+(l.to??Infinity)));}),label+' declares an image never visible in its phase frames');
-    const resources=images.map(l=>{const f=media(p,l.path);return {id:l.id,path:f,sha256:hash(f)};});
+    const resources=images.map(l=>{const f=media(p,l.path),origin=assertB4StoryAsset(f);return {id:l.id,path:f,sha256:hash(f),asset_role:origin.role};});
     const full_scene_ids=m.layer_ids.filter(id=>{const l=images.find(l=>l.id===id);return (l.w??200)>=1100&&(l.h??height)>=height*.8;});
     shots.push({shot,id:'shot-'+shot,kind:m.kind,intent:m.intent,before:m.before,after:m.after,layer_ids:[...m.layer_ids],region:region(m.region,height),times,frame_indices:indices,clip_start_frame:frameAt(s.start,p),clip_end_frame:last,resources,full_scene_ids,
       ...(text(m.reason)?{reason:m.reason}:{}),...(m.supports_shot!==undefined?{supports_shot:m.supports_shot}:{}),...(text(m.reuse_reason)?{reuse_reason:m.reuse_reason}:{})});
@@ -187,13 +189,14 @@ function probeSource(p,source,ffprobe) {
 }
 async function checkFile(p,source,draw,picture,ffmpeg) {
   const diagnostic=checkB4PicturePaint(p,{draw,picture}),plan=diagnostic.plan,{createCanvas,loadImage}=canvasAPI();
-  // Decode every scope frame at a bounded diagnostic size. Native 1080x1920
-  // raw frames would restart FFmpeg every few frames and make long films
-  // impractical; phase-specific provenance below still uses native PNGs.
-  const width=Math.min(320,p.width),height=Math.round(width*p.height/p.width),n=Math.ceil(plan.scope_end*p.fps-EPS),bytes=width*height*4,chunkSize=Math.max(1,Math.min(p.fps*5,Math.floor(32*1024*1024/bytes)));
-  const decoded=createCanvas(width,height),ctx=decoded.getContext('2d'),pixels=ctx.createImageData(width,height);let max_mean=0;
+  // Decode to RGB before resizing, then use the same Canvas sampler as the
+  // authored frame (also used by typography review). YUV-first scaling or a
+  // different resize kernel can misclassify dense colored ink as render drift.
+  // Keep raw decode chunks bounded to 32 MiB; all scope frames still compare.
+  const width=Math.min(320,p.width),n=Math.ceil(plan.scope_end*p.fps-EPS),bytes=p.width*p.height*4,chunkSize=Math.max(1,Math.min(p.fps*5,Math.floor(32*1024*1024/bytes)));
+  const decoded=createCanvas(p.width,p.height),ctx=decoded.getContext('2d'),pixels=ctx.createImageData(p.width,p.height);let max_mean=0;
   for(let start=0;start<n;start+=chunkSize) {
-    const count=Math.min(chunkSize,n-start),raw=command(ffmpeg,['-v','error','-ss',String(start/p.fps),'-i',source,'-map','0:v:0','-vf',`scale=${width}:${height}:flags=area`,'-frames:v',String(count),'-pix_fmt','rgba','-f','rawvideo','pipe:1'],count*bytes+1024*1024);
+    const count=Math.min(chunkSize,n-start),raw=command(ffmpeg,['-v','error','-ss',String(start/p.fps),'-i',source,'-map','0:v:0','-frames:v',String(count),'-pix_fmt','rgba','-f','rawvideo','pipe:1'],count*bytes+1024*1024);
     need(raw.length===count*bytes,'actual output must contain every frame in the submitted scope');
     for(let j=0;j<count;j++) {
       pixels.data.set(raw.subarray(j*bytes,(j+1)*bytes));ctx.putImageData(pixels,0,0);
@@ -247,7 +250,7 @@ function template(plan,output_sha256,evidence_sha256,artifacts) {
 }
 export async function buildB4PictureEvidence(p,{file:source,draw,picture,out,projectFingerprint,ffmpeg=process.env.FFMPEG||'ffmpeg',ffprobe=process.env.FFPROBE||'ffprobe'}) {
   const plan=planB4Picture(p);if(!plan)return null;
-  source=file(source);const output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint);
+  source=file(source);assertB4StoryAsset(source);const output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint);
   need(fs.existsSync(out)&&fs.statSync(out).isDirectory()&&fs.realpathSync(path.resolve(out))===path.resolve(out)&&fs.readdirSync(out).length===0,'evidence output must be a fresh empty real directory');
   const metadata=probeSource(p,source,ffprobe),diagnostic=await checkFile(p,source,draw,picture,ffmpeg),artifacts=[];
   for(const a of descriptors(plan,p))artifacts.push({...a,sha256:extract(source,a,p,ffmpeg,path.join(out,a.file))});
@@ -267,7 +270,7 @@ function observations(items,{range,artifacts,continuous,full=false}) {
 }
 export async function verifyB4PictureReview(p,{file:source,draw,picture,evidenceDir,reviewFile,projectFingerprint,ffmpeg=process.env.FFMPEG||'ffmpeg',ffprobe=process.env.FFPROBE||'ffprobe'}) {
   const plan=planB4Picture(p);if(!plan)return null;
-  source=file(source);reviewFile=file(reviewFile);const review_sha256=hash(reviewFile),ledgerFile=file(path.join(evidenceDir,'evidence.json')),evidence_sha256=hash(ledgerFile),ledger=read(ledgerFile),review=read(reviewFile),output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint),plan_sha256=digest(JSON.stringify(plan));
+  source=file(source);assertB4StoryAsset(source);reviewFile=file(reviewFile);const review_sha256=hash(reviewFile),ledgerFile=file(path.join(evidenceDir,'evidence.json')),evidence_sha256=hash(ledgerFile),ledger=read(ledgerFile),review=read(reviewFile),output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint),plan_sha256=digest(JSON.stringify(plan));
   need(ledger.schema===1&&ledger.status==='pending_independent_review'&&ledger.scope==='picture only'&&ledger.delivery_ready===false&&ledger.output===source&&ledger.output_sha256===output_sha256&&ledger.project_fingerprint===project_fingerprint&&ledger.plan_sha256===plan_sha256&&same(ledger.plan,plan),'stale evidence/output/project/plan/resource binding');
   need(same(ledger.range,{start:0,end:plan.scope_end})&&same(ledger.metadata,probeSource(p,source,ffprobe)),'stale media metadata/scope');
   const expected=descriptors(plan,p);need(Array.isArray(ledger.artifacts)&&ledger.artifacts.length===expected.length,'missing/extra evidence artifacts');
@@ -297,7 +300,7 @@ export async function verifyB4PictureReview(p,{file:source,draw,picture,evidence
   }
   need(Array.isArray(review.shots)&&same(review.shots.map(s=>s.shot).sort((a,b)=>a-b),plan.shots.map(s=>s.shot).sort((a,b)=>a-b)),'independent review must cover every picture shot exactly once');
   for(const s of plan.shots) {
-    const item=review.shots.find(x=>x.shot===s.shot);need(item.checks&&same(Object.keys(item.checks).sort(),CHECKS.slice().sort()),'every shot requires semantic_motion, anatomy_contact, continuity and repetition_pacing review');
+    const item=review.shots.find(x=>x.shot===s.shot);need(item.checks&&same(Object.keys(item.checks).sort(),CHECKS.slice().sort()),'every shot requires semantic_motion, anatomy_contact, continuity, repetition_pacing and story_asset_origin review');
     const local=new Set(ledger.artifacts.filter(a=>a.shot===s.shot).map(a=>a.id));local.add('source-video');
     for(const k of CHECKS){const c=item.checks[k];need(c?.status==='pass','shot '+s.shot+' '+k+' is pending/failed');observations(c.observations,{range:[s.clip_start_frame/p.fps,s.clip_end_frame/p.fps],artifacts:local,continuous:s.id+'-continuous'});}
   }

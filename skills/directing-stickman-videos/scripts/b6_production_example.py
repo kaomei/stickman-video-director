@@ -23,7 +23,7 @@ subprocess.run(['ffmpeg','-v','error','-i',str(base/'engine/audio/master.m4a'),'
 for name in ['scene.py','story.json','captions.json']:
     shutil.copyfile(root/'assets/b6/production'/('example-'+name),base/name)
 shutil.copyfile(root/'assets/b6/production/example-landscape.json',base/'formats/landscape.json')
-p.update(stage='authored',duration=7.5,voice={'name':'The Pharaoh 3','path':str(audio.relative_to(base)),'sha256':hashlib.sha256(audio.read_bytes()).hexdigest(),'speed':1,'source':'Existing master excerpts with silence padding; native speech speed; no new synthesis'})
+p.update(stage='authored',duration=7.5,purpose='example-reproduction',technical_fixture=True,voice={'name':'The Pharaoh 3','path':str(audio.relative_to(base)),'sha256':hashlib.sha256(audio.read_bytes()).hexdigest(),'speed':1,'source':'Existing master excerpts with silence padding; native speech speed; no new synthesis'})
 p['character_system']={'schema':'b6-character-system/1','mode':'locked-v90-performance','reason':'This existing-performance example reuses the unmodified, locked V90 cast/actions; it does not exercise a new character or limb action.'}
 p['review']={'status':'pending_user_review','art':'Existing V90 art reused','acting':'Existing calibrated actions; new sequence and booth camera; pending visual/user review','sound':'Original-speed voice excerpts; pending listening review'}
 save(base/'project.json',p)

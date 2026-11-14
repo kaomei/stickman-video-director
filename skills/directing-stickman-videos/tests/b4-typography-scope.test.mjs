@@ -6,6 +6,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {FFMPEG, run, save, loadProject} from '../scripts/autopilot-core.mjs';
 import {BRIAN} from '../scripts/b4-runtime.mjs';
+import {planB4Typography} from '../scripts/b4-typography-review.mjs';
 import {createCanvas} from '@napi-rs/canvas';
 
 function fixture(t) {
@@ -65,4 +66,18 @@ test('B4 preview does not silently discard misspelled current image-text referen
   const f = fixture(t);
   f.p.typography.image_text.push({shot: 'misspelled-current-shot', layer_id: 'missing-board', text: 'Must remain invalid'}); f.write();
   assert.throws(() => loadProject(f.file, {seconds: 1.5}), /current shot/);
+});
+
+test('B4 preview retains current physical marking coverage, scopes known future states, and still rejects unknown sources', t => {
+  const f=fixture(t),marking={id:'machine-number',shot:0,layer_ids:['current-image','late-board'],role:'environment_marking',text:'7',
+    classification_reason:'Physical machine identifier, separate from any title, rule or warning.',
+    region:{x:780,y:80,w:350,h:250},times:{entry:0,mid:.25,settled:.5,hold:1.4}};
+  f.p.typography.image_text.push(marking,{...marking,id:'future-machine-number',layer_ids:['late-board']});f.write();
+  const preview=loadProject(f.file,{seconds:1.5});
+  assert.deepEqual(preview.typography.image_text.map(x=>[x.id,x.layer_ids]),[['machine-number',['current-image']]]);
+  assert.equal(planB4Typography(preview).registry.find(x=>x.id==='machine-number').kind,'environment_marking');
+  const old=preview.fingerprint;marking.text='8';f.write();
+  assert.notEqual(loadProject(f.file,{seconds:1.5}).fingerprint,old,'current marking text remains fingerprint-bound');
+  marking.layer_ids.push('misspelled-image');f.write();
+  assert.throws(()=>loadProject(f.file,{seconds:1.5}),/actual image layer/);
 });

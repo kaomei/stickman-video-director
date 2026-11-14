@@ -23,7 +23,7 @@ for name in ('hotel-panorama.png','table.png','letter.png'):
 audio=base/'audio/technical-silence.wav'
 with wave.open(str(audio),'wb') as f:
     f.setnchannels(1);f.setsampwidth(2);f.setframerate(24000);f.writeframes(b'\0\0'*144000)
-p.update(stage='authored',duration=6,technical_fixture=True,
+p.update(version=1,stage='authored',duration=6,purpose='diagnostic',technical_fixture=True,
  voice={'name':'Silent technical fixture','path':str(audio.relative_to(base)),'sha256':hashlib.sha256(audio.read_bytes()).hexdigest(),'speed':1,'source':'Local silence; no voice generation; no film/story acceptance'},
  review={'status':'pending_user_review','art':'Two code-derived demo roles; not new model artwork','acting':'Six-second turn/pick-up/shared transfer/withdraw test; actual alpha gates plus visual review required','sound':'Intentionally silent structural test'})
 p['inputs']+=['art/'+n for n in ('hotel-panorama.png','table.png','letter.png')]

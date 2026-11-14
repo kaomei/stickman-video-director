@@ -307,3 +307,21 @@ test('B4 explicit source-silence trim repairs onset without changing rate or sou
   f.project.voice = {path: 'voice.wav', trim_start: .28}; f.write();
   assert.throws(() => loadProject(f.file), /Voice supports/);
 });
+
+
+test('B4 shared validation and preview reject copied reference art in both opening and later body shots', t => {
+  const f=fixture(t),copy=path.join(f.dir,'new-story-art.png');
+  fs.copyFileSync(path.join(ROOT,'assets/b4/reference-04-street.png'),copy);
+  f.project.shots[1].layers[1].path='new-story-art.png';
+  f.project.picture_motion.shots[1].reuse_reason='New original scene; not an exemption';
+  f.write();
+  // A prefix only checks assets it actually displays. Full validation/render
+  // cannot inherit a clean prefix result to conceal a later reference copy.
+  assert.equal(loadProject(f.file,{seconds:1.6}).rangeEnd,1.6);
+  assert.throws(()=>loadProject(f.file),/B4 asset origin:.*style_reference street/);
+  for(const args of [['validate',f.file],['preview',f.file,'--seconds','3.2'],['render',f.file]]) {
+    const r=command(args);assert.notEqual(r.status,0);assert.match(r.stderr,/B4 asset origin:.*style_reference street/);
+  }
+  f.project.shots[1].layers[1].path='after.png';f.project.shots[0].layers[0].path='new-story-art.png';f.write();
+  assert.throws(()=>loadProject(f.file,{seconds:1.6}),/B4 asset origin:.*style_reference street/);
+});

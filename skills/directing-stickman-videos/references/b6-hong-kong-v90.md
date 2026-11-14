@@ -1,6 +1,6 @@
 # B6 · V90 editable reproduction project
 
-Use this route when continuing the reviewed Hong Kong 1990s characters and performance. It preserves V90's painted backgrounds, textured character layers, facial art, thin limbs, ambient cast, taxi, original camera code, The Pharaoh 3 mixed master and authored semantic caption cues. It is a complete 20-second editable **16:9** project, not a preview movie pasted into a renderer. It does not call an image/video/audio model.
+Use this route only when the user explicitly requests the unchanged Hong Kong V90 example reproduction, or when checking that named installation fixture. Its wrapper reports `purpose: example-reproduction` and `new_story: false`; it is not evidence that a new user story has been produced. It preserves V90's painted backgrounds, textured character layers, facial art, thin limbs, ambient cast, taxi, original camera code, The Pharaoh 3 mixed master and authored semantic caption cues. It is a complete 20-second editable **16:9** project, not a preview movie pasted into a renderer. It does not call an image/video/audio model.
 
 **Reference priority:** this is Sample 2 and a secondary binding/engineering example. The strict primary B6 visual/performance standard is Sample 1, the Eiffel portrait V44; B6 works best in 9:16. V90's preserved fine limbs are correct for an unchanged reproduction of this historical clip, but do not define the limb weight for a new B6 production. New cast and scenes must match Sample 1 portrait's relative ink weight, brushwork, light, meme acting and motion language while recalibrating geometry. Keep the locked V90 source intact when using this reproduction route.
 
@@ -43,7 +43,7 @@ Orthographic depth permits the inherited painted projection; its fixed-length ca
 
 Inspect decoded action/cut boundaries and sleeve/arm/table occlusion visually. Compare the new-directory render with V90 and listen to the excerpt. A passing report explicitly leaves visual/user acceptance pending. Do not extend a different pose or identity based only on this reconstruction.
 
-Full 20-second production is available after genuine user review of the actual new-directory preview:
+The explicit unchanged 20-second **example reproduction** can be exported after genuine user review of that actual new-directory preview:
 
 ```bash
 node scripts/autopilot.mjs approve /absolute/new-hk-project --report outputs/test-01/report.json --note "Record the user's actual decision"

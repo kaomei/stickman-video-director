@@ -18,6 +18,7 @@ const LIMITS = ['Pixel diagnostics establish local change and current-media prov
   'Reviewer identity, independence, actual playback and judgment are declared, not authenticated.',
   'Image-embedded text must be declared; this gate does not certify that undeclared text was detected.',
   'Image-layer pixel change does not itself prove embedded glyph motion; the reviewer must inspect the glyphs.',
+  'Environment marking classification is reviewed, not authenticated; titles, rules and warnings retain principal-text requirements.',
   'Independent agent review is not human or user acceptance; user acceptance is not inferred.'];
 const fail = s => { throw Error('B4 typography: ' + s); };
 const need = (v, s) => { if (!v) fail(s); };
@@ -65,11 +66,24 @@ export function planB4Typography(p) {
   const typography = p.typography;
   if (typography) need(text(typography.author_id), 'explicit typography plan needs actual author_id');
   for (const item of typography?.image_text || []) {
-    const shot = resolveShot(p, item.shot), l = [...layers(p.shots[shot].layers)].find(l => l.id === item.layer_id);
+    const shot = resolveShot(p, item.shot), candidates = [...layers(p.shots[shot].layers)];
+    need(item.role === undefined || ['principal','environment_marking'].includes(item.role), 'image_text role must be principal or environment_marking');
+    if (item.role === 'environment_marking') {
+      const ids=item.layer_ids ?? [item.layer_id], selected=Array.isArray(ids)?ids.map(id=>candidates.find(l=>l.id===id)):[];
+      need(safeId(item.id)&&!seen.has(item.id)&&!/^caption-\d+$/.test(item.id)&&text(item.text)&&text(item.classification_reason),'environment_marking needs a unique id, exact text and physical-marking classification_reason');
+      need(selected.length>0&&new Set(ids).size===ids.length&&selected.every(l=>l?.type==='image'&&safeId(l.id)),'environment_marking must identify its actual image layer(s)');
+      need(item.times&&PHASES.every(k=>Number.isFinite(item.times[k])),'environment_marking needs all four actual evidence phase times');
+      const start=Math.min(...selected.map(l=>p.shots[shot].start+(l.from||0))),end=Math.min(p.shots[shot].end,Math.max(...selected.map(l=>p.shots[shot].start+(l.to??Infinity))),scope_end);
+      if(start>=scope_end)continue;
+      const resources=selected.map(l=>{const source=file(path.resolve(p.base||'.',l.path));return {id:l.id,path:source,sha256:hash(source)};});
+      seen.add(item.id);registry.push({id:item.id,shot,kind:'environment_marking',text:item.text,start,end,source_layer_ids:ids,classification_reason:item.classification_reason,region:region(item.region,h),times:item.times,resources});continue;
+    }
+    const l = candidates.find(l => l.id === item.layer_id);
     need(l?.type === 'image' && safeId(l.id) && !/^caption-\d+$/.test(l.id) && !seen.has(l.id) && text(item.text), 'image_text must declare a unique actual image layer and its principal text');
     const start=p.shots[shot].start+(l.from||0);if(start>=scope_end)continue;
     seen.add(l.id); registry.push({id:l.id, shot, kind:'image_text', text:item.text, start, end:Math.min(p.shots[shot].end,p.shots[shot].start+(l.to??Infinity),scope_end)});
   }
+  const principalRegistry=registry.filter(l=>l.kind!=='environment_marking');
   const moments = [], assigned = [],caption_diagnostics=[];
   const add = (m, kind, allowed, bounds, sources=registry,diagnosticOnly=false) => {
     need(safeId(m.id) && ![...moments,...caption_diagnostics].some(x => x.id === m.id), 'moments need globally unique safe ids');
@@ -86,7 +100,7 @@ export function planB4Typography(p) {
   };
   if (!typography?.moments) {
     const o = p.opening, setup = registry.find(l => l.id === o?.setup), payoff = registry.find(l => l.id === o?.payoff);
-    need(registry.every(l => [setup?.id,payoff?.id].includes(l.id)), 'body text requires explicit typography.moments; opening-only diagnostics cannot cover it');
+    need(principalRegistry.every(l => [setup?.id,payoff?.id].includes(l.id)), 'body text requires explicit typography.moments; opening-only diagnostics cannot cover it');
     if (setup && payoff) {
       const s = p.shots[0], ls = [...layers(s.layers)], a = ls.find(l=>l.id===setup.id), b=ls.find(l=>l.id===payoff.id);
       const end = Math.min(s.end,scope_end), mid = frameAt(payoff.start,context)/p.fps, settled = frameAt(payoff.start+.2,context)/p.fps;
@@ -99,9 +113,13 @@ export function planB4Typography(p) {
     need(Array.isArray(typography.moments), 'typography.moments must be an array');
     for (const m of typography.moments) {
       if (m.times?.entry >= scope_end) continue;
-      const shot = resolveShot(p,m.shot), s=p.shots[shot], known=registry.filter(l=>l.shot===shot);
+      const shot = resolveShot(p,m.shot), s=p.shots[shot], known=principalRegistry.filter(l=>l.shot===shot);
       add({...m,shot},'text',known.map(l=>l.id),[s.start,Math.min(s.end,scope_end)]);
     }
+  }
+  for(const e of registry.filter(l=>l.kind==='environment_marking')) {
+    add({id:e.id,shot:e.shot,layer_ids:[e.id],region:e.region,times:e.times,intent:'Inspect the physical scene marking: '+e.text,treatment:'Stable marking attached to its real scene object; classification and all six checks require independent actual-MP4 review.'},'environment_marking',[e.id],[e.start,e.end],[e]);
+    Object.assign(moments.at(-1),{layer_ids:e.source_layer_ids,registry_ids:[e.id],text:e.text,classification_reason:e.classification_reason,resources:e.resources});
   }
   need(same([...assigned].sort(),registry.map(l=>l.id).sort()), 'known principal text must be covered exactly once; omitted/duplicate text is not reviewable');
   const cues = (p.captions || []).map((c,i)=>({id:'caption-'+i,index:i,text:c.text,start:c.start,end:Math.min(c.end,scope_end)}));
@@ -145,6 +163,12 @@ export function checkB4TypographyPaint(p,{draw}) {
     const without=snapshot(draw(at('settled'),{focusIds:['__b4_typography_empty__']}));
     const ink=diff(frames.settled,without,m.region),entry_mid=diff(frames.entry,frames.mid,m.region),mid_settled=diff(frames.mid,frames.settled,m.region);
     need(ink.mean>.0008 && ink.fraction>.002,'moment '+m.id+' has no visible isolated text in its declared region');
+    if(m.kind==='environment_marking') {
+      const phases=[];
+      for(const phase of PHASES){const isolated=frames[phase],empty=snapshot(draw(at(phase),{focusIds:['__b4_typography_empty__']})),glyph=diff(isolated,empty,m.region),composed=snapshot(draw(at(phase))),removed=snapshot(draw(at(phase),{omitIds:m.layer_ids})),visibility=diff(composed,removed,m.region);
+        need(glyph.mean>.0008&&glyph.fraction>.002&&visibility.mean>=glyph.mean*.25&&visibility.fraction>=glyph.fraction*.2,'environment marking '+m.id+' must be visible and unobscured in all four phases');phases.push({phase,ink:glyph,visible:visibility});}
+      metrics.push({id:m.id,kind:m.kind,phases,classification_status:'pending_independent_review',micro_animation:'independent review must confirm a stable physical marking, not title/rule/warning'});continue;
+    }
     for(const [name,d] of Object.entries({entry_mid,mid_settled})) need(d.mean>=Math.max(.00012,ink.mean*.008)&&d.fraction>=.0005,'moment '+m.id+' needs actual local text micro-animation ('+name+'); background motion cannot supply it');
     const full=snapshot(draw(at('settled'))),omit=snapshot(draw(at('settled'),{omitIds:m.layer_ids})),visible=diff(full,omit,m.region);
     need(visible.mean>=ink.mean*.25 && visible.fraction>=ink.fraction*.2,'moment '+m.id+' is obscured in the actual composition');
@@ -192,7 +216,7 @@ async function checkFile(p,source,draw,ffmpeg) {
   // The alternative keeps the current background and substitutes only the
   // isolated typography difference, so a moving picture cannot supply proof.
   const phase_matches=[];
-  for(const m of diagnosticMoments(plan)) for(const [phase,next] of [['entry','mid'],['mid','settled']]) {
+  for(const m of diagnosticMoments(plan).filter(m=>m.kind!=='environment_marking')) for(const [phase,next] of [['entry','mid'],['mid','settled']]) {
     const t=m.frame_indices[phase]/p.fps,actualImage=await loadImage(command(ffmpeg,['-v','error','-ss',String(t),'-i',source,'-frames:v','1','-c:v','png','-threads:v','1','-f','image2pipe','pipe:1']));
     const actual=snapshot(actualImage),authored=snapshot(draw(t)),isolated=snapshot(draw(t,{focusIds:m.layer_ids})),other=snapshot(draw(m.frame_indices[next]/p.fps,{focusIds:m.layer_ids}));
     let currentError=0,alternativeError=0,count=0;
@@ -230,7 +254,7 @@ function template(plan,output_sha256,evidence_sha256,artifacts) {
   return {schema:1,author_id:plan.author_id,reviewer:{id:'',kind:'agent',method:'',independent:false},output_sha256,evidence_sha256,
     full_playback:{status:'unknown',viewed_ranges:[],observations:[]},
     ...(plan.viewing_profile==='portrait-phone'?{portrait_viewing:{status:'unknown',display_width:null,display_height:null,playback_speed:null,platform:'',real_device:{checked:null,limitation:''},observations:[]}}:{}),
-    moments:plan.moments.map(m=>({id:m.id,checks:Object.fromEntries(CHECKS.map(k=>[k,{status:'unknown',observations:[]}]))})),blocking_issues:[],evidence_ids:artifacts.map(a=>a.id),limits:LIMITS};
+    moments:plan.moments.map(m=>({id:m.id,...(m.kind==='environment_marking'?{environment_classification:{status:'unknown',text:m.text,classification_reason:m.classification_reason,is_physical_marking:null,is_title_or_rule_or_warning:null,observations:[]}}:{}),checks:Object.fromEntries(CHECKS.map(k=>[k,{status:'unknown',observations:[]}]))})),blocking_issues:[],evidence_ids:artifacts.map(a=>a.id),limits:LIMITS};
 }
 export async function buildB4TypographyEvidence(p,{file:source,draw,out,projectFingerprint,ffmpeg=process.env.FFMPEG||'ffmpeg',ffprobe=process.env.FFPROBE||'ffprobe'}) {
   source=file(source);const output_sha256=hash(source),project_fingerprint=binding(p,projectFingerprint),plan=planB4Typography(p);need(plan,'B4 project required');
@@ -283,6 +307,11 @@ export async function verifyB4TypographyReview(p,{file:source,draw,evidenceDir,r
   for(const m of plan.moments) {
     const item=review.moments.find(x=>x.id===m.id);need(item.checks&&same(Object.keys(item.checks).sort(),CHECKS.slice().sort()),'moment requires all six independent review checks');
     const local=new Set(ledger.artifacts.filter(a=>a.moment===m.id).map(a=>a.id));local.add('source-video');
+    if(m.kind==='environment_marking') {
+      const c=item.environment_classification;
+      need(c?.status==='pass'&&c.is_physical_marking===true&&c.is_title_or_rule_or_warning===false,'environment marking '+m.id+' classification is pending/failed; principal titles, rules and warnings cannot use this role');
+      observations(c.observations,{scope:[m.clip_start_frame/p.fps,m.clip_end_frame/p.fps],artifacts:local,continuous:m.id+'-continuous'});
+    }
     for(const k of CHECKS){const c=item.checks[k];need(c?.status==='pass','moment '+m.id+' '+k+' is pending/failed');observations(c.observations,{scope:[m.clip_start_frame/p.fps,m.clip_end_frame/p.fps],artifacts:local,continuous:m.id+'-continuous'});}
   }
   need(hash(source)===output_sha256&&hash(ledgerFile)===evidence_sha256&&hash(reviewFile)===review_sha256&&digest(JSON.stringify(planB4Typography(p)))===plan_sha256,'media/evidence/review/plan changed during acceptance');

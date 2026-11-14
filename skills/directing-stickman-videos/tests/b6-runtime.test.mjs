@@ -6,7 +6,7 @@ import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {ROOT, FFMPEG, probe} from '../scripts/autopilot-core.mjs';
 import {STYLES} from '../scripts/autopilot-core.mjs';
-import {initB6, loadB6, runB6, checkPack, sha} from '../scripts/b6-dynamic-meme.mjs';
+import {initB6, loadB6, runB6, checkPack, checkApproval, sha} from '../scripts/b6-dynamic-meme.mjs';
 import * as tools from '../scripts/b6-scene.mjs';
 import {frame} from '../assets/b6/starter/scene.mjs';
 
@@ -29,6 +29,8 @@ test('shared init selects a dedicated B6 renderer and requires a native format',
   const dir=path.join(tmp,'shared');const r=run('init',dir,'--style','B6','--ratio','both','--example','blocking-calibration');
   assert.equal(r.status,0,r.stderr);
   assert.equal(read(path.join(dir,'project.json')).renderer,'b6-painted-world-v1');
+  assert.equal(read(path.join(dir,'project.json')).purpose,'diagnostic');
+  assert.equal(read(path.join(dir,'project.json')).technical_fixture,true);
   assert(!STYLES.includes('B6'),'B6 must not become a generic B1–B4 alias');
   assert.throws(()=>initB6(dir,'both'),/exists/);
   assert.throws(()=>initB6(path.join(ROOT,'b6-should-not-write'),'both'),/outside/);
@@ -159,16 +161,23 @@ test('real encodes preserve input audio, native dimensions and timed caption sid
     const out=path.join(dir,ratio==='16:9'?'preview-L':'preview-P');
     const result=await runB6('preview',[dir,'--ratio',ratio,'--start','2','--seconds','2','--output',out,'--trusted-code']);
     const report=read(result.report),video=probe(result.video).streams.find(s=>s.codec_type==='video');
+    assert.equal(report.technical_fixture,true);assert.equal(report.purpose,'diagnostic');assert.equal(report.delivery_ready,false);
     assert.equal(report.technical.decoded,true);assert.equal(report.technical.audio_speed,1);
     assert.deepEqual([video.width,video.height],ratio==='16:9'?[320,180]:[180,320]);
     assert.equal(+video.nb_frames,8);assert(Math.abs(report.technical.duration-2)<.15);
     assert.equal(sha(result.video),report.video_sha256);assert.equal(sha(audio),audioHash);
     assert.equal(fs.readFileSync(path.join(out,'captions.srt'),'utf8'),'1\n00:00:00,000 --> 00:00:02,000\ncodec\n');
     assert.match(fs.readFileSync(path.join(out,'captions.vtt'),'utf8'),/00:00:00\.000 --> 00:00:02\.000/);
+    // Removing every editable marker/relabeling stage and reviews must not upgrade a legacy renderer.
+    edit(pf,v=>{delete v.technical_fixture;delete v.purpose;v.stage='authored';v.review={drawing:'Reviewed',acting:'Reviewed',sound:'Reviewed'};});
     await assert.rejects(runB6('approve',[dir,'--ratio',ratio,'--report',result.report,'--note','Technical test must remain unapproved']),/technical-only/);
     assert(!fs.existsSync(path.join(out,'approval.json')));
     await assert.rejects(runB6('preview',[dir,'--ratio',ratio,'--seconds','2','--output',out,'--trusted-code']),/new project-local/);
   }
+  // A forged old-style report/approval does not bypass the renderer boundary either.
+  const fakeReport=path.join(dir,'forged-report.json'),fakeApproval=path.join(dir,'forged-approval.json');
+  save(fakeReport,{kind:'preview',technical_fixture:false});save(fakeApproval,{note:'Reviewed'});
+  assert.throws(()=>checkApproval(loadB6(dir,'16:9'),fakeReport,fakeApproval),/technical-only/);
   const denied=path.join(dir,'full-denied');
-  await assert.rejects(runB6('render',[dir,'--ratio','16:9','--output',denied,'--trusted-code']),/reviewed preview/);assert(!fs.existsSync(denied));
+  await assert.rejects(runB6('render',[dir,'--ratio','16:9','--output',denied,'--trusted-code']),/technical-only/);assert(!fs.existsSync(denied));
 });

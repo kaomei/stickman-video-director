@@ -26,6 +26,7 @@ export function initProduction(dir,ratio,fontOptions) {
   fs.copyFileSync(path.join(ROOT,'scripts/b6_space.py'),path.join(dir,'b6_space.py'));
   fs.copyFileSync(path.join(ROOT,'scripts/b6_caption.py'),path.join(dir,'caption_renderer.py'));
   fs.copyFileSync(path.join(ROOT,'scripts/b6_puppet.py'),path.join(dir,'b6_puppet.py'));
+  fs.copyFileSync(path.join(ROOT,'scripts/b6_asset_roles.py'),path.join(dir,'b6_asset_roles.py'));
   fs.copyFileSync(path.join(ROOT,'assets/b6/production/scene.py'),path.join(dir,'scene.py'));
   fs.mkdirSync(path.join(dir,'reference'));
   const standard=JSON.parse(fs.readFileSync(path.join(ROOT,'assets/b6/style-standard.json'),'utf8'));
@@ -45,8 +46,8 @@ export function initProduction(dir,ratio,fontOptions) {
   fs.mkdirSync(path.join(dir,'characters'));
   save(path.join(dir,'characters.json'),{schema:'b6-character-registry/1',actors:[],rigid_cast:[]});
   save(path.join(dir,'story.json'),{narration:'',beats:[],status:'awaiting_story_authoring'});
-  save(path.join(dir,'project.json'),{version:2,style:'B6',renderer:'b6-production-v1',stage:'needs_authoring',duration:null,fps:30,scene:'scene.py',story:'story.json',captions:'captions.json',formats,voice:null,bindings:null,character_system:{schema:'b6-character-system/1',registry:'characters.json'},quality_target:'quality-target.json',caption_font_variant:publicFont.variant,inputs:['motion_review.py','b6_space.py','caption_renderer.py','b6_puppet.py',...publicFont.inputs],review:{status:'pending',art:null,acting:null,sound:null}});
-  return {project:path.join(dir,'project.json'),renderer:'b6-production-v1',formats:Object.keys(formats),caption_font_variant:publicFont.variant,stage:'Agent must author the requested story, native scene code, paintings, calibrated actions and sound before preview; no placeholder video or approval created',workflow:'references/b6-installed-production.md',engine:'Complete portable V90 source, art, binding, locally provisioned legacy fonts and voice copied to engine/. New-story captions use the explicit bundled Archivo Black profile in fonts/; Sample 1 Arial Black remains the separate original reference profile.'};
+  save(path.join(dir,'project.json'),{version:2,style:'B6',renderer:'b6-production-v1',purpose:'production',stage:'needs_authoring',duration:null,fps:30,scene:'scene.py',story:'story.json',captions:'captions.json',formats,voice:null,bindings:null,character_system:{schema:'b6-character-system/1',registry:'characters.json'},quality_target:'quality-target.json',caption_font_variant:publicFont.variant,inputs:['motion_review.py','b6_space.py','caption_renderer.py','b6_puppet.py','b6_asset_roles.py',...publicFont.inputs],review:{status:'pending',art:null,acting:null,sound:null}});
+  return {project:path.join(dir,'project.json'),renderer:'b6-production-v1',formats:Object.keys(formats),caption_font_variant:publicFont.variant,stage:'Agent must author the requested story, native scene code, paintings, calibrated actions and sound before preview; no placeholder video or approval created',workflow:'references/b6-installed-production.md',engine:'Complete portable V90 engine retained for implementation reference and explicit example reproduction; bundled media cannot be new-story production layers. New stories use per-view puppets and project-local painted worlds. New-story captions use the explicit bundled Archivo Black profile in fonts/; Sample 1 Arial Black remains the separate original reference profile.'};
 }
 
 export function runProduction(command,args) {

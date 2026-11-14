@@ -2,6 +2,8 @@
 
 The **drawing style is user-approved and locked**. B4 uses this existing Skill's shared installed runtime: initialize with `node scripts/autopilot.mjs init /absolute/project --style B4`, then author its story-specific image layers, [required picture-animation plan](b4-picture-animation.md), timed captions and native-rate audio tracks under the [runtime contract](autopilot-runtime.md#b4-production-tracks). The same validate/preview/approve/render commands apply; do not alias B4 to B1/B2/B3. Read [Autopilot](autopilot.md) and [shared production QA](autopilot-production-qa.md) for production; neither supplies B4's visual design. Picture progression and local text animation are default production work, not options waiting for the user to request a GIF or remind the agent.
 
+Read the [reference/output boundary](b4-asset-origin.md) before selecting story assets: the approved pack guides new artwork; its finished scenes cannot stand in for a newly requested story.
+
 ## Required portable style lock
 
 Load these files from the installed Skill, not a previous chat, Desktop or generation cache:

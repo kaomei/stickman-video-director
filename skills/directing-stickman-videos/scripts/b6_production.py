@@ -3,11 +3,13 @@
 from pathlib import Path
 from types import SimpleNamespace
 import argparse, hashlib, importlib.util, json, math, subprocess, sys
+from contextlib import contextmanager
 
 sys.dont_write_bytecode=True
 # Validation may parse local package data, but must never execute an edited helper.
 TRUSTED_PUPPET_RUNTIME_SHA256='adc4bd4ddcbe2bb184381d080e99ebe1f4bd1beb3b0b6b1a841930ae15d5bed8'
 TRUSTED_CAPTION_RUNTIME_SHA256='5fc03a3f38dce9f55609f2059077125ecc30b7f5fa1d31580f9e007fcf23200b'
+TRUSTED_ASSET_ROLES_SHA256='ade90e92cad1751bd0b010d508501bba73a41a1ffe6c6018dadd4a368ace9c14'
 TRUSTED_MOTION_REVIEW_SHA256='e9873884fd348f4f1461e7b04a5301c6fd8aa2f14397468d248652ea2c25e56b'
 FROZEN_V90_EXAMPLE_SHA256={
     'scene':'dffaba09358cfdeafc9a3a04f29483910f4a8667159fbdbd60094b9185239947',
@@ -125,6 +127,35 @@ def character_registry(base, project, cast_ids):
     for actor in rigid:files.append(actor['source'])
     return runtime,characters,registry,files
 
+def asset_roles():
+    helper=Path(__file__).with_name('b6_asset_roles.py')
+    return verified_module('b6_asset_role_runtime',helper,TRUSTED_ASSET_ROLES_SHA256,'asset-role runtime')
+
+def authored_process_scope(purpose):
+    """Bound ordinary scene process launches, not hostile/native Python execution.
+
+    Child decoders do not emit the parent's file-open audit events. Production
+    media must therefore be prepared as declared local inputs before execution;
+    only the trusted runner starts encoders/muxers outside this active scope.
+    """
+    state={'depth':0}
+    if purpose=='production':
+        def audit(event,args):
+            launch=(event in {'subprocess.Popen','os.system','os.fork','os.forkpty',
+                             'os.posix_spawn','os.startfile','os.startfile/2',
+                             '_winapi.CreateProcess'} or
+                    event.startswith(('os.exec','os.spawn')))
+            if state['depth'] and launch:
+                raise ValueError('Production authored scenes cannot launch subprocesses ('+event+
+                                 '); preprocess media into project-local PNG inputs before rendering')
+        sys.addaudithook(audit)
+    @contextmanager
+    def scope():
+        state['depth']+=1
+        try:yield
+        finally:state['depth']-=1
+    return scope
+
 def caption_helper():
     helper=Path(__file__).with_name('caption_renderer.py')
     if not helper.exists():helper=Path(__file__).with_name('b6_caption.py')
@@ -164,15 +195,32 @@ def load(base,ratio):
     meta=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(audio)]))
     require(any(s['codec_type']=='audio' for s in meta['streams']) and abs(float(meta['format']['duration'])-p['duration'])<.12,'Full audio duration differs from project')
     files=['project.json','run.py','caption_renderer.py',p['scene'],p['story'],p['captions'],p['voice']['path'],p['formats'][ratio],plan['caption']['font_file'],*p.get('inputs',[])]
+    comparison_reference=None
     if p.get('quality_target'):
         files.extend(['motion_review.py','b6_space.py'])
         files.append(p['quality_target'])
         target=read(local(base,p['quality_target']))
         require(sha(local(base,target['reference']['path']))==target['reference']['sha256'],'Locked motion reference changed')
-        files.append(target['reference']['path'])
+        comparison_reference=target['reference']['path']
+        files.append(comparison_reference)
     if p.get('bindings'):files.append(p['bindings'])
+    roles=asset_roles()
+    purpose=roles.classify(p,sha(local(base,p['scene'])))
+    # Inventory package bytes before importing/validating their runtime. In
+    # particular, relabelled demo art cannot hide behind a different filename.
+    declared_character_files=[]
+    contract=p.get('character_system',{})
+    if contract.get('registry'):
+        declared=read(local(base,contract['registry']))
+        for actor in declared.get('actors',[]):
+            package=local(base,actor['package'].rstrip('/')+'/package.json')
+            declared_character_files.extend(str(f.relative_to(base)) for f in package.parent.rglob('*') if f.is_file())
+    # The locked quality movie is permitted for COMPARISON, never an art input.
+    story_inputs=[f for f in files if f!=comparison_reference or f in p.get('inputs',[])]
+    protected=roles.audit_inputs(base,[*story_inputs,*declared_character_files],purpose)
     puppet_runtime,character_packages,registry,character_files=character_registry(base,p,cast_ids)
     files.extend(character_files)
+    files.append('b6_asset_roles.py')
     # Validation checks data/hashes only. Authored modules are imported after --trusted-code.
     manifest=read(local(base,'engine/manifest.json'))
     required_font_license_files(base/'engine',manifest)
@@ -184,7 +232,7 @@ def load(base,ratio):
         require(len(contract['coverage'])==round(p['duration']*30) and len(contract['leg_coverage'])==len(contract['coverage']),'New action needs complete per-frame limb inventory')
     digests={f:sha(local(base,f)) for f in sorted(set(files))};digests['engine/manifest.json']=ef
     fingerprint=hashlib.sha256(json.dumps(digests,sort_keys=True).encode()).hexdigest()
-    return SimpleNamespace(project=p,plan=plan,cues=cues,audio=audio,fingerprint=fingerprint,inputs=digests,engine_project=ep,engine_bindings=eb,base=base,ratio=ratio,puppet_runtime=puppet_runtime,character_packages=character_packages,character_registry=registry)
+    return SimpleNamespace(purpose=purpose,protected_inputs=protected,project=p,plan=plan,cues=cues,audio=audio,fingerprint=fingerprint,inputs=digests,engine_project=ep,engine_bindings=eb,base=base,ratio=ratio,puppet_runtime=puppet_runtime,character_packages=character_packages,character_registry=registry)
 
 def authored_contacts(scene, frame, contract):
     """New scenes provide their own prop endpoints, never inherited V90 logs."""
@@ -230,6 +278,7 @@ class Engine:
         self.original_caption=self.scene.m.caption;self.original_camera=self.scene.m.booth_camera
         self.scene.m.caption=lambda im,t:im
     def draw(self,source_time,camera=None):
+        require(getattr(self.context,'purpose','production')=='example-reproduction' and self.context.project.get('character_system',{}).get('mode')=='locked-v90-performance','Frozen V90 source draw is example reproduction only; author a new-story scene with painted puppets')
         require(0<=source_time<20,'Reusable performance outside source range')
         require(self.context.ratio=='16:9','V90 performances need a newly staged portrait scene; no crop/stretch fallback')
         if camera is not None:
@@ -243,7 +292,9 @@ class Engine:
 
 def run(a):
     base=Path(a.project).resolve();c=load(base,a.ratio);p=c.project
-    if a.command=='validate':return {'valid':True,'renderer':p['renderer'],'fingerprint':c.fingerprint,'ratio':a.ratio,'duration':p['duration']}
+    if a.command in ('approve','render'):
+        require(c.purpose=='production','B6 '+c.purpose+' is technical-only / example-only: review text or deleted fixture flags cannot authorize a new-story finished export')
+    if a.command=='validate':return {'purpose':c.purpose,'delivery_ready':False,'protected_inputs':c.protected_inputs,'valid':True,'renderer':p['renderer'],'fingerprint':c.fingerprint,'ratio':a.ratio,'duration':p['duration']}
     def motion_review():
         helper=Path(__file__).with_name('motion_review.py')
         if not helper.exists():helper=Path(__file__).with_name('b6_motion_review.py')
@@ -283,7 +334,23 @@ def run(a):
     out=(base/a.output).resolve();require(out.is_relative_to(base) and not out.exists(),'Choose a fresh project-local output directory')
     c.engine_runtime=module('b6_locked_runtime',base/'engine/run.py')
     reads,outside=c.engine_runtime.resource_audit(base)
-    e=Engine(c);c.engine=e;scene=module('b6_authored_scene',local(base,p['scene']))
+    # New-story frames never receive the old source performance or its art objects.
+    # Keep the complete engine on disk for explicit reproduction and implementation reference.
+    e=Engine(c) if c.purpose=='example-reproduction' and p.get('character_system',{}).get('mode')=='locked-v90-performance' else None
+    if e is not None:c.engine=e
+    scene_scope=authored_process_scope(c.purpose)
+    roles=asset_roles()
+    read_scope=roles.actual_reads_scope(base,reads,c.purpose)
+    with scene_scope(),read_scope():
+        scene=module('b6_authored_scene',local(base,p['scene']))
+    checked_reads=set()
+    def check_story_reads():
+        fresh=set(reads)-checked_reads
+        # Output data is not a production input; compare-only references read by
+        # scene code ARE inputs here and cannot become a background/video layer.
+        source=[rel for rel in fresh if not rel.startswith(str(out.relative_to(base))+'/')]
+        roles.audit_inputs(base,source,c.purpose)
+        checked_reads.update(fresh)
     from PIL import Image,ImageDraw
     import numpy as np
     out.mkdir(parents=True);w,h=c.plan['width'],c.plan['height'];thumbs=[];arms=legs=0;maxcontact=0
@@ -294,8 +361,11 @@ def run(a):
     try:
         with open(out/'limb-frames.jsonl','w') as log:
             for i in range(start,end):
-                t=i/30;e.used_source_draw=False;e.source_frame=None;e.rig.reset(i)
-                rendered=scene.frame(t,c)
+                t=i/30
+                if e is not None:e.used_source_draw=False;e.source_frame=None;e.rig.reset(i)
+                with scene_scope(),read_scope():
+                    rendered=scene.frame(t,c)
+                check_story_reads()
                 if c.puppet_runtime is not None:
                     require(isinstance(rendered,c.puppet_runtime.RenderResult),'Character-system scenes must return the final painted RenderResult, including all foreground occluders')
                     visible_shots={s['id'] for s in c.plan['shots'] if s['start']<=t<s['end']}
@@ -314,6 +384,7 @@ def run(a):
                     maxcontact=max([maxcontact,*contacts]);arms+=len(frame_arms);legs+=len(frame_legs)
                     log.write(json.dumps({'frame':i,'character_system':'b6-puppet/1',**qa})+'\n')
                 else:
+                    require(e is not None,'New-story production requires the painted-puppet RenderResult, not old source imagery or numeric-only bindings')
                     im=rendered.convert('RGB')
                     if p.get('character_system',{}).get('mode')=='locked-v90-performance':
                         require(e.used_source_draw,'The legacy exception permits only the locked source performance, not new cast/actions')
@@ -325,6 +396,9 @@ def run(a):
                     maxcontact=max([maxcontact,*contacts]);arms+=len(e.rig.RECORDS);legs+=len(e.rig.LEGS)
                     log.write(json.dumps({'frame':i,'performance_frame':e.source_frame,'arms':e.rig.RECORDS,'legs':e.rig.LEGS,'contacts':contacts})+'\n')
                 require(im.size==(w,h),'Scene must render at native dimensions; no automatic crop/stretch')
+                if c.purpose!='production':
+                    badge='B6 DIAGNOSTIC - NOT A FINISHED STORY' if c.purpose=='diagnostic' else 'B6 EXAMPLE REPRODUCTION - NOT A NEW STORY'
+                    overlay=ImageDraw.Draw(im);overlay.rectangle((0,0,w,28),fill='#392f2f');overlay.text((8,7),badge,fill='#fff0c5')
                 cue=next((q for q in c.cues if q['start']<=t<q['end']),None)
                 if cue:
                     bounds=caption_raster.draw(im,cue['text'])
@@ -346,7 +420,7 @@ def run(a):
     caption_sidecars(out,c.cues,start/30,end/30)
     undeclared=[f for f in reads if not f.startswith('engine/') and not f.startswith(str(out.relative_to(base))+'/') and f not in c.inputs]
     require(not undeclared,'Declare project-local code/art dependencies in inputs: '+str(undeclared))
-    result={'status':'automated_checks_passed_pending_visual_and_user_review','kind':a.command,'technical_fixture':bool(p.get('technical_fixture')),'ratio':a.ratio,'fingerprint':c.fingerprint,'checked_frames':end-start,'arm_poses_checked':arms,'straight_legs_checked':legs,'max_prop_contact_error_px':maxcontact,'external_media_reads':sorted(outside),'voice_speed':1,'new_story_acceptance':'not implied by reusing a tested performance'}
+    result={'status':'automated_checks_passed_pending_visual_and_user_review','kind':a.command,'technical_fixture':c.purpose!='production','purpose':c.purpose,'delivery_ready':False,'protected_inputs':c.protected_inputs,'ratio':a.ratio,'fingerprint':c.fingerprint,'checked_frames':end-start,'arm_poses_checked':arms,'straight_legs_checked':legs,'max_prop_contact_error_px':maxcontact,'external_media_reads':sorted(outside),'voice_speed':1,'new_story_acceptance':'not implied by reusing a tested performance'}
     result.update(time_range={'start':start/30,'end':end/30},technical_status='pass',creative_status='pending_actual_playback_and_source_review',user_acceptance='not_inferred',review_required='review-pack then check-review; numeric QC never certifies motion quality')
     result['caption_sidecars']=[str((out/name).relative_to(base)) for name in ['captions.srt','captions.vtt']]
     result['caption_contract']=captions.contract(c.plan['caption'],base/'caption_renderer.py',base/c.plan['caption']['font_file'],sha(base/p['captions']),list(caption_observations.values()))

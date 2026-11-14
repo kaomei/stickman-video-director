@@ -140,3 +140,26 @@ test('portrait acceptance requires phone-size normal-speed source playback with 
   assert.equal(accepted.user_acceptance,'not_inferred');
   assert.match(accepted.limits.join(' '),/declared, not authenticated/);
 });
+
+test('physical environment digits retain complete coverage, four-phase visibility and all six independent checks',async t=>{
+  const f=fixture(t),p=f.p;p.base=f.dir;
+  const mark=createCanvas(40,50),ctx=mark.getContext('2d');ctx.fillStyle='#814332';ctx.fillRect(0,0,40,50);ctx.fillStyle='#fff1d4';ctx.font='bold 32px sans-serif';ctx.fillText('7',9,38);fs.writeFileSync(path.join(f.dir,'physical-number.png'),mark.toBuffer('image/png'));
+  p.shots[0].layers.push({id:'machine-panel',type:'image',path:'physical-number.png'});
+  const entry={id:'machine-number',shot:0,layer_id:'machine-panel',text:'7',role:'environment_marking',classification_reason:'The digit is printed on a fixed metal machine panel as its physical identifier, not a title, rule, warning or instruction.',region:{x:1040,y:190,w:180,h:220},times:{entry:0,mid:.25,settled:.5,hold:17/12}};
+  p.typography.image_text=[entry];
+  const base=drawFixture(p),draw=(time,o={})=>{const c=base(time,o);if(!(o.omitIds||[]).includes('machine-panel')&&(!(o.focusIds||[]).length||o.focusIds.includes('machine-panel')))c.getContext('2d').drawImage(mark,265,50);return c;};f.draw=draw;f.options.draw=draw;
+  const defaultPrincipal=structuredClone(p);delete defaultPrincipal.typography.image_text[0].role;assert.throws(()=>planB4Typography(defaultPrincipal),/covered exactly once/);
+  const absentTimes=structuredClone(p);delete absentTimes.typography.image_text[0].times;assert.throws(()=>planB4Typography(absentTimes),/four actual evidence phase/);
+  const absentReason=structuredClone(p);delete absentReason.typography.image_text[0].classification_reason;assert.throws(()=>planB4Typography(absentReason),/classification_reason/);
+  const paint=checkB4TypographyPaint(p,{draw}),physical=paint.metrics.find(m=>m.id===entry.id);assert.equal(physical.phases.length,4);assert.equal(physical.classification_status,'pending_independent_review');
+  const hidden=(time,o={})=>draw(time,time<.25?{...o,omitIds:[...(o.omitIds||[]),'machine-panel']}:o);assert.throws(()=>checkB4TypographyPaint(p,{draw:hidden}),/visible and unobscured in all four phases/);
+  f.encode(f.source,draw);await buildB4TypographyEvidence(p,f.options);
+  const ledger=read(path.join(f.out,'evidence.json'));assert.equal(ledger.artifacts.filter(a=>a.moment===entry.id).length,5);
+  const review=syntheticReview(f);await assert.rejects(()=>verify(f),/classification is pending/);
+  const item=review.moments.find(m=>m.id===entry.id);assert.deepEqual(Object.keys(item.checks).sort(),['hierarchy','material_finish','micro_animation','readability','story_fit','timing']);
+  item.environment_classification={status:'pass',is_physical_marking:true,is_title_or_rule_or_warning:true,observations:[{time:.5,detail:'Synthetic reviewer identifies this as a warning; the environment role must be rejected.',evidence_ids:[entry.id+'-continuous']}]};write(f.reviewFile,review);await assert.rejects(()=>verify(f),/principal titles, rules and warnings/);
+  item.environment_classification.is_title_or_rule_or_warning=false;item.environment_classification.observations[0].detail='Synthetic fixture digit remains printed on its physical machine panel across all phases; protocol-only classification.';write(f.reviewFile,review);
+  item.checks.micro_animation.status='unknown';write(f.reviewFile,review);await assert.rejects(()=>verify(f),/micro_animation is pending/);
+  item.checks.micro_animation.status='pass';write(f.reviewFile,review);assert.equal((await verify(f)).status,'independent_visual_review_pass');
+  fs.appendFileSync(path.join(f.dir,'physical-number.png'),'changed');await assert.rejects(()=>verify(f),/stale evidence\/output\/project\/plan binding/);
+});

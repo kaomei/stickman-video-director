@@ -46,8 +46,8 @@ export function initB6(dir,ratio,example) {
     save(path.join(dir,`formats/${name}-captions.json`),[]);formats[r]=`formats/${name}.json`;
   }
   const assets=Object.fromEntries(read(path.join(PACK,'manifest.json')).assets.filter(a=>a.path.startsWith('paint/')&&a.path.endsWith('.png')).map(a=>[path.basename(a.path,'.png'),a.path]));
-  save(path.join(dir,'project.json'),{version:1,style:'B6',renderer:'b6-painted-world-v1',stage:'scaffold',duration:6,fps:30,story:'story.json',scene:'scene.mjs',styleLock:'style-lock.json',voice:{provider:'ElevenLabs',name:'The Pharaoh 3 - Energetic, Lively & Cheerful',voice_id:null,path:null,sha256:null,contains_sfx:true},assets,formats,review:{drawing:null,acting:null,sound:null}});
-  return {project:path.join(dir,'project.json'),formats:Object.keys(formats),stage:'scaffold only; author story, art, native plans, narration, semantic captions and reviews; no generation or rendering performed'};
+  save(path.join(dir,'project.json'),{version:1,style:'B6',renderer:'b6-painted-world-v1',purpose:'diagnostic',technical_fixture:true,stage:'scaffold',duration:6,fps:30,story:'story.json',scene:'scene.mjs',styleLock:'style-lock.json',voice:{provider:'ElevenLabs',name:'The Pharaoh 3 - Energetic, Lively & Cheerful',voice_id:null,path:null,sha256:null,contains_sfx:true},assets,formats,review:{drawing:null,acting:null,sound:null}});
+  return {project:path.join(dir,'project.json'),formats:Object.keys(formats),purpose:'diagnostic',delivery_ready:false,stage:'Legacy blocking diagnostic only; approve/render are permanently disabled for this renderer. Use default init for a new production story.'};
 }
 const finite=(v,label)=>{if(!Number.isFinite(v))throw new Error(`Finite ${label} required`);};
 const words=s=>s.normalize('NFKC').toLowerCase().replace(/[\p{P}\p{Z}\s]/gu,'');
@@ -129,6 +129,10 @@ async function painter(p) {
     const canvas=createCanvas(p.plan.width,p.plan.height),ctx=canvas.getContext('2d');
     await mod.frame({canvas,ctx,t,plan:p.plan,project:p,images,tools:sceneTools,width:p.plan.width,height:p.plan.height});
     sceneTools.caption(ctx,p.captions.find(c=>c.start<=t&&t<c.end),p.plan.caption,p.plan.width,p.plan.height);
+    // Intrinsic renderer label: deleting project flags cannot turn this into a deliverable.
+    ctx.fillStyle='#392f2f';ctx.fillRect(0,0,canvas.width,Math.max(18,canvas.height*.035));
+    ctx.fillStyle='#fff0c5';ctx.font=`bold ${Math.max(9,Math.round(canvas.height*.018))}px B6 Sans`;
+    ctx.fillText('B6 DIAGNOSTIC - NOT A FINISHED STORY',7,Math.max(12,canvas.height*.024));
     return canvas;
   };
 }
@@ -149,6 +153,7 @@ async function encode(args,log) {
   });
 }
 export function checkApproval(p,reportFile,approvalFile) {
+  if(p.renderer==='b6-painted-world-v1')throw new Error('Legacy B6 diagnostic is technical-only: approve/render are disabled regardless of stage, fixture flags or review text');
   const report=read(reportFile),a=read(approvalFile);
   const reviewed=loadB6(p.file,p.ratio,{rangeEnd:report.range?.start+report.range?.seconds});
   if(p.technical_fixture||report.technical_fixture||report.kind!=='preview'||report.visual_only||report.ratio!==p.ratio||report.fingerprint!==reviewed.fingerprint||!fs.existsSync(report.video)||sha(report.video)!==report.video_sha256||a.fingerprint!==reviewed.fingerprint||a.ratio!==p.ratio||a.preview_sha256!==report.video_sha256||!a.note?.trim())throw new Error('Preview/user approval changed, is technical-only or belongs to another ratio; review this native version');
@@ -166,12 +171,13 @@ export async function runB6(command,args) {
   if(read(file).renderer==='b6-production-v1')return runProduction(command,args);
   if(['review-pack','check-review'].includes(command))throw new Error('Motion review commands require the B6 production renderer');
   if(read(file).renderer==='b6-hk-v90-v1')return runHK(command,args);
+  if(['approve','render'].includes(command)&&read(file).renderer==='b6-painted-world-v1')throw new Error('Legacy B6 diagnostic is technical-only: approve/render are disabled regardless of stage, fixture flags or review text');
   const duration=read(file).duration;
   const previewEnd=Number(opt(args,'--start',0))+Number(opt(args,'--seconds',Math.min(20,duration)));
   const approvalReport=command==='approve'&&opt(args,'--report')?read(opt(args,'--report')):null;
   const rangeEnd=command==='preview'?previewEnd:command==='validate'&&args.includes('--seconds')?previewEnd:approvalReport?approvalReport.range?.start+approvalReport.range?.seconds:undefined;
   const p=loadB6(file,ratio,{visualOnly,rangeEnd});
-  if(command==='validate')return {valid:true,ratio,visual_only:visualOnly,fingerprint:p.fingerprint,checked_seconds:p.rangeEnd,shots:p.plan.shots.length,note:'Structural validation only; drawing, semantic timing, sound and native framing require actual review'};
+  if(command==='validate')return {valid:true,purpose:'diagnostic',delivery_ready:false,ratio,visual_only:visualOnly,fingerprint:p.fingerprint,checked_seconds:p.rangeEnd,shots:p.plan.shots.length,note:'Structural validation only; drawing, semantic timing, sound and native framing require actual review'};
   if(command==='approve') {
     const reportFile=opt(args,'--report'),note=opt(args,'--note','');
     if(!reportFile||!note.trim())throw new Error('Actual reviewed preview --report and genuine user approval --note required');
@@ -200,7 +206,7 @@ export async function runB6(command,args) {
     const canvas=await draw(times[i]),f=path.join(out,`${String(i).padStart(6,'0')}.png`);
     fs.writeFileSync(f,canvas.toBuffer('image/png'));ledger.push({frame:i,time:times[i],sha256:sha(f)});
   }
-  const report={version:1,style:'B6',kind:command,ratio,fingerprint:p.fingerprint,visual_only:visualOnly,technical_fixture:Boolean(p.technical_fixture),range:{start,seconds},frames:ledger,creative_acceptance:'pending actual review'};
+  const report={version:1,style:'B6',kind:command,ratio,fingerprint:p.fingerprint,visual_only:visualOnly,technical_fixture:true,purpose:'diagnostic',delivery_ready:false,range:{start,seconds},frames:ledger,creative_acceptance:'diagnostic only; never a finished story'};
   save(path.join(out,'report.json'),report);
   if(command!=='frames') {
     const video=path.join(out,command==='preview'?'preview.mp4':'film.mp4');

@@ -10,6 +10,7 @@ import {B4_HOOK, B4_PORTRAIT, portraitHook, planB4Opening} from './b4-opening.mj
 import {planB4Typography} from './b4-typography-review.mjs';
 import {planB4Picture} from './b4-picture-review.mjs';
 import {referenceInputs} from './b-style-reference-review.mjs';
+import {assertB4StoryAsset} from './b4-asset-origin.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const STYLES = ['B1', 'B2', 'B3', 'B4'];
@@ -71,7 +72,14 @@ function scopeB4Typography(p, rangeEnd) {
   };
   const result = {...typography};
   if (Array.isArray(result.moments)) result.moments = result.moments.filter(m => sourceInScope(m?.shot) && beforeEnd(m));
-  if (Array.isArray(result.image_text)) result.image_text = result.image_text.filter(item => sourceInScope(item?.shot, item?.layer_id));
+  if (Array.isArray(result.image_text)) result.image_text = result.image_text.map(item => {
+    // A physical marking can persist across multiple before/after images. Scope
+    // only known future sources, retaining unknown ids so validation rejects them.
+    if (item?.role !== 'environment_marking' || !Array.isArray(item.layer_ids)) return item;
+    return {...item, layer_ids: item.layer_ids.filter(id => sourceInScope(item.shot, id))};
+  }).filter(item => item?.role === 'environment_marking' && Array.isArray(item.layer_ids)
+    ? sourceInScope(item.shot) && item.layer_ids.length > 0
+    : sourceInScope(item?.shot, item?.layer_id));
   if (Array.isArray(result.caption_groups)) result.caption_groups = result.caption_groups.filter(g => beforeEnd(g) &&
     !(Array.isArray(g?.cue_indices) && g.cue_indices.length && g.cue_indices.every(i => p.captions[i] && p.captions[i].start >= rangeEnd)));
   return result;
@@ -153,7 +161,7 @@ export function loadProject(file, {seconds} = {}) {
       for (const k of ['x', 'y', 'w', 'h', 'size', 'angle', 'alpha', 'progress', 'lineWidth']) if (l[k] !== undefined) number(l[k], k, -10000, 10000);
       if (l.w !== undefined && l.w <= 0 || l.size !== undefined && l.size <= 0) throw new Error('Layer dimensions must be positive');
       if (l.type === 'shadow') { number(l.w, 'shadow width', 1, 10000); number(l.h, 'shadow height', 1, 10000); }
-      if (l.type === 'image') { const f = mediaPath(base, l.path); if (!/\.(png|jpe?g)$/i.test(f)) throw new Error('Only PNG/JPEG image layers'); assets.add(f); }
+      if (l.type === 'image') { const f = mediaPath(base, l.path); if (!/\.(png|jpe?g)$/i.test(f)) throw new Error('Only PNG/JPEG image layers'); if(p.style==='B4')assertB4StoryAsset(f); assets.add(f); }
       if (l.type === 'pose') { if (p.style !== 'B1') throw new Error('B1 pose atlas cannot be used in another style; author story-specific image layers'); number(l.pose, 'pose', 0, 2); if (!Number.isInteger(l.pose)) throw new Error('Integer pose index required'); assets.add(mediaPath(base, '@b1/character-pose-sheet-v6.png')); }
       if (l.type === 'text' && (typeof l.text !== 'string' || !l.text.trim() || l.text.length > 400)) throw new Error('Text layer must be 1–400 characters');
       if (l.type === 'line' && (!Array.isArray(l.points) || l.points.length < 2 || l.points.some(pt => !Array.isArray(pt) || pt.length !== 2 || pt.some(n => !Number.isFinite(n))))) throw new Error('Line requires finite [x,y] points');
@@ -197,7 +205,7 @@ export function loadProject(file, {seconds} = {}) {
   if (p.style === 'B4' && portraitHook(project) && hashFile(fontPaths(project).cinematic) !== B4_PORTRAIT.font_sha256) throw new Error('B4 portrait: bundled poster font changed; restore Anton instead of silently substituting it');
   if (['B1', 'B2', 'B3'].includes(p.style)) for (const f of referenceInputs(p.style, project)) assets.add(f);
   const inputs = [...assets].sort().map(f => ({path: f, sha256: hashFile(f)}));
-  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-quality.mjs', 'b-style-motion-geometry.mjs', 'b-style-portrait.mjs', 'b-style-portrait-paint.mjs', 'b4-runtime.mjs', ...(['B1', 'B2', 'B3'].includes(p.style) ? ['b-style-reference-review.mjs', 'b4-font-coverage.mjs'] : []), ...(p.style === 'B3' ? ['b3-semantic-motion.mjs'] : []), ...(p.style === 'B4' ? ['b4-style-lock.mjs', 'b4-opening-audio-check.mjs', 'b4-opening.mjs', 'b4-opening-visual-check.mjs', 'b4-typography-review.mjs', 'b4-picture-review.mjs', 'b4-font-coverage.mjs'] : [])].map(f => hashFile(path.join(ROOT, 'scripts', f)));
+  const engine = ['autopilot-core.mjs', 'autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-quality.mjs', 'b-style-motion-geometry.mjs', 'b-style-portrait.mjs', 'b-style-portrait-paint.mjs', 'b4-runtime.mjs', ...(['B1', 'B2', 'B3'].includes(p.style) ? ['b-style-reference-review.mjs', 'b4-font-coverage.mjs'] : []), ...(p.style === 'B3' ? ['b3-semantic-motion.mjs'] : []), ...(p.style === 'B4' ? ['b4-style-lock.mjs', 'b4-opening-audio-check.mjs', 'b4-opening.mjs', 'b4-opening-visual-check.mjs', 'b4-typography-review.mjs', 'b4-picture-review.mjs', 'b4-font-coverage.mjs', 'b4-asset-origin.mjs'] : [])].map(f => hashFile(path.join(ROOT, 'scripts', f)));
   return {...project, inputs, fingerprint: sha(JSON.stringify({project: timeline, rangeEnd, inputs, engine}))};
 }
 export function outputDir(p) {
