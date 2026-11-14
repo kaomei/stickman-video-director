@@ -475,9 +475,7 @@ Sevdiğiniz avatarı kanalınızın sunucusuna dönüştürün; tanınmış kara
 
 Abartılı meme ifadeleri, serbest el çizgileri ve yumuşak renkler, sıra dışı hikâyeleri canlı kısa animasyonlara dönüştürür. Geniş sahneler karakterlere, nesnelere ve kameraya hareket alanı açar.
 
-**Dikey formatta (9:16) daha iyi sonuç verir.**
-
-- **Görünüm**: Düzensiz mürekkep çizgileri, mat boyama ve yumuşak ışık; yüz ve beden aynı el çizimi tarzını korur.
+- **Görünüm**: Kalınlığı değişen mürekkep çizgileri, mat boyama ve yumuşak ışık, başı, bedeni ve sahneyi tutarlı bir el çizimi tarzında birleştirir; **dikey formatta daha iyi sonuç verir**.
 - **Hareket**: Yanal takip, katmanlı derinlik, nesne alışverişi ve tepki yakın planları hikâyeyi izler; her esprinin anlaşılması için duraklamalar bırakır.
 - **Uygun konular**: Tarihin tuhaf olayları, dolandırıcılık hikâyeleri, absürt komedi ve sürpriz sonlu kısa öyküler.
 
