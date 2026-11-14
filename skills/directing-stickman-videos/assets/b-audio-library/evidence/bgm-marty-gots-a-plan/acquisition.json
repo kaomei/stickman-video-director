@@ -1,0 +1,21 @@
+{
+  "id": "bgm-marty-gots-a-plan",
+  "title": "Marty Gots a Plan",
+  "author": "Kevin MacLeod",
+  "isrc": "USUAN1500015",
+  "source_page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1500015",
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Marty%20Gots%20a%20Plan.mp3",
+  "original_filename": "Marty Gots a Plan.mp3",
+  "official_metadata": {
+    "length": "00:02:48",
+    "bpm": "140",
+    "instruments": "Cello, Viola, Violin, English Horn, Alto Flute, Percussion, Marimba",
+    "feel": "Humorous, Bouncy, Mysterious",
+    "uploaded": "2015-02-11"
+  },
+  "required_attribution": "\"Marty Gots a Plan\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/",
+  "changes": "none; original MP3 redistributed unchanged",
+  "audio_sha256": "948e7a1253da8af51dc30b71b3c1c08deebaaf5454547367a23736d3df6a2667",
+  "source_mapping": "Official individual page template selects the ISRC record in official pieces.json and renders CC BY 4.0 attribution plus a download URL from that record's filename.",
+  "verified_at": "2026-11-14"
+}

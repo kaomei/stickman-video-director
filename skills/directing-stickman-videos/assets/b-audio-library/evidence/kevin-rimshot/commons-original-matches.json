@@ -1,0 +1,26 @@
+[
+  {
+    "filename": "bah-dum.wav",
+    "original_official_zip_member_sha1": "42376435b57110d013a91da6edd1353223a5da9f",
+    "commons_structured_metadata_fragment": "checksum 42376435b57110d013a91da6edd1353223a5da9f determination method or standard : SHA-1 Retrieved from \" https://commons.wikimedia.org/w/index.php?title=File:Kevin_MacLeod_assorted_rimshots_-_Bah-dum.wav&oldid=997753946 \" Categories : Stings music",
+    "sha1_present_in_license_page": true,
+    "by3_declared": true,
+    "page": "sfx-gap-fill/evidence/kevin-rimshot/source.html.txt"
+  },
+  {
+    "filename": "kdum-keesh.wav",
+    "original_official_zip_member_sha1": "eb783f3e25261f17e887ad512548e8ef05702938",
+    "commons_structured_metadata_fragment": "",
+    "sha1_present_in_license_page": false,
+    "by3_declared": true,
+    "page": "sfx-gap-fill/evidence/kevin-rimshot/kdum-keesh-license.html.txt"
+  },
+  {
+    "filename": "4-second roll.wav",
+    "original_official_zip_member_sha1": "1ba0b0eb2e8ba3e6797701a3a55b278551260e3d",
+    "commons_structured_metadata_fragment": "",
+    "sha1_present_in_license_page": false,
+    "by3_declared": true,
+    "page": "sfx-gap-fill/evidence/kevin-rimshot/4-second-roll-license.html.txt"
+  }
+]

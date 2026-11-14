@@ -1,0 +1,25 @@
+{
+  "id": "bf-cartoon-bounce",
+  "title": "Funny Comic Cartoon Bounce Sound",
+  "author": "Blender Foundation",
+  "source_url": "https://opengameart.org/content/funny-comic-cartoon-bounce-sound",
+  "license_id": "CC-BY-3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/licenses/by/3.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:37.778973+00:00",
+  "description": "Sheep bounce sound from Yofrankie! game.",
+  "attribution_notice": "(c) copyright Blender Foundation | apricot.blender.org",
+  "license_declaration": "License(s): CC-BY 3.0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/BounceYoFrankie.flac",
+      "filename": "BounceYoFrankie.flac",
+      "sha256": "80abfe50382c0fb16a8fa1b1444bc703ab3101d18978311eda9b4e44a66618ab",
+      "bytes": 8034
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/BounceYoFrankie.flac",
+  "source_page_sha256": "9671e98ffe28e880d33782cd830bd8f564c67d2acaf4b6ac04b7cf194beee54f"
+}

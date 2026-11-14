@@ -1,0 +1,25 @@
+{
+  "id": "supergeek-laughter",
+  "title": "Do you remember laughter?",
+  "author": "Supergeek",
+  "source_url": "https://opengameart.org/content/do-you-remember-laughter",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:36.631473+00:00",
+  "description": "A few people have submitted some sinister laughter recently and I thought I'd get in the fun. Included in this .ogg file are several variations of laughter, including a \"hahaha, huh?\", \"haha, COUGH COUGH\" and even a satiric LOL.",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/ogalaughter_2.ogg",
+      "filename": "ogalaughter_2.ogg",
+      "sha256": "64887c49e9e60a0caf993a97c12c82f367c6337f67a20a1fc60c30526bd7cff0",
+      "bytes": 112765
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/ogalaughter_2.ogg",
+  "source_page_sha256": "0b592200a8bce801281f976ef7b0b7ddfa20869ee18b2f7ffb5cbe2bfcc32b9f"
+}

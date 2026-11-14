@@ -1,0 +1,25 @@
+{
+  "id": "yaroslav-car-pass",
+  "title": "Car 1",
+  "author": "Yaroslav_Novikov",
+  "source_url": "https://opengameart.org/content/car-1-1",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:38.760818+00:00",
+  "description": "Moving car sound",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/car1.wav",
+      "filename": "car1.wav",
+      "sha256": "85d1ca20f95244c558b57e2be465c8efcf2f7425bb54049e9eddcbec7f1739af",
+      "bytes": 2850368
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/car1.wav",
+  "source_page_sha256": "a0c27b14a9db801754c0e3839e21061fa37be844b759919b42494f4a8dc1b06a"
+}

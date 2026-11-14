@@ -1,0 +1,25 @@
+{
+  "id": "horse-trotting",
+  "title": "Horse trotting",
+  "author": "EZduzziteh",
+  "source_url": "https://opengameart.org/content/horse-trotting",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "https://opengameart.org/content/horse-trotting"
+  ],
+  "retrieved_at": "2026-11-14",
+  "description": "Original author-made Foley using jacket, water bottle and hands; not a real-horse field recording.",
+  "attribution_notice": "",
+  "license_declaration": "CC0 on original author OpenGameArt submission.",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/Trot.ogg",
+      "filename": "Trot.ogg",
+      "sha256": "0fd1a787f3ebb2c0213de8a807566a4879b659bdf2643c8720d6e1720bb436b9",
+      "bytes": 138357
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/Trot.ogg",
+  "source_page_sha256": "6e19965bf8e2e5c1b6a4a6a0b9860a34196b2a346c0a75975c90d385b04bbbce"
+}

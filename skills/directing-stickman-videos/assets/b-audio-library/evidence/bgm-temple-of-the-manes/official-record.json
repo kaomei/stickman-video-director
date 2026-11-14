@@ -1,0 +1,20 @@
+{
+  "source_url": "https://incompetech.com/music/royalty-free/pieces.json",
+  "record": {
+    "title": "Temple of the Manes",
+    "filename": "Temple of the Manes.mp3",
+    "length": "00:02:36",
+    "instruments": "Harps, Flutes, Oboe, Percussion",
+    "genre": "25",
+    "bpm": "108",
+    "description": "An ancient-feeling modal piece.",
+    "feel": "Dark, Mystical",
+    "uploaded": "2007-01-01",
+    "isrc": "USUAN1100053",
+    "collection": "45",
+    "sheetmusic": null,
+    "video": null,
+    "itunes": "https://itunes.apple.com/us/album/temple-of-the-manes/id945160470?i=945160484",
+    "filmmusicURL": null
+  }
+}

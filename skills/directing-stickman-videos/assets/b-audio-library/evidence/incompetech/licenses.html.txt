@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Music Licensing &mdash; incompetech.com</title>
+<style>
+  body { font-family: Arial, "Helvetica Neue", sans-serif; color: #222; max-width: 1000px; margin: 0 auto; padding: 12px; }
+  h2 { margin-bottom: 6px; }
+  button { cursor: pointer; }
+  .choices { display: flex; gap: 16px; flex-wrap: wrap; margin: 12px 0; }
+  .choice { flex: 1 1 320px; border: 1px solid #ccc; border-radius: 6px; padding: 12px; }
+  .choice h3 { margin: 0 0 6px; }
+  .choice button { font-size: 15px; padding: 6px 14px; }
+  .cols { display: flex; gap: 20px; flex-wrap: wrap; }
+  .col { flex: 1 1 420px; }
+  .musicbox { border: 1px solid #999; height: 320px; overflow: auto; padding: 6px; background: #fff; }
+  .musicfile { margin: 2px 0; font-size: 13px; }
+  .musicfile label { cursor: pointer; }
+  #search { width: 100%; box-sizing: border-box; padding: 6px; margin-bottom: 6px; font-size: 14px; }
+  .field { margin: 10px 0; }
+  .field label { display: block; font-weight: bold; font-size: 13px; margin-bottom: 2px; }
+  .field input { width: 100%; max-width: 420px; box-sizing: border-box; padding: 6px; font-size: 14px; }
+  .err { color: #b00; font-weight: bold; font-size: 12px; margin-left: 8px; }
+  .price { font-size: 18px; font-weight: bold; margin: 8px 0; }
+  .preview { color: #777; font-size: 11px; border-left: 3px solid #eee; padding-left: 10px; }
+  textarea { width: 100%; box-sizing: border-box; height: 180px; font-family: monospace; font-size: 12px; }
+  .primary { background: #2a6; color: #fff; border: 0; border-radius: 4px; padding: 10px 18px; font-size: 15px; }
+  .primary:disabled { background: #aaa; cursor: default; }
+  .paypal { margin-top: 10px; }
+  .hidden { display: none; }
+  .note { background: #fff8dc; border: 1px solid #e0d090; padding: 8px; border-radius: 4px; font-size: 13px; }
+  #status { font-size: 13px; margin-left: 10px; }
+</style>
+</head>
+<body>
+
+<H1>Incompetech Music Licenses</H1>
+<DIV><P><a href="/">Home</a></P></DIV>
+
+<HR>
+
+<h2>Available Licenses</h2>
+
+<div class="choices">
+  <div class="choice">
+    <h3>Standard License</h3>
+    <p>For projects where attribution is not wanted or is impossible (radio/TV ads, corporate
+       presentations, on-hold music, etc.). Select titles, fill out your info, download the PDF,
+       pay with PayPal.</p>
+    <button type="button" onclick="showMode('sl')">Use Standard License</button>
+  </div>
+  <div class="choice">
+    <h3>Creative Commons &mdash; Free</h3>
+    <p>No charge. Requires that you credit the music. Select titles, then copy and paste the
+       generated credits into your work.</p>
+    <button type="button" onclick="showMode('cc')">Use Creative Commons</button>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+  <div class="cols">
+    <!-- LEFT: track picker (shared by both modes) -->
+    <div class="col">
+      <h3 id="headline">Standard License</h3>
+      <p>Compositions used: <span class="err" id="errPieces"></span></p>
+      <input type="text" id="search" placeholder="Type to filter titles&hellip;">
+      <div class="musicbox" id="musicbox">Loading catalog&hellip;</div>
+
+      <!-- Standard-license-only fields -->
+      <div id="slFields" class="hidden">
+        <div class="field">
+          <label>Production company (Licensee) <span class="err" id="errCompany"></span></label>
+          <input type="text" id="company" oninput="renderPreview()">
+        </div>
+        <div class="field">
+          <label>Additional licensee (optional)</label>
+          <input type="text" id="lname" oninput="renderPreview()">
+        </div>
+        <div class="field">
+          <label>Title of the production <span class="err" id="errTitle"></span></label>
+          <input type="text" id="ptitle" oninput="renderPreview()">
+        </div>
+        <button type="button" class="primary" id="genBtn" onclick="downloadLicense()">Download License PDF</button>
+        <span id="status"></span>
+      </div>
+    </div>
+
+    <!-- RIGHT: dynamic output -->
+    <div class="col">
+      <div class="price" id="priceBox"></div>
+
+      <!-- Standard license: PayPal + preview -->
+      <div id="slOut" class="hidden">
+        <div id="paypalBox" class="paypal"></div>
+        <h4>Selected titles</h4>
+        <ul id="titleList"></ul>
+        <h4>License preview</h4>
+        <div class="preview" id="preview"></div>
+      </div>
+
+      <!-- Creative Commons: credit block -->
+      <div id="ccOut" class="hidden">
+        <p><b>Copy and paste these credits into your work.</b></p>
+        <textarea id="ccBlock" readonly></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="vendor/pdf-lib.min.js"></script>
+<script src="vendor/fontkit.umd.min.js"></script>
+<script src="js/incompetech-pdf.js"></script>
+<script src="js/gen-standard.js"></script>
+<script>
+const PAYPAL_EMAIL = "payments@incompetech.com";
+let MODE = "sl";          // "sl" or "cc"
+let PIECES = [];          // full catalog [{uuid, title}]
+
+// ---------- load catalog ----------
+// Prefer the embedded catalog (pieces.js) so the page works from file:// with no
+// server and no CORS. Falls back to fetching pieces.json when served over http(s).
+async function loadCatalog() {
+  if (Array.isArray(window.CATALOG)) {
+    PIECES = window.CATALOG.slice();
+  } else {
+    const res = await fetch("../pieces.json");
+    const data = await res.json();
+    PIECES = data
+      .filter(p => (p.isrc || "").trim() !== "")
+      .map(p => ({ uuid: p.uuid, title: p.title }))
+      .sort((a, b) => a.title.localeCompare(b.title));
+  }
+  renderList("");
+}
+
+function renderList(filter) {
+  const box = document.getElementById("musicbox");
+  const f = filter.toLowerCase();
+  const rows = PIECES
+    .filter(p => !f || p.title.toLowerCase().includes(f))
+    .map(p =>
+      '<div class="musicfile"><label><input type="checkbox" class="pk" value="' +
+      encodeURIComponent(p.uuid) + '" data-title="' + escapeAttr(p.title) +
+      '" onchange="onSelectionChange()"> ' + escapeHtml(p.title) + '</label></div>'
+    );
+  box.innerHTML = rows.length ? rows.join("") : "<p>No matches.</p>";
+}
+
+function escapeHtml(s) { return s.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])); }
+function escapeAttr(s) { return s.replace(/["&<>]/g, c => ({ '"': "&quot;", "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])); }
+
+function selectedTitles() {
+  return Array.from(document.querySelectorAll(".pk:checked")).map(cb => cb.getAttribute("data-title"));
+}
+
+// ---------- mode switching ----------
+function showMode(m) {
+  MODE = m;
+  document.getElementById("app").classList.remove("hidden");
+  const sl = m === "sl";
+  document.getElementById("headline").textContent = sl ? "Standard License" : "Creative Commons License";
+  toggle("slFields", sl);
+  toggle("slOut", sl);
+  toggle("ccOut", !sl);
+  onSelectionChange();
+}
+function toggle(id, on) { document.getElementById(id).classList.toggle("hidden", !on); }
+
+// ---------- selection / pricing ----------
+function perPiecePrice(n) { return n === 1 ? 30 : n === 2 ? 25 : 20; }
+
+function onSelectionChange() {
+  const titles = selectedTitles();
+  const n = titles.length;
+  const priceBox = document.getElementById("priceBox");
+
+  if (MODE === "sl") {
+    if (n === 0) priceBox.textContent = "";
+    else if (n === 1) priceBox.textContent = "1 piece: $30";
+    else if (n === 2) priceBox.textContent = "2 pieces: $50";
+    else if (n <= 18) priceBox.textContent = n + " pieces: $" + (n * 20);
+    else priceBox.innerHTML = '<span style="color:#b00">This form supports up to 18 pieces. Please split larger orders into multiple licenses.</span>';
+    renderTitleList(titles);
+    renderPaypal(titles);
+    renderPreview();
+  } else {
+    priceBox.textContent = n ? "Creative Commons: $0" : "";
+    renderCC(titles);
+  }
+}
+
+function renderTitleList(titles) {
+  document.getElementById("titleList").innerHTML = titles.map(t => "<li>" + escapeHtml(t) + "</li>").join("");
+}
+
+function renderPaypal(titles) {
+  const box = document.getElementById("paypalBox");
+  if (!titles.length || titles.length > 18) { box.innerHTML = ""; return; }
+  const price = perPiecePrice(titles.length);
+  let html = '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">' +
+    '<input type="hidden" name="cmd" value="_cart">' +
+    '<input type="hidden" name="upload" value="1">' +
+    '<input type="hidden" name="business" value="' + PAYPAL_EMAIL + '">';
+  titles.forEach((t, i) => {
+    html += '<input type="hidden" name="item_name_' + (i + 1) + '" value="License: ' + escapeAttr(t) + '">';
+    html += '<input type="hidden" name="amount_' + (i + 1) + '" value="' + price + '">';
+  });
+  html += '<button type="submit" class="primary">Check out with PayPal ($' +
+    (titles.length === 1 ? 30 : titles.length === 2 ? 50 : titles.length * 20) + ')</button></form>';
+  box.innerHTML = html;
+}
+
+function renderCC(titles) {
+  let block = titles.map(t => '"' + t + '"').join(", ");
+  if (block) block += "\n";
+  block += "Kevin MacLeod (incompetech.com)\n" +
+    "Licensed under Creative Commons: By Attribution 4.0\n" +
+    "http://creativecommons.org/licenses/by/4.0/";
+  document.getElementById("ccBlock").value = titles.length ? block : "";
+}
+
+function renderPreview() {
+  const company = document.getElementById("company").value || "________";
+  const name = document.getElementById("lname").value;
+  const title = document.getElementById("ptitle").value || "________";
+  let t = "For good and valuable consideration, receipt of which is hereby acknowledged, Owner " +
+    "(Kevin MacLeod) hereby grants to <b>" + escapeHtml(company) + "</b>";
+  if (name) t += " and <b>" + escapeHtml(name) + "</b>";
+  t += ' ("Producer") the right, but not the obligation, to incorporate the music described above ' +
+    '("Property") in any manner Producer sees fit in the production tentatively entitled <b>' +
+    escapeHtml(title) + '</b> ("Program"), non-exclusively, worldwide, in perpetuity. ' +
+    "In full consideration, Producer agrees to pay Owner a fee as noted, payable within ten (10) " +
+    "business days of initial airing or sale.";
+  document.getElementById("preview").innerHTML = t;
+}
+
+// ---------- generate PDF ----------
+function setErr(id, msg) { document.getElementById(id).textContent = msg || ""; }
+
+async function downloadLicense() {
+  const titles = selectedTitles();
+  const company = document.getElementById("company").value.trim();
+  const title = document.getElementById("ptitle").value.trim();
+  const name = document.getElementById("lname").value.trim();
+
+  let ok = true;
+  setErr("errPieces", ""); setErr("errCompany", ""); setErr("errTitle", "");
+  if (titles.length === 0) { setErr("errPieces", "Select at least one piece"); ok = false; }
+  if (titles.length > 18) { setErr("errPieces", "Maximum 18 pieces"); ok = false; }
+  if (!company) { setErr("errCompany", "Required"); ok = false; }
+  if (!title) { setErr("errTitle", "Required"); ok = false; }
+  if (!ok) return;
+
+  const btn = document.getElementById("genBtn");
+  const status = document.getElementById("status");
+  btn.disabled = true; status.textContent = "Generating PDF…";
+  try {
+    const bytes = await generateStandardLicense({
+      pieces: titles, company, name, title, licenseType: 2,
+    });
+    const blob = new Blob([bytes], { type: "application/pdf" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = "license.pdf";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+    status.textContent = "Done — don't forget to pay with PayPal.";
+  } catch (e) {
+    console.error(e);
+    status.textContent = "Error generating PDF: " + e.message;
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// ---------- init ----------
+document.getElementById("search").addEventListener("input", e => renderList(e.target.value));
+loadCatalog().catch(e => {
+  document.getElementById("musicbox").innerHTML = "<p style='color:#b00'>Could not load catalog: " + e.message + "</p>";
+});
+</script>
+</body>
+</html>

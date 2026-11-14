@@ -1,0 +1,25 @@
+{
+  "id": "bart-squeak-toys",
+  "title": "Squeak toy sounds",
+  "author": "bart",
+  "source_url": "https://opengameart.org/content/squeak-toy-sounds",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:34.684955+00:00",
+  "description": "Attribution appreciated. :)",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/squeak_toy.zip",
+      "filename": "squeak_toy.zip",
+      "sha256": "3ba6419b05ebf8e0b7dd4395b3c10f26811c037e357143f10a159acdb2dabfb8",
+      "bytes": 898071
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/squeak_toy.zip",
+  "source_page_sha256": "0cefb876520ae87a904b4551a2890935163f52c9832263474c85d7b9ecae62cf"
+}

@@ -628,8 +628,7 @@ Hayır. Üst düzey bir RTX ekran kartına veya kodlama bilgisine ihtiyacınız 
 - [x] **6,000 Stars**: 10’dan fazla yüksek kaliteli yeni görsel stil yayımlandı
 - [ ] **🔥 10,000 Stars**:
   - A ve B modları için ortak 1,000’den fazla YouTube senaryosu istemi
-  - B modu için öğe bazında lisans kanıtı ve gerekli atıflarla 200’den fazla ses efekti ve ses geçişi
-  - YouTube Shorts ve TikTok için tek tıkla toplu düzenleyici
+  - [B ses kütüphanesi](skills/directing-stickman-videos/references/b-audio-library.md): 774 efekt/geçiş + 31 müzik + 85 kısa jingle; B stili/sahne önerileri, çevrimdışı dışa aktarma, öğe lisansları ve gerekli atıflarla
 - [ ] **20,000 Stars**:
   - Stickman AI Studio’nun açılışı — fikirden tamamlanmış videoya, otomatik pilotta
   - Daha fazla sürpriz yolda — birlikte heyecanla bekleyelim

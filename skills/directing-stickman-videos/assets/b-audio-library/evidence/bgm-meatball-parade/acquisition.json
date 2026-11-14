@@ -1,0 +1,21 @@
+{
+  "id": "bgm-meatball-parade",
+  "title": "Meatball Parade",
+  "author": "Kevin MacLeod",
+  "isrc": "USUAN1500014",
+  "source_page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1500014",
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Meatball%20Parade.mp3",
+  "original_filename": "Meatball Parade.mp3",
+  "official_metadata": {
+    "length": "00:03:25",
+    "bpm": "150",
+    "instruments": "Drums, Bass, Ukulele, Trumpet, Trombone",
+    "feel": "Humorous, Bright, Bouncy",
+    "uploaded": "2015-02-07"
+  },
+  "required_attribution": "\"Meatball Parade\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/",
+  "changes": "none; original MP3 redistributed unchanged",
+  "audio_sha256": "05a8f9a7a5c3e4f7913f199ebdaf8b4231ed17c002575a717213c947d46df605",
+  "source_mapping": "Official individual page template selects the ISRC record in official pieces.json and renders CC BY 4.0 attribution plus a download URL from that record's filename.",
+  "verified_at": "2026-11-14"
+}

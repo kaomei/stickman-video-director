@@ -1,0 +1,25 @@
+{
+  "id": "venn-evil-laugh",
+  "title": "evil laughter",
+  "author": "Venn Stone",
+  "source_url": "https://opengameart.org/content/evil-laughter-0",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:36.962102+00:00",
+  "description": "per qubodup request",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/eviljest.flac",
+      "filename": "eviljest.flac",
+      "sha256": "45a4c119c1c02cf6c875b623eb7b224978d6129018147cbbaffb0150ba23491a",
+      "bytes": 170907
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/eviljest.flac",
+  "source_page_sha256": "e142db44caea81f5c8bf927996708e2eb79178797974783249ce2a1887b7594a"
+}

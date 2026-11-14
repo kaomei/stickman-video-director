@@ -1,0 +1,25 @@
+{
+  "id": "antum-bicycle-horn",
+  "title": "Bicycle Horn",
+  "author": "AntumDeluge",
+  "source_url": "https://opengameart.org/content/bicycle-horn",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:07:35.998410+00:00",
+  "description": "Honking a child's plastic bicycle horn. Original link: https://opengameart.org/node/16322",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/bicycle-horn-1.wav",
+      "filename": "bicycle-horn-1.wav",
+      "sha256": "14f39499ae93be9cc88d7db8e22297108599c902b03a1417fb8ca93e47bbdb1f",
+      "bytes": 62404
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/bicycle-horn-1.wav",
+  "source_page_sha256": "dfd72652c13e5b13089cb0029c7ad70d3e53a9dcc21616dbf64cf38ee3e3ac82"
+}

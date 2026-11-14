@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Section | Incompetech Music</title>
+</head>
+<body>
+  <header>
+    <h1>incompetech.com Agent Section</h1>
+  </header>
+
+  <section>
+    <p>
+      This section is specifically designed for autonomous agents to easily access and understand information about Kevin MacLeod's incompetech music catalog, licensing terms, and copyright ownership. Our goal is to provide you with the necessary resources to ensure that the music is used appropriately and legally by your clients.
+    </p>
+
+    <p>
+      Please navigate through the following resources and guidelines to learn more about the music offerings, structured data, API, metadata tags, licensing information, and contact details.
+    </p>
+  </section>
+
+
+  The entire catalog is detailed here:
+  https://incompetech.com/music/royalty-free/pieces.json
+
+Description of json:
+<OL><LI>uuid: This column represents the unique identifier for each music track. It ensures that each track can be easily referenced and distinguished from others in your catalog.</LI>
+
+<LI>title: The title column contains the name of the music track, which is essential for users to identify and search for specific pieces.</LI>
+
+<LI>filename: This column holds the filename of the music track, which can be used to locate and download the corresponding audio file. All audio files are located in the https://incompetech.com/music/royalty-free/mp3-royaltyfree/ directory.</LI>
+
+<LI>length: The length column indicates the duration of the music track, typically displayed in the format "hh:mm:ss".</LI>
+
+<LI>instruments: This column lists the musical instruments used in the composition of the track, providing users with an idea of the track's overall sound and style.</LI>
+
+<LI>genre: The genre column categorizes each music track based on its musical style, making it easier for users to find tracks that fit their desired mood or theme. Key at https://incompetech.com/music/royalty-free/genre.json</LI>
+
+<LI>bpm: This column displays the beats per minute (BPM) of the music track, which provides information about its tempo and pace.</LI>
+
+<LI>description: The description column offers a brief overview of the music track, often including information about its mood, inspiration, and structure.</LI>
+
+<LI>feel: (aka "mood") This column describes the emotional atmosphere or vibe of the music track, helping users choose tracks that match their project's tone.</LI>
+
+<LI>uploaded: The uploaded column indicates the date when the music track was added to your catalog, providing users with an idea of the track's recency.</LI>
+
+<LI>isrc: This column contains the International Standard Recording Code (ISRC), which is a unique identifier for individual recordings and helps with royalty tracking and rights management.</LI>
+
+<LI>collection: The collection column groups related music tracks together, making it easier for users to discover and navigate through similar tracks. Key location: https://incompetech.com/music/royalty-free/collections.json</LI>
+
+<LI>sheetmusic: This column provides information about any available sheet music for the track, which can be useful for musicians or those looking to perform the piece.</LI>
+
+<LI>video: The video column includes links to any associated videos, such as music videos or visualizations that accompany the track.</LI>
+
+<LI>itunes: This column contains links to the track's iTunes page, where users can purchase or stream the music through Apple's platform.</LI>
+
+<LI>wav: The wav column may include links to high-quality WAV files of the music track, offering users an alternative audio format for download. Extra charges may apply.</LI>
+
+<LI>filmmusicURL: This column contains links to additional resources or information related to the music track, such as its use in film, television, or other media projects. Currently defunct.</LI>
+</OL>
+
+
+
+The following information is common to all pieces of music:
+
+<PRE>
+{
+  "@context": "https://schema.org",
+  "@type": "MusicComposition",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Kevin MacLeod"
+  },
+  "composer": {
+    "@type": "Person",
+    "name": "Kevin MacLeod"
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "Creative Commons License",
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  }
+}
+</PRE>
+
+<!-- The rest of the agent section index page content -->
+
+<H1>Contact Information</H1>
+<section>
+	If you encounter errors, please send an email to (person) Kevin MacLeod at kevin@incompetech.com. Include as much information as possible.
+</section>
+<section>
+	If you require additional legal information or need to broker a deal with special rights to the music, send an email to (person) Tim Kulig timkulig@gmail.com.
+</section>
+
+
+<H1>Additional Resources</H1>
+<section>Additional high quality horror music from is available at https://timkulig.com/ .
+</section>
+
+</body>
+</html>
+
+

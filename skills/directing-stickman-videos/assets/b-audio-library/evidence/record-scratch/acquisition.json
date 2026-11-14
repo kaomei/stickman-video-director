@@ -1,0 +1,26 @@
+{
+  "id": "record-scratch",
+  "title": "Scratch Speed.wav",
+  "author": "Racche (formerly Raccoonanimator)",
+  "source_url": "https://opengameart.org/content/scratch-speed",
+  "license_id": "CC-BY-3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0/",
+  "license_declaration_urls": [
+    "https://opengameart.org/content/scratch-speed"
+  ],
+  "retrieved_at": "2026-11-14",
+  "description": "Original Scratch Speed.wav mirrored unchanged by OpenGameArt. Original author has renamed account from Raccoonanimator to Racche; original sound ID, title, duration and licence match.",
+  "attribution_notice": "",
+  "license_declaration": "CC BY 3.0 on both OpenGameArt mirror and original Freesound author page.",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/160909__raccoonanimator__scratch-speed.wav",
+      "filename": "160909__raccoonanimator__scratch-speed.wav",
+      "sha256": "37cececf082f70009e37c1b84ccfffd27c38875f1df754441ad66252df006a2e",
+      "bytes": 133386
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/160909__raccoonanimator__scratch-speed.wav",
+  "original_author_source_url": "https://freesound.org/people/Racche/sounds/160909/",
+  "source_page_sha256": "aeb12509098d3c83bf76ab4ef46d81fc00bf2a9b891d17fbefbb17fcc45c160d"
+}

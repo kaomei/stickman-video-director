@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="alternate" type="application/rss+xml" title="The Liberated Pixel Cup Blog" href="http://lpc.opengameart.org/lpc-blog.xml" />
+<link rel="shortcut icon" href="https://lpc.opengameart.org/sites/default/files/16icon_0.gif" type="image/gif" />
+<meta name="description" content="13 &#039;swish&#039; sound effects (4 lighter ones and 9 heavier ones) in the .wav format, created for the FOSS RPG Summoning Wars." />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://lpc.opengameart.org/content/swishes-sound-pack" />
+<link rel="shortlink" href="https://lpc.opengameart.org/node/4693" />
+<meta property="og:site_name" content="Liberated Pixel Cup" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lpc.opengameart.org/content/swishes-sound-pack" />
+<meta property="og:title" content="Swishes Sound Pack" />
+<meta property="og:description" content="13 &#039;swish&#039; sound effects (4 lighter ones and 9 heavier ones) in the .wav format, created for the FOSS RPG Summoning Wars." />
+<meta property="og:updated_time" content="2012-04-10T15:58:07-04:00" />
+<meta property="og:image" content="https://lpc.opengameart.org/sites/default/files/styles/audio_with_background/public/audio_preview/swishprev.mp3.png" />
+<meta property="article:published_time" content="2011-01-05T21:15:39-05:00" />
+<meta property="article:modified_time" content="2012-04-10T15:58:07-04:00" />
+<meta name="dcterms.title" content="Swishes Sound Pack" />
+<meta name="dcterms.creator" content="artisticdude" />
+<meta name="dcterms.description" content="13 &#039;swish&#039; sound effects (4 lighter ones and 9 heavier ones) in the .wav format, created for the FOSS RPG Summoning Wars." />
+<meta name="dcterms.publisher" content="OpenGameArt.org" />
+<meta name="dcterms.date" content="2011-01-05T21:15-05:00" />
+<meta name="dcterms.type" content="Sound" />
+<meta name="dcterms.format" content="text/html" />
+  <title>Swishes Sound Pack | Liberated Pixel Cup</title>
+  <style type="text/css" media="all">
+@import url("https://lpc.opengameart.org/modules/system/system.base.css?to8ytr");
+@import url("https://lpc.opengameart.org/modules/system/system.menus.css?to8ytr");
+@import url("https://lpc.opengameart.org/modules/system/system.messages.css?to8ytr");
+@import url("https://lpc.opengameart.org/modules/system/system.theme.css?to8ytr");
+</style>
+<style type="text/css" media="all">
+@import url("https://lpc.opengameart.org/sites/all/modules/comment_notify/comment_notify.css?to8ytr");
+@import url("https://lpc.opengameart.org/modules/comment/comment.css?to8ytr");
+@import url("https://lpc.opengameart.org/modules/field/theme/field.css?to8ytr");
+@import url("https://lpc.opengameart.org/sites/all/modules/logintoboggan/logintoboggan.css?to8ytr");
+@import url("https://lpc.opengameart.org/modules/node/node.css?to8ytr");
+@import url("https://lpc.opengameart.org/modules/search/search.css?to8ytr");
+@import url("https://lpc.opengameart.org/modules/user/user.css?to8ytr");
+@import url("https://lpc.opengameart.org/modules/forum/forum.css?to8ytr");
+@import url("https://lpc.opengameart.org/sites/all/modules/views/css/views.css?to8ytr");
+</style>
+<style type="text/css" media="all">
+@import url("https://lpc.opengameart.org/sites/all/modules/ctools/css/ctools.css?to8ytr");
+@import url("https://lpc.opengameart.org/sites/all/modules/oga/cctag/cctag.css?to8ytr");
+@import url("https://lpc.opengameart.org/sites/all/modules/oga/lightbox/css/jquery.lightbox-0.5.css?to8ytr");
+@import url("https://lpc.opengameart.org/sites/all/modules/ds/layouts/ds_3col_stacked_fluid/ds_3col_stacked_fluid.css?to8ytr");
+@import url("https://lpc.opengameart.org/sites/all/modules/ds/layouts/ds_2col_stacked/ds_2col_stacked.css?to8ytr");
+</style>
+<style type="text/css" media="all">
+@import url("https://lpc.opengameart.org/sites/all/themes/lpc/lpc.css?to8ytr");
+</style>
+  <script type="text/javascript" src="https://lpc.opengameart.org/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://lpc.opengameart.org/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://lpc.opengameart.org/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.4.4"></script>
+<script type="text/javascript" src="https://lpc.opengameart.org/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://lpc.opengameart.org/misc/drupal.js?to8ytr"></script>
+<script type="text/javascript" src="https://lpc.opengameart.org/misc/jquery.cookie.js?v=1.0"></script>
+<script type="text/javascript" src="https://lpc.opengameart.org/sites/all/modules/entityreference/js/entityreference.js?to8ytr"></script>
+<script type="text/javascript" src="https://lpc.opengameart.org/sites/all/modules/authcache/authcache.js?to8ytr"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var lightbox_path="/sites/all/modules/oga/lightbox";jQuery(document).ready(function () { jQuery("a.preview-lightbox").lightBox(); });
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://lpc.opengameart.org/sites/all/modules/oga/lightbox/js/jquery.lightbox-0.5.js?to8ytr"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var lightbox_path="/sites/all/modules/oga/lightbox";jQuery(document).ready(function () { jQuery("p.lightbox-imgs a, a.lightbox-img").lightBox(); });
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://lpc.opengameart.org/sites/all/modules/oga/ajax_dlcount/ajax_dlcount.js?to8ytr"></script>
+<script type="text/javascript" src="https://lpc.opengameart.org/sites/all/themes/lpc/lpc.js?to8ytr"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"lpc","theme_token":"IreXgTSJZj4PkaMG8XIFVcnkBd9oaGK-UahZrWet4UQ","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/jquery.cookie.js":1,"sites\/all\/modules\/entityreference\/js\/entityreference.js":1,"sites\/all\/modules\/authcache\/authcache.js":1,"0":1,"sites\/all\/modules\/oga\/lightbox\/js\/jquery.lightbox-0.5.js":1,"1":1,"sites\/all\/modules\/oga\/ajax_dlcount\/ajax_dlcount.js":1,"sites\/all\/themes\/lpc\/lpc.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/comment_notify\/comment_notify.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/oga\/cctag\/cctag.css":1,"sites\/all\/modules\/oga\/lightbox\/css\/jquery.lightbox-0.5.css":1,"sites\/all\/modules\/ds\/layouts\/ds_3col_stacked_fluid\/ds_3col_stacked_fluid.css":1,"sites\/all\/modules\/ds\/layouts\/ds_2col_stacked\/ds_2col_stacked.css":1,"sites\/all\/themes\/lpc\/lpc.css":1}},"authcache":{"q":"node\/4693","cp":{"path":"\/","domain":".lpc.opengameart.org","secure":true},"cl":23.148148148148}});
+//--><!]]>
+</script>
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-4693 node-type-art domain-lpc-opengameart-org" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<a href='/'><img src="/sites/all/themes/lpc/media/lpc_logo_nocup.png" id="logo" 
+    alt="The Liberated Pixel Cup" /></a>
+
+<div id="header">
+<div id="progress_bar_region">
+    </div>
+<div id="menu_bar">
+    </div>
+</div>
+
+<div id="content">
+    
+        <div class='tabs'></div>
+    
+                <div class='pagetitle'><h2>Swishes Sound Pack</h2></div>
+          <div class="region region-content">
+    <div class="ds-2col-stacked node node-art view-mode-full clearfix">
+
+  
+      <div class="group-header">
+      <div class="field field-name-title field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even" property="dc:title"><h2>Swishes Sound Pack</h2></div></div></div>    </div>
+  
+      <div class="group-left left-column">
+      <div class="field field-name-author-submitter field-type-ds field-label-above"><div class="field-label">Author:&nbsp;</div><div class="field-items"><div class="field-item even"><span class='username'><a href="/users/artisticdude">artisticdude</a></span></div></div></div><div class="field field-name-post-date field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even">Wednesday, January 5, 2011 - 21:15</div></div></div><div class="field field-name-field-art-type field-type-taxonomy-term-reference field-label-above"><div class="field-label">Art Type:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="/art-search-advanced?field_art_type_tid%5B%5D=13" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Sound Effect</a></div></div></div><div class="field field-name-field-art-tags field-type-taxonomy-term-reference field-label-above"><div class="field-label">Tags:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="/art-search-advanced?field_art_tags_tid=attack" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">attack</a></div><div class="field-item odd"><a href="/art-search-advanced?field_art_tags_tid=swing" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">swing</a></div><div class="field-item even"><a href="/art-search-advanced?field_art_tags_tid=weapon" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">weapon</a></div><div class="field-item odd"><a href="/art-search-advanced?field_art_tags_tid=sword" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">sword</a></div><div class="field-item even"><a href="/art-search-advanced?field_art_tags_tid=staff" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">staff</a></div><div class="field-item odd"><a href="/art-search-advanced?field_art_tags_tid=arrow" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">arrow</a></div><div class="field-item even"><a href="/art-search-advanced?field_art_tags_tid=whoosh" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">whoosh</a></div><div class="field-item odd"><a href="/art-search-advanced?field_art_tags_tid=Swish" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Swish</a></div><div class="field-item even"><a href="/art-search-advanced?field_art_tags_tid=Action" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Action</a></div><div class="field-item odd"><a href="/art-search-advanced?field_art_tags_tid=RPG" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">RPG</a></div><div class="field-item even"><a href="/art-search-advanced?field_art_tags_tid=Strategy" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Strategy</a></div><div class="field-item odd"><a href="/art-search-advanced?field_art_tags_tid=Fantasy" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Fantasy</a></div><div class="field-item even"><a href="/art-search-advanced?field_art_tags_tid=Historical" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Historical</a></div><div class="field-item odd"><a href="/art-search-advanced?field_art_tags_tid=Warfare" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Warfare</a></div><div class="field-item even"><a href="/art-search-advanced?field_art_tags_tid=Battle" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Battle</a></div></div></div><div class="field field-name-field-art-licenses field-type-taxonomy-term-reference field-label-above"><div class="field-label">License(s):&nbsp;</div><div class="field-items"><div class="field-item even"><div class='license-icon'><a href='http://creativecommons.org/publicdomain/zero/1.0/' target='_blank'><img src='https://lpc.opengameart.org/sites/default/files/license_images/cc0.png' alt='' title=''><div class='license-name'>CC0</div></a></div></div></div></div><div class="field field-name-collect field-type-ds field-label-above"><div class="field-label">Collections:&nbsp;</div><div class="field-items"><div class="field-item even"><div class='collect-container'><ul><li><a href="/content/ancientbeast">AncientBeast</a></li><li><a href="/content/legend-of-rathnor-parts">Legend of Rathnor Parts</a></li><li><a href="/content/music-and-soundfx-for-a-3d-action-rpg">Music and soundfx for a 3d action rpg</a></li><li><a href="/content/openmw-showcase-possibilities">OpenMW showcase possibilities</a></li><li><a href="/content/possible-soundfx">Possible SoundFX</a></li><li><a href="/content/potential-html5-rpg-assets">Potential HTML5 RPG Assets</a></li><li><a href="/content/rpg-sound-archive-attack-movement-hits">RPG Sound Archive - Attack, Movement, Hits</a></li><li><a href="/content/tower-defense-sound">Tower Defense Sound</a></li></ul></div></div></div></div><div class="field field-name-favorites field-type-ds field-label-inline clearfix"><div class="field-label">Favorites:&nbsp;</div><div class="field-items"><div class="field-item even">82</div></div></div>    </div>
+  
+      <div class="group-right right-column">
+      <div class="field field-name-field-art-preview field-type-file field-label-above"><div class="field-label">Preview:&nbsp;</div><div class="field-items"><div class="field-item even"><div class='art_preview_multiple audio-preview' data-display-type='art_preview_multiple'><div class='audio-preview-container display-type-medium'><img class='audio-image' src='https://lpc.opengameart.org/sites/default/files/styles/medium/public/audio_preview/swishprev.mp3.png'><div class='play-button' data-ogg-url='https://lpc.opengameart.org/sites/default/files/audio_preview/swishprev.mp3.ogg' data-mp3-url='https://lpc.opengameart.org/sites/default/files/swishprev.mp3'></div></div></div></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>13 'swish' sound effects (4 lighter ones and 9 heavier ones) in the .wav format, created for the FOSS RPG Summoning Wars.</p>
+</div></div></div><div class="field field-name-field-art-files field-type-file field-label-above"><div class="field-label">File(s):&nbsp;</div><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="swishes.zip" title="application/zip" src="/modules/file/icons/package-x-generic.png" /> <a href="https://lpc.opengameart.org/sites/default/files/swishes.zip" type="application/zip; length=385150" data-fid="5630" target="_blank" download="swishes.zip">swishes.zip</a> 385.2 Kb <span class="dlcount">[<span class="dlcount-number" id="dlcount-5630">13053</span> download(s)]</span></span></div></div></div><ul class="links inline"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node/4693%23comment-form">Log in</a> or <a href="/user/register?destination=node/4693%23comment-form">register</a> to post comments</span></li>
+</ul>    </div>
+  
+      <div class="group-footer">
+      <div id="comments" class="comment-wrapper">
+          <h2 class="title">Comments</h2>
+      
+  <a id="comment-4064"></a>
+<div class="ds-3col-stacked-fluid comment view-mode-full group-two-sidebars group-sidebar-left group-sidebar-right clearfix">
+
+  
+  
+      <div class="group-left left-side-left">
+      <span rel="sioc:has_creator"><a href="/users/qubodup" title="View user profile." class="username" xml:lang="" about="/users/qubodup" typeof="sioc:UserAccount" property="foaf:name" datatype="">qubodup</a></span><div class="field field-name-date-joined field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><small><em>joined 17 years 7 months ago</em></small></div></div></div><div class="field field-name-post-date field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even">01/06/2011 - 07:57</div></div></div>    </div>
+  
+      <div class="group-middle left-side-right">
+      <div class="field field-name-art-comment-type-icon field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><img typeof="foaf:Image" src="https://lpc.opengameart.org/sites/default/files/styles/icon_64x64/public/comment_type_images/oga-icon-comment.png?itok=Yw-R2vKM" alt="" /></div></div></div><div class="field field-name-ds-user-picture field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/users/qubodup"><img typeof="foaf:Image" src="https://lpc.opengameart.org/sites/default/files/styles/icon_48x48/public/pictures/picture-6-1340154961.png?itok=4xOTtEn7" alt="qubodup&#039;s picture" title="qubodup&#039;s picture" /></a></div></div></div>    </div>
+  
+      <div class="group-right right-side">
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Nice! How did you make it?</p>
+</div></div></div>    </div>
+  
+      <div class="group-footer">
+      <ul class="links inline"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node/4693%23comment-form">Log in</a> or <a href="/user/register?destination=node/4693%23comment-form">register</a> to post comments</span></li>
+</ul>    </div>
+  </div>
+<a id="comment-4065"></a>
+<div class="ds-3col-stacked-fluid comment comment-by-node-author view-mode-full group-two-sidebars group-sidebar-left group-sidebar-right clearfix">
+
+  
+  
+      <div class="group-left left-side-left">
+      <span rel="sioc:has_creator"><a href="/users/artisticdude" title="View user profile." class="username" xml:lang="" about="/users/artisticdude" typeof="sioc:UserAccount" property="foaf:name" datatype="">artisticdude</a></span><div class="field field-name-date-joined field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><small><em>joined 16 years 10 months ago</em></small></div></div></div><div class="field field-name-post-date field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even">01/12/2011 - 10:46</div></div></div>    </div>
+  
+      <div class="group-middle left-side-right">
+      <div class="field field-name-art-comment-type-icon field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><img typeof="foaf:Image" src="https://lpc.opengameart.org/sites/default/files/styles/icon_64x64/public/comment_type_images/oga-icon-comment.png?itok=Yw-R2vKM" alt="" /></div></div></div><div class="field field-name-ds-user-picture field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/users/artisticdude"><img typeof="foaf:Image" src="https://lpc.opengameart.org/sites/default/files/styles/icon_48x48/public/pictures/picture-251-1311347834.png?itok=YhWN-IVR" alt="artisticdude&#039;s picture" title="artisticdude&#039;s picture" /></a></div></div></div>    </div>
+  
+      <div class="group-right right-side">
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Thanks! I made them using my standard equipment (a.k.a. my camcorder on the 'voice recording' setting), a clothes hanger, and several sticks of wood of various shapes and lengths. Then I just edited them into shape in Logic Express.</p>
+<p>Thing is, you have to swing the object (wood, hanger, whatever), at the right angle, or else all you'll get is that 'krrr' sound of wind hitting the microphone, even if you have a wind noise control option on your equipment (like I do). Generally I find it's best to swing the object at a 90 degree angle to the recording equipment, but it really depends on the equipment you use.</p>
+<p>Here's a diagram of what I mean. My camcorder has a flip-out screen that has the microphone on the back. I'll lay the camera on it's side and swing the object above the screen, like so:</p>
+<p>---&gt;---&gt;swing object ---&gt;---&gt;</p>
+<p>   O<br />
+   O<br />
+   #<br />
+   #  &lt;-- microphone<br />
+   #<br />
+   O<br />
+   O<br />
+XXXXXXXXXXXXXXXXX<br />
+XXXXXXXXXXXXXXXXXX &lt;--camcorder body<br />
+XXXXXXXXXXXXXXXXX</p>
+<p>Hope that helps! =)</p>
+</div></div></div>    </div>
+  
+      <div class="group-footer">
+      <ul class="links inline"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node/4693%23comment-form">Log in</a> or <a href="/user/register?destination=node/4693%23comment-form">register</a> to post comments</span></li>
+</ul>    </div>
+  </div>
+<a id="comment-13285"></a>
+<div class="ds-3col-stacked-fluid comment view-mode-full group-two-sidebars group-sidebar-left group-sidebar-right clearfix">
+
+  
+  
+      <div class="group-left left-side-left">
+      <span rel="sioc:has_creator"><a href="/users/shredlikebob" title="View user profile." class="username" xml:lang="" about="/users/shredlikebob" typeof="sioc:UserAccount" property="foaf:name" datatype="">shredlikebob</a></span><div class="field field-name-date-joined field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><small><em>joined 14 years 3 months ago</em></small></div></div></div><div class="field field-name-post-date field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even">08/08/2012 - 09:31</div></div></div>    </div>
+  
+      <div class="group-middle left-side-right">
+      <div class="field field-name-art-comment-type-icon field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><img typeof="foaf:Image" src="https://lpc.opengameart.org/sites/default/files/styles/icon_64x64/public/comment_type_images/oga-icon-comment.png?itok=Yw-R2vKM" alt="" /></div></div></div>    </div>
+  
+      <div class="group-right right-side">
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>swishy swishy</p>
+</div></div></div>    </div>
+  
+      <div class="group-footer">
+      <ul class="links inline"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node/4693%23comment-form">Log in</a> or <a href="/user/register?destination=node/4693%23comment-form">register</a> to post comments</span></li>
+</ul>    </div>
+  </div>
+<a id="comment-53812"></a>
+<div class="ds-3col-stacked-fluid comment view-mode-full group-two-sidebars group-sidebar-left group-sidebar-right clearfix">
+
+  
+  
+      <div class="group-left left-side-left">
+      <span rel="sioc:has_creator"><a href="/users/tomcoenen" title="View user profile." class="username" xml:lang="" about="/users/tomcoenen" typeof="sioc:UserAccount" property="foaf:name" datatype="">TomCoenen</a></span><div class="field field-name-date-joined field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><small><em>joined 10 years 1 month ago</em></small></div></div></div><div class="field field-name-post-date field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even">10/17/2016 - 02:44</div></div></div>    </div>
+  
+      <div class="group-middle left-side-right">
+      <div class="field field-name-art-comment-type-icon field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><img typeof="foaf:Image" src="https://lpc.opengameart.org/sites/default/files/styles/icon_64x64/public/comment_type_images/oga-icon-comment.png?itok=Yw-R2vKM" alt="" /></div></div></div>    </div>
+  
+      <div class="group-right right-side">
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Great sound effects, I used them in <a title="WorldGrower" href="https://github.com/WorldGrower/WorldGrower">WorldGrower</a> and I credited you for these sound effects.</p>
+</div></div></div>    </div>
+  
+      <div class="group-footer">
+      <ul class="links inline"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node/4693%23comment-form">Log in</a> or <a href="/user/register?destination=node/4693%23comment-form">register</a> to post comments</span></li>
+</ul>    </div>
+  </div>
+<a id="comment-83910"></a>
+<div class="ds-3col-stacked-fluid comment view-mode-full group-two-sidebars group-sidebar-left group-sidebar-right clearfix">
+
+  
+  
+      <div class="group-left left-side-left">
+      <span rel="sioc:has_creator"><a href="/users/darklighterdesigns" title="View user profile." class="username" xml:lang="" about="/users/darklighterdesigns" typeof="sioc:UserAccount" property="foaf:name" datatype="">darklighter_designs</a></span><div class="field field-name-date-joined field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><small><em>joined 9 years 6 months ago</em></small></div></div></div><div class="field field-name-post-date field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even">02/17/2020 - 02:24</div></div></div>    </div>
+  
+      <div class="group-middle left-side-right">
+      <div class="field field-name-art-comment-type-icon field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><img typeof="foaf:Image" src="https://lpc.opengameart.org/sites/default/files/styles/icon_64x64/public/comment_type_images/oga-icon-comment.png?itok=Yw-R2vKM" alt="" /></div></div></div><div class="field field-name-ds-user-picture field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/users/darklighterdesigns"><img typeof="foaf:Image" src="https://lpc.opengameart.org/sites/default/files/styles/icon_48x48/public/pictures/picture-46076-1494125396.jpg?itok=D7rSFB1R" alt="darklighter_designs&#039;s picture" title="darklighter_designs&#039;s picture" /></a></div></div></div>    </div>
+  
+      <div class="group-right right-side">
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>I used some of your assets in my free Tower Defense game:</p>
+<p><a href="https://www.construct.net/en/free-online-games/tinytd-0-2-2-alpha-9916/play">https://www.construct.net/en/free-online-games/tinytd-0-2-2-alpha-9916/play</a></p>
+<p> </p>
+<p>Thanks!</p>
+</div></div></div>    </div>
+  
+      <div class="group-footer">
+      <ul class="links inline"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node/4693%23comment-form">Log in</a> or <a href="/user/register?destination=node/4693%23comment-form">register</a> to post comments</span></li>
+</ul>    </div>
+  </div>
+<a id="comment-85123"></a>
+<div class="ds-3col-stacked-fluid comment view-mode-full group-two-sidebars group-sidebar-left group-sidebar-right clearfix">
+
+  
+  
+      <div class="group-left left-side-left">
+      <span rel="sioc:has_creator"><a href="/users/cole-hilscher" title="View user profile." class="username" xml:lang="" about="/users/cole-hilscher" typeof="sioc:UserAccount" property="foaf:name" datatype="">Cole Hilscher</a></span><div class="field field-name-date-joined field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><small><em>joined 6 years 9 months ago</em></small></div></div></div><div class="field field-name-post-date field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even">05/05/2020 - 21:23</div></div></div>    </div>
+  
+      <div class="group-middle left-side-right">
+      <div class="field field-name-art-comment-type-icon field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><img typeof="foaf:Image" src="https://lpc.opengameart.org/sites/default/files/styles/icon_64x64/public/comment_type_images/oga-icon-comment.png?itok=Yw-R2vKM" alt="" /></div></div></div>    </div>
+  
+      <div class="group-right right-side">
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Thank you for making these sounds! I used Swish_2 as the punching sound in one of my games. If you are interested, you can check it out on the App Store or Google Play.</p>
+<p><a href="https://apps.apple.com/us/app/sock-n-roll/id1509988682">https://apps.apple.com/us/app/sock-n-roll/id1509988682</a></p>
+<p><a href="https://play.google.com/store/apps/details?id=com.ColeHilscher.SocknRoll">https://play.google.com/store/apps/details?id=com.ColeHilscher.SocknRoll</a></p>
+<p>Thanks!</p>
+</div></div></div>    </div>
+  
+      <div class="group-footer">
+      <ul class="links inline"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node/4693%23comment-form">Log in</a> or <a href="/user/register?destination=node/4693%23comment-form">register</a> to post comments</span></li>
+</ul>    </div>
+  </div>
+
+  </div>
+    </div>
+  </div>
+  </div>
+    </div>
+
+<div id="footer">
+    </div>
+
+<a href='/user/login' style='display: block; position: fixed; height: 20px; width: 20px; bottom: 0; left: 0'>&nbsp;</a>
+
+  </body>
+</html>

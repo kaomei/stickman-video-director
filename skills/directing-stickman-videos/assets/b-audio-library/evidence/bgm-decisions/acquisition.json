@@ -1,0 +1,21 @@
+{
+  "id": "bgm-decisions",
+  "title": "Decisions",
+  "author": "Kevin MacLeod",
+  "isrc": "USUAN1100756",
+  "source_page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100756",
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Decisions.mp3",
+  "original_filename": "Decisions.mp3",
+  "official_metadata": {
+    "length": "00:01:29",
+    "bpm": "80",
+    "instruments": "Synths, Percussion",
+    "feel": "Driving, Intense, Suspenseful",
+    "uploaded": "2010-09-01"
+  },
+  "required_attribution": "\"Decisions\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/",
+  "changes": "none; original MP3 redistributed unchanged",
+  "audio_sha256": "2f6632cd35fc689ef2af72c7ddeec1cb86de289638e551368d92202e00a2e0c4",
+  "source_mapping": "Official individual page template selects the ISRC record in official pieces.json and renders CC BY 4.0 attribution plus a download URL from that record's filename.",
+  "verified_at": "2026-11-14"
+}

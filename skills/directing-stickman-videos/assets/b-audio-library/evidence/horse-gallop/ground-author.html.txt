@@ -1,0 +1,994 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=0">
+    <meta name="theme-color" content="#000000">
+    <title>Freesound - Single Horse Galopp by D4XX</title>
+    <meta name="description" content="Freesound: collaborative database of creative-commons licensed sound for musicians and sound lovers. Have you freed your sound today?">
+    <meta name="keywords" content="free, sound">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fd5b65">
+    <meta name="theme-color" content="#fd5b65">
+    <meta name="msapplication-config" content="none" />
+    
+    
+    
+    <meta property="og:title" content="Single Horse Galopp by D4XX" />
+    <meta property="og:type" content="song" />
+    <meta property="og:audio" content="https://freesound.orghttps://cdn.freesound.org/previews/564/564628_887696-lq.mp3" />
+    <meta property="og:audio:artist" content="D4XX" />
+    <meta property="og:audio:title" content="Single Horse Galopp" />
+    <meta property="og:url" content="https://freesound.org/people/D4XX/sounds/564628/" />
+    <meta property="og:audio:type" content="application/mp3" />
+    <meta property="og:site_name" content="Freesound" />
+    <meta property="og:image" content="https://cdn.freesound.org/displays/564/564628_887696_wave_bw_L.png" />
+    <meta property="og:image:alt" content="A waveform image of the sound" />
+    <meta property="fb:admins" content="100002130282170" />
+    <meta name="twitter:card" content="player" />
+    <meta name="twitter:site" content="@freesound_dev" />
+    <meta name="twitter:title" content="Single Horse Galopp" />
+    <meta name="twitter:description" content="This is a digital mastered single horse galopp." />
+    <meta name="twitter:image" content="https://cdn.freesound.org/displays/564/564628_887696_wave_bw_L.png" />
+    <meta name="twitter:player" content="https://freesound.org/embed/sound/iframe/564628/simple/full_size/" />
+    <meta name="twitter:player:width" content="440" />
+    <meta name="twitter:player:height" content="132" />
+    <meta name="twitter:player:stream" content="https://cdn.freesound.org/previews/564/564628_887696-lq.mp3" />
+    <meta name="twitter:player:stream:content_type" content="audio/mp4" />
+
+    
+    
+    <link id="style" rel="stylesheet" href="/static/bw-frontend/dist/index.15b075b4a219.css">
+    
+    
+</head>
+<body>
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+    
+
+<div class="modal " id="loginModal" tabindex="-1" role="dialog" aria-label="Login modal" aria-hidden="true">
+    <div class="modal-wrapper">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="bw-icon-close ">
+    
+</span>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    
+<div class="col-12">
+    <div class="text-center">
+        <h4 class="v-spacing-5">Log in to Freesound</h4>
+        <form id="loginForm" class="bw-form bw-form-less-spacing" method="post" action="/home/login/"><input type="hidden" name="csrfmiddlewaretoken" value="Bui3mEwGaEYaIbIk8EmD504XBdqwyU279SOi20ZA3aM9oRe6ZB4Buw0UHZR6Yxwz">
+            <p>
+    <label for="id_username">Username:</label>
+    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" placeholder="Enter your email or username" required id="id_username">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_password">Password:</label>
+    <input type="password" name="password" autocomplete="current-password" placeholder="Enter your password" required id="id_password">
+    
+    
+      
+    
+  </p>
+            <input type="hidden" name="next" value="/people/D4XX/sounds/564628/" />
+            <button type="submit" class="btn-primary v-spacing-top-2">Log in</button>
+        </form>
+    </div>
+</div>
+
+                </div>
+                <div class="modal-footer">
+                    
+    <a class="v-spacing-top-3" data-toggle="problems-logging-in-modal">Problems logging in?</a>
+
+                </div>
+                <div class="modal-extra-info">
+                    
+    <a data-toggle="registration-modal">Don't have an account? Join now</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<div class="modal " id="problemsLoggingInModal" tabindex="-1" role="dialog" aria-label="Problems logging in modal" aria-hidden="true">
+    <div class="modal-wrapper">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="bw-icon-close ">
+    
+</span>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    
+<div class="col-12">
+    <div class="text-center">
+        <h4 class="v-spacing-5">Problems logging in?</h4>
+        <div class="text-grey v-spacing-top-negative-1 v-spacing-4">
+            Enter your email or username below and we'll send you a link to help you login into your account.
+        </div>
+        <form id="problemsLoggingInModalForm" class="bw-form bw-form-less-spacing" method="post" action="/home/problems/"><input type="hidden" name="csrfmiddlewaretoken" value="Bui3mEwGaEYaIbIk8EmD504XBdqwyU279SOi20ZA3aM9oRe6ZB4Buw0UHZR6Yxwz">
+            <p>
+    
+    <input type="text" name="username_or_email" maxlength="254" placeholder="Your email or username" required id="id_username_or_email">
+    
+    
+      
+    
+  </p>
+            <button id="recovery-account" type="submit" class="btn-primary v-spacing-top-2">Send me a link</button>
+        </form>
+    </div>
+</div>
+
+                </div>
+                <div class="modal-footer">
+                    
+    <a class="v-spacing-top-3" data-link="loginModal"><span class="bw-icon-chevron bw-icon__chevron_left">
+    
+</span> Back to log in</a>
+
+                </div>
+                <div class="modal-extra-info">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<div class="modal " id="feedbackRegistration" tabindex="-1" role="dialog" aria-label="Registration complete modal" aria-hidden="true">
+    <div class="modal-wrapper">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="bw-icon-close ">
+    
+</span>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    
+<div class="col-12">
+    <div class="text-center">
+        <h4 class="v-spacing-5">Almost there!</h4>
+        <p class="main-text">We've sent a verification link by email</p>
+        <p class="secondary-text">Didn't receive the email? Check your Spam folder, it may have been caught by a filter. If you still don't see it, you can <a href="/home/reactivate/">resend the verification email</a>.</p>
+    </div>
+</div>
+
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
+                <div class="modal-extra-info">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<div class="modal zindex2000" id="confirmationModal" tabindex="-1" role="dialog" aria-label="Confirmation modal" aria-hidden="true">
+    <div class="modal-wrapper">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="bw-icon-close ">
+    
+</span>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    
+    <div class="text-center">
+        <h4 id="confirmationModalTitle">Default title</h4>
+        <div id="confirmationModalHelpText" class="v-spacing-top-2"></div>
+        <div class="row v-spacing-top-4 v-spacing-3">
+            <div class="col-4 offset-2">
+                <form id="confirmationModalAcceptSubmitForm" method="post" action=""><input type="hidden" name="csrfmiddlewaretoken" value="Bui3mEwGaEYaIbIk8EmD504XBdqwyU279SOi20ZA3aM9oRe6ZB4Buw0UHZR6Yxwz">
+                    <button type="submit" class="btn-primary">Yes</button>
+                </form>
+            </div>
+            <div class="col-4">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
+                <div class="modal-extra-info">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="genericModalWrapper"></div>
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body"></div>
+</div>
+    <div class="notifications-wrapper"></div>
+    
+    <div class="bw-page" aria-hidden="false">
+        
+        
+        
+<nav class="bw-nav">
+    <div class="container bw-nav__container">
+        <form method="get" action="/search/">
+        <div class="bw-nav__logo-search-container">
+            <div class="bw-nav__logo">
+                <a href="/" class="no-hover"></a>
+            </div>
+            <div class="input-wrapper">
+                <input name="q" type="search" placeholder="Search sounds..." autocomplete="off" />
+            </div>
+        </div>
+        </form>
+        <ul class="bw-nav__actions" role="menu">
+            <li class="bw-nav__action d-none d-lg-flex">
+    <a class="bw-link--grey font-weight-bold" href="/browse/" role="menuitem">Sounds</a>
+</li>
+<li class="bw-nav__action d-none d-lg-flex">
+    <a class="bw-link--grey font-weight-bold" href="/browse/tags/" role="menuitem">Tags</a>
+</li>
+<li class="bw-nav__action d-none d-lg-flex">
+    <a class="bw-link--grey font-weight-bold" href="/forum/" role="menuitem">Forum</a>
+</li>
+<li class="bw-nav__action d-none d-lg-flex">
+    <a class="bw-link--grey font-weight-bold" href="/browse/geotags/" role="menuitem">Map</a>
+</li>
+<li class="bw-nav__action dropdown">
+    <a class="bw-link--grey bw-nav__menu dropdown-toggle no-hover bw-icon-ellipsis" id="three-dots-menu" aria-label="Menu"
+       data-toggle="dropdown" tabindex="0"></a>
+    <ul class="dropdown-menu" aria-labelledby="three-dots-menu">
+        <li class="bw-nav__action dropdown-item d-lg-none">
+            <a class="bw-link--black" href="/browse/">Sounds</a>
+        </li>
+        <li class="bw-nav__action dropdown-item">
+            <a class="bw-link--black" href="/browse/packs/">Packs</a>
+        </li>
+        
+        <li class="bw-nav__action dropdown-item">
+            <a class="bw-link--black" href="/collections/">Collections</a>
+        </li>
+        
+        <li class="bw-nav__action dropdown-item d-lg-none">
+            <a class="bw-link--black" href="/forum/">Forum</a>
+        </li>
+        <li class="bw-nav__action dropdown-item d-lg-none">
+            <a class="bw-link--black" href="/browse/geotags/">Map</a>
+        </li>
+        <li class="bw-nav__action dropdown-item d-lg-none">
+            <a class="bw-link--black" href="/browse/tags/">Tags</a>
+        </li>
+        <li class="bw-nav__action dropdown-item">
+            <a class="bw-link--black" href="/browse/random/">Random sound</a>
+        </li>
+        <li class="bw-nav__action dropdown-item">
+            <a class="bw-link--black" href="/charts/">Charts</a>
+        </li>
+        <li class="bw-nav__action dropdown-item d-lg-none">
+            <a class="bw-link--black" href="/donations/donate/">Donate</a>
+        </li>
+        <li class="bw-nav__action dropdown-item">
+            <a class="bw-link--grey" href="/help/faq/">Help</a>
+        </li>
+                
+    </ul>
+</li>
+
+            
+
+
+    <li class="bw-nav__action">
+        <button class="btn-secondary" data-toggle="login-modal" data-target="#loginModal" role="menuitem">Log in</button>
+    </li>
+    <li class="bw-nav__action d-none d-lg-flex">
+        <button class="btn-primary" data-toggle="registration-modal" data-target="#registerModal" role="menuitem">Join</button>
+    </li>
+
+
+        </ul>
+    </div>
+</nav>
+        
+        
+    <div class="container">
+        <div class="navbar-space-filler v-spacing-7 padding-bottom-7 v-spacing-top-5">
+            
+            <div class="row no-gutters ">
+                <div class="col-md-8">
+                    
+
+
+
+
+    
+        
+        <div aria-label="Sound Single Horse Galopp by ">
+        <div
+    class="bw-player"
+    data-sound-id="564628"
+    data-username=""
+    data-user-id="887696"
+    data-size="big"
+    data-collection="false"
+    data-collection-modal-content-url=""
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="false"
+    data-similar-sounds-modal-url=""
+    data-remix-group="false"
+    data-remix-group-modal-url=""
+    data-mp3="https://cdn.freesound.org/previews/564/564628_887696-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/564/564628_887696-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/564/564628_887696_wave_bw_L.png"
+    data-spectrum="https://cdn.freesound.org/displays/564/564628_887696_spec_bw_L.jpg"
+    data-title="Single Horse Galopp"
+    data-duration="11.8"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="13" 
+    data-num-downloads="7874" 
+    
+    tabindex="0">  
+</div>
+        <div class="bw-player-big__controls"></div>
+        </div>
+
+    
+
+                    <div class="bw-sound-page__information v-spacing-top-5 word-wrap-break-word">
+                        
+                        <div class="row middle">
+                            <div class="col-10 overflow-hidden">
+                                <h1><a class="bw-link--black" href="/people/D4XX/sounds/564628/">Single Horse Galopp</a></h1>
+                            </div>
+                            <div class="col-2 text-right">
+                                <div class="text-grey">
+                                    
+                                    
+                                    <span class="h-spacing-left-1"></span>
+                                    <button title="Find similar sounds" aria-label="Find similar sounds" class="btn-neutral" data-toggle="similar-sounds-modal" data-modal-activation-param="similar" data-modal-content-url="/people/D4XX/sounds/564628/similar/?ajax=1">
+                                        <span class="bw-icon-similar ">
+    
+</span>
+                                    </button>
+                                    
+                                    
+                                    <span class="h-spacing-left-1"></span>
+                                    <button title="Add this sound to a collection" aria-label="Add this sound to a collection" class="btn-neutral" data-toggle="collection-modal" data-modal-content-url="/collections/564628/add/?ajax=1">
+                                        <span class="bw-icon-bookmark ">
+    
+</span>
+                                    </button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="middle v-spacing-top-2">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    aria-label="Average rating of 4.4">
+    
+        
+            <div class="bw-rating__star-no-editable" data-value="5">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </div>
+        
+    
+        
+            <div class="bw-rating__star-no-editable" data-value="4">
+        
+            
+                <span class="bw-icon-star text-red">
+    
+</span>
+            
+        
+            </div>
+        
+    
+        
+            <div class="bw-rating__star-no-editable" data-value="3">
+        
+            
+                <span class="bw-icon-star text-red">
+    
+</span>
+            
+        
+            </div>
+        
+    
+        
+            <div class="bw-rating__star-no-editable" data-value="2">
+        
+            
+                <span class="bw-icon-star text-red">
+    
+</span>
+            
+        
+            </div>
+        
+    
+        
+            <div class="bw-rating__star-no-editable" data-value="1">
+        
+            
+                <span class="bw-icon-star text-red">
+    
+</span>
+            
+        
+            </div>
+        
+    
+</div><span class="bw-rating__count text-grey h-spacing-left-1">Overall rating (90 ratings)</span></div>
+
+                        <div class="middle bw-sound-page__user v-spacing-top-5">
+                            <div class="h-spacing-1">
+                                
+    <div class="avatar" style="width:40px;height:40px;">
+        <img src="/data/avatars/887/887696_M.jpg"  class="avatar " style="width:40px;height:40px;" />
+    </div>
+
+                            </div>
+                            <div class="h-spacing-left-1 ellipsis">
+                                <a href="/people/D4XX/">D4XX</a>
+                                <p class="text-grey">March 24th, 2021</p>
+                            </div>
+                            
+                                <div class="h-spacing-left-3">
+                                    
+                                        <a class="no-hover btn-inverse" href="/follow/follow_user/D4XX/?next=/people/D4XX/sounds/564628/">Follow</a>
+                                    
+                                </div>
+                            
+                        </div>
+                        <div class="middle v-spacing-top-3 dot-separated-divs text-grey">
+                            
+                             
+                                <div class="ellipsis">
+                                    <span class="bw-icon-tree ">
+    
+</span>
+                                    <span title="This category was added automatically by an algorithm"><span class="bw-icon-robot ">
+    
+</span></span>
+                                    <a href="/search/?f=category%3A%22Music%22" title="Category: Music">Music</a> > <a href="/search/?f=category%3A%22Music%22+subcategory%3A%22Solo+instrument%22" title="Subcategory: Solo instrument">Solo instrument</a>
+                                </div>
+                            
+                            
+                            
+                            
+                        </div>
+                        <div class="v-spacing-top-1">
+                            <div id="soundDescriptionSection">
+                                <p>This is a digital mastered single horse galopp.</p>
+                            </div>
+                            
+                                <div class="v-spacing-top-3 text-grey">
+                                    <p><p>My Hobby Music: <a href="http://youtube.com/daxxravebusters" rel="nofollow">youtube.com/daxxravebusters</a><br>My Sounds: <a href="http://payhip.com/d4xxmusic" rel="nofollow">payhip.com/d4xxmusic</a></p></p>
+                                </div>
+                            
+                            <div class="v-spacing-top-3">
+                                <a href="javascript:void(0);" title="Flag this sound as illegal, offensive or other..." class="text-light-grey" data-toggle="flag-sound-modal" data-modal-activation-param="flag" data-modal-content-url="/people/D4XX/sounds/564628/flag/?ajax=1">
+                                    <span class="bw-icon-flag ">
+    
+</span> Sound illegal or offensive? Flag it!
+                                </a>
+                            </div>
+                            <div class="v-spacing-top-3">
+                                
+                                    <div class="display-inline-block"><a href="/browse/tags/Galopp/"  class="no-hover btn-inverse text-black font-weight-normal border-grey-light text-center no-border-radius padding-1 no-text-wrap h-spacing-1 line-height-38 no-letter-spacing opacity-050 tag-container h-spacing-1">
+    Galopp
+</a></div>
+                                
+                                    <div class="display-inline-block"><a href="/browse/tags/Horse/"  class="no-hover btn-inverse text-black font-weight-normal border-grey-light text-center no-border-radius padding-1 no-text-wrap h-spacing-1 line-height-38 no-letter-spacing opacity-050 tag-container h-spacing-1">
+    Horse
+</a></div>
+                                
+                                    <div class="display-inline-block"><a href="/browse/tags/gallop/"  class="no-hover btn-inverse text-black font-weight-normal border-grey-light text-center no-border-radius padding-1 no-text-wrap h-spacing-1 line-height-38 no-letter-spacing opacity-050 tag-container h-spacing-1">
+    gallop
+</a></div>
+                                
+                                    <div class="display-inline-block"><a href="/browse/tags/horse/"  class="no-hover btn-inverse text-black font-weight-normal border-grey-light text-center no-border-radius padding-1 no-text-wrap h-spacing-1 line-height-38 no-letter-spacing opacity-050 tag-container h-spacing-1">
+    horse
+</a></div>
+                                
+                                    <div class="display-inline-block"><a href="/browse/tags/run/"  class="no-hover btn-inverse text-black font-weight-normal border-grey-light text-center no-border-radius padding-1 no-text-wrap h-spacing-1 line-height-38 no-letter-spacing opacity-050 tag-container h-spacing-1">
+    run
+</a></div>
+                                
+                            </div>
+                            <div class="divider-light v-spacing-top-4"></div>
+                            <div class="v-spacing-top-4 row">
+                                <div class="col-2 text-center text-17">
+                                    <p class="text-grey no-margins">Type</p>
+                                    <p class="no-margins">Wave (.wav)</p>
+                                </div>
+                                <div class="col-2 text-center text-17">
+                                    <p class="text-grey no-margins">Duration</p>
+                                    <p class="no-margins">0:11.800</p>
+                                </div>
+                                <div class="col-2 text-center text-17">
+                                    <p class="text-grey no-margins">File size</p>
+                                    <p class="no-margins">3.0 MB</p>
+                                </div>
+                                    <div class="col-2 text-center text-17">
+                                        <p class="text-grey no-margins">Sample rate</p>
+                                        <p class="no-margins">44.1 kHz</p>
+                                    </div>
+                                
+                                    <div class="col-2 text-center text-17">
+                                        <p class="text-grey no-margins">Bit depth</p>
+                                        <p class="no-margins">24 bit</p>
+                                    </div>
+                                
+                                <div class="col-2 text-center text-17">
+                                    <p class="text-grey no-margins">Channels</p>
+                                    <p class="no-margins">Stereo</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="v-spacing-top-6">
+                        <div>
+                            <h6 class="text-26 no-margins ">Comments</h6>
+                            <a name="comments"></a>
+                            
+                                
+                                    <div class="v-spacing-top-4">
+                                        Please <a href="/home/login/?next=/people/D4XX/sounds/564628/">log in</a> to comment
+                                    </div>
+                                
+                            
+                            <div id="soundCommentsSection" class="v-spacing-top-5 word-wrap-break-word">
+                                
+                                    
+                                        <div>
+                                            <div style="display: flex; justify-content: space-between;">
+                                                
+
+
+
+    <div class="middle bw-sound-page__user v-spacing-top-1">
+        <div class="h-spacing-1">
+            
+    <div class="no-avatar text-white opacity-080 " style="background-color:rgb(255, 133, 62);width:40px;height:40px;line-height:40px;font-size:16px;">
+        S
+    </div>
+
+        </div>
+        <div class="h-spacing-left-1">
+            <a href="/people/spillogo/">spillogo</a>
+            <p class="text-grey">2 years, 2 months ago</p>
+        </div>
+    </div>
+
+                                                <div class="text-right v-spacing-top-1">
+                                                    
+
+
+                                                    
+                                                </div>
+                                            </div>
+                                            <p class="v-spacing-top-1"><p>great recording</p></p>
+                                            
+                                                <div class="divider-light v-spacing-top-3 v-spacing-2"></div>
+                                            
+                                        </div>
+                                    
+                                        <div>
+                                            <div style="display: flex; justify-content: space-between;">
+                                                
+
+
+
+    <div class="middle bw-sound-page__user v-spacing-top-1">
+        <div class="h-spacing-1">
+            
+    <div class="no-avatar text-white opacity-080 " style="background-color:rgb(170, 206, 65);width:40px;height:40px;line-height:40px;font-size:16px;">
+        H
+    </div>
+
+        </div>
+        <div class="h-spacing-left-1">
+            <a href="/people/heimering/">heimering</a>
+            <p class="text-grey">2 years, 11 months ago</p>
+        </div>
+    </div>
+
+                                                <div class="text-right v-spacing-top-1">
+                                                    
+
+
+                                                    
+                                                </div>
+                                            </div>
+                                            <p class="v-spacing-top-1"><p>Thank you for uploading this sound.<br>I will use it to make a short a audio story about “sinterklaas” .<br>A Dutch version of santaclaus.</p></p>
+                                            
+                                                <div class="divider-light v-spacing-top-3 v-spacing-2"></div>
+                                            
+                                        </div>
+                                    
+                                        <div>
+                                            <div style="display: flex; justify-content: space-between;">
+                                                
+
+
+
+    <div class="middle bw-sound-page__user v-spacing-top-1">
+        <div class="h-spacing-1">
+            
+    <div class="no-avatar text-white opacity-080 " style="background-color:rgb(0, 220, 80);width:40px;height:40px;line-height:40px;font-size:16px;">
+        J
+    </div>
+
+        </div>
+        <div class="h-spacing-left-1">
+            <a href="/people/jkaces/">jkaces</a>
+            <p class="text-grey">2 years, 11 months ago</p>
+        </div>
+    </div>
+
+                                                <div class="text-right v-spacing-top-1">
+                                                    
+
+
+                                                    
+                                                </div>
+                                            </div>
+                                            <p class="v-spacing-top-1"><p>Thanks!!</p></p>
+                                            
+                                                <div class="divider-light v-spacing-top-3 v-spacing-2"></div>
+                                            
+                                        </div>
+                                    
+                                        <div>
+                                            <div style="display: flex; justify-content: space-between;">
+                                                
+
+
+
+    <div class="middle bw-sound-page__user v-spacing-top-1">
+        <div class="h-spacing-1">
+            
+    <div class="no-avatar text-white opacity-080 " style="background-color:rgb(9, 199, 113);width:40px;height:40px;line-height:40px;font-size:16px;">
+        K
+    </div>
+
+        </div>
+        <div class="h-spacing-left-1">
+            <a href="/people/Kathleen66/">Kathleen66</a>
+            <p class="text-grey">3 years, 2 months ago</p>
+        </div>
+    </div>
+
+                                                <div class="text-right v-spacing-top-1">
+                                                    
+
+
+                                                    
+                                                </div>
+                                            </div>
+                                            <p class="v-spacing-top-1"><p>Thank you :)</p></p>
+                                            
+                                                <div class="divider-light v-spacing-top-3 v-spacing-2"></div>
+                                            
+                                        </div>
+                                    
+                                        <div>
+                                            <div style="display: flex; justify-content: space-between;">
+                                                
+
+
+
+    <div class="middle bw-sound-page__user v-spacing-top-1">
+        <div class="h-spacing-1">
+            
+    <div class="avatar" style="width:40px;height:40px;">
+        <img src="/data/avatars/9084/9084007_M.jpg"  class="avatar " style="width:40px;height:40px;" />
+    </div>
+
+        </div>
+        <div class="h-spacing-left-1">
+            <a href="/people/Defelozedd94/">Defelozedd94</a>
+            <p class="text-grey">3 years, 8 months ago</p>
+        </div>
+    </div>
+
+                                                <div class="text-right v-spacing-top-1">
+                                                    
+
+
+                                                    
+                                                </div>
+                                            </div>
+                                            <p class="v-spacing-top-1"><p>Thank you! I used your sound here: <a href="https://www.youtube.com/watch?v=aaxmBcBbGHY" rel="nofollow">https://www.youtube.com/watch?v=aaxmBcBbGHY</a></p></p>
+                                            
+                                        </div>
+                                    
+
+                                    <div>
+                                        
+
+
+
+
+
+
+<ul class="bw-pagination_container">
+    
+
+    
+
+    
+        
+            <li class="bw-pagination_circle bw-pagination_selected">
+                1
+            </li>
+        
+    
+        
+            <li><a href="/people/D4XX/sounds/564628/?page=2#comments" data-page="2" title="Page 2">2</a></li>
+        
+    
+        
+            <li><a href="/people/D4XX/sounds/564628/?page=3#comments" data-page="3" title="Page 3">3</a></li>
+        
+    
+
+    
+
+    
+        <li>
+            <a href="/people/D4XX/sounds/564628/?page=2#comments" data-page="2" class="bw-link--white bw-pagination_circle bw-pagination_direction no-hover" title="Next Page" aria-label="Next Page">
+                <span class="bw-icon-arrow ">
+    
+</span>
+            </a>
+        </li>
+    
+</ul>
+
+
+
+                                    </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>                 
+                </div>
+
+                <div class="col-md-4 col-extra-left-padding-large-md">
+                    <div class="divider-light v-spacing-top-4 v-spacing-4 d-md-none"></div>
+                    <div class="bw-sound__sidebar">
+                        
+                        
+                        <div>
+                            <ol>
+                                <li class="v-spacing-3"> <span class="bw-icon-download text-light-grey">
+    
+</span>
+                                    <a class="text-19 bw-link--black" title="This sound has been downloaded 7,874 times" href="javascript:void(0);" data-toggle="modal-default" data-modal-content-url="/people/D4XX/sounds/564628/downloaders/?ajax=1" data-modal-activation-param="downloaders">7.9K downloads</a>
+                                </li>
+                                <li class="v-spacing-3"><span class="bw-icon-comments text-light-grey">
+    
+</span>
+                                    <a class="text-19 bw-link--black" title="This sound has received 13 comments" href="#comments">13 comments</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="v-spacing-top-5 middle">
+                            <span class="bw-icon-zero text-light-grey text-30">
+    
+</span> <a title="Go to the full license text" href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank" class="bw-link--black text-20 h-spacing-left-2 padding-right-4">Creative Commons 0</a>
+                        </div>
+                        <div class="text-grey  v-spacing-top-1">
+                            You can copy, modify, distribute and perform the sound, even for commercial purposes, all without the need of asking permission to the author. <a href="javascript:void(0);" data-toggle="modal-default" data-modal-content-url="/people/D4XX/sounds/564628/attribution/?ajax=1" data-modal-activation-param="attribution" class="bw-link--black">Get attribution text...</a>
+                        </div>
+                        
+
+                        
+
+                        <div class="v-spacing-top-5 v-padding-bottom-5 ">
+                            
+                                
+                                    <a class="no-hover btn-primary display-inline-block w-100 text-center" href="/people/D4XX/sounds/564628/download/564628__d4xx__single-horse-galopp.wav">Login to download</a>
+                                
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                        </div>
+                        <div>
+                            <ol class="center">
+                                <li aria-label="Share in Facebook"><a class="no-hover" href="https://www.facebook.com/sharer/sharer.php?u=https://freesound.org/s/564628/" target="_blank"><div class="cleanIcon"><span class="bw-icon-facebook text-30">
+    
+        <span class="path1"></span><span class="path2"></span>
+        
+    
+</span></div></a></li>
+                                <li aria-label="Share in Twitter" class="h-spacing-left-2"><a class="no-hover" href="https://twitter.com/share?url=https://freesound.org/s/564628/" target="_blank"><div class="cleanIcon"><span class="bw-icon-twitter text-30">
+    
+        <span class="path1"></span><span class="path2"></span>
+        
+    
+</span></div></a></li>
+                                <li aria-label="Share URL" class="h-spacing-left-2"><a id="toggle-share-link" class="cursor-pointer no-hover"><div class="cleanIcon"><span class="bw-icon-share2 bw-icon__inside_circle">
+    
+</span></div></a></li>
+                                <li aria-label="Embed this sound" class="h-spacing-left-2"><a id="toggle-embed-code" class="cursor-pointer no-hover"><div class="cleanIcon"><span class="bw-icon-embed-stroke text-30">
+    
+        <span class="path1"></span><span class="path2"></span>
+        
+    
+</span></div></a></li>
+                            </ol>
+                        </div>
+
+                        <div id="share-link" class="v-spacing-top-5" data-static-file-url="https://cdn.freesound.org/previews/564/564628_887696-hq.mp3" data-sound-page-url="https://freesound.org/s/564628/">
+                             <span class="text-grey">Share url: </span><br><input class="w-100" type="text" readonly />
+                        </div>
+
+                        <div id="embed-links" class="v-spacing-top-5 bw-form">
+                            <div class="v-spacing-1">
+                                <div>920 x 245</div>
+                                <img id="large-embed-image" class="cursor-pointer" src="/static/bw-frontend/public/embeds/images/widgets/embed_large_scaled_active_color.922b1f15e945.png" alt="Embed example, large size"/>
+                            </div>
+                            <div class="v-spacing-1">
+                                <div>481 x 86</div>
+                                <img id="medium-embed-image" class="cursor-pointer" src="/static/bw-frontend/public/embeds/images/widgets/embed_medium_scaled_active_color.f1b63a5e4dca.png" alt="Embed example, medium size"/>
+                            </div>
+                            <div class="v-spacing-1">
+                                <div>375 x 30</div>
+                                <img id="small-embed-image" class="cursor-pointer" src="/static/bw-frontend/public/embeds/images/widgets/embed_small_scaled_active_color.be7770514444.png" alt="Embed example, small size"/>
+                            </div>
+                            <textarea
+                                    id="embed-code"
+                                    data-size-large="920,245"
+                                    data-size-medium="481,86"
+                                    data-size-small="375,30"
+                                    data-iframe-url-template="https://freesound.org/embed/sound/iframe/564628/simple/SIZE/"
+                                    style="min-height: 130px;"
+                                    placeholder="The embed code will appear here"
+                                    class="w-100 v-spacing-top-2">
+                            </textarea>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+
+<footer class="bw-footer padding-7 v-spacing-top-6">
+  <div class="center">
+    <div class="footer-logo-container">
+        <div class="row">
+            <div class="col-sm-8">
+                <a href="https://www.upf.edu/web/mtg" class="no-hover">
+                    <img class="w-100" src="/static/bw-frontend/public/upf_logo.06e9f326ce68.png" />
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="https://www.upf.edu/web/phonos/" class="no-hover">
+                    <img class="w-100" src="/static/bw-frontend/public/phonos_logo.7c586cfd83d2.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="row v-spacing-top-3 center">
+    <a class="bw-link--grey h-spacing-1" href="/help/faq/#about-freesound">About Freesound</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/tos_web/">Terms of use</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/privacy/">Privacy</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/cookies_policy/">Cookies</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/developers/">Developers</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/faq/">Help</a>
+    <a class="bw-link--grey h-spacing-1" href="/donations/donors/">Donations</a>
+    <a class="bw-link--grey h-spacing-1" href="https://blog.freesound.org">Blog</a>
+    <a class="bw-link--grey h-spacing-1" href="https://labs.freesound.org">Freesound Labs</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/tshirt/">Get your t-shirt!</a>
+  </div>
+  <div class="center v-spacing-top-3">
+    <span>© 2026 Universitat Pompeu Fabra</span>
+  </div>
+</footer>
+    </div>
+    
+<script defer data-domain="freesound.org" src="https://analytics.freesound.org/js/plausible.manual.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<script>
+    let redactedUrl = window.location.href.replace(/\/\d+\//g, "/_ID_/"); // Replace numberic IDs
+    redactedUrl = redactedUrl.replace(/people\/([^/]+)\//ig, "people/_USERNAME_/");  // Replace usernames
+    redactedUrl = redactedUrl.replace(/browse\/geotags\/(\w+)\//ig, "browse/geotags/_TAG_/");  // Replace tag from geotags
+    redactedUrl = redactedUrl.replace(/browse\/tags\/.*/ig, "browse/tags/_TAGS_/");  // Replace multiple tags from tags page
+    if (redactedUrl.includes("/forum/")){  // Replace forum names, be careful with some hard coded URLs
+        if (!(redactedUrl.includes("/moderate/") || redactedUrl.includes("/forums-search/") || redactedUrl.includes("/hot-treads/"))){
+            redactedUrl = redactedUrl.replace(/forum\/([^/]+)\//ig, "forum/_FORUM_NAME_/");  // Replace forum name
+        }
+    }
+    redactedUrl = redactedUrl.replace(/activate\/([^/]+)\/([^/]+)\//ig, "activate/_USERNAME_/_CODE_/");  // Replace activation urls
+    redactedUrl = redactedUrl.replace(/reset\/([^/]+)\//ig, "reset/_CODE_/");  // Replace password reset
+    redactedUrl = redactedUrl.replace(/tickets\/([^/]+)\//ig, "tickets/_ID_/");  // Replace moderation tickets
+    plausible('pageview', { u: redactedUrl });
+</script>
+
+    
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css' type='text/css' />
+<script type="text/javascript">
+    mapboxgl.accessToken = '[REDACTED: unrelated website access token]';
+</script>
+    <script>
+        
+        document.cookie = "preferSpectrogram=no;path=/";
+        document.cookie = "disallowSimultaneousAudioPlayback=no;path=/"
+        
+        const userIsAuthenticated = false;
+    </script>
+    <script src="/static/bw-frontend/dist/index.31307efc4d8b.js"></script>
+    
+    <script src="/static/bw-frontend/dist/pages/sound.20a7c20ef004.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "id": "bgm-8bit-dungeon-boss",
+  "title": "8bit Dungeon Boss",
+  "author": "Kevin MacLeod",
+  "isrc": "USUAN1200067",
+  "source_page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1200067",
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/8bit%20Dungeon%20Boss.mp3",
+  "original_filename": "8bit Dungeon Boss.mp3",
+  "official_metadata": {
+    "length": "00:02:52",
+    "bpm": "134",
+    "instruments": "Synths",
+    "feel": "Action, Dark, Humorous",
+    "uploaded": "2012-05-28"
+  },
+  "required_attribution": "\"8bit Dungeon Boss\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/",
+  "changes": "none; original MP3 redistributed unchanged",
+  "audio_sha256": "5f46f0195e2b166c9f9c672b9334515ff17e9d00cb4bf44edc085148fc5d6555",
+  "source_mapping": "Official individual page template selects the ISRC record in official pieces.json and renders CC BY 4.0 attribution plus a download URL from that record's filename.",
+  "verified_at": "2026-11-14"
+}

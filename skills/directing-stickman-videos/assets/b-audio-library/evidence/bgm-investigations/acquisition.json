@@ -1,0 +1,21 @@
+{
+  "id": "bgm-investigations",
+  "title": "Investigations",
+  "author": "Kevin MacLeod",
+  "isrc": "USUAN1100646",
+  "source_page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100646",
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Investigations.mp3",
+  "original_filename": "Investigations.mp3",
+  "official_metadata": {
+    "length": "00:01:34",
+    "bpm": "94",
+    "instruments": "Pizzicato Strings, English Horn, Bassoon, Marimba, Glockenspiel, Cowbells",
+    "feel": "Humorous, Mysterious",
+    "uploaded": "2009-12-29"
+  },
+  "required_attribution": "\"Investigations\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/",
+  "changes": "none; original MP3 redistributed unchanged",
+  "audio_sha256": "699f7a3cd227dfe5c1e88099b45af57202bfe9d56f86b8b43e4252b65dd96768",
+  "source_mapping": "Official individual page template selects the ISRC record in official pieces.json and renders CC BY 4.0 attribution plus a download URL from that record's filename.",
+  "verified_at": "2026-11-14"
+}

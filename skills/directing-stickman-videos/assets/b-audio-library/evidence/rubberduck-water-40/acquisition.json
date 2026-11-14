@@ -1,0 +1,25 @@
+{
+  "id": "rubberduck-water-40",
+  "title": "40 CC0 water / splash / slime SFX",
+  "author": "rubberduck",
+  "source_url": "https://opengameart.org/content/40-cc0-water-splash-slime-sfx",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:32.243062+00:00",
+  "description": "I created some water, splash and slime sounds: 3x bubble 6x loop sounds (bubbles, rain, water) 16x slime (partly recorded from real slime) 15x splash The loop sounds are also a bit longer as in the preview.",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/water-splash-slime-sfx.zip",
+      "filename": "water-splash-slime-sfx.zip",
+      "sha256": "7cd39abb49d4362a37ba18dc0e454c7dc1d08029d4e5b683149046bc237b2eba",
+      "bytes": 2259262
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/water-splash-slime-sfx.zip",
+  "source_page_sha256": "2e7e47024f8a944abc40417e8a1ac7b51bf5660a401e2e0ea260a1354cf0ad63"
+}

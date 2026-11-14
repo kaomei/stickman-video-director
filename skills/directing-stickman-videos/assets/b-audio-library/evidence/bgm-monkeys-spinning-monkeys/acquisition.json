@@ -1,0 +1,21 @@
+{
+  "id": "bgm-monkeys-spinning-monkeys",
+  "title": "Monkeys Spinning Monkeys",
+  "author": "Kevin MacLeod",
+  "isrc": "USUAN1400011",
+  "source_page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400011",
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Monkeys%20Spinning%20Monkeys.mp3",
+  "original_filename": "Monkeys Spinning Monkeys.mp3",
+  "official_metadata": {
+    "length": "00:02:05",
+    "bpm": "144",
+    "instruments": "Flutes, Violin, Viola, Cello",
+    "feel": "Bouncy, Bright, Humorous, Uplifting",
+    "uploaded": "2014-02-03"
+  },
+  "required_attribution": "\"Monkeys Spinning Monkeys\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/",
+  "changes": "none; original MP3 redistributed unchanged",
+  "audio_sha256": "a5bb345c23849ad0786aa0bc5157a9f2d4039660fe00282e55754d475f36dc14",
+  "source_mapping": "Official individual page template selects the ISRC record in official pieces.json and renders CC BY 4.0 attribution plus a download URL from that record's filename.",
+  "verified_at": "2026-11-14"
+}

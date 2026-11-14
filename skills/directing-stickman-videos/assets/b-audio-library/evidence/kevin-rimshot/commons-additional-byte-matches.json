@@ -1,0 +1,20 @@
+[
+  {
+    "filename": "kdum-keesh.wav",
+    "commons_original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Kevin_MacLeod_assorted_rimshots_-_Kdum-keesh.wav",
+    "commons_bytes": 2420428,
+    "commons_sha256": "fecfa5e00a097d1c6c30bcc5bf97dea93e57b6a70da588cea91bba603ba48821",
+    "official_original_sha256": "fecfa5e00a097d1c6c30bcc5bf97dea93e57b6a70da588cea91bba603ba48821",
+    "identical_bytes": true,
+    "license_page": "sfx-gap-fill/evidence/kevin-rimshot/kdum-keesh-license.html.txt"
+  },
+  {
+    "filename": "4-second roll.wav",
+    "commons_original_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Kevin_MacLeod_assorted_rimshots_-_4-second_roll.wav",
+    "commons_bytes": 1276428,
+    "commons_sha256": "de04d661da057a46d6ad0b0ead886181fe87ac3ef86120dd3493766d86936a23",
+    "official_original_sha256": "de04d661da057a46d6ad0b0ead886181fe87ac3ef86120dd3493766d86936a23",
+    "identical_bytes": true,
+    "license_page": "sfx-gap-fill/evidence/kevin-rimshot/4-second-roll-license.html.txt"
+  }
+]

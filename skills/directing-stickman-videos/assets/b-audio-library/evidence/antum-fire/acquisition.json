@@ -1,0 +1,31 @@
+{
+  "id": "antum-fire",
+  "title": "Fire Crackling",
+  "author": "AntumDeluge",
+  "source_url": "https://opengameart.org/content/fire-crackling",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:41.426108+00:00",
+  "description": "A popping and crackling fireplace. Details: Format: Vorbis Container: OGG Bit rate: 46k Sample rate: 44100Hz Channels: 1 Format: PCM/WAV (uncompressed) Licensing: Creative Commons Zero (CC0) Permanent link: https://opengameart.org/node/16327",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/fire-1_0.ogg",
+      "filename": "fire-1_0.ogg",
+      "sha256": "f922929805bc6afdf0a35727fa3998033db544c1b6f62ed3aeab94341ed6ddeb",
+      "bytes": 22784
+    },
+    {
+      "url": "https://opengameart.org/sites/default/files/fire-1.wav",
+      "filename": "fire-1.wav",
+      "sha256": "26702de8a195bcbafeae72034861d875a1b7917168a25106f4e1957ecdddf7e5",
+      "bytes": 253232
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/fire-1_0.ogg",
+  "source_page_sha256": "a927e0afcfbb01761fe91cee50982b7cd0dfa4990c6bca5617ad60ac69b6398e"
+}
