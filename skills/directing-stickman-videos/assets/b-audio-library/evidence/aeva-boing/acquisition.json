@@ -1,0 +1,25 @@
+{
+  "id": "aeva-boing",
+  "title": "BOING!",
+  "author": "Aeva",
+  "source_url": "https://opengameart.org/content/boing",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:32.099746+00:00",
+  "description": "A springy BOING sound, like that of a large spring. Made with an Arturia MicroFreak.",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/boing.flac",
+      "filename": "boing.flac",
+      "sha256": "9c6af38ca79332ad3fa66ad1229179d2a91655c1157d3620e21ef676f54d9fdd",
+      "bytes": 194024
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/boing.flac",
+  "source_page_sha256": "687e707d95352f15b06f01da3b1141b593c7d2f1668aed3973ad5bade4768e79"
+}

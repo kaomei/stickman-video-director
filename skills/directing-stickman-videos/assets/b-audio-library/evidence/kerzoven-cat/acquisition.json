@@ -1,0 +1,55 @@
+{
+  "id": "kerzoven-cat",
+  "title": "Cat Purr & Meow",
+  "author": "Kerzoven",
+  "source_url": "https://opengameart.org/content/cat-purr-meow",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:39.160039+00:00",
+  "description": "I could not find suiteable cat mews with CC0 licence, so I took the day to record some with my limited equipment. Purrs were easy but the meows have some background noise as the cat liked to move around.",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/cat_purrsleepy_loop.wav",
+      "filename": "cat_purrsleepy_loop.wav",
+      "sha256": "7f06368e25e6a7aec9b106c3e2915f236b3fa10b41781733ecc8a1866fc749b9",
+      "bytes": 498694
+    },
+    {
+      "url": "https://opengameart.org/sites/default/files/cat_purractive_loop.wav",
+      "filename": "cat_purractive_loop.wav",
+      "sha256": "5b41fbabf4a43e526face6922a74a1fa2d1930d0901e0df590989bf7d68cc97a",
+      "bytes": 733218
+    },
+    {
+      "url": "https://opengameart.org/sites/default/files/cat_mewfood.wav",
+      "filename": "cat_mewfood.wav",
+      "sha256": "3550f080882b52e236c8810a353756b2e0395fb7dadf0aeface0a06893cd181f",
+      "bytes": 99450
+    },
+    {
+      "url": "https://opengameart.org/sites/default/files/cat_mewpurr.wav",
+      "filename": "cat_mewpurr.wav",
+      "sha256": "a58487959ee00c812f9f02ca822a668173bcf04a98c6dd98a902514a1d3994ea",
+      "bytes": 124464
+    },
+    {
+      "url": "https://opengameart.org/sites/default/files/cat_mewpurr2.wav",
+      "filename": "cat_mewpurr2.wav",
+      "sha256": "918a896111936f3f6316d1cc7fd64aa1ef0a31a4162dfcbe02c058758b0f2458",
+      "bytes": 213444
+    },
+    {
+      "url": "https://opengameart.org/sites/default/files/cat_softmew.wav",
+      "filename": "cat_softmew.wav",
+      "sha256": "7de9fed4401b677ccbf072781182857d875093a8e9b5727fc21b38028cfd5a90",
+      "bytes": 218620
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/cat_purrsleepy_loop.wav",
+  "source_page_sha256": "1a701660ccef88a4f249629eb024693f200da506b56c7fa3b8bfb728e802b209"
+}

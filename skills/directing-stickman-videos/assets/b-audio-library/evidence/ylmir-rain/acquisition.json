@@ -1,0 +1,25 @@
+{
+  "id": "ylmir-rain",
+  "title": "Rain (loopable)",
+  "author": "Ylmir",
+  "source_url": "https://opengameart.org/content/rain-loopable",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:41.425047+00:00",
+  "description": "Four loopable rain SFX, with a length varying between 25 and 45 seconds. Recorded about two hours ago with a single mono mic at my window, then I processed it a bit, trying to make it sound stereo. It was more an experiment, but it can probably be useful anyway ;) Available in two formats, the samples are the same : - MP3, 192 kbps, constant bitrate - OGG, 160 kbps",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/Rain%20OGG.zip",
+      "filename": "Rain OGG.zip",
+      "sha256": "e68f3e1c77493cf43bec84cebff5043bff6be9ce16d59b24caa988cd460aa75b",
+      "bytes": 2736596
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/Rain%20OGG.zip",
+  "source_page_sha256": "ac804834fb327d604345925220b8450fd31b999ec5dd97b7b251b1286280e688"
+}

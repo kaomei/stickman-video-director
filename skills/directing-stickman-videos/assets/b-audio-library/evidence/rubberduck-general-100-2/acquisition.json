@@ -1,0 +1,25 @@
+{
+  "id": "rubberduck-general-100-2",
+  "title": "100 CC0 SFX #2",
+  "author": "rubberduck",
+  "source_url": "https://opengameart.org/content/100-cc0-sfx-2",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:07:36.173537+00:00",
+  "description": "another pack with 100 CC0 sfx Note: the preview does not contain all sounds, it also contains loopable sfx which are shorter in the preview. Included are: air flowing, door, various footstep, glass, hit, item, loops (ambient, machine, construction site, highway / street, flowing water), metal / metal hit, misc, stones, switch, thunder and wood / wood hit - sounds",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/sfx_100_v2.zip",
+      "filename": "sfx_100_v2.zip",
+      "sha256": "0fc61b4494e2e893c0c015ced4877b3f689c7d84a48cb61daecd7ddb52db797b",
+      "bytes": 2367871
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/sfx_100_v2.zip",
+  "source_page_sha256": "15a1e167aa334a903c7f973234de3848cd5641b189e9dae215ad8eb0f93ddf47"
+}

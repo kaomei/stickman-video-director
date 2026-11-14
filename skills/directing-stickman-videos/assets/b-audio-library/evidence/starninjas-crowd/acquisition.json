@@ -1,0 +1,25 @@
+{
+  "id": "starninjas-crowd",
+  "title": "Crowd Shouting/Speaking Ambience",
+  "author": "StarNinjas",
+  "source_url": "https://opengameart.org/content/crowd-shoutingspeaking-ambience",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:36.300685+00:00",
+  "description": "Just sound clips of me and my siblings speaking/shouting and mixed and edited to sound like a protesting crowd or an army or something. Enjoy! Youtube channel: https://www.youtube.com/channel/UCxLPx862bQqxGUOkfZOtvZA Discord: https://discord.gg/nKUAtJmtKj",
+  "attribution_notice": "Copyright/Attribution Notice: Credit is appreciated, thanks! (Just put a link to my OGA profile) I'd also appreciate if you could show me the projects you use this in!",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/crowd_shouting_0.ogg",
+      "filename": "crowd_shouting_0.ogg",
+      "sha256": "a2c23a64c127c77717cbe4abb21f138bac9d9aa6cb3cc89d62bab5d0d96dd7ca",
+      "bytes": 335526
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/crowd_shouting_0.ogg",
+  "source_page_sha256": "f90e33b2bb0dbe01f3e064a8312538504616c22b8bd673d07b946787305448cf"
+}

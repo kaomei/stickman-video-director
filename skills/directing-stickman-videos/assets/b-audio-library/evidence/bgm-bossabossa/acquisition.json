@@ -1,0 +1,21 @@
+{
+  "id": "bgm-bossabossa",
+  "title": "BossaBossa",
+  "author": "Kevin MacLeod",
+  "isrc": "USUAN1600055",
+  "source_page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1600055",
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/BossaBossa.mp3",
+  "original_filename": "BossaBossa.mp3",
+  "official_metadata": {
+    "length": "00:02:47",
+    "bpm": "77",
+    "instruments": "Piano, Bass, Drums, Guitar",
+    "feel": "Calming, Grooving, Bright",
+    "uploaded": "2016-10-02"
+  },
+  "required_attribution": "\"BossaBossa\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/",
+  "changes": "none; original MP3 redistributed unchanged",
+  "audio_sha256": "a89ec158f9113531e7cbd98955cdd1a557e88e19713a3ef8a5084e2f9f039a12",
+  "source_mapping": "Official individual page template selects the ISRC record in official pieces.json and renders CC BY 4.0 attribution plus a download URL from that record's filename.",
+  "verified_at": "2026-11-14"
+}

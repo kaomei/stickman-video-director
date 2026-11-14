@@ -1,0 +1,31 @@
+{
+  "id": "looneybits-engine-start",
+  "title": "Car engine start 01",
+  "author": "looneybits",
+  "source_url": "https://opengameart.org/content/car-engine-start-01",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:38.272423+00:00",
+  "description": "Car engine start sound effect meant to be used in your motor games. Site | YouTube | itch.io | Twitter If that was useful for you, please consider a donation",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/generic_car_startengine.wav",
+      "filename": "generic_car_startengine.wav",
+      "sha256": "fa9c199daf6b06a53267f32d764fb19522fc364304ad009bf8b6e392adbe5654",
+      "bytes": 291074
+    },
+    {
+      "url": "https://opengameart.org/sites/default/files/generic_car_startengine_1.wav",
+      "filename": "generic_car_startengine_1.wav",
+      "sha256": "1f50e855d5924221017093117407274ec1c929e83ec0f1940b1d6cdd941fc8ff",
+      "bytes": 177842
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/generic_car_startengine.wav",
+  "source_page_sha256": "47187aeedbb3968b3fe4b81966d2e84c4b76720bf26c640387ed06b1d8051ff7"
+}

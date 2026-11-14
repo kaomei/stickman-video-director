@@ -633,8 +633,7 @@ Não. Você não precisa de uma placa RTX de ponta nem de conhecimentos de progr
 - [x] **6,000 Stars**: Mais de 10 novos estilos visuais de alta qualidade já disponíveis
 - [ ] **🔥 10,000 Stars**:
   - Mais de 1,000 prompts de roteiros para YouTube compartilhados pelos modos A e B
-  - Mais de 200 efeitos sonoros e transições de áudio para o modo B, com comprovação de licença por item e créditos exigidos
-  - Editor em lote com um clique para YouTube Shorts e TikTok
+  - [Biblioteca de áudio B](skills/directing-stickman-videos/references/b-audio-library.md): 774 SFX/transições + 31 músicas + 85 jingles curtos, com sugestões por estilo B/cena, exportação offline, licenças por item e créditos obrigatórios
 - [ ] **20,000 Stars**:
   - lançamento do Stickman AI Studio — da ideia ao vídeo pronto, no piloto automático
   - Mais surpresas vêm por aí — vamos descobrir juntos

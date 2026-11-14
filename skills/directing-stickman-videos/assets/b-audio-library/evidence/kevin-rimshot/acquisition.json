@@ -1,0 +1,28 @@
+{
+  "id": "kevin-rimshot",
+  "title": "Assorted Rimshots",
+  "author": "Kevin MacLeod",
+  "source_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Rimshots.zip",
+  "license_id": "CC-BY-3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0/",
+  "license_declaration_urls": [
+    "https://commons.wikimedia.org/wiki/File:Kevin_MacLeod_assorted_rimshots_-_Bah-dum.wav",
+    "https://commons.wikimedia.org/wiki/File:Kevin_MacLeod_assorted_rimshots_-_Kdum-keesh.wav",
+    "https://commons.wikimedia.org/wiki/File:Kevin_MacLeod_assorted_rimshots_-_4-second_roll.wav",
+    "https://incompetech.com/agent-section/"
+  ],
+  "retrieved_at": "2026-11-14",
+  "description": "Three unchanged original WAVs selected from the author-hosted Rimshots.zip. Each has an exact matching CC BY 3.0 Wikimedia original; official author current blanket licence is also preserved. The old specific title is absent from the current dynamic pieces.json, so the conservative original BY 3.0 designation is retained.",
+  "attribution_notice": "Assorted Rimshots — Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 3.0 License. https://creativecommons.org/licenses/by/3.0/",
+  "license_declaration": "CC BY 3.0 Unported on byte-identical historical Wikimedia originals, with author-hosted original ZIP and current author common CC BY 4.0 declaration retained as corroboration. No inference of CC0 from Wikimedia site UI.",
+  "downloads": [
+    {
+      "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Rimshots.zip",
+      "filename": "Rimshots.zip",
+      "sha256": "4fa26395b664cbcd938b187eb04344fa9af93ba5fe3f6ba48f834bb805796c56",
+      "bytes": 9344238
+    }
+  ],
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Rimshots.zip",
+  "source_page_sha256": "dd20669059e1af107dac5d0e732339c7422a2ed42f1d6721ea1193c37a036060"
+}

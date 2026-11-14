@@ -1,0 +1,21 @@
+{
+  "id": "bgm-merry-go",
+  "title": "Merry Go",
+  "author": "Kevin MacLeod",
+  "isrc": "USUAN1100731",
+  "source_page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100731",
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Merry%20Go.mp3",
+  "original_filename": "Merry Go.mp3",
+  "official_metadata": {
+    "length": "00:02:00",
+    "bpm": "132",
+    "instruments": "Piano",
+    "feel": "Bouncy, Bright, Humorous",
+    "uploaded": "2010-06-15"
+  },
+  "required_attribution": "\"Merry Go\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/",
+  "changes": "none; original MP3 redistributed unchanged",
+  "audio_sha256": "c592ca0a9e2312280ea54070831a216c58ab7242890c0742eb95be5365b6e307",
+  "source_mapping": "Official individual page template selects the ISRC record in official pieces.json and renders CC BY 4.0 attribution plus a download URL from that record's filename.",
+  "verified_at": "2026-11-14"
+}

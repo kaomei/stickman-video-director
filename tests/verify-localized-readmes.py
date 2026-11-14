@@ -157,15 +157,17 @@ for name in selected:
     assert milestones == [("x", "1,000"), ("x", "3,000"), ("x", "6,000"), (" ", "10,000"), (" ", "20,000")], (name, "approved milestone states")
     assert "- [ ] **🔥 10,000 Stars**" in roadmap, (name, "current highlighted 10,000-Star milestone")
     milestone_blocks = re.split(r"(?=^- \[[x ]\] \*\*)", roadmap, flags=re.M)[1:]
-    assert [len(re.findall(r"^  - ", block, re.M)) for block in milestone_blocks] == [0, 0, 0, 3, 2], (name, "three 10,000-Star and two 20,000-Star deliverables")
+    assert [len(re.findall(r"^  - ", block, re.M)) for block in milestone_blocks] == [0, 0, 0, 2, 2], (name, "two 10,000-Star and two 20,000-Star deliverables")
     mode_names = ("导演模式", "全自动模式") if name == "README.zh-CN.md" else ("Director", "AutoPilot")
     for token in mode_names:
         assert token in roadmap, (name, "roadmap deliverable", token)
-    for token in ("1,000", "200", "YouTube Shorts", "TikTok"):
+    for token in ("1,000", "774", "31", "85"):
         assert token in milestone_blocks[3], (name, "10,000-Star deliverable", token)
     shared_deliverables = re.findall(r"^  - (.+)$", milestone_blocks[3], re.M)
     assert all(mode in shared_deliverables[0] for mode in ("A", "B")), (name, "script prompts shared by A and B")
     assert "B" in shared_deliverables[1], (name, "SFX and sound transitions scoped to B")
+    assert "](skills/directing-stickman-videos/references/b-audio-library.md)" in shared_deliverables[1], (name, "bundled sound library guide")
+    assert not re.match(r"\[[xX ]\]\s", shared_deliverables[1]), (name, "no redundant nested sound-library checkbox")
     assert "Content" not in shared_deliverables[1], (name, "no unconditional Content ID guarantee")
     studio_name = "Stickman AI 视频工作台" if name == "README.zh-CN.md" else "Stickman AI Studio"
     assert studio_name in milestone_blocks[4], (name, "20,000-Star studio deliverable")

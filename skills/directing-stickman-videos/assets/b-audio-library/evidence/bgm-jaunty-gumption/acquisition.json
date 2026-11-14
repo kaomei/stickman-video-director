@@ -1,0 +1,21 @@
+{
+  "id": "bgm-jaunty-gumption",
+  "title": "Jaunty Gumption",
+  "author": "Kevin MacLeod",
+  "isrc": "USUAN1300017",
+  "source_page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1300017",
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Jaunty%20Gumption.mp3",
+  "original_filename": "Jaunty Gumption.mp3",
+  "official_metadata": {
+    "length": "00:01:58",
+    "bpm": "146",
+    "instruments": "Marimba, Organ, Flutes, Synths, Percussion",
+    "feel": "Bouncy, Bright, Humorous, Uplifting",
+    "uploaded": "2013-02-26"
+  },
+  "required_attribution": "\"Jaunty Gumption\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/",
+  "changes": "none; original MP3 redistributed unchanged",
+  "audio_sha256": "844b9d89e1a48d51f04ce495db1ba743ee6c36856d0e39d43db393609bcb7aac",
+  "source_mapping": "Official individual page template selects the ISRC record in official pieces.json and renders CC BY 4.0 attribution plus a download URL from that record's filename.",
+  "verified_at": "2026-11-14"
+}

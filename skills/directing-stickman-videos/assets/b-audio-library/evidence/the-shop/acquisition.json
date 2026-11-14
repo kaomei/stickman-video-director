@@ -1,0 +1,25 @@
+{
+  "id": "the-shop",
+  "title": "The Shop - free OpenGameArt samples",
+  "author": "LEGIT Audio",
+  "source_url": "https://opengameart.org/content/the-shop",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "https://opengameart.org/content/the-shop"
+  ],
+  "retrieved_at": "2026-11-14",
+  "description": "Two convenience-store drinks-fridge drone/room-tone samples. These are mechanical interior beds, not neutral restaurant walla.",
+  "attribution_notice": "CC0 only applies to free sounds provided via opengameart.org. Other licences apply to sounds purchased outside OpenGameArt.",
+  "license_declaration": "CC0 only applies to the free sounds provided via OpenGameArt. No paid full-library material is included.",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/legit_audio_-_the_shop_free_sfx_wav.zip",
+      "filename": "legit_audio_-_the_shop_free_sfx_wav.zip",
+      "sha256": "87d49c4431fdf5647f3c434455b3bcd402fc757f97f2640b2ef84e2e5db9d86e",
+      "bytes": 19385775
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/legit_audio_-_the_shop_free_sfx_wav.zip",
+  "source_page_sha256": "d2f269c00b3ac255b93b068fde9c0cb01732bc7aa7b7bbbca041a6df0c8e0626"
+}

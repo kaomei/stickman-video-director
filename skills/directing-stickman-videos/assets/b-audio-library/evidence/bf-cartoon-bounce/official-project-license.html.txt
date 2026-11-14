@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11"><script defer data-domain="apricot.blender.org" src="https://analytics.blender.org/js/script.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Yo Frankie! &#8211; Apricot Open Game Project   &raquo; About</title>
+
+ <meta name="generator" content="WordPress 5.7"> <!-- leave this for stats -->
+
+<link rel="stylesheet" href="/wp-content/themes/ultrablue/style.css" type="text/css" media="screen">
+	<!--[if lt ie 7]>	
+		<link rel="stylesheet" type="text/css" media="screen" href="/wp-content/themes/ultrablue/ie-win.css" />
+	<![endif]-->	
+	
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+<link rel="alternate" type="text/xml" title="RSS .92" href="/feed/rss/">
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="/feed/atom/">
+<link rel="shortcut icon" href="/wp-content/themes/ultrablue/images/favico.png" type="image/png">
+<link rel="icon" type="image/png" href="/wp-content/themes/ultrablue/images/favico.png">
+
+<link rel="pingback" href="/xmlrpc.php">
+
+	<link rel="archives" title="July 2009" href="/2009/07/">
+	<link rel="archives" title="May 2009" href="/2009/05/">
+	<link rel="archives" title="March 2009" href="/2009/03/">
+	<link rel="archives" title="February 2009" href="/2009/02/">
+	<link rel="archives" title="January 2009" href="/2009/01/">
+	<link rel="archives" title="December 2008" href="/2008/12/">
+	<link rel="archives" title="November 2008" href="/2008/11/">
+	<link rel="archives" title="October 2008" href="/2008/10/">
+	<link rel="archives" title="September 2008" href="/2008/09/">
+	<link rel="archives" title="August 2008" href="/2008/08/">
+	<link rel="archives" title="July 2008" href="/2008/07/">
+	<link rel="archives" title="June 2008" href="/2008/06/">
+	<link rel="archives" title="May 2008" href="/2008/05/">
+	<link rel="archives" title="April 2008" href="/2008/04/">
+	<link rel="archives" title="March 2008" href="/2008/03/">
+	<link rel="archives" title="February 2008" href="/2008/02/">
+	<link rel="archives" title="January 2008" href="/2008/01/">
+	<link rel="archives" title="December 2007" href="/2007/12/">
+
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="Yo Frankie! - Apricot Open Game Project &raquo; About Comments Feed" href="/about-apricot/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.7" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/pages/8">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.7">
+<link rel="canonical" href="/about-apricot/">
+<link rel="shortlink" href="/?p=8">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout-apricot%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout-apricot%2F&#038;format=xml">
+
+</head>
+
+<body>
+<div align="center">
+<div id="apriheaderhtml">
+<img src="/wp-content/themes/ultrablue/images/apricot_header.jpg" width="958" height="343" border="0" usemap="#map">
+
+<map name="map">
+<area shape="rect" coords="501,252,578,290" alt="Blog!" href="/">
+<area shape="rect" coords="611,237,704,276" alt="Team!" href="/team/">
+<area shape="rect" coords="722,244,806,282" alt="Forum!" href="http://devtalk.blender.org/">
+<area shape="rect" coords="812,297,887,328" alt="About Apricot!" href="/about-apricot/">
+<area shape="rect" coords="826,244,896,283" alt="Press!" href="/press/">
+<area shape="rect" coords="535,299,624,330" alt="Gallery!" href="/gallery/">
+<area shape="rect" coords="649,288,776,325" alt="Development!" href="/dev/">
+<area shape="rect" coords="54,8,484,329" alt="Yo Frankie! Apricot Open Game Project" href="/">
+<area shape="rect" coords="3,4,39,34" alt="mee!" href="http://venomgfx.com.ar/apricot/splash.jpg">
+</map>
+</div>
+</div>
+<div id="headerbg">
+	<div id="navigation">
+
+
+
+<!-- 			     
+         	<h1><a href="">Yo Frankie! &#8211; Apricot Open Game Project</a></h1>
+			<div style="clear: both;"></div>
+			<div class="slogan">Yo Frankie! &#8211; Apricot Open Game Blog</div>
+			 <ul>
+              		<li class="page_item"><a href="">Home</a></li>
+
+	<li class="page_item page-item-8 current_page_item"><a href="/about-apricot/" aria-current="page">About</a></li>
+<li class="page_item page-item-14"><a href="/dev/">Development</a></li>
+<li class="page_item page-item-609"><a href="/download/">Download Yo Frankie!</a></li>
+<li class="page_item page-item-316"><a href="/dvd-credits/">DVD Pre-order Credits</a></li>
+<li class="page_item page-item-15"><a href="/gallery/">Gallery</a></li>
+<li class="page_item page-item-975"><a href="/how-to-dress-fashionably-in-college/">How to dress  fashionably in College</a></li>
+<li class="page_item page-item-12"><a href="/press/">Press</a></li>
+<li class="page_item page-item-5"><a href="/team/">Team</a></li>
+<li class="page_item page-item-805"><a href="/tutorial-baking-shadow-maps/">Video Tutorial: Baking Shadow Maps</a></li>
+<li class="page_item page-item-811"><a href="/tutorial-low-poly-tree-part-1/">Video Tutorial: Creating a Low Poly Tree, Part 1</a></li>
+<li class="page_item page-item-814"><a href="/tutorial-low-poly-tree-part-2/">Video Tutorial: Creating a Low Poly Tree, Part 2</a></li>
+<li class="page_item page-item-817"><a href="/tutorial-low-poly-tree-part-3/">Video Tutorial: Creating a Low Poly Tree, Part 3</a></li>
+<li class="page_item page-item-820"><a href="/tutorial-low-poly-tree-part-4/">Video Tutorial: Creating a Low Poly Tree, Part 4</a></li>
+<li class="page_item page-item-824"><a href="/tutorial-low-poly-tree-part-5/">Video Tutorial: Creating a Low Poly Tree, Part 5</a></li>
+<li class="page_item page-item-808"><a href="/tutorial-ipo-editor/">Video Tutorial: New Features in the IPO Editor</a></li>
+<li class="page_item page-item-795"><a href="/tutorial-ambient-colors/">Videotutorial: Ambient Colors</a></li>
+<li class="page_item page-item-716"><a href="/tutorial-level-template/">Videotutorial: Level Template Creation</a></li>
+<li class="page_item page-item-726"><a href="/tutorial-library-linking/">Videotutorial: Library Linking</a></li>
+<li class="page_item page-item-764"><a href="/tutorial-multicolor-mist/">Videotutorial: MultiColor Mist Effect</a></li>
+<li class="page_item page-item-766"><a href="/tutorial-animated-normal-maps/">Videotutorial: RealTime Water (animated Normal Maps)</a></li>
+<li class="page_item page-item-762"><a href="/tutorial-simulating-ao-with-vertex-colors/">Videotutorial: Simulating AO with Vertex Colors</a></li>
+<li class="page_item page-item-731"><a href="/tutorial-texture-splatting/">Videotutorial: Texture Splatting in Real Time</a></li>
+	
+                </ul>
+-->	
+	
+	</div>
+</div>
+	
+<div id="wrapper2">
+	
+	<div id="wrapper">
+	
+		<div id="content-wrapper">
+		
+			<div id="content">
+			
+			
+			
+				
+			
+		
+				<div class="post-wrapper">
+
+			<h3 class="post-title-inside"><a href="/about-apricot/" rel="bookmark" title="Permanent Link to About">About</a></h3>
+
+
+			<div class="post">
+
+			<h1>Project Apricot</h1>
+<p><img loading="lazy" src="/wp-content/uploads/2007/12/apricots.jpg" border="15" alt="" hspace="5" vspace="5" width="250" height="188" align="right"><br>
+After Orange and Peach, Blender Institute continued with a new open project: Apricot. This time it wasn’t a movie but a 3D game! Starting february 1st 2008,  a small team of again the best 3D artist and developers worked on a game jointly with the on-line community. The main character in the game has been based on the short 3D animation open movie Peach. The project ended in august, and in october 2008 the DVD and game was released.</p>
+<p align="left">
+</p>
+<h1>The Game</h1>
+<p>The original project goal was to work on a cross platform game (at least Linux, Windows, OS X), using Blender for modeling and animation, Crystal Space as 3D engine and delivery platform, and Python for some magic scripting to glue things together. The purpose was to not only make a compelling 3D game experience, but especially to improve and validate the open source 3D game creation pipeline, with industry-standard conditions.</p>
+<p>Halfway during the project, we noticed the great advances made in Blender&#8217;s internal Game Engine, so we&#8217;ve added delivering the project entirely in Blender as a target for Apricot as well.</p>
+<h1>Targets</h1>
+<p>&#8211; Validation: create full functional game prototype, industry quality</p>
+<p>&#8211; Crystal Space development: HDR lighting, game logic, character animation</p>
+<p>&#8211; Blender development: animation prototyping, pipeline improvements, GLSL (node) shading editor, improvements in logic editing (states), general Blender GE improvements.</p>
+<p>&#8211; Realize in Open Source (GPL/LGPL), deliver in Open Content (Creative Commons)</p>
+<p>&#8211; Education: Training/workshops, presentations, documentation, DVD</p>
+<h1>How</h1>
+<p>The Blender Foundation and Crystal Space community will be the main financiers for Apricot. Additional support will be by Grupo Ikusnet and the Dutch Game Days Foundation.  As for the previous open movies, a pre-sale campaign to purchase the DVD has been organized by the Blender Foundation as well as by Crystal Space.</p>
+<h1>Sponsors or Partners</h1>
+<p>Sponsors who have helped realizing Apricot:</p>
+<ul>
+<li>Project Partner: <a title="website Grupo Ikusnet" href="http://www.grupoikusnet.com/" target="_blank">Grupo Ikusnet </a>
+</li>
+<li>Project Partner: <a title="website NLGD" href="http://www.nlgd.nl/" target="_blank">Dutch Game Days Foundation</a>
+</li>
+<li>Sponsor: <a href="http://www.amsterdamsfondsvoordekunst.nl/">Amsterdams Fonds voor de Kunst</a>
+</li>
+<li>Music composition and sound design: <a href="http://fitchsounds.com/">Claire Fitch</a>
+</li>
+<li>Hardware: <a href="http://www.maqina.nl/">Maqina Computersystems</a>
+</li>
+<li>Sponsor:<a href="http://www.paravizion.com/">Paravizion</a><br class="webkit-block-placeholder">
+</li>
+<li>Sponsor: <a href="http://www.redfish.com/">Redfish</a>
+</li>
+<li>Sponsor: <a href="http://nyquist.net/">Nyquist Art + Logic</a>
+</li>
+<li>Sponsor: <a href="http://www.tarent.com/">tarent</a>
+</li>
+<li>External consultant gamedesign: <a href="http://www.wouterbaars.net/">Wouter Baars</a>
+</li>
+</ul>
+<h1>Donations</h1>
+<p>Blender Foundation donations are still welcome for future projects. Click on the button below, or use foundation(at)blender.org to do the payment to</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post"> <input name="cmd" type="hidden" value="_xclick"> <input name="business" type="hidden" value="foundation@blender.org"> <input name="item_name" type="hidden" value="Blender Foundation, Apricot project"> <input name="item_number" type="hidden" value="001"> <input name="lc" type="hidden" value="US"> <span style="font-family: Verdana,Arial,Helvetica,sans-serif;"><input alt="Make payments with PayPal - it's fast, free and secure!" name="submit" src="https://www.paypal.com/images/x-click-but04.gif" type="image">
+<p class="csc-header csc-header-n5">
+</p>
+<h1>Creative Commons</h1>
+<p><a href="http://creativecommons.org/"><img src="//orange.blender.org/wp-content/themes/orange/images/blog/logo_trademark.gif" border="0" alt="" hspace="5" vspace="5" align="right"></a>The Apricot open game project, the data we&#8217;ve published online and on the DVDs, and all of the contents on this website has been licensed under the <a title="cc license 3.0" href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution </a><a title="cc license 3.0" href="http://creativecommons.org/licenses/by/3.0/" target="_blank">license</a> 3.0. If any content on this site is not licensed as such, it will be clearly indicated. In short, this means you can freely reuse and distribute this content, also commercially, for as long you provide a proper attribution.The attribution is:<strong>(c) copyright Blender Foundation | apricot.blender.org</strong>. Excluded from the Creative Commons is: all logos on this website (including Blender logo, Apricot logo, Yo Frankie! logo, Creative Commons logo) and associated trademarks.</p>
+<h1>Website credits</h1>
+<p>This WordPress blog has been based on a CC licensed theme<a href="http://www.linkwith.us/"></a>.  <a href="http://www.askgraphics.com/"> </a></p>
+<p></p></span>
+</form>
+
+			</div>
+			
+			
+			</div>
+
+
+			
+			   <p class="pagination"> </p>
+
+						
+			
+	
+			</div>
+		
+		</div>
+		   <div id="sidebar-wrapper">
+            
+                <div id="sidebar">
+
+		<div class="sideblock">
+		<h3>Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="/yofrankie-11/">YoFrankie 1.1</a>
+									</li>
+											<li>
+					<a href="/yo-frankie-new-bge-video/">Yo Frankie! New BGE Video</a>
+									</li>
+											<li>
+					<a href="/competition-winners-announced/">Competition Winners Announced</a>
+									</li>
+											<li>
+					<a href="/competition-deadline-checklist/">Competition Deadline, Checklist</a>
+									</li>
+											<li>
+					<a href="/yo-frankie-level-competition-blender-game-engine/">Yo Frankie Level Competition (Blender Game Engine)</a>
+									</li>
+											<li>
+					<a href="/yo-frankie-online-release/">Yo Frankie! Online Release!</a>
+									</li>
+											<li>
+					<a href="/blender-gamekit-almost-done/">Blender Gamekit almost done!</a>
+									</li>
+											<li>
+					<a href="/dvds-arrived/">DVDs arrived!</a>
+									</li>
+											<li>
+					<a href="/dvd-goldmaster-ready/">DVD goldmaster ready</a>
+									</li>
+											<li>
+					<a href="/yofrankie-bge-gameplay-update/">YoFrankie BGE Gameplay Update</a>
+									</li>
+					</ul>
+
+		</div>
+<div class="sideblock">
+<h3>Categories</h3>
+			<ul>
+					<li class="cat-item cat-item-5">
+<a href="/category/apricot-press/">Apricot Press</a> (19)
+</li>
+	<li class="cat-item cat-item-3">
+<a href="/category/blender-institute/">Blender Institute</a> (19)
+</li>
+	<li class="cat-item cat-item-2">
+<a href="/category/blogroll/">Blogroll</a> (10)
+</li>
+	<li class="cat-item cat-item-17">
+<a href="/category/crystal-space/">Crystal Space</a> (13)
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/development/">Development</a> (26)
+</li>
+	<li class="cat-item cat-item-78">
+<a href="/category/dvd-content/">DVD Content</a> (6)
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/media-gallery/">Media Gallery</a> (8)
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/production/">Production</a> (23)
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/random-fluff/">Random Fluff</a> (11)
+</li>
+	<li class="cat-item cat-item-34">
+<a href="/category/screenshots/">Screenshots</a> (8)
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a> (16)
+</li>
+			</ul>
+
+			</div>
+<div class="sideblock">
+<h3>Archives</h3>		<label class="screen-reader-text" for="archives-dropdown-2">Archives</label>
+		<select id="archives-dropdown-2" name="archive-dropdown">
+			
+			<option value="">Select Month</option>
+				<option value="/2009/07/"> July 2009 &nbsp;(1)</option>
+	<option value="/2009/05/"> May 2009 &nbsp;(1)</option>
+	<option value="/2009/03/"> March 2009 &nbsp;(1)</option>
+	<option value="/2009/02/"> February 2009 &nbsp;(1)</option>
+	<option value="/2009/01/"> January 2009 &nbsp;(1)</option>
+	<option value="/2008/12/"> December 2008 &nbsp;(1)</option>
+	<option value="/2008/11/"> November 2008 &nbsp;(2)</option>
+	<option value="/2008/10/"> October 2008 &nbsp;(2)</option>
+	<option value="/2008/09/"> September 2008 &nbsp;(4)</option>
+	<option value="/2008/08/"> August 2008 &nbsp;(5)</option>
+	<option value="/2008/07/"> July 2008 &nbsp;(14)</option>
+	<option value="/2008/06/"> June 2008 &nbsp;(9)</option>
+	<option value="/2008/05/"> May 2008 &nbsp;(5)</option>
+	<option value="/2008/04/"> April 2008 &nbsp;(10)</option>
+	<option value="/2008/03/"> March 2008 &nbsp;(8)</option>
+	<option value="/2008/02/"> February 2008 &nbsp;(9)</option>
+	<option value="/2008/01/"> January 2008 &nbsp;(1)</option>
+	<option value="/2007/12/"> December 2007 &nbsp;(2)</option>
+
+		</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "archives-dropdown-2" );
+	function onSelectChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value !== '' ) {
+			document.location.href = this.options[ this.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onSelectChange;
+})();
+/* ]]> */
+</script>
+			</div>                
+                </div>
+            
+            </div>
+        
+        </div>    
+										 <div id="footer">
+</div>
+</div>         
+	
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"d5f49e4e21684977a6be2ac49670f7b1","spa":2}' crossorigin="anonymous"></script>
+</body>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Object Caching 87/91 objects using apc
+Page Caching using apc 
+Database Caching using apc
+
+Served from: apricot.blender.org @ 2021-03-24 15:17:59 by W3 Total Cache
+-->
+</html>

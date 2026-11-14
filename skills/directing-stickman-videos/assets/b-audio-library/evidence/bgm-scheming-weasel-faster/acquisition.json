@@ -1,0 +1,21 @@
+{
+  "id": "bgm-scheming-weasel-faster",
+  "title": "Scheming Weasel (faster version)",
+  "author": "Kevin MacLeod",
+  "isrc": "USUAN1100085",
+  "source_page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100085",
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Scheming%20Weasel%20faster.mp3",
+  "original_filename": "Scheming Weasel faster.mp3",
+  "official_metadata": {
+    "length": "00:01:29",
+    "bpm": "168",
+    "instruments": "English Horn, Bassoons, Bass, Glockenspiel, Clarinet, Celesta, Triangle, Bass Clarinet",
+    "feel": "Dark, Humorous, Eerie, Bouncy",
+    "uploaded": "2006-01-01"
+  },
+  "required_attribution": "\"Scheming Weasel (faster version)\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/",
+  "changes": "none; original MP3 redistributed unchanged",
+  "audio_sha256": "f2f20d0737560a2dec0d82119810757326b1eec7eae211f2d3e056e9754834a9",
+  "source_mapping": "Official individual page template selects the ISRC record in official pieces.json and renders CC BY 4.0 attribution plus a download URL from that record's filename.",
+  "verified_at": "2026-11-14"
+}

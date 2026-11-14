@@ -1,0 +1,13 @@
+{
+  "id": "kenney-digital",
+  "title": "Digital Audio",
+  "author": "Kenney",
+  "source_url": "https://kenney.nl/assets/digital-audio",
+  "download_url": "https://kenney.nl/download-link/6173736574732f6469676974616c2d617564696f",
+  "license_spdx": "CC0-1.0",
+  "verified_at": "2026-11-14",
+  "archive_sha256": "24e6ce28b76a6d8c89cff4d331e0965ff5c3de8a73c612028e9d363cc64e4f06",
+  "archive_bytes": 990367,
+  "source_page_sha256": "efa6a6f6a67b26a5204c570d36ad52afc350e85c91e46d576e3e7ae6fb5c5f32",
+  "note": "Use the official source page or download-resolution endpoint; expiring signed URLs are kept only in local acquisition records. Original audio unchanged."
+}

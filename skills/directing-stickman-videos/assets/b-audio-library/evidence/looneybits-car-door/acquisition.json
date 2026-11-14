@@ -1,0 +1,31 @@
+{
+  "id": "looneybits-car-door",
+  "title": "Car_door_SFX",
+  "author": "looneybits",
+  "source_url": "https://opengameart.org/content/cardoorsfx",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:38.366123+00:00",
+  "description": "Car_door_SFX sound effect meant to be used in your motor games. Site | YouTube | itch.io | Twitter If that was useful for you, please consider a donation",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/door_closing.wav",
+      "filename": "door_closing.wav",
+      "sha256": "0f5a47631d8705c583999998f75f4384d555fef3089a4ad61e0484800089576c",
+      "bytes": 126088
+    },
+    {
+      "url": "https://opengameart.org/sites/default/files/door_opening.wav",
+      "filename": "door_opening.wav",
+      "sha256": "3f8f458e388ca1e3f8ebc2e3b144655e4d53b377951556e12c9796dd2b6f029d",
+      "bytes": 174544
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/door_closing.wav",
+  "source_page_sha256": "1b61ba092ff7ed3060d1cd3d5141b77b21132ba77d06543c51855f0e1ee70472"
+}

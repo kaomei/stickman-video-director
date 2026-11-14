@@ -1,0 +1,13 @@
+{
+  "id": "kenney-jingles",
+  "title": "Music Jingles",
+  "author": "Kenney",
+  "source_url": "https://kenney.nl/assets/music-jingles",
+  "download_url": "https://kenney.nl/download-link/6173736574732f6d757369632d6a696e676c6573",
+  "license_spdx": "CC0-1.0",
+  "verified_at": "2026-11-14",
+  "archive_sha256": "b729ba57959bd58793d2c5cafa348aaf2655d354f3da35ec4729e03ec77197b8",
+  "archive_bytes": 1239525,
+  "source_page_sha256": "135a98945db96d547ecbf3925a1f3e26078db6947047277177e13f561bf77a70",
+  "note": "Use the official source page or download-resolution endpoint; expiring signed URLs are kept only in local acquisition records. Original audio unchanged."
+}

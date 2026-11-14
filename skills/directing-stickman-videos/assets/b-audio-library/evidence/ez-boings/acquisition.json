@@ -1,0 +1,37 @@
+{
+  "id": "ez-boings",
+  "title": "Boings",
+  "author": "EZduzziteh",
+  "source_url": "https://opengameart.org/content/boings",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:34.042047+00:00",
+  "description": "Some boing sfx for a game im working on Made for my game about squishing bugs: https://ezduzziteh.itch.io/bugsplat",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/bung_01.mp3",
+      "filename": "bung_01.mp3",
+      "sha256": "a2ed9251698dfa9d7ec9952117095da7c0bfd13b3b0ef456382581f711b2ee7f",
+      "bytes": 7224
+    },
+    {
+      "url": "https://opengameart.org/sites/default/files/bing_02.mp3",
+      "filename": "bing_02.mp3",
+      "sha256": "f2e0ddaa3bb8bca1674bcd4e48497ce271cf1eaa1c104f227c075dfb852b8fc4",
+      "bytes": 5685
+    },
+    {
+      "url": "https://opengameart.org/sites/default/files/bing_01_0.mp3",
+      "filename": "bing_01_0.mp3",
+      "sha256": "c09d39344940ff552c87f95b712313536be922c6d4c1ac8abb6ecf3ad049caff",
+      "bytes": 6076
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/bung_01.mp3",
+  "source_page_sha256": "660dfaf43d12b040136f1cf749b9b42e8adcbbf493789c11fd1e8e9dc50851ce"
+}

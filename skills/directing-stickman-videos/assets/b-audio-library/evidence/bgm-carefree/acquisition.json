@@ -1,0 +1,21 @@
+{
+  "id": "bgm-carefree",
+  "title": "Carefree",
+  "author": "Kevin MacLeod",
+  "isrc": "USUAN1400037",
+  "source_page": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037",
+  "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Carefree.mp3",
+  "original_filename": "Carefree.mp3",
+  "official_metadata": {
+    "length": "00:03:25",
+    "bpm": "96",
+    "instruments": "Ukulele, Guitar, Marimba, Glockenspiel, Percussion",
+    "feel": "Bouncy, Bright, Calming, Uplifting",
+    "uploaded": "2014-08-16"
+  },
+  "required_attribution": "\"Carefree\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/",
+  "changes": "none; original MP3 redistributed unchanged",
+  "audio_sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311",
+  "source_mapping": "Official individual page template selects the ISRC record in official pieces.json and renders CC BY 4.0 attribution plus a download URL from that record's filename.",
+  "verified_at": "2026-11-14"
+}

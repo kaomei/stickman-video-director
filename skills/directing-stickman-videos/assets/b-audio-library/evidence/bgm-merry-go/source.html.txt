@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>incompetech Music</title>
+  <meta name="description" content="Custom graph paper generators and royalty-free music.">
+  <link rel="icon" href="/images/zicon.ico" type="image/x-icon">
+  <link rel="describedby" href="/llms.txt">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&family=Droid+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- New CSS -->
+  <link rel="stylesheet" href="/2025css/base.css">
+  <link rel="stylesheet" href="/2025css/layout.css">
+  <link rel="stylesheet" href="/2025css/components.css">
+  <link rel="stylesheet" href="/2025css/graphpaper.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+<a href="/" class="logo" aria-label="Incompetech">
+  <span class="logo-word">INC</span>
+  <span class="play-badge" aria-hidden="true">
+    <!-- Square badge; large centered triangle -->
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+  <!-- smaller badge -->
+  <rect x="18" y="18" width="64" height="64" rx="10" class="badge-rect"/>
+  <!-- same triangle size -->
+  <polygon points="34,24 34,76 78,50" class="badge-play"/>
+</svg>
+  </span>
+  <span class="logo-word">MPETECH</span>
+</a>
+
+    <!-- Main nav: keeps your existing UL structure -->
+    <nav class="main-nav">
+      <ul id="menu-main-menu" class="menu">
+        <li><a href="/music/royalty-free/music.html">Royalty-Free Music</a></li>
+        <li><a href="/music/royalty-free/faq.html">Music FAQ</a></li>
+        <li><a href="/music/royalty-free/licenses/">Music Licenses</a></li>
+        <li><a href="/graphpaper/">Graph Paper</a></li>
+        <li><a href="/calendars/">Calendars</a></li>
+        <li><a href="/gallimaufry/">and More</a></li>
+        <li><a href="/email.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Dark-mode toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </div>
+</header>
+<main class="site-content container">
+
+
+
+
+    <style>
+        /* Copied styles from music.html for consistent look */
+/*
+        :root {
+            --surface: #f9f9f9;
+            --text: #222;
+            --border: #ccc;
+            --accent: #1565c0;
+        }
+*/
+
+
+        body { 
+            font-family: system-ui, sans-serif; 
+            margin: 0; 
+            padding: 1em 1em 90px; 
+            background-color: var(--surface);
+            color: var(--text);
+        }
+        .dim { opacity: 0.5; } 
+        
+        /* Styles for the single track container */
+        #track-container {
+            max-width: 900px;
+            margin: 1em auto;
+            border: 1px solid var(--border, #ccc);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.08);
+            background-color: var(--surface);
+        }
+        
+        #track-container h1 {
+            margin: 0;
+            padding: 0;
+        }
+        /* Re-using button styles from original */
+        button {
+            padding: .6em 1.2em;
+            font-size: 1em;
+            border: 1px solid var(--border, #ccc);
+            border-radius: 999px;
+            cursor: pointer;
+            background: inherit;
+            color: inherit;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        
+        button:hover {
+            background-color: #eee;
+        }
+        
+        /* Specific styles for listen/download buttons */
+        .js-listen, .js-download, .js-video, .js-itunes {
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 0.5em;
+            border-radius: 6px;
+        }
+        
+        .js-listen:hover {
+            background-color: var(--accent, #1565c0);
+            color: #fff;
+            border-color: var(--accent, #1565c0);
+        }
+        .js-download:hover {
+            background-color: #444;
+            color: #fff;
+            border-color: #444;
+        }
+        .js-video:hover, .js-itunes:hover {
+            background-color: #f0f0f0;
+        }
+        /* Mini-player styles */
+        #mini-player {
+            position: fixed;
+            inset: auto 16px 16px auto;
+            z-index: 1000;
+            width: 320px;
+            max-width: 92vw;
+            background: var(--surface, #f9f9f9);
+            color: var(--text, #222);
+            border: 1px solid var(--border, #ccc);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 10px;
+        }
+        
+        #mini-player-play {
+            min-width: 2.25rem;
+            height: 2.25rem;
+            border: 1px solid var(--border, #ccc);
+            border-radius: 999px;
+            background: transparent;
+            cursor: pointer;
+        }
+        
+        #mini-player-seek {
+            flex: 1;
+            accent-color: var(--accent, #1565c0);
+        }
+        
+        #mini-player-volume {
+            width: 80px;
+            accent-color: var(--accent, #1565c0);
+            cursor: pointer;
+        }
+    </style>
+
+
+
+
+
+
+    <h1>Music Track Details</h1>
+
+    <!-- This div will be populated by JavaScript -->
+    <div id="track-container">
+        <div style="padding: 2em; text-align: center;" class="dim">Loading track...</div>
+    </div>
+
+    <!-- Floating mini-player (UI shell only) -->
+    <div id="mini-player" style="display:none;"> <!-- Start hidden -->
+        <audio id="mini-audio" preload="none" style="display:none;"></audio>
+        <!-- drag handle / header -->
+        <div id="mini-player-handle" style="display:flex; align-items:center; gap:8px; cursor:grab; user-select:none;">
+            <div aria-hidden="true" style="font-size:18px; line-height:1;">⋮⋮</div>
+            <div id="mini-player-title" style="flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                <span class="dim">No Track selected</span>
+            </div>
+            <input type="range" id="mini-player-volume" min="0" max="1" step="0.01" value="1" title="Volume" style="width:80px; accent-color:var(--accent,#1565c0); cursor:pointer;">
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+            <button type="button" id="mini-player-play">►</button>
+            <input id="mini-player-seek" type="range" min="0" value="0" step="0.01">
+            <div id="mini-player-time" style="font-size:.85em; opacity:.8; white-space:nowrap;">0:00 / 0:00</div>
+        </div>
+    </div>
+
+    <script>
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>'"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", "\"": "&quot;" }[c]));
+        }
+
+        // ======= STATIC LOOKUPS (from music.html) =======
+        const genres = [
+            { "id": 2, "genre": "African" }, { "id": 3, "genre": "Blues" }, { "id": 4, "genre": "Classical" },
+            { "id": 5, "genre": "Contemporary" }, { "id": 6, "genre": "Disco" }, { "id": 7, "genre": "Electronica" },
+            { "id": 8, "genre": "Funk" }, { "id": 9, "genre": "Holiday" }, { "id": 10, "genre": "Horror" },
+            { "id": 11, "genre": "Jazz" }, { "id": 12, "genre": "Latin" }, { "id": 13, "genre": "Modern" },
+            { "id": 14, "genre": "Musical" }, { "id": 15, "genre": "Polka" }, { "id": 16, "genre": "Pop" },
+            { "id": 18, "genre": "Reggae" }, { "id": 19, "genre": "Rock" }, { "id": 20, "genre": "Silent Film Score" },
+            { "id": 21, "genre": "Ska" }, { "id": 22, "genre": "Soundtrack" }, { "id": 23, "genre": "Stings" },
+            { "id": 24, "genre": "Unclassifiable" }, { "id": 25, "genre": "World" }, { "id": 26, "genre": "Urban" }
+        ];
+        const collections = [
+            {"id":"1","collection_name":"Hard Electronic","collection_category":"Electronic and Rock","code":"12"},
+            {"id":"2","collection_name":"Medium Electronic","collection_category":"Electronic and Rock","code":"18"},
+            {"id":"3","collection_name":"Video Classica","collection_category":"Electronic and Rock","code":"29"},
+            {"id":"4","collection_name":"Disco and Lounge","collection_category":"Electronic and Rock","code":"7"},
+            {"id":"5","collection_name":"Rock Classic","collection_category":"Electronic and Rock","code":"24"},
+            {"id":"6","collection_name":"Rock Medium","collection_category":"Electronic and Rock","code":"25"},
+            {"id":"7","collection_name":"Rock Harder","collection_category":"Electronic and Rock","code":"26"},
+            {"id":"8","collection_name":"Funk and Blues","collection_category":"Electronic and Rock","code":"11"},
+            {"id":"9","collection_name":"African","collection_category":"World","code":"1"},
+            {"id":"10","collection_name":"Middle East Inspired","collection_category":"World","code":"46"},
+            {"id":"11","collection_name":"Reggae and Ska","collection_category":"World","code":"23"},
+            {"id":"12","collection_name":"Polka","collection_category":"World","code":"22"},
+            {"id":"14","collection_name":"Native American","collection_category":"World","code":"19"},
+            {"id":"15","collection_name":"Latin Sounds","collection_category":"World","code":"15"},
+            {"id":"16","collection_name":"Jazz","collection_category":"Everything Else","code":"14"},
+            {"id":"17","collection_name":"Far East Inspired","collection_category":"World","code":"10"},
+            {"id":"18","collection_name":"Silent Film - Bright","collection_category":"Film Scoring Moods","code":"31"},
+            {"id":"19","collection_name":"Silent Film - Dark","collection_category":"Film Scoring Moods","code":"32"},
+            {"id":"20","collection_name":"Action","collection_category":"Film Scoring Moods","code":"33"},
+            {"id":"21","collection_name":"Comedic","collection_category":"Film Scoring Moods","code":"34"},
+            {"id":"22","collection_name":"Darkness and Unease","collection_category":"Film Scoring Moods","code":"35"},
+            {"id":"23","collection_name":"Gloom and Sadness","collection_category":"Film Scoring Moods","code":"36"},
+            {"id":"24","collection_name":"Horror Soundscapes","collection_category":"Film Scoring Moods","code":"37"},
+            {"id":"25","collection_name":"Horror Themes","collection_category":"Film Scoring Moods","code":"38"},
+            {"id":"26","collection_name":"Misc","collection_category":"Film Scoring Moods","code":"39"},
+            {"id":"27","collection_name":"Mystery","collection_category":"Film Scoring Moods","code":"40"},
+            {"id":"28","collection_name":"Noire","collection_category":"Film Scoring Moods","code":"41"},
+            {"id":"29","collection_name":"Transitions","collection_category":"Film Scoring Moods","code":"42"},
+            {"id":"30","collection_name":"Aspiring","collection_category":"Film Scoring Moods","code":"43"},
+            {"id":"31","collection_name":"Tension","collection_category":"Film Scoring Moods","code":"44"},
+            {"id":"32","collection_name":"Wonder","collection_category":"Film Scoring Moods","code":"45"},
+            {"id":"33","collection_name":"Bright Piano","collection_category":"Lighter Faire","code":"2"},
+            {"id":"37","collection_name":"Light","collection_category":"Lighter Faire","code":"17"},
+            {"id":"38","collection_name":"Elegant Piano","collection_category":"Lighter Faire","code":"16"},
+            {"id":"39","collection_name":"Heartfelt Melodies","collection_category":"Lighter Faire","code":"13"},
+            {"id":"40","collection_name":"Thoughtful","collection_category":"Lighter Faire","code":"20"},
+            {"id":"41","collection_name":"Serenity","collection_category":"Lighter Faire","code":"27"},
+            {"id":"42","collection_name":"Touching Moments","collection_category":"Lighter Faire","code":"28"},
+            {"id":"43","collection_name":"Christmas","collection_category":"Everything Else","code":"4"},
+            {"id":"44","collection_name":"Danse Macabre","collection_category":"Everything Else","code":"5"},
+            {"id":"45","collection_name":"Dark World","collection_category":"Everything Else","code":"6"},
+            {"id":"46","collection_name":"Famous Classics","collection_category":"Everything Else","code":"8"},
+            {"id":"47","collection_name":"Mad Pianist","collection_category":"Everything Else","code":"9"},
+            {"id":"48","collection_name":"Oddities","collection_category":"Everything Else","code":"21"},
+            {"id":"49","collection_name":"Wonders of Other Worlds","collection_category":"Everything Else","code":"30"},
+            {"id":"52","collection_name":"Western European","collection_category":"World","code":"50"},
+            {"id":"54","collection_name":"Polynesian","collection_category":"World","code":"47"},
+            {"id":"999","collection_name":"not in a collection","collection_category":"not in a collection","code":"999"}
+        ];
+
+        // ======= HELPER FUNCTIONS (from music.html) =======
+        function getGenreName(id) {
+            const g = genres.find(x => String(x.id) === String(id));
+            return g ? g.genre : 'unknown';
+        }
+
+        function getCollectionName(code) {
+            const c = collections.find(x => String(x.code) === String(code));
+            return c ? `${c.collection_name} (${c.collection_category})` : 'unknown';
+        }
+
+        function formatLength(str) {
+            if (!str) return '';
+            const parts = str.split(':').map(x => parseInt(x, 10) || 0);
+            // parts is [hours, minutes, seconds]
+            const [h, m, s] = parts;
+            if (h > 0) {
+                // show h:mm:ss
+                return `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            }
+            // show m:ss (even if minutes = 0)
+            return `${m}:${s.toString().padStart(2, '0')}`;
+        }
+        
+        function formatDescription(desc) {
+            if (!desc) return '';
+            return escapeHtml(desc).replace(/\r\n/g, '<br>');
+        }
+
+        // ======= PAGE LOGIC =======
+        document.addEventListener('DOMContentLoaded', () => {
+            const trackContainer = document.getElementById('track-container');
+
+            // 1. Get ISRC from URL
+            const params = new URLSearchParams(window.location.search);
+            const isrcToFind = params.get('isrc');
+
+            if (!isrcToFind) {
+                trackContainer.innerHTML = `<div style="padding: 2em; text-align: center;">Could not find the track. 
+			No ISRC provided. <br><br>Please add <b>?isrc=USUAN2300004</b> to the end of the URL to see an example.</div>`;
+                return;
+            }
+
+            // 2. Load data
+            fetch('pieces.json')
+                .then(r => r.json())
+                .then(allPieces => {
+                    // 3. Find the track
+                    const p = allPieces.find(track => track.isrc === isrcToFind);
+
+                    // 4. Render the track or a "not found" message
+                    if (p) {
+                        renderTrack(p);
+                    } else {
+                        trackContainer.innerHTML = `<div style="padding: 2em; text-align: center;">Could not find the track. Track with ISRC '<b>${escapeHtml(isrcToFind)}</b>' not found.</div>`;
+                    }
+                })
+                .catch(e => {
+                    console.error("Error loading pieces.json:", e);
+                    trackContainer.innerHTML = `<div style="padding: 2em; text-align: center;">Could not load music data file.</div>`;
+                });
+
+            // 5. Render function
+            function renderTrack(p) {
+                const mp3Url = `/music/royalty-free/mp3-royaltyfree/${encodeURIComponent(p.filename)}`;
+                let html = '';
+
+                // --- Build Button HTML ---
+                let buttonsHtml = `<div> <button type="button" class="js-listen" data-url="${mp3Url}" data-title="${escapeHtml(p.title || '')}">► Listen Now</button></div>`;
+                buttonsHtml += `<div> <button type="button" class="js-download" data-url="${mp3Url}">⬇ Download</button></div>`;
+                
+                if (p.video) {
+                    buttonsHtml += `<div><button type="button" class="js-video" data-url="${escapeHtml(encodeURI(p.video))}">⧉ YouTube Video</button></div>`;
+                }
+                if (p.itunes) {
+                    buttonsHtml += `<div><button type="button" class="js-itunes" data-url="${escapeHtml(encodeURI(p.itunes))}">⧉ iTunes Track</button></div>`;
+                }
+
+                // --- Build Main Track HTML ---
+                html = `
+                    <div style="border:1px solid var(--border, #ccc); border-radius: 8px; overflow: hidden;">
+                        <div style="padding: 12px 16px; background-color: color-mix(in srgb, currentColor 5%, transparent); border-bottom: 1px solid var(--border, #ccc);">
+                             <h1 style="font-size: 1.5em; margin: 0;">${escapeHtml(p.title || '(untitled)')}</h1>
+                        </div>
+                        <div style="padding:16px;">
+                            <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:flex-start;">
+                                <!-- Column A (~67%): description + instruments + license -->
+                                <div style="flex:2 1 420px; min-width:260px;">
+                                    <div style="font-size: 1.1em; line-height: 1.5;">${formatDescription(p.description) || '<span class="dim">No description available.</span>'}</div>
+                                    <div style="margin-top: 1em;"><b>Instruments:</b> ${escapeHtml(p.instruments) || 'n/a'}</div>
+                                    <div style="opacity:.6; font-size:.85em; line-height:1.3; margin-top:1em; padding: .5em; background-color: color-mix(in srgb, currentColor 5%, transparent); border-radius: 4px;">
+                                        <b>Attribution Code</b><br>
+                                        <tt>
+                                            "${escapeHtml(p.title || '')}" Kevin MacLeod (incompetech.com)<br>
+                                            Licensed under Creative Commons: By Attribution 4.0 License<br>
+                                            http://creativecommons.org/licenses/by/4.0/
+                                        </tt>
+                                    </div>
+                                </div>
+                                <!-- Column B (~33%): actions + stats -->
+                                <div style="flex:1 1 280px; min-width:220px;">
+                                    ${buttonsHtml}
+                                    <hr style="margin:12px 0; border:none; border-top:1px solid rgba(0,0,0,.15);">
+                                    <div><b>Genre:</b> ${getGenreName(p.genre)}</div>
+                                    <div><b>Album:</b> ${getCollectionName(p.collection)}</div>
+                                    <div><b>Length:</b> ${formatLength(p.length)}</div>
+                                    <div style="margin-top: 0.5em;"><b>Feel:</b> ${escapeHtml(p.feel) || 'n/a'}</div>
+                                    <div><b>Tempo:</b> ${escapeHtml(p.bpm) || 'n/a'} bpm</div>
+                                    <div style="opacity:.7; margin-top: 0.5em;"><b>ISRC:</b> ${escapeHtml(p.isrc) || 'n/a'}</div>
+                                    <div style="opacity:.7;"><b>Uploaded:</b> ${escapeHtml(p.uploaded) || 'n/a'}</div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>`;
+                
+                trackContainer.innerHTML = html;
+
+                // 6. Add event listeners for the new buttons
+                trackContainer.addEventListener('click', (e) => {
+                    const btn = e.target.closest('button');
+                    if (!btn) return;
+                    
+                    const url = btn.dataset.url;
+                    if (!url) return;
+
+                    if (btn.classList.contains('js-listen')) {
+                        const title = btn.dataset.title || 'Untitled';
+                        if (window.listenNow) {
+                            window.listenNow(url, title);
+                        } else {
+                            console.error('Mini-player not found.');
+                        }
+                        return;
+                    }
+
+                    if (btn.classList.contains('js-download')) {
+                        // Create a temporary link to trigger the download
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = url.split('/').pop(); // Suggests a filename
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        return;
+                    }
+
+                    if (btn.classList.contains('js-video') || btn.classList.contains('js-itunes')) {
+                        window.open(url, '_blank');
+                        return;
+                    }
+                });
+            }
+        });
+
+        // ======= MINI PLAYER SCRIPT (from music.html) =======
+        (() => {
+            const box = document.getElementById('mini-player');
+            const handle = document.getElementById('mini-player-handle');
+            const title = document.getElementById('mini-player-title');
+            const play = document.getElementById('mini-player-play');
+            const seek = document.getElementById('mini-player-seek');
+            const timeEl = document.getElementById('mini-player-time');
+            const audio = document.getElementById('mini-audio');
+            const volume = document.getElementById('mini-player-volume');
+
+            if (!box || !handle || !title || !play || !seek || !timeEl || !audio || !volume) {
+                console.error("Mini-player DOM elements not found.");
+                return;
+            }
+
+            volume.addEventListener('input', () => { audio.volume = volume.value; });
+
+            play.addEventListener('click', () => {
+                if (!audio.src) return;
+                if (audio.paused) audio.play();
+                else audio.pause();
+            });
+
+            seek.addEventListener('input', () => {
+                if (isFinite(audio.duration)) audio.currentTime = +seek.value;
+            });
+
+            audio.addEventListener('timeupdate', () => {
+                if (isFinite(audio.duration)) {
+                    seek.max = audio.duration;
+                    seek.value = audio.currentTime;
+                    timeEl.textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`;
+                }
+            });
+            audio.addEventListener('play', () => { play.textContent = '❚❚'; });
+            audio.addEventListener('pause', () => { play.textContent = '►'; });
+            audio.addEventListener('ended', () => { play.textContent = '►'; });
+
+            window.listenNow = (url, trackTitle) => {
+                box.style.display = 'flex'; // Show the player
+                title.textContent = trackTitle || 'Untitled';
+                if (audio.src !== url) {
+                    audio.src = url;
+                }
+                audio.play().catch((e) => { console.warn("Autoplay blocked, user must interact.", e); });
+            };
+
+            function fmt(s) {
+                if (!isFinite(s)) return '0:00';
+                const m = Math.floor(s / 60), ss = Math.floor(s % 60);
+                return `${m}:${String(ss).padStart(2, '0')}`;
+            }
+
+            // --- Dragging Logic ---
+            let dragging = false, startX = 0, startY = 0, startLeft = 0, startTop = 0;
+            
+            function onPointerDown(e) {
+                const rect = box.getBoundingClientRect();
+                dragging = true;
+                box.style.cursor = 'grabbing';
+                handle.style.cursor = 'grabbing';
+                startX = e.clientX;
+                startY = e.clientY;
+                startLeft = rect.left;
+                startTop = rect.top;
+                window.addEventListener('pointermove', onPointerMove, { passive: true });
+                window.addEventListener('pointerup', onPointerUp, { once: true });
+            }
+
+            function onPointerMove(e) {
+                if (!dragging) return;
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+                const vw = window.innerWidth;
+                const vh = window.innerHeight;
+                const rect = box.getBoundingClientRect();
+                let left = startLeft + dx;
+                let top = startTop + dy;
+                const margin = 8;
+                left = Math.max(margin, Math.min(left, vw - rect.width - margin));
+                top = Math.max(margin, Math.min(top, vh - rect.height - margin));
+                box.style.left = left + 'px';
+                box.style.top = top + 'px';
+                box.style.right = 'auto';
+                box.style.bottom = 'auto';
+            }
+
+            function onPointerUp() {
+                dragging = false;
+                box.style.cursor = '';
+                handle.style.cursor = 'grab';
+                window.removeEventListener('pointermove', onPointerMove);
+            }
+
+            handle.addEventListener('pointerdown', onPointerDown);
+        })();
+    </script>
+
+
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 1997–2026 Incompetech Inc.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const root = document.documentElement;
+  const btn  = document.getElementById('theme-toggle');
+  const key  = 'theme';
+
+  const sysPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initial = localStorage.getItem(key) || (sysPrefersDark ? 'dark' : 'light');
+  setTheme(initial);
+
+  btn.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+
+  function setTheme(mode) {
+    root.dataset.theme = mode;
+    localStorage.setItem(key, mode);
+    btn.textContent = mode === 'dark' ? '🌙' : '☀️';
+    btn.setAttribute('aria-label', mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+})();
+</script>
+</body>
+</html>
+
+
+
+

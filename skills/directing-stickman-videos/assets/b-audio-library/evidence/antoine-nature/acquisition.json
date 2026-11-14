@@ -1,0 +1,25 @@
+{
+  "id": "antoine-nature",
+  "title": "Nature Sounds Pack",
+  "author": "Antoine Goumain (Antoinemax)",
+  "source_url": "https://opengameart.org/content/nature-sounds-pack",
+  "license_id": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "license_declaration_urls": [
+    "https://creativecommons.org/licenses/by/4.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:06:32.223340+00:00",
+  "description": "Hi, my name is Antoine. I'm a French Sound Designer. I've created a Sound pack with the theme of nature. Ambient sound (5 sounds) Foliage (6 sounds) Footstep (9 sounds) Stream (3 sounds) Here is my portfolio : https://antoinegoumain.fr/ Here is my LinkedIn : https://www.linkedin.com/in/antoinegoumain/ Here is my Patreon page if you like my work and you want to help me : https://www.patreon.com/antoinegoumain",
+  "attribution_notice": "Copyright/Attribution Notice: Share — copy and redistribute the material in any medium or format Adapt — remix, transform, and build upon the material for any purpose, even commercially. It would be nice if you can credit.",
+  "license_declaration": "License(s): CC-BY 4.0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/nature_sounds_pack.7z",
+      "filename": "nature_sounds_pack.7z",
+      "sha256": "b308acf3848d57fa27b4cb8f5dc644595fb0792ef979c7157032532781da178f",
+      "bytes": 8044155
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/nature_sounds_pack.7z",
+  "source_page_sha256": "3a9653dac49983eec2a82dd1126df3fa3a939afc0fd03c4c2a85694c0188d2d5"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "horse-gallop",
+  "title": "Horse gallop on different surfaces",
+  "author": "congusbongus (adaptation); individual original authors in credits.txt",
+  "source_url": "https://opengameart.org/content/horse-gallop-on-different-surfaces",
+  "license_id": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "license_declaration_urls": [
+    "https://opengameart.org/content/horse-gallop-on-different-surfaces"
+  ],
+  "retrieved_at": "2026-11-14",
+  "description": "Six short edited hoof/gallop samples derived from individually credited Freesound originals. Whole adapted pack is labelled CC BY 4.0 by adapter; original sources are CC0 or CC BY 4.0.",
+  "attribution_notice": "Samples have mixed licences CC0 and CC-BY 4.0, please check credits.txt for details",
+  "license_declaration": "CC BY 4.0 on adapter submission; original per-file credits and author licence pages retained.",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/archive_2.zip",
+      "filename": "archive_2.zip",
+      "sha256": "8cafb1ffb6cf17428c32735f2303bd94faa5fe8876eef1d921d2a7d04a84be77",
+      "bytes": 44566
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/archive_2.zip",
+  "source_page_sha256": "9734302bfee551855439e17f84436e2b4e4089adbb8bc26b4b3264c8a813c1dc"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "pauliuw-dog",
+  "title": "Dog sounds",
+  "author": "pauliuw",
+  "source_url": "https://opengameart.org/content/dog-sounds",
+  "license_id": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_declaration_urls": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "retrieved_at": "2026-11-14T07:07:36.001157+00:00",
+  "description": "9 dog sounds(barking, growling, squalling). Some of the sounds are recordced through mp3 player.",
+  "attribution_notice": "",
+  "license_declaration": "License(s): CC0",
+  "downloads": [
+    {
+      "url": "https://opengameart.org/sites/default/files/dog.7z",
+      "filename": "dog.7z",
+      "sha256": "ecee65b849048790e963952dd15c74889c89d7c948a629e041caa631886d7662",
+      "bytes": 1826396
+    }
+  ],
+  "download_url": "https://opengameart.org/sites/default/files/dog.7z",
+  "source_page_sha256": "2d3f19ab460b56fb1d0d59e4e04dbedb15d6fd1a8184b66bb25dc6676675b035"
+}
