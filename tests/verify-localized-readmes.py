@@ -161,8 +161,12 @@ for name in selected:
     mode_names = ("导演模式", "全自动模式") if name == "README.zh-CN.md" else ("Director", "AutoPilot")
     for token in mode_names:
         assert token in roadmap, (name, "roadmap deliverable", token)
-    for token in ("1,000", "200", "YouTube Shorts", "TikTok", "Content"):
+    for token in ("1,000", "200", "YouTube Shorts", "TikTok"):
         assert token in milestone_blocks[3], (name, "10,000-Star deliverable", token)
+    shared_deliverables = re.findall(r"^  - (.+)$", milestone_blocks[3], re.M)
+    assert all(mode in shared_deliverables[0] for mode in ("A", "B")), (name, "script prompts shared by A and B")
+    assert "B" in shared_deliverables[1], (name, "SFX and sound transitions scoped to B")
+    assert "Content" not in shared_deliverables[1], (name, "no unconditional Content ID guarantee")
     studio_name = "Stickman AI 视频工作台" if name == "README.zh-CN.md" else "Stickman AI Studio"
     assert studio_name in milestone_blocks[4], (name, "20,000-Star studio deliverable")
     assert "api.star-history.com/svg" in roadmap, (name, "chart after roadmap and before styles")
@@ -482,3 +486,4 @@ for name in selected:
     print(f"{name}: navigation, A/B structure, 7 FAQs, media, links and examples passed.")
 
 print("Eight languages share the approved A/B layout; French follows Korean.")
+
