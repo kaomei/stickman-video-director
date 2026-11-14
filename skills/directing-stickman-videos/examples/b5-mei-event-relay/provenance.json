@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "scope": "Exact local visual-stage source and essential rig snapshot; not a complete film project",
+  "approved_film": {
+    "path": "../../assets/b5/local-baselines/mei-event-relay/approved-sample.mp4",
+    "sha256": "de2d3b0e22ddebb213d9b58cb787479ad5c53f96f87b80d17542c6bcf894aa9b",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 341,
+    "video_duration_seconds": 11.366667
+  },
+  "existing_approval_record": {
+    "path": "../../assets/b5/local-baselines/mei-event-relay/user-approval.json",
+    "sha256": "c480d8564fe229e52a65d4f5b2bf27241eeaa115a834bc8a6603e145ffc9d0ef",
+    "scope": "The visual event-relay effect and animation direction of the 11.37-second 16:9 phone-coffee film",
+    "cold_start_pass": false,
+    "new_approval_created": false
+  },
+  "source_files": {
+    "stage.cjs": {
+      "sha256": "786e66cdc7ecfc71d5d7073bbcf843a07421d75ef0322a594e9b9e060130cf19",
+      "bytes": 9395,
+      "original_render_receipt_key": "scene/stage.cjs"
+    },
+    "mei-reference-rig.cjs": {
+      "sha256": "172ef35bae227fa47ec1cca0365b127b004c24fee9b4b1cca5290b9c08bb956b",
+      "bytes": 1247,
+      "original_render_receipt_key": "scene/mei-reference-rig.cjs"
+    }
+  },
+  "original_source_bindings": {
+    "scene/stage.cjs": {
+      "sha256": "786e66cdc7ecfc71d5d7073bbcf843a07421d75ef0322a594e9b9e060130cf19",
+      "bytes": 9395,
+      "matches_current_source": true,
+      "bundled": true
+    },
+    "scene/renderer.cjs": {
+      "sha256": "a9b43ee98e236860b493221e49d4e52b921686ef4e47b43083147714e2d846d9",
+      "bytes": 2828,
+      "matches_current_source": true,
+      "bundled": false
+    },
+    "scene/presenter.cjs": {
+      "sha256": "860c2e4c72c253cf6e8aee8c59eb78f0c5993a89dcf7697d8b6020b40db74809",
+      "bytes": 4758,
+      "matches_current_source": true,
+      "bundled": false
+    },
+    "scene/mei-reference-rig.cjs": {
+      "sha256": "172ef35bae227fa47ec1cca0365b127b004c24fee9b4b1cca5290b9c08bb956b",
+      "bytes": 1247,
+      "matches_current_source": true,
+      "bundled": true
+    }
+  },
+  "original_receipts": {
+    "source-frame-ledger.json": {
+      "sha256": "c3bbfa2b1477088db30c8e4e222c7b402dbca99a3688a414afb52cca879b6e9a",
+      "origin": "b5-mei-event-chain/candidate-event-relay/frame-ledger.json",
+      "source_unchanged_during_render": true
+    },
+    "verification_document": {
+      "sha256": "beb992aa33ee3a647efeebe705f0a7ea741faf6a605edfb692793af6a77ac33f",
+      "origin": "b5-mei-event-chain/candidate-event-relay/verification.json",
+      "recorded_video_sha256": "de2d3b0e22ddebb213d9b58cb787479ad5c53f96f87b80d17542c6bcf894aa9b",
+      "source_fingerprints_match_frame_render": true,
+      "decode_all_341_frames": true
+    },
+    "original_render_entrypoint": {
+      "sha256": "66a792e145d5858c22f274c4e07bfcecc84a75bafd1ae4a8a2508a908ba56ffe",
+      "origin": "b5-mei-event-chain/project/render-full.cjs",
+      "method": "sharp(original full renderer.frame(i/30)).png(), 341 frames; source fingerprints checked before/after"
+    }
+  },
+  "local_reverification": {
+    "path": "reverification.json",
+    "sha256": "ccede68416f29abec7d0145f3d2d9d628e9b8dbb8fab8750878185db040774e0",
+    "all_original_341_png_hashes_match": true,
+    "fresh_original_full_composite_pngs_match": 12
+  },
+  "binding_status": "Byte-identical stage/rig to original source ledger; existing 341 PNGs and 12 newly rasterized full-composite PNGs match it; approved MP4 hash and original encoding/verification receipt match. No fresh MP4 rebuild is claimed.",
+  "excluded": "Full renderer, paper/presenter/font assets, captions and audio are deliberately not copied into this stage-only example. The SVG study wrapper is newly added and is not the approved full compositor.",
+  "review_limits": "Recorded user visual-direction approval is retained separately from independent normal-speed audiovisual review, cold-start quality, publication rights or new-topic approval."
+}

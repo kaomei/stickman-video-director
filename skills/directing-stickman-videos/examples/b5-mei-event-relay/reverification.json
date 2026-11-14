@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "checked_at": "2026-11-13T16:07:20.846Z",
+  "kind": "read-only local source/frame re-verification",
+  "all_341_original_frame_files_match_ledger": true,
+  "samples": [
+    {
+      "frame": 0,
+      "t": 0,
+      "expected_sha256": "1595712492006d6c7bb45a164191b07fa6ea7cf8383ea803566de9acb2bbb8b7",
+      "actual_sha256": "1595712492006d6c7bb45a164191b07fa6ea7cf8383ea803566de9acb2bbb8b7",
+      "equal": true
+    },
+    {
+      "frame": 45,
+      "t": 1.5,
+      "expected_sha256": "ca4220c64d85239cc58c31a2410d5364a6023816949d82d726c2daa933215774",
+      "actual_sha256": "ca4220c64d85239cc58c31a2410d5364a6023816949d82d726c2daa933215774",
+      "equal": true
+    },
+    {
+      "frame": 60,
+      "t": 2,
+      "expected_sha256": "1ef6b98605592fc0fd9aa2cf50e44bacbc305afefe195de41258389d2d20ce76",
+      "actual_sha256": "1ef6b98605592fc0fd9aa2cf50e44bacbc305afefe195de41258389d2d20ce76",
+      "equal": true
+    },
+    {
+      "frame": 94,
+      "t": 3.1333333333333333,
+      "expected_sha256": "da6817e95d32e1d8b460eb0d4353ce481425e4817f44892d2b0bbc9f62b80b61",
+      "actual_sha256": "da6817e95d32e1d8b460eb0d4353ce481425e4817f44892d2b0bbc9f62b80b61",
+      "equal": true
+    },
+    {
+      "frame": 133,
+      "t": 4.433333333333334,
+      "expected_sha256": "5d3ae05e32112d968efb95b07f0b735d879aa3f7a27d5ba5d4e6348b1bf81159",
+      "actual_sha256": "5d3ae05e32112d968efb95b07f0b735d879aa3f7a27d5ba5d4e6348b1bf81159",
+      "equal": true
+    },
+    {
+      "frame": 134,
+      "t": 4.466666666666667,
+      "expected_sha256": "970548610cedae0cbe392a7a0f3a84a3195a704c8987ee9d953d766bffd3f0ff",
+      "actual_sha256": "970548610cedae0cbe392a7a0f3a84a3195a704c8987ee9d953d766bffd3f0ff",
+      "equal": true
+    },
+    {
+      "frame": 141,
+      "t": 4.7,
+      "expected_sha256": "1e7dfff41c962958978bf4ba428e706b74a4900b70baa9d577ddef5c0b19164e",
+      "actual_sha256": "1e7dfff41c962958978bf4ba428e706b74a4900b70baa9d577ddef5c0b19164e",
+      "equal": true
+    },
+    {
+      "frame": 156,
+      "t": 5.2,
+      "expected_sha256": "64ab3d200f1f9c791bdbc6d115fa2f1a91c086d0cf402d5656e746c761ee1718",
+      "actual_sha256": "64ab3d200f1f9c791bdbc6d115fa2f1a91c086d0cf402d5656e746c761ee1718",
+      "equal": true
+    },
+    {
+      "frame": 194,
+      "t": 6.466666666666667,
+      "expected_sha256": "464a06c8362546a001a5d45d6771c78c577e8b4719df10d2353a8476128affac",
+      "actual_sha256": "464a06c8362546a001a5d45d6771c78c577e8b4719df10d2353a8476128affac",
+      "equal": true
+    },
+    {
+      "frame": 257,
+      "t": 8.566666666666666,
+      "expected_sha256": "81d1ef1515c7682c2631b45c99277a33341864f40f56f4fd0b0e2974339db6eb",
+      "actual_sha256": "81d1ef1515c7682c2631b45c99277a33341864f40f56f4fd0b0e2974339db6eb",
+      "equal": true
+    },
+    {
+      "frame": 315,
+      "t": 10.5,
+      "expected_sha256": "2118003a943e0558da986f27c4cf281f47f7e1fe1e189f76e9e99291bf79f896",
+      "actual_sha256": "2118003a943e0558da986f27c4cf281f47f7e1fe1e189f76e9e99291bf79f896",
+      "equal": true
+    },
+    {
+      "frame": 340,
+      "t": 11.333333333333334,
+      "expected_sha256": "7492c571b3e8c57edefc58085112ff2fc2ff0382327ef8196653474dad2381b0",
+      "actual_sha256": "7492c571b3e8c57edefc58085112ff2fc2ff0382327ef8196653474dad2381b0",
+      "equal": true
+    }
+  ],
+  "limitations": [
+    "Twelve full composite frames were rerasterized with the original renderer and Sharp environment; all 341 existing PNG files were hashed.",
+    "No fresh MP4 encode, normal-speed audiovisual review, cold-start test or new user approval is asserted."
+  ]
+}

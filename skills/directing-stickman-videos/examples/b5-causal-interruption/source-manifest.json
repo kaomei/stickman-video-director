@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "case": "b5-causal-interruption",
+  "created_utc": "2026-11-13T10:30:49.371726+00:00",
+  "source_stage_sha256": "95a2a5718bae842ead3cff2b3f5739485becef52672a9e9b3a0dedbef8d4d09d",
+  "stage_reused_byte_identical": true,
+  "private_identity_assets_included": false,
+  "paid_audio_included": false,
+  "scope": "Silent anonymous-stage worked example, not a generic new-story template or visual acceptance",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4383,
+      "sha256": "8073941f8a37a0915c9ccaa6800aa18c37bf5e5296f0f24cc16febadfe5ac23c",
+      "origin": "Portable stage-only worked-example wrapper/documentation authored for this local repair"
+    },
+    {
+      "path": "action-cards.md",
+      "bytes": 3041,
+      "sha256": "ccaf99d9baf676ce4024e76233483d3035782581c25c78bd83f0853870cefc4a",
+      "origin": "Portable stage-only worked-example wrapper/documentation authored for this local repair"
+    },
+    {
+      "path": "assets/Anton-OFL.txt",
+      "bytes": 4234,
+      "sha256": "dbd945e828dd179a73d9cc376742cdc6a1c9ff399ed127bf544aa3de8913f1a9",
+      "origin": "V5 assets/fonts/Anton-OFL.txt; SIL OFL for already bundled Anton font"
+    },
+    {
+      "path": "assets/paper.png",
+      "bytes": 1153336,
+      "sha256": "3e7951c1282026765a95333ef46f81f723e57c5c4251c45b9adcaa6a4b8fd7cf",
+      "origin": "Existing bundled assets/b5/example/assets/paper.png; byte-identical V5 reuse"
+    },
+    {
+      "path": "assets/title-v2-0.png",
+      "bytes": 7756,
+      "sha256": "f4fa4e3a9658fe36018cb9208f93589ba2480c3a6fb9a7aeffd874ba1f62b6c7",
+      "origin": "V5 project raster title mask, rendered from bundled Anton font; not narration or subtitles"
+    },
+    {
+      "path": "assets/title-v2-1.png",
+      "bytes": 3990,
+      "sha256": "37add6dbd3906905a08ccd6868cf718725f92d925ee55cd2d02f2a3da10f3795",
+      "origin": "V5 project raster title mask, rendered from bundled Anton font; not narration or subtitles"
+    },
+    {
+      "path": "assets/title-v2-2.png",
+      "bytes": 3920,
+      "sha256": "72472005d927f810b8479189cd478b6d5b5d6f759c062d70dfdd18d915a9be23",
+      "origin": "V5 project raster title mask, rendered from bundled Anton font; not narration or subtitles"
+    },
+    {
+      "path": "assets/title-v3-0.png",
+      "bytes": 4258,
+      "sha256": "a794a38721b7ddeeeb96259eac7634fc565487069d8f0b1b2e6eab931d475cfe",
+      "origin": "V5 project raster title mask, rendered from bundled Anton font; not narration or subtitles"
+    },
+    {
+      "path": "assets/title-v3-1.png",
+      "bytes": 2018,
+      "sha256": "d499ab88226d34110ec183b3fcff45063c38b2eaf4bb5191cca4d9e72389b146",
+      "origin": "V5 project raster title mask, rendered from bundled Anton font; not narration or subtitles"
+    },
+    {
+      "path": "render-demo.cjs",
+      "bytes": 2991,
+      "sha256": "e0d1e850c3f37b2776cef3993b727c7b42a33c83a4530d95cf73c6ba5528164e",
+      "origin": "Portable stage-only worked-example wrapper/documentation authored for this local repair"
+    },
+    {
+      "path": "renderer.cjs",
+      "bytes": 2324,
+      "sha256": "6249af7aeb8a5dffc8d3891737340d7f244e26936b5f90073e458768a539191d",
+      "origin": "Portable stage-only worked-example wrapper/documentation authored for this local repair"
+    },
+    {
+      "path": "stage.cjs",
+      "bytes": 15066,
+      "sha256": "95a2a5718bae842ead3cff2b3f5739485becef52672a9e9b3a0dedbef8d4d09d",
+      "origin": "V5 authored stage; unchanged from work/dog-lap-b5/project-v5/scene/stage.cjs"
+    },
+    {
+      "path": "title-atlas.json",
+      "bytes": 858,
+      "sha256": "609a67ecbaf8b640aa979c1fc58ecbaea33bca0d64d77c6473d3b1a934795015",
+      "origin": "Portable stage-only worked-example wrapper/documentation authored for this local repair"
+    },
+    {
+      "path": "verify.cjs",
+      "bytes": 2663,
+      "sha256": "1464fd4ab03b56a8ade6e1558778cf7e488b720bfaf9d177d4655d749d094141",
+      "origin": "Portable stage-only worked-example wrapper/documentation authored for this local repair"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "source": "installed CrazyMei assets/templates/{16x9,9x16}/src",
+  "purpose": "read-only choreography and native geometry study; not runtime",
+  "files": [
+    {
+      "path": "choreography-source/16x9/hook.html",
+      "sha256": "252a2a205038eb111ee3340867e64de99856426a06c73739eadad18690e32c0d"
+    },
+    {
+      "path": "choreography-source/16x9/mistake-1.html",
+      "sha256": "75e950ee50de9fbff7e797fcf9086da905ef2bb9d7d3a6d4d8f700c7daa00624"
+    },
+    {
+      "path": "choreography-source/16x9/mistake-2.html",
+      "sha256": "3593702a6cf39787d2f7c54e3c83031091e5682181812b80e300047f3de8cfe2"
+    },
+    {
+      "path": "choreography-source/16x9/mistake-3.html",
+      "sha256": "552d88b61d27a9f7d5aad168d286df74d19f77fcaa23ac84d067aba545685467"
+    },
+    {
+      "path": "choreography-source/9x16/hook.html",
+      "sha256": "3dee68613a9579babf9edf10b5327716f112343541c2be40b5dfa4dbee91d245"
+    },
+    {
+      "path": "choreography-source/9x16/mistake-1.html",
+      "sha256": "6ff296584e991b30851564e580ee8b9854790d4ee942ca251272a9d821b5e27d"
+    },
+    {
+      "path": "choreography-source/9x16/mistake-2.html",
+      "sha256": "710b67b6533c43e2d71e90ef28e4353f26b27fe74118458c7722c3bbba2bf422"
+    },
+    {
+      "path": "choreography-source/9x16/mistake-3.html",
+      "sha256": "d47389e3f4f1152026630167b7d5bbf4ea43c42293b9d3650a63d5502b039292"
+    }
+  ]
+}

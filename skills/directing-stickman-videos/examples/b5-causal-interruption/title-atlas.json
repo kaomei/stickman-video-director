@@ -1,0 +1,42 @@
+{
+  "WHY YOUR": {
+    "file": "assets/title-v2-0.png",
+    "width": 483.1300048828125,
+    "pad": 12,
+    "baseline": 140,
+    "image_width": 508,
+    "image_height": 242
+  },
+  "LAP?": {
+    "file": "assets/title-v2-1.png",
+    "width": 236.44000244140625,
+    "pad": 12,
+    "baseline": 140,
+    "image_width": 261,
+    "image_height": 242
+  },
+  "BEFORE": {
+    "file": "assets/title-v2-2.png",
+    "width": 340.94000244140625,
+    "pad": 12,
+    "baseline": 140,
+    "image_width": 365,
+    "image_height": 242
+  },
+  "ON YOUR@96": {
+    "file": "assets/title-v3-0.png",
+    "width": 297.75,
+    "pad": 12,
+    "baseline": 108,
+    "image_width": 322,
+    "image_height": 188
+  },
+  "LAP@96": {
+    "file": "assets/title-v3-1.png",
+    "width": 130.0800018310547,
+    "pad": 12,
+    "baseline": 108,
+    "image_width": 155,
+    "image_height": 188
+  }
+}

@@ -10,6 +10,7 @@ import {spawnSync} from 'node:child_process';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PHASES = ['before', 'anticipation', 'contact', 'consequence', 'delayed_response', 'recovery'];
 const ACTION_CHECKS = ['causality', 'body_motion', 'arms_pose', 'contact', 'effects', 'recovery', 'pacing'];
+export const B5_VISUAL_EVENT_CHECKS = ['meaningful_change', 'composition', 'richness', 'effects', 'readability', 'pacing'];
 const CAPTION_CHECKS = ['segmentation', 'reveal', 'emphasis', 'shaping', 'timing', 'readability'];
 const LIMITS = [
   'Checks establish complete, current evidence and recorded independent observations, not automatic aesthetic approval.',
@@ -78,6 +79,35 @@ function transcriptFile(dir, plan) {
   return file;
 }
 
+// Omitted kind keeps the schema:1 physical-action contract intact. A visual
+// event must be explicit; it does not acquire fictional contact/body checks.
+export function b5ActionKind(action) {
+  need(action && (action.kind === undefined || ['physical', 'visual'].includes(action.kind)),
+    'action kind must be physical or visual');
+  return action.kind ?? 'physical';
+}
+export function b5ActionChecks(action, {preview = false} = {}) {
+  return b5ActionKind(action) === 'visual' ? B5_VISUAL_EVENT_CHECKS : preview ? B5_PREVIEW_CHECKS : ACTION_CHECKS;
+}
+function actionSamples(action) {
+  return b5ActionKind(action) === 'visual' ? action.visual_phases : PHASES.map(label => ({label, at: action.phases[label]}));
+}
+function actionRegion(action) {
+  return b5ActionKind(action) === 'visual' ? action.event_region : action.actor_region;
+}
+function visualSamples(action) {
+  const samples = action.visual_phases;
+  need(Array.isArray(samples) && samples.length >= 2 && samples[0]?.label === 'before' && samples.at(-1)?.label === 'after',
+    'visual action ' + action.id + ' needs visual_phases from before to after');
+  const labels = new Set();
+  for (const sample of samples) {
+    need(sample && text(sample.label) && /^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/.test(sample.label) && sample.label !== 'continuous' && !labels.has(sample.label),
+      'visual action ' + action.id + ' needs unique meaningful sample labels');
+    labels.add(sample.label);
+  }
+  return samples;
+}
+
 export function validateVisualPlan({dir, c}) {
   config(c);
   const plan = read(plainFile(path.join(dir, 'scene/visual-plan.json'), 'visual plan'));
@@ -95,23 +125,34 @@ export function validateVisualPlan({dir, c}) {
   ids(plan.actions, 'actions');
   for (const action of plan.actions) {
     interval(action, c, 'action ' + action.id);
-    region(action.actor_region, c, 'actor_region ' + action.id, plan.stage_region);
+    const visual = b5ActionKind(action) === 'visual';
+    region(actionRegion(action), c, (visual ? 'event_region ' : 'actor_region ') + action.id, plan.stage_region);
     need(text(action.intent), 'action ' + action.id + ' needs its explanatory intent and before/after change');
-    need(action.phases && typeof action.phases === 'object', 'action ' + action.id + ' needs six physical phases');
+    let samples;
+    if (visual) {
+      need(text(action.movement), 'visual action ' + action.id + ' needs a concrete movement description');
+      const change = action.visual_change;
+      const normalize = value => value.replace(/\s+/gu, ' ').trim().normalize('NFC');
+      need(change && text(change.before) && text(change.after) && normalize(change.before) !== normalize(change.after),
+        'visual action ' + action.id + ' needs distinct before/after visual_change descriptions');
+      samples = visualSamples(action);
+    } else {
+      need(action.phases && typeof action.phases === 'object', 'action ' + action.id + ' needs six physical phases');
+      samples = actionSamples(action);
+    }
     let prior = -Infinity, priorFrame = -1;
-    for (const phase of PHASES) {
-      const at = action.phases[phase];
+    for (const {at} of samples) {
       need(Number.isFinite(at) && at >= action.start - EPS && at <= action.end + EPS && at > prior,
         'action ' + action.id + ' phase times must be ordered inside the action');
       const sampledFrame = Math.max(0, Math.min(Math.round(c.duration * c.fps) - 1, Math.ceil(at * c.fps - EPS)));
-      need(sampledFrame > priorFrame, 'action ' + action.id + ' phases must use six distinct ordered final-video frames');
+      need(sampledFrame > priorFrame, 'action ' + action.id + (visual ? ' visual_phases must use distinct ordered final-video frames' : ' phases must use six distinct ordered final-video frames'));
       priorFrame = sampledFrame;
       prior = at;
     }
   }
   let covered = 0;
   for (const action of [...plan.actions].sort((a, b) => a.start - b.start)) {
-    need(action.start <= covered + 1 / c.fps + EPS, 'actions must cover the full film; record deliberate holds/transitions as actions');
+    need(action.start <= covered + 1 / c.fps + EPS, 'actions must cover the full film; include deliberate holds/transitions within their owning events');
     covered = Math.max(covered, action.end);
   }
   need(covered >= c.duration - 1 / c.fps - EPS, 'actions omit the end of the film');
@@ -160,12 +201,14 @@ export function validateVisualPlan({dir, c}) {
 
 function baselines() {
   return [
+    {id: 'crazymei', source_path: path.join(ROOT, 'assets/b5/local-baselines/crazymei/approved-sample.mp4'), lock: path.join(ROOT, 'assets/b5/local-baselines/crazymei/baseline-lock.json')},
     {id: 'spiderman', source_path: path.join(ROOT, 'assets/b5/approved-sample.mp4'), lock: path.join(ROOT, 'assets/b5/baseline-lock.json')},
+    {id: 'mei-event-relay', source_path: path.join(ROOT, 'assets/b5/local-baselines/mei-event-relay/approved-sample.mp4'), lock: path.join(ROOT, 'assets/b5/local-baselines/mei-event-relay/user-approval.json')},
     {id: 'jensen-v13', source_path: path.join(ROOT, 'assets/b5/local-baselines/jensen-v13/approved-sample.mp4'), lock: path.join(ROOT, 'assets/b5/local-baselines/jensen-v13/baseline-lock.json')}
   ].map(({id, source_path, lock}) => {
     plainFile(source_path, 'accepted baseline'); plainFile(lock, 'baseline lock');
     const contract = read(lock), source_sha256 = hash(source_path);
-    need(source_sha256 === (contract.video?.sha256 || contract.video_sha256), 'accepted baseline changed: ' + id);
+    need(source_sha256 === (contract.video?.sha256 || contract.video_sha256 || contract.approved_video_sha256), 'accepted baseline changed: ' + id);
     return {id, source_path, source_sha256, lock_sha256: hash(lock)};
   });
 }
@@ -205,7 +248,7 @@ function expectedArtifacts(plan, c) {
   clip('full-stage-silent', 'full_playback', 'silent_stage', plan.stage_region, 0, c.duration, false);
   clip('full-captions-audio', 'full_playback', 'captions_with_audio', plan.captions.region, 0, c.duration, true);
   for (const action of plan.actions) {
-    for (const phase of PHASES) frame('action-' + action.id + '-' + phase, 'action', action.id, action.actor_region, action.phases[phase], {phase});
+    for (const {label: phase, at} of actionSamples(action)) frame('action-' + action.id + '-' + phase, 'action', action.id, actionRegion(action), at, {phase});
     clip('action-' + action.id + '-continuous', 'action', action.id, plan.stage_region, action.start, action.end, false);
   }
   for (const group of plan.captions.groups) {
@@ -267,7 +310,7 @@ export async function buildB5ReviewPack({dir, c, candidateDir, out, projectFinge
     schema: 1, reviewer: {id: '', kind: 'agent', method: '', independent: false},
     video_sha256: source.video_sha256, evidence_sha256: hash(path.join(output, 'evidence.json')),
     baseline_comparisons: [], full_playback: Object.fromEntries(['silent_stage', 'complete_mix', 'captions_with_audio'].map(key => [key, {...unknown(), viewed_ranges: []}])),
-    actions: plan.actions.map(a => ({id: a.id, checks: checks(ACTION_CHECKS)})),
+    actions: plan.actions.map(a => ({id: a.id, checks: checks(b5ActionChecks(a))})),
     captions: plan.captions.groups.map(g => ({id: g.id, checks: checks(CAPTION_CHECKS)})),
     blocking_issues: ['Not reviewed. Copy this template outside the project, inspect the actual evidence and final composite, and record truthful independent observations.']
   });
@@ -295,10 +338,10 @@ function reviewGroups(actual, expected, checks, label, artifactMap) {
   need(Array.isArray(actual) && actual.length === expected.length && new Set(actual.map(x => x.id)).size === actual.length,
     label + ' review must cover every planned id exactly once');
   for (const item of expected) {
-    const review = actual.find(x => x.id === item.id);
-    need(review && review.checks && same(Object.keys(review.checks).sort(), [...checks].sort()), label + ' ' + item.id + ' needs all required checks');
+    const review = actual.find(x => x.id === item.id), required = typeof checks === 'function' ? checks(item) : checks;
+    need(review && review.checks && same(Object.keys(review.checks).sort(), [...required].sort()), label + ' ' + item.id + ' needs all required checks');
     const allowed = new Set([...artifactMap.values()].filter(a => a.scope === label && a.scope_id === item.id).map(a => a.id));
-    for (const check of checks) {
+    for (const check of required) {
       checked(review.checks[check], label + ' ' + item.id + '/' + check, [item.start, item.end], allowed, artifactMap);
       need(review.checks[check].observations.some(o => o.evidence_ids.includes(label + '-' + item.id + '-continuous')),
         label + ' ' + item.id + '/' + check + ' must reference continuous playback, not only a still');
@@ -306,7 +349,7 @@ function reviewGroups(actual, expected, checks, label, artifactMap) {
   }
 }
 
-export function verifyB5VisualAcceptance({dir, c, candidateDir, evidenceDir, reviewFile, projectFingerprint, ffmpeg = 'ffmpeg', ffprobe = 'ffprobe'}) {
+function verifyB5Review({dir, c, candidateDir, evidenceDir, reviewFile, projectFingerprint, ffmpeg = 'ffmpeg', ffprobe = 'ffprobe', preview = null}) {
   const plan = validateVisualPlan({dir, c}), source = candidate({dir, c, candidateDir, projectFingerprint, ffprobe});
   const folder = directory(evidenceDir, 'evidence directory'), file = plainFile(path.join(folder, 'evidence.json'), 'evidence ledger');
   const reviewPath = plainFile(reviewFile, 'independent review');
@@ -343,13 +386,17 @@ export function verifyB5VisualAcceptance({dir, c, candidateDir, evidenceDir, rev
   } } finally { fs.rmSync(scratch, {recursive: true, force: true}); }
   need(review.schema === 1 && review.video_sha256 === source.video_sha256 && review.evidence_sha256 === evidence_sha256,
     'review must bind the exact current final video and evidence ledger hashes');
+  if (preview) need(review.plan_checkpoint_sha256 === preview.checkpoint_sha256,
+    'preview review must bind its pre-authoring plan checkpoint');
   const reviewer = review.reviewer;
   need(reviewer && text(reviewer.id) && reviewer.id !== plan.author_id && ['agent', 'human'].includes(reviewer.kind) && text(reviewer.method) && reviewer.independent === true,
     'review must truthfully identify an independent reviewer different from author_id');
   need(Array.isArray(review.blocking_issues) && review.blocking_issues.length === 0, 'unresolved blocking issues prevent acceptance');
   const playback = review.full_playback;
-  need(playback && same(Object.keys(playback).sort(), ['captions_with_audio', 'complete_mix', 'silent_stage']), 'complete playback review is required');
-  for (const [key, id] of [['silent_stage', 'full-stage-silent'], ['complete_mix', 'source-video'], ['captions_with_audio', 'full-captions-audio']]) {
+  const playbackItems = [['silent_stage', 'full-stage-silent'], ['complete_mix', 'source-video']];
+  if (!preview) playbackItems.push(['captions_with_audio', 'full-captions-audio']);
+  need(playback && same(Object.keys(playback).sort(), playbackItems.map(([key]) => key).sort()), 'complete playback review is required');
+  for (const [key, id] of playbackItems) {
     checked(playback[key], 'full playback/' + key, [0, c.duration], new Set([id]), artifactMap);
     need(Array.isArray(playback[key].viewed_ranges) && playback[key].viewed_ranges.length > 0, 'full playback/' + key + ' needs recorded viewed_ranges');
     let end = 0;
@@ -359,22 +406,31 @@ export function verifyB5VisualAcceptance({dir, c, candidateDir, evidenceDir, rev
     }
     need(end >= c.duration - 1 / c.fps - EPS, 'full playback/' + key + ' viewed ranges omit the ending');
   }
-  reviewGroups(review.actions, plan.actions, ACTION_CHECKS, 'action', artifactMap);
-  reviewGroups(review.captions, plan.captions.groups, CAPTION_CHECKS, 'caption', artifactMap);
-  need(Array.isArray(review.baseline_comparisons) && review.baseline_comparisons.length > 0, 'record at least one actual accepted-baseline comparison');
+  reviewGroups(review.actions, plan.actions, action => b5ActionChecks(action, {preview: Boolean(preview)}), 'action', artifactMap);
+  if (!preview) reviewGroups(review.captions, plan.captions.groups, CAPTION_CHECKS, 'caption', artifactMap);
+  need(Array.isArray(review.baseline_comparisons), 'record actual CrazyMei, Spider and latest approved Mei event-relay target comparisons');
+  const comparisonSources = preview ? preview.targets : baseline_sources;
   const seen = new Set();
   for (const comparison of review.baseline_comparisons) {
-    const baseline = baseline_sources.find(b => b.id === comparison.id);
+    const baseline = comparisonSources.find(b => b.id === comparison.id);
     need(baseline && !seen.has(comparison.id) && comparison.source_path === baseline.source_path && comparison.source_sha256 === baseline.source_sha256,
       'baseline comparison must name the actual locked source and hash'); seen.add(comparison.id);
     observations(comparison.observations, 'baseline comparison', [0, c.duration], new Set(artifactMap.keys()), artifactMap);
   }
+  need(['crazymei', 'spiderman', 'mei-event-relay'].every(id => seen.has(id)),
+    (preview ? 'preview' : 'formal review') + ' requires CrazyMei, Spider and latest approved Mei event-relay target comparisons');
   command(ffmpeg, ['-v', 'error', '-nostdin', '-i', source.video, '-f', 'null', '-']);
   need(hash(source.video) === source.video_sha256 && hash(source.file) === source.candidate_sha256 && hash(file) === evidence_sha256 && hash(reviewPath) === review_sha256 && hash(path.join(dir, 'scene/visual-plan.json')) === plan_sha256 && hash(transcriptFile(dir, plan)) === plan.transcript.sha256,
     'candidate/evidence/plan changed during acceptance');
-  return {schema: 1, style: 'B5', status: 'independent_visual_review_pass', user_acceptance: 'not_inferred',
+  return {schema: 1, style: 'B5', status: preview ? 'preview_ready' : 'independent_visual_review_pass', user_acceptance: 'not_inferred',
     output: source.video, output_sha256: source.video_sha256, candidate_sha256: source.candidate_sha256,
     project_fingerprint: projectFingerprint, plan_sha256, evidence_sha256, review_sha256,
-    reviewer, baseline_sources, actions_reviewed: plan.actions.length, caption_groups_reviewed: plan.captions.groups.length,
+    reviewer, baseline_sources: comparisonSources, actions_reviewed: plan.actions.length, caption_groups_reviewed: preview ? 0 : plan.captions.groups.length,
     full_decode: 'pass', limits: LIMITS};
 }
+
+export const B5_PREVIEW_CHECKS = ['causality', 'natural_limbs', 'composition', 'richness', 'pacing'];
+export function verifyB5VisualAcceptance(args) { return verifyB5Review(args); }
+// The caller must first validate the checkpoint and the two immutable target
+// sources. This remains a record/provenance gate, never machine aesthetic QA.
+export function verifyB5PreviewReview(args, preview) { return verifyB5Review({...args, preview}); }

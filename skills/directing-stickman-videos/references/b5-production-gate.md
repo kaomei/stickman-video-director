@@ -1,5 +1,9 @@
 # B5 new-story asset and production gate
 
+## Default preview and optional strict QA
+
+For normal requested previews, follow the [first-preview workflow](b5-first-preview.md): author/render/encode an internal candidate, inspect actual normal-speed playback with sound once, and repair only observed defects. The asset, typography, timeline and integrity requirements below still apply. Independent storyboard rehearsal, plan-lock, blind PNG/seal/contextual rounds and per-event evidence clips belong to the optional [strict formal protocol](b5-visual-acceptance.md), not the default preview.
+
 This is part of the existing B5 route, not a new Skill, image provider or generation permission. Reuse accepted identity and speech first. Never edit a locked example to satisfy a new project's checks.
 
 ## Image-first identity, any Agent
@@ -35,7 +39,7 @@ Preserve the exact bundled accepted Spider-Man SVG through `approved_reuse`, its
 
 ## Technical project evidence
 
-Any adaptation of the historical example needs `scene/production.json`. The byte-identical complete historical `scene/` alone is exempt from this technical manifest so its approved source/media stays unchanged. Adding a file, changing the topic, face, script or timing ends that exemption. This exception does **not** transfer the historical composite's visual acceptance to a newly encoded film. Every new encode follows [candidate, evidence, independent review and accept](b5-visual-acceptance.md).
+Any adaptation of the historical example needs `scene/production.json`. The byte-identical complete historical `scene/` alone is exempt from this technical manifest so its approved source/media stays unchanged. Adding a file, changing the topic, face, script or timing ends that exemption. This exception does **not** transfer the historical composite's visual acceptance to a newly encoded film. Every new candidate needs actual review: use the [default single-pass preview workflow](b5-first-preview.md), or the [optional formal independent protocol](b5-visual-acceptance.md) when strict acceptance is required.
 
 Use these fields with real local files and evidence, not copied approval text:
 
@@ -68,11 +72,13 @@ mix: {path, sha256}         # reviewed final mix, not dry narration
 motion:
   [{start, end, role: actor | prop | information, reason,
     region: [left, top, width, height]}]
+holds:                      # optional readable result holds; not motion
+  [{start, end, event_id, reason, next_change}]
 ```
 
 All paths are local and relative to `scene/`, with no symlinks or path escape. Reference lists may be empty only when none were actually supplied. Do not fabricate source, rights or approval entries. Store private API keys outside the manifest. Sound cues use final-video seconds and name the causal action; cover the timeline with quiet ambience and any explicitly motivated quiet beats, use discrete event SFX rather than a loud loop, and record deliberate quiet rather than omitting sound design. Review voice intelligibility and the encoded mix; no forced voice vendor. See [sound QA](b5-sound-qa.md).
 
-These technical fields are necessary context, not a visual verdict. A nonempty motion `reason`, `semantic_review`, `sound_review` or approval note cannot replace extracted action strips, continuous clips, complete playback and an independent review record. The separate [visual review plan and result](b5-visual-acceptance.md#review-record-and-binding) must cover every main action and every caption group, bind evidence to the final candidate, and block acceptance on any missing, unknown or failing item.
+These technical fields are necessary context, not a visual verdict. A nonempty motion `reason`, `semantic_review`, `sound_review` or approval note cannot replace watching and hearing the actual candidate. For a default preview, use one actual playback review and a compact issue/scope note. Use the separate [formal visual protocol](b5-visual-acceptance.md) only when strict, evidence-bound acceptance is required.
 
 ### Font, text-effect and language customization
 
@@ -80,27 +86,24 @@ By default, keep the B5 Instrument Sans caption/Anton headline hierarchy, upper-
 
 For a requested language whose glyphs the default fonts do not cover, use `kind: language_fallback`, record the target `language`, reason and adapted treatment, and retain `preset: b5-instrument-anton-v1` as the design hierarchy. Select a licensed, script-capable font without silently choosing another design. Both routes still require local font files and exact SHA-256 values; font or treatment changes invalidate old frame evidence. They do not waive semantic captions, safe bounds, identity, sound, local motion or review gates.
 
-Implement the change in the actual renderer and rebuild glyph tiles for the actual script, rather than changing metadata alone or keeping the example's words. All languages require semantic-unit progressive reveal, meaningful emphasis and a readable hold tied to the actual voice. Changing only the font, keeping the whole sentence static or applying a generic effect detached from speech fails. Inspect punctuation, CJK glyphs, joining/bidirectional order, combining marks or other relevant shaping, clipping, spacing and timing in encoded playback. Do not fragment a shaped word, grapheme, phrase or number–unit pair to imitate English word animation. Preserve accepted earlier project versions. Technical file/pixel checks cannot certify these properties; every caption group must pass the [independent visual gate](b5-visual-acceptance.md#every-caption-group-must-pass-in-every-language).
+Implement the change in the actual renderer and rebuild glyph tiles for the actual script, rather than changing metadata alone or keeping the example's words. All languages require semantic-unit progressive reveal, meaningful emphasis and a readable hold tied to the actual voice. Group at actual pauses and complete semantic dependencies, preserving modifiers, verb–object relationships and phrasal verbs. Never clear an unresolved preposition or subordinate introducer before its necessary continuation; use a meaningful line/reveal break within the group or a genuine semantic break, not fixed words, characters or seconds. Changing only the font, keeping the whole sentence static or applying a generic effect detached from speech fails. During the actual candidate review, check caption reveal/settled states and adjacent group replacements against the approved speech; inspect a suspect boundary frame only as needed. Masked `qualityFrame` images and semantic-review prose cannot establish caption readability. Inspect punctuation, CJK glyphs, joining/bidirectional order, combining marks or other relevant shaping, clipping, spacing and timing in encoded playback. Do not fragment a shaped word, grapheme, phrase or number–unit pair to imitate English word animation. Preserve accepted earlier project versions. Technical file/pixel checks cannot certify these properties; check every caption group in actual playback, using the [strict independent gate](b5-visual-acceptance.md#every-caption-group-must-pass-in-every-language) only for formal acceptance.
 
-Motion intervals must bound actual local actor/prop/information progress, with no principal-picture inactivity above 2.5 seconds. Exclude subtitles, title entrances, camera drift, global noise, arbitrary jitter and large full-frame regions. Follow the [left-stage causal action cards](b5-left-stage-motion.md), including contact, consequence, recovery and SFX timing. Review each left actor's force, natural arm/hand task and recovery; a moving mouth, prop, text or burst cannot rescue a static actor with unmotivated raised arms. A passing sampled-pixel check is only a technical prerequisite.
+Motion intervals must bound actual local actor/prop/information progress. Unexplained principal-picture inactivity over 2.5 seconds fails the technical gate; a deliberate readable result hold must be recorded separately through the `holds` field above, not disguised as a motion interval or filled with jitter. Each hold requires finite `start`/`end`, an `event_id` from the valid `scene/visual-plan.json`, a concrete reading purpose in `reason`, and the actual handoff/next change in `next_change`. Its interval must fit within that event. A hold is not a separate unchanged visual event; the owning event still needs distinct before/after states. At least one real `motion` interval remains required and is checked independently. Motion and valid holds together cover the timeline; a hold declaration does not prove its readability or pacing, which must be reviewed in continuous playback.
+
+Exclude subtitle-only updates, camera drift and global noise from stage progress. A meaningful word/graph transformation may be the principal visual event, while a redundant title entrance is not. Follow the [Mei scene structure](b5-crazymei-directing-structure.md) and [event cards](b5-left-stage-motion.md); add force/contact/consequence/recovery and source-aligned SFX only for actual physical actions. Check anatomy and task/rest poses wherever figures appear. Technical sampling is not a visual verdict.
 
 ## Renderer and commands
 
 Inspect project code before `--trusted-code`. A new renderer exports:
 
-- `frame(t)`: normal frame, as before.
-- `qualityFrame(t)`: the **same picture-rendering path**, with caption/title overlays, global camera transforms and noise disabled. Never fake a separate animation solely for the checker.
-- `productionAssets`: `[{path, sha256}]` declaring the accepted presenter image actually used by that rendering path. Do not list an unused image while drawing another face.
+- `frame(t)`: the normal frame.
+- `qualityFrame(t)`: the same picture-rendering path with caption/title overlays, global camera transforms and noise disabled; never fake a separate checker-only animation.
+- `productionAssets`: `[{path, sha256}]` declaring the accepted presenter image actually used by that rendering path; do not list an unused image while drawing another face.
 
-```sh
-node scripts/character-explainer.mjs validate /absolute/project
-node scripts/character-explainer.mjs frames /absolute/project --output /absolute/new-frames --all --trusted-code
-node scripts/character-explainer.mjs encode /absolute/project --frames-dir /absolute/new-frames --audio /absolute/project/scene/final-mix.wav --output /absolute/new-candidate
-node scripts/character-explainer.mjs review-pack /absolute/project --candidate-dir /absolute/new-candidate --output /absolute/new-evidence
-# Independent actual-media review produces /absolute/review.json before accept.
-node scripts/character-explainer.mjs accept /absolute/project --candidate-dir /absolute/new-candidate --evidence-dir /absolute/new-evidence --review /absolute/review.json --output /absolute/new-delivery
-```
+Use the [default first-preview commands](b5-first-preview.md#make-the-requested-candidate): `validate`, `frames --all --trusted-code`, then `encode` with the approved mix. `validate` checks the production manifest, asset/font fingerprints and timeline. `frames` checks the presenter raster and local picture-region change, then records input/frame hashes. `encode` rejects stale frame/project evidence or a different mix, fully decodes the result, and creates an internal candidate with review pending. None of these commands certifies visual quality or user acceptance. Optional `--approval-note` records truthful provenance only.
 
-`validate` checks the technical manifest, asset/font fingerprints and timeline. `frames` also decodes the presenter raster and samples local picture-region pixel change, then records input/frame hashes. Neither command nor `check` establishes visual acceptance. `encode` rejects stale project/frame evidence and a different final mix, and writes `candidate.json` with `status: pending_visual_review`, never `delivery.json`. Optional `--approval-note` is truthful provenance only. `review-pack` extracts final-MP4 evidence; `accept` validates its binding and complete independent results before creating `delivery.json` with `status: visual_review_passed` and `user_acceptance: not_inferred`. Follow the [full protocol](b5-visual-acceptance.md); do not substitute text declarations for actual review. Outputs are non-overwriting and projects stay outside the installed Skill. No command generates assets, pays a provider, mixes audio or grants user approval.
+Review that actual candidate once at normal speed with sound; inspect suspect frames and repair affected intervals as needed. Deliver the requested preview with the containing-folder link and truthful QA scope. Preserve accepted versions and do not infer user approval.
 
-These are accidental-regression safeguards, not a sandbox against dishonest trusted code: metadata cannot authenticate generation, prove that a declared image was displayed, recognize a celebrity, certify rights, judge action quality or authenticate a reviewer's honesty. Sampled pixel change cannot prove continuous motion, natural poses, final occlusion, caption animation or causality. Independent reviewers must inspect the real extracted media and complete encoded playback with sound. Report missing listening or review honestly and leave the candidate pending. Any relevant hash change invalidates its old binding; never bypass a failed gate with invented approval, copied observations or a fake provider label.
+For explicit strict QA, use `reference-study`, `plan-lock`, the PNG first-read/seal/contextual or incremental-revision path, `review-pack`, `preview-ready` and `accept` under the [formal protocol](b5-visual-acceptance.md). Strict PNG arguments opt `encode` into their exact-current-evidence gate; a direct strict wrapper must run the corresponding `png-review-check` immediately before FFmpeg. Only the strict protocol creates formal evidence-bound review receipts. Do not require these receipts for an ordinary preview.
+
+Technical checks are accidental-regression safeguards, not proof of generation provenance, likeness, rights, action meaning or reviewer honesty. Actual viewing/listening scope must remain truthful. Outputs stay outside the installed Skill; no command grants new paid calls, asset generation, user approval or publication authority.
