@@ -431,7 +431,7 @@ Un compte à rebours. Un appel nocturne. Une règle à ne jamais enfreindre. Ins
   </tr>
   <tr>
     <td align="center">Narration Brian · Effets calés sur le récit · Un choix final sous tension</td>
-    <td align="center">Narration Brian · Accroche visuelle glaçante · Texte animé percutant</td>
+    <td align="center">Accroche visuelle glaçante · Texte animé percutant</td>
   </tr>
 </table>
 
@@ -490,8 +490,8 @@ Des expressions de meme, des traits dessinés à la main et des couleurs douces 
     <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Exemple 2 : Hong Kong des années 1990 · Brioches et arcade" width="360"></a></td>
   </tr>
   <tr>
-    <td align="center">16:9 · 63,2 secondes · Narration et sous-titres en anglais</td>
-    <td align="center">16:9 · 20 secondes · Narration et sous-titres en anglais</td>
+    <td align="center">Expressions exagérées · Animation de personnages dessinés à la main · Rebondissements</td>
+    <td align="center">Narration The Pharaoh 3 · Interactions entre personnages · Changements de décor</td>
   </tr>
 </table>
 

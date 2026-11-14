@@ -427,7 +427,7 @@ A countdown. A late-night call. A rule you must never break. Ordinary places bec
   </tr>
   <tr>
     <td align="center">Brian narration · Story-synced SFX · A cliffhanger choice</td>
-    <td align="center">Brian narration · A chilling visual hook · Impactful text animation</td>
+    <td align="center">A chilling visual hook · Impactful text animation</td>
   </tr>
 </table>
 
@@ -486,8 +486,8 @@ Expressive meme faces, loose hand-drawn lines and soft colors turn unusual stori
     <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Example 2: 1990s Hong Kong · Buns and Arcades" width="360"></a></td>
   </tr>
   <tr>
-    <td align="center">16:9 · 63.2 seconds · English narration and captions</td>
-    <td align="center">16:9 · 20 seconds · English narration and captions</td>
+    <td align="center">Expressive faces · Hand-drawn character animation · Story twists</td>
+    <td align="center">The Pharaoh 3 narration · Character interactions · Scene changes</td>
   </tr>
 </table>
 

@@ -435,7 +435,7 @@ Uma contagem regressiva. Uma ligação de madrugada. Uma regra que você nunca d
   </tr>
   <tr>
     <td align="center">Narração Brian · Efeitos sincronizados à história · Escolha final em suspense</td>
-    <td align="center">Narração Brian · Abertura visual arrepiante · Texto animado de impacto</td>
+    <td align="center">Abertura visual arrepiante · Texto animado de impacto</td>
   </tr>
 </table>
 
@@ -494,8 +494,8 @@ Expressões de meme, traços soltos à mão e cores suaves transformam história
     <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Exemplo 2: Hong Kong dos anos 1990 · Pães e fliperamas" width="360"></a></td>
   </tr>
   <tr>
-    <td align="center">16:9 · 63,2 segundos · Narração e legendas em inglês</td>
-    <td align="center">16:9 · 20 segundos · Narração e legendas em inglês</td>
+    <td align="center">Expressões exageradas · Animação de personagens desenhados à mão · Reviravoltas</td>
+    <td align="center">Narração The Pharaoh 3 · Interação entre personagens · Mudanças de cena</td>
   </tr>
 </table>
 

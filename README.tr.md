@@ -430,7 +430,7 @@ Bir geri sayım. Gece gelen bir telefon. Asla çiğnememeniz gereken bir kural. 
   </tr>
   <tr>
     <td align="center">Brian anlatımı · Öyküyle senkron efektler · Gerilimli final seçimi</td>
-    <td align="center">Brian anlatımı · Ürpertici görsel açılış · Vurgulu metin animasyonu</td>
+    <td align="center">Ürpertici görsel açılış · Vurgulu metin animasyonu</td>
   </tr>
 </table>
 
@@ -489,8 +489,8 @@ Abartılı meme ifadeleri, serbest el çizgileri ve yumuşak renkler, sıra dı�
     <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Örnek 2: 1990’lar Hong Kong’u · Çörek ve atari" width="360"></a></td>
   </tr>
   <tr>
-    <td align="center">16:9 · 63,2 saniye · İngilizce anlatım ve altyazı</td>
-    <td align="center">16:9 · 20 saniye · İngilizce anlatım ve altyazı</td>
+    <td align="center">Abartılı ifadeler · El çizimi karakter animasyonu · Öyküde sürprizler</td>
+    <td align="center">The Pharaoh 3 anlatımı · Karakter etkileşimleri · Sahne geçişleri</td>
   </tr>
 </table>
 

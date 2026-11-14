@@ -436,7 +436,7 @@ Hitung mundur. Telepon larut malam. Aturan yang tak boleh dilanggar. Terinspiras
   </tr>
   <tr>
     <td align="center">Narasi Brian · Efek selaras cerita · Pilihan akhir penuh ketegangan</td>
-    <td align="center">Narasi Brian · Pembuka visual mencekam · Animasi teks yang menonjolkan inti</td>
+    <td align="center">Pembuka visual mencekam · Animasi teks yang menonjolkan inti</td>
   </tr>
 </table>
 
@@ -495,8 +495,8 @@ Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut 
     <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="Contoh 2: Hong Kong 1990-an · Roti dan arkade" width="360"></a></td>
   </tr>
   <tr>
-    <td align="center">16:9 · 63,2 detik · Narasi dan takarir bahasa Inggris</td>
-    <td align="center">16:9 · 20 detik · Narasi dan takarir bahasa Inggris</td>
+    <td align="center">Ekspresi berlebihan · Animasi karakter gambar tangan · Kejutan cerita</td>
+    <td align="center">Narasi The Pharaoh 3 · Interaksi antartokoh · Pergantian adegan</td>
   </tr>
 </table>
 
