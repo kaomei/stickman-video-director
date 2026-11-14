@@ -67,6 +67,8 @@ The approved English Archivo Black portrait caption profile is mechanically chec
 
 ## Runtime evidence contract
 
+Use the selected ratio's [installed workflow](b-style-installed-workflow.md) arguments. The examples below illustrate `16:9` and `9:16` separately; keep the current project's ratio consistent across preview, review, approval and final-film checks rather than copying a different example's ratio.
+
 Set `project.quality_target` to the project-relative quality-target JSON. New init copies the canonical style standard and full primary portrait movie into the project. Its `reference` records the Sample 1 portrait identity, native ratio, local `path`, exact `sha256`, and selected `segments` with `start`, `end` and `purpose`; `style_standard` records drawing, relative limb weight, light, animation and format criteria. `preferred_ratio` is a recommendation, not permission to change the requested delivery ratio. Keep V90's engineering role separate. Changing the primary standard requires an explicit user direction; a new story, cast, era or landscape output does not lower it. Existing in-progress projects must carry this selection and regenerate affected review evidence before a new quality claim; preserve their existing films and genuine approval history.
 
 After preview encoding, run:

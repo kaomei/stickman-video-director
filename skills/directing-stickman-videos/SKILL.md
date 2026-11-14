@@ -7,7 +7,7 @@ description: "Turn topics, requirements, articles or scripts into stickman video
 
 ## Two modes, one Skill
 
-Keep the installation/name. Honor known choices; clarify ambiguous deliverables once. Before planning, read [mode execution boundaries](references/mode-execution-boundaries.md), then the selected route:
+Keep the name and known choices; clarify ambiguity once. Before planning, read [mode execution boundaries](references/mode-execution-boundaries.md), then the selected route:
 
 - **A · Director / A1–A5:** approved proposals and standalone video prompts. A1 maps to Style 1 light/dark, A2 to Style 2/2A/2B, A3–A5 to Styles 3–5. Follow the unchanged contract below.
 - **A6 · Amber Noir:** read [A6](references/amber-noir.md) when selected, before planning; bypass the A1–A5 contract below. It owns reference-guided execution, Gemini Puck narration and finishing.
@@ -21,7 +21,9 @@ B6 works best in **portrait (9:16)**. **Sample 1's portrait Eiffel V44 is the st
 
 A and B share installation, not production contracts. Rules from **A · Director** onward apply only to A1–A5, not to A6 or any B style. Each B owns its visuals, captions, voice, pacing and SFX; no B1 fallback or A setup/clip/approval/text rules. Preserve unrelated styles.
 
-B accepts topics, briefs, articles and scripts. English narration defaults; explicit language/voice choices prevail. Follow [selected-provider execution](references/autopilot.md#selected-provider-execution): a missing adapter is not a provider prohibition. Use native named TTS without added style descriptions; B4 permits secondary-role acting, not automatic narrator tuning. Read the [story-led sound system](references/autopilot-sound-system.md). Never automatically revoice accepted media.
+B1–B6: read the [installed workflow](references/b-style-installed-workflow.md) and run its style/ratio query before production.
+
+B accepts topics, briefs, articles and scripts; default English unless overridden. Follow [selected-provider execution](references/autopilot.md#selected-provider-execution): a missing adapter is not a provider prohibition. Use native named TTS without style descriptions; B4 allows secondary-role acting, not narrator tuning. Read the [story-led sound system](references/autopilot-sound-system.md). Never automatically revoice accepted media.
 
 Captions: B1–B4 and B6 single-line; B5 up to three semantic lines. Apply fixed style typography and actual local motion/audio checks in the [common gate](references/autopilot-production-qa.md#natural-captions-and-semantic-sound). B1/B2/B3/B5 voice credits are illustrative; Brian remains B4-only. New B5 real/complex presenters require an available image tool or approved supplied raster, not code-face substitutes; follow the [production gate](references/b5-production-gate.md).
 

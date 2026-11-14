@@ -4,6 +4,8 @@ The user's outcome is a new film at the demonstrated drawing/animation quality. 
 
 ## Default route
 
+Resolve the requested ratio through the [installed workflow](b-style-installed-workflow.md) first. The `16:9` commands below illustrate landscape only; for portrait, use the query's `9:16` arguments consistently through initialization, preview, review, approval and full render. Each ratio needs its own authored plans and evidence.
+
 B6 defaults to the user-approved bundled **Archivo Black** caption font, preserving the established caption geometry, outline, raster and phrase switching. New-story production does not require Arial or Arial Black. Initialization records the actual project font and provenance. Locally installed original fonts remain optional for historical V90 typography reproduction; see the [V90 recipe](b6-hong-kong-v90.md).
 
 Read the [Sample 1 detailed acceptance matrix](b6-sample-1-acceptance.md), B6's drawing/light, native-format, character-binding and [motion execution/review](b6-motion-review.md) guides before authoring. Check the current request and existing approvals first. Reuse known story/format/voice choices; only ask for missing decisions that change production. Follow existing cost/provider authorization for new still images and speech. Code renders animation; a video generation model is not the motion fallback.

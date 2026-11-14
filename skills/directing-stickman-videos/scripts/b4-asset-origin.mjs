@@ -27,8 +27,8 @@ function catalog(skillRoot) {
     if(!fs.existsSync(file)||sha(fs.readFileSync(file))!==asset.sha256)throw Error('B4 asset origin: approved showcase resource missing or changed: '+asset.id);
     items.push({...asset,path:file});
   }
-  // Repository README videos need not be included in an installed Skill, but
-  // their exact known bytes remain examples rather than new-story outputs.
+  // Public showcases are also installed for effect comparison. Their exact
+  // known bytes remain examples rather than new-story production outputs.
   for(const item of manifest.publication?.accepted_showcases||[])if(/^[a-f0-9]{64}$/.test(item.sha256))items.push({id:item.title||item.name||item.repository_path,role:'approved_showcase',sha256:item.sha256});
   return items;
 }
