@@ -4,8 +4,10 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
-import {ROOT, FFMPEG, run, save, json, hashFile} from '../scripts/autopilot-core.mjs';
+import {ROOT, FFMPEG, run, save, json, hashFile, loadProject, sha} from '../scripts/autopilot-core.mjs';
 import {writeSyntheticReferenceReview} from './helpers/reference-review.mjs';
+import {canonicalJson} from '../scripts/canonical-json.mjs';
+import {planBStyleReference} from '../scripts/b-style-reference-review.mjs';
 
 // These tiny tones and borrowed fixture props test review control flow only.
 // Passing a synthetic declaration here is never evidence of sample visual quality.
@@ -47,6 +49,87 @@ function reviewFor(f, which) {
   const file = writeSyntheticReferenceReview(f.dir,which), review = json(file);
   return {file,review,evidence,dir,write:()=>save(file,review)};
 }
+
+function reverseKeys(value) {
+  if (Array.isArray(value)) return value.map(reverseKeys);
+  return value && typeof value === 'object' ? Object.fromEntries(Object.entries(value).reverse().map(([key, item]) => [key, reverseKeys(item)])) : value;
+}
+
+test('canonical JSON keeps every value and array order while normalizing object keys', () => {
+  const value = JSON.parse('{"z":[{"second":2,"first":1},0],"__proto__":{"kept":true},"a":null}');
+  assert.equal(canonicalJson(value),canonicalJson(reverseKeys(value)));
+  assert.deepEqual(JSON.parse(canonicalJson(value)),value);
+  const changed = structuredClone(value); changed.z.reverse();
+  assert.notEqual(canonicalJson(value),canonicalJson(changed));
+  changed.z = value.z; changed.extra = false;
+  assert.notEqual(canonicalJson(value),canonicalJson(changed));
+});
+
+for (const style of ['B1','B2','B3']) test(`${style} approvals survive administrative/JSON formatting edits but retain all real input and review gates`, t => {
+  const f = fixture(t,style);
+  fs.copyFileSync(path.join(ROOT,'assets/b1/idea-bulb-crayon.png'),path.join(f.dir,'story-prop.png'));
+  f.project.shots.forEach(s => {s.layers[0].path = 'story-prop.png';}); f.write();
+  passed(command('preview',f.file,'--seconds','.6'));
+  const sample = reviewFor(f,'preview');
+  sample.review.full_playback.observations.push({time:.2,detail:'A second ordered synthetic observation; no actual viewing is claimed.',evidence_ids:['source-video']}); sample.write();
+  passed(command('approve',f.file,'--note',note,'--visual-review',sample.file));
+  const approvalFile = path.join(f.out,'approval.json'), approval = json(approvalFile);
+  assert.equal(approval.visual_review_hash_schema,'canonical-json-v1');
+  assert.equal(approval.visual_review_semantic_sha256,sha(canonicalJson(sample.review)));
+  assert.equal(approval.visual_review_sha256,hashFile(sample.file),'Original bytes remain recorded for audit.');
+  passed(command('render',f.file));
+  const previewHash = hashFile(path.join(f.out,'preview.mp4')), filmHash = hashFile(path.join(f.out,'film.mp4'));
+  const scoped = () => loadProject(f.file,{seconds:.6});
+  const initial = scoped(), plan = planBStyleReference(initial);
+  const cached = () => {
+    assert.equal(passed(command('render',f.file)).reused,true,'No preview, approval or encoded output needs regeneration.');
+    assert.equal(hashFile(path.join(f.out,'preview.mp4')),previewHash);
+    assert.equal(hashFile(path.join(f.out,'film.mp4')),filmHash);
+    assert.deepEqual(json(approvalFile),approval,'Formatting does not silently create another approval.');
+  };
+  f.project.metadata = {working_note:'A local administrative note.'}; f.write(); cached();
+  f.project.metadata.working_note = 'A changed local note.'; f.write(); cached();
+  save(f.file,reverseKeys(f.project));
+  assert.equal(scoped().fingerprint,initial.fingerprint);
+  assert.deepEqual(planBStyleReference(scoped()),plan,'Nested caption, capability and B3 plan hashes remain equivalent.');
+  cached();
+  fs.writeFileSync(sample.file,JSON.stringify(reverseKeys(sample.review))); cached();
+  assert.notEqual(hashFile(sample.file),approval.visual_review_sha256);
+  assert.equal(sha(canonicalJson(json(sample.file))),approval.visual_review_semantic_sha256);
+
+  // Unknown metadata is not granted an administrative exemption.
+  f.project.metadata.renderer_setting = 'must stay bound'; f.write();
+  rejected(command('render',f.file),/Approval invalidated/i);
+  delete f.project.metadata.renderer_setting; f.write();
+  const change = (apply, undo) => {apply();f.write();rejected(command('render',f.file),/Approval invalidated|changed/i);undo();f.write();};
+  change(() => {f.project.captions[0].text += ' Changed meaning.';}, () => {f.project.captions[0].text='A synthetic opening.';});
+  change(() => {f.project.shots[0].layers[0].x += 1;}, () => {f.project.shots[0].layers[0].x -= 1;});
+  change(() => {f.project.sfx[0].gain += .01;}, () => {f.project.sfx[0].gain -= .01;});
+  const media = path.join(f.dir,'story-prop.png'), originalMedia = fs.readFileSync(media);
+  fs.appendFileSync(media,'technical mutation');
+  rejected(command('render',f.file),/Approval invalidated|changed/i); fs.writeFileSync(media,originalMedia);
+  const audio = path.join(f.dir,'voice.wav'), originalAudio = fs.readFileSync(audio), changedAudio = Buffer.from(originalAudio);
+  changedAudio[changedAudio.length-2] ^= 1; fs.writeFileSync(audio,changedAudio);
+  rejected(command('render',f.file),/Approval invalidated|changed/i); fs.writeFileSync(audio,originalAudio);
+  const reviewMutation = mutate => {const r=structuredClone(sample.review);mutate(r);save(sample.file,r);rejected(command('render',f.file),/review changed/i);};
+  reviewMutation(r => {r.shots[0].checks.sound.status='fail';});
+  reviewMutation(r => {r.evidence_sha256='0'.repeat(64);});
+  reviewMutation(r => {r.reviewer.method += ' A different claimed method.';});
+  reviewMutation(r => {r.baseline_comparisons.reverse();r.full_playback.observations.reverse();});
+  sample.write();
+
+  // A same-runtime byte-only approval remains strict; no missing semantic
+  // snapshot can safely prove a reserialized legacy file was unchanged.
+  const legacy = {...approval}; delete legacy.visual_review_hash_schema; delete legacy.visual_review_semantic_sha256;
+  save(approvalFile,legacy); assert.equal(passed(command('render',f.file)).reused,true);
+  fs.writeFileSync(sample.file,JSON.stringify(sample.review));
+  rejected(command('render',f.file),/review changed/i);
+  save(approvalFile,{...approval,visual_review_hash_schema:'unknown-v9'});
+  rejected(command('render',f.file),/review changed/i);
+  const incomplete={...approval};delete incomplete.visual_review_semantic_sha256;save(approvalFile,incomplete);
+  rejected(command('render',f.file),/review changed/i);
+  save(approvalFile,approval); cached();
+});
 
 for (const style of ['B1','B2','B3']) test(`${style} CLI keeps technical output pending and binds both sample and whole-film reviews`, t => {
   const f = fixture(t,style);

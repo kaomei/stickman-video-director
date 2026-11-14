@@ -156,8 +156,11 @@ class MotionReview(unittest.TestCase):
 
     def test_blank_pending_check_can_be_completed_in_the_same_form(self):
         self.write()
-        with self.assertRaisesRegex(ValueError, 'pending/needs repair'):
+        with self.assertRaisesRegex(ValueError, 'pending/needs repair') as error:
             review.validate_review(self.context, 'review/motion-review.json', 'report.json')
+        self.assertIn('original review/motion-review.json', str(error.exception))
+        self.assertIn('does not require repair or re-render', str(error.exception))
+        self.assertNotIn('continue local repairs', str(error.exception))
         self.assertIsNone(review.active_failure(self.context))
         self.assertEqual(review.unresolved_findings(self.data), [])
         # Neither candidate/source changes nor an invented repair are needed to
@@ -165,6 +168,33 @@ class MotionReview(unittest.TestCase):
         self.completed_fixture()
         result = review.validate_review(self.context, 'review/motion-review.json', 'report.json')
         self.assertEqual(result['status'], 'reviewer_passed_not_automatic_aesthetic_judgment')
+
+    def test_observed_failure_keeps_repair_prompt_and_history(self):
+        self.data['review']['status'] = 'needs_repair'
+        self.data['checks']['body_action'].update(status='needs_repair', observation='Observed unsupported wrist.',
+                                                 confirmed_defect=True)
+        self.write()
+        with self.assertRaisesRegex(ValueError, 'continue local repairs, re-render') as error:
+            review.validate_review(self.context, 'review/motion-review.json', 'report.json')
+        self.assertNotIn('does not require repair', str(error.exception))
+        active = review.active_failure(self.context)
+        self.assertIsNotNone(active)
+        frozen = review.read(review.local(self.base, active['path']))
+        self.assertEqual([key for key, _ in review.unresolved_findings(frozen)], ['check:body_action'])
+
+    def test_render_without_approval_explains_recovery_and_stays_blocked(self):
+        args = SimpleNamespace(command='render', project=str(self.base), ratio='16:9', trusted_code=True,
+                               start=0, seconds=1)
+        with patch.object(runtime, 'load', return_value=self.context):
+            with self.assertRaisesRegex(ValueError, 'Missing user approval:') as error:
+                runtime.run(args)
+        message = str(error.exception)
+        self.assertIn(str(self.base / 'approval-16x9.json'), message)
+        self.assertIn('Preview remains available without approval', message)
+        self.assertIn('review-pack and check-review', message)
+        self.assertIn('after genuine user approval', message)
+        self.assertIn('approve --report ... --review ... --note', message)
+        self.assertFalse((self.base / 'approval-16x9.json').exists())
 
     def test_overall_pending_alone_does_not_manufacture_a_failure(self):
         self.completed_fixture()

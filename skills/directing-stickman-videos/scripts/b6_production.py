@@ -10,7 +10,7 @@ sys.dont_write_bytecode=True
 TRUSTED_PUPPET_RUNTIME_SHA256='adc4bd4ddcbe2bb184381d080e99ebe1f4bd1beb3b0b6b1a841930ae15d5bed8'
 TRUSTED_CAPTION_RUNTIME_SHA256='5fc03a3f38dce9f55609f2059077125ecc30b7f5fa1d31580f9e007fcf23200b'
 TRUSTED_ASSET_ROLES_SHA256='ade90e92cad1751bd0b010d508501bba73a41a1ffe6c6018dadd4a368ace9c14'
-TRUSTED_MOTION_REVIEW_SHA256='730056f4f09f6b776535d21440dc40ecc0cb49bc7736d0bc5c383cdf1431efa3'
+TRUSTED_MOTION_REVIEW_SHA256='b2f813cf6d42f65d73053eb75565e6f7ee3f32af7f58600679aa6bd042d921ed'
 FROZEN_V90_EXAMPLE_SHA256={
     'scene':'dffaba09358cfdeafc9a3a04f29483910f4a8667159fbdbd60094b9185239947',
     'native_plan':'c0cdbfa77603936aa69ffdf3f211b28566fd14292172593fd63324a9d749620c',
@@ -336,7 +336,11 @@ def run(a):
     start=round(a.start*30);end=round((a.start+(a.seconds if a.seconds is not None else p['duration']-a.start))*30)
     require(0<=start<end<=round(p['duration']*30),'Invalid authored timeline range')
     if a.command=='render':
-        approval=read(base/f"approval-{a.ratio.replace(':','x')}.json")
+        approval_path=base/f"approval-{a.ratio.replace(':','x')}.json"
+        require(approval_path.is_file(),'Missing user approval: '+str(approval_path)+
+                '. Preview remains available without approval. Complete preview, review-pack and check-review; '
+                'after genuine user approval, record it with approve --report ... --review ... --note "..." before render.')
+        approval=read(approval_path)
         require(approval['fingerprint']==c.fingerprint and approval['video_sha256']==sha(local(base,approval['video'])),'User-reviewed preview changed')
         reviewed=approval.get('motion_review',{})
         require(reviewed.get('review') and sha(local(base,reviewed['review']))==reviewed.get('sha256'),'Creative review missing/changed since user approval')
