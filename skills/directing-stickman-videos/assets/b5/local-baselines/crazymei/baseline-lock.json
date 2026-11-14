@@ -1,0 +1,23 @@
+{
+  "id": "b5-crazymei-approved-20261102",
+  "role": "primary_quality_standard",
+  "video": {
+    "path": "approved-sample.mp4",
+    "sha256": "42a6cb806e5329761ecf2754761300b6b11d46ea7fd0d9131b8c04cdc04e83ec",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_seconds": 49.2
+  },
+  "approval": {
+    "date": "2026-11-02",
+    "source": "crazymei/references/baseline.md",
+    "statement": "这个版本可以"
+  },
+  "quality_scope": [
+    "16:9",
+    "9:16"
+  ],
+  "layout_validation": "Approved complete composite is landscape. Native portrait must be laid out and reviewed separately; the quality bar is unchanged.",
+  "provenance": "User-produced approved Autopilot-Mode-16x9-A, also present in the existing public B5 gallery. This is not an outside creator private source."
+}

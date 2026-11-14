@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import {validateVisualPlan} from './b5-visual-review.mjs';
 const sha = f => crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
 const read = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 const text = x => typeof x === 'string' && x.trim().length > 0;
@@ -86,20 +87,43 @@ export function validateB5Production({dir, c}, pack) {
   need(bedEnd >= c.duration - .05, 'cover background gaps with quiet ambience or an explicitly motivated quiet beat');
   need(text(q.sound_review), 'record actual listening review separately from encoding');
   lockedFile(scene, q.mix);
-  const intervals = q.motion;
+  const intervals = q.motion, holds = q.holds === undefined ? [] : q.holds;
   need(Array.isArray(intervals), 'record local motion intervals, not caption entrances or global camera drift');
-  let end = 0;
-  for (const m of [...intervals].sort((a,b) => a.start - b.start)) {
+  need(intervals.length > 0, 'principal picture inactive: record actual meaningful local motion; holds alone cannot replace it');
+  for (const m of intervals) {
     need(Number.isFinite(m.start) && Number.isFinite(m.end) && m.start >= 0 && m.end > m.start && m.end <= c.duration && text(m.reason), 'invalid local motion interval/reason');
     need(['actor', 'prop', 'information'].includes(m.role), 'local motion needs actor/prop/information role');
     const r = m.region;
     need(Array.isArray(r) && r.length === 4 && r.every(Number.isInteger) && r[0] >= 0 && r[1] >= 0 && r[2] > 0 && r[3] > 0 && r[0]+r[2] <= c.width && r[1]+r[3] <= c.height && r[2]*r[3] < c.width*c.height*.6, 'bound motion to a local picture region, excluding captions/global framing');
-    need(m.start - end <= 2.500001, 'principal picture inactive for over 2.5 seconds'); end = Math.max(end, m.end);
   }
-  need(c.duration - end <= 2.500001, 'principal picture inactive for over 2.5 seconds');
+  need(Array.isArray(holds), 'holds must be an array of planned readable event intervals');
+  let visual_plan_sha256;
+  if (holds.length) {
+    const planFile = path.join(scene, 'visual-plan.json');
+    need(fs.existsSync(planFile), 'planned holds require the corresponding scene/visual-plan.json');
+    const plan = validateVisualPlan({dir, c});
+    visual_plan_sha256 = sha(planFile);
+    const concrete = value => text(value) && !/^(?:hold|still|pause|read|next|continue|none|n\/?a|ok|pass|静止|暂停|停留|继续)[\s.!。！]*$/iu.test(value.trim());
+    for (const hold of holds) {
+      need(hold && Number.isFinite(hold.start) && Number.isFinite(hold.end) && hold.start >= 0 && hold.end > hold.start && hold.end <= c.duration &&
+        text(hold.event_id) && concrete(hold.reason) && concrete(hold.next_change), 'planned hold needs valid start/end/event_id and concrete reason/next_change');
+      const event = plan.actions.find(action => action.id === hold.event_id);
+      need(event, 'planned hold event_id is missing from the actual visual plan: ' + hold.event_id);
+      need(hold.start >= event.start - 1e-7 && hold.end <= event.end + 1e-7, 'planned hold must remain within its named visual-plan event: ' + hold.event_id);
+    }
+  }
+  // A readable result can intentionally stay still. It is separately declared,
+  // tied to a planned event and reviewed in its continuous clip, not sampled as
+  // fake motion. Unexplained inactivity and motion pixel checks remain strict.
+  let end = 0;
+  for (const item of [...intervals, ...holds].sort((a,b) => a.start - b.start)) {
+    need(item.start - end <= 2.500001, 'principal picture inactive for over 2.5 seconds without a planned readable hold');
+    end = Math.max(end, item.end);
+  }
+  need(c.duration - end <= 2.500001, 'principal picture inactive for over 2.5 seconds without a planned readable hold');
   return {mode: 'new_story', manifest_sha256: sha(manifest), mix_sha256: q.mix.sha256, presenter: {path: a.path, file, sha256: a.sha256, source: s.type, kind: a.kind, approvedRigReuse},
-    captions: {preset: captions.preset, font_sha256: captions.font.sha256, title_font_sha256: captions.title_font.sha256, override: override || null}, motion: intervals,
-    limits: 'Metadata and sampled pixel checks are not likeness, semantic-caption, final visibility, licensing or listening certification; review actual playback'};
+    captions: {preset: captions.preset, font_sha256: captions.font.sha256, title_font_sha256: captions.title_font.sha256, override: override || null}, motion: intervals, holds, ...(visual_plan_sha256 ? {visual_plan_sha256} : {}),
+    limits: 'Planned holds still require actual continuous review. Metadata and sampled pixel checks are not likeness, semantic-caption, final visibility, licensing or listening certification; review actual playback'};
 }
 export async function checkB5Motion(evidence, renderer, sharp) {
   if (evidence.mode === 'exact_approved_legacy') return evidence;

@@ -73,14 +73,22 @@ function assertTemplateRoutes(workflow, projectDir = '<NEW_PROJECT_DIR>') {
     assert.ok(command(workflow, 'planning-ledger').includes('--planning'));
     assert.ok(!command(workflow, 'production-ledger').includes('--planning'));
   } else if (workflow.style === 'B5') {
-    assert.deepEqual(items.map(item => [item.phase, item.track, item.path, item.created_by, item.initial_status]),
-      [['candidate', 'visual', path.join('<NEW_EVIDENCE_DIR>', 'review-template.json'), 'review-pack', 'unknown']]);
-    for (const [id, action] of [['validate', 'validate'], ['frames', 'frames'], ['encode-candidate', 'encode'], ['review-pack', 'review-pack'], ['accept-candidate', 'accept']]) {
+    assert.deepEqual(items, [], 'Ordinary B5 previews do not require formal evidence templates');
+    assert.equal(workflow.preview_review.mode, 'standard_preview');
+    assert.equal(workflow.preview_review.strict_qa.opt_in, true);
+    assert.deepEqual(workflow.preview_review.strict_qa.completeness_commands.map(item => item.id), ['init-delivery-completeness', 'check-delivery-completeness']);
+    assert.ok(workflow.preview_review.strict_qa.completeness_commands.every(item => item.argv[1] === path.join(ROOT, 'scripts/b-delivery-completeness.mjs')));
+    assert.ok(!workflow.commands.some(item => ['init-delivery-completeness', 'check-delivery-completeness'].includes(item.id)));
+    assert.ok(fs.statSync(workflow.preview_review.strict_qa.guide).isFile());
+    assert.equal(workflow.acceptance.documents[0], path.join(ROOT, 'references/b5-first-preview.md'));
+    assert.equal(workflow.references[0].path, path.join(ROOT, 'assets/b5/local-baselines/mei-event-relay/approved-sample.mp4'));
+    for (const [id, action] of [['validate', 'validate'], ['frames', 'frames'], ['encode-candidate', 'encode']]) {
       const argv = command(workflow, id);
       assert.equal(argv[1], path.join(ROOT, 'scripts/character-explainer.mjs'));
       assert.equal(argv[2], action);
     }
-    assert.ok(!workflow.commands.some(item => ['approve-preview', 'render-film'].includes(item.id)));
+    assert.ok(!workflow.commands.some(item => ['approve-preview', 'render-film', 'review-pack', 'accept-candidate'].includes(item.id)));
+    assert.ok(!command(workflow, 'encode-candidate').includes('--strict-review'));
     assert.ok(!command(workflow, 'init').includes('--ratio'), 'B5 init cannot silently claim native ratio conversion');
   } else {
     assert.deepEqual(items.map(item => [item.phase, item.track, item.path, item.created_by, item.initial_status]), [
@@ -94,6 +102,10 @@ function assertTemplateRoutes(workflow, projectDir = '<NEW_PROJECT_DIR>') {
     }
     assert.equal(command(workflow, 'check-film-review')[2], 'check-review');
     assert.equal(option(command(workflow, 'check-film-review'), '--review'), 'outputs/film-review-01/motion-review.json');
+  }
+  if (workflow.style !== 'B5') {
+    assert.equal(command(workflow, 'init-delivery-completeness')[2], 'init');
+    assert.equal(command(workflow, 'check-delivery-completeness')[2], 'check');
   }
   for (const item of items) {
     assert.ok(workflow.commands.some(step => step.id === item.created_by || (item.created_by === 'render' && step.id === 'render-film')));
@@ -209,13 +221,16 @@ for (const style of STYLES) {
   });
 }
 
-test('B5 init remains a historical scaffold with a dedicated unverified production workflow', t => {
+test('B5 init defaults to a neutral portable story stage with an unverified production workflow', t => {
   const dir = temporary(t), projectDir = path.join(dir, 'new-B5');
   const initialized = success(cli(dir, 'init', projectDir, '--style', 'B5'));
   const project = read(initialized.project);
   assert.equal(project.style, 'B5');
   assert.equal(project.renderer, 'character-explainer-code-v1');
-  assert.match(initialized.stage, /not a generated new story/);
+  assert.equal(project.scaffold_type, 'neutral_new_story');
+  assert.equal(initialized.scaffold_type, 'neutral_new_story');
+  assert.ok(fs.statSync(initialized.art_kit).isFile());
+  assert.ok(fs.statSync(initialized.mei_scene_plan).isFile());
   unverified(initialized);
   const hint = initialized.next_workflow.commands;
   assert.equal(hint.length, 1);

@@ -29,6 +29,23 @@ If image generation fails or is blocked, report the observed limitation and a sc
 
 **Left-stage actors are always anonymous stickmen**, animated with code (SVG/canvas or the existing rig), with story-specific props, gestures, force, camera, titles and captions. Presenter selection changes only the bottom-right identity: do not turn left actors into that celebrity/IP or replace their physical-comedy grammar with generated talking-head shots. Large objects and absurd consequences are welcome when the action is concrete and causal; preserve the composition, anatomy, sound and semantic-caption rules below.
 
+## Lock the anonymous actor model before new choreography
+
+Use the actual CrazyMei ordinary actor, not a fresh skeleton inferred from the words “stick figure.” The [original hook rig](../assets/b5/local-baselines/crazymei/choreography-source/16x9/hook.html) and [first scene](../assets/b5/local-baselines/crazymei/choreography-source/16x9/mistake-1.html) provide the drawing. A [small reusable port](../assets/b5/motion/mei-reference-rig.cjs) preserves that normal geometry; adapt its pose and story contacts rather than elongating its limbs. Run the [dependency-free SVG demo](../assets/b5/motion/mei-reference-rig-demo.cjs) with `node assets/b5/motion/mei-reference-rig-demo.cjs > comparison.svg` from the skill directory to see the source-angle, seated and reaching examples at the same head size. The port shifts the original hip to `(0,0)`; it does not change proportions. In the original model coordinates:
+
+| Part | Source geometry |
+| --- | --- |
+| Round head | Center `(0,-345)`, radius `60`, outline `11` |
+| Trunk | `(0,-280)` to `(0,-150)`, stroke `18`; arm attachment `(0,-265)` |
+| Each arm | Two segments `86 + 84`, round caps and joins |
+| Each leg | Two segments `80 + 80`, attached at `(0,-150)` |
+
+These are neutral-model proportions, not screen-space size or required joint angles. Translate, rotate and **uniformly scale the complete actor**, including its head and strokes, to fit either ratio. Design seated/reaching poses from this same model. If a hand cannot reach a task, move the task surface/prop, shift the supported root or author a plausible new pose. Do not double the arm/leg lengths while keeping the original head. An alternative drawing family requires a deliberate reference comparison; fixed bone lengths alone do not establish the chosen model.
+
+Before interpolating a new story, compare the source actor and new actor at the **same head diameter** in neutral and key task poses; inspect both the whole figure and the actual 320px-wide composition. Check head/body/limb ratios, source-like line weight, head-to-trunk connection, natural elbows/knees, support and task ownership. A reachable IK solution can still create a giant triangular arm, detached-looking neck or confused limb silhouette. Change the pose or staging when that happens. Do not merely hide the elbow behind the head or enlarge the head to compensate.
+
+Ordinary writing, looking, sitting and reaching must preserve this normal model. A source-style flatten/stretch is a **separate caused gag** with planned entry, extent and recovery, not permission to distort normal acting. The V5 dog-lap case teaches retained state and layered timing; its historical actor geometry is **not** the shape master. A normal rig repair must preserve unrelated presenter identity, captions and audio.
+
 ## Reference composition (1920×1080)
 
 - Paper `#EBE7E1`, ink `#1E1C1A`, red `#D7372C`, secondary gray `#858079`. Preserve natural negative space and purposeful variation, not uniform UI tags everywhere.
@@ -48,17 +65,17 @@ Keep stage artwork, ground, screen-space titles, captions and presenter in separ
 
 ## Motion is the idea, not decorative activity
 
-Read and apply the mandatory [left-stage action contract](b5-left-stage-motion.md) before authoring. This section fixes composition and rig safety; that contract fixes choreography and its evidence. The left stage is a physical-comedy scene, not a sequence of illustrated information cards.
+Read and apply the mandatory [left-stage action contract](b5-left-stage-motion.md) before authoring. This section fixes composition and rig safety; that contract fixes choreography and its evidence. The left stage uses successive major visual events, including physical comedy, graphic transformations and visual metaphors; it is not static information cards or a mandatory continuous domestic scene.
 
-Author **anticipation → contact → force transfer → exaggerated result → rebound/reaction**. Use nonuniform acceleration, holds, squash/recoil and delayed secondary motion. A paper stack must compress on contact, its layers lag/rebound, and the actor must respond to that weight; a box resists before moving. Use oversized props and absurd physical consequences, not lots of unrelated symbols. Allow comic pauses, but don't leave the principal picture inactive longer than the common B gate.
+For physical events, author **anticipation → contact → force transfer → exaggerated result → rebound/reaction**. Graphic events instead need a readable entrance/change/result/handoff; do not invent bodies or contacts for them. Use nonuniform acceleration, holds, squash/recoil and delayed secondary motion. A paper stack must compress on contact, its layers lag/rebound, and the actor must respond to that weight; a box resists before moving. Use oversized props and absurd physical consequences, not lots of unrelated symbols. A deliberate result hold needs its event, reading purpose and next change recorded through the [production gate](b5-production-gate.md); unexplained inactivity fails, and jitter cannot stand in for progress.
 
-At transitions, transform the visible premise through a clear physical action: for example, a title gets struck through as the actor's posture changes. In a mirror sequence use approach → touch → recoil → inspect → retouch → hands to self. Reflections must match contact and facing; don't substitute an idle mirror prop.
+At transitions, transform or replace the visible premise through a meaningful visual event; physical action is one option: for example, a title gets struck through as the actor's posture changes. In a mirror sequence use approach → touch → recoil → inspect → retouch → hands to self. Reflections must match contact and facing; don't substitute an idle mirror prop.
 
 Maintain one current pose per limb, fixed bone lengths, plausible elbow direction, reachable targets and grounded feet in the normal rig. The sample's two-segment arms are 86/84 units with reach clamped below 170; use IK or an equivalent contact solver. Grip and object contact share the same coordinate source. Use a separate, explicitly timed whole-body deformation layer for intentional comic flattening, stretching or melting; this is not permission for accidental long arms or broken joints. Include its entry, extreme and recovery states in QA. Do not inverse-scale the head to cancel a deliberately flattened whole-body silhouette. See [normal rig versus comic deformation](b5-left-stage-motion.md#normal-rig-versus-comic-deformation).
 
 Use brief stage impact accents (<0.2 seconds) and motivated pushes (typically ≤6.5%, rare ≤10%), not incessant shaking or speed for its own sake. Avoid identical keyframes/easing for every object.
 
-**No meaningless anxiety bubbles, background circles, orbital lines or internal curved diagrams.** Express unease with shrugged/contracted shoulders, hunching, hands drawn inward, a small retreat or curled posture. Real ropes, mirrors and brief force/action lines are allowed when the audience can see what physically causes them. Keep other approved picture/audio untouched during a local repair.
+Do not add meaningless anxiety bubbles, background circles or orbital lines as filler. Express a figure's unease through readable posture. A meaningful graph, event-order diagram, graphic path or visual metaphor may lead a scene when it explains the actual line; it is not restricted to decoration beside a figure. Real ropes, mirrors and brief force/action lines need coherent physical causes where applicable. Keep other approved picture/audio untouched during a local repair.
 
 ## Continuous presenter acting, without losing identity
 

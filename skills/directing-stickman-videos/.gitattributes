@@ -1,0 +1,2 @@
+# Preserve the verified source prompt verbatim, including original trailing spaces.
+references/b5-mei-original-prompt.md whitespace=-blank-at-eol

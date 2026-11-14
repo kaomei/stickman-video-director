@@ -1,100 +1,96 @@
-# B5 left stage: causal slapstick, not prop slides
+# B5 left stage: successive visual events and event-local physical comedy
 
-Read this before planning or coding any B5 story. It governs the **anonymous left-stage stickmen only**. The bottom-right presenter retains the approved identity, size, mouth/gesture system and audio; do not confuse presenter asset routing with left-stage animation. Follow [composition and rig safety](b5-avatar-motion.md), [sound](b5-sound-qa.md) and the [B5 production route](b5-character-explainer.md).
+Read before directing any B5 story. This governs the anonymous left stage. Keep the approved bottom-right presenter, narration and captions separate from stage choreography. Use [composition and rig safety](b5-avatar-motion.md), [sound](b5-sound-qa.md) and the [B5 route](b5-character-explainer.md).
 
 ## What to learn from the reference
 
-The source-led motion study uses the user-supplied CrazyMei reference, its directing instructions, original scene specification and editable choreography. Its distinctive mechanism is **a change in the actor's physical state**, not merely large objects, many events or fast easing. Learn this mechanism; do not transplant the account, presenter, narration, branded copy or every gag. Private reference footage is not bundled or licensed for redistribution by this instruction.
+Study both bundled complete films: [CrazyMei](../assets/b5/local-baselines/crazymei/approved-sample.mp4) and [Spider](../assets/b5/approved-sample.mp4). They set the same quality target in 16:9 and 9:16. The [verified original prompt](b5-mei-original-prompt.md) organizes scenes as Voiceover / On-Screen Text / multiple Animation Actions / SFX. Its top-level mechanism is a succession of major visual gags, metaphors and transformations; physical state changes make individual gags convincing.
 
-| Reference mechanism | Transferable direction | Insufficient substitute |
+| Reference event relay | Transferable direction | Insufficient substitute |
 | --- | --- | --- |
-| Falling weight → body becomes a pancake → hand sweeps it away → spring recovery | An object imposes a visible force; its consequence persists and drives the next action. | Board drops near an upright actor; both bounce independently. |
-| Trip → cable winds around torso → blade contacts cable → released body somersaults | Establish a constraint, tighten it, then visibly release stored energy. | Rope icon, scissors icon and a smiling pose appear in sequence. |
-| Battery drains → body loses height → ink puddle remains | Make a metaphor happen to the actor through readable intermediate states. | Battery percentage changes next to a sad but unchanged actor. |
-| Swinging body → rope endpoint follows its hand → landing/recovery | Derive connected objects from the actor's actual transforms. | Animate a rope and hand separately until they happen to look close. |
+| Anvil → pancake figure → giant hand sweep → spring return → retention curve | Hand the stage to a new main visual through specific, meaningful actions and contrasting timing. | Same desk/figure for the whole film, or decorative icons appearing around an idle actor. |
+| Badges → trip → wrap → scissors → FREE | Develop and release a constraint inside this sequence; let the result change the picture. | Badges and scissors bounce independently while nothing changes. |
+| Paper/X → deflation → puddle → battery/metaphor emphasis | Switch from literal illustration to an embodied metaphor and graphic emphasis. | Change only the heading while replaying a pose. |
 
-The bundled Spider-Man film remains a proven B5 implementation example, not a ceiling on choreography quality. A newly generated story or passing geometry report is **not** an accepted motion baseline. If the original private video is unavailable, disclose that comparison gap; use the mechanisms above and bundled examples without pretending to have watched missing material.
+Do not transplant the reference's account, presenter, narration or exact gags. A newly generated film, valid geometry or populated template is not a new accepted baseline. Outside creator private footage is not bundled by this instruction.
 
 ## Action cards before code
 
-Use the approved original-speed narration and actual word/phrase timing. Group by meaning; a long sentence may contain several action beats. Write a card for every main idea before rendering:
+First fill the [Mei scene template](b5-mei-scene-template.md) using actual approved word/phrase timing. Make the main visual sequence clear before refining body mechanics. Group by meaning: one sentence may contain several visual events, and a planned hold can let a result read. No fixed event quota.
+
+Then write cards/cue ledger and complete visual/preview plans. For every event record:
 
 ```text
-beat_id / narration_span / actual_word_anchor / time_or_frame / fps
-meaning: What idea must the viewer understand without labels?
-before_state: Actor pose, weight, prop ownership and constraint.
-anticipation: What loads, resists, approaches or winds up?
-contact: Shared point/path, coordinate owner and force direction.
-consequence: How the actor's silhouette, location or freedom changes.
-secondary_motion: What trails, bends, rattles, catches up or falls next?
-recovery: Recoil/overshoot/settle; final state feeds the next beat.
-sound_event_id: Shared visual contact event, material and source transient.
-hold_if_any: Duration, readable purpose and next change; not filler.
-review_frames: Before / anticipation / contact / extreme / delayed response / recovery.
+id / kind (physical or visual) / narration span / actual word anchor / start–end / fps
+meaning: The spoken idea and the chosen visual premise.
+before_state: What leads the stage before this event?
+visual_change: Main-visual handoff and semantic action/state change, named separately.
+  What becomes visibly different, and how does that answer the current words?
+composition: Main visual, scale, silhouette, safe area and planned framing.
+timing: Leading path/endpoints/curve and decisive interval; separately delayed tails.
+richness: Supporting material/graphic/reaction that develops this event's meaning.
+hold_exit: What the result lets us read; what ends it; next main visual/handoff.
+sound_event: Actual event/material/transient, or purposeful silence.
 ```
 
-Keep a project-local cue ledger (for example `left-stage-beats.json`) with these fields or equivalent explicit information. Word anchors stay tied to the accepted voice; do not speed up, regenerate or recast narration to fit a stock gag. The ledger directs authoring; the [visual acceptance protocol](b5-visual-acceptance.md) additionally requires complete action coverage, evidence extracted from the final encoded candidate and independent actual-media review. A ledger or nonempty review string alone cannot pass it. The scaffold does not generate new choreography.
+For a **physical event**, add before/anticipation/contact/consequence/delayed response/recovery; force direction, shared world contact owner, actor/support/grip tasks, deformation bounds and release/handoff time. For a **visual event**, add meaningful before/after states and ordered real sample positions; a path reveal, replacement or transformation does not need invented force, contact or arms. A readable result hold stays within its changing event, not in a separate event with identical before/after states. Use `kind: visual` only when appropriate; a clip containing an actual bodily collision still needs physical review. See [plan/review schema](b5-visual-acceptance.md#review-record-and-binding).
 
-**Reject before code** if the card merely says “show a folder, scale in a photo, wiggle the actor, add a burst.” Replace it with a concrete action: an anonymous investigator pulls a stubborn folder, its contents suddenly give way, the body overbalances, sliding photos drag the gaze/body into the next setup. A news metaphor must remain visibly illustrative: no fabricated documents, quotations, dates, romantic acts or evidence. Don't imply that a real person performed the stickman's gag.
+Cards are authoring instructions, not approval forms. Keep factual meaning and uncertainty intact. Preparation, contact and settling can develop an already named action; source-provided examples can be illustrated with their hypothetical/example framing intact. These are not permission to assert a motive or invent acts, evidence, documents or quotations. Record the plan under [first-preview execution](b5-first-preview.md); a separate plan-lock belongs to optional strict QA. Neither a ledger nor nonempty review prose proves the result.
+
+## End on the current meaning
+
+The last event follows the current words just as earlier events do: entrance → decisive change → readable result → handoff or finish. An end state means the result can be read; it does not mean earlier shots must be collected together. The approved example's chronology and object chain explain its own spoken order, not a universal B5 outro.
+
+Mark actual speech end and plan through the requested picture end at the original voice speed. Continue the supported action/consequence, independently delayed tails and a motivated result read; use the next semantic handoff only if that meaning belongs in the excerpt. Never introduce a side-by-side comparison, recap, icon row or summary solely because seconds remain. A comparison is appropriate when the relation itself is the current explanation. Choose the last event's timing accordingly; do not invent behavior or add perpetual jitter to occupy time.
+
+## Draw needed states before tweening
+
+After choosing the main-visual relay, prepare only the artwork its current events need. Reuse accepted identities, the ordinary Mei model and suitable existing drawings; create missing story objects, expressions and meaningful state variants before writing their motion. An SVG drawing function, layered vector or isolated raster can be a reusable element. Use an available drawing route suited to the contour and style, under existing generation authorization; another image tool or paid call is not automatic.
+
+Draw recognizable before, contact/extreme and changed-result poses where the action needs them. Keep head/body connections, bent joints, paw/hand ownership and support legible at the intended size. For coupled action, such as a dog supported on a person's thigh, stage the dog and supporting pose together with shared contact coordinates and deliberate front/back layers. Parts may move separately when their connections and lengths remain coherent. If articulation would break the silhouette, use drawn pose variants or a complete contact pose rather than stretching, masking off or detaching pieces. A close-up retains enough connecting context to identify its subject; a label cannot repair missing anatomy.
+
+Then animate the prepared states with short decisive paths, local rotations, reveals, pose changes and separately delayed tails, and clear/demote the previous lead at each handoff. More assets alone do not create richness: each asset/state must perform a role in the current meaning. A single unchanged illustration sliding or zooming through every beat is insufficient. This drawing order belongs inside existing authoring and the existing candidate review; no separate library, asset-count target or new approval/report round is required. It can reduce repeated drawing and repair, but no speedup is established without measurement.
+
+## Abstract comic expression is a normal production choice
+
+Use the [installed executable artwork/relay kit](b5-art-kit.md) for recurring shapes, whole poses and motion handoffs. Its phone, eyes, hand and cup reuse the approved source contours; animal poses are reusable new whole drawings, not previously user-approved film evidence. Default init copies the implementation into the project, so it survives moving the project or removing the Skill.
+
+The script's meaning does not require realistic animal locomotion or a continuous acted room. A whole cartoon dog can launch, rotate, land in a bounded squash and recover; giant graphic eyes can replace a gaze; a question can take over; a single paw/forearm drawing can show a tap. Choose the simplest recognizable image that performs the current verb, then let it yield. Cartoon squash applies to the complete silhouette, including face, with an explicit recovery. Avoid rebuilding animal joint chains when whole drawings and graphic handoffs communicate the same meaning. Real contact still shares a point and readable ownership; comic abstraction does not justify disconnected anatomy or unclear support.
 
 ## Choreography and staging
 
-Use **setup → anticipation → contact/constraint → exaggerated consequence → delayed secondary motion → recovery**. Not every minor beat needs all phases, but every main idea needs a readable causal chain and an unmistakably different before/after state.
+- Direct the **main visual handoff**: entrance → decisive change → readable result → transition/next event. A wipe, transformation, graphic path or bold word can take over the stage. Do not require the same room or unfinished task to persist across unrelated meanings.
+- Check the **semantic action** as well as the takeover. Entry, fade, zoom and annotation can introduce the lead without changing what it does. An observation/investigation beat needs a relevant new visible clue, not another view of already-known location endpoints. A diagram's own comparison or transformation can be the action when that relation answers the narration.
+- Give each event a leading path and unequal phase durations. Contrast readable preparation/results with short, decisive movement. Offset secondary starts/tails; do not drive every layer with one smooth pulse or accelerate approved speech.
+- Use strong silhouettes and meaningful scale changes. Props and graphics must act, transform, clear or reinterpret the picture. Unrelated tiny icons, generic bursts, perpetual shaking and more event IDs do not establish richness.
+- Preserve purposeful holds. A flattened figure, a completed graph or a clear event-order comparison can remain still while it is read. Review a long plateau for purpose and exit; do not impose compulsory cuts or random movement every second.
+- For force/contact acting, use setup → anticipation → contact/constraint → exaggerated consequence → delayed secondary motion → recovery. Show force through root, torso, support, hands and material. A paper stack compresses and its layers lag; a hinge turns about its hinge. Retain a grip/constraint until its real release inside that event.
+- Keep cause and result readable. Compose titled and untitled shots separately; do not leave a tiny bottom-strip action under empty title space. Camera accents support the stage, with captions and presenter outside that transform. A physical close-up must not hide the contact or extreme.
 
-- Stage the line of action and silhouette first. Decide what pushes, pulls, catches, blocks, carries or releases the actor. Use root translation/rotation, weight shifts, balance loss and pose changes; do not animate only hands, brows and prop scale.
-- Props are acting partners. A large object should obstruct, weigh down, sweep, trap, stretch, topple, drag or release something. Size is relative to the actor, not a demand to fill the frame. One well-staged object can outperform ten popping icons.
-- Make material behavior specific: paper bends under load, layers lag after contact and rebound in sequence; a heavy box resists before moving; a hinge rotates about its hinge; a mirror touch has approach, contact, recoil, inspection and a changed next attempt. No floating grip across a visible gap.
-- At a reveal, change the visible premise, not only the heading. Something fails, gives way, flips, recoils or is reinterpreted, and the actor physically reacts. The ending of one chain should create the beginning of the next, rather than resetting to the same standing pose for each sentence.
-- Vary the comic verbs across the film: catch/resist, compress/release, stumble/roll, wrap/escape, drain/collapse, swing/land are options, not a mandatory checklist. Do not reuse anvil → battery → scissors in every topic or perform every gag at maximum intensity.
-- Use unequal timing: a legible wind-up, a fast contact, a larger follow-through and a brief settling beat. At 30 fps, roughly 5–9 frames of anticipation, 1–3 frames around contact and 6–15 frames of follow-through can be a starting experiment, not a uniform timing template. Scale to the actual action and speech; do not accelerate the whole timeline to fake energy.
-- Alternate build-up, hit, consequence, pause and escalation. Flag a principal-stage plateau longer than about one second for review. A deliberate held weight, compressed body, trapped pose or comic stare may stay longer if its purpose and exit are explicit. Host mouth motion, subtitle highlighting, camera drift or a looping prop wiggle do not excuse an otherwise idle left stage. Do not turn this flag into compulsory cuts or random motion every second.
-- Keep the cause and its result in a readable frame. A brief stage impact accent may support a hit; it does not replace it. Keep existing camera limits, typography outside camera transforms and meaningful negative space. Never use constant shake, an extra diagram, meaningless anxiety circles or repeated floating labels to manufacture activity.
+### Arm and hand poses are part of physical action review
 
-### Arm and hand poses are part of the action gate
-
-This requirement applies to **left anonymous actors**, independently of the presenter's rest/keyword gestures. Plan what each hand is doing before, during and after every main action. Use a supported resting pose when a hand has no task. Reach, resist, lift, catch or protect with a readable entry, shoulder/body response and recovery or handoff to the next task. Vary the line of action and elbow angles with the force; do not pin both arms overhead, reuse a stock wave or keep rigid symmetrical arms through unrelated beats.
-
-A sustained raised pose can be correct while visibly hanging, holding weight, resisting or trapped. Name that constraint and inspect its continuous interval; a written reason cannot excuse an unsupported picture. Return or transition the arms when the force ends. Review normal bone lengths, plausible bends, one hand per task and actual grips throughout the clip. FX, moving props, mouth motion and captions cannot rescue an actor whose arm pose remains mechanically frozen. Do not add idle flailing just to pass a movement threshold.
+Whenever a figure appears, give each hand a visible task/support or natural rest. Reach, resist, lift or catch with shoulder/body participation and a credible entry and exit. Sustained raised poses need visible hanging, weight, resistance or entrapment. Do not keep rigid symmetrical arms or a stock wave through unrelated beats. Check grips, elbow direction, support and silhouette continuously. A graphic-only event need not add a figure just to satisfy an anatomy checklist.
 
 ## Normal rig versus comic deformation
 
-Separate the **normal rig** from an **explicit comic deformation layer**:
-
-1. Normal motion uses one current pose per limb, fixed segment lengths, plausible elbow direction, reachable IK targets and grounded feet. Walk/run requires changing support, not sliding a stationary stance. Airborne motion has a takeoff, arc and landing.
-2. Deformation is a named, bounded action with an entry, extreme, follow-through and recovery (or a deliberately retained end state). Whole-body flattening, stretch, spin or melting is allowed when caused by the scene and semantically useful. An arbitrarily lengthened arm, duplicate limb, drifting joint or broken neck is not slapstick.
-3. Apply deformation in a consistent local body space around the contact/pivot. Head and face participate when the entire silhouette flattens; do not automatically inverse-scale them back to a normal round head and erase the joke. Keep expressions readable at the extreme, with no accidental distortion of the separate presenter.
-4. Bound grips and attached props to the **evaluated world transform**, including root rotation/deformation; use the same point for hand, rope end or held-object handle. A physically released object becomes independent only after the release event. Choose front/back limb order intentionally.
-5. Record each intended exception to normal geometry in the action card. Keep normal-bone checks, and review deformation separately; never disable anatomy checks globally or excuse accidental spikes as comedy. Restore the normal rig cleanly unless the story deliberately ends in the transformed state.
-
-The source's pancake (approximately 2.35× width / 0.12× height) and later collapse into a puddle demonstrate a large state change, **not universal numeric presets**. B5 does not require that amount of deformation, and some beats work through relocation, entanglement or balance alone. The test is a readable physical consequence, not matching a squash percentage.
+1. Lock the [source ordinary drawing](b5-avatar-motion.md#lock-the-anonymous-actor-model-before-new-choreography): head/trunk/limb proportions and stroke weight under uniform scale, one current pose per limb, reachable targets and planted support. Fixed but elongated bones still draw the wrong figure. Re-stage unreachable props instead of stretching limbs.
+2. Separate a named, bounded comic deformation from the normal rig. Whole-body flattening, spin or melting needs entry, extreme and recovery or a deliberate retained result. Arbitrarily long arms, duplicate limbs and broken necks are defects.
+3. Apply deformation in consistent local body space. Let the head participate in a full pancake instead of inverse-scaling away the joke; preserve face readability and the separate presenter.
+4. Bind grips and attached objects to evaluated world transforms, including root/deformation. Use the same point for hand/rope/handle. A released object becomes independent after its release event. Choose front/back layers intentionally.
+5. Keep geometry checks and inspect actual silhouettes. Do not globally waive anatomy because one event uses squash. The source pancake values are examples, not universal presets.
 
 ## Shared event, sound and deterministic code
 
-Give each important action a stable event ID used by picture and sound, for example `folder_release_02`. Record its actual narration anchor, contact time/frame, world contact point, material, force direction, actor before/after state, secondary-motion delay and recovery endpoint. Let that event drive any justified camera accent and SFX spotting, not independent approximate timestamps. Use actual source transient offset so contact lands within one frame at the project frame rate.
+Give events stable IDs used by picture and sound. For a contact, record actual word anchor, contact frame, evaluated world point, material and source-transient offset; keep contact and sound within one project frame. For a visual reveal, name its actual entrance/change anchor instead of inventing a collision. Use distinct preparation/material/tail sounds where justified, with space for narration. Reuse approved media under existing cost authorization.
 
-Preparation/air, contact, material tail and recovery sounds follow the different action phases. A paper release is not the same sound as a box impact. Leave room for the voice and selected accents; a generic whoosh/boom on every prop is not reference-level Foley. Reuse approved media and respect the existing cost and sound rules.
-
-The renderer must be seekable and deterministic: evaluate pose/props from the requested project time/frame and shared event data, not wall-clock time, unseeded random state or accumulated playback. Separate actor rig, deformation, prop dynamics, stage camera, titles/captions and presenter layers so a local motion repair cannot accidentally resize the host or change the voice. Keep each requested aspect ratio native and review its staging independently.
+Evaluate pose/props from requested time/frame, not wall-clock time, unseeded randomness or accumulated playback. Separate normal rig, deformation, prop/graphic dynamics, camera, text and presenter so a stage repair cannot alter host/audio. Compose and review each requested ratio natively.
 
 ## Reusable directing prompt
 
-This is a distilled production instruction, not a verbatim recovered chat prompt. Adapt the bracketed inputs to the current story:
-
-> Direct the anonymous left-stage stickmen as a causal slapstick scene for [approved script + word timing + ratio]. Keep the approved bottom-right presenter and narration unchanged. First produce action cards, then author deterministic code. Translate each main idea into setup, anticipation, physical contact/constraint, a conspicuous whole-body consequence, delayed material motion and recovery. Use story-specific oversized objects as forces, not decorative noun illustrations. Let an action's final state seed the next action. Vary timing, silhouette, force and comic verbs. Use a normal fixed-length rig plus explicitly bounded deformation where justified. Anchor grips, prop dynamics, SFX and restrained camera accents to shared contact events. Keep titles readable, captions semantic and the source's factual meaning intact. Reject prop-pop-plus-idle-actor scenes. Review before/contact/extreme/recovery strips and silent left-stage playback before judging the full mix. Do not regenerate approved assets, spend credits or publish without the applicable user authorization.
+Use the full [Mei scene template](b5-mei-scene-template.md), supported by the [verified original](b5-mei-original-prompt.md) and [source timing study](b5-crazymei-directing-structure.md). That scene structure directs the event relay. The contact checklist refines only relevant physical events. The [V5 case](b5-v5-causal-workflow.md) is an optional local mechanics example, not the mandatory whole-film structure.
 
 ## Review gate, not just a successful render
 
-Save the action cards and code/input records in the user's project. Keep candidate, extracted evidence, independent review and delivery directories outside that project so they do not change its input fingerprint. Follow the mandatory [candidate → evidence → independent review → accept protocol](b5-visual-acceptance.md). `encode` is pending, not accepted delivery. Use `review-pack` to extract the left-stage evidence from the final candidate MP4; review it **without sound, captions or presenter distraction**, then watch the complete encoded film with sound. Source-render isolation may help diagnose a problem, but it does not replace final-candidate evidence. Do not remake unaffected media just for an audit.
+Save authoring records in the project; keep outputs outside it. For an ordinary requested preview, follow the [default first-preview route](b5-first-preview.md): review the actual encoded candidate once at normal speed with sound against the approved effect. Use the criteria below during that pass; inspect suspect keyframes/contacts only as needed. Separate silent event clips, independent repeated review and bound evidence records are part of [optional strict acceptance](b5-visual-acceptance.md).
 
-For each main chain, inspect a motion strip containing before, anticipation, contact, extreme consequence, delayed response and recovery; then watch the continuous interval with lead-in/out. A whole-film contact sheet only locates scenes. Check:
-
-- Can a viewer name what acted on the figure and what changed? Does a reveal change the actor/premise rather than only its label?
-- Are anticipation, fast contact, delayed response and recovery visibly different? No identical pulse easing across all props, teleporting exits or fades standing in for physical action.
-- Do shared hand/prop/ground coordinates coincide? Are weight, silhouette, occlusion and normal/deformed rig states intentional and legible? Are the extreme and recovery clean?
-- Does each arm have a visible task, support or natural rest? Are raised poses motivated through their full duration, with plausible shoulders, elbows, grips and recovery? Do unrelated beats avoid the same rigid overhead pose or repeated wave?
-- Is a long hold purposeful? Does the next beat develop the state rather than repeat it? Is intensity varied rather than exhausting?
-- Does title-aware framing fit both titled and untitled shots? Without a heading, is the actor-and-prop group large and high enough to read, rather than leaving an unused title area above a tiny bottom-strip action? Inspect setup/contact/extreme/recovery and interval boundaries for cropping; keep presenter and captions independent of the stage camera.
-- With sound restored, does the correct material transient coincide with contact, and do consequential/recovery sounds remain audible under voice and music? A waveform alone is not listening evidence.
-- Are accepted presenter, voice, unrelated shots and other styles untouched by a local fix? Is the requested ratio natively composed?
-
-Fail any main chain that is just **prop entrance + small actor pulse + generic burst**, even when it has many cue events, valid IK, new headings and a successful render. Every main chain must have observed passing results; missing evidence, an unknown result or a blocking defect keeps the candidate pending. Repair the failed interval only, then bind new evidence and review to the resulting candidate. Record unavailable comparison/listening checks and pending user review honestly. Documentation/link tests prove the contract is present; **they do not prove a new video matches CrazyMei**. An updated Skill does not retroactively improve an existing preview.
+Check main visual handoffs and semantic changes separately, using actual before/change/result samples. Name the clue or relation gained after disregarding entrance effects and explanatory labels; verify that it answers the current words. Also check scale/silhouette, timing contrast, purposeful holds/exits, graphic readability and physical anatomy/contacts where present. Reject a requested event relay that became minor limb movements, a noun collage or repeated endpoints with arrows in place of the promised observation. Record observed defects with times and repair the affected intervals internally; don't strengthen the review wording instead. Missing playback/listening stays pending. Documentation/tests establish the route exists; they do not prove a new film matches the targets or that a user has accepted it.

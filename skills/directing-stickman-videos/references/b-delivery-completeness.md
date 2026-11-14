@@ -12,9 +12,15 @@ An explicit user instruction can omit or alter a component; retain its actual te
 
 Do not replace accepted samples, regenerate approved voice or repaint unrelated assets for this rule update. For a local revision, review changed ranges and their joins under existing preservation rules; a new full-film completeness claim still needs valid whole-scope review evidence for that exact output. Existing historical samples do not acquire a new pass merely because this document changed.
 
+## B5 ordinary requested previews
+
+For B5's [default first-preview workflow](b5-first-preview.md), apply the caption, SFX, music and source/rights contract above within the **same single actual-candidate review**. Inspect the encoded preview once at normal speed with sound against the approved B5 standard; inspect suspect frames only as needed. Save a concise note identifying the actual candidate, review scope, component findings, repairs and any viewing/listening or rights limitations. Retain the existing approved script, caption/spotting inventories and actual source/rights records. Repair observed failures and recheck affected intervals and their neighbors.
+
+An ordinary requested B5 preview does not require the formal completeness JSON/checker, independent native acceptance index, extra playback channels or another review round. Its workflow exposes the formal completeness commands under `preview_review.strict_qa.completeness_commands`; use them with the [native strict protocol](b5-visual-acceptance.md) only for explicitly selected strict QA or final-delivery acceptance. This exception changes the preview record, not the required visible/audible result: missing or unreviewed components and unresolved applicable rights remain disclosed and pending; no automatic pass, user approval or publication authority is created. Other styles and B5 final/strict checks retain the formal gate below.
+
 ## Actual-output gate
 
-After encoding each preview/final scope, make the Agent prepare and complete its own report; the user need not fill JSON:
+Outside the ordinary B5 preview exception above, after encoding each preview/final scope, make the Agent prepare and complete its own report; the user need not fill JSON:
 
 ```bash
 node scripts/b-delivery-completeness.mjs init --style B1 --ratio 16:9 --media /absolute/output/candidate.mp4 --output /absolute/reviews/completeness.json
@@ -69,7 +75,7 @@ Use the existing native gate outputs without converting them into a generic pass
 | --- | --- |
 | B1–B3 | `reference`: native reference acceptance, evidence ledger and completed review. A limited/best-effort receipt does not pass. For a receipt embedded in preview approval JSON, set `acceptance_key: "reference_acceptance"`. |
 | B4 | **Both** `picture` and `typography`, each with its own acceptance, evidence and review. Picture acceptance keeps `scope: "picture only"` plus its native `range`; typography keeps its native time `scope`. Embedded preview keys are `picture_acceptance` and `typography_acceptance`. |
-| B5 | `visual`: native acceptance/delivery JSON, evidence ledger and independent review, including all three full-playback channels. Both actual native statuses `independent_visual_review_pass` and `visual_review_passed` are supported. Agent review does not infer user approval or require the user to fill a new form. |
+| B5 strict QA/final acceptance | `visual`: native acceptance/delivery JSON, evidence ledger and independent review, including all three full-playback channels. Both actual native statuses `independent_visual_review_pass` and `visual_review_passed` are supported. Agent review does not infer user approval or require the user to fill a new form. |
 | B6 | `motion`: native `check-review` receipt and completed motion `review`, plus a fingerprinted `render_report`; the review's output, ratio, render fingerprint and full playback must match the current production encode. |
 | B7 | `pixel`: native acceptance, evidence ledger and completed review, using its existing `media_sha256`, creative-review, playback and listening fields. |
 | B8 | `greek`: native `review-report` receipt as `acceptance` and the actual encoded sample/film report as `review`; its current MP4 artifact, dimensions and every shot's recorded visual rows must pass. |

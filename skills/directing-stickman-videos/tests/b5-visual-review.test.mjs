@@ -6,7 +6,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
-import {validateVisualPlan, buildB5ReviewPack, verifyB5VisualAcceptance} from '../scripts/b5-visual-review.mjs';
+import {validateVisualPlan, buildB5ReviewPack, verifyB5VisualAcceptance, b5ActionChecks, B5_VISUAL_EVENT_CHECKS} from '../scripts/b5-visual-review.mjs';
 
 // These are synthetic provenance/contract tests. No real creative review,
 // human viewing, listening or user acceptance is represented by this fixture.
@@ -51,9 +51,8 @@ function syntheticReview(f, ledger) {
     review.full_playback[name] = {status: 'pass', observations: observation(id), viewed_ranges: [{start: 0, end: 2}]};
   for (const [items, prefix] of [[review.actions, 'action'], [review.captions, 'caption']]) for (const item of items)
     for (const key of Object.keys(item.checks)) item.checks[key] = {status: 'pass', observations: observation(prefix + '-' + item.id + '-continuous')};
-  const baseline = ledger.baseline_sources[0];
-  review.baseline_comparisons = [{id: baseline.id, source_path: baseline.source_path, source_sha256: baseline.source_sha256,
-    observations: observation('source-video')}];
+  review.baseline_comparisons = ledger.baseline_sources.filter(b => ['crazymei', 'spiderman', 'mei-event-relay'].includes(b.id)).map(baseline =>
+    ({id: baseline.id, source_path: baseline.source_path, source_sha256: baseline.source_sha256, observations: observation('source-video')}));
   review.blocking_issues = [];
   write(f.reviewFile, review);
   return review;
@@ -75,6 +74,71 @@ test('visual plan locks actual transcript, semantic-unit order, progressive timi
   Object.assign(f.plan, structuredClone(original)); f.savePlan();
   f.transcript.words[1].start = .7; f.saveTranscript();
   assert.throws(() => validateVisualPlan(f.args), /nonoverlapping/);
+});
+
+function visualEvent(f) {
+  f.plan.actions[0] = {id: 'move', kind: 'visual', start: 0, end: 2, event_region: [0, 25, 95, 65],
+    intent: 'Synthetic graphic transformation for typed evidence tests only.',
+    movement: 'Synthetic source pattern enlarges and replaces its preceding arrangement.',
+    visual_change: {before: 'A compact synthetic pattern.', after: 'An expanded, rearranged synthetic pattern.'},
+    visual_phases: [{label: 'before', at: 0}, {label: 'expansion_peak', at: .75}, {label: 'after', at: 1.8}]};
+  f.savePlan();
+}
+
+test('visual events need declared change and distinct labeled frames without inventing actor/contact, while physical remains strict', t => {
+  const f = fixture(t), physical = structuredClone(f.plan.actions[0]);
+  assert.deepEqual(b5ActionChecks(physical), ['causality', 'body_motion', 'arms_pose', 'contact', 'effects', 'recovery', 'pacing']);
+  f.plan.actions[0].kind = 'physical'; f.savePlan();
+  assert.equal(validateVisualPlan(f.args).actions[0].kind, 'physical');
+  delete f.plan.actions[0].phases.contact; f.savePlan();
+  assert.throws(() => validateVisualPlan(f.args), /phase times must be ordered/);
+  visualEvent(f); const original = structuredClone(f.plan.actions[0]);
+  assert.equal(validateVisualPlan(f.args).actions[0].actor_region, undefined);
+  assert.deepEqual(b5ActionChecks(original), B5_VISUAL_EVENT_CHECKS);
+  const reject = (mutate, message) => {f.plan.actions[0] = structuredClone(original); mutate(f.plan.actions[0]); f.savePlan(); assert.throws(() => validateVisualPlan(f.args), message);};
+  reject(a => {delete a.movement;}, /movement description/);
+  reject(a => {a.visual_change.after = '  A compact synthetic pattern.  ';}, /distinct before\/after visual_change/);
+  reject(a => {delete a.visual_change;}, /distinct before\/after visual_change/);
+  reject(a => {a.visual_phases = [{label: 'before', at: .001}, {label: 'after', at: .002}];}, /distinct ordered final-video frames/);
+  reject(a => {a.visual_phases[1].at = 0;}, /phase times must be ordered/);
+  reject(a => {a.visual_phases.at(-1).label = 'settled';}, /from before to after/);
+  reject(a => {a.visual_phases[1].label = 'before';}, /unique meaningful sample labels/);
+  reject(a => {a.visual_phases[1].label = 'continuous';}, /unique meaningful sample labels/);
+  reject(a => {a.kind = 'graphic';}, /kind must be physical or visual/);
+  reject(a => {a.event_region = [90, 25, 65, 60];}, /inside stage_region/);
+  f.plan.actions[0] = {...physical, kind: 'visual'}; f.savePlan();
+  assert.throws(() => validateVisualPlan(f.args), /event_region/);
+});
+
+test('visual evidence samples the event and uses change/readability checks without fictional body/contact approval', async t => {
+  const f = fixture(t); visualEvent(f);
+  const ledger = await buildB5ReviewPack(f.args), frames = ledger.artifacts.filter(a => a.scope === 'action' && a.kind === 'frame');
+  assert.deepEqual(frames.map(a => a.phase), ['before', 'expansion_peak', 'after']);
+  assert(frames.every(a => JSON.stringify(a.crop) === JSON.stringify(f.plan.actions[0].event_region)));
+  const template = read(path.join(f.out, 'review-template.json'));
+  assert.deepEqual(Object.keys(template.actions[0].checks), B5_VISUAL_EVENT_CHECKS);
+  assert.equal(template.actions[0].checks.contact, undefined);
+  assert.equal(template.actions[0].checks.meaningful_change.status, 'unknown');
+  const review = syntheticReview(f, ledger);
+  assert.equal(verifyB5VisualAcceptance(f.args).status, 'independent_visual_review_pass');
+  review.actions[0].checks.meaningful_change.status = 'fail'; write(f.reviewFile, review);
+  assert.throws(() => verifyB5VisualAcceptance(f.args), /meaningful_change.*failed/);
+  review.actions[0].checks.meaningful_change.status = 'pass';
+  review.actions[0].checks.contact = {status: 'pass', observations: []}; write(f.reviewFile, review);
+  assert.throws(() => verifyB5VisualAcceptance(f.args), /all required checks/);
+});
+
+test('mixed physical and visual intervals retain full-film coverage and each kind retains its own evidence contract', t => {
+  const f = fixture(t), physical = structuredClone(f.plan.actions[0]);
+  visualEvent(f); const visual = f.plan.actions[0];
+  physical.end = 1;
+  physical.phases = Object.fromEntries(keys.map((key, i) => [key, [0, .1, .2, .3, .4, .8][i]]));
+  visual.id = 'transform'; visual.start = 1;
+  visual.visual_phases = [{label: 'before', at: 1}, {label: 'after', at: 1.8}];
+  f.plan.actions = [physical, visual]; f.savePlan();
+  assert.equal(validateVisualPlan(f.args).actions.length, 2);
+  visual.start = 1.2; visual.visual_phases[0].at = 1.2; f.savePlan();
+  assert.throws(() => validateVisualPlan(f.args), /cover the full film/);
 });
 
 test('caption plan cannot split a Unicode grapheme even if source word indices are complete', t => {
@@ -134,6 +198,7 @@ test('synthetic acceptance contract rejects failed arms/captions, empty passes, 
   const original = structuredClone(review);
   const reject = (mutate, message) => {Object.assign(review, structuredClone(original)); mutate(review); write(f.reviewFile, review); assert.throws(() => verifyB5VisualAcceptance(f.args), message);};
   reject(r => {r.reviewer.id = f.plan.author_id;}, /independent reviewer/);
+  reject(r => {r.baseline_comparisons = r.baseline_comparisons.filter(b => b.id !== 'mei-event-relay');}, /(?:required|latest|relay|target comparisons)/);
   reject(r => {r.actions[0].checks.arms_pose.status = 'fail';}, /arms_pose.*failed/);
   reject(r => {r.captions[0].checks.reveal.status = 'unknown';}, /reveal.*failed/);
   reject(r => {r.actions[0].checks.pacing.observations = [];}, /timed observations/);
@@ -183,7 +248,7 @@ test('candidate media metadata, location, symlinks and post-review hash changes 
   await assert.rejects(buildB5ReviewPack(f.args), /symlink/);
 });
 
-test('CLI review-pack and accept distinguish pending candidates from evidence-bound deliveries (synthetic protocol only)', t => {
+test('CLI cannot promote a legacy candidate through formal review without first-preview readiness (synthetic protocol only)', t => {
   const f = fixture(t);
   write(path.join(f.dir, 'project.json'), {style: 'B5', renderer: 'character-explainer-code-v1'});
   write(path.join(f.scene, 'config.json'), f.c);
@@ -204,12 +269,6 @@ test('CLI review-pack and accept distinguish pending candidates from evidence-bo
   assert.equal(fs.existsSync(deliveryDir), false, 'an unknown review cannot create a delivery');
   syntheticReview(f, ledger); // Structural test data; no real aesthetic review claimed.
   result = run(accept);
-  assert.equal(result.status, 0, result.stderr);
-  const delivery = read(path.join(deliveryDir, 'delivery.json'));
-  assert.equal(delivery.status, 'visual_review_passed');
-  assert.equal(delivery.user_acceptance, 'not_inferred');
-  assert.equal(sha(path.join(deliveryDir, 'video.mp4')), sha(f.video));
-  assert.equal(sha(path.join(deliveryDir, 'visual-review.json')), sha(f.reviewFile));
-  assert.equal(sha(path.join(deliveryDir, 'review-evidence/evidence.json')), sha(path.join(f.out, 'evidence.json')));
-  for (const artifact of ledger.artifacts) assert.equal(sha(path.join(deliveryDir, 'review-evidence', artifact.file)), artifact.sha256);
+  assert.notEqual(result.status, 0); assert.match(result.stderr, /--preview-ready receipt is required/);
+  assert.equal(fs.existsSync(deliveryDir), false, 'formal review alone cannot bypass the first-preview gate');
 });

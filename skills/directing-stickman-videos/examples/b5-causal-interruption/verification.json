@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "checked_utc": "2026-11-13T10:32:06.047765+00:00",
+  "source_verification": {
+    "passed": true,
+    "dense_samples": 1001,
+    "max_human_bone_error": 1.4210854715202004e-13,
+    "shared_contact_checks": [
+      "paw-wrist",
+      "reading-hand-book",
+      "chin-support-hand",
+      "continuous-launch"
+    ],
+    "source_files": 14,
+    "limits": "Source/hash/geometry checks only; dog legs are drawn curves, not certified anatomical bones. No continuous film viewing or sound listening is asserted."
+  },
+  "portability": {
+    "verification_from_unrelated_cwd": true,
+    "cwd": "temporary directory outside project",
+    "project_private_absolute_paths_found": [],
+    "runtime_dependencies": [
+      "Node >=20",
+      "sharp from surrounding Skill package.json",
+      "ffmpeg / ffprobe on PATH"
+    ],
+    "runtime_network_or_paid_calls": false
+  },
+  "actual_demo": {
+    "width": 1920,
+    "height": 1080,
+    "frames": 300,
+    "fps": "30/1",
+    "duration": 10,
+    "audio_streams": 0,
+    "sha256": "a68c60285498c66a5a0a4793873901cc6a40b4a63c66b78904a4cc13590b52ef"
+  },
+  "demo_location": "work/b5-v5-repair/example-verification/causal-interruption-silent.mp4 (outside packaged source example)",
+  "decode_check": {
+    "exit_code": 0,
+    "full_stream_decoded_without_reported_errors": true
+  },
+  "actual_still_review": {
+    "viewed_contact_sheet": true,
+    "time_samples": [
+      0,
+      1.22,
+      2.72,
+      4.84,
+      5.5,
+      6.78,
+      7.39,
+      8.45,
+      9.35
+    ],
+    "observation": "Anonymous reader/book/dog and BEFORE/AFTER title phases render. Paper crosses face at impact; later hand supports chin while other hand sets book aside and strokes back. This is a nine-still review, not motion playback."
+  },
+  "source_stage_sha256": "95a2a5718bae842ead3cff2b3f5739485becef52672a9e9b3a0dedbef8d4d09d",
+  "manifest_sha256": "f5791173708d15c380594403fcc4336bb887fa449068ee2d2a00c04c342a54fd",
+  "limits": [
+    "No continuous video playback or sound listening was performed. The demonstration has no audio.",
+    "V5 remains a locally produced revision, not a user-accepted universal visual baseline.",
+    "No portrait or new-story film-level cold-start test is represented by this case.",
+    "Human IK is checked. Dog legs are drawn curves, not certified fixed-length anatomical bones.",
+    "Host, speech/captions and Foley are deliberately absent; this is not a complete B5 preview renderer."
+  ]
+}

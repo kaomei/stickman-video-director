@@ -160,6 +160,65 @@ test('B5 rejects static/fake raster/missing render-path evidence and samples rea
   await assert.rejects(checkB5Motion(f.validate(),{...f.render,productionAssets:[f.lock('fake.png')]},sharp),/corrupt|invalid|pngload|header|input/i);
 });
 
+test('B5 allows a named, explained readable hold while rejecting unexplained inactivity and hold metadata disguised as motion', async t => {
+  // Synthetic timing/provenance fixture only: this does not assert that an
+  // artistic hold has been watched or accepted by a person or agent reviewer.
+  const f = await fixture(t);
+  const motion = [
+    {start:0, end:.4, role:'prop', reason:'Synthetic pattern enters its reading position', region:[10,20,100,100]},
+    {start:3.6, end:4, role:'prop', reason:'Synthetic pattern leaves for the next event', region:[10,20,100,100]}
+  ];
+  f.q.motion = structuredClone(motion); f.save();
+  assert.throws(f.validate, /inactive.*without a planned readable hold/);
+  const transcript = {language:'en', words:[{text:'Pattern.', start:0, end:4}]};
+  write(path.join(f.scene,'word-timings.json'), transcript);
+  const event = (id, start, end, after) => ({id, kind:'visual', start, end, event_region:[10,20,100,100],
+    intent:'Synthetic event timing fixture only; no creative approval is asserted.',
+    movement:'The synthetic pattern moves to a new reading position.',
+    visual_change:{before:'The synthetic pattern has its preceding position.', after:'The synthetic pattern occupies its next position.'},
+    visual_phases:[{label:'before',at:start},{label:'after',at:after}]});
+  const plan = {schema:1, author_id:'synthetic-hold-fixture', transcript:f.lock('word-timings.json'),
+    stage_region:[0,0,180,180], actions:[event('reading_result',0,3.6,3.5), event('handoff',3.6,4,3.9)],
+    captions:{language:'en', region:[190,0,130,80], groups:[{id:'words',start:0,end:4,
+      units:[{text:'Pattern.',start:0,end:4,emphasis:true,word_indices:[0]}]}]}};
+  const planFile = path.join(f.scene,'visual-plan.json'); write(planFile,plan);
+  const hold = {start:.4, end:3.6, event_id:'reading_result', reason:'Read the completed pattern before it exits.',
+    next_change:'The pattern leaves its region as the handoff event starts.'};
+  f.q.holds = [structuredClone(hold)]; f.save();
+  // The entire 3.2 second hold is actually identical; motion exists only on
+  // either side. A passing sample here must not depend on added idle wobble.
+  const heldFrame = t => svg(t < .4 ? t : t <= 3.6 ? .4 : t - 3.2);
+  assert(heldFrame(.5).equals(heldFrame(3.5)));
+  const renderer = {...f.render, qualityFrame:heldFrame, frame:heldFrame};
+  const evidence = f.validate(), result = await checkB5Motion(evidence,renderer,sharp);
+  assert.equal(evidence.holds.length,1);
+  assert(Math.abs(evidence.holds[0].end-evidence.holds[0].start-3.2)<1e-7);
+  assert.equal(evidence.visual_plan_sha256,sha(planFile));
+  assert.equal(result.motion_samples.length,2);
+  assert(result.motion_samples.every(sample => sample.changed_pixels>=8));
+  assert.match(evidence.limits,/still require actual continuous review/);
+  const reject = (change, message) => {f.q.holds=[structuredClone(hold)]; change(f.q.holds[0]); f.save(); assert.throws(f.validate,message);};
+  reject(h=>{h.reason='';},/concrete reason\/next_change/);
+  reject(h=>{h.reason='hold';},/concrete reason\/next_change/);
+  reject(h=>{h.next_change='';},/concrete reason\/next_change/);
+  reject(h=>{h.next_change='next';},/concrete reason\/next_change/);
+  reject(h=>{delete h.event_id;},/start\/end\/event_id/);
+  reject(h=>{h.event_id='nonexistent';},/missing from the actual visual plan/);
+  reject(h=>{h.end=3.7;},/within its named visual-plan event/);
+  reject(h=>{h.start=-.1;},/valid start\/end/);
+  reject(h=>{h.end=4.1;},/valid start\/end/);
+  for (const holds of [null,{}]) {f.q.holds=holds; f.save(); assert.throws(f.validate,/holds must be an array/);}
+  f.q.holds=[structuredClone(hold)]; f.q.motion=[]; f.save();
+  assert.throws(f.validate,/holds alone cannot replace/);
+  f.q.motion=structuredClone(motion); f.save();
+  fs.renameSync(planFile,planFile+'.saved');
+  assert.throws(f.validate,/require the corresponding scene\/visual-plan/);
+  fs.renameSync(planFile+'.saved',planFile);
+  // Renaming the still interval to motion must fail its actual pixel check.
+  f.q.holds=[]; f.q.motion.splice(1,0,{start:.4,end:3.6,role:'prop',reason:'Synthetic still hold falsely declared as motion',region:[10,20,100,100]}); f.save();
+  await assert.rejects(checkB5Motion(f.validate(),renderer,sharp),/no visible pixel change/);
+});
+
 test('B5 samples return-to-rest and quarter-phase motion without changing the evidence contract', async t => {
   const f = await fixture(t), q = f.validate();
   const quarterPeaks=t=>svg(Math.max(0,1-Math.abs(t-1)/.3)+Math.max(0,1-Math.abs(t-3)/.3));
@@ -235,7 +294,7 @@ test('B5 CLI permits a return gesture candidate and monotonic motion but rejects
   });
 });
 
-test('B5 technical success with a static custom caption produces only a candidate, never a visual pass', async t => {
+test('B5 technical custom-font render cannot bypass final PNG two-stage review', async t => {
   const f = await fixture(t);
   fs.copyFileSync(path.join(root,'assets/fonts/NotoSans.ttf'),path.join(f.scene,'custom.ttf'));
   f.q.captions.font=f.lock('custom.ttf');
@@ -258,19 +317,9 @@ test('B5 technical success with a static custom caption produces only a candidat
   const printed=await sharp(path.join(frameDir,'000000.png')).extract({left:150,top:130,width:160,height:35}).removeAlpha().raw().toBuffer();
   let red=0;for(let i=0;i<printed.length;i+=3)if(printed[i]>130&&printed[i+1]<110&&printed[i+2]<110)red++;
   assert(red>20,'custom-font caption tile must appear in the rendered frame');
-  const args=['encode',f.dir,'--frames-dir',frameDir,'--audio',path.join(f.scene,'mix.wav'),'--output',path.join(f.tmp,'candidate')];
-  r=run(args); assert.equal(r.status,0,r.stderr);
-  const candidate=JSON.parse(fs.readFileSync(path.join(f.tmp,'candidate/candidate.json')));
-  assert.equal(candidate.full_decode,'pass');
-  assert.equal(candidate.status,'pending_visual_review');
-  assert.equal(candidate.visual_acceptance,'not_reviewed');
-  assert.equal(JSON.parse(r.stdout).status,'pending_visual_review');
-  assert(!fs.existsSync(path.join(f.tmp,'candidate/delivery.json')),'encoding must not create an accepted delivery');
-  const evidence=path.join(f.tmp,'no-evidence');
-  r=run(['review-pack',f.dir,'--candidate-dir',path.join(f.tmp,'candidate'),'--output',evidence]);
-  assert.notEqual(r.status,0,'static caption engineering fixture cannot acquire a visual pass without a plan and actual review');
-  assert.match(r.stderr,/visual-plan/);
-  assert(!fs.existsSync(evidence));
+  const args=['encode',f.dir,'--frames-dir',frameDir,'--audio',path.join(f.scene,'mix.wav'),'--output',path.join(f.tmp,'candidate'),'--strict-review'];
+  r=run(args); assert.notEqual(r.status,0); assert.match(r.stderr,/Strict review encode requires --png-evidence/);
+  assert(!fs.existsSync(path.join(f.tmp,'candidate')),'missing PNG review must be rejected before candidate output or encoding');
   fs.copyFileSync(path.join(f.scene,'mix.wav'),path.join(f.tmp,'other.wav')); fs.appendFileSync(path.join(f.tmp,'other.wav'),'different bytes');
   const wrong=[...args]; wrong[wrong.indexOf('--audio')+1]=path.join(f.tmp,'other.wav'); wrong[wrong.indexOf('--output')+1]=path.join(f.tmp,'wrong');
   r=run(wrong); assert.notEqual(r.status,0); assert.match(r.stderr,/reviewed final mix/);
