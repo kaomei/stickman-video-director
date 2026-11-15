@@ -63,13 +63,15 @@ def verify_next_style_teasers(text, name, gallery_styles, label):
         assert not re.search(r"\b\d[\d,.\s]*\s*Stars?\b", visible_teaser, re.I), (name, series, "next-style teaser has no numeric Star unlock promise")
 
 expected_images = images(cn)
-assert len(expected_images) == 46 and len(set(expected_images)) == 35
+assert len(expected_images) == 49 and len(set(expected_images)) == 37
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 b6_previews = [
     pinned + "7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/" + filename
     for filename in ("b6-dynamic-meme-eiffel-16x9.gif", "b6-dynamic-meme-hong-kong-v90-20s.gif")
 ]
 local_a6_previews = {
+    "assets/readme/previews/style-7-rubber-hose.gif",
+    "assets/readme/previews/style-7-rubber-hose-2.gif",
     "assets/readme/previews/style-6-amber-noir-mcp.gif",
     "assets/readme/previews/style-6-amber-noir-flow.gif",
     "assets/readme/previews/b2-colorful-sleep.gif",
@@ -203,9 +205,8 @@ for name in selected:
     hero = text.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
     rows = re.findall(r"<tr>(.*?)</tr>", hero, re.S)
     gallery_styles = re.findall(r'href="#([^"]+)"><img', hero)
-    assert gallery_styles == ["a1", "a2", "a3", "a4", "style-5", "b1", "a6", "b2", "b3", "b4", "b5", "b6"], name
-    # Owner rule: two columns, odd last card left + Coming Soon right;
-    # even card counts fill the grid without a placeholder. No spanning rows.
+    assert gallery_styles == ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 'a4', 'b4', 'style-5', 'b5', 'a6', 'b6', 'a7'], name
+    # Owner rule: A1–A7 left, B1–B6 right; final B cell stays empty. No spanning rows.
     assert len(rows) == (len(gallery_styles) + 1) // 2, name
     assert all(row.count('<td width="50%"') == 2 for row in rows), name
     assert "colspan" not in hero and "rowspan" not in hero, name
@@ -214,8 +215,8 @@ for name in selected:
     assert len(placeholders) == len(gallery_styles) % 2, (name, "placeholder only for odd gallery count")
     if placeholders:
         assert placeholders == [cells[-1]] and "<img" in cells[-2], name
-        assert re.search(r'<a href="#a7"><strong>[^<]+</strong></a>', cells[-1]), name
-    assert text.count('width="90%"') == 12 and text.count('width="360"') == 24, name
+        assert not cells[-1].strip(), (name, "last B cell is empty")
+    assert text.count('width="90%"') == 13 and text.count('width="360"') == 26, name
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
     card_ids = ["a5" if style == "style-5" else style for style in gallery_styles]
@@ -227,6 +228,11 @@ for name in selected:
     assert style_ids == expected_style_ids, (name, "published style catalog plus one next-style teaser per series")
     teaser_labels = {"en": "Coming soon…", "zh-CN": "待更新…", "ja": "近日公開…", "ko": "곧 공개…", "fr": "Bientôt disponible…", "pt-BR": "Em breve…", "tr": "Yakında…", "id": "Segera hadir…"}
     verify_next_style_teasers(text, name, gallery_styles, teaser_labels[active])
+    a7 = section(text, "a7", '<a id="a8"></a>')
+    assert len(re.findall(r"^- \*\*", a7, re.M)) == 2, (name, "A7 highlights and use cases")
+    a7_videos = ["assets/readme/style-7-rubber-hose.mp4", "assets/readme/style-7-rubber-hose-2.mp4"]
+    assert re.findall(r'<a href="([^"]+\.mp4)">', a7) == a7_videos, (name, "A7 approved showcase pair")
+    assert all((root / video).is_file() for video in a7_videos), (name, "A7 videos exist")
     a6 = section(text, "a6", '<a id="a7"></a>')
     assert len(re.findall(r"^- \*\*", a6, re.M)) == 2, (name, "A6 advantages and use cases")
     assert re.findall(r'<a href="([^"]+\.mp4)">', a6) == list(a6_videos), name
@@ -234,10 +240,10 @@ for name in selected:
     assert "Tested Flow workflow:" not in text and "Click either GIF" not in text, name
     assert "Veo 3.1 Fast" not in a6, (name, "operational model guidance stays in Skill")
     assert "Omni" not in a6, (name, "A6 does not inherit the legacy model")
-    assert re.search(r"\*\*12[^\n]+\*\*", text), (name, "twelve A+B visual styles")
-    placeholder = section(text, "a7", '<a id="b-styles"></a>')
-    assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1, (name, "A7 roadmap CTA retained")
-    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A7 and B7 update links plus roadmap navigation")
+    assert re.search(r"\*\*13[^\n]+\*\*", text), (name, "thirteen A+B visual styles")
+    placeholder = section(text, "a8", '<a id="b-styles"></a>')
+    assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1, (name, "A8 roadmap CTA retained")
+    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A8 and B7 update links plus roadmap navigation")
     b2 = section(text, "b2", '<!-- b3:section:start -->')
     assert len(re.findall(r"^- \*\*", b2, re.M)) == 2, (name, "B2 advantages and use cases")
     assert re.findall(r'<a href="([^"]+\.mp4)">', b2) == ["assets/readme/b2-colorful-sleep.mp4", "assets/readme/b2-colorful-phone-weather.mp4"], (name, "approved B2 pair in requested order")
@@ -303,7 +309,7 @@ for name in selected:
         "id": "hasilnya lebih baik dalam format vertikal",
     }
     assert portrait_terms[active] in b6, (name, "localized portrait preference")
-    assert images(hero)[-1] == b6_previews[0], (name, "B6 homepage preview uses immutable CDN")
+    assert images(hero)[-2] == b6_previews[0], (name, "B6 homepage preview uses immutable CDN")
     assert images(b6) == b6_previews, (name, "B6 sample previews use immutable CDN")
     for video in b6_videos:
         assert (root / video).is_file(), (name, video)
@@ -450,7 +456,7 @@ for name in selected:
     if is_english:
         approved_mode_intro = (
             '<div align="center">\n\n'
-            '**12 visual styles · Tested examples · Free and open source**\n\n'
+            '**13 visual styles · Tested examples · Free and open source**\n\n'
             '⭐ **Star the project to catch the next style drop and feature unlocks.**\n\n'
             '[Get started](#quick-start) · [Styles & Demos](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)\n\n'
             '</div>\n\n'

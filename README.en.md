@@ -24,8 +24,18 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 <a href="#a1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/dark-theme-demo.gif" alt="Classic black-and-white stickman animation: white lines on black for dynamic explainers" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>Minimal Line Art</strong><br>
+<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Minimal hand-drawn stickman video: expressive characters, key text, and subtle animation" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>Modern Pop</strong><br>
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="Modern pop stickman animation: red-beanie character with tech lighting" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>Colorful Hand-Drawn</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Colorful hand-drawn stickman video: a quiet bedroom and a thought drifting along a river" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -34,8 +44,18 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="Prehistoric cave stickman animation: short cave stories with a twist" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>Retro TV</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="retro TV-style fictional 3 AM television mystery with rounded white characters" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>Cozy Storytelling</strong><br>
 <a href="#a4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="Cozy stickman storytelling: colorful everyday scenes and relatable moments" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>Survival Thriller</strong><br>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Survival Thriller" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -44,8 +64,8 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="Historical stickman cartoon: a samurai story in Edo Japan" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Minimal Line Art</strong><br>
-<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Minimal hand-drawn stickman video: expressive characters, key text, and subtle animation" width="90%"></a>
+<strong>Character Explainer</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 explainer about asking for help, with a distinctive presenter and expressive stickmen" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -54,41 +74,22 @@ Continually updated visual styles for **science explainers, dark psychology, tec
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir stickman animation: an orange-hoodie character in a warm-lit city with deep shadows" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Colorful Hand-Drawn</strong><br>
-<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Colorful hand-drawn stickman video: a quiet bedroom and a thought drifting along a river" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>Retro TV</strong><br>
-<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="retro TV-style fictional 3 AM television mystery with rounded white characters" width="90%"></a>
-</td>
-<td width="50%" align="center">
-<strong>Survival Thriller</strong><br>
-<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Survival Thriller" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:end -->
-<!-- b5:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>Character Explainer</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 explainer about asking for help, with a distinctive presenter and expressive stickmen" width="90%"></a>
-</td>
-<!-- b6:hero:start -->
-<td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
-<!-- b6:hero:end -->
 </tr>
-<!-- b5:hero:end -->
+<tr>
+<td width="50%" align="center">
+<strong>Rubber Hose Animation</strong><br>
+<a href="#a7"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
+</td>
+<td width="50%" align="center"></td>
+</tr>
 </table>
 
 <div align="center">
 
-**12 visual styles · Tested examples · Free and open source**
+**13 visual styles · Tested examples · Free and open source**
 
 ⭐ **Star the project to catch the next style drop and feature unlocks.**
 
@@ -316,7 +317,23 @@ What if you woke up and everything cost ten thousand times less? The visual insp
 
 <a id="a7"></a>
 
-### A7: Coming soon…
+### A7: Rubber Hose Animation
+
+A fine-line stickman steps into richly drawn vintage scenery, turning everyday mishaps into theatrical comedy through elastic gestures, expressive faces and continuous character acting. Muted sage, ivory and tiny faded-red accents preserve the period charm while keeping the actor clear.
+
+- **Visual highlights**：A consistent white circular face, two curved hair tufts and a thin-line body; confident ink contours, matte painted textures, prop interaction and expressive editing.
+- **Best for**：Absurd comedy, everyday fables, twist stories and music-led shorts.
+
+| Example 1: Chased by a cloud | Example 2: A rainy street |
+|:---:|:---:|
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation · Example 1: Chased by a cloud" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · Rubber Hose Animation · Example 2: A rainy street" width="360"></a> |
+| Vintage hand-drawn streets · Elastic character acting | Rainy atmosphere · Prop interaction and reaction cuts |
+
+---
+
+<a id="a8"></a>
+
+### A8: Coming soon…
 
 New specialized director styles are in preparation. [Star the project](#road-to-10000-stars--creator-ecosystem) to follow future updates.
 

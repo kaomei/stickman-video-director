@@ -24,8 +24,18 @@
 <a href="#a1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/dark-theme-demo.gif" alt="クラシック白黒の棒人間アニメ：黒背景と白い線で伝える解説動画" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>ミニマル線画</strong><br>
+<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="ミニマル線画の棒人間動画：表情豊かなキャラクター、強調テキスト、部分アニメーション" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>モダンポップ</strong><br>
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="モダンポップの棒人間アニメ：赤いニット帽のキャラクターとテック系の光" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>カラフル手描き</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="カラフル手描きの棒人間動画：静かな寝室と川を流れる思い" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -34,8 +44,18 @@
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="原始時代の棒人間アニメ：洞窟を舞台にした意外なオチのある物語" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>レトロテレビ風</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="丸みのある白いキャラクターで描く午前3時のテレビ怪談" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>ほっとする日常ストーリー</strong><br>
 <a href="#a4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="日常を描く棒人間アニメ：彩りのある風景と共感できる小さな出来事" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>サバイバル・スリラー</strong><br>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · サバイバル・スリラー" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -44,8 +64,8 @@
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="歴史カートゥーンの棒人間アニメ：江戸時代の武士の物語" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>ミニマル線画</strong><br>
-<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="ミニマル線画の棒人間動画：表情豊かなキャラクター、強調テキスト、部分アニメーション" width="90%"></a>
+<strong>キャラクター解説</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5の助けを求める心理の解説。アニメの語り手と表情豊かな棒人間" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -54,41 +74,22 @@
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noirの棒人間アニメーション：暖かな街灯と深い影の街、オレンジのパーカーのキャラクター" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>カラフル手描き</strong><br>
-<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="カラフル手描きの棒人間動画：静かな寝室と川を流れる思い" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>レトロテレビ風</strong><br>
-<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="丸みのある白いキャラクターで描く午前3時のテレビ怪談" width="90%"></a>
-</td>
-<td width="50%" align="center">
-<strong>サバイバル・スリラー</strong><br>
-<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · サバイバル・スリラー" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:end -->
-<!-- b5:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>キャラクター解説</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5の助けを求める心理の解説。アニメの語り手と表情豊かな棒人間" width="90%"></a>
-</td>
-<!-- b6:hero:start -->
-<td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
-<!-- b6:hero:end -->
 </tr>
-<!-- b5:hero:end -->
+<tr>
+<td width="50%" align="center">
+<strong>ラバーホース・アニメーション</strong><br>
+<a href="#a7"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · ラバーホース・アニメーション" width="90%"></a>
+</td>
+<td width="50%" align="center"></td>
+</tr>
 </table>
 
 <div align="center">
 
-**12種類の画風 · 制作例あり · 無料・オープンソース**
+**13種類の画風 · 制作例あり · 無料・オープンソース**
 
 ⭐ **プロジェクトに Star を付けて、次の画風追加や新機能の解放をチェックしましょう。**
 
@@ -317,7 +318,23 @@ A1、A2、A3…の番号で追加し、それぞれの画風に対応するア�
 
 <a id="a7"></a>
 
-### A7: 近日公開…
+### A7: ラバーホース・アニメーション
+
+細い線の棒人間が、丁寧に描かれたレトロな背景の中で活躍。しなやかな手足、豊かな表情、連続した演技で、日常の失敗を劇場アニメのような喜劇に変えます。セージグリーンやアイボリーに少量のくすんだ赤を添え、年代感を表現します。
+
+- **見どころ**：白い丸顔、2本の曲がった髪、細い線の体を統一。インクの輪郭、マットな筆触、小道具とのやり取り、表情豊かなカット割り。
+- **向いている内容**：不条理コメディ、日常の寓話、どんでん返しの物語、音楽に合わせた短編。
+
+| サンプル1：雲に追われて | サンプル2：雨の街角 |
+|:---:|:---:|
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · ラバーホース・アニメーション · サンプル1：雲に追われて" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · ラバーホース・アニメーション · サンプル2：雨の街角" width="360"></a> |
+| レトロな手描きの街並み · しなやかな演技 | 雨の空気感 · 小道具とのやり取りと表情のカット |
+
+---
+
+<a id="a8"></a>
+
+### A8: 近日公開…
 
 新しい特化型のディレクタースタイルを準備中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、今後の更新をチェックしてください！
 

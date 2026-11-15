@@ -24,8 +24,18 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 <a href="#a1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/dark-theme-demo.gif" alt="Klasik siyah beyaz çöp adam animasyonu: siyah fonda beyaz çizgilerle bilgi anlatımı" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>Minimal Çizgi Sanatı</strong><br>
+<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Minimalist el çizimi çöp adam videosu: canlı ifadeler, vurgulu metinler ve mikro animasyonlar" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>Modern ve Renkli</strong><br>
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="Modern çöp adam animasyonu: kırmızı bereli karakter ve teknolojik ışık efektleri" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>Renkli El Çizimi</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Renkli el çizimi çöp adam videosu: sessiz bir yatak odası ve nehirde süzülen bir düşünce" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -34,8 +44,18 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="Tarih öncesi çöp adam animasyonu: mağara hikâyesi ve beklenmedik bir son" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>Retro TV Stili</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>İç Isıtan Hikâyeler</strong><br>
 <a href="#a4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="İç ısıtan çöp adam animasyonu: renkli mekânlar ve gündelik duygular" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>Hayatta Kalma Gerilimi</strong><br>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Hayatta Kalma Gerilimi" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -44,8 +64,8 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="Tarihi çöp adam animasyonu: Edo dönemi Japonya’sında bir samurayın hikâyesi" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Minimal Çizgi Sanatı</strong><br>
-<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Minimalist el çizimi çöp adam videosu: canlı ifadeler, vurgulu metinler ve mikro animasyonlar" width="90%"></a>
+<strong>Karakterli Anlatım</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5: yardım isteme üzerine, animasyon sunucu ve ifadeli çöp adamlarla anlatım" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -54,41 +74,22 @@ Bir konu, makale veya senaryoyla başlayın. Görselleri, seslendirmeleri, altya
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir çöp adam animasyonu: sıcak ışıklı ve derin gölgeli bir şehirde turuncu kapüşonlu karakter" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Renkli El Çizimi</strong><br>
-<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Renkli el çizimi çöp adam videosu: sessiz bir yatak odası ve nehirde süzülen bir düşünce" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>Retro TV Stili</strong><br>
-<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Yuvarlak beyaz karakterlerle gece 3’te açılan TV hakkında kurgu gizem" width="90%"></a>
-</td>
-<td width="50%" align="center">
-<strong>Hayatta Kalma Gerilimi</strong><br>
-<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Hayatta Kalma Gerilimi" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:end -->
-<!-- b5:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>Karakterli Anlatım</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5: yardım isteme üzerine, animasyon sunucu ve ifadeli çöp adamlarla anlatım" width="90%"></a>
-</td>
-<!-- b6:hero:start -->
-<td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
-<!-- b6:hero:end -->
 </tr>
-<!-- b5:hero:end -->
+<tr>
+<td width="50%" align="center">
+<strong>Rubber Hose Animation</strong><br>
+<a href="#a7"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
+</td>
+<td width="50%" align="center"></td>
+</tr>
 </table>
 
 <div align="center">
 
-**12 görsel stil · Denenmiş örnekler · Ücretsiz ve açık kaynak**
+**13 görsel stil · Denenmiş örnekler · Ücretsiz ve açık kaynak**
 
 ⭐ **Bir sonraki stil paketini ve yeni özellikleri kaçırmamak için projeye yıldız verin.**
 
@@ -319,7 +320,23 @@ Uyandığınızda her şey on bin kat ucuzlamış olsa? Görsel ilham, YouTube�
 
 <a id="a7"></a>
 
-### A7: Yakında…
+### A7: Rubber Hose Animation
+
+İnce çizgili bir çöp adam, özenle çizilmiş retro dekorlarda hareket eder. Esnek uzuvlar, güçlü yüz ifadeleri ve kesintisiz oyunculuk, gündelik aksilikleri teatral komediye dönüştürür. Adaçayı yeşili, fildişi ve az miktarda soluk kırmızı dönem hissini korur.
+
+- **Görsel özellikler**：Beyaz yuvarlak yüz, iki kıvrık saç teli ve ince çizgili gövde tutarlıdır; mürekkep konturları, mat boya dokuları, nesne etkileşimi ve anlatıya uygun kurgu.
+- **Uygun içerikler**：Absürt komedi, gündelik yaşam öyküleri, sürpriz sonlu hikâyeler ve müzik odaklı kısa filmler.
+
+| Örnek 1: Peşindeki bulut | Örnek 2: Yağmurlu bir sokak |
+|:---:|:---:|
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation · Örnek 1: Peşindeki bulut" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · Rubber Hose Animation · Örnek 2: Yağmurlu bir sokak" width="360"></a> |
+| Retro el çizimi sokaklar · Esnek karakter oyunculuğu | Yağmur atmosferi · Nesne etkileşimi ve tepki çekimleri |
+
+---
+
+<a id="a8"></a>
+
+### A8: Yakında…
 
 Director moduna özel yeni stiller hazırlanıyor. [Projeye yıldız verin](#road-to-10000-stars--creator-ecosystem) ve gelecek güncellemeleri takip edin!
 

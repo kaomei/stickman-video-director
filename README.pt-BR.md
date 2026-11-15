@@ -24,8 +24,18 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <a href="#a1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/dark-theme-demo.gif" alt="Animação clássica com bonecos de palito brancos sobre fundo preto" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>Traço minimalista</strong><br>
+<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Vídeo em desenho à mão minimalista com bonecos expressivos, texto em destaque e microanimações" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>Pop moderno</strong><br>
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="Boneco de palito de gorro vermelho em cenário tecnológico moderno" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>Desenho à Mão Colorido</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Vídeo de bonecos de palito em desenho colorido: um quarto tranquilo e um pensamento seguindo o rio" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -34,8 +44,18 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="História pré-histórica com bonecos de palito e uma virada cômica" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>Estilo TV retrô</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>Histórias acolhedoras</strong><br>
 <a href="#a4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="Personagens expressivos em um cenário cotidiano colorido" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>Suspense de sobrevivência</strong><br>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Suspense de sobrevivência" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -44,8 +64,8 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="Animação histórica com bonecos de palito no Japão do período Edo" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Traço minimalista</strong><br>
-<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Vídeo em desenho à mão minimalista com bonecos expressivos, texto em destaque e microanimações" width="90%"></a>
+<strong>Explicação com personagem</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 sobre pedir ajuda, com apresentador animado e bonecos-palito expressivos" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -54,41 +74,22 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animação stickman Amber Noir: personagem de moletom laranja em uma cidade com luz quente e sombras profundas" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Desenho à Mão Colorido</strong><br>
-<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Vídeo de bonecos de palito em desenho colorido: um quarto tranquilo e um pensamento seguindo o rio" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>Estilo TV retrô</strong><br>
-<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="90%"></a>
-</td>
-<td width="50%" align="center">
-<strong>Suspense de sobrevivência</strong><br>
-<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Suspense de sobrevivência" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:end -->
-<!-- b5:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>Explicação com personagem</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 sobre pedir ajuda, com apresentador animado e bonecos-palito expressivos" width="90%"></a>
-</td>
-<!-- b6:hero:start -->
-<td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
-<!-- b6:hero:end -->
 </tr>
-<!-- b5:hero:end -->
+<tr>
+<td width="50%" align="center">
+<strong>Rubber Hose Animation</strong><br>
+<a href="#a7"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
+</td>
+<td width="50%" align="center"></td>
+</tr>
 </table>
 
 <div align="center">
 
-**12 estilos visuais · Exemplos testados · Grátis e de código aberto**
+**13 estilos visuais · Exemplos testados · Grátis e de código aberto**
 
 ⭐ **Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.**
 
@@ -324,7 +325,23 @@ E se você acordasse e tudo custasse dez mil vezes menos? A inspiração visual 
 
 <a id="a7"></a>
 
-### A7: Em breve…
+### A7: Rubber Hose Animation
+
+Um boneco de traços finos entra em cenários retrô desenhados com cuidado. Gestos elásticos, expressões marcantes e atuação contínua transformam pequenos contratempos em comédia teatral. Verde-sálvia, marfim e discretos detalhes em vermelho desbotado preservam o charme de época.
+
+- **Destaques visuais**：Rosto branco circular, duas mechas curvas e corpo de linhas finas consistentes; contornos a tinta, pintura fosca, interação com objetos e montagem expressiva.
+- **Ideal para**：Comédia absurda, fábulas do cotidiano, histórias com reviravoltas e curtas guiados pela música.
+
+| Exemplo 1: Perseguido por uma nuvem | Exemplo 2: Uma rua chuvosa |
+|:---:|:---:|
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation · Exemplo 1: Perseguido por uma nuvem" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · Rubber Hose Animation · Exemplo 2: Uma rua chuvosa" width="360"></a> |
+| Ruas retrô desenhadas à mão · Atuação elástica | Atmosfera de chuva · Interação com objetos e cortes de reação |
+
+---
+
+<a id="a8"></a>
+
+### A8: Em breve…
 
 Novos estilos especializados para o modo Director estão em preparação. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) e acompanhe as próximas atualizações!
 

@@ -24,8 +24,18 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <a href="#a1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/dark-theme-demo.gif" alt="Animasi stickman hitam putih klasik dengan garis putih di latar hitam" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>Seni Garis Minimalis</strong><br>
+<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Video stickman sketsa tangan minimalis dengan karakter ekspresif, teks utama, dan animasi ringan" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>Pop Modern</strong><br>
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="Stickman berkupluk merah dengan efek cahaya teknologi modern" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>Gambar Tangan Berwarna</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Video figur stik gambar tangan berwarna: kamar tenang dan pikiran yang mengalir bersama sungai" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -34,8 +44,18 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="Cerita stickman di gua prasejarah dengan kejutan komedi" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>Gaya TV Retro</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>Cerita Hangat</strong><br>
 <a href="#a4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="Karakter stickman ekspresif di latar keseharian penuh warna" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>Thriller Bertahan Hidup</strong><br>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Thriller Bertahan Hidup" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -44,8 +64,8 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="Animasi stickman sejarah di Jepang zaman Edo" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Seni Garis Minimalis</strong><br>
-<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Video stickman sketsa tangan minimalis dengan karakter ekspresif, teks utama, dan animasi ringan" width="90%"></a>
+<strong>Penjelasan dengan Karakter</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 tentang meminta bantuan, dengan pembawa acara animasi dan manusia lidi ekspresif" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -54,41 +74,22 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animasi stickman Amber Noir: karakter berhoodie oranye di kota bercahaya hangat dengan bayangan pekat" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Gambar Tangan Berwarna</strong><br>
-<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Video figur stik gambar tangan berwarna: kamar tenang dan pikiran yang mengalir bersama sungai" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>Gaya TV Retro</strong><br>
-<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Misteri fiksi TV pukul 3 pagi dengan karakter putih membulat" width="90%"></a>
-</td>
-<td width="50%" align="center">
-<strong>Thriller Bertahan Hidup</strong><br>
-<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Thriller Bertahan Hidup" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:end -->
-<!-- b5:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>Penjelasan dengan Karakter</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 tentang meminta bantuan, dengan pembawa acara animasi dan manusia lidi ekspresif" width="90%"></a>
-</td>
-<!-- b6:hero:start -->
-<td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
-<!-- b6:hero:end -->
 </tr>
-<!-- b5:hero:end -->
+<tr>
+<td width="50%" align="center">
+<strong>Rubber Hose Animation</strong><br>
+<a href="#a7"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
+</td>
+<td width="50%" align="center"></td>
+</tr>
 </table>
 
 <div align="center">
 
-**12 gaya visual · Contoh yang sudah diuji · Gratis dan open source**
+**13 gaya visual · Contoh yang sudah diuji · Gratis dan open source**
 
 ⭐ **Beri Star pada proyek ini agar tidak ketinggalan gaya dan fitur baru berikutnya.**
 
@@ -325,7 +326,23 @@ Bagaimana jika saat bangun, semua barang sepuluh ribu kali lebih murah? Inspiras
 
 <a id="a7"></a>
 
-### A7: Segera hadir…
+### A7: Rubber Hose Animation
+
+Figur stik bergaris tipis tampil di latar retro yang digambar dengan rinci. Gerakan lentur, ekspresi kuat, dan akting berkesinambungan mengubah kejadian sehari-hari menjadi komedi teatrikal. Warna hijau sage, gading, dan sedikit merah pudar menjaga nuansa lawas.
+
+- **Ciri visual**：Wajah bulat putih, dua helai rambut melengkung, dan tubuh garis tipis yang konsisten; kontur tinta, tekstur cat matte, interaksi properti, dan penyuntingan ekspresif.
+- **Cocok untuk**：Komedi absurd, fabel keseharian, cerita dengan kejutan, dan film pendek mengikuti musik.
+
+| Contoh 1: Dikejar awan | Contoh 2: Jalanan saat hujan |
+|:---:|:---:|
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation · Contoh 1: Dikejar awan" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · Rubber Hose Animation · Contoh 2: Jalanan saat hujan" width="360"></a> |
+| Jalan retro gambar tangan · Akting lentur | Suasana hujan · Interaksi properti dan potongan reaksi |
+
+---
+
+<a id="a8"></a>
+
+### A8: Segera hadir…
 
 Gaya khusus Director yang baru sedang disiapkan. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk mengikuti pembaruan selanjutnya!
 

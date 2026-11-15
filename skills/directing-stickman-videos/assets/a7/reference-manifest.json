@@ -1,0 +1,102 @@
+{
+  "style_id": "A7",
+  "name_zh": "橡皮管动画风",
+  "name_en": "Rubber Hose Animation",
+  "publication": "a7_director_mode",
+  "prompt_lock": "approved-prompt-lock.json",
+  "style_frames": [
+    {
+      "file": "courtyard.jpg",
+      "source_take": "shot-A.mp4",
+      "source_time_seconds": 0.3,
+      "sha256": "265ef406a86c85d8dae366d59073139a9c31968d38ca9fcd4884433c74a1f577"
+    },
+    {
+      "file": "kitchen.jpg",
+      "source_take": "shot-D.mp4",
+      "source_time_seconds": 0.25,
+      "sha256": "4bfcbd70904396ff2dd678636046828aa8a2ec970dd56539a2549354c807d1d4"
+    },
+    {
+      "file": "attic.jpg",
+      "source_take": "shot-B.mp4",
+      "source_time_seconds": 0.5,
+      "sha256": "b91b453bb67b9d789fe5236a7fe46d02e709bea76d9a009f65952ad13080471c"
+    }
+  ],
+  "limits": [
+    "No approved portrait complete film bundled",
+    "Clean stills establish drawing grammar, not rigid props, setting, plot or required shot count",
+    "Full showcase is repository README media, outside installable Skill; raw song not bundled"
+  ],
+  "reference_usage": {
+    "workflow": "Successful MV direct-video route: existing kitchen material reference with frozen character/style and compact scene/action; no compulsory new still or low-resolution probe",
+    "primary_drawing_reference": "kitchen.jpg",
+    "cross_scene_comparisons": [
+      "courtyard.jpg",
+      "attic.jpg"
+    ],
+    "role": "Drawing grammar and character identity, not compulsory setting, layout, story or first frame",
+    "procedure": "../../references/rubber-hose.md#bundled-references-and-actual-model-inputs",
+    "scene_standard": "../../references/a7-prompt-contract.md#block-3--variable-scene-with-a-shared-drawing-standard",
+    "submission_evidence": [
+      "actual_input_file_and_sha256_when_available_or_provider_asset_identity_and_verified_thumbnail",
+      "provider_slot",
+      "input_role",
+      "exact_prompt",
+      "job_id"
+    ],
+    "review_limit": "Reference inputs and matching prompt hashes do not prove actual-output style or stability",
+    "validated_examples": "validated-workflow.json",
+    "provenance_limit": "Bundled kitchen.jpg is a clean MV frame, not certified byte-identical to the saved Flow reference used in the two accepted tests; see validated-workflow.json"
+  },
+  "historical_showcase": {
+    "title": "烂奇迹",
+    "sha256": "fe87ac87bea7399967fa70cf47e6db7c9b2e65a8c568feca7cf2c5f01ea86d63",
+    "ratio": "16:9",
+    "width": 1280,
+    "height": 720,
+    "duration_seconds": 24.685,
+    "music": "User-supplied original file; public redistribution clearance not established",
+    "lyrics": "Showcase-specific; optional for future A7 films",
+    "user_approval": "Visual style and character approved in this chat",
+    "existing_review": "Sampled frames and technical checks; no invented continuous viewing/listening pass",
+    "status": "Retained in local project archive; replaced in README by user-selected A7.1/A7.2",
+    "original_repo_relative_file": "assets/readme/style-7-rubber-hose.mp4",
+    "project_archive_relative_file": "work/a-flow-experiments-20261115/music25-lanqiji/v2-lyric-cut/烂奇迹_V2_歌词剧情版_720p.mp4",
+    "bundled_in_current_repo": false
+  },
+  "showcase": {
+    "title": "样片 1：乌云追逐",
+    "repo_relative_file": "assets/readme/style-7-rubber-hose.mp4",
+    "sha256": "0cc4c5e37a947d35fb3aabf0e18e2296b84d583588118f5a916f36825b9c64aa",
+    "source_name": "A7.1.mp4",
+    "source_sha256": "0cc4c5e37a947d35fb3aabf0e18e2296b84d583588118f5a916f36825b9c64aa",
+    "source_trim_start_seconds": 0,
+    "ratio": "16:9",
+    "width": 1920,
+    "height": 1080,
+    "duration_seconds": 10.0,
+    "audio": "Preserved from user-provided video; this gallery update does not establish public redistribution rights",
+    "user_selection": "User explicitly selected this file for the A7 README showcase",
+    "existing_review": "Sampled frames and file/trim checks only; no inherited continuous viewing/listening pass"
+  },
+  "additional_showcases": [
+    {
+      "title": "样片 2：雨中街头",
+      "repo_relative_file": "assets/readme/style-7-rubber-hose-2.mp4",
+      "sha256": "8fdea675c52d21566d54877fd72b40ce364f184756353b08d913242215d358db",
+      "source_name": "A7.2.mp4",
+      "source_sha256": "77afcf46565c65efb3d400d243fbaa78bd1cb3b7e47823a2066576c00ef23a90",
+      "source_trim_start_seconds": 2,
+      "ratio": "16:9",
+      "width": 1920,
+      "height": 1080,
+      "duration_seconds": 8.0,
+      "audio": "Preserved from user-provided video; this gallery update does not establish public redistribution rights",
+      "user_selection": "User explicitly selected this file for the A7 README showcase",
+      "existing_review": "Sampled frames and file/trim checks only; no inherited continuous viewing/listening pass"
+    }
+  ],
+  "updated_at": "2026-11-15T15:21:52.806319+00:00"
+}
