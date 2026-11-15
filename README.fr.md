@@ -24,8 +24,18 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 <a href="#a1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/dark-theme-demo.gif" alt="Animation stickman en noir et blanc : traits blancs sur fond noir pour expliquer un concept" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>Trait minimaliste</strong><br>
+<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Vidéo stickman dessinée à la main : personnages expressifs, mots-clés et micro-animations" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>Pop moderne</strong><br>
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="Animation stickman pop moderne : personnage au bonnet rouge et effets lumineux technologiques" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>Dessin à la main en couleur</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Vidéo stickman dessinée en couleur : une chambre calme et une pensée au fil de l’eau" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -34,8 +44,18 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="Animation stickman préhistorique : une histoire de caverne avec une chute inattendue" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>Style TV rétro</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Mystère fictif de la télévision à 3 h du matin avec des personnages blancs arrondis" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>Histoires réconfortantes</strong><br>
 <a href="#a4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="Animation stickman chaleureuse : décor coloré et émotions du quotidien" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>Thriller de survie</strong><br>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Thriller de survie" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -44,8 +64,8 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="Animation stickman historique : la vie d’un samouraï dans le Japon d’Edo" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Trait minimaliste</strong><br>
-<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Vidéo stickman dessinée à la main : personnages expressifs, mots-clés et micro-animations" width="90%"></a>
+<strong>Explications par un personnage</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 : demander de l’aide, avec un présentateur animé et des stickmen expressifs" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -54,41 +74,22 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animation stickman Amber Noir : un personnage en sweat orange dans une ville aux lumières chaudes et aux ombres profondes" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Dessin à la main en couleur</strong><br>
-<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Vidéo stickman dessinée en couleur : une chambre calme et une pensée au fil de l’eau" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>Style TV rétro</strong><br>
-<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Mystère fictif de la télévision à 3 h du matin avec des personnages blancs arrondis" width="90%"></a>
-</td>
-<td width="50%" align="center">
-<strong>Thriller de survie</strong><br>
-<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Thriller de survie" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:end -->
-<!-- b5:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>Explications par un personnage</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 : demander de l’aide, avec un présentateur animé et des stickmen expressifs" width="90%"></a>
-</td>
-<!-- b6:hero:start -->
-<td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
-<!-- b6:hero:end -->
 </tr>
-<!-- b5:hero:end -->
+<tr>
+<td width="50%" align="center">
+<strong>Rubber Hose Animation</strong><br>
+<a href="#a7"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
+</td>
+<td width="50%" align="center"></td>
+</tr>
 </table>
 
 <div align="center">
 
-**12 styles visuels · Des exemples testés · Gratuit et open source**
+**13 styles visuels · Des exemples testés · Gratuit et open source**
 
 ⭐ **Ajoutez une étoile au projet pour suivre les prochains styles et les nouvelles fonctionnalités à débloquer.**
 
@@ -320,7 +321,23 @@ Et si, au réveil, tout coûtait dix mille fois moins cher ? L’inspiration vis
 
 <a id="a7"></a>
 
-### A7 : Bientôt disponible…
+### A7: Rubber Hose Animation
+
+Un personnage filiforme évolue dans des décors rétro finement dessinés. Gestes élastiques, expressions marquées et jeu continu transforment les petits incidents du quotidien en comédie théâtrale. Le vert sauge, l’ivoire et quelques touches de rouge passé conservent le charme d’époque.
+
+- **Points forts**：Visage blanc circulaire, deux mèches courbes et corps en traits fins ; contours à l’encre, peinture mate, interaction avec les accessoires et montage expressif.
+- **Idéal pour**：Comédie absurde, fables du quotidien, récits à chute et courts métrages musicaux.
+
+| Exemple 1 : Poursuivi par un nuage | Exemple 2 : Une rue sous la pluie |
+|:---:|:---:|
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation · Exemple 1 : Poursuivi par un nuage" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · Rubber Hose Animation · Exemple 2 : Une rue sous la pluie" width="360"></a> |
+| Rues rétro dessinées à la main · Jeu élastique | Ambiance pluvieuse · Accessoires et plans de réaction |
+
+---
+
+<a id="a8"></a>
+
+### A8 : Bientôt disponible…
 
 De nouveaux styles spécialisés pour le mode Director sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour suivre les prochaines mises à jour !
 

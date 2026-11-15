@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "style_id": "A7",
+  "updated_at": "2026-11-15T15:21:52.806319+00:00",
+  "publication": "a7_director_mode",
+  "workflow": "Existing kitchen material reference + exact character/style blocks + compact scene/action -> direct video generation; no new still stage",
+  "observed_settings": {
+    "provider": "Flow",
+    "model": "Omni1.2 Flash",
+    "resolution": "720p",
+    "seconds": 10,
+    "ratio": "16:9",
+    "count_per_scene": 1
+  },
+  "fixed_prompt_lock": "approved-prompt-lock.json",
+  "actual_test_reference": {
+    "provider_asset_title": "来自“02 橡皮管喜剧 · 720p精修”的已保存画面",
+    "slot": "Flow video type 素材 / reference material",
+    "role": "Character identity and ink-and-paint drawing; not first frame",
+    "original_file_sha256": null,
+    "hash_unavailable_reason": "Existing saved provider image reused; original bytes not downloaded",
+    "bundled_kitchen_byte_identity": "not_established"
+  },
+  "portable_reference": {
+    "file": "kitchen.jpg",
+    "role": "Clean MV kitchen frame supplied for fresh installations",
+    "sha256": "4bfcbd70904396ff2dd678636046828aa8a2ec970dd56539a2549354c807d1d4",
+    "tested_with_this_exact_file_in_these_jobs": false
+  },
+  "accepted_examples": [
+    {
+      "id": "01-post-office",
+      "prompt": "validated-prompts/post-office.txt",
+      "prompt_sha256": "3895602890d1f3597641e7e10180bf08ec13f525426436d2eba0e54016b10a31",
+      "job_id": "90d505be-087a-4a67-9693-5c0b21147c12",
+      "user_acceptance": "accepted",
+      "approved_at": "2026-11-15T15:14:36.875Z",
+      "user_quote": "你不用看了，我觉得这两个场景OK的",
+      "assistant_review": "Partial browser playback and snapshots; not a full frame-by-frame production audit.",
+      "downloaded": false,
+      "output_sha256": null,
+      "full_assistant_playback": "not_checked",
+      "final_encoded_listening": "not_checked"
+    },
+    {
+      "id": "02-seaside-pier",
+      "prompt": "validated-prompts/seaside-pier.txt",
+      "prompt_sha256": "71a0b040c5d4042db083c1632e74598beda5663ea8b116060b52e1c10ec286ff",
+      "job_id": "58ad7819-6d88-4519-950b-66b5ec7f2bd2",
+      "user_acceptance": "accepted",
+      "approved_at": "2026-11-15T15:14:36.875Z",
+      "user_quote": "你不用看了，我觉得这两个场景OK的",
+      "assistant_review": "Generated and opened in Flow. Further assistant review stopped at user request.",
+      "downloaded": false,
+      "output_sha256": null,
+      "full_assistant_playback": "not_checked",
+      "final_encoded_listening": "not_checked"
+    }
+  ],
+  "scope_limits": [
+    "Two user-accepted new locations, not a guarantee for future generations",
+    "Partial assistant review stopped at user request; no full visual/audio audit inferred",
+    "No portrait complete-film baseline",
+    "README original showcases unchanged; no new gallery clips",
+    "Lyrics optional and brief-specific"
+  ],
+  "not_accepted_baselines": [
+    "Unsubmitted laundry test",
+    "Clock-shop still not approved"
+  ],
+  "publication_authorized": false
+}

@@ -24,8 +24,18 @@
 <a href="#a1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/dark-theme-demo.gif" alt="클래식 흑백 스틱맨 애니메이션: 검은 배경과 흰 선으로 전달하는 지식·정보" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>미니멀 라인 아트</strong><br>
+<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="미니멀 손그림 스틱맨 영상: 생생한 표정, 핵심 문구, 부분 애니메이션" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>모던 팝 스타일</strong><br>
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="모던 팝 스틱맨 애니메이션: 빨간 비니 캐릭터와 테크 조명 연출" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>컬러 손그림</strong><br>
+<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="컬러 손그림 스틱맨 영상: 조용한 침실과 강을 따라 떠가는 생각" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -34,8 +44,18 @@
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="선사시대 동굴 스틱맨 애니메이션: 동굴을 배경으로 한 반전 이야기" width="90%"></a>
 </td>
 <td width="50%" align="center">
+<strong>레트로 TV 스타일</strong><br>
+<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="둥근 흰색 캐릭터로 표현한 새벽 3시 TV 미스터리" width="90%"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
 <strong>따뜻한 일상 이야기 스타일</strong><br>
 <a href="#a4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="따뜻한 일상 스틱맨 애니메이션: 다채로운 배경과 공감 가는 순간" width="90%"></a>
+</td>
+<td width="50%" align="center">
+<strong>서바이벌 스릴러</strong><br>
+<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · 서바이벌 스릴러" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -44,8 +64,8 @@
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="역사 카툰 스틱맨 애니메이션: 에도 시대 사무라이 이야기" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>미니멀 라인 아트</strong><br>
-<a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="미니멀 손그림 스틱맨 영상: 생생한 표정, 핵심 문구, 부분 애니메이션" width="90%"></a>
+<strong>캐릭터 해설</strong><br>
+<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="도움 요청의 심리를 설명하는 B5 영상: 애니메이션 진행자와 표정이 풍부한 스틱맨" width="90%"></a>
 </td>
 </tr>
 <tr>
@@ -54,41 +74,22 @@
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir 스틱맨 애니메이션: 따뜻한 조명과 깊은 그림자의 도시 속 주황색 후드티 캐릭터" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>컬러 손그림</strong><br>
-<a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="컬러 손그림 스틱맨 영상: 조용한 침실과 강을 따라 떠가는 생각" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>레트로 TV 스타일</strong><br>
-<a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="둥근 흰색 캐릭터로 표현한 새벽 3시 TV 미스터리" width="90%"></a>
-</td>
-<td width="50%" align="center">
-<strong>서바이벌 스릴러</strong><br>
-<a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · 서바이벌 스릴러" width="90%"></a>
-</td>
-</tr>
-<!-- b3:hero:end -->
-<!-- b5:hero:start -->
-<tr>
-<td width="50%" align="center">
-<strong>캐릭터 해설</strong><br>
-<a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="도움 요청의 심리를 설명하는 B5 영상: 애니메이션 진행자와 표정이 풍부한 스틱맨" width="90%"></a>
-</td>
-<!-- b6:hero:start -->
-<td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
-<!-- b6:hero:end -->
 </tr>
-<!-- b5:hero:end -->
+<tr>
+<td width="50%" align="center">
+<strong>러버 호스 애니메이션</strong><br>
+<a href="#a7"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 러버 호스 애니메이션" width="90%"></a>
+</td>
+<td width="50%" align="center"></td>
+</tr>
 </table>
 
 <div align="center">
 
-**12가지 비주얼 스타일 · 실제 제작 예시 · 무료 오픈소스**
+**13가지 비주얼 스타일 · 실제 제작 예시 · 무료 오픈소스**
 
 ⭐ **프로젝트에 Star를 눌러 다음 스타일과 새 기능 공개를 확인하세요.**
 
@@ -318,7 +319,23 @@ A1, A2, A3… 순으로 추가하며, 각 스타일에 맞는 애니메이션 �
 
 <a id="a7"></a>
 
-### A7: 곧 공개…
+### A7: 러버 호스 애니메이션
+
+가는 선의 스틱맨이 정교한 복고풍 손그림 배경에서 움직입니다. 탄력 있는 팔다리와 풍부한 표정, 이어지는 연기로 일상의 작은 사고를 극장 애니메이션 같은 코미디로 풀어냅니다. 세이지 그린과 아이보리에 바랜 붉은색을 조금 더해 시대감을 살립니다.
+
+- **시각적 특징**：흰 원형 얼굴, 굽은 머리카락 두 가닥, 가는 선의 몸을 유지합니다. 잉크 윤곽, 무광 붓질, 소품과의 상호작용, 표현력 있는 장면 전환을 결합합니다.
+- **추천 콘텐츠**：부조리 코미디, 일상의 우화, 반전 이야기, 음악에 맞춘 단편.
+
+| 샘플 1: 구름에게 쫓기다 | 샘플 2: 비 오는 거리 |
+|:---:|:---:|
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 러버 호스 애니메이션 · 샘플 1: 구름에게 쫓기다" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · 러버 호스 애니메이션 · 샘플 2: 비 오는 거리" width="360"></a> |
+| 복고 손그림 거리 · 탄력 있는 캐릭터 연기 | 비 오는 분위기 · 소품 상호작용과 표정 컷 |
+
+---
+
+<a id="a8"></a>
+
+### A8: 곧 공개…
 
 새로운 특화 Director 스타일을 준비하고 있습니다. [프로젝트에 Star를 누르고](#road-to-10000-stars--creator-ecosystem) 앞으로의 업데이트를 확인해 주세요!
 

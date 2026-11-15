@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "approved_at": "2026-11-15T12:02:39.831Z",
+  "approval_quote": "这两版可以，先把人物和画风提示词固定下来",
+  "approved_rounds": [
+    33,
+    34
+  ],
+  "character": "ONE original stickman, drawn as a literal thin-line stick figure. Flat paper-white circular face, two black oval eyes, tiny brows and mouth, exactly two short curved black hair tufts. Head outline directly touches a short black neck. Neck, vertical spine, two arms and two legs are each a SINGLE uniform fine ink stroke, like a pen-drawn stick diagram, about 2 pixels wide at 360p. Background remains visible immediately beside both edges of the narrow spine, even between the shoulders. Two small white outlined hands and two short black curved feet. All joints visibly connected; head size and line width remain constant during bending. Bare line body; no clothing, tie, black filled chest, triangular neck shape or rounded torso.",
+  "visual_style": "An original early hand-inked theatrical cartoon with a fine-line stickman and an exquisitely HAND-DRAWN 1930s background painting. A subdued colored palette: dusty sage-gray green, pearl-gray plaster, muted gray-taupe, pale ivory furnishings and tiny faded brick-red details. Not pure monochrome, not sepia. The face and hands are flat clean neutral WHITE with no yellow tint. Every room object is defined first by a confident visible black pen outline, with small hand-drawn seams, hinges, joints and irregular edges. Color inside those contours is laid in as flat matte paint shapes with delicate visible brush texture, soft stippling and sparse hatch strokes. Use a few broad, simple painted tone regions for depth, not smooth shading wrapped around furniture. Uniform diffuse stage illumination: lamps remain OFF, walls and work surfaces have even tones; no lit pools, glints, bloom, window glow or directional cast-light effects. Period craftsmanship and fine architectural drawing provide richness, while shapes remain clear and quiet around the stickman. Distinct 2D ink-and-paint cartoon scenery, no CGI, 3D renders, ambient occlusion, smooth bevels, plastic, photoreal material, airbrushed gradients, film border, heavy scratches or existing cartoon character.",
+  "hashes": {
+    "character_sha256": "8638b61a5b7a802a048635fb5f2363090272d34e653010d7da8a50e53ea68391",
+    "visual_style_sha256": "77ec3ffc4bd1f2c541cbc7f6f289c42bc5c6bc5676b4a35c2517e3be619dc2cf"
+  },
+  "usage": "Repeat both blocks verbatim for future tests. Only scene/action/camera vary. Existing phrases mentioning360p remain unchanged as part of the approved anchor; output settings are independently selected in Flow.",
+  "scope": "Frozen A7 character and visual grammar. Change scene and performance blocks only.",
+  "style_id": "A7",
+  "name_zh": "橡皮管动画风",
+  "name_en": "Rubber Hose Animation",
+  "publication": "A7 Director mode",
+  "lyrics": "Optional, project-specific; not a default requirement"
+}
