@@ -81,7 +81,7 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 <tr>
 <td width="50%" align="center">
 <strong>Rubber Hose Animation</strong><br>
-<a href="#a7"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
+<a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
 </td>
 <td width="50%" align="center"></td>
 </tr>
@@ -330,7 +330,7 @@ Un personnage filiforme évolue dans des décors rétro finement dessinés. Gest
 
 | Exemple 1 : Poursuivi par un nuage | Exemple 2 : Une rue sous la pluie |
 |:---:|:---:|
-| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation · Exemple 1 : Poursuivi par un nuage" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · Rubber Hose Animation · Exemple 2 : Une rue sous la pluie" width="360"></a> |
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation · Exemple 1 : Poursuivi par un nuage" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · Rubber Hose Animation · Exemple 2 : Une rue sous la pluie" width="360"></a> |
 | Rues rétro dessinées à la main · Jeu élastique | Ambiance pluvieuse · Accessoires et plans de réaction |
 
 ---
