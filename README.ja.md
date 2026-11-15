@@ -81,7 +81,7 @@
 <tr>
 <td width="50%" align="center">
 <strong>ラバーホース・アニメーション</strong><br>
-<a href="#a7"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · ラバーホース・アニメーション" width="90%"></a>
+<a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · ラバーホース・アニメーション" width="90%"></a>
 </td>
 <td width="50%" align="center"></td>
 </tr>
@@ -327,7 +327,7 @@ A1、A2、A3…の番号で追加し、それぞれの画風に対応するア�
 
 | サンプル1：雲に追われて | サンプル2：雨の街角 |
 |:---:|:---:|
-| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · ラバーホース・アニメーション · サンプル1：雲に追われて" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · ラバーホース・アニメーション · サンプル2：雨の街角" width="360"></a> |
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · ラバーホース・アニメーション · サンプル1：雲に追われて" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · ラバーホース・アニメーション · サンプル2：雨の街角" width="360"></a> |
 | レトロな手描きの街並み · しなやかな演技 | 雨の空気感 · 小道具とのやり取りと表情のカット |
 
 ---

@@ -81,7 +81,7 @@
 <tr>
 <td width="50%" align="center">
 <strong>러버 호스 애니메이션</strong><br>
-<a href="#a7"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 러버 호스 애니메이션" width="90%"></a>
+<a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 러버 호스 애니메이션" width="90%"></a>
 </td>
 <td width="50%" align="center"></td>
 </tr>
@@ -328,7 +328,7 @@ A1, A2, A3… 순으로 추가하며, 각 스타일에 맞는 애니메이션 �
 
 | 샘플 1: 구름에게 쫓기다 | 샘플 2: 비 오는 거리 |
 |:---:|:---:|
-| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 러버 호스 애니메이션 · 샘플 1: 구름에게 쫓기다" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · 러버 호스 애니메이션 · 샘플 2: 비 오는 거리" width="360"></a> |
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 러버 호스 애니메이션 · 샘플 1: 구름에게 쫓기다" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · 러버 호스 애니메이션 · 샘플 2: 비 오는 거리" width="360"></a> |
 | 복고 손그림 거리 · 탄력 있는 캐릭터 연기 | 비 오는 분위기 · 소품 상호작용과 표정 컷 |
 
 ---

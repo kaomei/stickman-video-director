@@ -81,7 +81,7 @@
 <tr>
 <td width="50%" align="center">
 <strong>橡皮管动画风</strong><br>
-<a href="#a7"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 橡皮管动画风" width="90%"></a>
+<a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 橡皮管动画风" width="90%"></a>
 </td>
 <td width="50%" align="center"></td>
 </tr>
@@ -326,7 +326,7 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 | 样片 1：乌云追逐 | 样片 2：雨中街头 |
 |:---:|:---:|
-| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 橡皮管动画风 · 样片 1：乌云追逐" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · 橡皮管动画风 · 样片 2：雨中街头" width="360"></a> |
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 橡皮管动画风 · 样片 1：乌云追逐" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · 橡皮管动画风 · 样片 2：雨中街头" width="360"></a> |
 | 复古手绘街景 · 弹性肢体表演 | 雨景氛围 · 道具互动与表情切镜 |
 
 ---
