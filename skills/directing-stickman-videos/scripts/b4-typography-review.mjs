@@ -143,9 +143,13 @@ export function planB4Typography(p) {
 
 const diagnosticMoments=plan=>[...plan.moments,...plan.caption_diagnostics];
 
+// One scratch canvas per snapshot size. Creating a new native canvas for every
+// sampled frame grew memory by megabytes per frame on long films (issue #129).
+const snapshotCanvases=new Map();
 function snapshot(canvas, width=320) {
-  const {createCanvas}=canvasAPI();
-  const c=createCanvas(width,Math.round(width*canvas.height/canvas.width)); c.getContext('2d').drawImage(canvas,0,0,c.width,c.height);
+  const {createCanvas}=canvasAPI(),height=Math.round(width*canvas.height/canvas.width),key=width+'x'+height;
+  let c=snapshotCanvases.get(key); if(!c)snapshotCanvases.set(key,c=createCanvas(width,height)); else c.getContext('2d').clearRect(0,0,width,height);
+  c.getContext('2d').drawImage(canvas,0,0,c.width,c.height);
   return {width:c.width,height:c.height,data:c.getContext('2d').getImageData(0,0,c.width,c.height).data};
 }
 function diff(a,b,r) {
@@ -154,7 +158,9 @@ function diff(a,b,r) {
   for(let j=y;j<y+h;j++) for(let i=x;i<x+w;i++) {const n=(j*a.width+i)*4,d=(Math.abs(a.data[n]-b.data[n])+Math.abs(a.data[n+1]-b.data[n+1])+Math.abs(a.data[n+2]-b.data[n+2]))/(3*255);sum+=d;if(d>.035)changed++;}
   return {mean:sum/(w*h),fraction:changed/(w*h)};
 }
-export function checkB4TypographyPaint(p,{draw}) {
+// A generator, so the async variant can yield to the event loop after every moment
+// and native canvas memory is reclaimed during long films (issue #129).
+function* typographyPaintMoments(p,{draw}) {
   const plan=planB4Typography(p); if(!plan)return null;
   need(typeof draw==='function','authored painter is required'); const metrics=[];
   for(const m of diagnosticMoments(plan)) {
@@ -167,7 +173,7 @@ export function checkB4TypographyPaint(p,{draw}) {
       const phases=[];
       for(const phase of PHASES){const isolated=frames[phase],empty=snapshot(draw(at(phase),{focusIds:['__b4_typography_empty__']})),glyph=diff(isolated,empty,m.region),composed=snapshot(draw(at(phase))),removed=snapshot(draw(at(phase),{omitIds:m.layer_ids})),visibility=diff(composed,removed,m.region);
         need(glyph.mean>.0008&&glyph.fraction>.002&&visibility.mean>=glyph.mean*.25&&visibility.fraction>=glyph.fraction*.2,'environment marking '+m.id+' must be visible and unobscured in all four phases');phases.push({phase,ink:glyph,visible:visibility});}
-      metrics.push({id:m.id,kind:m.kind,phases,classification_status:'pending_independent_review',micro_animation:'independent review must confirm a stable physical marking, not title/rule/warning'});continue;
+      metrics.push({id:m.id,kind:m.kind,phases,classification_status:'pending_independent_review',micro_animation:'independent review must confirm a stable physical marking, not title/rule/warning'});yield;continue;
     }
     for(const [name,d] of Object.entries({entry_mid,mid_settled})) need(d.mean>=Math.max(.00012,ink.mean*.008)&&d.fraction>=.0005,'moment '+m.id+' needs actual local text micro-animation ('+name+'); background motion cannot supply it');
     const full=snapshot(draw(at('settled'))),omit=snapshot(draw(at('settled'),{omitIds:m.layer_ids})),visible=diff(full,omit,m.region);
@@ -178,9 +184,19 @@ export function checkB4TypographyPaint(p,{draw}) {
       need(memberInk.mean>.0008&&memberInk.fraction>.002&&memberVisible.mean>=memberInk.mean*.25&&memberVisible.fraction>=memberInk.fraction*.2,'grouped text member '+id+' must actually be visible, inside its region and unobscured');
       members.push({id,ink:memberInk,visible:memberVisible});
     }
-    metrics.push({id:m.id,ink,entry_mid,mid_settled,visible,members});
+    metrics.push({id:m.id,ink,entry_mid,mid_settled,visible,members});yield;
   }
   return {status:'paint_diagnostic_pass',plan,metrics,limits:LIMITS};
+}
+export function checkB4TypographyPaint(p,options) {
+  const moments=typographyPaintMoments(p,options);let step;
+  while(!(step=moments.next()).done);
+  return step.value;
+}
+export async function checkB4TypographyPaintAsync(p,options) {
+  const moments=typographyPaintMoments(p,options);let step;
+  while(!(step=moments.next()).done)await new Promise(setImmediate);
+  return step.value;
 }
 
 function probeSource(p,source,ffprobe) {
@@ -192,7 +208,7 @@ function probeSource(p,source,ffprobe) {
 }
 async function checkFile(p,source,draw,ffmpeg) {
   const {loadImage,createCanvas}=canvasAPI();
-  const diagnostic=checkB4TypographyPaint(p,{draw}),plan=diagnostic.plan,width=Math.min(160,Math.max(1,Math.round(160*p.width/p.height))),height=Math.round(width*p.height/p.width),n=Math.ceil(plan.scope_end*p.fps-EPS);
+  const diagnostic=await checkB4TypographyPaintAsync(p,{draw}),plan=diagnostic.plan,width=Math.min(160,Math.max(1,Math.round(160*p.width/p.height))),height=Math.round(width*p.height/p.width),n=Math.ceil(plan.scope_end*p.fps-EPS);
   // Decode native pixels, then downsample both sides with the same Canvas
   // kernel. Mixing FFmpeg bilinear with Canvas filtering falsely flags dense
   // portrait glyph edges; changing the tolerance would hide real differences.
@@ -210,6 +226,7 @@ async function checkFile(p,source,draw,ffmpeg) {
       const local=diff(actual,authored,m.region);need(local.mean<=.04&&local.fraction<=.18,'exported typography frame '+i+' differs for '+m.id);
     }
     }
+    await new Promise(setImmediate); // let native canvas memory be reclaimed between decode chunks (issue #129)
   }
   // A broad codec tolerance alone would allow stripping a subtle settle. Test
   // the glyph pixels that distinguish each phase from its next authored phase.

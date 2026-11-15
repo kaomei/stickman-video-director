@@ -72,8 +72,8 @@ async function main() {
       const {painter} = await import('./autopilot-render.mjs'); const draw = await painter(p);
       for (const cue of p.captions) draw(Math.min(p.rangeEnd - 0.001, (cue.start + cue.end) / 2));
       const opening_visual = p.style === 'B4' ? await (await import('./b4-opening-visual-check.mjs')).checkB4OpeningPaint(p, {draw, picture: await painter(p, {pictureOnly: true})}) : undefined;
-      const typography = p.style === 'B4' ? await (await import('./b4-typography-review.mjs')).checkB4TypographyPaint(p, {draw}) : undefined;
-      const picture_motion = p.style === 'B4' ? await (await import('./b4-picture-review.mjs')).checkB4PicturePaint(p, {draw, picture: await painter(p, {pictureOnly: true})}) : undefined;
+      const typography = p.style === 'B4' ? await (await import('./b4-typography-review.mjs')).checkB4TypographyPaintAsync(p, {draw}) : undefined;
+      const picture_motion = p.style === 'B4' ? await (await import('./b4-picture-review.mjs')).checkB4PicturePaintAsync(p, {draw, picture: await painter(p, {pictureOnly: true})}) : undefined;
       const portrait = await (await import('./b-style-portrait-paint.mjs')).checkBStylePortraitPaint(p, draw);
       const b3_semantics = p.style === 'B3' ? (await import('./b3-semantic-motion.mjs')).planB3Semantics(p) : undefined;
       console.log(JSON.stringify({typography, ...(picture_motion ? {picture_motion} : {}), ...(portrait ? {portrait} : {}), ...(b3_semantics ? {b3_semantics} : {}), valid: true, ...(['B1', 'B2', 'B3', 'B4'].includes(p.style) ? {status: 'technical_only', visual_acceptance: 'not_reviewed', delivery_ready: false} : {}), fingerprint: p.fingerprint, duration: p.duration, checked_seconds: p.rangeEnd, shots: p.shots.length, ...(opening_visual ? {opening_visual} : {})})); return;
