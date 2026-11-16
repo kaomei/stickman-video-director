@@ -41,7 +41,7 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 <tr>
 <td width="50%" align="center">
 <strong>Préhistoire et cavernes</strong><br>
-<a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="Animation stickman préhistorique : une histoire de caverne avec une chute inattendue" width="90%"></a>
+<a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@f1e7992ade7de1b31bf520cd264e375334009be9/assets/readme/previews/style-3-demo.gif" alt="Animation stickman préhistorique : une histoire de caverne avec une chute inattendue" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <strong>Style TV rétro</strong><br>
@@ -99,24 +99,50 @@ Des styles visuels régulièrement enrichis pour les chaînes de **vulgarisation
 
 <a id="creation-modes"></a>
 
-## 🎬 Deux façons de créer vos vidéos
+## 🎬 Deux modes de production vidéo : Model Engine vs Code Engine
 
-**Vous voulez maîtriser chaque plan ? Choisissez A · Director Mode. Vous voulez une vidéo terminée sans assembler les scènes vous-même ? Choisissez B · Autopilot Mode.** Un projet, deux méthodes de production.
+**Un même réalisateur stickman, deux façons de produire les images** : le mode A utilise un modèle vidéo pour générer des plans continus ; le mode B anime des éléments visuels par calques à l’aide de code. Dans les deux cas, un agent peut automatiser la production jusqu’à la vidéo finale, en respectant les exigences du style choisi.
 
-|  | <div align="center">A · Director Mode</div> | <div align="center">B · Autopilot Mode</div> |
-|:---:|:---|:---|
-| **Principe** | **Vous gardez la main, l’IA prépare la mise en scène** : elle crée le découpage et les prompts ; vous contrôlez la génération des séquences et le montage. | **Donnez un sujet ou un objectif, récupérez une vidéo** : illustrations, voix off, sous-titres, micro-animations et assemblage sont automatisés. |
-| **Durée** | **Idéal pour les formats courts**, par exemple de 30 secondes à 3 minutes. Les formats plus longs se construisent séquence par séquence. | **Pensé pour les formats longs**, notamment les vidéos avec voix off de **10 minutes et plus**. Convient aussi aux formats courts et aux séries narratives. |
-| **Outils** | Préparez les plans avec un assistant IA compatible avec les Skills, générez les séquences dans votre outil vidéo préféré (Google Flow, Runway, Luma, Kling, etc.), puis assemblez-les dans CapCut ou Premiere. | Un agent de développement IA comme **Codex ou Claude Code**, capable de lire et d’écrire des fichiers, d’appeler des outils et d’exécuter des commandes, pour relier génération des médias et assemblage local. |
-| **Rendu** | **Séquences animées générées une par une** : gestes, mise en scène et interactions entre personnages. | **Illustrations de storyboard + animations locales** : expressions, réactions et mouvements d’objets accompagnent la narration, avec des coupes, zooms et panoramiques. Les seuls mouvements de caméra ou apparitions de texte ne comptent pas comme animation de la scène. |
-| **Livrable** | Proposition de réalisation, storyboard, prompts vidéo par séquence et indications sonores. | **Un fichier vidéo complet avec voix off, sous-titres et micro-animations.** |
+<table>
+<thead>
+<tr>
+<th align="center" valign="middle"></th>
+<th align="center" valign="middle">A · Model Engine</th>
+<th align="center" valign="middle">B · Code Engine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" valign="middle"><strong>Principe</strong></td>
+<td align="left" valign="middle">Le modèle de génération vidéo reçoit le storyboard, les prompts et les images de référence, puis génère directement des séquences continues avec des actions, des personnages et des changements de décor.</td>
+<td align="left" valign="middle">L’IA dessine ou génère les éléments visuels, puis écrit et exécute du code pour contrôler les personnages, les accessoires, les effets de texte et la chronologie des plans. La vidéo est rendue et assemblée en local.</td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong>Atouts</strong></td>
+<td align="left" valign="middle">Privilégie le jeu corporel, les interactions, la continuité des actions et l’ambiance créée par la caméra et la lumière, pour des images vivantes et expressives.</td>
+<td align="left" valign="middle">Privilégie la composition par calques et le contrôle précis ; le rythme, la disposition, les retouches locales et la réutilisation des éléments sont plus faciles à maîtriser.</td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong>Usage</strong></td>
+<td align="left" valign="middle">• <strong>Conversation classique</strong> : obtenez un storyboard et des prompts autonomes, puis générez et montez les séquences sur une plateforme vidéo.<br>• <strong>Production par un agent</strong> : dans Codex ou Claude Code, avec accès au navigateur, aux fichiers et au montage, l’agent pilote la plateforme vidéo dans le navigateur intégré. Il enchaîne génération, vérification, corrections ciblées et montage, puis adapte les sous-titres et le son à votre demande et au style choisi.</td>
+<td align="left" valign="middle">Dans un agent ayant accès aux fichiers et au terminal, comme Codex ou Claude Code, validez le scénario et un extrait conforme au style choisi. L’agent prépare ensuite les éléments, écrit le code, anime la scène, réalise les sous-titres et le son, puis effectue le rendu local.</td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong>Livrable</strong></td>
+<td align="left" valign="middle">• <strong>Conversation classique</strong> : storyboard + prompts autonomes pour chaque séquence<br>• <strong>Production par un agent</strong> : fichier vidéo complet + aperçu local</td>
+<td align="left" valign="middle">Fichier vidéo complet + aperçu local</td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong>Coût</strong></td>
+<td align="left" valign="middle">La génération vidéo consomme le quota ou les crédits de la plateforme utilisée. Les images, la voix et l’agent sont facturés selon les services configurés.</td>
+<td align="left" valign="middle">Le rendu local par code ne consomme pas de crédits de modèle vidéo. La génération d’images, la synthèse vocale, les appels au modèle de l’agent ou les licences des médias peuvent entraîner des frais.</td>
+</tr>
+</tbody>
+</table>
 
-Les deux méthodes peuvent partir d’un sujet brut, d’un lien web ou d’un script complet. Choisissez librement le format (9:16, 16:9, 1:1), la langue de narration et la voix off. Les durées ci-dessus sont des recommandations, pas des limites strictes.
+Une idée, un article, un lien web ou un script complet suffit pour commencer. Les deux modes permettent de créer des vidéos courtes ou longues, en paysage `16:9` ou en vertical `9:16` selon la plateforme. Sous-titres, voix off, musique et effets sonores sont adaptés à vos besoins et aux exigences du style choisi.
 
-💡 **Configuration rapide** :
-
-- **Director Mode** fonctionne dans les fenêtres de conversation IA classiques.
-- **Autopilot Mode** s’exécute dans un agent de développement IA ayant accès aux fichiers et au terminal (comme **Claude Code, OpenAI Codex ou Cursor**) pour gérer automatiquement le rendu et la livraison des fichiers de bout en bout.
+Vous hésitez encore sur le style ? Retrouvez ci-dessous les descriptions et les sujets conseillés des [styles A](#a-styles) et des [styles B](#b-styles), ainsi que d’autres exemples pour vous guider.
 
 <!-- project-sponsor:start -->
 <a id="project-sponsor"></a>
@@ -144,9 +170,9 @@ Les deux méthodes peuvent partir d’un sujet brut, d’un lien web ou d’un s
 
 ## 🧭 Bien démarrer
 
-**Pour vous rapprocher au mieux des exemples présentés, je recommande de commencer avec Codex.** Mes propres exemples pour ce projet ont été créés et testés avec Codex.
+<strong>Pour vous rapprocher au mieux des exemples présentés, privilégiez Codex, Claude Code ou un autre outil IA doté de solides capacités de programmation.</strong>
 
-Le Skill peut aussi être installé dans Claude Code, Cursor, Antigravity ou d’autres agents ayant accès aux fichiers et au terminal. Les modèles, la configuration des outils et le mode d’exécution peuvent toutefois produire des résultats différents.
+Le Skill peut aussi être installé dans d’autres agents capables de lire et d’écrire des fichiers et d’exécuter des commandes dans un terminal. Les modèles, la configuration des outils et le mode d’exécution peuvent toutefois produire des résultats différents.
 
 Envoyez le message suivant à votre assistant IA :
 
@@ -164,12 +190,12 @@ L’installation a expiré ? Consultez le [guide de dépannage](skills/directing
 
 <a id="director-start"></a>
 
-### A · Director Mode : des prompts de storyboard, séquence par séquence
+### A · Model Engine : choisissez les prompts ou la production complète
 
-Après l’installation, envoyez ce message à l’assistant IA en remplaçant le sujet par le vôtre :
+**Parcours 1 : conversation classique, avec storyboard et prompts autonomes.** Après l’installation, envoyez ce message à l’assistant IA en remplaçant le sujet par le vôtre :
 
 ```text
-Utilise Director / le mode A pour transformer le sujet, le texte ou le besoin ci-dessous
+Utilise Model Engine / le mode A pour transformer le sujet, le texte ou le besoin ci-dessous
 en vidéo stickman :
 [Indique le sujet, colle ton texte ou décris directement ton besoin]
 
@@ -178,20 +204,35 @@ Présente-moi d’abord une proposition de réalisation.
 Après ma validation, fournis les prompts vidéo de chaque séquence.
 ```
 
-**Parcours : sujet et besoins → scénario → validation des trois vues du personnage si nécessaire → prompts de storyboard détaillés → génération des séquences et montage manuels**
+**Parcours : sujet et besoins → validation du récit et du storyboard → validation des références du personnage si nécessaire → prompts autonomes → génération des séquences et montage par vos soins.**
 
 La proposition comprend la structure du récit, la voix off par séquence, les actions, les plans et le travail sonore. Copiez ensuite les prompts un par un dans [Google Flow](https://flow.google.com/) ou un autre outil de génération vidéo, puis ajoutez les sous-titres et finalisez le montage dans CapCut ou un logiciel similaire.
+
+**Parcours 2 : un agent avec accès au terminal peut produire la vidéo complète.** Pour lui demander une production automatisée, ajoutez :
+
+```text
+Cette fois, je choisis la production automatique par l’agent.
+Par défaut, ouvre Google Flow dans le navigateur intégré pour générer les séquences.
+Vérifie d’abord le navigateur, la connexion et le quota Flow, les fichiers et les outils de montage.
+Présente le plan de production, les outils, les coûts et le périmètre d’exécution.
+Après ma validation, enchaîne génération, corrections ciblées, montage et aperçu local
+sans sortir du périmètre autorisé. Réalise aussi les sous-titres et le son selon ma demande et le style choisi.
+N’attends pas que je te relance à chaque séquence ; signale les outils manquants,
+les changements de plan ou toute augmentation des dépenses avant de poursuivre.
+```
+
+**Parcours : validation du plan et du périmètre → génération et vérification des séquences → corrections ciblées → montage et postproduction → livraison d’un aperçu local.** Sous-titres, son et prompts suivent votre demande et les exigences du style choisi. Les personnages, les éléments et les séquences déjà validés sont réutilisés.
 
 Pour votre première vidéo, suivez le [guide visuel de production sur X](https://x.com/CrazyKaomei/status/2102311241046008268) (fil avec des démonstrations vidéo étape par étape).
 
 <a id="autopilot-start"></a>
 
-### B · Autopilot Mode : d’une demande à une vidéo longue
+### B · Code Engine : d’une demande à une vidéo longue
 
 Après l’installation dans Codex, Claude Code ou un environnement capable de gérer des fichiers et d’exécuter des commandes, formulez votre demande ainsi :
 
 ```text
-Utilise Autopilot / le mode B pour transformer le sujet, l’article, le post,
+Utilise Code Engine / le mode B pour transformer le sujet, l’article, le post,
 l’actualité ou le besoin ci-dessous en une vidéo accrocheuse pour YouTube :
 [Colle le contenu ou le lien, ou décris ton objectif de promotion]
 
@@ -210,13 +251,15 @@ L’assistant IA adapte le storyboard au contenu, génère les visuels et la nar
 
 Au premier lancement, il vérifie la configuration requise et vous explique étape par étape ce qui manque et comment le compléter. Si une image ou une voix ne vous convient pas, vous pouvez ne retoucher que la séquence concernée et conserver ce qui est déjà validé.
 
-**Une finition facultative pour les deux modes :** une fois la vidéo finale validée, passez au [kit de miniature et de publication](#thumbnail-publishing-kit) pour créer une miniature assortie et les textes de mise en ligne, ou terminez ici. Aucun changement de mode ni réinstallation n’est nécessaire.
+<strong>Une finition facultative pour les deux modes :</strong> une fois la vidéo finale validée, passez au [kit de miniature et de publication](#thumbnail-publishing-kit) pour créer une miniature assortie et les textes de mise en ligne, ou terminez ici. Aucun changement de mode ni réinstallation n’est nécessaire.
 
 <a id="style-gallery"></a>
 
 <a id="a-styles"></a>
 
-## 🎨 A · Director Mode : les styles disponibles
+## 🎨 A · Model Engine : aperçu des styles
+
+Les exemples actuels du mode A ont été réalisés avec Google Flow. Vous pouvez aussi choisir une autre plateforme de génération vidéo. <strong>Avant de confier la production automatique à un agent, vérifiez que votre compte est connecté et dispose d’un quota suffisant.</strong>
 
 Les styles sont numérotés A1, A2, A3… Chaque fiche présente ses exemples animés.
 
@@ -263,7 +306,7 @@ Pas de téléphone, pas de bureau… alors pourquoi les hommes des cavernes trav
 
 | Exemple 1 : Comment le premier emploi a-t-il été inventé ? | Exemple 2 : La découverte du feu |
 |:---:|:---:|
-| <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="Aperçu animé : comment le premier emploi a été inventé" width="360"> | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-community-fire.gif" alt="La découverte du feu : création de la communauté" width="360"> |
+| <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@f1e7992ade7de1b31bf520cd264e375334009be9/assets/readme/previews/style-3-demo.gif" alt="Aperçu animé : comment le premier emploi a été inventé" width="360"> | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-community-fire.gif" alt="La découverte du feu : création de la communauté" width="360"> |
 | Récit préhistorique · Chute sur le monde du travail | Découverte du feu · Création de la communauté |
 
 ---
@@ -339,14 +382,16 @@ Un personnage filiforme évolue dans des décors rétro finement dessinés. Gest
 
 ### A8 : Bientôt disponible…
 
-De nouveaux styles spécialisés pour le mode Director sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour suivre les prochaines mises à jour !
+De nouveaux styles spécialisés pour Model Engine sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour suivre les prochaines mises à jour !
 
 
 <a id="b-styles"></a>
 
-## 🤖 B · Autopilot Mode : les styles disponibles
+## 🤖 B · Code Engine : aperçu des styles
 
-Les styles sont numérotés B1, B2, B3… Chaque fiche présente ses vidéos à base d’illustrations et de micro-animations. Cette série est maintenue séparément des styles A.
+Tous les exemples actuels du mode B ont été réalisés avec Codex : le modèle intégré <strong><code>gpt-image-2</code></strong> génère les éléments visuels, puis du code anime les calques et effectue le rendu local. Avant de confier la production automatique à un autre agent, <strong>vérifiez qu’il peut lire et écrire des fichiers, exécuter des commandes dans un terminal et que les outils nécessaires sont configurés.</strong>
+
+Les styles sont numérotés B1, B2, B3… Chaque fiche présente ses exemples vidéo complets.
 
 <a id="b1"></a>
 
@@ -493,7 +538,7 @@ Faites de votre avatar préféré la voix de votre chaîne ; l’utilisation de 
 
 ### B6 : Dynamic Meme Animation
 
-Des expressions de meme, des traits dessinés à la main et des couleurs douces transforment les récits insolites en courts dessins animés pleins de vie. Les décors larges laissent de la place aux personnages, aux accessoires et à la caméra.
+Des expressions de meme, des traits dessinés à la main et des couleurs douces transforment les récits insolites en courts dessins animés pleins de vie. Le style s’inspire de la chaîne YouTube [@RicksClips3000](https://www.youtube.com/@RicksClips3000) (**environ 180 000 abonnés**). Les décors larges laissent de la place aux personnages, aux accessoires et à la caméra.
 
 - **Image**: Des traits d’encre d’épaisseur variable, une peinture mate et une lumière douce donnent à la tête, au corps et au décor une touche dessinée à la main cohérente, **pour un meilleur rendu en format vertical**.
 - **Mouvement**: Travellings latéraux, profondeur par plans, échanges d’objets et gros plans de réaction suivent le récit, avec des pauses pour lire chaque gag.
@@ -522,7 +567,7 @@ Des expressions de meme, des traits dessinés à la main et des couleurs douces 
 
 ### B7 : Bientôt disponible…
 
-De nouveaux styles Autopilot et de nouvelles animations par code sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour suivre les prochaines mises à jour !
+De nouveaux styles Code Engine et de nouvelles animations par code sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour suivre les prochaines mises à jour !
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>
@@ -531,7 +576,7 @@ De nouveaux styles Autopilot et de nouvelles animations par code sont en prépar
 
 **Même une excellente vidéo doit d’abord donner envie de cliquer.** Une fois l’animation terminée, préparez dans le même workflow une miniature cohérente, des titres à fort potentiel de clic et des accroches qui suscitent la participation.
 
-Un pack de finition intégré pour **Director Mode et Autopilot Mode** : il génère des accroches visuelles adaptées au personnage et au style validés de votre vidéo, ainsi que les métadonnées YouTube prêtes à publier.
+Un pack de finition intégré pour **A · Model Engine et B · Code Engine** : il génère des accroches visuelles adaptées au personnage et au style validés de votre vidéo, ainsi que les métadonnées YouTube prêtes à publier.
 
 <table width="100%">
   <tr>
@@ -600,9 +645,9 @@ Oui. Stickman Video Director est 100 % gratuit et open source sous licence MIT. 
 
 ### Q2. Comment puis-je maintenir la cohérence des personnages ?
 
-**B · Mode Autopilot** : Suit un workflow piloté par le code. Les images du personnage sont créées avant la production de la vidéo, puis réutilisées dans les différentes scènes : son apparence reste donc relativement stable.
+**B · Code Engine** : Suit un workflow piloté par le code. Les images du personnage sont créées avant la production de la vidéo, puis réutilisées dans les différentes scènes : son apparence reste donc relativement stable.
 
-**A · Mode Réalisateur** : Repose principalement sur la génération vidéo à partir de texte. Si la coiffure, les vêtements ou d’autres caractéristiques du personnage sont complexes et difficiles à reproduire de manière stable avec du texte seul, ajoutez une image de référence du personnage en bâtonnets et réutilisez-la pour les clips suivants afin d’obtenir des résultats plus cohérents.
+**A · Model Engine** : Repose principalement sur la génération vidéo à partir de texte. Si la coiffure, les vêtements ou d’autres caractéristiques du personnage sont complexes et difficiles à reproduire de manière stable avec du texte seul, ajoutez une image de référence du personnage en bâtonnets et réutilisez-la pour les clips suivants afin d’obtenir des résultats plus cohérents.
 
 ### Q3. Quels outils dois-je utiliser ? Faut-il un modèle de génération d’images précis ?
 
@@ -630,8 +675,8 @@ Oui, tout à fait. Les créateurs de chaînes sans visage s’inquiètent souven
 
 Non. Vous n’avez besoin ni d’une carte RTX haut de gamme ni de connaissances en programmation.
 
-- **Director Mode** s’utilise par conversation dans tout assistant IA compatible avec les Skills.
-- **Autopilot Mode** s’exécute dans des agents de développement IA (comme Claude Code, Codex ou Cursor), avec de simples demandes en anglais courant. La génération visuelle lourde passe par des API cloud légères ou un rendu procédural, et non par votre matériel local.
+- **A · Model Engine** permet d’obtenir un storyboard et des prompts dans une conversation classique, ou de confier la production complète à un agent disposant des outils de navigateur, de fichiers et de montage nécessaires.
+- **B · Code Engine** s’exécute dans un agent comme Claude Code, Codex ou Cursor. L’agent écrit le code et effectue le rendu en local ; les images et la voix peuvent faire appel à des services externes. Les besoins matériels dépendent du projet.
 
 <!-- readme:contribute -->
 
@@ -641,8 +686,8 @@ Non. Vous n’avez besoin ni d’une carte RTX haut de gamme ni de connaissances
 
 **Chaque étoile alimente la prochaine nouveauté !** Ensemble, nous construisons un studio 100 % gratuit et open source pour aider les créateurs solo à gérer des chaînes sans montrer leur visage, sans abonnement SaaS à 50 $/mois.
 
-- [x] **1,000 Stars** : lancement du mode Director + 5 styles visuels de base
-- [x] **3,000 Stars** : lancement du mode AutoPilot pour générer des vidéos en un clic
+- [x] **1,000 Stars** : lancement de Model Engine + 5 styles visuels de base
+- [x] **3,000 Stars** : lancement de Code Engine pour générer des vidéos en un clic
 - [x] **6,000 Stars** : Plus de 10 nouveaux styles visuels de qualité déjà disponibles
 - [ ] **🔥 10,000 Stars** :
   - Plus de 1,000 prompts de scripts YouTube communs aux modes A et B

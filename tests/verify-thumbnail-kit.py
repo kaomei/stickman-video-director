@@ -15,7 +15,7 @@ assert source.index('<a id="b2"></a>') < source.index(start) < source.index('<a 
 assert "[Publishing Kit](#thumbnail-publishing-kit)" not in source
 assert "[FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem)" in source
 assert '**Your video is only as good as the click.**' in kit
-assert 'both **Director and Autopilot Mode**' in kit
+assert 'both **Model Engine and Code Engine**' in kit
 assert '*All thumbnail concepts are designed around proven YouTube packaging psychology:' in kit
 assert '### What the kit delivers:' in kit
 assert re.findall(r'^- \*\*([^*]+)\*\*:', kit, re.M) == [
