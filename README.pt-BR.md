@@ -4,16 +4,18 @@
 
 # 🎬 Stickman Video Director
 
-**Transforme qualquer roteiro em vídeos animados de bonecos de palito virais, em vários estilos, para canais do YouTube sem aparecer na câmera.**
+**Faça seu canal sem aparecer na câmera crescer com animações automatizadas de bonecos-palito.**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Comece com um tema, um artigo ou um roteiro. Organize automaticamente os visuais, as narrações, as legendas e os efeitos sonoros em um vídeo de bonecos-palito pronto para publicar.
+Transforme rascunhos de roteiro em vídeos explicativos animados que prendem a atenção em minutos — com 13 estilos testados na prática, narração, movimentos de câmera dinâmicos e design de som.
 
-**⚡ 100% gratuito e de código aberto. Sem câmera, sem assinaturas de US$ 50/mês e pronto em minutos, não em dias.**
+**Sem After Effects e sem gastar US$ 50 por mês com SaaS. Publique todos os dias sem se esgotar.**
 
-Estilos visuais sempre atualizados para canais de **divulgação científica, psicologia sombria, fábulas tecnológicas, histórias virais e narrativas.**
+[Começar](#quick-start) · [Galeria de estilos](#style-gallery) · [Perguntas frequentes](#faq) · [Roteiro de evolução](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)
+
+⭐ *Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.*
 
 </div>
 
@@ -43,10 +45,12 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <strong>Cavernas pré-históricas</strong><br>
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@f1e7992ade7de1b31bf520cd264e375334009be9/assets/readme/previews/style-3-demo.gif" alt="História pré-histórica com bonecos de palito e uma virada cômica" width="90%"></a>
 </td>
+<!-- b3:hero:start -->
 <td width="50%" align="center">
 <strong>Estilo TV retrô</strong><br>
 <a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="90%"></a>
 </td>
+<!-- b3:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
@@ -63,86 +67,87 @@ Estilos visuais sempre atualizados para canais de **divulgação científica, ps
 <strong>Cartoon histórico</strong><br>
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="Animação histórica com bonecos de palito no Japão do período Edo" width="90%"></a>
 </td>
+<!-- b5:hero:start -->
 <td width="50%" align="center">
 <strong>Explicação com personagem</strong><br>
 <a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 sobre pedir ajuda, com apresentador animado e bonecos-palito expressivos" width="90%"></a>
 </td>
+<!-- b5:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
 <strong>Amber Noir</strong><br>
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animação stickman Amber Noir: personagem de moletom laranja em uma cidade com luz quente e sombras profundas" width="90%"></a>
 </td>
+<!-- b6:hero:start -->
 <td width="50%" align="center">
 <strong>Dynamic Meme Animation</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
 </td>
+<!-- b6:hero:end -->
 </tr>
 <tr>
+<!-- a7:hero:start -->
 <td width="50%" align="center">
 <strong>Rubber Hose Animation</strong><br>
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
 </td>
+<!-- a7:hero:end -->
 <td width="50%" align="center"></td>
 </tr>
 </table>
 
-<div align="center">
-
-**13 estilos visuais · Exemplos testados · Grátis e de código aberto**
-
-⭐ **Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.**
-
-[Começar](#quick-start) · [Estilos e demos](#style-gallery) · [Perguntas frequentes](#faq) · [Roteiro de evolução](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)
-
-</div>
-
 <a id="creation-modes"></a>
 
-## 🎬 Dois modos de produção de vídeo: Model Engine vs Code Engine
+## 🎬 Dois modos de criação de vídeo: Model Engine vs Code Engine
 
-**O mesmo diretor de bonecos-palito, duas formas de produzir as imagens**: o modo A usa um modelo de vídeo para gerar planos contínuos; o modo B usa código para animar elementos em camadas. Nos dois modos, um agente pode automatizar a produção até o vídeo final, seguindo as normas do estilo escolhido.
+**O mesmo diretor de vídeos stickman, duas formas de criar as imagens**: o modo A usa modelos de vídeo para gerar cenas contínuas, enquanto o modo B usa código para animar elementos visuais em camadas. Nos dois modos, um Agent pode automatizar a produção até o vídeo final, seguindo rigorosamente as regras do estilo escolhido.
 
 <table>
 <thead>
 <tr>
 <th align="center" valign="middle"></th>
-<th align="center" valign="middle">A · Model Engine</th>
-<th align="center" valign="middle">B · Code Engine</th>
+<th align="center" valign="middle"><div align="center">A · Model Engine</div></th>
+<th align="center" valign="middle"><div align="center">B · Code Engine</div></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center" valign="middle"><strong>Princípio</strong></td>
-<td align="left" valign="middle">O modelo de geração de vídeo recebe o storyboard, os prompts e as imagens de referência e gera diretamente clipes contínuos com ações, personagens e mudanças de cenário.</td>
-<td align="left" valign="middle">A IA desenha ou gera os elementos visuais e escreve e executa código para controlar personagens, objetos, efeitos de texto e a linha do tempo dos planos. A renderização e a composição do vídeo são feitas localmente.</td>
+<td align="center" valign="middle"><strong>Conceito</strong></td>
+<td align="left" valign="middle">Envia prompts e storyboards a modelos de geração de vídeo para produzir diretamente clipes fluidos.</td>
+<td align="left" valign="middle">Gera elementos visuais em camadas e, em seguida, escreve e executa código para animar, compor e renderizar localmente.</td>
 </tr>
 <tr>
-<td align="center" valign="middle"><strong>Destaques</strong></td>
-<td align="left" valign="middle">Prioriza a atuação corporal, a interação entre personagens, ações contínuas e a atmosfera criada pela câmera e pela iluminação, com imagens vivas e expressivas.</td>
-<td align="left" valign="middle">Prioriza a composição em camadas e o controle preciso; ritmo, posicionamento, ajustes pontuais e reutilização de elementos são mais fáceis de controlar.</td>
+<td align="center" valign="middle"><strong>Características</strong></td>
+<td align="left" valign="middle">Movimentos fluidos e naturais e iluminação cinematográfica; imagens vivas com uma dinâmica cinematográfica rica.</td>
+<td align="left" valign="middle">Personagens consistentes e elementos reutilizáveis; ritmo preciso na linha do tempo, controle do layout e ajustes locais fáceis.</td>
 </tr>
 <tr>
-<td align="center" valign="middle"><strong>Uso</strong></td>
-<td align="left" valign="middle">• <strong>Conversa comum</strong>: obtenha um storyboard e prompts independentes para gerar e editar os clipes em uma plataforma de vídeo.<br>• <strong>Produção com Agent</strong>: no Codex ou Claude Code, com acesso ao navegador, aos arquivos e à edição, o agente opera a plataforma de vídeo pelo navegador integrado. Ele realiza geração, verificação, correções pontuais e edição em sequência, configurando legendas e som conforme o pedido e o estilo.</td>
-<td align="left" valign="middle">Em um agente com leitura e escrita de arquivos e execução no terminal, como Codex ou Claude Code, confirme o roteiro e uma amostra conforme o estilo escolhido. O agente prepara os elementos, escreve o código, anima a cena, produz as legendas e o som e renderiza o vídeo localmente.</td>
+<td align="center" valign="middle"><strong>Ideal para</strong></td>
+<td align="left" valign="middle">Criadores com acesso a recursos de geração de vídeo (como Google Flow, APIs acessíveis ou modelos locais auto-hospedados), com foco em vídeos curtos de forte impacto visual.</td>
+<td align="left" valign="middle">Usuários com assinaturas ativas do Codex ou Claude Code que querem aproveitar a cota de programação que sobra, sem pagar a mais por créditos caros de modelos de vídeo.</td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong>Fluxo</strong></td>
+<td align="left" valign="middle">Confirme o roteiro e o estilo para receber prompts por cena e gerar os clipes manualmente; ou deixe a IA operar um navegador integrado para gerar clipes, unir cenas e cuidar das legendas e do áudio.</td>
+<td align="left" valign="middle">Confirme o roteiro do vídeo e uma amostra de 20 s no estilo escolhido; depois, deixe a IA cuidar automaticamente de toda a preparação dos elementos, escrita do código, execução das animações, legendas, áudio e renderização local.</td>
 </tr>
 <tr>
 <td align="center" valign="middle"><strong>Entrega</strong></td>
-<td align="left" valign="middle">• <strong>Conversa comum</strong>: storyboard + pacote de prompts independentes para cada clipe<br>• <strong>Produção com Agent</strong>: arquivo de vídeo completo + prévia local</td>
-<td align="left" valign="middle">Arquivo de vídeo completo + prévia local</td>
+<td align="left" valign="middle">Roteiro do storyboard + prompts por cena + (arquivo de vídeo completo)</td>
+<td align="left" valign="middle">Biblioteca de elementos em camadas (personagens/cenas/objetos) + arquivo de vídeo completo</td>
 </tr>
 <tr>
 <td align="center" valign="middle"><strong>Custo</strong></td>
-<td align="left" valign="middle">A geração de vídeo consome a cota ou os créditos da plataforma utilizada. Imagens, voz e serviços do agente são cobrados conforme as ferramentas configuradas.</td>
-<td align="left" valign="middle">A renderização local por código não exige créditos de modelos de vídeo. A geração de imagens, a voz TTS, as chamadas ao modelo do agente ou as licenças dos materiais podem ter custos.</td>
+<td align="left" valign="middle">Consome créditos/pontos de geração dos modelos de vídeo; vídeos mais longos aumentam significativamente o custo e os gastos com novas tentativas.</td>
+<td align="left" valign="middle">Não exige créditos de modelos de vídeo; renderiza localmente usando sua cota Agent existente e ferramentas básicas de imagem e síntese de voz.</td>
 </tr>
 </tbody>
 </table>
 
-Uma ideia, um artigo, um link ou um roteiro completo já basta para começar. Os dois modos permitem criar vídeos curtos ou longos, em `16:9` horizontal ou `9:16` vertical conforme a plataforma. Legendas, narração, música de fundo e efeitos sonoros são configurados conforme o pedido e as normas do estilo.
+Uma ideia, um artigo, um link da web ou um roteiro completo já basta para começar. Os dois modos permitem criar vídeos curtos ou longos. Escolha o formato horizontal `16:9` ou vertical `9:16` conforme a plataforma de publicação e configure legendas, narração, música de fundo e efeitos sonoros de acordo com suas necessidades e os padrões do estilo escolhido.
 
-Ainda não escolheu o estilo? Veja abaixo as descrições e os temas indicados para os [estilos A](#a-styles) e [estilos B](#b-styles), além de mais vídeos de exemplo para ajudar na escolha.
+Ainda não escolheu um estilo? Veja abaixo a apresentação detalhada de cada um, os temas mais indicados e outros vídeos de exemplo para se inspirar.
 
 <!-- project-sponsor:start -->
 <a id="project-sponsor"></a>
@@ -168,90 +173,70 @@ Ainda não escolheu o estilo? Veja abaixo as descrições e os temas indicados p
 
 <a id="quick-start"></a>
 
-## 🧭 Primeiros passos
+## 🧭 Comece a usar
 
-<strong>Para chegar o mais perto possível dos exemplos apresentados, dê preferência ao Codex, Claude Code ou a outras ferramentas de IA com boa capacidade de programação.</strong>
+<strong>Para chegar o mais perto possível dos vídeos de exemplo, dê preferência a ferramentas de IA com boa capacidade de programação, como Codex e Claude Code.</strong>
 
-O Skill também pode ser instalado em outros agentes com leitura e escrita de arquivos e execução de comandos no terminal. Diferenças nos modelos, na configuração das ferramentas e na execução podem alterar o resultado.
+Você também pode instalar o Skill em outros Agents capazes de ler e gravar arquivos e executar comandos no terminal. Os resultados podem variar conforme o modelo, a configuração das ferramentas e a forma de execução.
 
-Envie a mensagem abaixo ao seu assistente de IA:
+### Step 1: Instale o Skill
+
+No primeiro uso, o assistente verifica a configuração necessária e explica, passo a passo, o que falta e como resolver. Envie o seguinte texto ao seu assistente de IA:
 
 ```text
-Instale este Skill para mim:
+Instale este Skill:
 https://github.com/kaomei/stickman-video-director
 
-Assim que a instalação terminar, leia imediatamente o SKILL.md instalado.
-Explique de forma simples as entregas, as ferramentas necessárias e o fluxo dos dois modos.
-Dê exemplos de pedidos que eu possa usar.
-Considerando o meu projeto, diga o que ainda falta e qual é a próxima etapa concreta.
+Após a instalação, leia SKILL.md e me avise que está pronto.
 ```
 
-A instalação expirou? Consulte o [guia de solução de problemas](skills/directing-stickman-videos/references/installation-troubleshooting.md) para macOS/Linux e Windows.
+### Step 2: Escolha o estilo e o modo e comece a criar com uma frase
+
+Escolha um estilo do [modo A](#a-styles) ou do [modo B](#b-styles), copie o prompt correspondente abaixo, adapte-o às suas necessidades e envie ao seu assistente de IA:
 
 <a id="director-start"></a>
 
-### A · Model Engine: escolha entre prompts e produção completa
-
-**Rota 1: conversa comum, com storyboard e prompts independentes.** Após instalar, envie este pedido ao assistente de IA e troque o tema pelo seu:
+### A · Model Engine
 
 ```text
-Use Model Engine / modo A para transformar o tema, texto ou pedido abaixo
-em um vídeo de bonecos-palito:
-[Informe o tema, cole o texto ou descreva o que precisa]
+Use o motor de modelos (modo A) para transformar o tema ou texto abaixo em um vídeo stickman:
+[Informe um tema, cole um texto ou simplesmente descreva sua ideia]
 
-Formato: horizontal 16:9, estilo A3 « Cavernas pré-históricas », 30 segundos para começar.
-Apresente primeiro uma proposta de direção.
-Depois da minha aprovação, entregue os prompts de vídeo para cada clipe.
+Requisitos: horizontal 16:9, estilo A3 “Cavernas pré-históricas”, começando com 30 segundos.
+
+Primeiro, apresente a estrutura da história, a direção sonora e o storyboard;
+após minha aprovação, forneça prompts de geração de vídeo que possam ser usados de forma independente para cada trecho.
 ```
 
-**Fluxo: tema e pedido → aprovação da história e do storyboard → aprovação das referências do personagem, se necessário → prompts independentes → geração dos clipes e edição por sua conta.**
-
-A proposta inclui estrutura da história, narração por trecho, ações, planos e desenho de som. Copie os prompts um por um para o [Google Flow](https://flow.google.com/) ou outra ferramenta de geração de vídeo e use o CapCut ou um editor semelhante para adicionar legendas e finalizar a montagem.
-
-**Rota 2: um Agent com acesso ao terminal pode produzir o vídeo completo.** Para pedir a produção automática, acrescente:
-
-```text
-Desta vez, escolho a rota de produção automática com Agent.
-Por padrão, abra o Google Flow no navegador integrado para gerar os clipes.
-Primeiro, confira o navegador, o login e a cota do Flow, os arquivos e as ferramentas de edição.
-Apresente o plano de produção, as ferramentas, os custos e o escopo de execução.
-Após minha aprovação, realize geração, correções pontuais, edição e prévia local em sequência,
-dentro do escopo autorizado. Inclua legendas e som conforme meu pedido e o estilo escolhido.
-Não espere que eu peça cada clipe; avise se faltarem ferramentas,
-se precisar mudar o plano ou aumentar os gastos antes de continuar.
-```
-
-**Fluxo: aprovação do plano e do escopo → geração e verificação dos clipes → correções pontuais → edição e pós-produção → entrega da prévia local.** Legendas, som e prompts seguem o pedido e as normas do estilo escolhido. Personagens, elementos e clipes já aprovados são reutilizados.
-
-Para seu primeiro vídeo, consulte o [tutorial visual de produção no X](https://x.com/CrazyKaomei/status/2102311241046008268) (fio com demonstrações em vídeo passo a passo).
+- **Produção:** Após aprovar o storyboard, você pode gerar as cenas manualmente ou deixar um Agent operar pelo navegador integrado (primeiro faça um teste em baixa resolução; com o resultado aprovado, ele continua a produção e a edição do vídeo final).
+- **Plataforma recomendada:** Recomendamos o Google Flow para se aproximar do resultado dos exemplos; para o primeiro vídeo, consulte o [tutorial detalhado no X](https://x.com/CrazyKaomei/status/2102311241046008268).
 
 <a id="autopilot-start"></a>
 
-### B · Code Engine: de um pedido a um vídeo longo
-
-Depois da instalação no Codex, Claude Code ou em outro ambiente com acesso a arquivos e execução de comandos, faça um pedido assim:
+### B · Code Engine
 
 ```text
-Use Code Engine / modo B para transformar o tema, artigo, post,
-notícia ou pedido abaixo em um vídeo atraente para o YouTube:
-[Cole o conteúdo ou link, ou descreva seu objetivo de divulgação]
+Use o motor de código (modo B) para transformar o tema ou artigo abaixo em um vídeo stickman atraente:
+[Cole um texto longo, uma notícia ou um link, ou descreva o tema desejado]
 
-Formato: 5 a 10 minutos, horizontal 16:9, estilo B1 « Traço minimalista »,
-com narração, legendas e efeitos sonoros.
+Requisitos: horizontal 16:9, duração de 8 minutos, estilo B1 “Traço minimalista”, com narração, legendas e efeitos sonoros.
 
-Confira primeiro a configuração de geração de imagens, voz e composição do vídeo.
-Depois, apresente um roteiro e uma amostra de 20 segundos com som.
-Após minha aprovação, produza automaticamente o vídeo completo, acompanhando o ritmo da narração.
-Entregue o arquivo final, sem que eu precise montar os trechos manualmente.
+Primeiro, verifique o ambiente local de geração de imagens e composição de vídeo e apresente o roteiro completo e uma amostra com áudio dos primeiros 20 segundos;
+após minha aprovação, conclua automaticamente a preparação dos elementos, a escrita do código e a renderização local de todo o vídeo e entregue diretamente o vídeo completo.
 ```
 
-**Fluxo: tema, conteúdo ou objetivo → aprovação do roteiro → aprovação de uma amostra de 20 segundos com som → produção automática → entrega do vídeo completo**
+- **Produção:** Após a aprovação do roteiro e da amostra com áudio de 20 segundos, o Agent prepara automaticamente os elementos visuais, as animações, as legendas e o áudio conforme o estilo escolhido, renderiza o vídeo completo localmente e fornece uma prévia.
+- **Ajustes pontuais:** Se alguma imagem ou som não agradar, peça à IA para ajustar apenas o trecho correspondente, preservando as partes já aprovadas.
 
-O assistente de IA adapta o storyboard ao conteúdo, gera as imagens e a narração, acrescenta legendas e efeitos sonoros e monta o vídeo no ritmo da voz. Você se concentra em aprovar o roteiro e a amostra, sem precisar gerar e montar cada trecho.
+### Step 3: Gere a miniatura e os textos de publicação com um único pedido
 
-No primeiro uso, o assistente confere a configuração necessária e explica, passo a passo, o que falta e como completar. Se uma imagem ou voz não agradar, ajuste apenas o trecho correspondente e preserve o que já foi aprovado.
+Quando estiver satisfeito com o vídeo final, continue com o [kit de miniatura e publicação](#thumbnail-publishing-kit). Basta enviar esta frase à IA:
 
-<strong>Finalização opcional nos dois modos:</strong> depois de aprovar o vídeo, continue com o [kit de miniatura e publicação](#thumbnail-publishing-kit) para criar uma capa no mesmo estilo e os textos para publicação, ou encerre por ali. Não é preciso trocar de modo nem reinstalar.
+```text
+Gere uma miniatura e os textos de publicação para o vídeo anterior, mantendo o estilo aprovado.
+```
+
+A IA gera uma miniatura no mesmo estilo, o título do vídeo, a descrição e o texto do comentário fixado, sem trocar de modo nem reconfigurar as ferramentas.
 
 <a id="style-gallery"></a>
 
@@ -259,9 +244,9 @@ No primeiro uso, o assistente confere a configuração necessária e explica, pa
 
 ## 🎨 A · Model Engine: visão geral dos estilos
 
-Os exemplos atuais do modo A foram produzidos com o Google Flow. Você também pode escolher outra plataforma de geração de vídeo. <strong>Antes de deixar a produção automática com um Agent, confirme que a conta está conectada e tem cota disponível.</strong>
+Os vídeos de exemplo atuais do modo A foram produzidos com o [Google Flow](https://flow.google.com/). Você também pode escolher outra plataforma de geração de vídeo. <strong>Antes de deixar um Agent produzir o vídeo automaticamente, confirme que sua conta está conectada e tem créditos disponíveis.</strong>
 
-Os estilos são numerados A1, A2, A3… Cada ficha apresenta seus exemplos animados.
+Os estilos seguem a numeração A1, A2, A3… Cada um apresenta seus próprios exemplos de animação.
 
 <a id="a1"></a>
 
@@ -389,9 +374,9 @@ Novos estilos especializados para Model Engine estão em preparação. [Dê uma 
 
 ## 🤖 B · Code Engine: visão geral dos estilos
 
-Todos os exemplos atuais do modo B foram produzidos com o Codex: o modelo integrado <strong><code>gpt-image-2</code></strong> gera os elementos visuais, e o código anima as camadas e renderiza o vídeo localmente. Antes de deixar a produção automática com outro agente, <strong>confirme que ele pode ler e escrever arquivos, executar comandos no terminal e que as ferramentas necessárias estão configuradas.</strong>
+Todos os vídeos de exemplo atuais do modo B foram produzidos com Codex: o modelo integrado <strong><code>gpt-image-2</code></strong> gera os elementos visuais, que são animados em camadas por código e renderizados localmente. Antes de deixar outro Agent produzir o vídeo automaticamente, <strong>confirme que ele pode ler e gravar arquivos e executar comandos no terminal, e que as ferramentas necessárias estão configuradas.</strong>
 
-Os estilos são numerados B1, B2, B3… Cada ficha apresenta seus vídeos completos de exemplo.
+Os estilos seguem a numeração B1, B2, B3… Cada um apresenta seus próprios vídeos de exemplo completos.
 
 <a id="b1"></a>
 
@@ -538,7 +523,7 @@ Transforme seu avatar favorito no apresentador do canal; o uso de personagens co
 
 ### B6: Dynamic Meme Animation
 
-Expressões de meme, traços soltos à mão e cores suaves transformam histórias curiosas em animações curtas e vivas. O estilo se inspira no canal do YouTube [@RicksClips3000](https://www.youtube.com/@RicksClips3000) (**cerca de 180 mil inscritos**). Cenários amplos dão espaço aos personagens, objetos e movimentos de câmera.
+Expressões de meme, traços soltos à mão e cores suaves transformam histórias curiosas em animações curtas e vivas. Cenários amplos dão espaço aos personagens, objetos e movimentos de câmera. O estilo visual se inspira no canal do YouTube [@RicksClips3000](https://www.youtube.com/@RicksClips3000) (**cerca de 180 mil inscritos**).
 
 - **Visual**: Traços de tinta de espessura variável, pintura fosca e luz suave mantêm a cabeça, o corpo e o cenário no mesmo estilo desenhado à mão, **com melhor resultado no formato vertical**.
 - **Movimento**: Travellings laterais, profundidade em camadas, entrega de objetos e closes de reação acompanham a história, com pausas para entender cada gag.
@@ -576,7 +561,7 @@ Novos estilos Code Engine e animações por código estão em preparação. [Dê
 
 **Até um ótimo vídeo precisa conquistar o clique primeiro.** Depois de concluir a animação, prepare no mesmo fluxo thumbnails com o visual certo, títulos de alto CTR e ganchos para engajar o público.
 
-Um pacote de finalização integrado para **A · Model Engine e B · Code Engine**: gera ganchos visuais alinhados ao personagem e ao estilo aprovados do vídeo, com metadados do YouTube prontos para publicar.
+Um pacote de finalização integrado para **Model Engine e Code Engine**: gera ganchos visuais alinhados ao personagem e ao estilo aprovados do vídeo, com metadados do YouTube prontos para publicar.
 
 <table width="100%">
   <tr>
@@ -673,10 +658,7 @@ Sim, com certeza. Uma grande preocupação de quem cria canais sem aparecer é a
 
 ### Q7. Preciso saber programar ou ter uma GPU cara?
 
-Não. Você não precisa de uma placa RTX de ponta nem de conhecimentos de programação.
-
-- **A · Model Engine** permite obter storyboard e prompts em uma conversa comum ou deixar a produção completa com um agente que tenha as ferramentas necessárias de navegador, arquivos e edição.
-- **B · Code Engine** roda em um agente como Claude Code, Codex ou Cursor. O agente escreve o código e renderiza o vídeo localmente; imagens e voz podem usar serviços externos. Os requisitos de hardware dependem do projeto.
+Você não precisa escrever código por conta própria nem comprar uma GPU de ponta. O modo A pode usar plataformas de vídeo online; no modo B, um Agent escreve o código e renderiza localmente. O desempenho do computador afeta a velocidade de produção, mas não é o fator decisivo.
 
 <!-- readme:contribute -->
 
@@ -686,8 +668,8 @@ Não. Você não precisa de uma placa RTX de ponta nem de conhecimentos de progr
 
 **Cada Star impulsiona a próxima novidade!** Juntos, estamos construindo um estúdio 100% gratuito e de código aberto para ajudar criadores solo a tocar canais sem aparecer, sem assinaturas SaaS de US$ 50/mês.
 
-- [x] **1,000 Stars**: lançamento de Model Engine + 5 estilos visuais principais
-- [x] **3,000 Stars**: lançamento de Code Engine para gerar vídeos em um clique
+- [x] **1,000 Stars**: lançamento do modo Model Engine + 5 estilos visuais principais
+- [x] **3,000 Stars**: lançamento do modo Code Engine para gerar vídeos em um clique
 - [x] **6,000 Stars**: Mais de 10 novos estilos visuais de alta qualidade já disponíveis
 - [ ] **🔥 10,000 Stars**:
   - Mais de 1,000 prompts de roteiros para YouTube compartilhados pelos modos A e B
@@ -728,10 +710,12 @@ Tem uma ideia de estilo ou quer ganhar destaque? Entre na nossa [comunidade do T
 - **Pedir um estilo**: envie um link de referência visual + o nicho que você quer abordar.
 - **Aparecer em destaque**: fez um vídeo com esta ferramenta? Envie o link para exibição neste README e no nosso canal oficial do YouTube!
 
-🔔 *Siga **[@CrazyKaomei](https://x.com/CrazyKaomei)** no X para fluxos diários de produção de vídeo, ferramentas de automação e procedimentos de crescimento de canal.*
+🔔 **Siga [@CrazyKaomei](https://x.com/CrazyKaomei) no X para fluxos diários de produção de vídeo, ferramentas de automação e procedimentos de crescimento de canal.**
 
 ## 📄 Licença
 
 Este projeto usa a [licença MIT](https://github.com/kaomei/stickman-video-director/blob/main/LICENSE): você pode usar, modificar, distribuir e utilizar comercialmente sem pagar pela Skill. Ao distribuir o projeto ou partes substanciais dele, mantenha os avisos de direitos autorais e de licença.
+
+Músicas, efeitos sonoros e outros recursos de terceiros continuam sujeitos às próprias licenças e exigências de atribuição. Consulte os avisos dos respectivos recursos.
 
 Fornecido “como está”, sem garantias. Consulte os termos completos em [LICENSE](https://github.com/kaomei/stickman-video-director/blob/main/LICENSE).

@@ -4,16 +4,18 @@
 
 # 🎬 Stickman Video Director
 
-**将任何脚本变成适合不露脸 YouTube 频道的多画风爆款火柴人动画视频。**
+**用自动化火柴人动画，持续做大你的不露脸频道。**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-从一个话题、一篇文章或一份脚本开始，自动编排画面、配音、字幕与音效，制作可直接发布的火柴人视频。
+几分钟内，将原始脚本变成让观众愿意看下去的动画解说视频——13 种经实测的画风，配齐旁白、动态运镜与声音设计。
 
-**⚡ 100% 免费开源。无需出镜，无需每月 $50 的订阅，几分钟就能完成，不必等上几天。**
+**无需 After Effects，也不用每月为 SaaS 工具支付 50 美元。每天出片，不必把自己累垮。**
 
-画风持续更新，适用于 **科学科普、暗黑心理学、科技寓言、热门奇闻与故事类频道。**
+[开始使用](#quick-start) · [画风长廊](#style-gallery) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [加入社区](#community)
+
+⭐ *为项目点个 Star，及时关注下一批画风和新功能解锁。*
 
 </div>
 
@@ -43,10 +45,12 @@
 <strong>史前洞穴风</strong><br>
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@f1e7992ade7de1b31bf520cd264e375334009be9/assets/readme/previews/style-3-demo.gif" alt="史前洞穴风火柴人动画：洞穴故事、反转短片" width="90%"></a>
 </td>
+<!-- b3:hero:start -->
 <td width="50%" align="center">
 <strong>复古电视风</strong><br>
 <a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="90%"></a>
 </td>
+<!-- b3:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
@@ -63,39 +67,35 @@
 <strong>历史卡通风</strong><br>
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="历史卡通风火柴人动画：江户日本的武士故事" width="90%"></a>
 </td>
+<!-- b5:hero:start -->
 <td width="50%" align="center">
 <strong>角色解说风</strong><br>
 <a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 角色解说：为什么不愿开口求助，个性主讲人与火柴人小剧场" width="90%"></a>
 </td>
+<!-- b5:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
 <strong>暖金暗影风</strong><br>
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="暖金暗影风火柴人动画：暖光与深邃暗影中的城市，主角身穿橙色连帽衫" width="90%"></a>
 </td>
+<!-- b6:hero:start -->
 <td width="50%" align="center">
 <strong>动感 Meme 风</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · 动感 Meme 风" width="90%"></a>
 </td>
+<!-- b6:hero:end -->
 </tr>
 <tr>
+<!-- a7:hero:start -->
 <td width="50%" align="center">
 <strong>橡皮管动画风</strong><br>
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 橡皮管动画风" width="90%"></a>
 </td>
+<!-- a7:hero:end -->
 <td width="50%" align="center"></td>
 </tr>
 </table>
-
-<div align="center">
-
-**13 种画风 · 实测样片 · 免费开源**
-
-⭐ **为项目点个 Star，及时关注下一批画风和新功能解锁。**
-
-[开始使用](#quick-start) · [画风与样片](#style-gallery) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [加入社区](#community)
-
-</div>
 
 <a id="creation-modes"></a>
 
@@ -107,42 +107,47 @@
 <thead>
 <tr>
 <th align="center" valign="middle"></th>
-<th align="center" valign="middle">A · Model Engine（模型引擎）</th>
-<th align="center" valign="middle">B · Code Engine（代码引擎）</th>
+<th align="center" valign="middle"><div align="center">A · Model Engine (模型引擎)</div></th>
+<th align="center" valign="middle"><div align="center">B · Code Engine (代码引擎)</div></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="center" valign="middle"><strong>原理</strong></td>
-<td align="left" valign="middle">将分镜、提示词与参考图输入视频生成模型，直接生成包含动作、角色与场景变化的连续视频片段。</td>
-<td align="left" valign="middle">AI 绘制或生成画面素材，再编写并执行代码控制人物、道具、文字动效与镜头时间线，在本地渲染合成视频。</td>
+<td align="left" valign="middle">把分镜提示词输入视频生成模型，直接生成连续动态画面。</td>
+<td align="left" valign="middle">AI 生成角色与场景分层底图，再用代码组装、运镜并本地渲染。</td>
 </tr>
 <tr>
 <td align="center" valign="middle"><strong>特点</strong></td>
-<td align="left" valign="middle">侧重肢体表演、人物互动、连贯动作与镜头光影氛围；画面生动、富有视听张力。</td>
-<td align="left" valign="middle">侧重画面分层编排与精确控制；时间线节奏、排版位置、局部微调和素材复用更易把控。</td>
+<td align="left" valign="middle">动作流畅自然、光影质感足，画面生动，富有影视动态张力。</td>
+<td align="left" valign="middle">角色形象稳定，素材可复用，时间线节奏、排版位置和局部微调更易把控。</td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong>适合</strong></td>
+<td align="left" valign="middle">拥有可用视频模型资源（如 Google Flow、优惠 API 或本地部署模型），主做高视觉表现力短视频的创作者。</td>
+<td align="left" valign="middle">已订阅 Codex / Claude Code 等编程会员（额度经常用不完），不想再额外掏钱买昂贵视频模型额度的用户。</td>
 </tr>
 <tr>
 <td align="center" valign="middle"><strong>使用</strong></td>
-<td align="left" valign="middle">• <strong>普通聊天</strong>：获取分镜脚本与独立提示词，自行在视频平台生成并剪辑。<br>• <strong>Agent 制作</strong>：在具备浏览器、文件与剪辑能力的 Codex、Claude Code 中，通过内置浏览器操作视频平台，连续完成生成、检查、局部返修和剪辑，并按需求与画风配置字幕和声音。</td>
-<td align="left" valign="middle">在具备文件读写和终端执行能力的 Agent（如 Codex、Claude Code）中，按所选画风确认脚本与样片后，由 Agent 自动完成素材准备、代码编写、动画驱动、字幕与声音制作，再在本地渲染。</td>
+<td align="left" valign="middle">确认脚本和画风后获取分镜与提示词，直接手动出片；也能让 AI 在内置浏览器操作生成片段，并完成剪辑、字幕和声音制作。</td>
+<td align="left" valign="middle">按所选画风确认视频脚本与 20s 样片后，由 AI 自动完成所有素材准备、代码编写、动画驱动、字幕与声音制作，再在本地渲染。</td>
 </tr>
 <tr>
 <td align="center" valign="middle"><strong>产出</strong></td>
-<td align="left" valign="middle">• <strong>普通聊天</strong>：分镜方案＋独立可用的逐段提示词包<br>• <strong>Agent 制作</strong>：完整视频文件＋本地预览</td>
-<td align="left" valign="middle">完整视频文件＋本地预览</td>
+<td align="left" valign="middle">分镜脚本 + 逐段提示词 +（完整视频文件）</td>
+<td align="left" valign="middle">分层素材库（角色/场景/道具）+ 完整视频文件</td>
 </tr>
 <tr>
 <td align="center" valign="middle"><strong>成本</strong></td>
-<td align="left" valign="middle">视频生成消耗所用平台的额度或积分；生图、配音、Agent 等服务按实际配置计费。</td>
-<td align="left" valign="middle">本地代码渲染无需视频模型额度；生图、TTS 配音、Agent 模型调用或素材授权可能产生费用。</td>
+<td align="left" valign="middle">消耗第三方视频模型额度/积分，长视频制作成本与抽卡风险较高。</td>
+<td align="left" valign="middle">本地代码渲染无需视频模型额度；仅使用现成 Agent 额度与基础生图/配音。</td>
 </tr>
 </tbody>
 </table>
 
 给一个想法、一篇文章、网页链接或完整脚本，即可开始制作。两种模式均支持短视频与长篇内容，可按发布平台选择 `16:9` 横屏或 `9:16` 竖屏，并按需求与画风标准配置字幕、旁白配音、背景音乐和音效。
 
-还没决定用哪种画风？下方分别提供「[A 画风](#a-styles)」和「[B 画风](#b-styles)」的详细介绍和适用题材，以及更多样片供你参考。
+还没决定用哪种画风？下方分别提供不同画风的详细介绍和适用题材，以及更多样片供你参考。
 
 <!-- project-sponsor:start -->
 <a id="project-sponsor"></a>
@@ -174,78 +179,64 @@
 
 也可安装到其他具备文件读写与终端执行能力的 Agent，但模型能力、工具配置与执行方式不同，最终效果可能有所差异。
 
-把以下内容发送给你的 AI 助手：
+### Step 1：安装 Skill
+
+首次使用会先检查所需配置，缺什么、怎么补都会逐步说明。把以下内容发送给你的 AI 助手：
 
 ```text
-帮我安装这个 Skill：
+帮我安装这个 Skill:
 https://github.com/kaomei/stickman-video-director
 
-安装成功后，立即读取已安装的 SKILL.md，
-用易懂的方式介绍两种模式的产出、所需工具和制作流程，
-给我可以照着说的示例；
-结合我的需求，告诉我还缺什么、下一步具体怎么做。
+安装成功后读取 SKILL.md，并告诉我你已就绪。
 ```
 
-安装超时？请看[安装排障](skills/directing-stickman-videos/references/installation-troubleshooting.md)（macOS/Linux 与 Windows）。
+### Step 2：选择画风和模式，一句话开始创作
+
+选好喜欢的「[A 模式](#a-styles)」或「[B 模式](#b-styles)」画风，再复制下方对应的提示词，换成自己的需求后发给 AI 助手：
 
 <a id="director-start"></a>
 
-### A · Model Engine（模型引擎）：选择提示词交付或连续制作
-
-**路线一：普通聊天，交付分镜与独立提示词。** 安装后，把下面这段发给 AI 助手，换成自己的话题即可：
+### A · Model Engine
 
 ```text
-使用模型引擎/A模式，把下面的话题、文案或需求，
-做成火柴人视频：
-[填写话题、粘贴文案，也可以直接描述需求]
+使用模型引擎（A 模式），把下面的话题/文案做成火柴人视频：
+[填写话题、粘贴文案，或直接描述你的想法]
 
-需求：横屏 16:9，采用 A3「史前洞穴风」，先做 30 秒。
-先给我导演提案，确认后再输出逐段视频提示词。
+要求：横屏 16:9，采用风格 A3「史前洞穴风」，先做 30 秒。
+
+先为我提供故事架构、声音方向与分镜方案；
+我确认通过后，再提供独立可用的逐段视频生成提示词。
 ```
 
-**流程：给出话题和需求 → 确认故事与分镜方案 → 按需确认人物参考 → 拿到独立提示词 → 自行生成片段并剪辑成片。**
-
-提案包含故事结构、分段旁白、画面动作、镜头和声音设计。拿到提示词后，将它们逐条复制到 [Google Flow](https://flow.google.com/) 等视频生成工具，再用剪映等工具添加字幕、完成剪辑。
-
-**路线二：具备终端执行能力的 Agent，可直接制作完整成片。** 希望它全自动制作时，可以补充：
-
-```text
-这次选择 Agent 自动制作路线，默认用内置浏览器打开 Google Flow 生成。
-先检查浏览器、Flow 登录与额度、文件和剪辑工具，
-把制作方案、工具、费用和执行范围一起说明。
-确认后，在已授权范围内连续完成生成、针对性返修、剪辑和本地预览，
-并按需求与所选画风完成字幕和声音。
-不需要我逐段提醒；缺少工具或需要变更方案、扩大费用时再说明。
-```
-
-**流程：确认方案与执行范围 → 生成并检查片段 → 针对性返修 → 剪辑与后期 → 交付本地预览。** 字幕、声音与提示词均按需求和所选画风标准制作；已确认的人物、素材和合格片段会继续复用。
-
-制作第一个视频时，请参考 [X 上的可视化制作教程](https://x.com/CrazyKaomei/status/2102311241046008268)（含分步视频演示的串帖）。
+- **出片流程：** 分镜确认后，可自行手动生成，也可让 Agent 通过内置浏览器操作（先用低分辨率试片，满意后再连续制作并剪辑成片）。
+- **推荐平台：** 推荐使用 Google Flow，便于接近样片效果；首次制作可参考 [X 详细教程](https://x.com/CrazyKaomei/status/2102311241046008268)。
 
 <a id="autopilot-start"></a>
 
-### B · Code Engine（代码引擎）：一句话生成长片
-
-在 Codex、Claude Code 等具备文件与命令执行能力的环境中，安装后这样说：
+### B · Code Engine
 
 ```text
-使用代码引擎/B模式，把下面的话题、文章、帖子、新闻或具体需求，
-做成在 YouTube 上有吸引力的视频：
-[粘贴内容或链接，也可以直接描述宣传需求]
+使用代码引擎（B 模式），把下面的话题/文章做成一条有吸引力的火柴人视频：
+[粘贴长文、新闻、链接，或描述选题需求]
 
-需求：5～10 分钟，横屏 16:9，采用 B1「极简线稿风」，配上旁白、字幕和音效。
+要求：横屏 16:9，时长 8 分钟，采用风格 B1「极简线稿风」，配齐旁白、字幕和音效。
 
-先检查生图、配音和视频合成配置，再给我脚本与 20 秒有声样片；
-确认后，让画面跟随配音节奏自动完成整片，交付完整视频文件，不用我逐段拼装。
+先检查本地生图与合成环境，为我出具完整脚本与前 20 秒有声样片；
+确认通过后，自动完成全片素材准备、代码编写与本地渲染，直接交付完整视频。
 ```
 
-**流程：给出话题、内容或需求 → 确认视频脚本 → 确认 20 秒有声样片 → 自动制作整片 → 拿到完整视频**
+- **出片流程：** 确认脚本和 20 秒有声样片后，Agent 会按所选画风自动完成素材、动画、字幕与声音制作，在本地渲染整片并提供预览。
+- **局部微调：** 成片后若画面或声音不满意，可让 AI 只微调对应片段，保留已确认的部分。
 
-AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和音效，再按配音节奏合成为完整视频。你主要负责确认脚本和样片，不用逐段生成、手动拼装。
+### Step 3：一键生成封面与发布文案
 
-首次使用会先检查所需配置，缺什么、怎么补都会逐步说明。画面或声音不满意，可以只调整对应片段，保留已经确认的部分。
+确认成片满意后，可继续制作[封面与发布工具包](#thumbnail-publishing-kit)，把这句话发给 AI 即可：
 
-<strong>两种模式都可选的收尾步骤：</strong>确认成片满意后，可继续制作[封面与发布工具包](#thumbnail-publishing-kit)，获取匹配画风的封面和上传文案，也可以直接结束。无需切换模式或重新安装。
+```text
+为刚才的视频生成封面与发布文案，沿用已确认的画风。
+```
+
+AI 将为你一键生成匹配画风的封面图、视频标题、简介和置顶评论文案，无需切换模式或重新配置。
 
 <a id="style-gallery"></a>
 
@@ -253,7 +244,7 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ## 🎨 A 模式画风一览
 
-当前 A 模式样片效果基于 Google Flow 制作，也可自行选择其它视频生成平台。<strong>交由 Agent 自动出片前，请确认账号已登录且有可用额度。</strong>
+当前 A 模式样片效果基于 [Google Flow](https://flow.google.com/) 制作，也可自行选择其它视频生成平台。<strong>交由 Agent 自动出片前，请确认账号已登录且有可用额度。</strong>
 
 按 A1、A2、A3…更新，每个画风下展示对应的动画样片。
 
@@ -667,10 +658,7 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 
 ### Q7. 我需要懂编程或者拥有昂贵的高性能显卡吗？
 
-完全不需要。你不需要购买几万块的专业独立显卡，也不需要懂写代码。
-
-- **A · Model Engine（模型引擎）**：普通聊天交付分镜与独立提示词；具备浏览器、文件与剪辑工具的 Agent 也可连续制作到成片。
-- **B · Code Engine（代码引擎）**：由 Claude Code、Codex 或 Cursor 等 Agent 执行代码，在本地渲染；生图和配音可调用外部服务，渲染耗时取决于项目与本机性能。
+不需要自己写代码，也不必专门购买高端显卡。A 模式可使用在线视频平台；B 模式由 Agent 编写代码并在本地渲染，制作速度会受电脑性能影响，但不是决定性因素。
 
 <!-- readme:contribute -->
 
@@ -722,10 +710,12 @@ AI 助手会根据内容设计分镜，生成画面与旁白，配好字幕和�
 - **推荐画风**：发送视觉参考链接 + 你想做的内容领域。
 - **作品展示**：用这个工具制作了视频？发送作品链接，就有机会在本 README 和官方 YouTube 频道中展示！
 
-🔔 *在 X 上关注 **[@CrazyKaomei](https://x.com/CrazyKaomei)**，获取每日视频制作流程、自动化工具与频道增长 SOP。*
+🔔 **在 X 上关注 [@CrazyKaomei](https://x.com/CrazyKaomei)，获取每日视频制作流程、自动化工具与频道增长 SOP。**
 
 ## 📄 许可证
 
 本项目采用 [MIT License](https://github.com/kaomei/stickman-video-director/blob/main/LICENSE) 开源，允许免费使用、修改、商用和分发。分发本项目或其重要部分时，请保留原有版权和许可声明。
+
+第三方音乐、音效等素材仍适用各自的许可证及署名要求，详见对应素材说明。
 
 项目按“现状”提供，不作任何担保；完整条款见 [LICENSE](https://github.com/kaomei/stickman-video-director/blob/main/LICENSE)。
