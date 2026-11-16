@@ -85,7 +85,7 @@ for catalog in ("a-styles", "b-styles"):
 assert "catalogs currently live in the Chinese README" not in guide_text
 install = cn.split("```text\n", 1)[1].split("```", 1)[0]
 assert "https://github.com/kaomei/stickman-video-director" in install
-assert "已安装的 SKILL.md" in install
+assert "安装成功后读取 SKILL.md" in install
 assert (root / "tests/scenarios/first-use-guidance.md").is_file()
 
 # Chinese-facing welcome uses Chinese mode names, not internal routing labels.
