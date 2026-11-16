@@ -24,14 +24,14 @@ assert "我是烤妹儿" not in cn, "Keep the follow CTA focused on reader value
 readable_cn = re.sub(r'<[^>]+>|\]\([^)]+\)|https?://[^\s<>)"]+', "", cn.replace("# 🎬 Stickman Video Director\n", "", 1))
 outside_faq = cn.split('<a id="faq"></a>', 1)[0] + cn.split('<!-- readme:contribute -->', 1)[1]
 readable_outside_faq = re.sub(r'<[^>]+>|\]\([^)]+\)|https?://[^\s<>)"]+', "", outside_faq.replace("# 🎬 Stickman Video Director\n", "", 1))
-assert not re.search(r"\b(?:Director|Autopilot)\b", readable_outside_faq, re.I), "Use Chinese mode names outside the user-supplied bilingual FAQ; preserve technical paths and anchors"
-assert "自动成片" not in readable_cn, "Use 全自动模式 consistently for mode B"
+assert not re.search(r"\b(?:Director|Autopilot)\b", readable_outside_faq, re.I), "Use the approved engine names; preserve the project title, technical paths and anchors"
+assert "自动成片" not in readable_cn, "Do not restore the retired mode-B label"
 assert not re.search(r"(?<!AI )助手|(?<=[\u4e00-\u9fff])AI 助手", readable_cn), "Use AI 助手 consistently, with spaces between English and Chinese"
-assert "### A · 导演模式：逐段生成分镜提示词" in cn
-assert "### B · 全自动模式：一句话生成长片" in cn
+assert "### A · Model Engine（模型引擎）：选择提示词交付或连续制作" in cn
+assert "### B · Code Engine（代码引擎）：一句话生成长片" in cn
 
-sections = ("## 🎬 两种视频制作模式", "## 🧭 开始使用", "## 🎨 A · 导演模式画风一览",
-            "## 🤖 B · 全自动模式画风一览", "## ❓ 常见问题解答 (FAQ)", "## ⭐ 迈向 20,000 Stars 与创作者生态",
+sections = ("## 🎬 两种视频制作模式", "## 🧭 开始使用", "## 🎨 A 模式画风一览",
+            "## 🤖 B 模式画风一览", "## ❓ 常见问题解答 (FAQ)", "## ⭐ 迈向 20,000 Stars 与创作者生态",
             "## 🔮 计划中的画风", "## 💬 社区与投稿", "## 📄 许可证")
 assert [cn.index(s) for s in sections] == sorted(cn.index(s) for s in sections)
 assert "## 接下来做什么" not in cn, "Keep the removed next-steps heading out of the footer"
@@ -42,19 +42,33 @@ footer_items = ("**每一颗 Star", "- [x] **1,000 Stars**", "- [x] **3,000 Star
                 '<div align="center">', '<a id="whats-next"></a>', "## 🔮 计划中的画风",
                 "## 💬 社区与投稿", "🔔 *在 X 上关注")
 assert [footer.index(s) for s in footer_items] == sorted(footer.index(s) for s in footer_items), "Place roadmap before the unchanged chart, then styles, submissions and the X follow link"
-mode_comparison = cn.split('<a id="creation-modes"></a>', 1)[1].split('<a id="quick-start"></a>', 1)[0]
-mode_rows = [line for line in mode_comparison.splitlines() if line.startswith("|")]
-assert not any(row.startswith(("| **操作** |", "| **用途** |")) for row in mode_rows), "Keep the comparison concise without the removed operation and use-case rows"
-assert mode_rows[0] == '|  | <div align="center">A · 导演模式</div> | <div align="center">B · 全自动模式</div> |', "Center only the mode headings"
-assert mode_rows[1] == "|:---:|:---|:---|", "Keep explanatory columns left-aligned"
-assert len(mode_rows) == 7 and mode_rows[-1].startswith('| **产出** |'), "Keep five explanatory rows without the redundant Start row"
-assert all('align="center"' not in row for row in mode_rows[2:]), "Do not center the explanatory body text"
-assert "插画分镜＋局部动画" in mode_comparison and "插画轮播" not in mode_comparison, "Describe B as illustrated scenes rather than a slideshow; do not impose B1's drawing style on every B style"
-assert "仅有镜头移动或文字入场，不算画面微动画" in mode_comparison
+mode_comparison = cn.split('<a id="creation-modes"></a>', 1)[1].split('<!-- project-sponsor:start -->', 1)[0]
+comparison_table = re.search(r"<table>(.*?)</table>", mode_comparison, re.S).group(1)
+comparison_rows = re.findall(r"<tr>(.*?)</tr>", comparison_table, re.S)
+assert len(comparison_rows) == 6, "Keep one header and the approved five comparison dimensions"
+comparison_cells = [re.findall(r"<(th|td)([^>]*)>(.*?)</\1>", row, re.S) for row in comparison_rows]
+assert all(len(cells) == 3 for cells in comparison_cells), "Each comparison row has a label and two engines"
+assert [cell[2] for cell in comparison_cells[0]] == [
+    "", "A · Model Engine（模型引擎）", "B · Code Engine（代码引擎）"
+], "Keep the top-left header empty and the two approved engine headings"
+assert all(cell[0] == "th" for cell in comparison_cells[0])
+assert [cells[0][2] for cells in comparison_cells[1:]] == [
+    f"<strong>{label}</strong>" for label in ("原理", "特点", "使用", "产出", "成本")
+], "Keep five concise dimensions without the retired duration, operation or use-case rows"
+assert all('valign="middle"' in attrs for cells in comparison_cells for _, attrs, _ in cells), "Vertically center all 18 comparison cells"
+assert all('align="center"' in attrs for _, attrs, _ in comparison_cells[0])
+for cells in comparison_cells[1:]:
+    assert all(tag == "td" for tag, _, _ in cells)
+    assert 'align="center"' in cells[0][1]
+    assert all('align="left"' in attrs for _, attrs, _ in cells[1:]), "Keep explanatory columns left-aligned"
+assert len(re.findall(r"<table>", mode_comparison)) == 1, "Use a single comparison table"
+assert "<strong>普通聊天</strong>" in comparison_cells[3][1][2] and "<strong>Agent 制作</strong>" in comparison_cells[3][1][2]
+assert "分层动画" in mode_comparison and "插画轮播" not in mode_comparison, "Describe B as layered code animation, without restricting all B styles to B1"
+assert "完整视频文件＋本地预览" in comparison_cells[4][1][2] and comparison_cells[4][2][2] == "完整视频文件＋本地预览"
 assert "一次安装，按需选择" not in cn, "Keep the removed mode-selection sentence out of the introduction"
 quick_start_intro = cn.split('<a id="quick-start"></a>', 1)[1].split('<a id="director-start"></a>', 1)[0]
-assert "想尽可能接近展示案例，建议优先使用 Codex。" in quick_start_intro
-assert "也可安装到 Claude Code、Cursor、Antigravity 等具备文件和终端访问能力的 Agent" in quick_start_intro
+assert "<strong>想尽可能接近展示样片，建议优先使用 Codex、Claude Code 等编程能力较强的 AI 工具。</strong>" in quick_start_intro
+assert "也可安装到其他具备文件读写与终端执行能力的 Agent" in quick_start_intro
 assert "最终效果可能有所差异" in quick_start_intro
 assert "把以下内容发送给你的 AI 助手：" in quick_start_intro
 install = quick_start_intro.split("```text\n", 1)[1].split("```", 1)[0]
@@ -67,7 +81,7 @@ assert "之后每完成一个阶段" not in quick_start_intro, "Keep the removed
 assert "安装后，把下面这段发给 AI 助手，换成自己的话题即可：" in cn
 director_start = cn.split('<a id="director-start"></a>', 1)[1].split('<a id="autopilot-start"></a>', 1)[0]
 director_example = director_start.split("```text\n", 1)[1].split("```", 1)[0]
-assert director_example.startswith("使用导演模式/A模式，"), "Explicitly select mode A in the reusable Director example"
+assert director_example.startswith("使用模型引擎/A模式，"), "Explicitly select Model Engine / A in the reusable example"
 assert "填写话题、粘贴文案，也可以直接描述需求" in director_example
 assert "人类的第一份工作是怎么来的" not in director_example, "Use a fill-in template rather than a hard-coded topic"
 assert "也可以直接贴已有文案或文章" not in cn
@@ -99,12 +113,12 @@ faq_answers = re.split(r"^### Q\d+\. .+\n", faq, flags=re.M)[1:]
 # These are supplied-copy checks, not factual verification of the draft's claims.
 required_copy = (
     ("MIT 开源协议", "$30–$60", "没有任何订阅费", "按需支付官方 API 费用"),
-    ("**B · 全自动模式**", "代码驱动", "人物素材图", "不同场景中复用", "**A · 导演模式**", "火柴人角色参考图"),
+    ("**B · Code Engine（代码引擎）**", "代码驱动", "人物素材图", "不同场景中复用", "**A · Model Engine（模型引擎）**", "火柴人角色参考图"),
     ("**推荐使用 Codex，以尽可能接近案例效果。**", "制作和测试", "其他 Agent", "GPT 内置生图模型", "没有额外配置生图 API", "不能用代码头像替代", "不绑定服务商"),
     ("公众号长文", "前 3 秒爆款黄金钩子", "根据主题、目标时长和所选画风安排故事与分镜"),
     ("**视觉叙事心理学**", "**黄金 3 秒钩子**", "**爆款视觉隐喻**", "**卡点与节奏留白**", "Casually Explained"),
     ("搬运重复内容（Reused Content）", "高价值原创内容", "YouTube 创作者收益计划（YPP）", "TikTok 创作者基金"),
-    ("专业独立显卡", "**分镜导演模式（Director Mode）**", "**全自动模式（Autopilot Mode）**", "云端 API 或轻量级渲染"),
+    ("专业独立显卡", "**A · Model Engine（模型引擎）**", "普通聊天交付分镜与独立提示词", "Agent 也可连续制作到成片", "**B · Code Engine（代码引擎）**", "在本地渲染", "生图和配音可调用外部服务", "本机性能"),
 )
 for number, (answer, phrases) in enumerate(zip(faq_answers, required_copy), 1):
     for phrase in phrases:
@@ -112,16 +126,17 @@ for number, (answer, phrases) in enumerate(zip(faq_answers, required_copy), 1):
 assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 0, 0, 3, 0, 2], "Keep the approved FAQ paragraph/bullet structure"
 assert all(len(answer.strip().split("\n\n")) == 2 for answer in faq_answers[1:3]), "Keep consistency and tool answers to two concise paragraphs"
 assert faq.count("<!-- readme:platforms -->") == 1 and "<!-- readme:platforms -->" in faq_answers[0], "Keep the internal platform marker after Q1"
-assert "**10 分钟及以上**" in cn and "连续故事短剧" in cn
 assert "Codex、Claude Code" in cn and "Google Flow" in cn
-assert "两种工作流都可以从一个初步话题、一个网页链接或一份完整脚本开始。" in mode_comparison
-assert "画幅（9:16、16:9、1:1）、旁白语言与配音均可自由选择。" in mode_comparison
-assert "💡 **快速配置说明**：" in mode_comparison and not re.search(r"^>", mode_comparison, re.M)
-assert "给出话题或需求，直接拿成片" in mode_comparison
+assert "给一个想法、一篇文章、网页链接或完整脚本，即可开始制作。" in mode_comparison
+assert "两种模式均支持短视频与长篇内容" in mode_comparison
+assert "`16:9` 横屏或 `9:16` 竖屏" in mode_comparison
+assert "字幕、旁白配音、背景音乐和音效" in mode_comparison
+assert "[A 画风](#a-styles)" in mode_comparison and "[B 画风](#b-styles)" in mode_comparison
+assert "<strong>使用</strong>" in mode_comparison and "内置浏览器操作视频平台" in mode_comparison
 assert "给出话题、内容或需求 → 确认视频脚本 → 确认 20 秒有声样片 → 自动制作整片 → 拿到完整视频" in cn
 autopilot_start = cn.split('<a id="autopilot-start"></a>', 1)[1].split('<a id="style-gallery"></a>', 1)[0]
 autopilot_example = autopilot_start.split("```text\n", 1)[1].split("```", 1)[0]
-assert autopilot_example.startswith("使用全自动模式/B模式，"), "Explicitly select mode B in the reusable Autopilot example"
+assert autopilot_example.startswith("使用代码引擎/B模式，"), "Explicitly select Code Engine / B in the reusable example"
 for requirement in ("话题、文章、帖子、新闻或具体需求", "做成在 YouTube 上有吸引力的视频", "粘贴内容或链接，也可以直接描述宣传需求", "需求：5～10 分钟", "B1「极简线稿风」", "旁白、字幕和音效", "20 秒有声样片", "画面跟随配音节奏", "交付完整视频文件"):
     assert requirement in autopilot_start, requirement
 assert "Node.js" not in autopilot_start and "FFmpeg" not in autopilot_start
@@ -149,8 +164,23 @@ for number, name in enumerate(style_names, 1):
     assert f"### A{number}：{detail_name}\n" in cn, "Keep preview and detail names aligned"
 assert "史前黑色幽默" not in cn and "史前手绘 / 黑色幽默" not in cn
 assert "采用 A3「史前洞穴风」" in director_example
-assert "按需确认人物三视图" in director_start, "Keep character references optional for ordinary A use"
+assert "按需确认人物参考" in director_start, "Keep character references optional for ordinary A use"
 assert "三视图（正面、侧面、背面）" not in director_start, "Do not move the removed FAQ's detailed guidance into the quick-start"
+director_examples = re.findall(r"```text\n(.*?)```", director_start, re.S)
+assert len(director_examples) == 2, "A keeps distinct ordinary-chat and tool-enabled Agent delivery routes"
+assert "**路线一：普通聊天，交付分镜与独立提示词。**" in director_start
+assert "**路线二：具备终端执行能力的 Agent，可直接制作完整成片。**" in director_start
+for requirement in ("默认用内置浏览器打开 Google Flow", "Flow 登录与额度", "制作方案、工具、费用和执行范围", "已授权范围内连续完成生成", "针对性返修", "按需求与所选画风完成字幕和声音", "不需要我逐段提醒", "扩大费用时再说明"):
+    assert requirement in director_examples[1], requirement
+assert "确认方案与执行范围 → 生成并检查片段 → 针对性返修 → 剪辑与后期 → 交付本地预览" in director_start
+assert "已确认的人物、素材和合格片段会继续复用" in director_start
+for anchor, end, requirements in (
+    ("a-styles", "a1", ("基于 Google Flow 制作", "<strong>交由 Agent 自动出片前，请确认账号已登录且有可用额度。</strong>", "按 A1、A2、A3…更新")),
+    ("b-styles", "b1", ("样片均由 Codex 制作", "<strong><code>gpt-image-2</code></strong>", "代码驱动分层动画", "在本地渲染成片", "<strong>请确认其具备文件读写与终端执行能力，且所需工具已配置完成。</strong>", "按 B1、B2、B3…更新")),
+):
+    intro = cn.split(f'<a id="{anchor}"></a>', 1)[1].split(f'<a id="{end}"></a>', 1)[0]
+    for requirement in requirements:
+        assert requirement in intro, (anchor, requirement)
 for variant in ("A1.1", "A1.2", "A2.1", "A2.2"):
     assert variant in cn, variant
 

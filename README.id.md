@@ -41,7 +41,7 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 <tr>
 <td width="50%" align="center">
 <strong>Gua Prasejarah</strong><br>
-<a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="Cerita stickman di gua prasejarah dengan kejutan komedi" width="90%"></a>
+<a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@f1e7992ade7de1b31bf520cd264e375334009be9/assets/readme/previews/style-3-demo.gif" alt="Cerita stickman di gua prasejarah dengan kejutan komedi" width="90%"></a>
 </td>
 <td width="50%" align="center">
 <strong>Gaya TV Retro</strong><br>
@@ -99,24 +99,50 @@ Gaya visual terus diperbarui untuk channel **penjelasan sains, psikologi gelap, 
 
 <a id="creation-modes"></a>
 
-## 🎬 Dua mode pembuatan video
+## 🎬 Dua mode produksi video: Model Engine vs Code Engine
 
-**Ingin mengontrol setiap shot? Pilih A · Director Mode. Ingin video jadi tanpa merangkai adegan sendiri? Pilih B · Autopilot Mode.** Satu proyek, dua alur kerja.
+**Sutradara stickman yang sama, dua jalur pembuatan visual**: Mode A memakai model video untuk menghasilkan shot berkesinambungan; mode B menggerakkan aset dengan kode untuk membuat animasi berlapis. Pada keduanya, Agent dapat mengerjakan produksi secara otomatis hingga menjadi video lengkap, dengan mengikuti standar gaya yang dipilih.
 
-|  | <div align="center">A · Director</div> | <div align="center">B · Autopilot</div> |
-|:---:|:---|:---|
-| **Cara kerja** | **Anda mengendalikan produksi, AI menyusun arahan:** dapatkan storyboard dan prompt, lalu atur sendiri pembuatan klip dan editing. | **Berikan topik atau kebutuhan, terima video jadi:** ilustrasi, narasi, subtitle, animasi ringan, dan penggabungan video dikerjakan otomatis. |
-| **Durasi** | **Diutamakan untuk video pendek**, misalnya 30 detik–3 menit; video lebih panjang juga bisa dibuat per bagian. | **Diutamakan untuk video panjang**, terutama video bernarasi **10 menit ke atas**; juga mendukung video pendek dan cerita bersambung. |
-| **Alat** | Rencanakan dengan asisten AI yang mendukung Skill, buat klip di generator video pilihan Anda (Google Flow, Runway, Luma, Kling, dan lainnya), lalu susun di CapCut atau Premiere. | Dijalankan melalui agen seperti **Codex atau Claude Code** yang dapat membaca dan menulis file, memakai alat, serta menjalankan perintah untuk menghubungkan pembuatan materi dengan penggabungan video lokal. |
-| **Visual** | **Animasi per adegan:** berfokus pada gerakan, arahan kamera, dan interaksi karakter. | **Storyboard ilustrasi + animasi lokal:** ekspresi, reaksi karakter, dan gerakan objek mengikuti narasi, didukung pergantian adegan, zoom, dan pergeseran kamera. Gerakan kamera atau kemunculan teks saja tidak dihitung sebagai animasi adegan. |
-| **Hasil** | Rancangan penyutradaraan, storyboard, prompt video per bagian, dan arahan suara. | **File video lengkap dengan narasi, subtitle, dan animasi ringan.** |
+<table>
+<thead>
+<tr>
+<th align="center" valign="middle"></th>
+<th align="center" valign="middle">A · Model Engine (Mesin Model)</th>
+<th align="center" valign="middle">B · Code Engine (Mesin Kode)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" valign="middle"><strong>Prinsip</strong></td>
+<td align="left" valign="middle">Storyboard, prompt, dan gambar referensi dimasukkan ke model pembuat video untuk langsung menghasilkan klip berkesinambungan yang memuat gerakan, karakter, dan perubahan adegan.</td>
+<td align="left" valign="middle">AI menggambar atau menghasilkan aset visual, lalu menulis dan menjalankan kode untuk mengendalikan karakter, properti, animasi teks, dan lini masa kamera; video dirender serta digabungkan secara lokal.</td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong>Ciri</strong></td>
+<td align="left" valign="middle">Berfokus pada ekspresi tubuh, interaksi karakter, gerakan berkesinambungan, serta pencahayaan dan suasana sinematik; menghadirkan adegan yang hidup dan kuat secara audiovisual.</td>
+<td align="left" valign="middle">Berfokus pada penyusunan visual berlapis dan kontrol yang presisi; ritme lini masa, posisi tata letak, perbaikan setempat, dan penggunaan ulang aset lebih mudah dikendalikan.</td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong>Penggunaan</strong></td>
+<td align="left" valign="middle">• <strong>Percakapan biasa</strong>: Dapatkan naskah storyboard dan prompt mandiri, lalu buat dan edit video sendiri di platform video.<br>• <strong>Produksi oleh Agent</strong>: Di Codex atau Claude Code yang memiliki akses browser, file, dan alat pengeditan, gunakan browser bawaan untuk mengoperasikan platform video. Agent melanjutkan pembuatan, pemeriksaan, perbaikan setempat, dan pengeditan, serta menyiapkan subtitle dan suara sesuai kebutuhan dan gaya.</td>
+<td align="left" valign="middle">Di Agent yang dapat membaca dan menulis file serta menjalankan perintah terminal (seperti Codex atau Claude Code), setujui naskah dan sampel sesuai gaya pilihan. Agent otomatis menyiapkan aset, menulis kode, menggerakkan animasi, membuat subtitle dan suara, lalu merender video secara lokal.</td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong>Hasil</strong></td>
+<td align="left" valign="middle">• <strong>Percakapan biasa</strong>: Rencana storyboard + paket prompt per bagian yang dapat digunakan secara mandiri<br>• <strong>Produksi oleh Agent</strong>: File video lengkap + pratinjau lokal</td>
+<td align="left" valign="middle">File video lengkap + pratinjau lokal</td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong>Biaya</strong></td>
+<td align="left" valign="middle">Pembuatan video memakai kuota atau kredit platform yang digunakan. Layanan gambar, narasi, dan Agent dikenakan biaya sesuai konfigurasi yang dipilih.</td>
+<td align="left" valign="middle">Rendering kode secara lokal tidak memerlukan kuota model video; pembuatan gambar, narasi TTS, pemanggilan model Agent, atau lisensi aset dapat menimbulkan biaya.</td>
+</tr>
+</tbody>
+</table>
 
-Kedua alur kerja bisa dimulai dari topik mentah, tautan web, atau naskah lengkap. Pilih rasio aspek (9:16, 16:9, 1:1), bahasa narasi, dan suara dengan bebas. Durasi di atas adalah rekomendasi, bukan batas mutlak.
+Mulailah dari sebuah ide, artikel, tautan web, atau naskah lengkap. Kedua mode mendukung video pendek maupun konten panjang. Pilih format horizontal `16:9` atau vertikal `9:16` sesuai platform, lalu atur subtitle, narasi, musik latar, dan efek suara sesuai kebutuhan serta standar gaya.
 
-💡 **Catatan Penyiapan Cepat**:
-
-- **Director Mode** dapat digunakan di jendela percakapan AI standar.
-- **Autopilot Mode** berjalan di agen coding AI dengan akses file dan terminal (seperti **Claude Code, OpenAI Codex, atau Cursor**) untuk menangani rendering hingga penyerahan file secara otomatis.
+Belum menentukan gaya? Bagian [gaya A](#a-styles) dan [gaya B](#b-styles) di bawah menyediakan penjelasan lengkap, topik yang sesuai, serta lebih banyak contoh video untuk referensi.
 
 <!-- project-sponsor:start -->
 <a id="project-sponsor"></a>
@@ -142,88 +168,101 @@ Kedua alur kerja bisa dimulai dari topik mentah, tautan web, atau naskah lengkap
 
 <a id="quick-start"></a>
 
-## 🧭 Mulai di sini
+## 🧭 Mulai menggunakan
 
-**Agar hasilnya sedekat mungkin dengan contoh, saya menyarankan untuk mulai dengan Codex.** Contoh buatan saya di proyek ini dibuat dan diuji menggunakan Codex.
+<strong>Agar hasilnya sedekat mungkin dengan contoh yang ditampilkan, utamakan alat AI dengan kemampuan pemrograman yang kuat, seperti Codex atau Claude Code.</strong>
 
-Skill juga dapat dipasang di Claude Code, Cursor, Antigravity, atau agent lain yang memiliki akses file dan terminal. Namun, perbedaan kemampuan model, konfigurasi alat, dan cara eksekusi dapat menghasilkan keluaran yang berbeda.
+Skill juga dapat dipasang di Agent lain yang mampu membaca dan menulis file serta menjalankan perintah terminal. Namun, perbedaan kemampuan model, konfigurasi alat, dan cara eksekusi dapat memengaruhi hasilnya.
 
-Kirim pesan berikut ke asisten AI Anda:
+Kirim pesan berikut kepada asisten AI Anda:
 
 ```text
-Tolong pasangkan Skill ini:
+Tolong pasang Skill ini:
 https://github.com/kaomei/stickman-video-director
 
 Setelah berhasil dipasang, segera baca SKILL.md yang terpasang.
-Jelaskan dengan bahasa sederhana hasil dari kedua mode,
-alat yang diperlukan, serta alur pembuatannya.
-Berikan contoh permintaan yang bisa saya sesuaikan.
-Berdasarkan kebutuhan saya, jelaskan apa yang masih kurang
-dan langkah berikutnya secara konkret.
+Jelaskan hasil kedua mode, alat yang dibutuhkan, dan alur produksinya dengan bahasa sederhana.
+Berikan contoh permintaan yang bisa langsung saya gunakan.
+Berdasarkan kebutuhan saya, jelaskan apa yang masih kurang dan langkah konkret berikutnya.
 ```
 
-Instalasi kehabisan waktu? Lihat [panduan pemecahan masalah instalasi](skills/directing-stickman-videos/references/installation-troubleshooting.md) untuk macOS/Linux dan Windows.
+Instalasi mengalami timeout? Lihat [panduan pemecahan masalah instalasi](skills/directing-stickman-videos/references/installation-troubleshooting.md) untuk macOS/Linux dan Windows.
 
 <a id="director-start"></a>
 
-### A · Director: prompt video per adegan
+### A · Model Engine (Mesin Model): pilih paket prompt atau produksi berkelanjutan
 
-Setelah memasang Skill, kirim pesan ini ke asisten AI dan ganti dengan topik Anda:
+**Jalur pertama: percakapan biasa untuk mendapatkan storyboard dan prompt mandiri.** Setelah pemasangan, kirim pesan berikut kepada asisten AI, lalu ganti topiknya sesuai kebutuhan:
 
 ```text
-Gunakan mode Director / mode A untuk mengubah topik,
-teks, atau kebutuhan berikut menjadi video stickman:
-[Tulis topik, tempel teks, atau jelaskan kebutuhan Anda]
+Gunakan Model Engine / mode A untuk mengubah topik, teks, atau kebutuhan berikut
+menjadi video stickman:
+[Isi topik, tempel teks, atau jelaskan kebutuhan secara langsung]
 
-Kebutuhan: horizontal 16:9, gaya A3 “Gua Prasejarah”.
-Buat 30 detik dulu.
-Berikan rancangan penyutradaraan terlebih dahulu.
-Setelah saya setujui, berikan prompt video untuk setiap bagian.
+Kebutuhan: horizontal 16:9, gaya A3 “Gua Prasejarah”; buat 30 detik terlebih dahulu.
+Berikan proposal penyutradaraan terlebih dahulu.
+Setelah saya setujui, keluarkan prompt video per bagian.
 ```
 
-**Alur: topik dan kebutuhan → naskah cerita → konfirmasi tiga tampak karakter bila diperlukan → prompt adegan terperinci → hasilkan klip dan edit menjadi video secara manual**
+**Alur: berikan topik dan kebutuhan → setujui cerita dan storyboard → setujui referensi karakter bila perlu → dapatkan prompt mandiri → buat klip dan edit sendiri menjadi video.**
 
-Rancangan mencakup struktur cerita, narasi per bagian, gerakan, kamera, dan arahan suara. Setelah menerima prompt, salin satu per satu ke [Google Flow](https://flow.google.com/) atau alat pembuat video lain. Gunakan CapCut atau editor lain untuk menambahkan subtitle dan menyelesaikan video.
+Proposal mencakup struktur cerita, narasi per bagian, aksi visual, kamera, dan rancangan suara. Setelah mendapat prompt, salin satu per satu ke [Google Flow](https://flow.google.com/) atau alat pembuat video lain, lalu tambahkan subtitle dan selesaikan pengeditan dengan alat seperti CapCut.
 
-Untuk video pertama Anda, ikuti [panduan produksi visual di X](https://x.com/CrazyKaomei/status/2102311241046008268) (utas dengan demo video langkah demi langkah).
+**Jalur kedua: Agent yang dapat menjalankan perintah terminal bisa langsung membuat video lengkap.** Untuk produksi otomatis, tambahkan:
+
+```text
+Kali ini saya memilih jalur produksi otomatis oleh Agent.
+Secara default, buka Google Flow di browser bawaan untuk membuat video.
+Periksa terlebih dahulu browser, status login dan kredit Flow, serta alat file dan pengeditan.
+Jelaskan rencana produksi, alat, biaya, dan cakupan eksekusi secara bersamaan.
+Setelah saya setujui, lanjutkan pembuatan, perbaikan setempat, pengeditan,
+dan pratinjau lokal dalam cakupan yang sudah diizinkan;
+siapkan subtitle serta suara sesuai kebutuhan dan gaya pilihan.
+Jangan menunggu pengingat untuk setiap bagian. Beri tahu saya jika ada alat yang kurang,
+atau jika rencana perlu diubah atau biaya perlu ditambah.
+```
+
+**Alur: setujui rencana dan cakupan eksekusi → buat dan periksa klip → perbaikan setempat → pengeditan dan pascaproduksi → serahkan pratinjau lokal.** Subtitle, suara, dan prompt mengikuti kebutuhan serta standar gaya pilihan; karakter, aset, dan klip yang sudah disetujui dan memenuhi standar tetap digunakan kembali.
+
+Untuk video pertama, ikuti [tutorial produksi visual di X](https://x.com/CrazyKaomei/status/2102311241046008268) (utas dengan demonstrasi video langkah demi langkah).
 
 <a id="autopilot-start"></a>
 
-### B · Autopilot: dari satu permintaan menjadi video lengkap
+### B · Code Engine (Mesin Kode): dari satu permintaan menjadi video panjang
 
-Setelah memasang Skill di lingkungan yang bisa mengakses file dan menjalankan perintah, seperti Codex atau Claude Code, katakan:
+Setelah memasang Skill di lingkungan yang mendukung operasi file dan eksekusi perintah, seperti Codex atau Claude Code, katakan:
 
 ```text
-Gunakan mode Autopilot / mode B untuk mengubah topik, artikel,
-postingan, berita, atau kebutuhan berikut menjadi video
-yang menarik untuk YouTube:
-[Tempel konten atau tautan, atau jelaskan kebutuhan video promosi]
+Gunakan Code Engine / mode B untuk mengubah topik, artikel, postingan,
+berita, atau kebutuhan berikut menjadi video yang menarik di YouTube:
+[Tempel konten atau tautan, atau jelaskan kebutuhan promosi secara langsung]
 
-Kebutuhan: 5–10 menit, horizontal 16:9, gaya B1
-“Seni Garis Minimalis”, dengan narasi, subtitle, dan efek suara.
+Kebutuhan: 5–10 menit, horizontal 16:9, gaya B1 “Garis Minimalis”,
+dengan narasi, subtitle, dan efek suara.
 
-Periksa dahulu konfigurasi gambar, suara, dan penggabungan video.
-Lalu berikan naskah dan contoh video 20 detik dengan audio.
-Setelah saya setujui, selesaikan seluruh video secara otomatis,
-dengan visual mengikuti ritme narasi. Kirim file video lengkap,
-tanpa perlu saya rangkai per bagian secara manual.
+Periksa konfigurasi pembuatan gambar, narasi, dan penggabungan video terlebih dahulu.
+Lalu berikan naskah dan sampel bersuara 20 detik.
+Setelah saya setujui, selesaikan seluruh video secara otomatis dengan visual
+mengikuti ritme narasi. Serahkan file video lengkap tanpa meminta saya merangkai tiap klip.
 ```
 
-**Alur: topik, konten, atau kebutuhan → setujui naskah → setujui contoh 20 detik dengan audio → produksi otomatis → terima video lengkap**
+**Alur: berikan topik, konten, atau kebutuhan → setujui naskah → setujui sampel bersuara 20 detik → produksi seluruh video secara otomatis → terima file video lengkap**
 
-Asisten AI merancang adegan, menghasilkan gambar dan narasi, menyiapkan subtitle dan efek suara, lalu merangkainya mengikuti ritme suara. Anda cukup menyetujui naskah dan contoh video, tanpa membuat serta menyambung setiap bagian sendiri.
+Asisten AI merancang storyboard sesuai konten, menghasilkan gambar dan narasi, menyiapkan subtitle serta efek suara, lalu menggabungkannya mengikuti ritme narasi. Tugas utama Anda adalah menyetujui naskah dan sampel; Anda tidak perlu membuat dan merangkai tiap klip sendiri.
 
-Saat pertama digunakan, asisten memeriksa konfigurasi dan menjelaskan apa yang belum tersedia serta cara melengkapinya. Jika gambar atau suara kurang cocok, bagian tersebut bisa disesuaikan tanpa mengulang bagian yang sudah disetujui.
+Pada penggunaan pertama, konfigurasi yang diperlukan akan diperiksa. Apa yang kurang dan cara melengkapinya dijelaskan bertahap. Jika visual atau suara belum sesuai, hanya bagian terkait yang perlu diperbaiki; bagian yang sudah disetujui tetap dipertahankan.
 
-**Tahap akhir opsional untuk kedua mode:** setelah menyetujui video final, lanjutkan ke [Kit Thumbnail & Publikasi](#thumbnail-publishing-kit) untuk membuat sampul dengan gaya yang sama dan teks unggahan, atau selesai di sini. Tidak perlu berganti mode atau menginstal ulang.
+<strong>Langkah penutup opsional untuk kedua mode:</strong> setelah puas dengan video akhir, lanjutkan ke [Paket Thumbnail & Publikasi](#thumbnail-publishing-kit) untuk mendapatkan sampul yang sesuai gaya dan teks unggahan, atau akhiri di sini. Tidak perlu mengganti mode atau memasang ulang.
 
 <a id="style-gallery"></a>
 
 <a id="a-styles"></a>
 
-## 🎨 Pilihan gaya A · Director
+## 🎨 Pilihan gaya A · Model Engine
 
-Diperbarui dengan penomoran A1, A2, A3… Setiap gaya memiliki contoh animasinya sendiri.
+Contoh mode A saat ini dibuat dengan Google Flow; Anda juga dapat memilih platform pembuat video lain. <strong>Sebelum menyerahkan produksi otomatis kepada Agent, pastikan akun sudah login dan memiliki kredit yang tersedia.</strong>
+
+Gaya diperbarui sebagai A1, A2, A3… Setiap gaya menampilkan contoh animasi yang sesuai.
 
 <a id="a1"></a>
 
@@ -268,7 +307,7 @@ Tak ada ponsel atau kantor. Kenapa manusia gua tetap terjebak pekerjaan? Gaya vi
 
 | Contoh 1: “Dari Mana Datangnya Pekerjaan Pertama Manusia?” | Contoh 2: “Manusia Pertama Kali Menemukan Api” |
 |:---:|:---:|
-| <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-demo.gif" alt="Pratinjau Dari Mana Datangnya Pekerjaan Pertama Manusia?" width="360"> | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-community-fire.gif" alt="Manusia Pertama Kali Menemukan Api, animasi karya komunitas" width="360"> |
+| <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@f1e7992ade7de1b31bf520cd264e375334009be9/assets/readme/previews/style-3-demo.gif" alt="Pratinjau Dari Mana Datangnya Pekerjaan Pertama Manusia?" width="360"> | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-community-fire.gif" alt="Manusia Pertama Kali Menemukan Api, animasi karya komunitas" width="360"> |
 | Cerita prasejarah · Kejutan dunia kerja | Penemuan api · Karya komunitas |
 
 ---
@@ -344,14 +383,16 @@ Figur stik bergaris tipis tampil di latar retro yang digambar dengan rinci. Gera
 
 ### A8: Segera hadir…
 
-Gaya khusus Director yang baru sedang disiapkan. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk mengikuti pembaruan selanjutnya!
+Gaya Model Engine yang baru sedang disiapkan. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk mengikuti pembaruan selanjutnya!
 
 
 <a id="b-styles"></a>
 
-## 🤖 Pilihan gaya B · Autopilot
+## 🤖 Pilihan gaya B · Code Engine
 
-Diperbarui dengan penomoran B1, B2, B3… Setiap gaya memiliki contoh video dengan storyboard ilustrasi dan animasi ringan, dikelola terpisah dari seri A.
+Seluruh contoh mode B saat ini dibuat dengan Codex: model bawaan <strong><code>gpt-image-2</code></strong> menghasilkan aset visual, lalu kode menggerakkan animasi berlapis dan video dirender secara lokal. Sebelum menyerahkan produksi otomatis kepada Agent lain, <strong>pastikan Agent dapat membaca dan menulis file serta menjalankan perintah terminal, dan semua alat yang diperlukan sudah dikonfigurasi.</strong>
+
+Gaya diperbarui sebagai B1, B2, B3… Setiap gaya menampilkan contoh video lengkap yang sesuai.
 
 <a id="b1"></a>
 
@@ -498,7 +539,7 @@ Jadikan avatar favorit Anda pembawa acara di kanal Anda; penggunaan karakter ter
 
 ### B6: Dynamic Meme Animation
 
-Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut menghidupkan kisah unik menjadi animasi pendek. Latar yang luas memberi ruang gerak bagi tokoh, properti, dan kamera.
+Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut menghidupkan kisah unik menjadi animasi pendek. Gaya visualnya terinspirasi dari channel YouTube [@RicksClips3000](https://www.youtube.com/@RicksClips3000) (**sekitar 180 ribu subscriber**). Latar yang luas memberi ruang gerak bagi tokoh, properti, dan kamera.
 
 - **Visual**: Garis tinta dengan ketebalan bervariasi, cat matte, dan pencahayaan lembut menjaga keselarasan gaya gambar tangan pada kepala, tubuh, dan latar; **hasilnya lebih baik dalam format vertikal**.
 - **Gerak**: Pelacakan menyamping, kedalaman berlapis, penyerahan benda, dan close-up reaksi mengikuti cerita, dengan jeda agar setiap aksi dan lelucon terbaca.
@@ -527,7 +568,7 @@ Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut 
 
 ### B7: Segera hadir…
 
-Gaya Autopilot dan animasi berbasis kode yang baru sedang disiapkan. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk mengikuti pembaruan selanjutnya!
+Gaya Code Engine dan animasi berbasis kode yang baru sedang disiapkan. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk mengikuti pembaruan selanjutnya!
 
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>
@@ -536,7 +577,7 @@ Gaya Autopilot dan animasi berbasis kode yang baru sedang disiapkan. [Beri Star 
 
 **Video yang bagus tetap harus menarik klik terlebih dahulu.** Setelah animasi selesai, siapkan thumbnail yang sesuai, judul berpotensi CTR tinggi, dan pemantik interaksi penonton dalam alur kerja yang sama.
 
-Paket penyelesaian terpadu untuk **Director Mode dan Autopilot Mode**: menghasilkan daya tarik visual yang sesuai dengan karakter dan gaya video yang sudah disetujui, lengkap dengan metadata YouTube siap tayang.
+Paket penyelesaian terpadu untuk **A · Model Engine dan B · Code Engine**: menghasilkan daya tarik visual yang sesuai dengan karakter dan gaya video yang sudah disetujui, lengkap dengan metadata YouTube siap tayang.
 
 <table width="100%">
   <tr>
@@ -605,9 +646,9 @@ Ya. Stickman Video Director 100% gratis dan open source dengan lisensi MIT. Anda
 
 ### Q2. Bagaimana saya menjaga konsistensi karakter?
 
-**B · Mode Autopilot**: Menggunakan alur produksi berbasis kode. Aset gambar karakter dibuat sebelum produksi video dan dipakai ulang di berbagai adegan, sehingga penampilan karakter relatif konsisten.
+**B · Code Engine**: Menggunakan alur produksi berbasis kode. Aset gambar karakter dibuat sebelum produksi video dan dipakai ulang di berbagai adegan, sehingga penampilan karakter relatif konsisten.
 
-**A · Mode Sutradara**: Terutama mengandalkan pembuatan video dari teks. Jika gaya rambut, pakaian, atau ciri karakter lainnya rumit dan sulit direproduksi secara konsisten hanya dengan teks, tambahkan satu gambar referensi karakter stickman dan terus gunakan pada klip berikutnya agar hasilnya lebih stabil.
+**A · Model Engine**: Terutama mengandalkan pembuatan video dari teks. Jika gaya rambut, pakaian, atau ciri karakter lainnya rumit dan sulit direproduksi secara konsisten hanya dengan teks, tambahkan satu gambar referensi karakter stickman dan terus gunakan pada klip berikutnya agar hasilnya lebih stabil.
 
 ### Q3. Alat apa yang sebaiknya saya gunakan? Apakah perlu memilih model pembuat gambar tertentu?
 
@@ -635,8 +676,8 @@ Ya, tentu saja. Salah satu kekhawatiran utama kreator tanpa wajah adalah kebijak
 
 Tidak. Anda tidak memerlukan kartu grafis RTX kelas atas atau pengetahuan pemrograman.
 
-- **Director Mode** digunakan lewat percakapan di asisten AI apa pun yang mendukung Skill.
-- **Autopilot Mode** berjalan di agen coding AI seperti Claude Code, Codex, atau Cursor, menggunakan permintaan sederhana dalam bahasa Inggris. Seluruh proses pembuatan visual yang berat ditangani oleh API cloud ringan atau rendering prosedural, bukan perangkat keras lokal Anda.
+- **A · Model Engine** menyediakan storyboard dan prompt melalui percakapan di asisten AI yang mendukung Skill; Agent dengan alat yang diperlukan dapat melanjutkan produksi hingga video lengkap.
+- **B · Code Engine** berjalan di agen coding AI seperti Claude Code, Codex, atau Cursor melalui permintaan dalam bahasa sehari-hari. Agent merender video secara lokal dan dapat menggunakan layanan eksternal yang telah dikonfigurasi untuk gambar serta narasi.
 
 <!-- readme:contribute -->
 
@@ -646,8 +687,8 @@ Tidak. Anda tidak memerlukan kartu grafis RTX kelas atas atau pengetahuan pemrog
 
 **Setiap Star mendukung rilisan berikutnya!** Bersama-sama, kita membangun studio 100% gratis dan open source untuk membantu kreator solo mengelola channel tanpa tampil di kamera, tanpa langganan SaaS seharga US$ 50/bulan.
 
-- [x] **1,000 Stars**: Director Mode + 5 gaya visual inti telah dirilis
-- [x] **3,000 Stars**: AutoPilot Mode untuk membuat video dalam satu klik telah dirilis
+- [x] **1,000 Stars**: A · Model Engine + 5 gaya visual inti telah dirilis
+- [x] **3,000 Stars**: B · Code Engine untuk membuat video dalam satu klik telah dirilis
 - [x] **6,000 Stars**: Lebih dari 10 gaya visual baru berkualitas tinggi telah dirilis
 - [ ] **🔥 10,000 Stars**:
   - Koleksi 1,000+ prompt naskah YouTube untuk mode A dan B
