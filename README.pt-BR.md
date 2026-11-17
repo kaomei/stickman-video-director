@@ -96,7 +96,7 @@ Transforme roteiros brutos em animações explicativas de alta retenção em min
 <!-- b7:hero:start -->
 <td width="50%" align="center">
 <strong>Teatro Pixel</strong><br>
-<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Teatro Pixel" width="90%"></a>
+<a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Teatro Pixel" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
 </tr>
@@ -570,8 +570,8 @@ Pequenos pixels, grandes consequências. Personagens brancos transformam escolha
     <th width="50%" align="center">Exemplo 2: não acelere a sua vida</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="Exemplo 1: o que acontece quando você só diz “tanto faz”?" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Exemplo 2: não acelere a sua vida" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Exemplo 1: o que acontece quando você só diz “tanto faz”?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Exemplo 2: não acelere a sua vida" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Animação de personagens em pixel art · Música e efeitos com clima de videogame</td>

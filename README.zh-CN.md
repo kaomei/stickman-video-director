@@ -96,7 +96,7 @@
 <!-- b7:hero:start -->
 <td width="50%" align="center">
 <strong>像素剧场风</strong><br>
-<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · 像素剧场风" width="90%"></a>
+<a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · 像素剧场风" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
 </tr>
@@ -570,8 +570,8 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
     <th width="50%" align="center">样片 2：别快进你的人生</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="样片 1：总说“无所谓”，世界会变成什么样？" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="样片 2：别快进你的人生" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="样片 1：总说“无所谓”，世界会变成什么样？" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="样片 2：别快进你的人生" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">像素角色动画 · 游戏感配乐与音效</td>
