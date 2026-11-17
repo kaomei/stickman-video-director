@@ -579,8 +579,6 @@ Pequenos pixels, grandes consequências. Personagens brancos transformam escolha
   </tr>
 </table>
 
-Créditos musicais: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
-
 <!-- b7:section:end -->
 
 <a id="b8"></a>

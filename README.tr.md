@@ -579,8 +579,6 @@ Küçük pikseller, büyük sonuçlar. Beyaz çöp adamlar günlük seçimleri k
   </tr>
 </table>
 
-Müzik bilgileri: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
-
 <!-- b7:section:end -->
 
 <a id="b8"></a>

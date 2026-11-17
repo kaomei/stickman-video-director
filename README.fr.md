@@ -579,8 +579,6 @@ De petits pixels, de grandes conséquences. Des personnages blancs transforment 
   </tr>
 </table>
 
-Crédits musicaux: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
-
 <!-- b7:section:end -->
 
 <a id="b8"></a>

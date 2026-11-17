@@ -579,8 +579,6 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
   </tr>
 </table>
 
-음악 크레딧: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
-
 <!-- b7:section:end -->
 
 <a id="b8"></a>
