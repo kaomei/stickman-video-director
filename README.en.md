@@ -575,7 +575,7 @@ Small pixels, big consequences. A white stick-figure cast turns everyday choices
   </tr>
   <tr>
     <td align="center">Pixel character animation · Game-inspired music & SFX</td>
-    <td align="center">Pixel animation · Story-driven SFX</td>
+    <td align="center">Brian voiceover · Story-driven SFX · Typewriter quote ending</td>
   </tr>
 </table>
 

@@ -575,7 +575,7 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
   </tr>
   <tr>
     <td align="center">픽셀 캐릭터 애니메이션 · 게임 감성 음악과 효과음</td>
-    <td align="center">픽셀 애니메이션 · 이야기 맞춤 효과음</td>
+    <td align="center">Brian 내레이션 · 이야기 맞춤 효과음 · 타이핑 문구로 여운을 남기는 엔딩</td>
   </tr>
 </table>
 
