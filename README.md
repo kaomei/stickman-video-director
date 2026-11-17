@@ -9,7 +9,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Turn raw scripts into high-retention animated explainers in minutes — across 13 battle-tested styles, complete with voiceovers, dynamic camera moves, and sound design.
+Turn raw scripts into high-retention animated explainers in minutes — across 14 battle-tested styles, complete with voiceovers, dynamic camera moves, and sound design.
 
 **No After Effects. No $50/mo SaaS tax. Ship daily without burnout.**
 
@@ -93,7 +93,12 @@ Turn raw scripts into high-retention animated explainers in minutes — across 1
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
 </td>
 <!-- a7:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b7:hero:start -->
+<td width="50%" align="center">
+<strong>Pixel Theater</strong><br>
+<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Pixel Theater" width="90%"></a>
+</td>
+<!-- b7:hero:end -->
 </tr>
 </table>
 
@@ -548,9 +553,39 @@ Expressive meme faces, loose hand-drawn lines and soft colors turn unusual stori
 
 ---
 
+<!-- b7:section:start -->
 <a id="b7"></a>
 
-### B7: Coming soon…
+### B7: Pixel Theater
+
+Small pixels, big consequences. A white stick-figure cast turns everyday choices into playful little game worlds, where a button press, a missed chance, or one careless answer can change everything.
+
+- **Visual identity**: Crisp pixel art, expressive white characters, and scene-specific color palettes—no blurred edges or smooth-vector substitutes.
+- **Story in motion**: Characters, props, and scenery bring the story to life. A closing reflection, pixel keystrokes, subtle motion, softly pulsing text, and fitting music let the ending linger.
+- **Best for**: Choice-driven stories, ironic life lessons, dark comedy, and emotional fables with a game-like twist.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Demo 1: What happens when you keep saying “I don’t care”?</th>
+    <th width="50%" align="center">Demo 2: Don’t fast-forward your life</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="Demo 1: What happens when you keep saying “I don’t care”?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Demo 2: Don’t fast-forward your life" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Pixel character animation · Game-inspired music & SFX</td>
+    <td align="center">Pixel animation · Story-driven SFX</td>
+  </tr>
+</table>
+
+Music credits: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
+
+<!-- b7:section:end -->
+
+<a id="b8"></a>
+
+### B8: Coming soon…
 
 New Code Engine styles and procedural animations are in preparation. [Star the project](#road-to-10000-stars--creator-ecosystem) to follow future updates.
 

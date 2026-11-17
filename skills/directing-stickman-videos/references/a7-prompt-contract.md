@@ -1,6 +1,8 @@
 # A7 · Four-block prompt contract
 
-Read [production](rubber-hose.md) and [acceptance](a7-acceptance.md). The authoritative strings are [approved-prompt-lock.json](../assets/a7/approved-prompt-lock.json). Copy Blocks 1 and 2 exactly into every standalone prompt. The “about 2 pixels wide at 360p” wording describes relative thinness; output resolution is a separate setting. Do not change it to a thick filled spine at 720p.
+Read [production](rubber-hose.md), [acceptance](a7-acceptance.md) and the shared [source-to-edit production contract](a-production-and-review.md). The authoritative strings are [approved-prompt-lock.json](../assets/a7/approved-prompt-lock.json). Copy Blocks 1 and 2 exactly into every standalone prompt. The “about 2 pixels wide at 360p” wording describes relative thinness; output resolution is a separate setting. Do not change it to a thick filled spine at 720p.
+
+Keep audio routing in a separate [A audio timeline plan](a-audio-timeline-and-review.md), without changing the frozen visual blocks. Footage intended for external music/VO must not request those tracks per video clip; specify native speech only for explicitly approved synchronized dialogue. SFX cues remain tied to the retained actions.
 
 ## Block 1 — fixed character
 
@@ -26,7 +28,7 @@ A small 1930s post office: a finely inked timber service counter, pigeonhole mai
 
 ## Block 4 — variable timed action and camera
 
-Write a causal performance with anticipation, action, consequence and reaction, using purposeful framing. State the important grips, releases, foot contacts and prop states; keep head/neck/limb connections and the narrow spine stable. Timing follows the actual requested duration and readable action. Four beats were useful in these ten-second tests, not a required shot quota.
+Write a causal performance with anticipation, action, consequence and reaction, using purposeful framing. State the important grips, releases, foot contacts and prop states; keep head/neck/limb connections and the narrow spine stable. Timing follows the actual supported source duration and readable action. Map retained source ranges to the approved final timeline; one source may contain several edited shots, and its unused parts can be discarded. Four beats were useful in these ten-second tests, not a required shot quota.
 
 This is the **exact action block from the same accepted test**:
 
@@ -44,4 +46,4 @@ Both examples contain the same short production introduction and exact frozen Bl
 
 For a new prompt, retain Blocks 1/2 exactly, change the scene/action and adjust the introduction/settings to the approved brief. Review all four blocks for contradictions, impossible contacts, overloaded beats, yellow faces, filled torsos, smooth shading or dramatic lighting. If a prompt limit prevents the complete fixed blocks, resolve the tool limitation rather than silently dropping them.
 
-For Director prompt-only delivery, supply all four fully expanded blocks, output settings, intended text/audio and the reference image with its input role; no unresolved placeholders or “same character/style as above”. For execution, follow the [reference-input procedure](rubber-hose.md#bundled-references-and-actual-model-inputs), record the actual image/input identity and exact submitted text, and stay within the user's existing generation/upload/download permissions. A new still or low-resolution test is not compulsory before using this successful direct-video route.
+After storyboard approval, supply all four fully expanded blocks, output settings, intended text/audio and the reference image with its input role as an independently usable prompt package; no unresolved placeholders or “same character/style as above”. Follow the [A unified workflow](mode-execution-boundaries.md#a-unified-workflow) to offer optional browser generation after that handoff. For execution, follow the [reference-input procedure](rubber-hose.md#bundled-references-and-actual-model-inputs), record the actual image/input identity and exact submitted text, and stay within the user's existing generation/upload/download permissions. A new still or test for every location is not compulsory before using this successful direct-video route. An initial representative trial, when authorized, uses the selected model’s lowest available resolution; full production then follows the accepted trial and confirmed final resolution/total credit budget, reusing existing equivalent approvals.

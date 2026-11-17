@@ -9,7 +9,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-生の原稿からわずか数分で高維持率の解説アニメへ —— 実戦検証済みの13種類の画風、ナレーション、カメラワーク、効果音まで完全自動。
+生の原稿からわずか数分で高維持率の解説アニメへ —— 実戦検証済みの14種類の画風、ナレーション、カメラワーク、効果音まで完全自動。
 
 **面倒な動画編集・アニメ付けは不要。月額50ドルのSaaS税もゼロ。毎日投稿を、もっと楽に。**
 
@@ -93,7 +93,12 @@
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · ラバーホース・アニメーション" width="90%"></a>
 </td>
 <!-- a7:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b7:hero:start -->
+<td width="50%" align="center">
+<strong>ピクセルシアター</strong><br>
+<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · ピクセルシアター" width="90%"></a>
+</td>
+<!-- b7:hero:end -->
 </tr>
 </table>
 
@@ -548,9 +553,39 @@ Memeらしい大げさな表情、ラフな手描き線、柔らかな色彩で�
 
 ---
 
+<!-- b7:section:start -->
 <a id="b7"></a>
 
-### B7: 近日公開…
+### B7: ピクセルシアター
+
+小さなピクセルが、思いがけない結末を描きます。白い棒人間が迷い、ボタンを押し、チャンスを逃す。「どうでもいい」のひと言で、ゲームのような世界が変わり始めます。
+
+- **ビジュアル**: くっきりしたピクセル、表情豊かな白いキャラクター、場面ごとの配色。ぼかしや滑らかなベクター表現に頼りません。
+- **物語の演出**: 人物・道具・背景が連動して物語を描きます。結末は短い言葉とレトロな打鍵音、ささやかな動き、穏やかに明滅する文字と音楽で余韻を残します。
+- **おすすめの題材**: 選択で変わる物語、皮肉な人生訓、ブラックコメディ、ゲーム感覚の心に響く寓話。
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">制作例 1：「どうでもいい」と言い続けたら？</th>
+    <th width="50%" align="center">制作例 2：人生を早送りしないで</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="制作例 1：「どうでもいい」と言い続けたら？" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="制作例 2：人生を早送りしないで" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">ピクセルキャラクターの演技 · ゲーム風の音楽と効果音</td>
+    <td align="center">ピクセルアニメーション · 物語に合わせた効果音</td>
+  </tr>
+</table>
+
+音楽クレジット: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
+
+<!-- b7:section:end -->
+
+<a id="b8"></a>
+
+### B8: 近日公開…
 
 新しい Code Engine の画風とコードアニメーションを準備中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、今後の更新をチェックしてください！
 

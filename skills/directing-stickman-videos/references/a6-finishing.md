@@ -2,6 +2,8 @@
 
 Only A6 uses this profile. Preserve A1–A5/B voice, caption and rendering rules. This standard captures the approved complete film, not its story-specific text, actor's outfit, shot timings or personal watermark.
 
+Use the [A audio timeline contract](a-audio-timeline-and-review.md) for source-to-final cue mapping, continuous music, native-dialogue binding when applicable and actual final-file listening. This preserves the A6-specific Puck narration profile below.
+
 ## Independent narration and edit
 
 - Use **Gemini TTS · Puck** for default English narration, with a curious, exploratory storytelling delivery: engaged and inviting, clear natural articulation, slight intrigue on the opening question, unhurried realization at the payoff. Avoid a flat announcer, exaggerated advertising, growling or forced whispers. Keep one continuous narrator identity across the film. Honor explicit language/voice choices.

@@ -31,9 +31,9 @@ Resolve the guidance language using the priority above, then select its README f
 | tr | Turkish | [README.tr.md](https://github.com/kaomei/stickman-video-director/blob/main/README.tr.md) |
 | id | Indonesian | [README.id.md](https://github.com/kaomei/stickman-video-director/blob/main/README.id.md) |
 
-Append `#a-styles` for the Director catalog and `#b-styles` for the Autopilot catalog; these anchors are shared by every listed edition. Localize the visible link labels as well as choosing the right destination. For an unsupported language, keep the guidance and link labels in that language but use `README.en.md` for the catalog. Do not invent a translated filename or anchor, or silently fall back to Chinese.
+Append `#a-styles` for the Model Engine catalog and `#b-styles` for the Autopilot catalog; these anchors are shared by every listed edition. Localize the visible link labels as well as choosing the right destination. For an unsupported language, keep the guidance and link labels in that language but use `README.en.md` for the catalog. Do not invent a translated filename or anchor, or silently fall back to Chinese.
 
-For example, English guidance links to [Director styles and samples](https://github.com/kaomei/stickman-video-director/blob/main/README.en.md#a-styles) and [Autopilot styles and samples](https://github.com/kaomei/stickman-video-director/blob/main/README.en.md#b-styles), even on a Chinese-language host. The Chinese welcome below uses the Chinese edition because its guidance is Chinese; do not copy its destinations unchanged into other languages.
+For example, English guidance links to [Model Engine styles and samples](https://github.com/kaomei/stickman-video-director/blob/main/README.en.md#a-styles) and [Autopilot styles and samples](https://github.com/kaomei/stickman-video-director/blob/main/README.en.md#b-styles), even on a Chinese-language host. The Chinese welcome below uses the Chinese edition because its guidance is Chinese; do not copy its destinations unchanged into other languages.
 
 Adapt this Chinese example to the actual environment and installation status:
 
@@ -41,27 +41,29 @@ Adapt this Chinese example to the actual environment and installation status:
 
 给我一个话题、需求、文章链接或故事脚本，就可以开始。**不用先写好完整文案**，我会帮你整理内容，再按你选的模式往下做。一次安装即可使用下面两种模式。
 
-**画风在这里选择：**[导演模式画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#a-styles) · [全自动模式画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#b-styles)。打开看样片，选好后把画风编号（如 **A3** 或 **B1**）告诉我即可，不用下载画风包或重新安装。
+**画风在这里选择：**[模型引擎画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#a-styles) · [全自动模式画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#b-styles)。打开看样片，选好后把画风编号（如 **A3** 或 **B1**）告诉我即可，不用下载画风包或重新安装。
 
-#### A · 导演模式：先拿分镜和提示词，自己掌控生成与剪辑
+#### A · Model Engine（模型引擎）：分镜与提示词，或由 Agent 连续制作
 
 - **适合做什么**：TikTok / Shorts、反转短剧、需要人物互动和具体动作的故事；可以先做 30 秒，也适合 1～3 分钟短片。
-- **你会拿到什么**：故事提案、分段旁白、画面分镜，以及可以逐条复制使用的视频生成提示词。
-- **需要准备什么**：在支持 Skill 的 AI 助手里和我沟通；生成视频时使用 Google Flow 等工具，最后在剪映等软件里完成剪辑。写提案和提示词不需要先配置 API。
-- **怎么进行**：给话题和需求 → 我给故事提案 → 你确认或修改 → 按需确认人物三视图 → 我给逐段分镜提示词 → 你生成片段并剪辑。
+- **你会拿到什么**：普通聊天交付故事提案、画面分镜和可独立使用的逐段提示词；具备工具的 Agent 还可继续制作完整视频，交付本地预览。
+- **需要准备什么**：普通聊天只拿分镜和提示词，无需配置生成工具。Agent 自动制作默认用内置浏览器打开 Google Flow，现有 A 样片来自 Flow；需要浏览器操作、文件与剪辑能力，以及已登录且有可用额度的 Flow 账号。我会先检查已有配置与授权，缺少什么就明确说明。
+- **怎么进行**：确认故事、画风、比例、时长和声音需求 → 确认分镜方案 → 拿到独立提示词。生成素材与剪辑镜头分开安排，素材长短按剧情和模型能力选择，可拆剪拼接，保留你要求的成片时长。你可以自行生成，也可以让我用内置浏览器操作 Flow，先以所选模型可用的最低分辨率做少量代表片段测试。效果满意、想继续出片时，再确认成片分辨率、总积分上限与执行范围，随后连续完成生成、针对性返修、剪辑、字幕、声音和本地预览，不用逐段提醒。
 
 **可选：先定人物，再做分镜。** 想让人物更一致，或做专属形象的视频，可以先设计符合所选画风的火柴人，确认三视图（正面、侧面、背面）。已有确认的角色参考图可直接复用，不需要定制时可跳过。生成每段视频时，在支持参考图的工具中都附上已确认的角色图；参考图是额外辅助，不替代原有提示词，也不改变画风规则，最终仍需检查各段人物是否一致。
 
 可以直接这样说：
 
 ```text
-使用导演模式/A模式，把下面的话题、文案或需求做成火柴人视频：
+使用模型引擎/A模式，把下面的话题、文案或需求做成火柴人视频：
 [填写话题、粘贴文案，也可以直接描述需求]
 需求：横屏 16:9，采用 A3「史前洞穴风」，先做 30 秒。
 先给我导演提案，确认后再输出逐段视频提示词。
 ```
 
 如需专属角色，可以再补一句：“先帮我设计符合所选画风的火柴人，确认三视图，再给分镜提示词。”
+
+拿到提示词后，如需继续制作，可以说：“请用内置浏览器打开 Google Flow，检查当前模型、登录与额度，先用该模型可用的最低分辨率做少量代表片段测试，说明测试范围和预计消耗，等我确认后再生成。测试满意后，再和我确认成片分辨率、含返修的总积分上限与执行范围，然后连续制作到完整成片和本地预览。”已有明确授权时直接沿用，不重复询问；不需要代操作时，独立提示词包就是完整交付。
 
 #### B · 全自动模式：确认样片后，自动做完整视频
 
@@ -111,21 +113,25 @@ The example is not a canned claim: report only checks actually completed, insert
 
 These are stage handoffs, not per-command logs or recurring reminders. When no user action is needed and the next step is authorized, continue doing it in the same turn. Stop only at the mode's existing approval gates or a genuine blocker. Do not ask permission again for every scene, file or command. At an approval gate, name what is being approved; a generic "continue" must not silently become approval of an unseen sample or new costs.
 
-## A · Director handoffs
+## A · Model Engine（模型引擎） handoffs
 
-The table and optional-reference sections below retain the A1–A5 workflow. When A6 is selected, use [A6 selection and production guidance](amber-noir.md) instead. Do not present its execution-route explanation before selection or replay the generic welcome afterward.
+For sound planning, apply the [independent A audio timeline and listening contract](a-audio-timeline-and-review.md); for joins, apply [action and camera continuity](a-production-and-review.md#action-and-camera-continuity), including insert entry and return.
+
+All A1–A7 styles follow the [shared A workflow](mode-execution-boundaries.md#a-unified-workflow) and [production/review contract](a-production-and-review.md). Use the selected style’s visual, prompt and acceptance rules within that workflow: A6 adds [its production guidance](amber-noir.md), and A7 adds [production](rubber-hose.md), [frozen prompts](a7-prompt-contract.md) and [acceptance](a7-acceptance.md); sample lyrics remain optional. Do not ask users to choose a delivery route upfront or replay the generic welcome after selection.
 
 | Stage | What to explain / next action |
 |---|---|
-| Brief | Reuse source, ratio and style/theme already supplied. Ask for missing required items together. Duration defaults to 60 seconds under the existing Director contract. Do not require Node, FFmpeg, an API key or service login merely to produce a proposal or prompts. |
-| Proposal | Deliver the current storyboard, narration and visual/voice plan. Say that approval of this proposal is still needed; invite a specific change or confirmation, then stop. Topic approval is not proposal approval. |
-| Prompt package | After approval, deliver independently usable clip prompts and stitching guidance. Explain that these are prompts, not generated video files. Next, the user generates clips in a supported video tool and edits/assembles them; offer targeted help if a clip needs correction. |
+| Brief | Reuse supplied story/source, style, ratio, duration and sound choices. Ask for the missing essentials together, using a proposed 60-second target only if no duration was given. Do not round it to a fixed clip multiple or require Node, FFmpeg, an API key or login merely to plan or deliver prompts. |
+| Proposal | Deliver the current storyboard with final edited-shot timing, source-generation groups/durations and retained ranges, visual/reference plan and approved sound needs. Narration is included when wanted. Ask for approval of this concrete plan, then stop; topic approval is not storyboard approval. |
+| Prompt package | After plan approval, deliver complete independent source-generation prompts, reference-image input roles and retained-range/edit/settings guidance. One source can supply several edited shots; prompt count is not a fixed division of runtime. This is a valid complete handoff for self-generation. Then offer optional help operating the video platform through the built-in browser; do not silently spend credits or require login to receive prompts. |
+| Optional trial | If wanted, default to Google Flow in the built-in browser; current A samples were made there. Check the actual selected model, available durations, lowest supported available resolution, login, quota and required tools. Propose a small representative test and estimated consumption, then run only within its authorization. Show the actual preview for review; do not make every scene repeat a still-frame and low-resolution test gate. |
+| Full production | Once the test is accepted and the user wants a finished video, confirm final resolution, total credit cap including repairs and the execution scope. Reuse valid existing approvals when they already cover these choices. Continuously generate, inspect, repair the affected parts, edit and finish approved subtitles/sound, then deliver the video, local preview and folder. No per-shot reminders or repeated permission within the confirmed scope; stop for a real blocker or proposed scope/cost change. |
 
-Keep all existing setup, style, voice and revision rules unchanged. A global change returns to the proposal gate; explain what changed instead of restarting already valid setup.
+Keep each style’s visual/voice anchors, reference-input rules and valid prior approvals; change scenes, actions and motivated camera work with the story. Generated footage and edited shots are separate: choose source lengths from the story and actual model capabilities, then trim/join selected ranges while preserving the requested final runtime. Eight-, ten- or fifteen-second examples are not universal requirements. Save prompts, actual reference identities, settings, job IDs, usable takes, edit mapping and review status in the project checkpoint. Limit ineffective retries, inspect actual acting/camera/sound, and repair only affected ranges and joins. Explicitly user-confirmed samples are reusable baselines, not a reason for repeated generation or review. A material plan change returns only the affected plan to approval; do not restart valid setup. Missing browser/generation access leaves prompt delivery available and must not be presented as a missing prompt prerequisite.
 
 ### Optional A character references
 
-Character references are optional support for stronger visual consistency or a personalized character, not a new setup requirement for all A users. Explain the option in first-use guidance; if the user has not chosen it, continue the ordinary Director workflow without blocking on a three-view sheet or adding an approval gate. This section is A-only; it does not impose a reference workflow on B.
+Character references are optional support for stronger visual consistency or a personalized character, not a new setup requirement for all A users. Explain the option in first-use guidance; if the user has not chosen it, continue the ordinary Model Engine workflow without blocking on a three-view sheet or adding an approval gate. This section is A-only; it does not impose a reference workflow on B.
 
 When chosen, help define a character within the selected A style's permitted variations and confirm front, side and back views before delivering final clip prompts. Reuse suitable user-approved references rather than requiring new images. Include the character/reference plan in Phase A; a reference that changes an already approved global design follows the existing proposal-revision rule. Keep fixed style anchors, anatomy and character constraints intact: do not silently override them to copy an incompatible reference. Explain any conflict and resolve it with the user.
 
@@ -139,7 +145,7 @@ When A5 / Style 5 / Historical Cartoon is selected, proactively give this recomm
 
 > 使用 A5 时，建议你先自行生成人物三视图（正面、侧面、背面），确认满意后，再做视频。在支持参考图的视频工具里，生成每段视频时，都把角色参考图和该段完整分镜提示词一起提交。只靠文字提示词，人物一致性可能不够稳定；参考图有助于保持形象，但不能保证完全一致。已有满意的角色图可以直接复用。
 
-Explain that this is recommended, not a new mandatory setup or approval gate. If the user prefers text-only or skips character design, briefly acknowledge the consistency limitation and continue the existing Director workflow. Once this choice is known, do not repeatedly ask or repeat the warning at every clip. Suggest three views again only for a new character or a material design change.
+Explain that this is recommended, not a new mandatory setup or approval gate. If the user prefers text-only or skips character design, briefly acknowledge the consistency limitation and continue the existing Model Engine workflow. Once this choice is known, do not repeatedly ask or repeat the warning at every clip. Suggest three views again only for a new character or a material design change.
 
 The default A5 behavior is advice only: remind the user to generate their own reference images. Do not bundle or supply reference images, automatically generate them, require an upload, or wait for a three-view approval before delivering the ordinary proposal and prompts. Generate or review references only when the user explicitly requests that additional work; that request does not waive the host's generation permissions or cost approval. Reuse suitable approved character images when the user provides them instead of requiring new ones. This A5-specific boundary takes precedence over the general optional-reference help above.
 
@@ -195,6 +201,6 @@ Deliver MP4, subtitle sidecars and project/checkpoint paths with a short verific
 
 ## Optional finishing after video approval
 
-For both modes, apply [Thumbnail & Publishing Kit](thumbnail-publishing-kit.md) after the user confirms the final video, or when they explicitly request packaging. Offer it once in the conversation language, unless already accepted, declined or deferred. Do not offer it merely because a proposal, A prompt package or B sample was approved, or a render passed technical checks. For A, the external edit is complete only when the user says so; request the final cut/timeline only if needed for the requested checks or timestamps, not to make the optional offer. For B, delivery of an MP4 is not final user acceptance.
+For both modes, apply [Thumbnail & Publishing Kit](thumbnail-publishing-kit.md) after the user confirms the final video, or when they explicitly request packaging. Offer it once in the conversation language, unless already accepted, declined or deferred. Do not offer it merely because a proposal, A prompt package or B sample was approved, or a render passed technical checks. For A self-generation, the external edit is complete only when the user says so; request the final cut/timeline only if needed for the requested checks or timestamps, not to make the optional offer. For A Agent production, likewise wait for user acceptance of the delivered final video; prompt or trial approval is not final-film acceptance. For B, delivery of an MP4 is not final user acceptance.
 
 Use a short handoff such as: “这版视频确认没问题了。要不要顺便生成匹配当前画风的封面，以及标题、简介、置顶评论和发布前检查清单？” If the user explicitly requests packaging earlier, use the approved script for drafts and mark final-cut-dependent items pending. Skipping ends the task normally and never withholds the video. Keep all production, revision and cost approvals unchanged.

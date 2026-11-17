@@ -1,6 +1,6 @@
 # Complete Example
 
-Load this reference only when a concrete end-to-end example resolves ambiguity. Reuse its workflow and level of detail, not its topic, wording, metaphors, or palette.
+Load this reference only when a concrete end-to-end example resolves ambiguity. Reuse its workflow and level of detail, not its topic, wording, metaphors, or palette. This is a historical six-clip, ten-seconds-per-clip example, not a required runtime, model, resolution or frame-rate preset. Apply the [shared A workflow](mode-execution-boundaries.md#a-unified-workflow) and adapt segment timing to the approved story and actual chosen platform/model capabilities; do not round a new film to ten-second multiples.
 
 All examples follow the shared `voice-continuity.md` contract. Freeze one complete profile per video; different examples may choose different voices. The male block has user listening acceptance for the separate Style 2A Hope test; the female profile below is an illustrative adaptation, not a provider-tested voice. Visual examples are unchanged by this voice-only update.
 
@@ -46,9 +46,9 @@ User: “16:9，60秒，黑底白火柴人。”
 | 40–50s | 行动爆发 | **0–3s：** 碎片移开，A 抓住藤蔓，金色能量沿双臂流动。**3–7s：** A 扯断藤蔓，碎片向右爆开。**7–10s：** 发送图标、空白文档和金色行动路径通过匹配剪辑连接，A 抬起右脚。 | 快速推近、镜头震动、能量传播、藤蔓爆裂、三次匹配剪辑和悬停脚步。下一段由同一只脚落地。 | So interrupt the loop. Choose one tiny move and do it now. Send the message, open the document, take the first imperfect step. | 打断这个循环。现在就选择一个微小动作：发出消息、打开文档，迈出并不完美的第一步。 | BGM 切到 108 BPM；能量声、断裂声、发送提示、键盘声和蓄力脚步。 |
 | 50–60s | 释放、成长与 CTA | **0–3s：** 右脚落地产生金色冲击波，紫色线团炸成金星。**3–7s：** 地面折成由左下通往右上的山路，A 开始攀登，紫色影子消散。**7–10s：** 镜头拉远，A 走向金色地平线，中心右侧保留干净留白。 | 落脚冲击、满屏波纹、星点粒子、纸张折山、对角跟拍和远景拉出。最后保持金色道路与后期 CTA 安全区。 | The moment you move, fear loses power. Stop waiting to feel ready. Try, make mistakes, grow—and prove your thoughts do not control your life. | 当你开始行动，恐惧就会失去力量。别再等待准备好的感觉。去尝试、去犯错、去成长，证明思想无法控制你的人生。 | 强鼓点、冲击波、星光、折纸、攀爬脚步和坚定收束音。 |
 
-**可选后期文字叠加：** Clip 2 在安全区加入 “WHAT IF?”；Clip 6 在中心右侧加入 “STOP OVERTHINKING. START MOVING.”。两处文字均在剪辑阶段添加，不进入 Omni Flash 视频生成提示词。
+**可选后期文字叠加：** Clip 2 在安全区加入 “WHAT IF?”；Clip 6 在中心右侧加入 “STOP OVERTHINKING. START MOVING.”。两处文字均在剪辑阶段添加，不进入视频生成提示词。
 
-Assistant: “请确认当前导演预案，或指定要修改的场景、旁白、尺寸、主题、配色、声音或语气。确认后我再生成六条 Omni Flash 提示词。”
+Assistant: “请确认当前导演预案，或指定要修改的场景、旁白、尺寸、主题、配色、声音或语气。确认后我再交付本例的六条独立视频提示词；是否需要帮你在内置浏览器里做少量低分辨率测试，可以在拿到提示词后再决定。”
 
 User: “确认。”
 
@@ -66,9 +66,11 @@ So interrupt the loop. Choose one tiny move and do it now. Send the message, ope
 
 The moment you move, fear loses power. Stop waiting to feel ready. Try, make mistakes, grow—and prove your thoughts do not control your life.
 
-## Phase B — Omni Flash Production Package
+## Phase B — Example Production Prompt Package
 
 ### Global continuity block
+
+The following 720p/24 FPS settings describe the example’s targets. They are not evidence that a currently selected tool exposes those controls; verify current settings before any authorized generation. A representative test uses the actual selected model’s lowest supported available resolution, and final resolution/total credit cap are confirmed separately before full production.
 
 - Six approximately ten-second clips; 16:9 horizontal; 720p target; 24 FPS; synchronized audio.
 - Pure black background with white stick figures and white line art.

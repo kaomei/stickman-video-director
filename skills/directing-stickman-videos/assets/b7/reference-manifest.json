@@ -1,0 +1,285 @@
+{
+  "schema_version": 2,
+  "style": "B7",
+  "name": "像素剧场风 / Pixel Theater",
+  "status": "approved_reference_pack",
+  "guide": "../../references/b7-pixel-theater.md",
+  "approval_date": "2026-11-12",
+  "authority_order": [
+    "explicit_user_choices",
+    "approved_white_c_identity",
+    "approved_original_b7_motion"
+  ],
+  "source_film": {
+    "filename": "B5-Paths-Brian-Full-v5-Game-BGM.mp4",
+    "sha256": "8581ffb74cadda06888a66431711052a6decb93bc3ca9711c1c144aded281dea",
+    "duration_seconds": 49.318115,
+    "logical_canvas": [
+      320,
+      180
+    ],
+    "output_canvas": [
+      1920,
+      1080
+    ],
+    "source_animation_fps": 24,
+    "approved_speed_multiplier": 1.1,
+    "effective_frame_rate": "132/5",
+    "role": "Historical Paths V5 source for drawing identity and the three silent excerpts; superseded for whole-film action, ending and sound acceptance by the complete V6/V11 examples."
+  },
+  "provenance": "Original code-rendered B7 works approved by the user. Historical silent excerpts remain; the two latest complete accepted reference films are bundled unchanged with mixed sound and attribution. No separate voice/music assets or third-party reference video are supplied.",
+  "renumbering": {
+    "previous_style": "B5",
+    "current_style": "B7",
+    "effective_date": "2026-11-09",
+    "publication": "Repository tags and Releases determine public publication; this reference manifest records approved content only.",
+    "historical_source_filenames_preserved": true
+  },
+  "example_not_default": {
+    "narrator": "Brian",
+    "music": "Underclocked (underunderclocked mix)",
+    "duration_and_timestamps": "Example-specific, not a reusable story template."
+  },
+  "implementation": {
+    "path": "../../scripts/b7_pixel_primitives.py",
+    "sha256": "b437df64ef49cb8ffd70bd0d05b4fe951df6bdb60d18727f739d9ff18fe6011f",
+    "tests": "../../tests/b7_pixel_primitives_test.py",
+    "requirements": [
+      "Python >=3.9",
+      "Pillow >=9.1"
+    ],
+    "provenance": "Extracted from the accepted film's pixel_tools, character_core and preview_v4 actor code; original historical B5 names refer to the work now numbered B7.",
+    "capabilities": [
+      "Exact Latin bitmap alphabet and shadow",
+      "Integer nearest-neighbor scaling",
+      "Single-line caption fit checks and explicit custom glyphs",
+      "White-C pose geometry, fixed-length IK and named prop/contact anchors"
+    ],
+    "not_included": [
+      "Walk-cycle timing",
+      "Story scenery and accessory library",
+      "Shared story/audio event engine",
+      "Speech or music assets",
+      "Universal B7 CLI renderer"
+    ]
+  },
+  "ending_implementation": {
+    "path": "../../scripts/b7_reflective_ending.py",
+    "sha256": "e4dd46914dbfd77fcfe3fb82c3c292f481ce9d104c566acd677073f064483d2f",
+    "tests": "../../tests/b7_reflective_ending_test.py",
+    "requirements": [
+      "Python >=3.9",
+      "Pillow >=9.1",
+      "Bundled b7_pixel_primitives.py"
+    ],
+    "capabilities": [
+      "Shared glyph/frame/PCM trigger plan",
+      "Fractional-rate exact sample timing",
+      "Fixed full-line bitmap origins",
+      "Gentle completed-text pulse without repeated ticks",
+      "Deterministic softened mechanical key PCM"
+    ],
+    "not_included": [
+      "Story scenery",
+      "Music or voice assets",
+      "Whole-film audio/story engine"
+    ]
+  },
+  "accepted_benchmark": {
+    "filename": "B7-Fast-Forward-Brian-Full-v11.mp4",
+    "sha256": "5aa572a5efc3855ec0455523664c0c23bd5e9d8a6337c04ed53869c40e50ae90",
+    "accepted_date": "2026-11-11",
+    "duration_seconds": 47.5,
+    "frame_rate": "24/1",
+    "voice_rate": "Native; not the original Paths sample's approved 1.1x",
+    "standards": [
+      "Varied causal framing and control close-ups",
+      "Fixed-geometry actor performance, no control crushing the actor",
+      "Audible speech-first whole-film music and causal SFX",
+      "Story-specific small typewriter reflection, synced keys, gentle pulse, meaningful final gesture"
+    ],
+    "media_bundled": true,
+    "limitations": "Already accepted finished reference film, not proof of automatic new-story equivalence. Mixed voice/music are reference-only; narration, rain scene, quote, tempo and soundtrack are not universal defaults.",
+    "path": "approved-v6-v11/fast-forward-v11-full.mp4",
+    "credit": "approved-v6-v11/fast-forward-v11-MUSIC-CREDITS.txt"
+  },
+  "images": [
+    {
+      "path": "professions-approved.png",
+      "sha256": "7a4a7f100b43ab8d859f8b34b2a133184b7e39fdc8ede10491ffb2ffcbcde535",
+      "width": 1216,
+      "height": 1312,
+      "purpose": "Fixed white-C character proportions and 1-2 occupation accessories."
+    },
+    {
+      "path": "approved-film-board.png",
+      "sha256": "1ab9421099efeb48c942d0291f57b591d38f34c0b67b0a5dd7f94d7f254d9bbb",
+      "width": 960,
+      "height": 888,
+      "purpose": "Approved story-specific composition, contrast and payoff examples."
+    }
+  ],
+  "motion": [
+    {
+      "path": "choices-and-noodles.mp4",
+      "sha256": "d8acd5a39d6fa482eafc17b7fc7476fcdfeb196791e45858ab9cc421d2a79134",
+      "width": 640,
+      "height": 360,
+      "frame_rate": "317/12",
+      "duration_seconds": 9.501577,
+      "source_start_seconds": 0,
+      "source_end_seconds": 9.5,
+      "audio": false,
+      "purpose": "Clear A/B/C choices, prop performance, deletion and reaction."
+    },
+    {
+      "path": "button-and-years.mp4",
+      "sha256": "d9f7be8f294b19b655d7f838fe1131b9803cfbd4ff0a291a37d7ad4b5b09f793",
+      "width": 640,
+      "height": 360,
+      "frame_rate": "317/12",
+      "duration_seconds": 9.993691,
+      "source_start_seconds": 25.0,
+      "source_end_seconds": 35.0,
+      "audio": false,
+      "purpose": "White button text on dark cap, contact/press and calendar consequence."
+    },
+    {
+      "path": "ocean-payoff.mp4",
+      "sha256": "9e876a1fafe3ab766b82d129566e904b16cfa28bda5368b82b4c8bf59aad2bce",
+      "width": 640,
+      "height": 360,
+      "frame_rate": "317/12",
+      "duration_seconds": 6.81388,
+      "source_start_seconds": 42.5,
+      "source_end_seconds": 49.318,
+      "audio": false,
+      "purpose": "Connected blue path, shoreline and wave return; no floating foam icon."
+    }
+  ],
+  "limitations": [
+    "No B7 manifest/CLI renderer is added by this pack; use its verified project-local code workflow.",
+    "Hashes, decoding and relocation do not prove new-story creative quality or listening.",
+    "Complete-film format acceptance is 16:9; the separate 9:16 v3 reference validates only its ten-second native layout and short captions.",
+    "User acceptance refers to the recorded historical versions; a new film requires its own actual full-speed picture/sound review."
+  ],
+  "accepted_paths": {
+    "filename": "B7-Paths-Brian-Full-v6.mp4",
+    "sha256": "ef34ef602d97502ae295b91d282afe5eea3f69c4ee88855832c7a11e7bb482d8",
+    "accepted_date": "2026-11-12",
+    "duration_seconds": 53.21969696969697,
+    "path": "approved-v6-v11/paths-v6-full.mp4",
+    "credit": "approved-v6-v11/paths-v6-MUSIC-CREDITS.txt",
+    "accepted_scope": "Full picture, sound and story-specific reflective ending. Prior 1.1x retime is example-specific."
+  },
+  "validated_formats": [
+    "16:9"
+  ],
+  "other_formats": "For 9:16 use the accepted ten-second portrait layout/caption reference and native-portrait guide, then independently review each new film. Other formats require separate recomposition and acceptance.",
+  "reference_usage": {
+    "finished_reference_only": true,
+    "not_new_story_output": true,
+    "no_reusable_voice_or_music_stems": true,
+    "attribution": "CREDITS.md",
+    "reference_index": "approved-v6-v11/README.md"
+  },
+  "approved_media": [
+    {
+      "id": "paths-v6-full",
+      "path": "approved-v6-v11/paths-v6-full.mp4",
+      "sha256": "ef34ef602d97502ae295b91d282afe5eea3f69c4ee88855832c7a11e7bb482d8",
+      "width": 1920,
+      "height": 1080,
+      "frame_rate": "317/12",
+      "duration_seconds": 53.22,
+      "audio": true,
+      "accepted_date": "2026-11-12",
+      "source_sha256": "ef34ef602d97502ae295b91d282afe5eea3f69c4ee88855832c7a11e7bb482d8",
+      "source_range_seconds": [
+        0,
+        53.21969696969697
+      ],
+      "credit": "approved-v6-v11/paths-v6-MUSIC-CREDITS.txt",
+      "purpose": "Latest complete approved picture, causal performance, reflective ending and mixed-sound reference."
+    },
+    {
+      "id": "fast-forward-v11-full",
+      "path": "approved-v6-v11/fast-forward-v11-full.mp4",
+      "sha256": "5aa572a5efc3855ec0455523664c0c23bd5e9d8a6337c04ed53869c40e50ae90",
+      "width": 1920,
+      "height": 1080,
+      "frame_rate": "24/1",
+      "duration_seconds": 47.5,
+      "audio": true,
+      "accepted_date": "2026-11-11",
+      "source_sha256": "5aa572a5efc3855ec0455523664c0c23bd5e9d8a6337c04ed53869c40e50ae90",
+      "source_range_seconds": [
+        0,
+        47.5
+      ],
+      "credit": "approved-v6-v11/fast-forward-v11-MUSIC-CREDITS.txt",
+      "purpose": "Latest complete approved picture, causal performance, reflective ending and mixed-sound reference."
+    }
+  ],
+  "text_assets": [
+    {
+      "path": "CREDITS.md",
+      "sha256": "75398d58e644971c526396dcc51390eac2b4fef196f89437418e7156df08553b"
+    },
+    {
+      "path": "approved-v6-v11/README.md",
+      "sha256": "f2eeb1f377b84d8285eca42107f675d595f3c490127c46b4098119ca2c23bc69"
+    },
+    {
+      "path": "approved-v6-v11/paths-v6-MUSIC-CREDITS.txt",
+      "sha256": "964c3eaf30c3d6838487f259bfb08d68611d5166b331e5447e7159d93f07369d"
+    },
+    {
+      "path": "approved-v6-v11/fast-forward-v11-MUSIC-CREDITS.txt",
+      "sha256": "f31c38158d4de9d0f26831a6b925abbfef3dbf7f6402f22732f113dd6eb6a7d3"
+    },
+    {
+      "path": "approved-portrait/README.md",
+      "sha256": "4d6f2063c420e60201c8397c3365181f8b325f517b13d1d9396d851db3d0df99"
+    },
+    {
+      "path": "approved-portrait/reference.json",
+      "sha256": "6f0509e9e1d6e9c0377789fca08d9d76b17cc2c39e9b3e96955ab13b8c6e030b"
+    },
+    {
+      "path": "approved-portrait/captions.json",
+      "sha256": "0fc8636f68ec0666cb214564d2597fa7c2d1a0f410586f38cb61401cffb6f395"
+    },
+    {
+      "path": "approved-portrait/MUSIC-CREDITS.txt",
+      "sha256": "f31c38158d4de9d0f26831a6b925abbfef3dbf7f6402f22732f113dd6eb6a7d3"
+    }
+  ],
+  "validated_formats_scope": "Complete accepted films only; see portrait_layout_reference for the narrower portrait acceptance.",
+  "portrait_layout_reference": {
+    "path": "approved-portrait/fast-forward-portrait-v3-10s.mp4",
+    "sha256": "b0aa0e97c3b74dbccc79b8cde042efaf25e98e98273e78a55be7485524345a8b",
+    "width": 1080,
+    "height": 1920,
+    "frame_rate": "24/1",
+    "duration_seconds": 10,
+    "audio": true,
+    "accepted_date": "2026-11-13",
+    "format": "9:16",
+    "accepted_scope": "10-second native portrait layout and short captions only",
+    "full_portrait_film_approved": false,
+    "record": "approved-portrait/reference.json",
+    "captions": "approved-portrait/captions.json",
+    "guide": "../../references/b7-native-portrait.md",
+    "index": "approved-portrait/README.md",
+    "credit": "approved-portrait/MUSIC-CREDITS.txt"
+  },
+  "portrait_evidence_images": [
+    {
+      "path": "approved-portrait/layout-board.png",
+      "sha256": "3f5e9faff0759093e3ecfea1a5d837a9dd063e7b32bdff066379df22b38c510d",
+      "width": 1080,
+      "height": 816
+    }
+  ]
+}

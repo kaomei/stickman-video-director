@@ -29,7 +29,7 @@ assert "# 🎬 Stickman Video Director" in source
 english_hero = source.split("</div>", 1)[0]
 assert "**Scale your faceless channel with automated stickman animations.**" in english_hero
 english_intro = (
-    "Turn raw scripts into high-retention animated explainers in minutes — across 13 battle-tested styles, complete with voiceovers, dynamic camera moves, and sound design.",
+    "Turn raw scripts into high-retention animated explainers in minutes — across 14 battle-tested styles, complete with voiceovers, dynamic camera moves, and sound design.",
     "**No After Effects. No $50/mo SaaS tax. Ship daily without burnout.**",
 )
 assert "\n\n".join(english_intro) in english_hero, "Approved English introduction and bold formatting"
@@ -37,25 +37,25 @@ assert "For your first video, see the [detailed tutorial on X](https://x.com/Cra
 
 # User-approved hero copy; publication and integration use their actual style counts.
 approved_localized_hero = {'zh-CN': ('**用全自动火柴人动画，规模化量产你的无人出镜频道。**',
-           '几分钟内，通过 13 款实操验证的画风把原始文案变成高完播率动画视频 —— 镜头调度、旁白配音与音效设计一键配齐。',
+           '几分钟内，通过 14 款实操验证的画风把原始文案变成高完播率动画视频 —— 镜头调度、旁白配音与音效设计一键配齐。',
            '**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**',
            '[快速上手](#quick-start) · [样片展厅](#style-gallery) · [常见问题](#faq) · '
            '[路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)',
            '*⭐ 欢迎点亮 Star，第一时间解锁最新画风与功能更新！*'),
  'ja': ('**自動化された棒人間アニメーションで、顔出しなしチャンネルを規模化・量産へ。**',
-        '生の原稿からわずか数分で高維持率の解説アニメへ —— 実戦検証済みの13種類の画風、ナレーション、カメラワーク、効果音まで完全自動。',
+        '生の原稿からわずか数分で高維持率の解説アニメへ —— 実戦検証済みの14種類の画風、ナレーション、カメラワーク、効果音まで完全自動。',
         '**面倒な動画編集・アニメ付けは不要。月額50ドルのSaaS税もゼロ。毎日投稿を、もっと楽に。**',
         '[クイックスタート](#quick-start) · [ショーケース](#style-gallery) · [FAQ](#faq) · '
         '[ロードマップ](#road-to-10000-stars--creator-ecosystem) · [コミュニティ](#community)',
         '*⭐ 次のスタイル追加や新機能を見逃さないよう、ぜひ Star をお願いします！*'),
  'ko': ('**자동화된 스틱맨 애니메이션으로 얼굴 없는 유튜브 채널을 대량 양산하세요.**',
-        '텍스트 원고를 몇 분 만에 높은 시청 지속 시간의 애니메이션 영상으로 —— 검증된 13가지 비주얼 스타일, 나레이션, 카메라 무빙, 사운드 디자인까지 한 번에.',
+        '텍스트 원고를 몇 분 만에 높은 시청 지속 시간의 애니메이션 영상으로 —— 검증된 14가지 비주얼 스타일, 나레이션, 카메라 무빙, 사운드 디자인까지 한 번에.',
         '**복잡한 모션 그래픽 작업 불필요. 매달 50달러의 SaaS 구독료도 제로. 지치지 않고 매일 업로드.**',
         '[빠른 시작](#quick-start) · [쇼케이스](#style-gallery) · [FAQ](#faq) · '
         '[로드맵](#road-to-10000-stars--creator-ecosystem) · [커뮤니티](#community)',
         '*⭐ 저장소를 Star하고 다음 스타일 업데이트와 새로운 기능을 가장 먼저 확인하세요.*'),
  'pt-BR': ('**Escale sua rede de canais dark com animações automatizadas de boneco-palito.**',
-           'Transforme roteiros brutos em animações explicativas de alta retenção em minutos — em 13 estilos '
+           'Transforme roteiros brutos em animações explicativas de alta retenção em minutos — em 14 estilos '
            'testados na prática, com locução, movimentos de câmera e sonoplastia inclusos.',
            '**Chega de sofrer no After Effects. Sem taxa de US$ 50/mês em SaaS. Poste todo dia sem '
            'esgotamento.**',
@@ -64,7 +64,7 @@ approved_localized_hero = {'zh-CN': ('**用全自动火柴人动画，规模化�
            '*⭐ Deixe uma estrela no projeto para acompanhar os próximos estilos e novidades.*'),
  'fr': ("**Industrialisez votre réseau de chaînes sans visage grâce à l'animation automatisée.**",
         'Transformez des scripts bruts en explications animées à haute rétention en quelques minutes — parmi '
-        '13 styles éprouvés, avec voix off, caméra dynamique et design sonore inclus.',
+        '14 styles éprouvés, avec voix off, caméra dynamique et design sonore inclus.',
         '**Oubliez les galères sur After Effects. Fini la taxe SaaS à 50 $/mois. Publiez quotidiennement '
         'sans épuisement.**',
         '[Démarrage](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · '
@@ -72,14 +72,14 @@ approved_localized_hero = {'zh-CN': ('**用全自动火柴人动画，规模化�
         '*⭐ Ajoutez une étoile au projet pour ne manquer aucun nouveau style ni mise à jour.*'),
  'tr': ('**Yüzsüz kanal ağınızı otomatik çöp adam animasyonlarıyla ölçeklendirin.**',
         'Ham metinleri dakikalar içinde yüksek tutunma oranlı animasyonlu açıklamalara dönüştürün — '
-        'kanıtlanmış 13 farklı stil, seslendirme, dinamik kamera ve ses efektleriyle birlikte.',
+        'kanıtlanmış 14 farklı stil, seslendirme, dinamik kamera ve ses efektleriyle birlikte.',
         "**Karmaşık After Effects kurgularına son. Aylık 50$'lık SaaS vergisi yok. Tükenmeden her gün "
         'yayınlayın.**',
         '[Hızlı Başlangıç](#quick-start) · [Vitrin](#style-gallery) · [SSS](#faq) · [Yol '
         'Haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)',
         '*⭐ Yeni stil güncellemelerini ve özellikleri kaçırmamak için projeye Star verin.*'),
  'id': ('**Skalakan jaringan channel tanpa wajah Anda dengan animasi stickman otomatis.**',
-        'Ubah naskah mentah menjadi video animasi beretensi tinggi dalam hitungan menit — dari 13 gaya '
+        'Ubah naskah mentah menjadi video animasi beretensi tinggi dalam hitungan menit — dari 14 gaya '
         'visual teruji, lengkap dengan voiceover, gerakan kamera dinamis, dan efek suara.',
         '**Tanpa ribet animasi After Effects. Tanpa pajak langganan SaaS $50/bulan. Upload tiap hari tanpa '
         'burnout.**',
@@ -114,13 +114,15 @@ def verify_next_style_teasers(text, name, gallery_styles, label):
         assert not re.search(r"\b\d[\d,.\s]*\s*Stars?\b", visible_teaser, re.I), (name, series, "next-style teaser has no numeric Star unlock promise")
 
 expected_images = images(cn)
-assert len(expected_images) == 49 and len(set(expected_images)) == 37
+assert len(expected_images) == 52 and len(set(expected_images)) == 39
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 b6_previews = [
     pinned + "7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/" + filename
     for filename in ("b6-dynamic-meme-eiffel-16x9.gif", "b6-dynamic-meme-hong-kong-v90-20s.gif")
 ]
 local_a6_previews = {
+    "assets/readme/previews/b7-pixel-theater.gif",
+    "assets/readme/previews/b7-fast-forward-excerpt.gif",
     "assets/readme/previews/style-7-rubber-hose.gif",
     "assets/readme/previews/style-7-rubber-hose-2.gif",
     "assets/readme/previews/style-6-amber-noir-mcp.gif",
@@ -180,7 +182,7 @@ for name in selected:
     else:
         locale = name[7:-3]
         assert tuple(hero_blocks[index] for index in (3, 5, 6, 7, 8)) == approved_localized_hero[locale], (name, "exact approved localized hero copy")
-    assert "13" in hero_blocks[5], (name, "actual published style count in introduction")
+    assert "14" in hero_blocks[5], (name, "actual published style count in introduction")
     assert hero_blocks[8].startswith(("⭐ *", "*⭐ ")) and hero_blocks[8].endswith("*"), (name, "italic Star CTA")
     assert "Styles-" not in top and "img.shields.io/badge/Styles" not in top, (name, "removed Styles badge")
     active = "en" if name == "README.md" else name[7:-3]
@@ -260,7 +262,7 @@ for name in selected:
     hero = text.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
     rows = re.findall(r"<tr>(.*?)</tr>", hero, re.S)
     gallery_styles = re.findall(r'href="#([^"]+)"><img', hero)
-    assert gallery_styles == ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 'a4', 'b4', 'style-5', 'b5', 'a6', 'b6', 'a7'], name
+    assert gallery_styles == ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 'a4', 'b4', 'style-5', 'b5', 'a6', 'b6', 'a7', 'b7'], name
     # Owner rule: A1–A7 left, B1–B6 right; final B cell stays empty. No spanning rows.
     assert len(rows) == (len(gallery_styles) + 1) // 2, name
     assert all(row.count('<td width="50%"') == 2 for row in rows), name
@@ -271,7 +273,7 @@ for name in selected:
     if placeholders:
         assert placeholders == [cells[-1]] and "<img" in cells[-2], name
         assert not cells[-1].strip(), (name, "last B cell is empty")
-    assert text.count('width="90%"') == 13 and text.count('width="360"') == 26, name
+    assert text.count('width="90%"') == 14 and text.count('width="360"') == 28, name
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
     card_ids = ["a5" if style == "style-5" else style for style in gallery_styles]
@@ -295,10 +297,10 @@ for name in selected:
     assert "Tested Flow workflow:" not in text and "Click either GIF" not in text, name
     assert "Veo 3.1 Fast" not in a6, (name, "operational model guidance stays in Skill")
     assert "Omni" not in a6, (name, "A6 does not inherit the legacy model")
-    assert "13" in hero_blocks[5], (name, "thirteen published A+B visual styles")
+    assert "14" in hero_blocks[5], (name, "fourteen published A+B visual styles")
     placeholder = section(text, "a8", '<a id="b-styles"></a>')
     assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1, (name, "A8 roadmap CTA retained")
-    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A8 and B7 update links plus roadmap navigation")
+    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A8 and B8 update links plus roadmap navigation")
     b2 = section(text, "b2", '<!-- b3:section:start -->')
     assert len(re.findall(r"^- \*\*", b2, re.M)) == 2, (name, "B2 advantages and use cases")
     assert re.findall(r'<a href="([^"]+\.mp4)">', b2) == ["assets/readme/b2-colorful-sleep.mp4", "assets/readme/b2-colorful-phone-weather.mp4"], (name, "approved B2 pair in requested order")
@@ -364,7 +366,7 @@ for name in selected:
         "id": "hasilnya lebih baik dalam format vertikal",
     }
     assert portrait_terms[active] in b6, (name, "localized portrait preference")
-    assert images(hero)[-2] == b6_previews[0], (name, "B6 homepage preview uses immutable CDN")
+    assert images(hero)[gallery_styles.index("b6")] == b6_previews[0], (name, "B6 homepage preview uses immutable CDN")
     assert images(b6) == b6_previews, (name, "B6 sample previews use immutable CDN")
     for video in b6_videos:
         assert (root / video).is_file(), (name, video)
@@ -381,7 +383,7 @@ for name in selected:
             next_id, _, title = entries[-1]
             assert title == "Coming soon…", (name, series, "placeholder follows the latest released style")
             assert f"### {next_id}: Coming soon…\n\n{teaser}" in text, (name, series, "approved placeholder copy")
-        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Line Art"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV"), ("B4", "Survival Thriller"), ("B5", "Character Explainer"), ("B6", "Dynamic Meme Animation"), ("B7", "Coming soon…")], (name, "approved B style names plus the next-style teaser")
+        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Line Art"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV"), ("B4", "Survival Thriller"), ("B5", "Character Explainer"), ("B6", "Dynamic Meme Animation"), ("B7", "Pixel Theater"), ("B8", "Coming soon…")], (name, "approved B style names plus the next-style teaser")
         assert "<strong>Retro TV</strong><br>" in hero and "Retro TV Style" not in text, (name, "concise English B3 name in gallery and section")
     for variant in ("A1.1", "A1.2", "A2.1", "A2.2"):
         assert variant in text, (name, variant)

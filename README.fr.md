@@ -9,7 +9,7 @@
 [![Étoiles GitHub](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![Licence MIT](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Transformez des scripts bruts en explications animées à haute rétention en quelques minutes — parmi 13 styles éprouvés, avec voix off, caméra dynamique et design sonore inclus.
+Transformez des scripts bruts en explications animées à haute rétention en quelques minutes — parmi 14 styles éprouvés, avec voix off, caméra dynamique et design sonore inclus.
 
 **Oubliez les galères sur After Effects. Fini la taxe SaaS à 50 $/mois. Publiez quotidiennement sans épuisement.**
 
@@ -93,7 +93,12 @@ Transformez des scripts bruts en explications animées à haute rétention en qu
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
 </td>
 <!-- a7:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b7:hero:start -->
+<td width="50%" align="center">
+<strong>Théâtre pixel</strong><br>
+<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Théâtre pixel" width="90%"></a>
+</td>
+<!-- b7:hero:end -->
 </tr>
 </table>
 
@@ -548,9 +553,39 @@ Des expressions de meme, des traits dessinés à la main et des couleurs douces 
 
 ---
 
+<!-- b7:section:start -->
 <a id="b7"></a>
 
-### B7 : Bientôt disponible…
+### B7 : Théâtre pixel
+
+De petits pixels, de grandes conséquences. Des personnages blancs transforment les choix du quotidien en petits mondes de jeu : un bouton pressé, une occasion manquée ou un simple « peu importe » peut tout changer.
+
+- **Identité visuelle**: Un pixel art net, des personnages blancs expressifs et une palette adaptée à chaque scène, sans flou ni imitation vectorielle lissée.
+- **Une histoire en mouvement**: Personnages, objets et décors font vivre le récit. Une courte réflexion finale, des frappes rétro, des mouvements subtils, un texte doucement pulsé et une musique adaptée prolongent l’émotion.
+- **Idéal pour**: Les récits à choix, les leçons de vie ironiques, l’humour noir et les fables sensibles à l’esprit jeu vidéo.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Démo 1 : que se passe-t-il quand on dit toujours « peu importe » ?</th>
+    <th width="50%" align="center">Démo 2 : ne passez pas votre vie en accéléré</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="Démo 1 : que se passe-t-il quand on dit toujours « peu importe » ?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Démo 2 : ne passez pas votre vie en accéléré" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Animation de personnages en pixels · Musique et bruitages inspirés du jeu vidéo</td>
+    <td align="center">Animation en pixels · Bruitages au service du récit</td>
+  </tr>
+</table>
+
+Crédits musicaux: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
+
+<!-- b7:section:end -->
+
+<a id="b8"></a>
+
+### B8 : Bientôt disponible…
 
 De nouveaux styles Code Engine et de nouvelles animations par code sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour suivre les prochaines mises à jour !
 
