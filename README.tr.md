@@ -4,18 +4,18 @@
 
 # 🎬 Stickman Video Director
 
-**Otomatik çöp adam animasyonlarıyla yüzünüzü göstermeden içerik ürettiğiniz kanalınızı büyütün.**
+**Yüzsüz kanal ağınızı otomatik çöp adam animasyonlarıyla ölçeklendirin.**
 
 [![GitHub Yıldızları](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT Lisansı](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Taslak senaryoları dakikalar içinde izleyiciyi ekranda tutan açıklayıcı animasyon videolarına dönüştürün — pratikte denenmiş 13 stil, seslendirme, dinamik kamera hareketleri ve ses tasarımıyla.
+Ham metinleri dakikalar içinde yüksek tutunma oranlı animasyonlu açıklamalara dönüştürün — kanıtlanmış 13 farklı stil, seslendirme, dinamik kamera ve ses efektleriyle birlikte.
 
-**After Effects’e veya aylık 50 dolarlık SaaS aboneliklerine gerek yok. Tükenmeden her gün video yayımlayın.**
+**Karmaşık After Effects kurgularına son. Aylık 50$'lık SaaS vergisi yok. Tükenmeden her gün yayınlayın.**
 
-[Başlayın](#quick-start) · [Stil Galerisi](#style-gallery) · [Sık sorulan sorular](#faq) · [Yol haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)
+[Hızlı Başlangıç](#quick-start) · [Vitrin](#style-gallery) · [SSS](#faq) · [Yol Haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)
 
-⭐ *Bir sonraki stil paketini ve yeni özellikleri kaçırmamak için projeye yıldız verin.*
+*⭐ Yeni stil güncellemelerini ve özellikleri kaçırmamak için projeye Star verin.*
 
 </div>
 

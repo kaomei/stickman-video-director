@@ -13,11 +13,11 @@ assert "[**🇨🇳 简中**](README.zh-CN.md)" in cn
 assert "[🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md)" in cn, "French follows Korean in the shared navigation"
 assert (root / "README.fr.md").is_file(), "French navigation must open a complete README"
 hero_copy = cn.split("</div>", 1)[0]
-assert "**用自动化火柴人动画，持续做大你的不露脸频道。**" in hero_copy
-assert "几分钟内，将原始脚本变成让观众愿意看下去的动画解说视频——13 种经实测的画风，配齐旁白、动态运镜与声音设计。" in hero_copy
-assert "**无需 After Effects，也不用每月为 SaaS 工具支付 50 美元。每天出片，不必把自己累垮。**" in hero_copy
+assert "**用全自动火柴人动画，规模化量产你的无人出镜频道。**" in hero_copy
+assert "几分钟内，通过 13 款实操验证的画风把原始文案变成高完播率动画视频 —— 镜头调度、旁白配音与音效设计一键配齐。" in hero_copy
+assert "**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**" in hero_copy
 assert "画风持续更新，适用于" not in hero_copy, "Keep the removed niche sentence out of the hero"
-assert "为项目点个 Star，及时关注下一批画风和新功能解锁。" in cn
+assert "*⭐ 欢迎点亮 Star，第一时间解锁最新画风与功能更新！*" in hero_copy
 assert "**每一颗 Star，都为下一次更新添一把火！**" in cn
 assert "100% 免费、开源的工作室" in cn
 assert "我是烤妹儿" not in cn, "Keep the follow CTA focused on reader value, not self-introduction"
@@ -87,9 +87,9 @@ assert "填写话题、粘贴文案，或直接描述你的想法" in director_e
 assert "人类的第一份工作是怎么来的" not in director_example, "Use a fill-in template rather than a hard-coded topic"
 assert "也可以直接贴已有文案或文章" not in cn
 assert "[查看画风一览 ↓]" not in cn, "Do not restore the removed per-mode shortcut links"
-assert "[画风长廊](#style-gallery)" in cn, "Use one localized style shortcut landing at A then B"
-navigation = next(line for line in cn.splitlines() if line.startswith("[开始使用](#quick-start)"))
-assert navigation.endswith("[常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [加入社区](#community)"), "Community follows the roadmap shortcut"
+assert "[样片展厅](#style-gallery)" in cn, "Use one localized style shortcut landing at A then B"
+navigation = next(line for line in cn.splitlines() if line.startswith("[快速上手](#quick-start)"))
+assert navigation.endswith("[常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)"), "Community follows the roadmap shortcut"
 assert "[最近更新]" not in navigation, "Keep the removed updates shortcut out of the navigation"
 assert '<a id="recent-updates"></a>' not in cn, "Do not restore the removed updates anchor"
 assert "## 最近更新" not in cn, "Do not restore the removed updates section"
@@ -156,7 +156,7 @@ b_style_names = [name for name in re.findall(r"^### B\d+：([^\n]+)$", cn, re.M)
 assert re.findall(r"<strong>([^<]+)</strong><br>", hero) == [item for pair in zip(list(style_names), b_style_names + [None]) for item in pair if item is not None], "A1–A7 left, B1–B6 right, final right cell empty"
 assert "<strong>极简线稿风</strong><br>" in hero, "Use the approved B1 preview in the sixth cell"
 assert re.findall(r'<a href="#([^"]+)"><img', hero)[:4] == ["a1", "b1", "a2", "b2"], "Link the first four previews directly to their style details"
-assert f"{len(style_names) + len(b_style_names)} 种经实测的画风" in hero_copy
+assert f"{len(style_names) + len(b_style_names)} 款实操验证的画风" in hero_copy
 assert "img.shields.io/badge/Styles" not in hero_copy and "**13 种画风" not in cn
 assert "种视觉方案" not in cn, "Count A+B styles once, not variants as a separate metric"
 assert re.search(r'<a href="#b1"><img src="([^"]+/b1-minimal-handdrawn\.gif)"[^>]+width="90%"></a>', hero), "Use B1 example 1 in the top gallery and keep its detail-section link"

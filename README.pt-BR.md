@@ -4,18 +4,18 @@
 
 # 🎬 Stickman Video Director
 
-**Faça seu canal sem aparecer na câmera crescer com animações automatizadas de bonecos-palito.**
+**Escale sua rede de canais dark com animações automatizadas de boneco-palito.**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Transforme rascunhos de roteiro em vídeos explicativos animados que prendem a atenção em minutos — com 13 estilos testados na prática, narração, movimentos de câmera dinâmicos e design de som.
+Transforme roteiros brutos em animações explicativas de alta retenção em minutos — em 13 estilos testados na prática, com locução, movimentos de câmera e sonoplastia inclusos.
 
-**Sem After Effects e sem gastar US$ 50 por mês com SaaS. Publique todos os dias sem se esgotar.**
+**Chega de sofrer no After Effects. Sem taxa de US$ 50/mês em SaaS. Poste todo dia sem esgotamento.**
 
-[Começar](#quick-start) · [Galeria de estilos](#style-gallery) · [Perguntas frequentes](#faq) · [Roteiro de evolução](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)
+[Início Rápido](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)
 
-⭐ *Dê uma estrela ao projeto para acompanhar os próximos estilos e novos recursos.*
+*⭐ Deixe uma estrela no projeto para acompanhar os próximos estilos e novidades.*
 
 </div>
 

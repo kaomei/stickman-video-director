@@ -11,9 +11,9 @@
 
 Turn raw scripts into high-retention animated explainers in minutes — across 13 battle-tested styles, complete with voiceovers, dynamic camera moves, and sound design.
 
-**No After Effects, no $50/mo SaaS tax. Ship daily without burnout.**
+**No After Effects. No $50/mo SaaS tax. Ship daily without burnout.**
 
-[Get started](#quick-start) · [Style Gallery](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)
+[Quickstart](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)
 
 ⭐ *Star the project to catch the next style drop and feature unlocks.*
 

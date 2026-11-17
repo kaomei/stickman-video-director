@@ -4,18 +4,18 @@
 
 # 🎬 Stickman Video Director
 
-**棒人間アニメの自動制作で、顔出しなしのチャンネルを伸ばそう。**
+**自動化された棒人間アニメーションで、顔出しなしチャンネルを規模化・量産へ。**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-素材となる台本から、視聴者を引きつける解説アニメを数分で。実制作で確かめた13種類の画風に、ナレーション、ダイナミックなカメラワーク、サウンドデザインまで。
+生の原稿からわずか数分で高維持率の解説アニメへ —— 実戦検証済みの13種類の画風、ナレーション、カメラワーク、効果音まで完全自動。
 
-**After Effectsも、月額50ドルのSaaS代も不要。無理なく毎日、動画を公開しよう。**
+**面倒な動画編集・アニメ付けは不要。月額50ドルのSaaS税もゼロ。毎日投稿を、もっと楽に。**
 
-[使い始める](#quick-start) · [画風ギャラリー](#style-gallery) · [よくある質問](#faq) · [ロードマップ](#road-to-10000-stars--creator-ecosystem) · [コミュニティ](#community)
+[クイックスタート](#quick-start) · [ショーケース](#style-gallery) · [FAQ](#faq) · [ロードマップ](#road-to-10000-stars--creator-ecosystem) · [コミュニティ](#community)
 
-⭐ *プロジェクトに Star を付けて、次の画風追加や新機能の解放をチェックしましょう。*
+*⭐ 次のスタイル追加や新機能を見逃さないよう、ぜひ Star をお願いします！*
 
 </div>
 

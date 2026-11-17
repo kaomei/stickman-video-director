@@ -4,18 +4,18 @@
 
 # 🎬 Stickman Video Director
 
-**자동화된 스틱맨 애니메이션으로 얼굴을 드러내지 않는 채널을 성장시키세요.**
+**자동화된 스틱맨 애니메이션으로 얼굴 없는 유튜브 채널을 대량 양산하세요.**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-초안 대본을 몇 분 만에 시청자를 붙잡는 애니메이션 설명 영상으로 바꿔 보세요. 실제 제작으로 검증한 13가지 스타일에 내레이션, 역동적인 카메라 움직임, 사운드 디자인까지 갖췄습니다.
+텍스트 원고를 몇 분 만에 높은 시청 지속 시간의 애니메이션 영상으로 —— 검증된 13가지 비주얼 스타일, 나레이션, 카메라 무빙, 사운드 디자인까지 한 번에.
 
-**After Effects도, 월 50달러의 SaaS 구독료도 필요 없습니다. 번아웃 없이 매일 영상을 올리세요.**
+**복잡한 모션 그래픽 작업 불필요. 매달 50달러의 SaaS 구독료도 제로. 지치지 않고 매일 업로드.**
 
-[시작하기](#quick-start) · [스타일 갤러리](#style-gallery) · [자주 묻는 질문](#faq) · [로드맵](#road-to-10000-stars--creator-ecosystem) · [커뮤니티](#community)
+[빠른 시작](#quick-start) · [쇼케이스](#style-gallery) · [FAQ](#faq) · [로드맵](#road-to-10000-stars--creator-ecosystem) · [커뮤니티](#community)
 
-⭐ *프로젝트에 Star를 눌러 다음 스타일과 새 기능 공개를 확인하세요.*
+*⭐ 저장소를 Star하고 다음 스타일 업데이트와 새로운 기능을 가장 먼저 확인하세요.*
 
 </div>
 

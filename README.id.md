@@ -4,18 +4,18 @@
 
 # 🎬 Stickman Video Director
 
-**Kembangkan channel tanpa tampil di kamera dengan animasi stickman otomatis.**
+**Skalakan jaringan channel tanpa wajah Anda dengan animasi stickman otomatis.**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Ubah draf naskah menjadi video penjelasan animasi yang membuat penonton terus menonton hanya dalam hitungan menit — dengan 13 gaya yang telah teruji, narasi, gerakan kamera dinamis, dan desain suara.
+Ubah naskah mentah menjadi video animasi beretensi tinggi dalam hitungan menit — dari 13 gaya visual teruji, lengkap dengan voiceover, gerakan kamera dinamis, dan efek suara.
 
-**Tak perlu After Effects atau langganan SaaS US$50 per bulan. Terbitkan video setiap hari tanpa kelelahan.**
+**Tanpa ribet animasi After Effects. Tanpa pajak langganan SaaS $50/bulan. Upload tiap hari tanpa burnout.**
 
-[Mulai di sini](#quick-start) · [Galeri Gaya](#style-gallery) · [Tanya jawab](#faq) · [Peta jalan](#road-to-10000-stars--creator-ecosystem) · [Komunitas](#community)
+[Panduan Cepat](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Komunitas](#community)
 
-⭐ *Beri Star pada proyek ini agar tidak ketinggalan gaya dan fitur baru berikutnya.*
+*⭐ Berikan Star pada repositori ini untuk mendapatkan rilis gaya dan fitur terbaru.*
 
 </div>
 

@@ -4,18 +4,18 @@
 
 # 🎬 Stickman Video Director
 
-**用自动化火柴人动画，持续做大你的不露脸频道。**
+**用全自动火柴人动画，规模化量产你的无人出镜频道。**
 
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-几分钟内，将原始脚本变成让观众愿意看下去的动画解说视频——13 种经实测的画风，配齐旁白、动态运镜与声音设计。
+几分钟内，通过 13 款实操验证的画风把原始文案变成高完播率动画视频 —— 镜头调度、旁白配音与音效设计一键配齐。
 
-**无需 After Effects，也不用每月为 SaaS 工具支付 50 美元。每天出片，不必把自己累垮。**
+**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**
 
-[开始使用](#quick-start) · [画风长廊](#style-gallery) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [加入社区](#community)
+[快速上手](#quick-start) · [样片展厅](#style-gallery) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)
 
-⭐ *为项目点个 Star，及时关注下一批画风和新功能解锁。*
+*⭐ 欢迎点亮 Star，第一时间解锁最新画风与功能更新！*
 
 </div>
 
