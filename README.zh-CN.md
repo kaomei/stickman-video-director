@@ -575,7 +575,7 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
   </tr>
   <tr>
     <td align="center">像素角色动画 · 游戏感配乐与音效</td>
-    <td align="center">像素动画 · 剧情音效</td>
+    <td align="center">Brian 配音 · 剧情音效 · 打字金句收尾</td>
   </tr>
 </table>
 

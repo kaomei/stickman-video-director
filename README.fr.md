@@ -575,7 +575,7 @@ De petits pixels, de grandes conséquences. Des personnages blancs transforment 
   </tr>
   <tr>
     <td align="center">Animation de personnages en pixels · Musique et bruitages inspirés du jeu vidéo</td>
-    <td align="center">Animation en pixels · Bruitages au service du récit</td>
+    <td align="center">Voix off Brian · Bruitages au service du récit · Phrase finale à effet machine à écrire</td>
   </tr>
 </table>
 

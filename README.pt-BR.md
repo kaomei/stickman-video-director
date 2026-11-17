@@ -575,7 +575,7 @@ Pequenos pixels, grandes consequências. Personagens brancos transformam escolha
   </tr>
   <tr>
     <td align="center">Animação de personagens em pixel art · Música e efeitos com clima de videogame</td>
-    <td align="center">Animação em pixels · Efeitos sonoros narrativos</td>
+    <td align="center">Narração de Brian · Efeitos sonoros narrativos · Reflexão final com efeito de digitação</td>
   </tr>
 </table>
 

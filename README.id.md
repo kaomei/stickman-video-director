@@ -575,7 +575,7 @@ Piksel kecil, konsekuensi besar. Karakter stik putih mengubah pilihan sehari-har
   </tr>
   <tr>
     <td align="center">Animasi karakter piksel · Musik dan efek suara bernuansa gim</td>
-    <td align="center">Animasi piksel · Efek suara sesuai cerita</td>
+    <td align="center">Narasi Brian · Efek suara sesuai cerita · Pesan penutup dengan efek ketik</td>
   </tr>
 </table>
 

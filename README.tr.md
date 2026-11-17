@@ -575,7 +575,7 @@ Küçük pikseller, büyük sonuçlar. Beyaz çöp adamlar günlük seçimleri k
   </tr>
   <tr>
     <td align="center">Piksel karakter animasyonu · Oyun esintili müzik ve ses efektleri</td>
-    <td align="center">Piksel animasyon · Hikâyeye uygun ses efektleri</td>
+    <td align="center">Brian seslendirmesi · Hikâyeye uygun ses efektleri · Daktilo efektli kapanış sözü</td>
   </tr>
 </table>
 
