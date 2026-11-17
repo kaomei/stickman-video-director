@@ -4,18 +4,18 @@
 
 # 🎬 Stickman Video Director
 
-**Développez votre chaîne sans montrer votre visage grâce à des animations stickman automatisées.**
+**Industrialisez votre réseau de chaînes sans visage grâce à l'animation automatisée.**
 
 [![Étoiles GitHub](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![Licence MIT](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Transformez vos ébauches de scripts en vidéos explicatives animées qui retiennent l’attention, en quelques minutes — avec 13 styles éprouvés, des voix off, des mouvements de caméra dynamiques et une conception sonore soignée.
+Transformez des scripts bruts en explications animées à haute rétention en quelques minutes — parmi 13 styles éprouvés, avec voix off, caméra dynamique et design sonore inclus.
 
-**Pas besoin d’After Effects ni de payer 50 $ par mois pour un SaaS. Publiez chaque jour sans vous épuiser.**
+**Oubliez les galères sur After Effects. Fini la taxe SaaS à 50 $/mois. Publiez quotidiennement sans épuisement.**
 
-[Bien démarrer](#quick-start) · [Galerie de styles](#style-gallery) · [FAQ](#faq) · [Feuille de route](#road-to-10000-stars--creator-ecosystem) · [Communauté](#community)
+[Démarrage](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Communauté](#community)
 
-⭐ *Ajoutez une étoile au projet pour suivre les prochains styles et les nouvelles fonctionnalités à débloquer.*
+*⭐ Ajoutez une étoile au projet pour ne manquer aucun nouveau style ni mise à jour.*
 
 </div>
 
