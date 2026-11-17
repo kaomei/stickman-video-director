@@ -96,7 +96,7 @@ Ubah naskah mentah menjadi video animasi beretensi tinggi dalam hitungan menit �
 <!-- b7:hero:start -->
 <td width="50%" align="center">
 <strong>Teater Piksel</strong><br>
-<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Teater Piksel" width="90%"></a>
+<a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Teater Piksel" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
 </tr>
@@ -570,8 +570,8 @@ Piksel kecil, konsekuensi besar. Karakter stik putih mengubah pilihan sehari-har
     <th width="50%" align="center">Contoh 2: jangan percepat hidupmu</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="Contoh 1: apa jadinya kalau kamu selalu bilang “terserah”?" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Contoh 2: jangan percepat hidupmu" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Contoh 1: apa jadinya kalau kamu selalu bilang “terserah”?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Contoh 2: jangan percepat hidupmu" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Animasi karakter piksel · Musik dan efek suara bernuansa gim</td>

@@ -96,7 +96,7 @@
 <!-- b7:hero:start -->
 <td width="50%" align="center">
 <strong>픽셀 시어터</strong><br>
-<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · 픽셀 시어터" width="90%"></a>
+<a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · 픽셀 시어터" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
 </tr>
@@ -570,8 +570,8 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
     <th width="50%" align="center">예시 2: 인생을 빨리 감지 마세요</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="예시 1: 계속 “상관없어”라고 말하면 어떻게 될까?" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="예시 2: 인생을 빨리 감지 마세요" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="예시 1: 계속 “상관없어”라고 말하면 어떻게 될까?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="예시 2: 인생을 빨리 감지 마세요" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">픽셀 캐릭터 애니메이션 · 게임 감성 음악과 효과음</td>

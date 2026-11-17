@@ -96,7 +96,7 @@ Ham metinleri dakikalar içinde yüksek tutunma oranlı animasyonlu açıklamala
 <!-- b7:hero:start -->
 <td width="50%" align="center">
 <strong>Piksel Tiyatrosu</strong><br>
-<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Piksel Tiyatrosu" width="90%"></a>
+<a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Piksel Tiyatrosu" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
 </tr>
@@ -570,8 +570,8 @@ Küçük pikseller, büyük sonuçlar. Beyaz çöp adamlar günlük seçimleri k
     <th width="50%" align="center">Örnek 2: hayatını hızlı ileri sarma</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="Örnek 1: sürekli “fark etmez” dersen ne olur?" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Örnek 2: hayatını hızlı ileri sarma" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Örnek 1: sürekli “fark etmez” dersen ne olur?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Örnek 2: hayatını hızlı ileri sarma" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Piksel karakter animasyonu · Oyun esintili müzik ve ses efektleri</td>
