@@ -579,8 +579,6 @@ Piksel kecil, konsekuensi besar. Karakter stik putih mengubah pilihan sehari-har
   </tr>
 </table>
 
-Kredit musik: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
-
 <!-- b7:section:end -->
 
 <a id="b8"></a>

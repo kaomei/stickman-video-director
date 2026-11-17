@@ -579,8 +579,6 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
   </tr>
 </table>
 
-音乐署名: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
-
 <!-- b7:section:end -->
 
 <a id="b8"></a>

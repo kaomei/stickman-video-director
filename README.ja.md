@@ -579,8 +579,6 @@ Memeらしい大げさな表情、ラフな手描き線、柔らかな色彩で�
   </tr>
 </table>
 
-音楽クレジット: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
-
 <!-- b7:section:end -->
 
 <a id="b8"></a>
