@@ -9,7 +9,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-텍스트 원고를 몇 분 만에 높은 시청 지속 시간의 애니메이션 영상으로 —— 검증된 13가지 비주얼 스타일, 나레이션, 카메라 무빙, 사운드 디자인까지 한 번에.
+텍스트 원고를 몇 분 만에 높은 시청 지속 시간의 애니메이션 영상으로 —— 검증된 14가지 비주얼 스타일, 나레이션, 카메라 무빙, 사운드 디자인까지 한 번에.
 
 **복잡한 모션 그래픽 작업 불필요. 매달 50달러의 SaaS 구독료도 제로. 지치지 않고 매일 업로드.**
 
@@ -93,7 +93,12 @@
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 러버 호스 애니메이션" width="90%"></a>
 </td>
 <!-- a7:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b7:hero:start -->
+<td width="50%" align="center">
+<strong>픽셀 시어터</strong><br>
+<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · 픽셀 시어터" width="90%"></a>
+</td>
+<!-- b7:hero:end -->
 </tr>
 </table>
 
@@ -548,9 +553,39 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
 
 ---
 
+<!-- b7:section:start -->
 <a id="b7"></a>
 
-### B7: 곧 공개…
+### B7: 픽셀 시어터
+
+작은 픽셀로 펼치는 뜻밖의 이야기. 하얀 스틱맨이 망설이고, 버튼을 누르고, 기회를 놓칩니다. “상관없어”라는 한마디가 게임 같은 세상을 바꿔 놓을 수도 있습니다.
+
+- **비주얼**: 선명한 픽셀, 표정이 살아 있는 하얀 캐릭터, 장면마다 달라지는 색감. 흐릿한 확대나 매끈한 벡터로 픽셀 아트를 흉내 내지 않습니다.
+- **이야기 연출**: 캐릭터·소품·배경이 함께 이야기를 이끕니다. 결말에는 짧은 문장, 픽셀 타자음, 작은 움직임, 은은하게 깜빡이는 글자와 음악으로 여운을 남깁니다.
+- **추천 콘텐츠**: 선택에 따라 달라지는 이야기, 아이러니한 인생 교훈, 블랙 코미디, 게임 감성의 따뜻한 우화.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">예시 1: 계속 “상관없어”라고 말하면 어떻게 될까?</th>
+    <th width="50%" align="center">예시 2: 인생을 빨리 감지 마세요</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="예시 1: 계속 “상관없어”라고 말하면 어떻게 될까?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="예시 2: 인생을 빨리 감지 마세요" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">픽셀 캐릭터 애니메이션 · 게임 감성 음악과 효과음</td>
+    <td align="center">픽셀 애니메이션 · 이야기 맞춤 효과음</td>
+  </tr>
+</table>
+
+음악 크레딧: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
+
+<!-- b7:section:end -->
+
+<a id="b8"></a>
+
+### B8: 곧 공개…
 
 새로운 Code Engine 스타일과 코드 애니메이션을 준비하고 있습니다. [프로젝트에 Star를 누르고](#road-to-10000-stars--creator-ecosystem) 앞으로의 업데이트를 확인해 주세요!
 

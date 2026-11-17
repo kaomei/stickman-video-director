@@ -9,7 +9,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-几分钟内，通过 13 款实操验证的画风把原始文案变成高完播率动画视频 —— 镜头调度、旁白配音与音效设计一键配齐。
+几分钟内，通过 14 款实操验证的画风把原始文案变成高完播率动画视频 —— 镜头调度、旁白配音与音效设计一键配齐。
 
 **告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**
 
@@ -93,7 +93,12 @@
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 橡皮管动画风" width="90%"></a>
 </td>
 <!-- a7:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b7:hero:start -->
+<td width="50%" align="center">
+<strong>像素剧场风</strong><br>
+<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · 像素剧场风" width="90%"></a>
+</td>
+<!-- b7:hero:end -->
 </tr>
 </table>
 
@@ -548,9 +553,39 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 ---
 
+<!-- b7:section:start -->
 <a id="b7"></a>
 
-### B7：待更新…
+### B7：像素剧场风
+
+把人生选择，演成一场像素小游戏。白色火柴人在小小世界里犹豫、按下按钮、错过机会；一句“无所谓”，也可能让眼前的世界悄悄消失。
+
+- **画面质感**：清晰利落的像素颗粒、富有表情的白色角色与随场景变化的配色，不用模糊缩放或平滑矢量冒充像素画。
+- **剧情表现**：角色、道具与场景联动，结尾以主题短句、像素打字声、轻柔闪字和配乐留下余韵。
+- **适合内容**：人生选择、荒诞寓言、黑色幽默，以及带游戏感的情绪与成长故事。
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">样片 1：总说“无所谓”，世界会变成什么样？</th>
+    <th width="50%" align="center">样片 2：别快进你的人生</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="样片 1：总说“无所谓”，世界会变成什么样？" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="样片 2：别快进你的人生" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">像素角色动画 · 游戏感配乐与音效</td>
+    <td align="center">像素动画 · 剧情音效</td>
+  </tr>
+</table>
+
+音乐署名: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
+
+<!-- b7:section:end -->
+
+<a id="b8"></a>
+
+### B8：待更新…
 
 新的代码引擎画风与代码动画正在准备中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，关注后续更新。
 

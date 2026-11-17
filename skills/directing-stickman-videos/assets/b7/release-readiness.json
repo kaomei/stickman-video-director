@@ -1,0 +1,144 @@
+{
+  "schema": "approved-reference-release/1",
+  "style": "B7",
+  "status": "approved_reference_reuse",
+  "registered_at": "2026-11-14T12:30:50.319466+00:00",
+  "blocking_items": [],
+  "references": [
+    {
+      "id": "paths-v6-full",
+      "output": {
+        "file": "skills/directing-stickman-videos/assets/b7/approved-v6-v11/paths-v6-full.mp4",
+        "sha256": "ef34ef602d97502ae295b91d282afe5eea3f69c4ee88855832c7a11e7bb482d8",
+        "duration": 53.22,
+        "width": 1920,
+        "height": 1080
+      },
+      "ratio": "16:9",
+      "approval_scope": "Historical complete landscape reference; no new review inferred.",
+      "native_review": {
+        "file": "",
+        "sha256": ""
+      },
+      "common_completeness": {
+        "file": "",
+        "sha256": ""
+      },
+      "playback": {
+        "status": "not_checked",
+        "output_sha256": "ef34ef602d97502ae295b91d282afe5eea3f69c4ee88855832c7a11e7bb482d8",
+        "normal_speed": false,
+        "reviewer": "",
+        "method": "",
+        "ranges": [],
+        "observations": [],
+        "evidence": []
+      },
+      "listening": {
+        "status": "not_checked",
+        "output_sha256": "ef34ef602d97502ae295b91d282afe5eea3f69c4ee88855832c7a11e7bb482d8",
+        "normal_speed": false,
+        "reviewer": "",
+        "method": "",
+        "ranges": [],
+        "observations": [],
+        "evidence": [],
+        "source": "final_encoded_output"
+      }
+    },
+    {
+      "id": "fast-forward-v11-full",
+      "output": {
+        "file": "skills/directing-stickman-videos/assets/b7/approved-v6-v11/fast-forward-v11-full.mp4",
+        "sha256": "5aa572a5efc3855ec0455523664c0c23bd5e9d8a6337c04ed53869c40e50ae90",
+        "duration": 47.5,
+        "width": 1920,
+        "height": 1080
+      },
+      "ratio": "16:9",
+      "approval_scope": "Historical complete landscape reference; no new review inferred.",
+      "native_review": {
+        "file": "",
+        "sha256": ""
+      },
+      "common_completeness": {
+        "file": "",
+        "sha256": ""
+      },
+      "playback": {
+        "status": "not_checked",
+        "output_sha256": "5aa572a5efc3855ec0455523664c0c23bd5e9d8a6337c04ed53869c40e50ae90",
+        "normal_speed": false,
+        "reviewer": "",
+        "method": "",
+        "ranges": [],
+        "observations": [],
+        "evidence": []
+      },
+      "listening": {
+        "status": "not_checked",
+        "output_sha256": "5aa572a5efc3855ec0455523664c0c23bd5e9d8a6337c04ed53869c40e50ae90",
+        "normal_speed": false,
+        "reviewer": "",
+        "method": "",
+        "ranges": [],
+        "observations": [],
+        "evidence": [],
+        "source": "final_encoded_output"
+      }
+    },
+    {
+      "id": "portrait-layout-v3-10s",
+      "output": {
+        "file": "skills/directing-stickman-videos/assets/b7/approved-portrait/fast-forward-portrait-v3-10s.mp4",
+        "sha256": "b0aa0e97c3b74dbccc79b8cde042efaf25e98e98273e78a55be7485524345a8b",
+        "duration": 10.0,
+        "width": 1080,
+        "height": 1920
+      },
+      "ratio": "9:16",
+      "approval_scope": "Exact 10-second v3 native portrait layout, caption size, whitespace and short semantic caption switching.",
+      "native_review": {
+        "file": "",
+        "sha256": ""
+      },
+      "common_completeness": {
+        "file": "",
+        "sha256": ""
+      },
+      "playback": {
+        "status": "not_checked",
+        "output_sha256": "b0aa0e97c3b74dbccc79b8cde042efaf25e98e98273e78a55be7485524345a8b",
+        "normal_speed": false,
+        "reviewer": "",
+        "method": "",
+        "ranges": [],
+        "observations": [],
+        "evidence": []
+      },
+      "listening": {
+        "status": "not_checked",
+        "output_sha256": "b0aa0e97c3b74dbccc79b8cde042efaf25e98e98273e78a55be7485524345a8b",
+        "normal_speed": false,
+        "reviewer": "",
+        "method": "",
+        "ranges": [],
+        "observations": [],
+        "evidence": [],
+        "source": "final_encoded_output"
+      },
+      "full_portrait_film_approved": false
+    }
+  ],
+  "note": "Release reuses byte-identical user-confirmed examples. Historical playback/listening records remain unchanged; new films must independently pass the current B7 review and common-completeness gates.",
+  "completion_instructions": [
+    "For a NEW or changed film, run the current native B7 and common delivery checks with actual output-bound playback/listening evidence.",
+    "Do not infer fresh review or full portrait-film approval from these unchanged examples."
+  ],
+  "publication_authorization": {
+    "by": "user",
+    "date": "2026-11-17",
+    "instruction": "我觉得先直接发布吧，B7也可以发布了",
+    "scope": "Publish B7 with unchanged previously accepted landscape films and scoped 10-second portrait reference. No new perceptual review claimed."
+  }
+}

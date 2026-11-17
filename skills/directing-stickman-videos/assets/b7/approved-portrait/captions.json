@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "coordinate_space": "logical_pixels_including_shadow",
+  "logical_canvas": {
+    "width": 180,
+    "height": 320
+  },
+  "output_scale": 6,
+  "font": "bundled B7 GLYPHS at scale 1, unchanged size",
+  "line_count": 1,
+  "caption_band": {
+    "left": 0,
+    "top": 257,
+    "right": 180,
+    "bottom": 277
+  },
+  "width_target_fraction": 0.6,
+  "width_hard_limit_fraction": 0.65,
+  "max_observed_width": 110,
+  "cues": [
+    {
+      "text": "You were born with a",
+      "start": 0,
+      "end": 0.94,
+      "drawn_width": 110,
+      "left_margin": 35,
+      "right_margin": 35,
+      "bounds": {
+        "left": 35,
+        "top": 264,
+        "right": 145,
+        "bottom": 272
+      }
+    },
+    {
+      "text": "fast-forward button",
+      "start": 0.94,
+      "end": 1.92,
+      "drawn_width": 110,
+      "left_margin": 35,
+      "right_margin": 35,
+      "bounds": {
+        "left": 35,
+        "top": 264,
+        "right": 145,
+        "bottom": 272
+      }
+    },
+    {
+      "text": "floating",
+      "start": 1.92,
+      "end": 2.36,
+      "drawn_width": 46,
+      "left_margin": 67,
+      "right_margin": 67,
+      "bounds": {
+        "left": 67,
+        "top": 264,
+        "right": 113,
+        "bottom": 272
+      }
+    },
+    {
+      "text": "above your head.",
+      "start": 2.36,
+      "end": 3.3,
+      "drawn_width": 88,
+      "left_margin": 46,
+      "right_margin": 46,
+      "bounds": {
+        "left": 46,
+        "top": 264,
+        "right": 134,
+        "bottom": 272
+      }
+    },
+    {
+      "text": "Boring",
+      "start": 3.8,
+      "end": 4.22,
+      "drawn_width": 34,
+      "left_margin": 73,
+      "right_margin": 73,
+      "bounds": {
+        "left": 73,
+        "top": 264,
+        "right": 107,
+        "bottom": 272
+      }
+    },
+    {
+      "text": "Monday meeting?",
+      "start": 4.22,
+      "end": 4.98,
+      "drawn_width": 86,
+      "left_margin": 47,
+      "right_margin": 47,
+      "bounds": {
+        "left": 47,
+        "top": 264,
+        "right": 133,
+        "bottom": 272
+      }
+    },
+    {
+      "text": "Press.",
+      "start": 5.23,
+      "end": 5.64,
+      "drawn_width": 32,
+      "left_margin": 74,
+      "right_margin": 74,
+      "bounds": {
+        "left": 74,
+        "top": 264,
+        "right": 106,
+        "bottom": 272
+      }
+    },
+    {
+      "text": "Skipped.",
+      "start": 5.92,
+      "end": 6.48,
+      "drawn_width": 42,
+      "left_margin": 69,
+      "right_margin": 69,
+      "bounds": {
+        "left": 69,
+        "top": 264,
+        "right": 111,
+        "bottom": 272
+      }
+    },
+    {
+      "text": "Awkward small talk?",
+      "start": 7.06,
+      "end": 8.04,
+      "drawn_width": 110,
+      "left_margin": 35,
+      "right_margin": 35,
+      "bounds": {
+        "left": 35,
+        "top": 264,
+        "right": 145,
+        "bottom": 272
+      }
+    },
+    {
+      "text": "Press.",
+      "start": 8.24,
+      "end": 8.66,
+      "drawn_width": 32,
+      "left_margin": 74,
+      "right_margin": 74,
+      "bounds": {
+        "left": 74,
+        "top": 264,
+        "right": 106,
+        "bottom": 272
+      }
+    },
+    {
+      "text": "Skipped.",
+      "start": 8.98,
+      "end": 9.5,
+      "drawn_width": 42,
+      "left_margin": 69,
+      "right_margin": 69,
+      "bounds": {
+        "left": 69,
+        "top": 264,
+        "right": 111,
+        "bottom": 272
+      }
+    }
+  ],
+  "timing_scope": "Accepted example timing only; new narration must be measured against its own actual speech.",
+  "semantic_exception": "User accepted carrying the light lead-in with a into the prior card; keep fast-forward button intact. Do not create a 0.3-second with-a flash card or split by fixed word counts."
+}

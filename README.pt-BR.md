@@ -9,7 +9,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Transforme roteiros brutos em animações explicativas de alta retenção em minutos — em 13 estilos testados na prática, com locução, movimentos de câmera e sonoplastia inclusos.
+Transforme roteiros brutos em animações explicativas de alta retenção em minutos — em 14 estilos testados na prática, com locução, movimentos de câmera e sonoplastia inclusos.
 
 **Chega de sofrer no After Effects. Sem taxa de US$ 50/mês em SaaS. Poste todo dia sem esgotamento.**
 
@@ -93,7 +93,12 @@ Transforme roteiros brutos em animações explicativas de alta retenção em min
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
 </td>
 <!-- a7:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b7:hero:start -->
+<td width="50%" align="center">
+<strong>Teatro Pixel</strong><br>
+<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Teatro Pixel" width="90%"></a>
+</td>
+<!-- b7:hero:end -->
 </tr>
 </table>
 
@@ -548,9 +553,39 @@ Expressões de meme, traços soltos à mão e cores suaves transformam história
 
 ---
 
+<!-- b7:section:start -->
 <a id="b7"></a>
 
-### B7: Em breve…
+### B7: Teatro Pixel
+
+Pequenos pixels, grandes consequências. Personagens brancos transformam escolhas do dia a dia em pequenos mundos de jogo, onde um botão apertado, uma chance perdida ou um simples “tanto faz” pode mudar tudo.
+
+- **Identidade visual**: Pixel art nítida, personagens brancos expressivos e paletas próprias para cada cena, sem desfoque nem imitações vetoriais suavizadas.
+- **História em movimento**: Personagens, objetos e cenários dão vida à história. Uma reflexão final, teclas retrô, movimentos sutis, texto pulsando suavemente e a trilha certa deixam uma impressão duradoura.
+- **Ideal para**: Histórias de escolhas, lições de vida irônicas, humor ácido e fábulas emocionantes com clima de videogame.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Exemplo 1: o que acontece quando você só diz “tanto faz”?</th>
+    <th width="50%" align="center">Exemplo 2: não acelere a sua vida</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="Exemplo 1: o que acontece quando você só diz “tanto faz”?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Exemplo 2: não acelere a sua vida" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Animação de personagens em pixel art · Música e efeitos com clima de videogame</td>
+    <td align="center">Animação em pixels · Efeitos sonoros narrativos</td>
+  </tr>
+</table>
+
+Créditos musicais: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
+
+<!-- b7:section:end -->
+
+<a id="b8"></a>
+
+### B8: Em breve…
 
 Novos estilos Code Engine e animações por código estão em preparação. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) e acompanhe as próximas atualizações!
 

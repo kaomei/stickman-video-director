@@ -2,6 +2,9 @@
 
 This catalog defines the supported visual styles for `directing-stickman-videos`, including character DNA locks, environment specifications, motion pacing, and negative constraints.
 
+
+Scope: the matrix and formulas below describe **A1–A5 only**. A6 uses [Amber Noir](amber-noir.md). A7 uses [Rubber Hose Animation](rubber-hose.md), its [frozen prompts](a7-prompt-contract.md) and [acceptance](a7-acceptance.md). Do not apply this matrix's general constraints or voice/pacing rules to A6/A7.
+
 ---
 
 ## 1. Style Matrix Overview
@@ -57,17 +60,14 @@ Occasional simple line expressions are allowed by default. Before freezing eithe
 
 ### Character DNA Anchors (Anti-Deformation Lock)
 
-To prevent character drift, bug-eye deformations, or clothing loss across clips, use these exact character anchors:
+To prevent character drift, bug-eye deformations, or clothing loss across clips, repeat this complete frozen character anchor verbatim in every independently usable generation prompt, including later clips and both Style 2 variants:
 
-**Clip 1 Character Anchor:**
+**Every Clip Character Anchor:**
 ```text
 A minimalist 2D animated stick figure wearing a bright red beanie (smooth rounded knit, no pom-pom) and a yellow t-shirt, with simple black stick limbs and shorts. Simple black lines, vibrant colors, smooth 2D animation style.
 ```
 
-**Subsequent Clips Character Anchor (Clips 2–6):**
-```text
-The same minimalist 2D animated stick figure in a bright red beanie and yellow shirt... Simple black lines, vibrant colors, smooth 2D animation style.
-```
+Never shorten it to "the same character", an ellipsis or a previous-clip reference. The clip count follows the approved story and selected model's supported durations; there is no fixed Clips 2–6 sequence. Scene, action and camera instructions stay separate from this character identity.
 
 **Deformation Prevention Rules:**
 - **No Realistic Facial Features**: Hollow circular head or minimal dot eyes only. Never request detailed pupils, irises, or photorealistic facial contours (which trigger alien bug-eyes).
@@ -99,7 +99,7 @@ Negative constraints: strictly minimalist studio aesthetic, no circuit board tex
   - Pulling out a glowing light-pen to draw a crisp luminous line bridge across an abyss.
   - Touching a sleek floating glass panel to reveal an icon-only illuminated lock.
   - Pushing open a heavy minimalist vault door to step forward into bright horizon light.
-- **Pacing**: Every 10-second clip must feature distinct actions across `[0–3s]`, `[3–7s]`, and `[7–10s]`. Never let the character stand idle or stare at the camera for multiple seconds.
+- **Pacing**: Time connected setup, escalation and payoff actions across the approved edit, with source lengths and retained ranges chosen for the story and selected model. A source can supply several shots; short shots need not repeat an entire three-beat arc. Never let the character stand idle or stare at the camera for multiple seconds.
 
 ---
 
@@ -127,7 +127,7 @@ Negative constraints: no photorealistic human skin or faces, no 3D humanoid CGI 
 
 Minimalist expressive characters inside colorful cartoon worlds: an office, a metro platform, a street-side cafe, a park or another story-appropriate setting. Use close action inserts, wide establishing views, lateral tracking and motivated location cuts. Warmth belongs to the visual treatment; preserve the source's conflict and meaning rather than making every topic cheerful.
 
-Each new ten-second segment normally establishes a different location. Keep the character, important props, screen direction and full voice profile consistent, while deliberately changing scenery. A new camera angle on the same desk is not a substitute for a new story location. Single-location requests and approved callbacks remain valid exceptions.
+Each new planned narrative segment normally establishes a different location; its duration follows the approved plan and selected model's capabilities. Keep the character, important props, screen direction and full voice profile consistent, while deliberately changing scenery. A new camera angle on the same desk is not a substitute for a new story location. Single-location requests and approved callbacks remain valid exceptions.
 
 Use the full character anchor, prop-state rules and acceptance checklist in `cozy-storytelling.md`; do not inherit Style 1's hollow-head/no-face/no-filled-body bans or Style 3's crude sketch/animal-hide rules.
 
@@ -143,15 +143,17 @@ Use `historical-cartoon.md` for the full style anchor, era-pack template, cast c
 
 ## 6. Universal Audio Continuity Contract
 
-Voice continuity is a shared foundation for **all styles**, including Styles 3 and 4. Apply `voice-continuity.md` before style-specific music rules. Different videos can choose different voices, while all clips of one video repeat one complete approved voice profile. Keep voice identity separate from the musical arc.
+For **narrated A1–A5 projects**, including Styles 3 and 4, apply `voice-continuity.md` and the [independent A audio timeline contract](a-audio-timeline-and-review.md). Default finished narration to a verified full-film external master in the approved voice; use continuous film-level music or deliberately arranged cues. Repeat full voice anchors only in prompts actually generating native speech. Footage intended for external VO must not request that narration from the video model. An approved no-narration brief needs no narrator.
 
-### Narrator Voice Lock
+### Historical native-audio voice example
 ```text
 One off-screen adult male narrator throughout. General American accent, warm clean baritone, medium-low pitch, gentle chest resonance, no raspiness or breathiness. Calm conversational delivery, restrained pitch variation, steady speaking pace, and close, dry studio sound. Keep the same vocal timbre, register, accent, pace, and recording quality throughout. Emotional progression belongs to the visuals and music; do not change the narrator's voice or switch to character dialogue.
 ```
-This is the user-accepted male example, not a compulsory voice for every project. For female, older, youthful or other approved voices, resolve a complete coherent profile using `voice-continuity.md`, then repeat it verbatim across every clip. Do not use only "same narrator" or inherit a prior clip by name. Keep narration audio-only, voice-first, with no speech bubbles or dialogue boxes. Actual listening acceptance exists for the Style 2A Hope sample; other profiles/styles remain untested for audio matching.
+This is the historically user-accepted male native-audio example, not a compulsory voice. Resolve other approved profiles through `voice-continuity.md`; repeat the full block only in relevant native-speech prompts. External narration keeps its profile in a separate synthesis plan. Keep narration off-screen and voice-first unless approved otherwise. The Style 2A Hope listening acceptance is specific to that sample; other profiles/styles remain untested for audio matching.
 
-### BGM Continuity Lock
+### Historical native-audio music examples
+
+The following old clip-level examples document a prior prompting approach. They are **not the current assembly instructions** and do not establish identical regenerated music. A finished film uses the independent continuous music master/cue plan above; do not concatenate these mixed clip soundtracks at picture cuts.
 - **Clip 1**:
   ```text
   Audio: Voiceover clearly audible over quiet, thoughtful piano and subtle soft ambient synth, building gentle optimistic momentum.
@@ -163,13 +165,14 @@ This is the user-accepted male example, not a compulsory voice for every project
 
 ---
 
-## 7. Visual Beat Pacing Template (10-Second Clip)
+## 7. Story-led Visual Beat Pacing Template
 
-Every prompt must divide its 10 seconds into three active narrative beats:
+Every generation prompt needs explicit timed story actions appropriate to its actual source duration and intended retained ranges. Use the [production and review contract](a-production-and-review.md) to map source-local times to the final edit. Replace the time fields below with real values; add or remove beat rows to match the performance rather than imposing a three-beat quota:
 
 ```text
 Timed Synchronized Visual Beats:
-- [0–3s] (VO: "..."): [Setup / premise action — character enters, acts, or inherits momentum from previous clip]
-- [3–7s] (VO: "..."): [Escalation / discovery — character interacts with environment or solves visual obstacle]
-- [7–10s] (VO: "..."): [Climax & outgoing transition — character delivers payoff and initiates outgoing motion for next clip]
+Generated source duration: [verified supported duration]
+Retained source range(s) → final edited time(s): [actual in/out mapping]
+- [source start–end] (approved VO/audio cue, if any): [connected action / motivated framing / visible result]
+- [source start–end] (approved VO/audio cue, if any): [next story event / reaction / continuity into the next retained shot]
 ```

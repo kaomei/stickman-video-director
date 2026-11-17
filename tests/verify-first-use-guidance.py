@@ -1,36 +1,83 @@
 #!/usr/bin/env python3
 """Check onboarding wiring and package integrity, not model behavior."""
-import hashlib
+import argparse
 import json
 import re
 from pathlib import Path
 
-root = Path(__file__).resolve().parents[1]
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--scope", choices=("integrated", "a", "published"), default="published",
+                    help="Use a only for the A-only candidate; default checks the integrated repository.")
+parser.add_argument("--repo", type=Path, help="Repository to inspect (defaults to this script's repository).")
+args = parser.parse_args()
+root = (args.repo or Path(__file__).resolve().parents[1]).resolve()
 skill = root / "skills/directing-stickman-videos"
 entry = (skill / "SKILL.md").read_text()
 guide = skill / "references/getting-started.md"
 guide_text = guide.read_text()
 
-# The new shared entry must reach the guide in the installed package.
-assert "(references/getting-started.md)" in entry and guide.is_file()
-for source in (skill / "SKILL.md", guide):
-    for target in re.findall(r"\]\(([^)]+\.md)(?:#[^)]*)?\)", source.read_text()):
-        if not target.startswith(("https://", "http://")):
-            assert (source.parent / target).is_file(), f"Broken reference: {source}: {target}"
 
-# Normalize only the exact owner-directed A5 baseline summary; preserve every other
-# Director byte and the original baseline digest.
-legacy = "## A · Director\n" + entry.split("## A · Director\n", 1)[1]
-original_a5 = "  - `Style 5 (Historical Cartoon / 历史卡通风)`: white-filled round heads, simple black oval eyes and thin black stick limbs in era-specific costume, with cel shading and full-color painterly historical settings"
-revised_a5 = "  - `Style 5 (Historical Cartoon / 历史卡通风)`: white heads with connected short white necks, expressive faces, black stick limbs and compact fingerless palms, period dress and cel-shaded historical settings"
-assert legacy.count(revised_a5) == 1, "Missing exact owner-directed A5 baseline summary"
-legacy = legacy.replace(revised_a5, original_a5, 1)
-assert hashlib.sha256(legacy.encode()).hexdigest() == "f710612be73c952fb130d891b0650388ec5ae89469cae95eda8e147eec18b73e"
-# A6 adds only a selection-time reference router; legacy Director stays frozen.
-# The published base entry is 16,732 bytes; allow the additive B6 router while
-# retaining a compact entry budget. Detailed workflow stays in references.
-assert len(entry.encode()) <= 20000, "Keep the new workflow detail in references"
+def section(text, heading):
+    """Bound a Markdown section by its real heading, not a former mode name."""
+    match = re.search(rf"^{re.escape(heading)}\s*$", text, re.M)
+    assert match, f"Missing section: {heading}"
+    level = len(heading) - len(heading.lstrip("#"))
+    following = re.search(rf"^#{{1,{level}}} ", text[match.end():], re.M)
+    end = match.end() + following.start() if following else len(text)
+    return text[match.end():end]
+
+
+# The entry must reach onboarding and the selected A production contracts in
+# one install. Drawing/voice byte preservation is checked by the separate
+# bounded contracts in verify-ab-preservation.py, not an obsolete whole-A hash.
+assert "(references/getting-started.md)" in entry and guide.is_file()
+direction = skill / "references/a1-a5-direction.md"
+direction_text = direction.read_text()
 boundaries = skill / "references/mode-execution-boundaries.md"
+production = skill / "references/a-production-and-review.md"
+a_routes = (direction, boundaries, production,
+            skill / "references/amber-noir.md",
+            skill / "references/rubber-hose.md",
+            skill / "references/a7-prompt-contract.md",
+            skill / "references/a7-acceptance.md")
+for source in (skill / "SKILL.md", guide, *a_routes):
+    assert source.is_file(), f"Missing installed A contract: {source}"
+    for target in re.findall(r"\]\(([^)#]+\.(?:md|json))(?:#[^)]*)?\)", source.read_text()):
+        if not target.startswith(("https://", "http://")):
+            linked = source.parent / target
+            assert linked.is_file(), f"Broken reference: {source}: {target}"
+            if linked.suffix == ".json":
+                json.loads(linked.read_text())
+
+# Routing changes must not collapse A1–A7 into one style or import B's renderer.
+for target in ("a1-a5-direction.md", "amber-noir.md", "rubber-hose.md",
+               "a7-prompt-contract.md", "a7-acceptance.md"):
+    assert f"(references/{target})" in entry, f"Missing A style route: {target}"
+for source in (entry, guide_text, direction_text):
+    assert "(references/mode-execution-boundaries.md#a-unified-workflow)" in source or \
+        "(mode-execution-boundaries.md#a-unified-workflow)" in source
+    assert "(references/a-production-and-review.md)" in source or \
+        "(a-production-and-review.md)" in source
+assert "## A unified workflow" in boundaries.read_text()
+assert "A1 maps to Style 1 light/dark, A2 to Style 2/2A/2B, A3–A5 to Styles 3–5" in entry
+assert "bypass the A1–A5 direction reference" in entry
+assert "Bypass A1–A5 rules and B renderers" in entry
+for style in ("Style 1 (Classic Minimalist)", "Style 2 (Modern Beanie Zeke)",
+              "Style 2A (Modern Studio Tech)", "Style 2B (Cinematic Story)",
+              "Style 3 (Prehistoric Hand-Drawn / Dark Comedy)",
+              "Style 4 (Cozy Storytelling / 治愈故事风)"):
+    assert style in direction_text, f"Missing A visual identity: {style}"
+revised_a5 = "  - `Style 5 (Historical Cartoon / 历史卡通风)`: white heads with connected short white necks, expressive faces, black stick limbs and compact fingerless palms, period dress and cel-shaded historical settings"
+assert direction_text.count(revised_a5) == 1, "Missing owner-directed A5 baseline summary"
+for anchor in ("one current pose per limb", "a moving arm replaces its previous pose rather than adding another arm",
+               "bright red beanie (smooth rounded knit, no pom-pom) and a yellow t-shirt"):
+    assert anchor in direction_text, f"Missing A character anchor: {anchor}"
+assert (root / "tests/verify-ab-preservation.py").is_file()
+for target in ("assets/a7/reference-manifest.json", "assets/a7/validated-workflow.json"):
+    assert f"({target})" in entry, f"Missing A7 approved material route: {target}"
+
+# Detailed workflow remains in references so the installed entry stays compact.
+assert len(entry.encode()) <= 20000, "Keep the new workflow detail in references"
 assert "(references/mode-execution-boundaries.md)" in entry and boundaries.is_file()
 assert "Before planning" in entry
 assert "Published B choices are B1, B2, B3, B4, B5 and B6" in guide_text
@@ -88,27 +135,63 @@ assert "https://github.com/kaomei/stickman-video-director" in install
 assert "安装成功后读取 SKILL.md" in install
 assert (root / "tests/scenarios/first-use-guidance.md").is_file()
 
-# Chinese-facing welcome uses Chinese mode names, not internal routing labels.
+# Chinese-facing welcome uses the approved bilingual names, not retired labels.
 welcome = guide_text.split("### 欢迎使用火柴人视频 Skill\n", 1)[1].split("### Adapt instead of replaying the README", 1)[0]
-assert "#### A · 导演模式：" in welcome and "#### B · 全自动模式：" in welcome
-assert not re.search(r"\b(?:Director|Autopilot)\b|自动成片", welcome)
+assert "#### A · Model Engine（模型引擎）：" in welcome
+if args.scope in ("a", "published"):
+    # A-only overlays retain the released B welcome verbatim. Do not require an
+    # unrelated B naming migration merely to verify the authorized A workflow.
+    assert any(heading in welcome for heading in (
+        "#### B · Code Engine（代码引擎）：",
+        "#### B · 全自动模式：确认样片后，自动做完整视频"))
+    active_welcome = welcome.split("#### B", 1)[0]
+else:
+    assert "#### B · Code Engine（代码引擎）：" in welcome
+    active_welcome = welcome
+assert not re.search(r"\b(?:Director|Autopilot)\b|自动成片", active_welcome)
 assert "A 模式的旁白和声音设计沿用原有规则" in welcome
 assert "稳定男声默认" not in welcome, "Do not misstate A's source-appropriate voice selection"
 
-# Optional A references remain reachable without any additional Director changes.
+# The unified A handoff distinguishes source generation from the final edit,
+# protects prompt-only use, and keeps tests/paid production within authorization.
+a_handoff = section(guide_text, "## A · Model Engine（模型引擎） handoffs")
+stages = re.findall(r"^\| (Brief|Proposal|Prompt package|Optional trial|Full production) \|", a_handoff, re.M)
+assert stages == ["Brief", "Proposal", "Prompt package", "Optional trial", "Full production"]
+for requirement in ("All A1–A7 styles follow", "sample lyrics remain optional",
+                    "Do not ask users to choose a delivery route upfront",
+                    "Do not round it to a fixed clip multiple",
+                    "topic approval is not storyboard approval",
+                    "complete independent source-generation prompts",
+                    "One source can supply several edited shots",
+                    "valid complete handoff for self-generation",
+                    "do not silently spend credits or require login to receive prompts",
+                    "Google Flow in the built-in browser", "actual selected model",
+                    "lowest supported available resolution", "estimated consumption",
+                    "run only within its authorization", "Show the actual preview",
+                    "do not make every scene repeat a still-frame and low-resolution test gate",
+                    "total credit cap including repairs", "Reuse valid existing approvals",
+                    "deliver the video, local preview and folder", "No per-shot reminders",
+                    "preserving the requested final runtime", "project checkpoint",
+                    "Limit ineffective retries", "inspect actual acting/camera/sound",
+                    "repair only affected ranges and joins",
+                    "Explicitly user-confirmed samples are reusable baselines"):
+    assert requirement in a_handoff, f"Missing A onboarding boundary: {requirement}"
+
+# Optional A references remain reachable without changing fixed style anchors.
 reference_heading = "Optional A character references"
 assert reference_heading in entry
-a_reference = guide_text.split(f"### {reference_heading}\n", 1)[1].split("## B · Autopilot handoffs", 1)[0]
+a_reference = section(guide_text, f"### {reference_heading}")
 for requirement in ("not a new setup requirement", "front, side and back views",
                     "Reuse suitable user-approved references", "every generated clip",
                     "when the chosen tool supports reference images", "not a consistency guarantee",
                     "not replace, shorten or globally rewrite", "fixed character anchor"):
     assert requirement in a_reference, requirement
-assert "按需确认人物三视图" in welcome and "三视图（正面、侧面、背面）" in welcome
+assert "三视图（正面、侧面、背面）" in welcome
+assert "已有确认的角色参考图可直接复用" in welcome and "不需要定制时可跳过" in welcome
 
 # A5 recommends references proactively, while preserving a non-blocking text route.
 assert "A5 proactive character guidance" in entry
-a5_reference = guide_text.split("### A5 proactive character guidance\n", 1)[1].split("## B · Autopilot handoffs", 1)[0]
+a5_reference = section(guide_text, "### A5 proactive character guidance")
 for requirement in ("before planning", "even if the user has not asked", "正面、侧面、背面",
                     "每段视频", "完整分镜提示词一起提交", "not a new mandatory setup",
                     "prefers text-only", "do not repeatedly ask", "Reuse suitable approved",
@@ -132,7 +215,9 @@ assert "Google Gemini **Bodi**" in b1 and "Google Gemini **Sadaltager**" in b1
 assert "Voice reference only" in b1 and "rather than requiring Gemini" in b1
 assert "native rate and default treatment" in b1
 assert "showcase voices are references, not mandatory providers or voices" in guide_text
-print("First-use wiring, proactive A5 reference guidance and single-Skill identity passed; other Director bytes preserved.")
+print("Unified A onboarding, A1–A7 style routes, reference/package integrity and single-Skill identity passed.")
+print("Prompt-only delivery, authorized Flow trial, runtime/edit mapping, recovery and scoped repair guidance passed.")
+print("Optional A references and proactive, non-blocking A5 guidance passed; visual/voice byte protection remains in verify-ab-preservation.py.")
 print("Independent B-style settings, defaults precedence and unchanged demo-voice policy passed.")
 print("Eight-language catalog destinations, shared anchors and English fallback instruction checks passed.")
 print("Static checks only; fresh-host conversational acceptance remains a separate test.")

@@ -13,8 +13,9 @@ a6 = reference.read_text()
 
 assert "(references/amber-noir.md)" in entry
 assert "when selected, before planning" in entry
-assert "bypass the A1–A5 contract below" in entry
-assert "apply only to A1–A5, not to A6 or any B style" in entry
+assert "bypass the A1–A5 direction reference while following the shared A workflow" in entry
+assert "applies only to A1–A5" in entry and "A6/A7 keep dedicated style references" in entry
+assert "applies to A1–A7, never to B" in entry
 assert "(amber-noir.md)" in guide
 welcome = guide.split("### 欢迎使用火柴人视频 Skill\n", 1)[1].split(
     "### Adapt instead of replaying the README", 1
@@ -25,8 +26,8 @@ for text in (
     "Explain only after selection",
     "Google Flow · Veo 3.1 Fast · 720p · up to 8 seconds per clip",
     "historical test provenance",
-    "Route 1 · Flow browser (recommended)",
-    "Route 2 · Renoise MCP (explicit choice)",
+    "Generation platform · Flow browser (recommended)",
+    "Alternative platform · Renoise MCP (explicit choice)",
     "not permission to submit a generation",
     "not a proven mouth-stability fix",
     "independent Gemini Puck narration",
@@ -37,7 +38,9 @@ for text in (
     "login-only Flow project URL is not a usable public media reference",
     "MCP installation alone is not proof",
     "do not split mechanically by word count",
-    "at least four clips", "at least eight",
+    "Plan narrative acts separately from generated clips",
+    "Verify the selected model’s currently supported durations",
+    "not a fixed six-scene or three-clip recipe",
     "Do not repaint, mask, replace the mouth",
     "Do not promise that every Codex/Claude environment has browser control",
     "No upload/publication follows automatically",

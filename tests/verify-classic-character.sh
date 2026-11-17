@@ -27,7 +27,9 @@ assert 'not frame-by-frame certification' in catalog
 assert 'repeat the concise frozen character anchor' in contract
 assert 'A raised arm replaces its old lowered line.' in contract
 assert 'no facial features, no hair, no clothing, no filled body, stable proportions, uniform medium line weight' not in contract
-assert 'For Style 1, freeze the concise character anchor' in skill
+direction = (root / 'references/a1-a5-direction.md').read_text()
+assert 'a1-a5-direction.md' in skill
+assert 'For Style 1, freeze the concise character anchor' in direction
 assert not (root / 'references/continuity-lock.md').exists(), 'Unrelated draft continuity changes included'
 print('Classic character instruction regression passed.')
 PY

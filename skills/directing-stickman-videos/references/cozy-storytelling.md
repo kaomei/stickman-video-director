@@ -20,7 +20,7 @@ Keep action, camera scale and props outside this design block. A close-up enlarg
 
 ## New segment, new story setting
 
-For a multi-clip video, default each new ten-second segment to another recognizable main setting. Establish it immediately, then vary wide views, action close-ups, tracking and foreground passes inside the segment. Three clips at the same table with different zoom levels do not satisfy this default.
+For a multi-clip video, default each new planned narrative segment to another recognizable main setting; choose its duration through the shared A workflow and actual model capabilities. Establish it immediately, then vary wide views, action close-ups, tracking and foreground passes inside the segment. Three clips at the same table with different zoom levels do not satisfy this default.
 
 Possible story route: office interruption → commute pressure → outdoor break. This is an example, not a reusable compulsory plot. Re-block for 9:16 with vertical depth and reveals instead of reusing a horizontal layout. Respect an explicit single-location request or an approved return/callback.
 
@@ -45,7 +45,7 @@ Graphical alerts or metaphors belong only to their approved timed beats. Use sim
 
 Use concrete actions, related effects and purposeful shot changes about every two to three seconds, with enough time to complete each handoff. Avoid liquid furniture transformations and too many simultaneous actions. A short sip, hesitation or reaction is useful; do not make the entire clip an idle talking pose. Warm daylight, moving leaves, passing trains and location-specific details can enrich the image without redesigning the character.
 
-Apply the shared `voice-continuity.md` contract for every clip. Freeze the video's chosen full voice profile and repeat it verbatim; another place, mood, character age or scene cannot recast the narrator. Keep emotions in visuals/music, and environmental acoustics in SFX rather than changing dry narration into station/cafe reverb. Use a story-appropriate score with the same motif/tempo/instrumentation across segments. The style is not limited to one male voice.
+Apply `voice-continuity.md` and the [A audio timeline contract](a-audio-timeline-and-review.md). Freeze the approved voice identity for the whole narration master; repeat its full block only in prompts actually generating native speech. External VO does not belong in every footage prompt. A new place, mood or character cannot recast the narrator. Keep emotions in visuals/music, and environmental acoustics in independent ambience/SFX rather than changing dry narration into station/cafe reverb. Use a continuous story-appropriate score or deliberate musical cues; matching prompt wording does not guarantee a seamless regenerated soundtrack. The style is not limited to one male voice.
 
 ## Delivery and acceptance
 
@@ -53,7 +53,7 @@ The skill outputs the confirmed proposal and standalone prompt package. Flow ope
 
 Before publishing a result or calling it consistent, check:
 
-- New clip openings show the approved different settings, unless a single-location request/callback was approved.
+- Open each approved new narrative setting clearly, unless a single-location request/callback was approved. A technical split into source-generation jobs does not require another location or a repeated establishing shot.
 - Character count/design, head/torso fill, proportions and current limb poses remain coherent at reaches, lifts, turns and walking steps.
 - Prop ownership and visible faces match the action; no simultaneous hand/background copies or end-state resets.
 - Movement direction and narrative meaning connect the cuts; time jumps are named. Different furniture after an intentional location cut is not itself a failure.

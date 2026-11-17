@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "style": "B7",
+  "format": "9:16",
+  "accepted_date": "2026-11-13",
+  "user_acceptance": "这版可以了，把B7竖屏的排版和短字幕规则也写进skill，更新本地待发布包，暂时不发布。",
+  "accepted_scope": "Exact 10-second v3 native portrait layout, caption size, whitespace and short semantic caption switching.",
+  "full_portrait_film_approved": false,
+  "media": "fast-forward-portrait-v3-10s.mp4",
+  "sha256": "b0aa0e97c3b74dbccc79b8cde042efaf25e98e98273e78a55be7485524345a8b",
+  "width": 1080,
+  "height": 1920,
+  "frame_rate": "24/1",
+  "duration_seconds": 10,
+  "logical_canvas": [
+    180,
+    320
+  ],
+  "integer_scale": 6,
+  "resampling": "nearest-neighbor",
+  "captions": "captions.json",
+  "layout_board": "layout-board.png",
+  "credit": "MUSIC-CREDITS.txt",
+  "provenance": "Code-drawn native portrait rearrangement of the approved Fast Forward V11 opening; first ten seconds of original mixed sound retained, with preview end fade. No new voice or music generation.",
+  "source_landscape_sha256": "5aa572a5efc3855ec0455523664c0c23bd5e9d8a6337c04ed53869c40e50ae90",
+  "validation": {
+    "decode": "passed",
+    "caption_bitmap_measurements": "Recorded per cue including one-pixel shadow",
+    "unchanged_scene_source_pixels_vs_v2": "All 240 frames outside changed caption band identical",
+    "mixed_audio_unchanged_vs_v2_adts_sha256": "2203e8039437a36ba11e3d6ae37512cabb56c3ee65ede2ac719818b5627d168d",
+    "independent_full_speed_picture_sound_review": "Not independently performed in this local update; user acceptance above is limited to the displayed 10-second layout and captions."
+  },
+  "limits": [
+    "Does not certify a complete portrait narrative, ending, all actions, or full-film audio.",
+    "Reference coordinates illustrate this sample; recompose each story and inspect actual target-platform UI and small-phone playback.",
+    "Finished mixed reference only, not reusable narration/music stems; retain attribution."
+  ]
+}

@@ -9,7 +9,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Ubah naskah mentah menjadi video animasi beretensi tinggi dalam hitungan menit — dari 13 gaya visual teruji, lengkap dengan voiceover, gerakan kamera dinamis, dan efek suara.
+Ubah naskah mentah menjadi video animasi beretensi tinggi dalam hitungan menit — dari 14 gaya visual teruji, lengkap dengan voiceover, gerakan kamera dinamis, dan efek suara.
 
 **Tanpa ribet animasi After Effects. Tanpa pajak langganan SaaS $50/bulan. Upload tiap hari tanpa burnout.**
 
@@ -93,7 +93,12 @@ Ubah naskah mentah menjadi video animasi beretensi tinggi dalam hitungan menit �
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
 </td>
 <!-- a7:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b7:hero:start -->
+<td width="50%" align="center">
+<strong>Teater Piksel</strong><br>
+<a href="#b7"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Teater Piksel" width="90%"></a>
+</td>
+<!-- b7:hero:end -->
 </tr>
 </table>
 
@@ -548,9 +553,39 @@ Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut 
 
 ---
 
+<!-- b7:section:start -->
 <a id="b7"></a>
 
-### B7: Segera hadir…
+### B7: Teater Piksel
+
+Piksel kecil, konsekuensi besar. Karakter stik putih mengubah pilihan sehari-hari menjadi dunia permainan kecil, tempat satu tombol, kesempatan yang terlewat, atau ucapan “terserah” bisa mengubah segalanya.
+
+- **Identitas visual**: Seni piksel yang tajam, karakter putih yang ekspresif, dan palet sesuai adegan—tanpa pembesaran buram atau tiruan vektor yang terlalu halus.
+- **Cerita lewat gerak**: Karakter, benda, dan latar menghidupkan cerita. Renungan penutup, ketikan retro, gerakan kecil, teks yang berpendar lembut, dan musik yang pas meninggalkan kesan mendalam.
+- **Cocok untuk**: Cerita tentang pilihan, pelajaran hidup yang ironis, komedi gelap, dan kisah menyentuh dengan nuansa permainan.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Contoh 1: apa jadinya kalau kamu selalu bilang “terserah”?</th>
+    <th width="50%" align="center">Contoh 2: jangan percepat hidupmu</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="assets/readme/previews/b7-pixel-theater.gif" alt="Contoh 1: apa jadinya kalau kamu selalu bilang “terserah”?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Contoh 2: jangan percepat hidupmu" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Animasi karakter piksel · Musik dan efek suara bernuansa gim</td>
+    <td align="center">Animasi piksel · Efek suara sesuai cerita</td>
+  </tr>
+</table>
+
+Kredit musik: [Paths](assets/readme/b7-pixel-theater-MUSIC-CREDIT.txt) · [Fast Forward](assets/readme/b7-fast-forward-excerpt-MUSIC-CREDIT.txt).
+
+<!-- b7:section:end -->
+
+<a id="b8"></a>
+
+### B8: Segera hadir…
 
 Gaya Code Engine dan animasi berbasis kode yang baru sedang disiapkan. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk mengikuti pembaruan selanjutnya!
 
