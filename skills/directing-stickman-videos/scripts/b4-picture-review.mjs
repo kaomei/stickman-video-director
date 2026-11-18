@@ -99,8 +99,12 @@ export function planB4Picture(p) {
   return {schema:1,status:'planned',scope:'picture only',delivery_ready:false,author_id:spec.author_id,width:p.width,height:p.height,fps:p.fps,scope_start:0,scope_end:end,shots,...(p.height>p.width?{viewing_profile:'portrait-phone'}:{}),limits:LIMITS};
 }
 
+// One scratch canvas per snapshot size. Creating a new native canvas for every
+// sampled frame grew memory by megabytes per frame on long films (issue #129).
+const snapshotCanvases=new Map();
 function snapshot(canvas,width=320) {
-  const {createCanvas}=canvasAPI(),c=createCanvas(width,Math.round(width*canvas.height/canvas.width));
+  const {createCanvas}=canvasAPI(),height=Math.round(width*canvas.height/canvas.width),key=width+'x'+height;
+  let c=snapshotCanvases.get(key); if(!c)snapshotCanvases.set(key,c=createCanvas(width,height)); else c.getContext('2d').clearRect(0,0,width,height);
   c.getContext('2d').drawImage(canvas,0,0,c.width,c.height);
   return {width:c.width,height:c.height,data:c.getContext('2d').getImageData(0,0,c.width,c.height).data};
 }
@@ -141,7 +145,9 @@ function registration(a,b) {
   return {original,best,ratio:best/Math.max(original,EPS),transform};
 }
 
-export function checkB4PicturePaint(p,{draw,picture}) {
+// A generator, so the async variant can yield to the event loop after every shot
+// and native canvas memory is reclaimed during long films (issue #129).
+function* picturePaintShots(p,{draw,picture}) {
   const plan=planB4Picture(p);if(!plan)return null;
   need(typeof draw==='function'&&typeof picture==='function','full and picture-only painters are required');
   const metrics=[];
@@ -176,9 +182,19 @@ export function checkB4PicturePaint(p,{draw,picture}) {
       if(s.full_scene_ids.length){global_registration=registration(snapshot(picture(t('before'),opts),160),snapshot(picture(t('after'),opts),160));need(global_registration.original<.004||global_registration.ratio>.32,'shot '+s.shot+' motion is explained by whole-scene translation/zoom; add a local story action');}
       Object.assign(result,{change,held,outside,mid_from_before,mid_from_after,composite,composite_hold,transition_samples:indices,steps,...(global_registration?{global_registration}:{})});
     }
-    metrics.push(result);
+    metrics.push(result);yield;
   }
   return {status:'paint_diagnostic_pass',diagnostic_status:'technical_only',review_status:'pending_independent_review',scope:'picture only',delivery_ready:false,plan,metrics,limits:LIMITS};
+}
+export function checkB4PicturePaint(p,options) {
+  const shots=picturePaintShots(p,options);let step;
+  while(!(step=shots.next()).done);
+  return step.value;
+}
+export async function checkB4PicturePaintAsync(p,options) {
+  const shots=picturePaintShots(p,options);let step;
+  while(!(step=shots.next()).done)await new Promise(setImmediate);
+  return step.value;
 }
 
 function probeSource(p,source,ffprobe) {
@@ -188,7 +204,7 @@ function probeSource(p,source,ffprobe) {
   return {width:v.width,height:v.height,fps:p.fps,duration:Number(v.duration??m.format.duration)};
 }
 async function checkFile(p,source,draw,picture,ffmpeg) {
-  const diagnostic=checkB4PicturePaint(p,{draw,picture}),plan=diagnostic.plan,{createCanvas,loadImage}=canvasAPI();
+  const diagnostic=await checkB4PicturePaintAsync(p,{draw,picture}),plan=diagnostic.plan,{createCanvas,loadImage}=canvasAPI();
   // Decode to RGB before resizing, then use the same Canvas sampler as the
   // authored frame (also used by typography review). YUV-first scaling or a
   // different resize kernel can misclassify dense colored ink as render drift.
@@ -205,6 +221,7 @@ async function checkFile(p,source,draw,picture,ffmpeg) {
       const s=plan.shots.find(s=>i>=s.clip_start_frame&&i<s.clip_end_frame);
       if(s){const local=diff(actual,expected,s.region);need(local.mean<=.04&&local.fraction<=.18,'exported picture frame '+i+' differs in shot '+s.shot);}
     }
+    await new Promise(setImmediate); // let native canvas memory be reclaimed between decode chunks (issue #129)
   }
   const phase_matches=[];
   // Substitute only the selected picture difference over the current composed

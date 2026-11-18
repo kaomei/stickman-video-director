@@ -12,8 +12,8 @@ import {checkOpeningFile} from './b4-opening-audio-check.mjs';
 import {checkB4OpeningPaint, checkB4OpeningFile} from './b4-opening-visual-check.mjs';
 import {B4_HOOK, B4_PORTRAIT, portraitHook, hookFamily, hookWeight, hookRows} from './b4-opening.mjs';
 import {requireB4Glyphs} from './b4-font-coverage.mjs';
-import {checkB4TypographyPaint, buildB4TypographyEvidence} from './b4-typography-review.mjs';
-import {checkB4PicturePaint, buildB4PictureEvidence} from './b4-picture-review.mjs';
+import {checkB4TypographyPaintAsync, buildB4TypographyEvidence} from './b4-typography-review.mjs';
+import {checkB4PicturePaintAsync, buildB4PictureEvidence} from './b4-picture-review.mjs';
 import {buildBStyleReferenceEvidence} from './b-style-reference-review.mjs';
 import {bStyleCaptionLayout, planBStylePortrait} from './b-style-portrait.mjs';
 import {checkBStylePortraitPaint} from './b-style-portrait-paint.mjs';
@@ -307,7 +307,7 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     const motionEvidence = await checkBStyleMotionPaint(p, frame);
     const portraitEvidence = await checkBStylePortraitPaint(p, frame);
     const picture = p.style === 'B4' ? await painter(p, {pictureOnly: true}) : null;
-    if (p.style === 'B4') { await checkB4OpeningPaint(p, {draw: frame, picture}); await checkB4TypographyPaint(p, {draw: frame}); await checkB4PicturePaint(p, {draw: frame, picture}); }
+    if (p.style === 'B4') { await checkB4OpeningPaint(p, {draw: frame, picture}); await checkB4TypographyPaintAsync(p, {draw: frame}); await checkB4PicturePaintAsync(p, {draw: frame, picture}); }
     const rendererHash = sha(['autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-portrait.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f))).join(':'));
     for (const [i, shot] of p.shots.entries()) {
       const first = Math.round(shot.start * p.fps), last = Math.min(count, i === p.shots.length - 1 ? count : Math.round(shot.end * p.fps)); if (last <= first) continue;
