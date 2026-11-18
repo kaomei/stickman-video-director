@@ -2,18 +2,20 @@
 """Standalone B6 authored-scene runtime, using the complete painted V90 engine."""
 from pathlib import Path
 from types import SimpleNamespace
-import argparse, hashlib, importlib.util, json, math, subprocess, sys, time
+import argparse, hashlib, importlib.util, json, math, shutil, subprocess, sys, time
 from contextlib import contextmanager
 
 sys.dont_write_bytecode=True
 # Validation may parse local package data, but must never execute an edited helper.
 TRUSTED_PUPPET_RUNTIME_SHA256='adc4bd4ddcbe2bb184381d080e99ebe1f4bd1beb3b0b6b1a841930ae15d5bed8'
 TRUSTED_CAPTION_RUNTIME_SHA256='5fc03a3f38dce9f55609f2059077125ecc30b7f5fa1d31580f9e007fcf23200b'
-TRUSTED_ASSET_ROLES_SHA256='ade90e92cad1751bd0b010d508501bba73a41a1ffe6c6018dadd4a368ace9c14'
-TRUSTED_MOTION_REVIEW_SHA256='b2f813cf6d42f65d73053eb75565e6f7ee3f32af7f58600679aa6bd042d921ed'
+TRUSTED_ASSET_ROLES_SHA256='34355da32469e49ceb1ebdbbb1c443d025b4ae4e76aa8394789075f9ef18f1f2'
+TRUSTED_MOTION_REVIEW_SHA256='2f5134a0e7bd62ae8718d2e5d3c723cbd50d7948dd98f1984f594cb94f3a893f'
 TRUSTED_ACTIONS_SHA256='4efcf86cb4f677f1369ca62bb5c87021262c8d92493428f4c91171280760db27'
-TRUSTED_ITERATION_SHA256='37aac116a54c860aaa5dca66ae7dbc0e68ab9bf2d9296e7c1c49c5e11dc8f1b0'
+TRUSTED_ITERATION_SHA256='c419ca71f8fe66a5a3c870ecb5df4b8c67c8da734feba4f5d41c7be4457e5910'
 TRUSTED_PREFLIGHT_SHA256='561c976f7e8be8ab446e37cbbfcf2fa8d99e9c2d24219291a4f036000fe67e2d'
+LEGACY_MOTION_REVIEW_SHA256='b2f813cf6d42f65d73053eb75565e6f7ee3f32af7f58600679aa6bd042d921ed'
+LEGACY_ITERATION_SHA256='37aac116a54c860aaa5dca66ae7dbc0e68ab9bf2d9296e7c1c49c5e11dc8f1b0'
 FROZEN_V90_EXAMPLE_SHA256={
     'scene':'dffaba09358cfdeafc9a3a04f29483910f4a8667159fbdbd60094b9185239947',
     'native_plan':'c0cdbfa77603936aa69ffdf3f211b28566fd14292172593fd63324a9d749620c',
@@ -22,7 +24,12 @@ FROZEN_V90_EXAMPLE_SHA256={
 }
 def read(p): return json.loads(Path(p).read_text())
 def save(p,v): Path(p).write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
-def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def sha(p):
+    digest = hashlib.sha256()
+    with Path(p).open('rb') as source:
+        for chunk in iter(lambda: source.read(256 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
 def require(ok,msg):
     if not ok: raise ValueError(msg)
 def resource_key(path):
@@ -84,16 +91,18 @@ def local(base,rel):
 def module(name,p):
     spec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec);sys.modules[name]=m;spec.loader.exec_module(m);return m
 
-def verified_module(name,path,expected_sha,label='character runtime'):
+def verified_module(name,path,expected_sha,label='character runtime',legacy_sha=None):
     # Execute exactly the verified source bytes, never a project-local .pyc cache.
     source=Path(path).read_bytes()
-    require(hashlib.sha256(source).hexdigest()==expected_sha,
+    require(hashlib.sha256(source).hexdigest() in (expected_sha, legacy_sha),
             'Untrusted '+label+' changed; validation refuses to execute the edited project helper')
     spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec)
     sys.modules[name]=m;exec(compile(source,str(path),'exec'),m.__dict__);return m
 
+# Allow exact previously shipped helpers when a project predates streaming hashes.
 def workflow_helper(base, name, digest):
-    return verified_module('b6_workflow_'+name,local(base,name+'.py'),digest,name)
+    legacy_sha = LEGACY_ITERATION_SHA256 if name == 'b6_iteration' else None
+    return verified_module('b6_workflow_'+name,local(base,name+'.py'),digest,name,legacy_sha)
 
 def character_registry(base, project, cast_ids):
     """Load actual per-view painted puppets; an arm-length JSON is insufficient.
@@ -332,7 +341,7 @@ def run(a):
         helper=Path(__file__).with_name('motion_review.py')
         if not helper.exists():helper=Path(__file__).with_name('b6_motion_review.py')
         require(helper.exists(),'Install the B6 motion-review helper before creative review')
-        return verified_module('b6_motion_review_helper',helper,TRUSTED_MOTION_REVIEW_SHA256,'motion-review runtime')
+        return verified_module('b6_motion_review_helper',helper,TRUSTED_MOTION_REVIEW_SHA256,'motion-review runtime',LEGACY_MOTION_REVIEW_SHA256)
     if a.command=='review-pack':
         require(a.report,'Choose the actual encoded preview --report')
         return motion_review().build_pack(c,a.report,a.output,a.review)
@@ -350,7 +359,7 @@ def run(a):
         if target.exists():
             history=base/'approvals';history.mkdir(exist_ok=True)
             previous=history/f'{target.stem}-{sha(target)}.json'
-            if not previous.exists():previous.write_bytes(target.read_bytes())
+            if not previous.exists():shutil.copyfile(target,previous)
             record['supersedes']=str(previous.relative_to(base))
         save(target,record);return {'approval':str(target)}
     require(a.trusted_code,'Inspect authored source, then allow --trusted-code')

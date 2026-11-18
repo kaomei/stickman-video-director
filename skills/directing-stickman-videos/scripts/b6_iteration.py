@@ -67,7 +67,11 @@ class RenderViewport:
 
 
 def _sha(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    digest = hashlib.sha256()
+    with path.open('rb') as source:
+        for chunk in iter(lambda: source.read(256 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def _digest(value):

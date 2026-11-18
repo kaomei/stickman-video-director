@@ -1,12 +1,11 @@
+import {hashFile as hash} from './file-sha256.mjs';
 // Extract first-use evidence. Extraction and declarations never certify viewing.
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
-const hash = p => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 const need = (v, m) => { if (!v) throw Error('B5 reference study: ' + m); };
 const text = v => typeof v === 'string' && v.trim().length > 0;
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);

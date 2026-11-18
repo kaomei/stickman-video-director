@@ -164,7 +164,11 @@ def save(path, data):
 
 
 def sha(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    digest = hashlib.sha256()
+    with Path(path).open('rb') as source:
+        for chunk in iter(lambda: source.read(256 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def local(base, rel):

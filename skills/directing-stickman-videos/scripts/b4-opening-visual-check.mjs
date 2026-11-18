@@ -29,6 +29,8 @@ export async function checkB4OpeningPaint(p, {draw, picture}) {
   const plan = planB4Opening(p, {hashFile, mediaPath});
   if (!plan || plan.status === 'user_exception') return plan;
   const {times: t, region} = plan;
+  await draw.prepare?.(Object.values(t));
+  await picture.prepare?.(Object.values(t));
   const before = capture(picture, t.before), after = capture(picture, t.after), hold = capture(picture, t.hold);
   const pictureChange = delta(before, after, region), heldChange = delta(before, hold, region);
   const outside = delta(before, after, region, false);

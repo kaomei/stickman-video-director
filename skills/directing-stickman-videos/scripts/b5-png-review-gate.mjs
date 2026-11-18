@@ -1,3 +1,4 @@
+import {hashFile as hash} from './file-sha256.mjs';
 // Pre-encode PNG provenance only. Local records cannot authenticate viewing,
 // independence, prior knowledge or aesthetic judgment, or intercept raw ffmpeg.
 import fs from 'node:fs';
@@ -10,7 +11,6 @@ import {assertB5RevisionInvariants, buildB5RevisionRequirements, validateB5Revis
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const sharp = createRequire(import.meta.url)('sharp');
-const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 const text = value => typeof value === 'string' && value.trim().length > 0;

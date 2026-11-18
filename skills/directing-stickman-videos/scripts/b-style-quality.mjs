@@ -94,6 +94,7 @@ export async function checkBStyleMotionPaint(p, draw) {
       const a = Math.max(start,interval.start), b = Math.min(end,interval.end);
       if (b-a < .00001) continue;
       const epsilon = Math.min(1e-5,(b-a)/10);
+      await draw.prepare?.([a + epsilon, (a + b) / 2, b - epsilon]);
       const options = {focusIds:[interval.id],principalMotionOnly:true,freezeAncestorsAt:a+epsilon};
       const first = Buffer.from(draw(a+epsilon,options).data()); let changed = 0;
       for (const t of [(a+b)/2,b-epsilon]) {

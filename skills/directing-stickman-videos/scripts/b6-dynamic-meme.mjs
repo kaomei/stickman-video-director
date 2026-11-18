@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {hashFile as sha} from './file-sha256.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath,pathToFileURL} from 'node:url';
@@ -13,7 +14,7 @@ import {initProduction,runProduction} from './b6-production.mjs';
 const PACK=path.join(ROOT,'assets/b6'), RATIOS=['16:9','9:16'];
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const save=(p,v)=>fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n');
-export const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+export {sha};
 const opt=(args,k,d)=>args.includes(k)?args[args.indexOf(k)+1]:d;
 export function checkPack() {
   const manifest=read(path.join(PACK,'manifest.json')),records=[...manifest.assets,...(manifest.examples??[])];

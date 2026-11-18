@@ -1,7 +1,7 @@
+import {hashFile} from './file-sha256.mjs';
 // Installed, read-only routing. This describes existing gates; it cannot pass them.
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
@@ -141,7 +141,7 @@ export function checkB4InstalledSamples() {
   const manifest = JSON.parse(fs.readFileSync(existing('assets/b4/approved-style.json'), 'utf8'));
   for (const item of manifest.publication.accepted_showcases) {
     const file = existing('assets/b4/public-showcases/' + path.basename(item.repository_path));
-    if (crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex') !== item.sha256) throw Error('B4 installed effect sample changed: ' + file);
+    if (hashFile(file) !== item.sha256) throw Error('B4 installed effect sample changed: ' + file);
   }
   return true;
 }

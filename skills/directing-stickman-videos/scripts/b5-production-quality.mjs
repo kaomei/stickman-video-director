@@ -1,9 +1,8 @@
+import {hashFile as sha} from './file-sha256.mjs';
 // New B5 stories: source/approval evidence and render checks, not likeness certification.
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
 import {validateVisualPlan} from './b5-visual-review.mjs';
-const sha = f => crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
 const read = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 const text = x => typeof x === 'string' && x.trim().length > 0;
 const need = (ok, why) => { if (!ok) throw Error('B5 production: ' + why); };
@@ -46,7 +45,14 @@ export function validateB5Production({dir, c}, pack) {
   const approvedRigReuse = a.kind === 'complex_character' && s.type === 'approved_reuse' &&
     sha(file) === sha(path.join(pack, 'example/assets/rig/spider-approved.svg'));
   if (a.kind !== 'original_simple') {
-    const b = fs.readFileSync(file);
+    const header = Buffer.alloc(12);
+    const fd = fs.openSync(file, 'r');
+    let b;
+    try {
+      b = header.subarray(0, fs.readSync(fd, header, 0, header.length, 0));
+    } finally {
+      fs.closeSync(fd);
+    }
     const raster = b.subarray(0, 8).equals(Buffer.from([137,80,78,71,13,10,26,10])) ||
       (b[0] === 255 && b[1] === 216 && b[2] === 255) ||
       (b.toString('ascii', 0, 4) === 'RIFF' && b.toString('ascii', 8, 12) === 'WEBP');

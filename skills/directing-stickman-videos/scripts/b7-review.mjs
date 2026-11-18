@@ -1,7 +1,7 @@
+import {hashFile as sha} from './file-sha256.mjs';
 // Evidence protocol, not an automatic aesthetic or listening judge.
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 
@@ -11,7 +11,6 @@ const CHECKS=['reference_match','principal_motion','geometry_contact','continuit
 const fail=s=>{throw Error('B7 review: '+s);};
 const need=(v,s)=>{if(!v)fail(s);};
 const nonempty=x=>typeof x==='string'&&x.trim().length>0;
-const sha=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
 const read=f=>JSON.parse(fs.readFileSync(f,'utf8'));
 const save=(f,d)=>fs.writeFileSync(f,JSON.stringify(d,null,2)+'\n');
 const ident=x=>nonempty(x)&&/^[A-Za-z0-9][A-Za-z0-9_-]{0,95}$/.test(x);

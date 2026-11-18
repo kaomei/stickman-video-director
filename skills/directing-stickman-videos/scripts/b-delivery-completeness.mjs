@@ -1,14 +1,13 @@
 #!/usr/bin/env node
+import {hashFile as hash} from './file-sha256.mjs';
 // Evidence completeness, not an automatic judge of meaning, audibility or aesthetics.
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 
 const requireThat = (ok, message) => { if (!ok) throw Error(message); };
 const text = value => typeof value === 'string' && value.trim().length > 0;
-const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const components = ['captions', 'sfx', 'music'];
 const within = (item, duration) => Number.isFinite(item.start) && Number.isFinite(item.end) && item.start >= 0 && item.end > item.start && item.end <= duration + .01;

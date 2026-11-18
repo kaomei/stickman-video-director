@@ -44,7 +44,7 @@ function wrap(ctx, text, maxWidth) {
   if (line) lines.push(line);
   return lines;
 }
-export async function painter(p, {pictureOnly = false} = {}) {
+export async function painter(p, {pictureOnly = false, boundedAssets = false} = {}) {
   const fonts = fontPaths(p);
   const plane = designPlane(p), captionLayout = bStyleCaptionLayout(p), captionBand = captionLayout.band_top;
   const portraitPlan = planBStylePortrait(p);
@@ -62,10 +62,24 @@ export async function painter(p, {pictureOnly = false} = {}) {
   const canvas = createCanvas(p.width, p.height), ctx = canvas.getContext('2d');
   const sceneCopy = p.style === 'B3' ? createCanvas(p.width, p.height) : null;
   const images = new Map();
-  for (const s of p.shots) for (const l of walkLayers(s.layers)) if (['image', 'pose'].includes(l.type)) {
-    const f = mediaPath(p.base, l.type === 'pose' ? '@b1/character-pose-sheet-v6.png' : l.path);
-    if (!images.has(f)) images.set(f, await loadImage(f));
+  const filesByShot = new Map(p.shots.map(shot => [shot, new Set(
+    [...walkLayers(shot.layers)].filter(layer => ['image', 'pose'].includes(layer.type))
+      .map(layer => mediaPath(p.base, layer.type === 'pose' ? '@b1/character-pose-sheet-v6.png' : layer.path)),
+  )]));
+  const shotAt = time => p.shots.find(shot => time >= shot.start && time < shot.end) || p.shots.at(-1);
+  let loadedShots = new Set();
+  async function loadShots(shots) {
+    const needed = new Set(shots.flatMap(shot => [...filesByShot.get(shot)]));
+    loadedShots.clear();
+    for (const file of images.keys()) if (!needed.has(file)) images.delete(file);
+    for (const file of needed) if (!images.has(file)) images.set(file, await loadImage(file));
+    loadedShots = new Set(shots);
   }
+  function prepare(times) {
+    const shots = times.map(shotAt);
+    if (shots.some(shot => !loadedShots.has(shot))) return loadShots([...new Set(shots)]);
+  }
+  await loadShots(boundedAssets ? p.shots.slice(0, 1) : p.shots);
   if (p.style === 'B4' && !p.opening?.user_override) {
     const layers = p.shots[0].layers, o = p.opening;
     const setup = layers.find(l => l.id === o.setup), payoff = layers.find(l => l.id === o.payoff);
@@ -99,7 +113,7 @@ export async function painter(p, {pictureOnly = false} = {}) {
     for (let i = 0; i < lengths.length && left > 0; i++) { const f = Math.min(1, left / Math.max(0.001, lengths[i])); ctx.lineTo(points[i][0] + (points[i + 1][0] - points[i][0]) * f, points[i][1] + (points[i + 1][1] - points[i][1]) * f); left -= lengths[i]; }
     ctx.stroke();
   }
-  return function frame(t, {omitIds = [], focusIds = [], hookSettled = false, principalMotionOnly = false, freezeAncestorsAt} = {}) {
+  function frame(t, {omitIds = [], focusIds = [], hookSettled = false, principalMotionOnly = false, freezeAncestorsAt} = {}) {
     ctx.resetTransform(); ctx.clearRect(0, 0, p.width, p.height); ctx.scale(p.width / plane.width, p.width / plane.width);
     ctx.fillStyle = ['B3', 'B4'].includes(p.style) ? '#111316' : p.style === 'B2' ? '#f4f0e5' : '#FDFDFC'; ctx.fillRect(0, 0, plane.width, plane.height);
     if (!focusIds.length && p.style === 'B1' && p.grid !== false) {
@@ -107,7 +121,8 @@ export async function painter(p, {pictureOnly = false} = {}) {
       for (let x = 32.5; x < plane.width; x += 64) { ctx.moveTo(x, 0); ctx.lineTo(x, captionBand - 1); }
       for (let y = 16.5; y < captionBand; y += 64) { ctx.moveTo(0, y); ctx.lineTo(plane.width, y); } ctx.stroke();
     }
-    const shot = p.shots.find(s => t >= s.start && t < s.end) || p.shots.at(-1);
+    const shot = shotAt(t);
+    if (!loadedShots.has(shot)) throw new Error('Prepare frame assets before drawing');
     function paintLayers(layers, selectedParent = false) { for (const layer of layers) {
       if (omitIds.includes(layer.id)) continue;
       if (principalMotionOnly && ['text', 'shadow'].includes(layer.type)) continue;
@@ -231,7 +246,9 @@ export async function painter(p, {pictureOnly = false} = {}) {
       ctx.textAlign = 'left'; ctx.restore();
     }
     return canvas;
-  };
+  }
+  if (boundedAssets) frame.prepare = prepare;
+  return frame;
 }
 async function encode(p, frame, start, frames, target) {
   const child = spawn(FFMPEG, ['-v', 'error', '-y', '-f', 'rawvideo', '-pixel_format', 'rgba', '-video_size', `${p.width}x${p.height}`, '-framerate', String(p.fps), '-i', 'pipe:0', '-an', '-c:v', 'libx264', '-preset', 'fast', '-crf', '20', '-pix_fmt', 'yuv420p', target], {stdio: ['pipe', 'ignore', 'pipe']});
@@ -240,33 +257,69 @@ async function encode(p, frame, start, frames, target) {
   const completion = new Promise((resolve, reject) => { child.on('error', reject); child.on('close', code => code === 0 ? resolve() : reject(new Error(`Encode failed: ${error}`))); });
   completion.catch(() => {});
   try {
-    for (let i = 0; i < frames; i++) { const data = frame((start + i) / p.fps).data(); if (!child.stdin.write(data)) await Promise.race([once(child.stdin, 'drain'), completion.then(() => { throw new Error('Encoder closed early'); })]); }
+    for (let i = 0; i < frames; i++) {
+      const time = (start + i) / p.fps;
+      await frame.prepare?.([time]);
+      const data = frame(time).data();
+      if (!child.stdin.write(data)) await Promise.race([once(child.stdin, 'drain'), completion.then(() => { throw new Error('Encoder closed early'); })]);
+    }
     child.stdin.end(); await completion;
   } catch (e) { child.kill(); await completion.catch(() => {}); throw e; }
 }
 function makeSfx(p, file, duration) {
-  const rate = 48000, n = Math.ceil(duration * rate), samples = new Float32Array(n);
-  let seed = 8731; const noise = () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296 * 2 - 1; };
+  const rate = 48000, n = Math.ceil(duration * rate);
+  const blocks = new Map(), nextSeed = seed => (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+  let seed = 8731;
   for (const s of p.sfx || []) {
     if (s.kind === 'file') continue;
     const len = s.kind === 'jingle' ? 0.52 : s.kind === 'chime' ? 0.55 : s.kind === 'paper' ? 0.22 : 0.12;
-    for (let i = 0; i < len * rate; i++) {
-      const index = Math.round(s.time * rate) + i; if (index >= n) break;
-      const t = i / rate, env = Math.exp(-t * (s.kind === 'chime' ? 8 : 25));
-      let value = s.kind === 'paper' ? noise() : s.kind === 'tap' ? noise() * 0.6 + Math.sin(t * 2 * Math.PI * 170) * 0.4 : Math.sin(2 * Math.PI * (s.kind === 'chime' ? 880 : 500 - 900 * t) * t);
-      if (s.kind === 'jingle') {
-        // Three irregular metallic contacts: an original key-ring Foley accent.
-        value = 0;
-        for (const [delay, f] of [[0, 2460], [0.085, 3110], [0.21, 2080]]) {
-          const q = t - delay;
-          if (q >= 0) value += (Math.sin(2 * Math.PI * f * q) * 0.55 + Math.sin(2 * Math.PI * f * 1.73 * q) * 0.25 + Math.sin(2 * Math.PI * f * 2.31 * q) * 0.12) * Math.exp(-q * 18);
-        }
-      }
-      samples[index] += value * (s.kind === 'jingle' ? 1 : env) * s.gain;
+    const start = Math.round(s.time * rate), end = Math.min(n, start + Math.ceil(len * rate));
+    const usesNoise = s.kind === 'paper' || s.kind === 'tap';
+    for (let offset = start; offset < end;) {
+      const block = Math.floor(offset / rate) * rate, stop = Math.min(end, block + rate);
+      if (!blocks.has(block)) blocks.set(block, []);
+      blocks.get(block).push({s, start, offset, stop, seed});
+      // Preserve the authored cue order of the original noise stream across blocks.
+      if (usesNoise) for (let i = offset; i < stop; i++) seed = nextSeed(seed);
+      offset = stop;
     }
   }
-  const bytes = Buffer.alloc(44 + n * 2); bytes.write('RIFF'); bytes.writeUInt32LE(bytes.length - 8, 4); bytes.write('WAVEfmt ', 8); bytes.writeUInt32LE(16, 16); bytes.writeUInt16LE(1, 20); bytes.writeUInt16LE(1, 22); bytes.writeUInt32LE(rate, 24); bytes.writeUInt32LE(rate * 2, 28); bytes.writeUInt16LE(2, 32); bytes.writeUInt16LE(16, 34); bytes.write('data', 36); bytes.writeUInt32LE(n * 2, 40);
-  samples.forEach((s, i) => bytes.writeInt16LE(Math.round(Math.max(-1, Math.min(1, s)) * 32767), 44 + i * 2)); fs.writeFileSync(file, bytes);
+  const header = Buffer.alloc(44); header.write('RIFF'); header.writeUInt32LE(36 + n * 2, 4); header.write('WAVEfmt ', 8); header.writeUInt32LE(16, 16); header.writeUInt16LE(1, 20); header.writeUInt16LE(1, 22); header.writeUInt32LE(rate, 24); header.writeUInt32LE(rate * 2, 28); header.writeUInt16LE(2, 32); header.writeUInt16LE(16, 34); header.write('data', 36); header.writeUInt32LE(n * 2, 40);
+  const samples = new Float32Array(rate), pcm = Buffer.alloc(rate * 2);
+  const fd = fs.openSync(file, 'w');
+  try {
+    fs.writeFileSync(fd, header);
+    fs.ftruncateSync(fd, 44 + n * 2);
+    // The unwritten intervals are silence. Mix each occupied second in cue order.
+    for (const [block, cues] of blocks) {
+      samples.fill(0);
+      for (const {s, start, offset, stop, seed: initialSeed} of cues) {
+        let state = initialSeed;
+        const noise = () => { state = nextSeed(state); return state / 4294967296 * 2 - 1; };
+        for (let index = offset; index < stop; index++) {
+          const i = index - start;
+          const t = i / rate, env = Math.exp(-t * (s.kind === 'chime' ? 8 : 25));
+          let value = s.kind === 'paper' ? noise() : s.kind === 'tap' ? noise() * 0.6 + Math.sin(t * 2 * Math.PI * 170) * 0.4 : Math.sin(2 * Math.PI * (s.kind === 'chime' ? 880 : 500 - 900 * t) * t);
+          if (s.kind === 'jingle') {
+            // Three irregular metallic contacts: an original key-ring Foley accent.
+            value = 0;
+            for (const [delay, f] of [[0, 2460], [0.085, 3110], [0.21, 2080]]) {
+              const q = t - delay;
+              if (q >= 0) value += (Math.sin(2 * Math.PI * f * q) * 0.55 + Math.sin(2 * Math.PI * f * 1.73 * q) * 0.25 + Math.sin(2 * Math.PI * f * 2.31 * q) * 0.12) * Math.exp(-q * 18);
+            }
+          }
+          samples[index - block] += value * (s.kind === 'jingle' ? 1 : env) * s.gain;
+        }
+      }
+      const size = Math.min(rate, n - block);
+      for (let i = 0; i < size; i++) pcm.writeInt16LE(Math.round(Math.max(-1, Math.min(1, samples[i])) * 32767), i * 2);
+      for (let written = 0; written < size * 2;) {
+        written += fs.writeSync(fd, pcm, written, size * 2 - written, 44 + block * 2 + written);
+      }
+    }
+  } finally {
+    fs.closeSync(fd);
+  }
 }
 function stamp(seconds, vtt = false) {
   const ms = Math.round(seconds * 1000); return `${String(Math.floor(ms / 3600000)).padStart(2, '0')}:${String(Math.floor(ms / 60000) % 60).padStart(2, '0')}:${String(Math.floor(ms / 1000) % 60).padStart(2, '0')}${vtt ? '.' : ','}${String(ms % 1000).padStart(3, '0')}`;
@@ -303,10 +356,10 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
       throw new Error('Output exists with different/unverified contents; pass --replace to replace renderer-owned output');
     }
     const cache = path.join(out, 'cache'); fs.mkdirSync(cache, {recursive: true});
-    const frame = await painter(p), clips = []; let reused = 0;
+    const frame = await painter(p, {boundedAssets: true}), clips = []; let reused = 0;
     const motionEvidence = await checkBStyleMotionPaint(p, frame);
     const portraitEvidence = await checkBStylePortraitPaint(p, frame);
-    const picture = p.style === 'B4' ? await painter(p, {pictureOnly: true}) : null;
+    const picture = p.style === 'B4' ? await painter(p, {pictureOnly: true, boundedAssets: true}) : null;
     if (p.style === 'B4') { await checkB4OpeningPaint(p, {draw: frame, picture}); await checkB4TypographyPaintAsync(p, {draw: frame}); await checkB4PicturePaintAsync(p, {draw: frame, picture}); }
     const rendererHash = sha(['autopilot-render.mjs', 'b3-graphics.mjs', 'b-style-portrait.mjs'].map(f => hashFile(path.join(ROOT, 'scripts', f))).join(':'));
     for (const [i, shot] of p.shots.entries()) {
@@ -345,7 +398,11 @@ export async function render(p, {full = false, seconds = 20, replace = false} = 
     fs.writeFileSync(path.join(out, `${kind}.vtt`), 'WEBVTT\n\n' + cues.map(c => `${stamp(c.start, true)} --> ${stamp(c.end, true)}\n${c.text}\n`).join('\n'));
     const cellHeight = p.height > p.width ? Math.round(320 * p.height / p.width) : 180;
     const sheet = createCanvas(960, cellHeight * 3), sc = sheet.getContext('2d');
-    for (let i = 0; i < 9; i++) sc.drawImage(frame(Math.min(duration - 1 / p.fps, (i + 0.5) * duration / 9)), (i % 3) * 320, Math.floor(i / 3) * cellHeight, 320, cellHeight);
+    for (let i = 0; i < 9; i++) {
+      const time = Math.min(duration - 1 / p.fps, (i + 0.5) * duration / 9);
+      await frame.prepare([time]);
+      sc.drawImage(frame(time), (i % 3) * 320, Math.floor(i / 3) * cellHeight, 320, cellHeight);
+    }
     fs.writeFileSync(path.join(out, `${kind}-contact-sheet.png`), sheet.toBuffer('image/png'));
     const info = probe(target), report = {fingerprint: p.fingerprint, preview_seconds: full ? null : duration, output: target, output_sha256: hashFile(target), original_voice_sha256: hashFile(p.voicePath), original_voice_duration: p.voiceDuration, voice_rate: 'unchanged; leading/trailing padding only', frames: count, duration: Number(info.format.duration), cache_hits: reused, shot_count: clips.length, full_decode: 'pass', caption_count: cues.length, human_review: 'required; technical checks are not acceptance', inputs: p.inputs};
     report.local_motion = motionEvidence;
