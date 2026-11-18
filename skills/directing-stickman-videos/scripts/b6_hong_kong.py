@@ -3,7 +3,12 @@
 from pathlib import Path
 import argparse, collections, hashlib, importlib.util, json, math, os, subprocess, sys
 
-def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def sha(p):
+    digest = hashlib.sha256()
+    with Path(p).open('rb') as source:
+        for chunk in iter(lambda: source.read(256 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
 def read(p): return json.loads(Path(p).read_text())
 def save(p, v): Path(p).write_text(json.dumps(v, ensure_ascii=False, indent=2)+'\n')
 def require(ok, message):

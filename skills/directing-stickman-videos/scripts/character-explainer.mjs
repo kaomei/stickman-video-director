@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {hashFile as hash} from './file-sha256.mjs';
 // B5 code-authored route. No network, generation, paid calls or automatic rigging.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -15,7 +16,6 @@ import {createB5PngReviewPack, sealB5PngImageFirstRead, validateB5PngPreEncodeRe
 const require=createRequire(import.meta.url);
 export const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const PACK=path.join(ROOT,'assets/b5');
-const hash=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
 const read=f=>JSON.parse(fs.readFileSync(f,'utf8'));
 const command=(exe,args)=>{const r=spawnSync(exe,args,{encoding:'utf8',maxBuffer:8e6});if(r.status!==0)throw Error(r.stderr||`${exe} failed`);return r.stdout};
 const ffmpeg=process.env.FFMPEG||'ffmpeg',ffprobe=process.env.FFPROBE||'ffprobe';

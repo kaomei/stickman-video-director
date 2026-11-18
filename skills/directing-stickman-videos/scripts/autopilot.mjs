@@ -69,11 +69,16 @@ async function main() {
     let p;
     if (command !== 'approve') p = loadProject(args[0], scoped ? {seconds} : {});
     if (command === 'validate') {
-      const {painter} = await import('./autopilot-render.mjs'); const draw = await painter(p);
-      for (const cue of p.captions) draw(Math.min(p.rangeEnd - 0.001, (cue.start + cue.end) / 2));
-      const opening_visual = p.style === 'B4' ? await (await import('./b4-opening-visual-check.mjs')).checkB4OpeningPaint(p, {draw, picture: await painter(p, {pictureOnly: true})}) : undefined;
+      const {painter} = await import('./autopilot-render.mjs'); const draw = await painter(p, {boundedAssets: true});
+      for (const cue of p.captions) {
+        const time = Math.min(p.rangeEnd - 0.001, (cue.start + cue.end) / 2);
+        await draw.prepare([time]);
+        draw(time);
+      }
+      const picture = p.style === 'B4' ? await painter(p, {pictureOnly: true, boundedAssets: true}) : undefined;
+      const opening_visual = p.style === 'B4' ? await (await import('./b4-opening-visual-check.mjs')).checkB4OpeningPaint(p, {draw, picture}) : undefined;
       const typography = p.style === 'B4' ? await (await import('./b4-typography-review.mjs')).checkB4TypographyPaintAsync(p, {draw}) : undefined;
-      const picture_motion = p.style === 'B4' ? await (await import('./b4-picture-review.mjs')).checkB4PicturePaintAsync(p, {draw, picture: await painter(p, {pictureOnly: true})}) : undefined;
+      const picture_motion = p.style === 'B4' ? await (await import('./b4-picture-review.mjs')).checkB4PicturePaintAsync(p, {draw, picture}) : undefined;
       const portrait = await (await import('./b-style-portrait-paint.mjs')).checkBStylePortraitPaint(p, draw);
       const b3_semantics = p.style === 'B3' ? (await import('./b3-semantic-motion.mjs')).planB3Semantics(p) : undefined;
       console.log(JSON.stringify({typography, ...(picture_motion ? {picture_motion} : {}), ...(portrait ? {portrait} : {}), ...(b3_semantics ? {b3_semantics} : {}), valid: true, ...(['B1', 'B2', 'B3', 'B4'].includes(p.style) ? {status: 'technical_only', visual_acceptance: 'not_reviewed', delivery_ready: false} : {}), fingerprint: p.fingerprint, duration: p.duration, checked_seconds: p.rangeEnd, shots: p.shots.length, ...(opening_visual ? {opening_visual} : {})})); return;
@@ -96,7 +101,7 @@ async function main() {
       const filmReport = json(path.join(out, 'film-report.json'));
       if (filmReport.fingerprint !== p.fingerprint || filmReport.output !== path.join(out, 'film.mp4') || hashFile(filmReport.output) !== filmReport.output_sha256) throw new Error('Film changed; render current evidence again');
       const {painter} = await import('./autopilot-render.mjs');
-      const acceptance = await (await import('./b4-typography-review.mjs')).verifyB4TypographyReview(p, {file: filmReport.output, draw: await painter(p), evidenceDir: path.join(out, 'film-typography'), reviewFile, projectFingerprint: p.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
+      const acceptance = await (await import('./b4-typography-review.mjs')).verifyB4TypographyReview(p, {file: filmReport.output, draw: await painter(p, {boundedAssets: true}), evidenceDir: path.join(out, 'film-typography'), reviewFile, projectFingerprint: p.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
       const acceptedPath = path.join(out, 'film-typography-acceptance.json'); save(acceptedPath, acceptance);
       console.log(JSON.stringify({typography_acceptance: acceptedPath, scope: 'typography only; other visual/audio and user acceptance remain required'})); return;
     }
@@ -106,7 +111,7 @@ async function main() {
       const reviewFile = fs.realpathSync(path.resolve(option('--review'))), filmReport = json(path.join(out, 'film-report.json'));
       if (filmReport.fingerprint !== p.fingerprint || filmReport.output !== path.join(out, 'film.mp4') || hashFile(filmReport.output) !== filmReport.output_sha256) throw new Error('Film changed; render current picture evidence again');
       const {painter} = await import('./autopilot-render.mjs');
-      const acceptance = await (await import('./b4-picture-review.mjs')).verifyB4PictureReview(p, {file: filmReport.output, draw: await painter(p), picture: await painter(p, {pictureOnly: true}), evidenceDir: path.join(out, 'film-picture'), reviewFile, projectFingerprint: p.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
+      const acceptance = await (await import('./b4-picture-review.mjs')).verifyB4PictureReview(p, {file: filmReport.output, draw: await painter(p, {boundedAssets: true}), picture: await painter(p, {pictureOnly: true, boundedAssets: true}), evidenceDir: path.join(out, 'film-picture'), reviewFile, projectFingerprint: p.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
       const acceptedPath = path.join(out, 'film-picture-acceptance.json'); save(acceptedPath, acceptance);
       console.log(JSON.stringify({picture_acceptance: acceptedPath, ...acceptance})); return;
     }
@@ -140,17 +145,17 @@ async function main() {
         if (report.opening_visual?.output_sha256 !== report.output_sha256 || !['diagnostic_pass', 'user_exception'].includes(report.opening_visual?.status)) throw new Error('B4 opening visual evidence missing; render and review the current preview again');
         const {painter} = await import('./autopilot-render.mjs');
         // Recheck the actual MP4; an edited report must not waive the gate.
-        await (await import('./b4-opening-visual-check.mjs')).checkB4OpeningFile(reviewed, report.output, {draw: await painter(reviewed), picture: await painter(reviewed, {pictureOnly: true})});
+        await (await import('./b4-opening-visual-check.mjs')).checkB4OpeningFile(reviewed, report.output, {draw: await painter(reviewed, {boundedAssets: true}), picture: await painter(reviewed, {pictureOnly: true, boundedAssets: true})});
         textReviewFile = command === 'approve' ? option('--text-review') : json(approvalPath).text_review_file;
         if (!textReviewFile) throw new Error('B4 preview requires independent typography review: approve --text-review REVIEW_JSON');
         textReviewFile = fs.realpathSync(path.resolve(textReviewFile));
         if (command === 'render' && hashFile(textReviewFile) !== json(approvalPath).text_review_sha256) throw new Error('Typography review changed; review and approve current preview again');
-        textAcceptance = await (await import('./b4-typography-review.mjs')).verifyB4TypographyReview(reviewed, {file: report.output, draw: await painter(reviewed), evidenceDir: path.join(out, 'preview-typography'), reviewFile: textReviewFile, projectFingerprint: reviewed.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
+        textAcceptance = await (await import('./b4-typography-review.mjs')).verifyB4TypographyReview(reviewed, {file: report.output, draw: await painter(reviewed, {boundedAssets: true}), evidenceDir: path.join(out, 'preview-typography'), reviewFile: textReviewFile, projectFingerprint: reviewed.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
         pictureReviewFile = command === 'approve' ? option('--picture-review') : json(approvalPath).picture_review_file;
         if (!pictureReviewFile) throw new Error('B4 preview requires independent picture animation review: approve --picture-review REVIEW_JSON');
         pictureReviewFile = fs.realpathSync(path.resolve(pictureReviewFile));
         if (command === 'render' && hashFile(pictureReviewFile) !== json(approvalPath).picture_review_sha256) throw new Error('Picture animation review changed; review and approve current preview again');
-        pictureAcceptance = await (await import('./b4-picture-review.mjs')).verifyB4PictureReview(reviewed, {file: report.output, draw: await painter(reviewed), picture: await painter(reviewed, {pictureOnly: true}), evidenceDir: path.join(out, 'preview-picture'), reviewFile: pictureReviewFile, projectFingerprint: reviewed.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
+        pictureAcceptance = await (await import('./b4-picture-review.mjs')).verifyB4PictureReview(reviewed, {file: report.output, draw: await painter(reviewed, {boundedAssets: true}), picture: await painter(reviewed, {pictureOnly: true, boundedAssets: true}), evidenceDir: path.join(out, 'preview-picture'), reviewFile: pictureReviewFile, projectFingerprint: reviewed.fingerprint, ffmpeg: FFMPEG, ffprobe: FFPROBE});
       }
     }
     if (command === 'approve') {

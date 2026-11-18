@@ -248,7 +248,11 @@ FIXTURE_SCENES = {'204a3faa0819af7a2d4774dcc8dc9ace31bbcf3acd7920a9138e65dfcc1cd
  'dffaba09358cfdeafc9a3a04f29483910f4a8667159fbdbd60094b9185239947': 'example-reproduction'}
 
 def digest(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    digest = hashlib.sha256()
+    with Path(path).open('rb') as source:
+        for chunk in iter(lambda: source.read(256 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 def classify(project, scene_sha):
     intrinsic=FIXTURE_SCENES.get(scene_sha)

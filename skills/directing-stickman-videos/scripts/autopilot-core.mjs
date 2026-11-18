@@ -1,3 +1,4 @@
+import {hashFile} from './file-sha256.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -18,7 +19,7 @@ export const STYLES = ['B1', 'B2', 'B3', 'B4'];
 export const FFMPEG = process.env.FFMPEG || 'ffmpeg';
 export const FFPROBE = process.env.FFPROBE || 'ffprobe';
 export const sha = value => crypto.createHash('sha256').update(value).digest('hex');
-export const hashFile = file => sha(fs.readFileSync(file));
+export {hashFile};
 export const json = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 export function save(file, value) {
   fs.mkdirSync(path.dirname(file), {recursive: true});

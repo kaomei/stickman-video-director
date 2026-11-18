@@ -86,6 +86,7 @@ export async function checkBStylePortraitPaint(p, draw) {
     }
     const times = sampleTimes(shot, end, p.fps, indexed);
     for (const time of times) {
+      await draw.prepare?.([time]);
       const baseline = pixels(draw, time, {focusIds: [emptyId]}, size);
       const full = pixels(draw, time, {}, size);
       for (const member of members.values()) {

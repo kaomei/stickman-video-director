@@ -1,6 +1,6 @@
+import {hashFile} from './file-sha256.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {initHK} from './b6-hong-kong.mjs';
@@ -34,7 +34,7 @@ export function initProduction(dir,ratio,fontOptions) {
   const standard=JSON.parse(fs.readFileSync(path.join(ROOT,'assets/b6/style-standard.json'),'utf8'));
   const ref=standard.reference.path;
   fs.copyFileSync(path.join(ROOT,'assets/b6',ref),path.join(dir,ref));
-  if(crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,ref))).digest('hex')!==standard.reference.sha256)throw new Error('B6 primary portrait reference fingerprint mismatch');
+  if(hashFile(path.join(dir,ref))!==standard.reference.sha256)throw new Error('B6 primary portrait reference fingerprint mismatch');
   save(path.join(dir,'quality-target.json'),standard);
   fs.mkdirSync(path.join(dir,'formats'));
   const formats={};

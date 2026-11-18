@@ -1,6 +1,6 @@
+import {hashFile as sha} from './file-sha256.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {provisionFonts, verifyProvisionedFontLicenses} from './b6-fonts.mjs';
@@ -8,7 +8,6 @@ import {provisionFonts, verifyProvisionedFontLicenses} from './b6-fonts.mjs';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const PACK=path.join(ROOT,'assets/b6/hong-kong-v90');
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
-const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 const opt=(a,k,d)=>a.includes(k)?a[a.indexOf(k)+1]:d;
 function local(base,rel) {
   if(typeof rel!=='string'||!rel||path.isAbsolute(rel))throw new Error('Project-relative file required');

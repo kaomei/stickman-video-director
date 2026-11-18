@@ -10,6 +10,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const pack = path.join(root, 'assets/b5');
 const script = path.join(root, 'scripts/b5-production-quality.mjs');
 const validatorSource = fs.readFileSync(script, 'utf8');
+const hashSource = fs.readFileSync(path.join(root, 'scripts/file-sha256.mjs'), 'utf8');
 const lock = JSON.parse(fs.readFileSync(path.join(pack, 'baseline-lock.json'), 'utf8'));
 
 // Execute the shipped validator, rather than a copy of its path/hash decision.
@@ -35,6 +36,13 @@ function validatorFor(api, scenario = 'intact') {
       }
       return encoding ? bytes.toString(encoding) : bytes;
     },
+    openSync(file) { return {bytes: this.readFileSync(file), offset: 0}; },
+    readSync(handle, buffer) {
+      const count = handle.bytes.copy(buffer, 0, handle.offset);
+      handle.offset += count;
+      return count;
+    },
+    closeSync() {},
     existsSync(file) { return fs.existsSync(localFile(file)); },
     readdirSync(dir, options) {
       let entries = fs.readdirSync(localFile(dir), options);
@@ -50,8 +58,10 @@ function validatorFor(api, scenario = 'intact') {
       return entries;
     }
   };
-  const context = {fs: fixtureFs, path: api, crypto, Buffer};
-  const code = validatorSource.replace(/^import .*;\r?\n/gm, '').replace(/^export /gm, '');
+  const context = {fs: fixtureFs, path: api, Buffer, createHash: crypto.createHash};
+  for (const method of ['openSync', 'readSync', 'closeSync']) context[method] = fixtureFs[method].bind(fixtureFs);
+  const code = [hashSource, 'const sha = hashFile;', validatorSource].join('\n')
+    .replace(/^import .*;\r?\n/gm, '').replace(/^export /gm, '');
   vm.runInNewContext(code + '\nglobalThis.validate = validateB5Production;', context, {filename: script});
   return () => context.validate({dir: project, c: {}}, virtualPack);
 }

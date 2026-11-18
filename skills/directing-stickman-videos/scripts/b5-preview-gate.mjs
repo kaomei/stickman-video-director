@@ -1,8 +1,8 @@
+import {hashFile as hash} from './file-sha256.mjs';
 // First-preview admission for B5 only. Local receipts prevent accidental
 // post-hoc/stale promotion; they cannot authenticate authorship or honest viewing.
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {validateVisualPlan, verifyB5PreviewReview, b5ActionKind, b5ActionChecks} from './b5-visual-review.mjs';
@@ -11,7 +11,6 @@ import {validateB5ReferenceStudy} from './b5-reference-study.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const START = '.b5-authoring-start.json';
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
-const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const write = (file, value) => fs.writeFileSync(file, JSON.stringify(value, null, 2) + '\n', {flag: 'wx'});
 const text = value => typeof value === 'string' && value.trim().length > 0;
 const need = (value, message) => { if (!value) throw Error('B5 preview gate: ' + message); };

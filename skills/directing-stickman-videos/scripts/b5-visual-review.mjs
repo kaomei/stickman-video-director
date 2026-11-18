@@ -1,3 +1,4 @@
+import {hashFile as hash} from './file-sha256.mjs';
 // Evidence-gated B5 review. This validates provenance and recorded observations;
 // it cannot certify that a reviewer watched, understood, or liked the film.
 import fs from 'node:fs';
@@ -21,7 +22,6 @@ const LIMITS = [
 const fail = message => { throw Error('B5 visual review: ' + message); };
 const need = (condition, message) => { if (!condition) fail(message); };
 const text = value => typeof value === 'string' && value.trim().length > 0;
-const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const digest = buffer => crypto.createHash('sha256').update(buffer).digest('hex');
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const write = (file, value) => fs.writeFileSync(file, JSON.stringify(value, null, 2) + '\n');

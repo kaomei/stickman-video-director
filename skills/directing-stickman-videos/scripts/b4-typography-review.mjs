@@ -165,6 +165,7 @@ function* typographyPaintMoments(p,{draw}) {
   need(typeof draw==='function','authored painter is required'); const metrics=[];
   for(const m of diagnosticMoments(plan)) {
     const at=k=>m.frame_indices[k]/p.fps;
+    yield PHASES.map(at);
     const frames=Object.fromEntries(PHASES.map(k=>[k,snapshot(draw(at(k),{focusIds:m.layer_ids}))]));
     const without=snapshot(draw(at('settled'),{focusIds:['__b4_typography_empty__']}));
     const ink=diff(frames.settled,without,m.region),entry_mid=diff(frames.entry,frames.mid,m.region),mid_settled=diff(frames.mid,frames.settled,m.region);
@@ -173,7 +174,7 @@ function* typographyPaintMoments(p,{draw}) {
       const phases=[];
       for(const phase of PHASES){const isolated=frames[phase],empty=snapshot(draw(at(phase),{focusIds:['__b4_typography_empty__']})),glyph=diff(isolated,empty,m.region),composed=snapshot(draw(at(phase))),removed=snapshot(draw(at(phase),{omitIds:m.layer_ids})),visibility=diff(composed,removed,m.region);
         need(glyph.mean>.0008&&glyph.fraction>.002&&visibility.mean>=glyph.mean*.25&&visibility.fraction>=glyph.fraction*.2,'environment marking '+m.id+' must be visible and unobscured in all four phases');phases.push({phase,ink:glyph,visible:visibility});}
-      metrics.push({id:m.id,kind:m.kind,phases,classification_status:'pending_independent_review',micro_animation:'independent review must confirm a stable physical marking, not title/rule/warning'});yield;continue;
+      metrics.push({id:m.id,kind:m.kind,phases,classification_status:'pending_independent_review',micro_animation:'independent review must confirm a stable physical marking, not title/rule/warning'});continue;
     }
     for(const [name,d] of Object.entries({entry_mid,mid_settled})) need(d.mean>=Math.max(.00012,ink.mean*.008)&&d.fraction>=.0005,'moment '+m.id+' needs actual local text micro-animation ('+name+'); background motion cannot supply it');
     const full=snapshot(draw(at('settled'))),omit=snapshot(draw(at('settled'),{omitIds:m.layer_ids})),visible=diff(full,omit,m.region);
@@ -184,7 +185,7 @@ function* typographyPaintMoments(p,{draw}) {
       need(memberInk.mean>.0008&&memberInk.fraction>.002&&memberVisible.mean>=memberInk.mean*.25&&memberVisible.fraction>=memberInk.fraction*.2,'grouped text member '+id+' must actually be visible, inside its region and unobscured');
       members.push({id,ink:memberInk,visible:memberVisible});
     }
-    metrics.push({id:m.id,ink,entry_mid,mid_settled,visible,members});yield;
+    metrics.push({id:m.id,ink,entry_mid,mid_settled,visible,members});
   }
   return {status:'paint_diagnostic_pass',plan,metrics,limits:LIMITS};
 }
@@ -195,7 +196,10 @@ export function checkB4TypographyPaint(p,options) {
 }
 export async function checkB4TypographyPaintAsync(p,options) {
   const moments=typographyPaintMoments(p,options);let step;
-  while(!(step=moments.next()).done)await new Promise(setImmediate);
+  while(!(step=moments.next()).done) {
+    await options.draw.prepare?.(step.value);
+    await new Promise(setImmediate);
+  }
   return step.value;
 }
 
@@ -220,7 +224,9 @@ async function checkFile(p,source,draw,ffmpeg) {
     need(raw.length===count*sourceFrameBytes,'actual output must contain every current final-video frame');
     for(let j=0;j<count;j++) {
     decodedPixels.data.set(raw.subarray(j*sourceFrameBytes,(j+1)*sourceFrameBytes));decodedContext.putImageData(decodedPixels,0,0);
-    const i=start+j,actual=snapshot(decoded,width),authored=snapshot(draw(i/p.fps),width),d=diff(actual,authored,{x:0,y:0,w:1280,h:1280*p.height/p.width});
+    const i=start+j;
+    await draw.prepare?.([i/p.fps]);
+    const actual=snapshot(decoded,width),authored=snapshot(draw(i/p.fps),width),d=diff(actual,authored,{x:0,y:0,w:1280,h:1280*p.height/p.width});
     need(d.mean<=.03&&d.fraction<=.09,'exported frame '+i+' does not match current authored composition');max_mean=Math.max(max_mean,d.mean);
     for(const m of diagnosticMoments(plan)) if(i>=m.clip_start_frame&&i<m.clip_end_frame) {
       const local=diff(actual,authored,m.region);need(local.mean<=.04&&local.fraction<=.18,'exported typography frame '+i+' differs for '+m.id);
@@ -235,6 +241,7 @@ async function checkFile(p,source,draw,ffmpeg) {
   const phase_matches=[];
   for(const m of diagnosticMoments(plan).filter(m=>m.kind!=='environment_marking')) for(const [phase,next] of [['entry','mid'],['mid','settled']]) {
     const t=m.frame_indices[phase]/p.fps,actualImage=await loadImage(command(ffmpeg,['-v','error','-ss',String(t),'-i',source,'-frames:v','1','-c:v','png','-threads:v','1','-f','image2pipe','pipe:1']));
+    await draw.prepare?.([t,m.frame_indices[next]/p.fps]);
     const actual=snapshot(actualImage),authored=snapshot(draw(t)),isolated=snapshot(draw(t,{focusIds:m.layer_ids})),other=snapshot(draw(m.frame_indices[next]/p.fps,{focusIds:m.layer_ids}));
     let currentError=0,alternativeError=0,count=0;
     const r=m.region,x0=Math.floor(r.x/4),y0=Math.floor(r.y/4),x1=Math.min(actual.width,Math.ceil((r.x+r.w)/4)),y1=Math.min(actual.height,Math.ceil((r.y+r.h)/4));

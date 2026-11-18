@@ -1,9 +1,8 @@
+import {hashFile as sha} from './file-sha256.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
-import crypto from 'node:crypto';
 
-const sha = p => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 export const PUBLIC_CAPTION_FONT = Object.freeze({
   variant: 'archivo-black', family: 'Archivo Black',
   source: 'assets/fonts/ArchivoBlack.ttf', path: 'fonts/ArchivoBlack.ttf',
