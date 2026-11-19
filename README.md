@@ -667,11 +667,11 @@ Yes. Stickman Video Director is 100% free and open-source under the MIT license.
 
 **A · Model Engine**: Primarily relies on text-to-video generation. If a character has a complex hairstyle, outfit, or other features that are difficult to reproduce consistently from text alone, add a stick-figure character reference image and keep using it for subsequent clips to make the results more consistent.
 
-### Q3. Which tools should I use? Do I need a specific image-generation model?
+### Q3. What tools do you recommend? Do I need a specific image generation model?
 
-**I recommend Codex for results closest to the examples.** I created and tested the B Mode showcase videos in Codex; you do not need to write code yourself. Other agents can install the Skill, but differences in models, tool configuration, and execution can affect the results.
+For results closest to the demos, **use Google Flow to generate clips in Mode A and Codex to produce the full video in Mode B.** All Mode B demos were made with Codex. Describe what you want in plain language, and the agent writes the code and renders the video locally.
 
-My examples use GPT's built-in model without a separate image-generation API. Other agents should use their available image tools; B5 real-person or complex hosts need generated or approved image assets, not code-drawn substitutes. Voice credits describe the examples, not a required provider. Ask your agent to configure your preferred service, then check a short sample before making the full video. Style presets are defaults, not restrictions: ask your agent to change fonts, text effects, or the video language and adapt the layout to your request.
+**You can choose your own image generation model.** The Mode B demos used Codex’s built-in image generation tool for visual assets, so that setup needs no separate image generation API. You can also use Claude Code or another agent that can read and write files and run terminal commands, together with your choice of image generation and voiceover tools. Start with a short sample with audio to check the style, captions, and sound before producing the full video.
 
 ### Q4. Can I make a video without an existing script?
 

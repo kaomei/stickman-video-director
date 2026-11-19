@@ -395,7 +395,7 @@ for name in selected:
         questions = (
             "Is this really 100% free? Are there any hidden fees?",
             "How do I maintain character consistency?",
-            "Which tools should I use? Do I need a specific image-generation model?",
+            "What tools do you recommend? Do I need a specific image generation model?",
             "Can I make a video without an existing script?",
             "How does the AI ensure the video has high viewer retention and isn't boring?",
             "Can I monetize these videos on YouTube and TikTok?",
@@ -407,7 +407,7 @@ for name in selected:
         required_copy = (
             ("$30–$60/month", "zero subscription fees", "third-party API usage"),
             ("code-driven", "image assets", "reference image"),
-            ("recommend Codex", "created and tested", "GPT's built-in model", "without a separate image-generation API"),
+            ("Codex’s built-in image generation tool", "no separate image generation API", "short sample with audio"),
             ("shower thought", "3-second hook", "story and shots", "topic, target length, and chosen style"),
             ("**visual storytelling psychology**", "**The 3-Second Hook**", "**Visual Metaphors**", "**Pacing & Comic Pauses**"),
             ("completely original", "YouTube Partner Program (YPP)"),
@@ -419,32 +419,17 @@ for name in selected:
         assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 0, 0, 3, 0, 0], (name, "approved FAQ list formatting")
     faq_answers = re.split(r"^### Q\d+\. .+\n", faq, flags=re.M)[1:]
     assert [len(re.findall(r"^- ", answer, re.M)) for answer in faq_answers] == [0, 0, 0, 0, 3, 0, 0], (name, "localized FAQ bullet parity")
-    # Model neutrality must not disappear in translation. Real-motion style gates
-    # remain in the individual style contracts; the owner removed the old
-    # camera/text-only warning from the comparison table.
-    production_copy = {
-        "en": ("Other agents", "available image tools", "B5", "not code-drawn substitutes", "not a required provider", "local animation", "prop movement", "alone do not count"),
-        "zh-CN": ("其他 Agent", "可用的生图工具", "B5", "不能用代码头像替代", "不绑定服务商", "局部动画", "道具动作", "不算画面微动画"),
-        "ja": ("他のエージェント", "使える画像生成ツール", "B5", "コードで描いた代用の顔は使いません", "サービスの指定ではありません", "部分アニメーション", "小道具の動き", "だけでは"),
-        "ko": ("다른 에이전트", "이미지 도구", "B5", "코드로 그린 대체 얼굴은 허용하지 않습니다", "특정 서비스를 요구하지 않습니다", "부분 애니메이션", "소품 움직임", "만으로는"),
-        "fr": ("autre agent", "outils d’image disponibles", "B5", "pas un visage de remplacement dessiné par code", "n’imposent aucun fournisseur", "animations locales", "mouvements d’objets", "ne comptent pas"),
-        "pt-BR": ("outros agentes", "ferramentas de imagem disponíveis", "B5", "não de rostos substitutos desenhados por código", "sem exigir um fornecedor", "animações locais", "movimentos de objetos", "não conta"),
-        "tr": ("Diğer ajanlarda", "görsel araçlarını", "B5", "kodla çizilmiş genel bir yüzle değiştirilemez", "sağlayıcıyı zorunlu kılmaz", "yerel animasyon", "nesne hareketleri", "sayılmaz"),
-        "id": ("Agen lain", "alat gambar yang tersedia", "B5", "bukan wajah pengganti yang digambar dengan kode", "bukan layanan yang wajib", "animasi lokal", "gerakan objek", "tidak dihitung"),
+    image_model_choice = {
+        "en": "**You can choose your own image generation model.**",
+        "zh-CN": "**生图模型可以自行选择。**",
+        "ja": "**画像生成モデルは自由に選べます。**",
+        "ko": "**이미지 생성 모델은 자유롭게 선택할 수 있습니다.**",
+        "fr": "**Vous pouvez choisir votre modèle de génération d’images.**",
+        "pt-BR": "**Você pode escolher o modelo de geração de imagens.**",
+        "tr": "**Görsel üretim modelini kendiniz seçebilirsiniz.**",
+        "id": "**Anda bebas memilih model pembuat gambar.**",
     }
-    neutrality = production_copy[active][:5]
-    assert all(token in faq_answers[2] for token in neutrality), (name, "localized model/voice neutrality")
-    typography_copy = {
-        "en": ("defaults, not restrictions", "fonts, text effects, or the video language", "adapt the layout"),
-        "zh-CN": ("画风预设不是限制", "字体、文字动效或视频语言", "适配排版"),
-        "ja": ("初期設定であり、制限ではありません", "フォント、文字の演出、動画の言語", "レイアウトを調整"),
-        "ko": ("기본값이지 제한이 아닙니다", "글꼴, 텍스트 효과, 영상 언어", "레이아웃을 맞출"),
-        "fr": ("points de départ, pas des restrictions", "polices, les effets de texte ou la langue", "adapter la mise en page"),
-        "pt-BR": ("pontos de partida, não restrições", "fontes, efeitos de texto ou o idioma", "adaptar o layout"),
-        "tr": ("başlangıç noktasıdır, kısıtlama değildir", "yazı tiplerini, metin efektlerini veya video dilini", "yerleşimi isteğinize göre"),
-        "id": ("titik awal, bukan batasan", "font, efek teks, atau bahasa video", "menyesuaikan tata letaknya"),
-    }
-    assert all(token in faq_answers[2] for token in typography_copy[active]), (name, "localized typography/language customization")
+    assert image_model_choice[active] in faq_answers[2], (name, "localized image model choice")
     for style_id, next_marker, voice in (("b1", '<a id="b2"></a>', "Bodi"), ("b2", '<a id="b3"></a>', "Fola"), ("b3", '<!-- b3:section:end -->', "Bodi")):
         style_section = section(text, style_id, next_marker)
         assert re.search(r'<td align="center">Google Gemini · [^<]*' + voice, style_section), (name, style_id, "verified sample platform and voice")
@@ -460,7 +445,7 @@ for name in selected:
     }
     assert all(token in faq_answers[3] for token in story_plan_copy[active]), (name, "story and shot structure scales with topic, length and style")
     assert not re.search(r"6(?:[- ]scene| 幕|シーン|개 장면| scènes| cenas| sahne| adegan)", faq_answers[3]), (name, "no fixed six-scene FAQ promise")
-    for answer, tokens in zip(faq_answers, (("MIT", "API"), ("B", "A"), ("Codex", "GPT"), ("3",), ("SFX", "Casually Explained"), ("YouTube", "YPP"), ("A", "B", "Agent"))):
+    for answer, tokens in zip(faq_answers, (("MIT", "API"), ("B", "A"), ("Google Flow", "Codex", "Claude Code", "API"), ("3",), ("SFX", "Casually Explained"), ("YouTube", "YPP"), ("A", "B", "Agent"))):
         assert all(token in answer for token in tokens), (name, "localized FAQ topic parity", tokens)
     assert "MIT" in faq and "API" in faq and "YouTube" in faq and "Codex" in faq, name
     code = re.findall(r"```text\n(.*?)```", text, re.S)

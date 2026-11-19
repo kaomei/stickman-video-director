@@ -667,11 +667,11 @@ Evet. Stickman Video Director, MIT lisansıyla %100 ücretsiz ve açık kaynakl�
 
 **A · Model Engine**: Temelde metinden video üretimine dayanır. Saç modeli, kıyafet veya diğer özellikler karmaşıksa ve yalnızca metinle tutarlı biçimde yeniden üretilemiyorsa bir çöp adam karakter referans görseli ekleyin ve sonraki kliplerde de kullanın. Bu, sonuçların daha tutarlı olmasını sağlar.
 
-### Q3. Hangi araçları kullanmalıyım? Belirli bir görsel üretim modeli seçmem gerekiyor mu?
+### Q3. Hangi araçları önerirsiniz? Belirli bir görsel üretim modeli kullanmam gerekiyor mu?
 
-**Örneklere mümkün olduğunca yakın sonuçlar için Codex’i öneririm.** B Modu örnek videolarını Codex’te hazırlayıp test ettim; kendiniz kod yazmanız gerekmez. Skill başka agent ortamlarına da kurulabilir, ancak model, araç yapılandırması ve yürütme biçimindeki farklar sonucu etkileyebilir.
+Örnek videolara yakın sonuçlar için **A modunda klipleri Google Flow ile üretmenizi, B modunda ise videonun tamamını Codex ile hazırlamanızı öneririz.** B modu örneklerinin tümü Codex ile hazırlandı. Ne istediğinizi kendi sözlerinizle anlatın. Ajan kodu yazar ve videoyu yerel olarak işler.
 
-Örneklerimde GPT’nin yerleşik görsel modelini kullanıyorum; ek bir görsel üretim API’si yapılandırmadım. Diğer ajanlarda, o ortamda bulunan görsel araçlarını kullanın. Gerçek kişilere veya karmaşık karakterlere dayanan B5 sunucuları için üretilmiş ya da onaylanmış görseller gerekir; kodla çizilmiş genel bir yüzle değiştirilemez. Ses bilgileri örneklerin kaynağını belirtir, belirli bir sağlayıcıyı zorunlu kılmaz. Gerekirse ajanınızdan seçtiğiniz hizmeti yapılandırmasını isteyin ve tam videodan önce kısa bir örneği kontrol edin. Stil ön ayarları birer başlangıç noktasıdır, kısıtlama değildir: ajanınızdan yazı tiplerini, metin efektlerini veya video dilini değiştirip yerleşimi isteğinize göre uyarlamasını isteyebilirsiniz.
+**Görsel üretim modelini kendiniz seçebilirsiniz.** B modu örneklerindeki görseller Codex’in yerleşik görsel üretim aracıyla hazırlandı. Bu yöntemde ayrı bir görsel üretim API’si kurmanız gerekmez. Dosya okuyup yazabilen ve terminal komutlarını çalıştırabilen Claude Code gibi bir ajanı da kendi görsel üretim ve seslendirme araçlarınızla kullanabilirsiniz. Videonun tamamını hazırlamadan önce kısa, sesli bir örnekle görsel stili, altyazıları ve sesi kontrol edin.
 
 ### Q4. Hazır bir senaryo olmadan video yapabilir miyim?
 
