@@ -667,11 +667,11 @@ Ya. Stickman Video Director 100% gratis dan open source dengan lisensi MIT. Anda
 
 **A · Model Engine**: Terutama mengandalkan pembuatan video dari teks. Jika gaya rambut, pakaian, atau ciri karakter lainnya rumit dan sulit direproduksi secara konsisten hanya dengan teks, tambahkan satu gambar referensi karakter stickman dan terus gunakan pada klip berikutnya agar hasilnya lebih stabil.
 
-### Q3. Alat apa yang sebaiknya saya gunakan? Apakah perlu memilih model pembuat gambar tertentu?
+### Q3. Alat apa yang direkomendasikan? Apakah harus memakai model pembuat gambar tertentu?
 
-**Agar hasilnya sedekat mungkin dengan contoh, saya merekomendasikan Codex.** Video contoh Mode B saya buat dan uji di Codex; Anda tidak perlu menulis kode sendiri. Skill juga dapat dipasang di agent lain, tetapi perbedaan model, konfigurasi alat, dan cara eksekusi dapat memengaruhi hasilnya.
+Agar hasilnya mendekati demo, **gunakan Google Flow untuk membuat klip di Mode A dan Codex untuk membuat video lengkap di Mode B.** Semua demo Mode B dibuat dengan Codex. Jelaskan hasil yang Anda inginkan dengan bahasa sehari-hari, lalu agen akan menulis kode dan merender video secara lokal.
 
-Contoh saya memakai model gambar bawaan GPT tanpa menyiapkan API tambahan. Agen lain dapat memakai alat gambar yang tersedia di lingkungannya. Pembawa acara B5 berupa orang nyata atau karakter kompleks harus memakai gambar yang dihasilkan atau sudah disetujui, bukan wajah pengganti yang digambar dengan kode. Kredit suara menunjukkan sumber contoh, bukan layanan yang wajib dipakai. Bila perlu, minta agen mengatur layanan pilihan Anda, lalu periksa sampel pendek sebelum membuat video lengkap. Preset gaya adalah titik awal, bukan batasan: minta agen mengubah font, efek teks, atau bahasa video dan menyesuaikan tata letaknya dengan keinginan Anda.
+**Anda bebas memilih model pembuat gambar.** Aset visual untuk demo Mode B dibuat dengan alat pembuat gambar bawaan Codex tanpa perlu API pembuatan gambar terpisah. Anda juga bisa memakai Claude Code atau agen lain yang dapat membaca dan menulis file serta menjalankan perintah di terminal, dengan alat pembuat gambar dan sulih suara pilihan Anda. Buat dulu cuplikan pendek dengan audio untuk memeriksa gaya visual, subtitle, dan suara sebelum mengerjakan video lengkap.
 
 ### Q4. Bisakah saya membuat video tanpa naskah yang sudah jadi?
 

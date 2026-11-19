@@ -667,11 +667,11 @@ Oui. Stickman Video Director est 100 % gratuit et open source sous licence MIT. 
 
 **A · Model Engine** : Repose principalement sur la génération vidéo à partir de texte. Si la coiffure, les vêtements ou d’autres caractéristiques du personnage sont complexes et difficiles à reproduire de manière stable avec du texte seul, ajoutez une image de référence du personnage en bâtonnets et réutilisez-la pour les clips suivants afin d’obtenir des résultats plus cohérents.
 
-### Q3. Quels outils dois-je utiliser ? Faut-il un modèle de génération d’images précis ?
+### Q3. Quels outils recommandez-vous ? Faut-il un modèle de génération d’images précis ?
 
-**Pour vous rapprocher des exemples, je recommande Codex.** J’y ai réalisé et testé les démonstrations du mode B ; vous n’avez pas besoin de coder. Le Skill s’installe aussi dans d’autres agents, mais les modèles, la configuration des outils et le mode d’exécution peuvent modifier le résultat.
+Pour obtenir un résultat proche des démos, **utilisez Google Flow pour générer les plans en mode A et Codex pour réaliser la vidéo complète en mode B.** Toutes les démos du mode B ont été réalisées avec Codex. Décrivez ce que vous souhaitez avec vos propres mots, et l’agent écrit le code et effectue le rendu en local.
 
-Mes exemples utilisent le modèle d’image intégré à GPT, sans API supplémentaire. Avec un autre agent, utilisez les outils d’image disponibles dans son environnement. Pour un présentateur B5 représentant une personne réelle ou un personnage complexe, il faut une image générée ou validée, pas un visage de remplacement dessiné par code. Les crédits vocaux décrivent les exemples et n’imposent aucun fournisseur. Au besoin, demandez à votre agent de configurer le service choisi, puis validez un court extrait avant la vidéo complète. Les styles prédéfinis sont des points de départ, pas des restrictions : demandez à votre agent de modifier les polices, les effets de texte ou la langue de la vidéo et d’adapter la mise en page.
+**Vous pouvez choisir votre modèle de génération d’images.** Les visuels des démos du mode B ont été créés avec l’outil intégré à Codex, sans API de génération d’images distincte. Vous pouvez aussi utiliser Claude Code ou un autre agent capable de lire et d’écrire des fichiers et d’exécuter des commandes dans un terminal, avec vos outils de génération d’images et de voix off. Commencez par un court extrait avec du son pour valider le style, les sous-titres et l’audio avant de produire la vidéo complète.
 
 ### Q4. Puis-je créer une vidéo sans script déjà rédigé ?
 
