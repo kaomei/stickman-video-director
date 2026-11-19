@@ -18,7 +18,7 @@
 - Unified A1–A7 production: approve the storyboard → standalone prompts → optional low-resolution trial → confirm final resolution and credit budget → continuous production.
 - Flexible generation lengths and separate editing shots; narration, music and sound effects each have their own timeline, with action and camera continuity checks.
 - Released B7 "Pixel Theater": approved examples, portrait layout and short-caption guidance, packaged code helpers and acceptance gates.
-- All eight README languages were updated with music attribution, bringing the public styles to **14**. The same day, B7 showcase images were fixed across all READMEs and sample 2's voiceover and typewriter ending were highlighted.
+- All nine README files, covering eight languages, were updated for B7, bringing the public styles to **14**. The release added music attribution. Later that day, the README showcase images were fixed, the music-credit line was removed from the READMEs, and sample 2’s voiceover and typewriter ending were highlighted.
 - B8–B10 are not included; existing approved styles and samples are preserved.
 
 ## 2026-11-16 — README refresh: Model Engine and Code Engine (v2026.11.16.1, v2026.11.16.2)
@@ -26,15 +26,15 @@
 - Renamed the README modes to **A · Model Engine** and **B · Code Engine**, with a comparison table explaining usage, outputs and cost.
 - Added a three-step getting-started guide and explained A's unified workflow: approve the storyboard, receive standalone prompts, optionally test through a browser, then confirm resolution and credit budget before full production.
 - Refreshed tool guidance, style introductions, FAQ and community copy; removed the style-count badge in favor of the released count in public copy.
-- Replaced A3's first showcase with the approved October 12 video, and added B6's inspiration credit for [@RicksClips3000](https://www.youtube.com/@RicksClips3000).
-- All languages are in sync. Documentation only: Skill production rules and media files are unchanged.
+- In v2026.11.16.1, replaced A3's first showcase and animated preview with the approved October 12 sample, and added B6's inspiration credit for [@RicksClips3000](https://www.youtube.com/@RicksClips3000).
+- Synchronized the README updates across languages. The v2026.11.16.2 follow-up updated README copy and documentation checks. Skill production rules stayed unchanged in both versions.
 
 ## 2026-11-15 — A7 Rubber Hose Animation and separate A/B showcases (v2026.11.15.1)
 
 - Added A7 "Rubber Hose Animation" to Director mode. It locks a thin-line stickman with two curled hair tufts, retro 2D painted scenery and fixed prompts, and ships with reference stills plus production and acceptance standards.
 - Kept the two approved landscape showcase clips; showcase 2 now starts at second 2 of the original file. Its lyrics belong to that showcase only and are not a default A7 requirement.
 - Documented the approved workflow of generating video directly from the kitchen reference material, plus re-tests in two new scenes (a post office and a seaside pier). Clarified the difference between a material reference and a first frame. Generation costs and model choice still follow Director mode's authorization flow.
-- The README in all nine languages now introduces A7 with its showcase. The top gallery lists A1–A7 on the left and B1–B6 on the right, leaving the last right-hand cell empty, and the style count is now 13. Other published styles and body text are unchanged.
+- All nine README files, covering eight languages, now introduce A7 with its showcase. The top gallery lists A1–A7 on the left and B1–B6 on the right, leaving the last right-hand cell empty, and the style count is now 13. Other published styles and body text are unchanged.
 - B7–B10 remain unpublished locally and are not part of this release.
 
 ## 2026-11-14 — B-mode sound library, B5/B6 defaults and fixes (v2026.11.14 – v2026.11.14.7)
