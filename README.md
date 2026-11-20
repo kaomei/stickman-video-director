@@ -9,7 +9,10 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Turn raw scripts into high-retention animated explainers in minutes — across 14 battle-tested styles, complete with voiceovers, dynamic camera moves, and sound design.
+**Send your AI agent one message — get back a finished stickman video.**<br>
+Script, voiceover, captions & sound · 14 battle-tested styles · For Claude Code, Codex & more
+
+💬 One message → ✅ Approve script & preview → 🎬 Finished video
 
 **No After Effects. No $50/mo SaaS tax. Ship daily without burnout.**
 
