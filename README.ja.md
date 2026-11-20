@@ -198,7 +198,7 @@ https://github.com/kaomei/stickman-video-director
 インストール後にSKILL.mdを読み、準備ができたことを教えてください。
 ```
 
-<sub>ターミナルを使いたい場合や、インストールがタイムアウトした場合は、[手動インストールガイド](skills/directing-stickman-videos/references/installation-troubleshooting.md)も参考にできます。</sub>
+ターミナルを使いたい場合や、インストールがタイムアウトした場合は、[手動インストールガイド](skills/directing-stickman-videos/references/installation-troubleshooting.md)も参考にできます。
 
 ### Step 2：画風とモードを選び、ひと言で制作をスタート
 

@@ -198,7 +198,7 @@ https://github.com/kaomei/stickman-video-director
 Kurulum tamamlandığında SKILL.md dosyasını oku ve hazır olduğunu söyle.
 ```
 
-<sub>Terminali tercih ediyorsanız veya kurulum zaman aşımına uğrarsa [manuel kurulum kılavuzuna](skills/directing-stickman-videos/references/installation-troubleshooting.md) göz atabilirsiniz.</sub>
+Terminali tercih ediyorsanız veya kurulum zaman aşımına uğrarsa [manuel kurulum kılavuzuna](skills/directing-stickman-videos/references/installation-troubleshooting.md) göz atabilirsiniz.
 
 ### Step 2: Stili ve modu seçin, tek bir istekle üretime başlayın
 
@@ -363,8 +363,8 @@ Uyandığınızda her şey on bin kat ucuzlamış olsa? Görsel ilham, YouTube�
 
 İnce çizgili bir çöp adam, özenle çizilmiş retro dekorlarda hareket eder. Esnek uzuvlar, güçlü yüz ifadeleri ve kesintisiz oyunculuk, gündelik aksilikleri teatral komediye dönüştürür. Adaçayı yeşili, fildişi ve az miktarda soluk kırmızı dönem hissini korur.
 
-- **Görsel özellikler**：Beyaz yuvarlak yüz, iki kıvrık saç teli ve ince çizgili gövde tutarlıdır; mürekkep konturları, mat boya dokuları, nesne etkileşimi ve anlatıya uygun kurgu.
-- **Uygun içerikler**：Absürt komedi, gündelik yaşam öyküleri, sürpriz sonlu hikâyeler ve müzik odaklı kısa filmler.
+- **Görsel özellikler**: Beyaz yuvarlak yüz, iki kıvrık saç teli ve ince çizgili gövde tutarlıdır; mürekkep konturları, mat boya dokuları, nesne etkileşimi ve anlatıya uygun kurgu.
+- **Uygun içerikler**: Absürt komedi, gündelik yaşam öyküleri, sürpriz sonlu hikâyeler ve müzik odaklı kısa filmler.
 
 | Örnek 1: Peşindeki bulut | Örnek 2: Yağmurlu bir sokak |
 |:---:|:---:|
