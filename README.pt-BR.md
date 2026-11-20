@@ -748,7 +748,7 @@ Tem uma ideia de estilo ou quer ganhar destaque? Entre na nossa [comunidade do T
 - **Pedir um estilo**: envie um link de referência visual + o nicho que você quer abordar.
 - **Aparecer em destaque**: fez um vídeo com esta ferramenta? Envie o link para exibição neste README e no nosso canal oficial do YouTube!
 
-🔔 **Siga [@CrazyKaomei](https://x.com/CrazyKaomei) no X para fluxos diários de produção de vídeo, ferramentas de automação e procedimentos de crescimento de canal.**
+🔔 **Siga [@AveryRunsAI](https://x.com/AveryRunsAI) no X para novos tutoriais, fluxos de produção de vídeo, ferramentas de automação e dicas de crescimento de canal.**
 
 ## 📄 Licença
 

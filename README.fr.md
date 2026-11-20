@@ -748,7 +748,7 @@ Une idée de style ou envie d’être mis à l’honneur ? Rejoignez notre [comm
 - **Proposer un style** : envoyez un lien de référence visuelle + la niche que vous souhaitez traiter.
 - **Présenter votre travail** : vous avez créé une vidéo avec cet outil ? Envoyez votre lien pour la présenter dans ce README et sur notre chaîne YouTube officielle !
 
-🔔 **Suivez [@CrazyKaomei](https://x.com/CrazyKaomei) sur X pour des workflows vidéo quotidiens, des outils d’automatisation et des procédures de croissance de chaîne.**
+🔔 **Suivez [@AveryRunsAI](https://x.com/AveryRunsAI) sur X pour les nouveaux tutoriels, des workflows vidéo, des outils d’automatisation et des conseils pour faire grandir votre chaîne.**
 
 ## 📄 Licence
 

@@ -153,7 +153,7 @@ shared_links = (
     "https://github.com/kaomei/stickman-video-director/blob/main/LICENSE",
     "https://github.com/leksautomate",
     "https://x.com/CrazyKaomei/status/2102311241046008268",
-    "https://x.com/CrazyKaomei",
+    "https://x.com/AveryRunsAI",
     "https://flow.google.com/",
     "https://telegram.me/stickmanskill",
     "https://renoise.ai/mcp?utm_source=crazykaomei-aini-202610&amp;utm_medium=xcom",
@@ -246,7 +246,7 @@ for name in selected:
     assert invitations[active] in community, (name, "preserved style/showcase lead and localized group invitation")
     assert "README" in community and "YouTube" in community, (name, "creator showcase destinations")
     assert "https://github.com/kaomei/stickman-video-director/issues" not in community, (name, "Do not require a GitHub Issue for feedback")
-    assert re.search(r"^🔔 \*\*.*\[@CrazyKaomei\]\(https://x\.com/CrazyKaomei\).*\*\*$", community, re.M), (name, "bold X follow line")
+    assert re.search(r"^🔔 \*\*.*\[@AveryRunsAI\]\(https://x\.com/AveryRunsAI\).*\*\*$", community, re.M), (name, "bold X follow line")
     assert "recent-updates" not in text, (name, "removed updates section")
     assert not re.search(r"monixin888|2109651037850325112", text, re.I), name
     assert not re.search(r"guaranteed (viral|views|income)|/Users/|eva2050|240669650", text, re.I), name

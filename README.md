@@ -748,7 +748,7 @@ Got a style idea or want to get featured? Join our [Telegram Community](https://
 - **Request a Style**: Send a visual reference link + the niche you want to cover.
 - **Get Featured**: Made a video with this tool? Send your link to be showcased in this README and on our official YouTube channel!
 
-🔔 **Follow [@CrazyKaomei](https://x.com/CrazyKaomei) on X for daily video workflows, automation tools, and channel growth SOPs.**
+🔔 **Follow [@AveryRunsAI](https://x.com/AveryRunsAI) on X for new tutorials, video workflows, automation tools, and channel growth tips.**
 
 ## 📄 License
 
