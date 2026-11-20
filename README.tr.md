@@ -662,7 +662,7 @@ Bu video için Küçük Resim ve Yayınlama Kitini oluştur:
 
 ### Q1. Gerçekten %100 ücretsiz mi? Gizli ücretler var mı?
 
-Evet. Stickman Video Director, MIT lisansıyla %100 ücretsiz ve açık kaynaklıdır. Kişisel ve ticari projelerinizde özgürce kullanabilirsiniz. Aylık 30–60 dolar isteyen kapalı SaaS platformlarının aksine bu projede abonelik ücreti yoktur. Yalnızca bağlamayı seçtiğiniz modellere göre Google Gemini, Claude veya ElevenLabs gibi üçüncü taraf API kullanımınızı ödersiniz.
+Evet, Skill'in kendisi ücretsizdir: MIT lisanslı açık kaynaktır, kişisel ve ticari projelerde kullanılabilir ve aylık 30–60 dolar isteyen SaaS araçlarının aksine abonelik ücreti yoktur. Gizli ücret yoktur, ancak bağladığınız hizmetlerin kendi maliyetleri vardır: yapay zekâ ajanınızın planı (Codex veya Claude Code gibi), görsel veya ses için üçüncü taraf API kullanımı (Google Gemini veya ElevenLabs gibi) ve Model Engine (A) için Google Flow gibi platformlarda video üretme kredileri.
 
 <!-- readme:platforms -->
 
@@ -692,7 +692,7 @@ Geleneksel yapay zekâ araçları metni yalnızca birebir resimlere dönüştür
 
 ### Q6. Bu videolardan YouTube ve TikTok’ta para kazanabilir miyim?
 
-Evet, kesinlikle. Yüzünü göstermeyen içerik üreticilerinin önemli bir kaygısı, YouTube’un “Reused Content” veya düşük emekli yapay zekâ içeriklerine yönelik para kazanmayı kapatma politikasıdır. Stickman Video Director özel hikâye örgüleri, benzersiz anlatım temposu ve özgün görsel sahneleme yazdığı için çıktınız tamamen özgündür. Yüzlerce kanal, YouTube Partner Program (YPP) kapsamında çöp adam anlatı videolarından başarıyla gelir elde ediyor.
+Evet, videoları kendiniz yayımlayıp para kazanmak için kullanabilirsiniz. Yüzünü göstermeyen içerik üreticilerinin önemli bir kaygısı, YouTube’un “Reused Content” politikasıdır. Her video kendi senaryosunu, temposunu ve görsel sahnelemesini alır; hazır görüntüler yeniden kullanılmaz ve bu politika tam olarak buna bakar. Yine de YouTube Partner Program (YPP) veya TikTok Creator Rewards Program onayına, kanalınızın bütününe bakarak her platform kendisi karar verir: kendi fikirlerinizi ve sesinizi ekleyin, düzenli yayın yapın ve her platformun yapay zekâ ile üretilen içerik kurallarına uyun.
 
 ### Q7. Programlama bilgisine veya pahalı bir GPU’ya ihtiyacım var mı?
 
@@ -707,7 +707,7 @@ Kendiniz kod yazmanız veya üst düzey bir GPU satın almanız gerekmez. A modu
 **Her yıldız bir sonraki yeniliğe güç verir!** Tek başına içerik üretenlerin aylık 50 dolarlık SaaS abonelikleri olmadan yüzlerini göstermedikleri kanallar yönetebilmesi için birlikte %100 ücretsiz, açık kaynaklı bir stüdyo kuruyoruz.
 
 - [x] **1,000 Stars**: Model Engine + 5 temel görsel stil yayımlandı
-- [x] **3,000 Stars**: tek tıkla video üreten Code Engine yayımlandı
+- [x] **3,000 Stars**: senaryodan hazır videoya kadar üreten Code Engine yayımlandı
 - [x] **6,000 Stars**: 10’dan fazla yüksek kaliteli yeni görsel stil yayımlandı
 - [ ] **🔥 10,000 Stars**:
   - A ve B modları için ortak 1,000’den fazla YouTube senaryosu istemi
@@ -730,7 +730,7 @@ Kendiniz kod yazmanız veya üst düzey bir GPU satın almanız gerekmez. A modu
 
 ## 🔮 Planlanan görsel stiller
 
-Yüz göstermeyen YouTube kanallarında en çok talep edilen nişler için yeni uzmanlaşmış motorlar eğitiyoruz:
+Yüz göstermeyen YouTube kanallarında en çok talep edilen nişler için yeni stiller geliştiriyoruz:
 
 - **OverSimplified tarzı tarih ve efsaneler** — Küçük tarihî figürler, fetih okları ve hicivli savaş haritaları
 - **Çöp adam dövüşü ve hız çizgileri** — Alan Becker tarzı dinamik dövüş, dövüş sanatları ve darbe kareleri

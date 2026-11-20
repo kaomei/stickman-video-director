@@ -662,7 +662,7 @@ Buat Kit Thumbnail & Publikasi untuk video ini:
 
 ### Q1. Apakah ini benar-benar 100% gratis? Ada biaya tersembunyi?
 
-Ya. Stickman Video Director 100% gratis dan open source dengan lisensi MIT. Anda bebas menggunakannya untuk proyek pribadi maupun komersial. Berbeda dari platform SaaS tertutup yang mengenakan US$30–60/bulan, proyek ini tidak memiliki biaya langganan. Anda hanya membayar penggunaan API pihak ketiga sendiri, seperti Google Gemini, Claude, atau ElevenLabs, sesuai model yang Anda hubungkan.
+Ya, Skill-nya sendiri gratis: open source dengan lisensi MIT, bisa dipakai untuk proyek pribadi maupun komersial, dan tanpa biaya langganan, berbeda dari alat SaaS yang mengenakan US$30–60/bulan. Tidak ada biaya tersembunyi, tetapi layanan yang Anda hubungkan memiliki biayanya sendiri: paket agen AI Anda (seperti Codex atau Claude Code), penggunaan API pihak ketiga untuk gambar atau suara (seperti Google Gemini atau ElevenLabs), serta, di Model Engine (A), kredit pembuatan video di platform seperti Google Flow.
 
 <!-- readme:platforms -->
 
@@ -692,7 +692,7 @@ Alat AI tradisional hanya mengubah teks menjadi ilustrasi harfiah. Stickman Vide
 
 ### Q6. Bisakah video ini dimonetisasi di YouTube dan TikTok?
 
-Ya, tentu saja. Salah satu kekhawatiran utama kreator tanpa wajah adalah kebijakan demonetisasi YouTube untuk “Reused Content” atau konten AI minim usaha. Karena Stickman Video Director menulis alur cerita khusus, ritme narasi unik, dan penataan visual orisinal, hasil Anda sepenuhnya orisinal. Ratusan channel berhasil memonetisasi video naratif stickman melalui YouTube Partner Program (YPP).
+Ya, video ini milik Anda untuk dipublikasikan dan dimonetisasi. Salah satu kekhawatiran utama kreator tanpa wajah adalah kebijakan “Reused Content” YouTube. Setiap video mendapat naskah, ritme, dan penataan visualnya sendiri tanpa memakai ulang materi yang sudah ada, dan justru hal inilah yang dinilai oleh kebijakan tersebut. Meski begitu, persetujuan YouTube Partner Program (YPP) atau TikTok Creator Rewards Program tetap diputuskan oleh masing-masing platform berdasarkan channel Anda secara keseluruhan: tambahkan ide dan suara Anda sendiri, unggah secara konsisten, dan ikuti aturan setiap platform tentang konten buatan AI.
 
 ### Q7. Apakah saya perlu bisa coding atau memiliki GPU mahal?
 
@@ -707,7 +707,7 @@ Anda tidak perlu menulis kode sendiri atau membeli GPU kelas atas. Mode A dapat 
 **Setiap Star mendukung rilisan berikutnya!** Bersama-sama, kita membangun studio 100% gratis dan open source untuk membantu kreator solo mengelola channel tanpa tampil di kamera, tanpa langganan SaaS seharga US$ 50/bulan.
 
 - [x] **1,000 Stars**: Model Engine + 5 gaya visual inti telah dirilis
-- [x] **3,000 Stars**: Code Engine untuk membuat video dalam satu klik telah dirilis
+- [x] **3,000 Stars**: Code Engine untuk membuat video dari naskah hingga jadi telah dirilis
 - [x] **6,000 Stars**: Lebih dari 10 gaya visual baru berkualitas tinggi telah dirilis
 - [ ] **🔥 10,000 Stars**:
   - Koleksi 1,000+ prompt naskah YouTube untuk mode A dan B
@@ -730,7 +730,7 @@ Anda tidak perlu menulis kode sendiri atau membeli GPU kelas atas. Mode A dapat 
 
 ## 🔮 Gaya visual yang direncanakan
 
-Kami sedang melatih mesin khusus baru untuk niche YouTube tanpa tampil di kamera yang paling banyak diminta:
+Kami sedang mengembangkan gaya baru untuk niche YouTube tanpa tampil di kamera yang paling banyak diminta:
 
 - **Sejarah dan legenda ala OverSimplified** — Tokoh sejarah mungil, panah penaklukan, dan peta pertempuran satiris
 - **Pertarungan stickman dan garis kecepatan** — Pertarungan dinamis ala Alan Becker, bela diri, dan frame benturan

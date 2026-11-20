@@ -662,7 +662,7 @@ Generate the Thumbnail & Publishing Kit for this video:
 
 ### Q1. Is this really 100% free? Are there any hidden fees?
 
-Yes. Stickman Video Director is 100% free and open-source under the MIT license. You can use it freely for both personal and commercial projects. Unlike proprietary SaaS platforms that charge $30–$60/month, this project has zero subscription fees. You only pay for your own third-party API usage (e.g., Google Gemini, Claude, or ElevenLabs) based on the models you choose to connect.
+Yes, the Skill itself is free: it's open-source under the MIT license, for personal and commercial projects, with zero subscription fees—unlike SaaS tools that charge $30–$60/month. There are no hidden fees, but the services you connect have their own costs: your AI agent's plan (such as Codex or Claude Code), third-party API usage for images or voice (such as Google Gemini or ElevenLabs), and, in Model Engine (A), video generation credits on platforms such as Google Flow.
 
 <!-- readme:platforms -->
 
@@ -692,7 +692,7 @@ Traditional AI tools just spit out literal illustrations of text. Stickman Video
 
 ### Q6. Can I monetize these videos on YouTube and TikTok?
 
-Yes, absolutely. A major concern for faceless creators is YouTube's "Reused Content" or "Low-effort AI" demonetization policy. Because Stickman Video Director writes custom storytelling arcs, unique narrative pacing, and original visual staging, your output is completely original. Hundreds of channels successfully monetize stickman narrative videos under the YouTube Partner Program (YPP).
+Yes, the videos are yours to publish and monetize. Each video gets its own script, pacing and visual staging instead of reused footage, which is what YouTube's reused-content policy targets. Approval for the YouTube Partner Program (YPP) or the TikTok Creator Rewards Program is still decided by each platform, based on your channel as a whole: add your own ideas and voice, publish consistently, and follow each platform's rules on AI-generated content.
 
 ### Q7. Do I need programming skills or an expensive GPU?
 
@@ -707,7 +707,7 @@ You don’t need to write code yourself or buy a high-end GPU. A can use online 
 **Every star fuels the next drop!** Together, we’re building a 100% free, open-source studio to help solo creators run faceless channels without $50/mo SaaS subscriptions.
 
 - [x] **1,000 Stars**: Shipped Model Engine + 5 core visual styles
-- [x] **3,000 Stars**: Shipped Code Engine for 1-click video generation
+- [x] **3,000 Stars**: Shipped Code Engine for end-to-end video generation
 - [x] **6,000 Stars**: Shipped 10+ high-quality new visual styles
 - [ ] **🔥 10,000 Stars**:
   - 1,000+ YouTube script prompts shared by modes A and B
@@ -730,7 +730,7 @@ You don’t need to write code yourself or buy a high-end GPU. A can use online 
 
 ## 🔮 Planned Visual Styles
 
-We are actively training new specialized engines for the most requested faceless YouTube niches:
+We are actively developing new styles for the most requested faceless YouTube niches:
 
 - **OverSimplified History & Lore** — Tiny historical figures, conquest arrows & satirical battle maps
 - **Stickman Combat & Speedlines** — Alan-Becker-style dynamic combat, martial arts & impact frames

@@ -662,7 +662,7 @@ Gere o kit de thumbnail e publicação para este vídeo:
 
 ### Q1. É mesmo 100% gratuito? Existem taxas ocultas?
 
-Sim. O Stickman Video Director é 100% gratuito e de código aberto sob a licença MIT. Você pode usá-lo livremente em projetos pessoais e comerciais. Ao contrário de plataformas SaaS proprietárias que cobram US$ 30–60/mês, este projeto não tem assinatura. Você só paga pelo uso das suas APIs de terceiros (como Google Gemini, Claude ou ElevenLabs), conforme os modelos que escolher conectar.
+Sim, o Skill em si é gratuito: é de código aberto sob a licença MIT, pode ser usado em projetos pessoais e comerciais e não tem assinatura, ao contrário de ferramentas SaaS que cobram US$ 30–60/mês. Não há taxas escondidas, mas os serviços que você conecta têm seus próprios custos: o plano do seu agente de IA (como Codex ou Claude Code), o uso de APIs de terceiros para imagem ou voz (como Google Gemini ou ElevenLabs) e, no Model Engine (A), os créditos de geração de vídeo em plataformas como o Google Flow.
 
 <!-- readme:platforms -->
 
@@ -692,7 +692,7 @@ Ferramentas tradicionais de IA apenas ilustram o texto literalmente. O Stickman 
 
 ### Q6. Posso monetizar esses vídeos no YouTube e no TikTok?
 
-Sim, com certeza. Uma grande preocupação de quem cria canais sem aparecer é a política de desmonetização do YouTube para “Reused Content” ou conteúdo de IA de baixo esforço. Como o Stickman Video Director escreve arcos narrativos personalizados, ritmo exclusivo e encenação visual original, seu resultado é totalmente original. Centenas de canais monetizam com sucesso vídeos narrativos de bonecos-palito pelo YouTube Partner Program (YPP).
+Sim, os vídeos são seus para publicar e monetizar. Uma grande preocupação de quem cria canais sem aparecer é a política de “Reused Content” do YouTube. Cada vídeo recebe roteiro, ritmo e encenação visual próprios, sem reutilizar material pronto, que é justamente o que essa política observa. Ainda assim, a aprovação no YouTube Partner Program (YPP) ou no TikTok Creator Rewards Program é decidida por cada plataforma, com base no canal como um todo: acrescente suas próprias ideias e sua voz, publique com constância e siga as regras de cada plataforma sobre conteúdo gerado por IA.
 
 ### Q7. Preciso saber programar ou ter uma GPU cara?
 
@@ -707,7 +707,7 @@ Você não precisa escrever código por conta própria nem comprar uma GPU de po
 **Cada Star impulsiona a próxima novidade!** Juntos, estamos construindo um estúdio 100% gratuito e de código aberto para ajudar criadores solo a tocar canais sem aparecer, sem assinaturas SaaS de US$ 50/mês.
 
 - [x] **1,000 Stars**: lançamento do modo Model Engine + 5 estilos visuais principais
-- [x] **3,000 Stars**: lançamento do modo Code Engine para gerar vídeos em um clique
+- [x] **3,000 Stars**: lançamento do modo Code Engine, do roteiro ao vídeo pronto
 - [x] **6,000 Stars**: Mais de 10 novos estilos visuais de alta qualidade já disponíveis
 - [ ] **🔥 10,000 Stars**:
   - Mais de 1,000 prompts de roteiros para YouTube compartilhados pelos modos A e B
@@ -730,7 +730,7 @@ Você não precisa escrever código por conta própria nem comprar uma GPU de po
 
 ## 🔮 Estilos visuais planejados
 
-Estamos treinando novos motores especializados para os nichos mais pedidos de canais do YouTube sem aparecer:
+Estamos desenvolvendo novos estilos para os nichos mais pedidos de canais do YouTube sem aparecer:
 
 - **História e lendas no estilo OverSimplified** — Pequenas figuras históricas, setas de conquista e mapas de batalha satíricos
 - **Combate stickman e linhas de velocidade** — Lutas dinâmicas no estilo Alan Becker, artes marciais e quadros de impacto

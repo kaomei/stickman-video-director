@@ -119,7 +119,7 @@ required_copy = (
     ("**A 模式推荐用 Google Flow 生成视频片段，B 模式推荐用 Codex 制作成片。**", "**生图模型可以自行选择。**", "Codex 内置生图工具", "无需另接生图 API", "Claude Code", "有声样片"),
     ("公众号长文", "前 3 秒爆款黄金钩子", "根据主题、目标时长和所选画风安排故事与分镜"),
     ("**视觉叙事心理学**", "**黄金 3 秒钩子**", "**爆款视觉隐喻**", "**卡点与节奏留白**", "Casually Explained"),
-    ("搬运重复内容（Reused Content）", "高价值原创内容", "YouTube 创作者收益计划（YPP）", "TikTok 创作者基金"),
+    ("搬运重复内容（Reused Content）", "YouTube 创作者收益计划（YPP）", "TikTok 创作者奖励计划", "最终由平台根据整个频道来决定"),
     ("不需要自己写代码", "高端显卡", "A 模式", "B 模式", "Agent", "在本地渲染", "但不是决定性因素"),
 )
 for number, (answer, phrases) in enumerate(zip(faq_answers, required_copy), 1):
