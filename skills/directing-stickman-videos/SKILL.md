@@ -44,4 +44,4 @@ All B styles: native **16:9 and 9:16**, under the [dual-format gate](references/
 
 Read [first-use and stage guidance](references/getting-started.md) after verified installation or on first invocation. Use the conversation/requested guidance language independently of video language or README edition. Reuse choices; do not replay welcome or add approvals. Follow **A5 proactive character guidance** and **Optional A character references** there without changing voice rules.
 
-Read [optional finishing](references/thumbnail-publishing-kit.md) after video approval or a packaging request; offer once, never block delivery. It also covers the optional one-time GitHub star invitation and description credit line.
+Read [optional finishing](references/thumbnail-publishing-kit.md) after video approval or a packaging request; offer once, never block delivery. See that reference for the optional project credit and when to include a closing GitHub Star invitation.
