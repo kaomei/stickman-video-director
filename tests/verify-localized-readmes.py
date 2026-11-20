@@ -29,63 +29,58 @@ assert "# 🎬 Stickman Video Director" in source
 english_hero = source.split("</div>", 1)[0]
 assert "**Scale your faceless channel with automated stickman animations.**" in english_hero
 english_intro = (
-    "Turn raw scripts into high-retention animated explainers in minutes — across 14 battle-tested styles, complete with voiceovers, dynamic camera moves, and sound design.",
+    '**Send your AI agent one message — get back a finished stickman video.**<br>\nScript, voiceover, captions & sound · 14 battle-tested styles · For Claude Code, Codex & more',
+    '💬 One message → ✅ Approve script & preview → 🎬 Finished video',
     "**No After Effects. No $50/mo SaaS tax. Ship daily without burnout.**",
 )
 assert "\n\n".join(english_intro) in english_hero, "Approved English introduction and bold formatting"
 assert "For your first video, see the [detailed tutorial on X](https://x.com/CrazyKaomei/status/2102311241046008268)." in source, "Approved first-video walkthrough copy and unchanged X thread link"
 
 # User-approved hero copy; publication and integration use their actual style counts.
-approved_localized_hero = {'zh-CN': ('**用全自动火柴人动画，规模化量产你的无人出镜频道。**',
-           '几分钟内，通过 14 款实操验证的画风把原始文案变成高完播率动画视频 —— 镜头调度、旁白配音与音效设计一键配齐。',
-           '**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**',
-           '[快速上手](#quick-start) · [样片展厅](#style-gallery) · [常见问题](#faq) · '
-           '[路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)',
-           '*⭐ 欢迎点亮 Star，第一时间解锁最新画风与功能更新！*'),
- 'ja': ('**自動化された棒人間アニメーションで、顔出しなしチャンネルを規模化・量産へ。**',
-        '生の原稿からわずか数分で高維持率の解説アニメへ —— 実戦検証済みの14種類の画風、ナレーション、カメラワーク、効果音まで完全自動。',
+approved_localized_hero = {
+    'zh-CN': ('**用全自动火柴人动画，规模化量产你的无人出镜频道。**',
+        '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 14 款实操验证的画风 · 支持 Claude Code、Codex 等',
+        '💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片',
+        '**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**',
+        '[快速上手](#quick-start) · [样片展厅](#style-gallery) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)',
+        '*⭐ 欢迎点亮 Star，第一时间解锁最新画风与功能更新！*'),
+    'ja': ('**自動化された棒人間アニメーションで、顔出しなしチャンネルを規模化・量産へ。**',
+        '**AIエージェントにひと言送るだけで、完成した棒人間動画が届く。**<br>\n台本・音声・字幕・効果音までおまかせ · 実戦検証済みの14画風 · Claude Code・Codex 対応',
+        '💬 ひと言送る → ✅ 台本とプレビューを確認 → 🎬 完成動画',
         '**面倒な動画編集・アニメ付けは不要。月額50ドルのSaaS税もゼロ。毎日投稿を、もっと楽に。**',
-        '[クイックスタート](#quick-start) · [ショーケース](#style-gallery) · [FAQ](#faq) · '
-        '[ロードマップ](#road-to-10000-stars--creator-ecosystem) · [コミュニティ](#community)',
+        '[クイックスタート](#quick-start) · [ショーケース](#style-gallery) · [FAQ](#faq) · [ロードマップ](#road-to-10000-stars--creator-ecosystem) · [コミュニティ](#community)',
         '*⭐ 次のスタイル追加や新機能を見逃さないよう、ぜひ Star をお願いします！*'),
- 'ko': ('**자동화된 스틱맨 애니메이션으로 얼굴 없는 유튜브 채널을 대량 양산하세요.**',
-        '텍스트 원고를 몇 분 만에 높은 시청 지속 시간의 애니메이션 영상으로 —— 검증된 14가지 비주얼 스타일, 나레이션, 카메라 무빙, 사운드 디자인까지 한 번에.',
+    'ko': ('**자동화된 스틱맨 애니메이션으로 얼굴 없는 유튜브 채널을 대량 양산하세요.**',
+        '**AI 에이전트에게 메시지 한 줄만 보내면, 완성된 스틱맨 영상이 돌아옵니다.**<br>\n대본·내레이션·자막·사운드까지 한 번에 · 검증된 14가지 스타일 · Claude Code, Codex 등 지원',
+        '💬 메시지 한 줄 → ✅ 대본과 미리보기 확인 → 🎬 완성 영상',
         '**복잡한 모션 그래픽 작업 불필요. 매달 50달러의 SaaS 구독료도 제로. 지치지 않고 매일 업로드.**',
-        '[빠른 시작](#quick-start) · [쇼케이스](#style-gallery) · [FAQ](#faq) · '
-        '[로드맵](#road-to-10000-stars--creator-ecosystem) · [커뮤니티](#community)',
+        '[빠른 시작](#quick-start) · [쇼케이스](#style-gallery) · [FAQ](#faq) · [로드맵](#road-to-10000-stars--creator-ecosystem) · [커뮤니티](#community)',
         '*⭐ 저장소를 Star하고 다음 스타일 업데이트와 새로운 기능을 가장 먼저 확인하세요.*'),
- 'pt-BR': ('**Escale sua rede de canais dark com animações automatizadas de boneco-palito.**',
-           'Transforme roteiros brutos em animações explicativas de alta retenção em minutos — em 14 estilos '
-           'testados na prática, com locução, movimentos de câmera e sonoplastia inclusos.',
-           '**Chega de sofrer no After Effects. Sem taxa de US$ 50/mês em SaaS. Poste todo dia sem '
-           'esgotamento.**',
-           '[Início Rápido](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · '
-           '[Roadmap](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)',
-           '*⭐ Deixe uma estrela no projeto para acompanhar os próximos estilos e novidades.*'),
- 'fr': ("**Industrialisez votre réseau de chaînes sans visage grâce à l'animation automatisée.**",
-        'Transformez des scripts bruts en explications animées à haute rétention en quelques minutes — parmi '
-        '14 styles éprouvés, avec voix off, caméra dynamique et design sonore inclus.',
-        '**Oubliez les galères sur After Effects. Fini la taxe SaaS à 50 $/mois. Publiez quotidiennement '
-        'sans épuisement.**',
-        '[Démarrage](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · '
-        '[Roadmap](#road-to-10000-stars--creator-ecosystem) · [Communauté](#community)',
+    'pt-BR': ('**Escale sua rede de canais dark com animações automatizadas de boneco-palito.**',
+        '**Mande uma mensagem para seu agente de IA e receba um vídeo de boneco-palito pronto.**<br>\nRoteiro, locução, legendas e som · 14 estilos testados · Para Claude Code, Codex e mais',
+        '💬 Uma mensagem → ✅ Aprove o roteiro e a prévia → 🎬 Vídeo pronto',
+        '**Chega de sofrer no After Effects. Sem taxa de US$ 50/mês em SaaS. Poste todo dia sem esgotamento.**',
+        '[Início Rápido](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)',
+        '*⭐ Deixe uma estrela no projeto para acompanhar os próximos estilos e novidades.*'),
+    'fr': ("**Industrialisez votre réseau de chaînes sans visage grâce à l'animation automatisée.**",
+        '**Un seul message à votre agent IA — et votre vidéo de bonshommes bâtons est prête.**<br>\nScript, voix off, sous-titres et son · 14 styles éprouvés · Pour Claude Code, Codex et plus',
+        '💬 Un message → ✅ Validez le script et l’aperçu → 🎬 Vidéo terminée',
+        '**Oubliez les galères sur After Effects. Fini la taxe SaaS à 50 $/mois. Publiez quotidiennement sans épuisement.**',
+        '[Démarrage](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Communauté](#community)',
         '*⭐ Ajoutez une étoile au projet pour ne manquer aucun nouveau style ni mise à jour.*'),
- 'tr': ('**Yüzsüz kanal ağınızı otomatik çöp adam animasyonlarıyla ölçeklendirin.**',
-        'Ham metinleri dakikalar içinde yüksek tutunma oranlı animasyonlu açıklamalara dönüştürün — '
-        'kanıtlanmış 14 farklı stil, seslendirme, dinamik kamera ve ses efektleriyle birlikte.',
-        "**Karmaşık After Effects kurgularına son. Aylık 50$'lık SaaS vergisi yok. Tükenmeden her gün "
-        'yayınlayın.**',
-        '[Hızlı Başlangıç](#quick-start) · [Vitrin](#style-gallery) · [SSS](#faq) · [Yol '
-        'Haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)',
+    'tr': ('**Yüzsüz kanal ağınızı otomatik çöp adam animasyonlarıyla ölçeklendirin.**',
+        '**Yapay zekâ ajanınıza tek bir mesaj gönderin, bitmiş çöp adam videonuzu alın.**<br>\nSenaryo, seslendirme, altyazı ve ses · Kanıtlanmış 14 stil · Claude Code, Codex ve dahası',
+        '💬 Tek mesaj → ✅ Senaryoyu ve önizlemeyi onaylayın → 🎬 Hazır video',
+        "**Karmaşık After Effects kurgularına son. Aylık 50$'lık SaaS vergisi yok. Tükenmeden her gün yayınlayın.**",
+        '[Hızlı Başlangıç](#quick-start) · [Vitrin](#style-gallery) · [SSS](#faq) · [Yol Haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)',
         '*⭐ Yeni stil güncellemelerini ve özellikleri kaçırmamak için projeye Star verin.*'),
- 'id': ('**Skalakan jaringan channel tanpa wajah Anda dengan animasi stickman otomatis.**',
-        'Ubah naskah mentah menjadi video animasi beretensi tinggi dalam hitungan menit — dari 14 gaya '
-        'visual teruji, lengkap dengan voiceover, gerakan kamera dinamis, dan efek suara.',
-        '**Tanpa ribet animasi After Effects. Tanpa pajak langganan SaaS $50/bulan. Upload tiap hari tanpa '
-        'burnout.**',
-        '[Panduan Cepat](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · '
-        '[Roadmap](#road-to-10000-stars--creator-ecosystem) · [Komunitas](#community)',
-        '*⭐ Berikan Star pada repositori ini untuk mendapatkan rilis gaya dan fitur terbaru.*')}
+    'id': ('**Skalakan jaringan channel tanpa wajah Anda dengan animasi stickman otomatis.**',
+        '**Kirim satu pesan ke agen AI Anda, dapatkan video stickman yang sudah jadi.**<br>\nNaskah, voiceover, subtitle & suara · 14 gaya teruji · Untuk Claude Code, Codex & lainnya',
+        '💬 Satu pesan → ✅ Setujui naskah & pratinjau → 🎬 Video jadi',
+        '**Tanpa ribet animasi After Effects. Tanpa pajak langganan SaaS $50/bulan. Upload tiap hari tanpa burnout.**',
+        '[Panduan Cepat](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Komunitas](#community)',
+        '*⭐ Berikan Star pada repositori ini untuk mendapatkan rilis gaya dan fitur terbaru.*'),
+}
 
 def images(text):
     return re.findall(r'<img\b[^>]*\bsrc="([^"]+)"', text)
@@ -171,19 +166,19 @@ for name in selected:
     top = text.split("</div>", 1)[0]
     hero_blocks = [block.strip() for block in top.split("\n\n") if block.strip()]
     is_english = name in ("README.md", "README.en.md")
-    assert len(hero_blocks) == 9, (name, "localized hero, navigation and Star CTA")
+    assert len(hero_blocks) == 10, (name, "localized hero, flow, navigation and Star CTA")
     assert hero_blocks[2] == "# 🎬 Stickman Video Director", (name, "shared product title")
     subtitle = hero_blocks[3]
     assert subtitle.startswith("**") and subtitle.endswith("**"), (name, "bold subtitle")
     assert "🎬" not in subtitle, (name, "concise localized subtitle")
     if is_english:
-        assert tuple(hero_blocks[5:7]) == english_intro, (name, "approved English introduction")
-        assert hero_blocks[7] == '[Quickstart](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)', (name, "approved English navigation labels")
+        assert tuple(hero_blocks[5:8]) == english_intro, (name, "approved English introduction")
+        assert hero_blocks[8] == '[Quickstart](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)', (name, "approved English navigation labels")
     else:
         locale = name[7:-3]
-        assert tuple(hero_blocks[index] for index in (3, 5, 6, 7, 8)) == approved_localized_hero[locale], (name, "exact approved localized hero copy")
+        assert tuple(hero_blocks[index] for index in (3, 5, 6, 7, 8, 9)) == approved_localized_hero[locale], (name, "exact approved localized hero copy")
     assert "14" in hero_blocks[5], (name, "actual published style count in introduction")
-    assert hero_blocks[8].startswith(("⭐ *", "*⭐ ")) and hero_blocks[8].endswith("*"), (name, "italic Star CTA")
+    assert hero_blocks[9].startswith(("⭐ *", "*⭐ ")) and hero_blocks[9].endswith("*"), (name, "italic Star CTA")
     assert "Styles-" not in top and "img.shields.io/badge/Styles" not in top, (name, "removed Styles badge")
     active = "en" if name == "README.md" else name[7:-3]
     expected_nav = " · ".join(

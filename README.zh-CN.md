@@ -9,7 +9,10 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-几分钟内，通过 14 款实操验证的画风把原始文案变成高完播率动画视频 —— 镜头调度、旁白配音与音效设计一键配齐。
+**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>
+脚本、配音、字幕与音效全包 · 14 款实操验证的画风 · 支持 Claude Code、Codex 等
+
+💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片
 
 **告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**
 

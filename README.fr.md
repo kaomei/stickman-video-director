@@ -9,7 +9,10 @@
 [![Étoiles GitHub](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![Licence MIT](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Transformez des scripts bruts en explications animées à haute rétention en quelques minutes — parmi 14 styles éprouvés, avec voix off, caméra dynamique et design sonore inclus.
+**Un seul message à votre agent IA — et votre vidéo de bonshommes bâtons est prête.**<br>
+Script, voix off, sous-titres et son · 14 styles éprouvés · Pour Claude Code, Codex et plus
+
+💬 Un message → ✅ Validez le script et l’aperçu → 🎬 Vidéo terminée
 
 **Oubliez les galères sur After Effects. Fini la taxe SaaS à 50 $/mois. Publiez quotidiennement sans épuisement.**
 
