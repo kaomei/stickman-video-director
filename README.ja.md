@@ -195,6 +195,8 @@ https://github.com/kaomei/stickman-video-director
 インストール後にSKILL.mdを読み、準備ができたことを教えてください。
 ```
 
+<sub>ターミナルを使いたい場合や、インストールがタイムアウトした場合は、[手動インストールガイド](skills/directing-stickman-videos/references/installation-troubleshooting.md)も参考にできます。</sub>
+
 ### Step 2：画風とモードを選び、ひと言で制作をスタート
 
 「[Aモード](#a-styles)」または「[Bモード](#b-styles)」から好きな画風を選び、下の対応するプロンプトをコピーして、自分の要望に書き換えてAIアシスタントに送ってください：
