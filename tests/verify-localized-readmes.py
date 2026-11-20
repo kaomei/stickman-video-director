@@ -441,7 +441,7 @@ for name in selected:
     assert all(token in faq_answers[3] for token in story_plan_copy[active]), (name, "story and shot structure scales with topic, length and style")
     assert not re.search(r"6(?:[- ]scene| 幕|シーン|개 장면| scènes| cenas| sahne| adegan)", faq_answers[3]), (name, "no fixed six-scene FAQ promise")
     for answer, tokens in zip(faq_answers, (("MIT", "API"), ("B", "A"), ("Google Flow", "Codex", "Claude Code", "API"), ("3",), ("SFX", "Casually Explained"), ("YouTube", "YPP"), ("A", "B", "Agent"))):
-        assert all(token in answer or (token == "Agent" and any(term in answer for term in ("agent", "ajan", "agen"))) for token in tokens), (name, "localized FAQ topic parity", tokens)
+        assert all(token in answer or (token == "Agent" and any(term in answer for term in ("agent", "ajan", "agen", "エージェント", "에이전트"))) for token in tokens), (name, "localized FAQ topic parity", tokens)
     assert "MIT" in faq and "API" in faq and "YouTube" in faq and "Codex" in faq, name
     code = re.findall(r"```text\n(.*?)```", text, re.S)
     assert len(code) == 5, (name, "installation, A example, B example and two publishing-kit prompts")

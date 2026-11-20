@@ -359,7 +359,7 @@ Et si, au réveil, tout coûtait dix mille fois moins cher ? L’inspiration vis
 
 <a id="a7"></a>
 
-### A7: Rubber Hose Animation
+### A7 : Rubber Hose Animation
 
 Un personnage filiforme évolue dans des décors rétro finement dessinés. Gestes élastiques, expressions marquées et jeu continu transforment les petits incidents du quotidien en comédie théâtrale. Le vert sauge, l’ivoire et quelques touches de rouge passé conservent le charme d’époque.
 
@@ -471,13 +471,13 @@ Comme tomber sur une étrange émission nocturne. Inspirés de [@BradikininVideo
 <!-- b4:section:start -->
 <a id="b4"></a>
 
-### B4: Thriller de survie
+### B4 : Thriller de survie
 
-Un compte à rebours. Un appel nocturne. Une règle à ne jamais enfreindre. Inspirés de [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives) sur YouTube (**100 000 abonnés gagnés en 3 semaines**), les lieux ordinaires deviennent des pièges. Têtes rondes blanches, gants blancs et contrastes tranchés plongent des personnages simples dans un monde inquiétant.
+Un compte à rebours. Un appel nocturne. Une règle à ne jamais enfreindre. Dans un univers inspiré de [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives) sur YouTube (**100 000 abonnés gagnés en 3 semaines**), les lieux ordinaires deviennent des pièges. Têtes rondes blanches, gants blancs et contrastes tranchés plongent des personnages simples dans un monde inquiétant.
 
-- **À l’écran**: Ouvertures à demi dans l’ombre, gros plans troublants, menaces surgissant du noir. Expressions, lumière et objets changent subtilement pour tendre l’atmosphère sans tout expliquer.
-- **Côté son**: Brian vous accroche dès l’ouverture. Une ambiance discrète et continue soutient la tension ; les effets liés au récit rendent le danger audible sans couvrir la voix.
-- **Pour raconter**: Règles de survie, légendes urbaines, évasions face au désastre et suspense à retournement.
+- **À l’écran** : Ouvertures à demi dans l’ombre, gros plans troublants, menaces surgissant du noir. Expressions, lumière et objets changent subtilement pour tendre l’atmosphère sans tout expliquer.
+- **Côté son** : Brian vous accroche dès l’ouverture. Une ambiance discrète et continue soutient la tension ; les effets liés au récit rendent le danger audible sans couvrir la voix.
+- **Pour raconter** : Règles de survie, légendes urbaines, évasions face au désastre et suspense à retournement.
 
 <table width="100%">
   <tr>
@@ -505,9 +505,9 @@ Un compte à rebours. Un appel nocturne. Une règle à ne jamais enfreindre. Ins
 
 Faites de votre avatar préféré la voix de votre chaîne ; l’utilisation de personnages connus nécessite une autorisation. Votre présentateur raconte dans un coin de l’écran, tandis que les stickmen jouent l’idée à gauche : entraînés par des factures, écrasés par la pression ou piégés dans un gag visuel. Même les concepts abstraits deviennent drôles et mémorables.
 
-- **Le style**: Papier aux tons chauds, présentateur distinctif et mots-clés noirs et rouges. Poids exagéré, rebonds et accessoires qui se transforment convertissent chaque explication en métaphore visuelle.
-- **L’ambiance sonore**: Une narration claire mène le récit ; lèvres, expressions et sous-titres suivent la voix. Les effets sonores soulignent les gestes, et la musique discrète laisse toute sa place à la parole.
-- **Idéal pour**: Vulgarisation, psychologie du quotidien, observations, culture populaire et commentaires pleins d’humour.
+- **À l’écran** : Papier aux tons chauds, présentateur distinctif et mots-clés noirs et rouges. Poids exagéré, rebonds et accessoires qui se transforment convertissent chaque explication en métaphore visuelle.
+- **Côté son** : Une narration claire mène le récit ; lèvres, expressions et sous-titres suivent la voix. Les effets sonores soulignent les gestes, et la musique discrète laisse toute sa place à la parole.
+- **Pour raconter** : Vulgarisation, psychologie du quotidien, observations, culture populaire et commentaires pleins d’humour.
 
 <table width="100%">
   <tr>
@@ -535,9 +535,9 @@ Faites de votre avatar préféré la voix de votre chaîne ; l’utilisation de 
 
 Des expressions de meme, des traits dessinés à la main et des couleurs douces transforment les récits insolites en courts dessins animés pleins de vie. Les décors larges laissent de la place aux personnages, aux accessoires et à la caméra. Le style visuel s’inspire de la chaîne YouTube [@RicksClips3000](https://www.youtube.com/@RicksClips3000) (**environ 180 000 abonnés**).
 
-- **À l’écran**: Des traits d’encre d’épaisseur variable, une peinture mate et une lumière douce donnent à la tête, au corps et au décor une touche dessinée à la main cohérente, **pour un meilleur rendu en format vertical**.
-- **En mouvement**: Travellings latéraux, profondeur par plans, échanges d’objets et gros plans de réaction suivent le récit, avec des pauses pour lire chaque gag.
-- **Pour raconter**: Anecdotes historiques, escroqueries, comédies absurdes et récits à chute.
+- **À l’écran** : Des traits d’encre d’épaisseur variable, une peinture mate et une lumière douce donnent à la tête, au corps et au décor une touche dessinée à la main cohérente, **pour un meilleur rendu en format vertical**.
+- **En mouvement** : Travellings latéraux, profondeur par plans, échanges d’objets et gros plans de réaction suivent le récit, avec des pauses pour lire chaque gag.
+- **Pour raconter** : Anecdotes historiques, escroqueries, comédies absurdes et récits à chute.
 
 <table width="100%">
   <tr>
@@ -565,18 +565,18 @@ Des expressions de meme, des traits dessinés à la main et des couleurs douces 
 
 De petits pixels, de grandes conséquences. Des personnages blancs transforment les choix du quotidien en petits mondes de jeu : un bouton pressé, une occasion manquée ou un simple « peu importe » peut tout changer.
 
-- **À l’écran**: Un pixel art net, des personnages blancs expressifs et une palette adaptée à chaque scène, sans flou ni imitation vectorielle lissée.
-- **En mouvement**: Personnages, objets et décors font vivre le récit. Une courte réflexion finale, des frappes rétro, des mouvements subtils, un texte doucement pulsé et une musique adaptée prolongent l’émotion.
-- **Pour raconter**: Les récits à choix, les leçons de vie ironiques, l’humour noir et les fables sensibles à l’esprit jeu vidéo.
+- **À l’écran** : Un pixel art net, des personnages blancs expressifs et une palette adaptée à chaque scène, sans flou ni imitation vectorielle lissée.
+- **En mouvement** : Personnages, objets et décors font vivre le récit. Une courte réflexion finale, des frappes rétro, des mouvements subtils, un texte doucement pulsé et une musique adaptée prolongent l’émotion.
+- **Pour raconter** : Les récits à choix, les leçons de vie ironiques, l’humour noir et les fables sensibles à l’esprit jeu vidéo.
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">Démo 1 : que se passe-t-il quand on dit toujours « peu importe » ?</th>
-    <th width="50%" align="center">Démo 2 : ne passez pas votre vie en accéléré</th>
+    <th width="50%" align="center">Exemple 1 : Que se passe-t-il quand on dit toujours « peu importe » ?</th>
+    <th width="50%" align="center">Exemple 2 : Ne passez pas votre vie en accéléré</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Démo 1 : que se passe-t-il quand on dit toujours « peu importe » ?" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Démo 2 : ne passez pas votre vie en accéléré" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Exemple 1 : Que se passe-t-il quand on dit toujours « peu importe » ?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Exemple 2 : Ne passez pas votre vie en accéléré" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Animation de personnages en pixels · Musique et bruitages inspirés du jeu vidéo</td>
@@ -595,7 +595,7 @@ De nouveaux styles Code Engine et de nouvelles animations par code sont en prép
 <!-- thumbnail-publishing-kit:start -->
 <a id="thumbnail-publishing-kit"></a>
 
-## 🖼️ Kit de miniatures à fort taux de clic et de publication
+## 🖼️ Kit miniature et publication à fort taux de clic
 
 **Même une excellente vidéo doit d’abord donner envie de cliquer.** Une fois l’animation terminée, préparez dans le même workflow une miniature cohérente, des titres à fort potentiel de clic et des accroches qui suscitent la participation.
 
@@ -708,12 +708,12 @@ Vous n’avez pas besoin d’écrire du code vous-même ni d’acheter un GPU ha
 
 - [x] **1,000 Stars** : lancement du mode Model Engine + 5 styles visuels de base
 - [x] **3,000 Stars** : lancement du mode Code Engine, du script à la vidéo finale
-- [x] **6,000 Stars** : Plus de 10 nouveaux styles visuels de qualité déjà disponibles
+- [x] **6,000 Stars** : plus de 10 nouveaux styles visuels de qualité déjà disponibles
 - [ ] **🔥 10,000 Stars** :
   - Plus de 1,000 prompts de scripts YouTube communs aux modes A et B
-  - [Bibliothèque audio B](skills/directing-stickman-videos/references/b-audio-library.md): 774 effets/transitions + 31 musiques + 85 jingles courts, avec suggestions par style B/scène, export hors ligne, licences et crédits requis
+  - [Bibliothèque audio B](skills/directing-stickman-videos/references/b-audio-library.md) : 774 effets/transitions + 31 musiques + 85 jingles courts, avec suggestions par style B/scène, export hors ligne, licences et crédits requis
 - [ ] **20,000 Stars** :
-  - lancement de Stickman AI Studio — de l’idée à la vidéo finale, en pilote automatique
+  - Lancement de Stickman AI Studio — de l’idée à la vidéo finale, en pilote automatique
   - D’autres surprises nous attendent — découvrons-les ensemble
 
 <div align="center">

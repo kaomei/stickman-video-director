@@ -505,9 +505,9 @@ Bir geri sayım. Gece gelen bir telefon. Asla çiğnememeniz gereken bir kural. 
 
 Sevdiğiniz avatarı kanalınızın sunucusuna dönüştürün; tanınmış karakterleri kullanmak için izin gerekir. Sunucu ekranın köşesinde anlatırken soldaki çöp adamlar fikri küçük bir sahneye dönüştürür: faturalar tarafından sürüklenir, baskı altında ezilir ya da görsel bir esprinin içine düşerler. Soyut fikirler bile eğlenceli ve akılda kalıcı olur.
 
-- **Görsel tarz**: Sıcak kâğıt dokusu, kendine özgü bir sunucu ve siyah-kırmızı vurgulu yazılar. Abartılı ağırlık, geri sıçrama ve dönüşen nesneler, açıklamaları görsel metaforlara çevirir.
-- **Ses atmosferi**: Net anlatım öndedir; dudak hareketleri, ifadeler ve altyazılar sesi takip eder. Efektler hareketin vurucu anına oturur, hafif müzik konuşmanın önüne geçmez.
-- **Uygun içerikler**: Bilgilendirici anlatımlar, gündelik psikoloji, yaşamdan gözlemler, popüler kültür ve esprili yorumlar.
+- **Görünüm**: Sıcak kâğıt dokusu, kendine özgü bir sunucu ve siyah-kırmızı vurgulu yazılar. Abartılı ağırlık, geri sıçrama ve dönüşen nesneler, açıklamaları görsel metaforlara çevirir.
+- **Ses dünyası**: Net anlatım öndedir; dudak hareketleri, ifadeler ve altyazılar sesi takip eder. Efektler hareketin vurucu anına oturur, hafif müzik konuşmanın önüne geçmez.
+- **İyi anlattığı konular**: Bilgilendirici anlatımlar, gündelik psikoloji, yaşamdan gözlemler, popüler kültür ve esprili yorumlar.
 
 <table width="100%">
   <tr>

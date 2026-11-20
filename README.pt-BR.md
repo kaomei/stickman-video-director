@@ -39,7 +39,7 @@ Roteiro, locução, legendas e som · 14 estilos testados · Para Claude Code, C
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="Boneco de palito de gorro vermelho em cenário tecnológico moderno" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Desenho à Mão Colorido</strong><br>
+<strong>Desenho à mão colorido</strong><br>
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Vídeo de bonecos de palito em desenho colorido: um quarto tranquilo e um pensamento seguindo o rio" width="90%"></a>
 </td>
 </tr>
@@ -98,8 +98,8 @@ Roteiro, locução, legendas e som · 14 estilos testados · Para Claude Code, C
 <!-- a7:hero:end -->
 <!-- b7:hero:start -->
 <td width="50%" align="center">
-<strong>Teatro Pixel</strong><br>
-<a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Teatro Pixel" width="90%"></a>
+<strong>Teatro pixel</strong><br>
+<a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Teatro pixel" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
 </tr>
@@ -262,7 +262,7 @@ Os estilos seguem a numeração A1, A2, A3… Cada um apresenta seus próprios e
 
 ### A1: Preto e branco clássico
 
-Uma cabeça redonda e poucos traços fazem uma ideia complicada se encaixar. A ansiedade vira uma gaiola; a atenção, uma bateria acabando. Sem excessos, cada gesto e metáfora ganha força.
+Uma cabeça redonda e poucos traços fazem uma ideia complicada fazer sentido. A ansiedade vira uma gaiola; a atenção, uma bateria acabando. Sem excessos, cada gesto e metáfora ganha força.
 
 - **O visual**: Tinta preta no branco ou branco no preto, com pontos de cor para destacar o essencial.
 - **Para contar**: Ciência, psicologia, desenvolvimento pessoal, negócios e conceitos que pedem uma boa analogia visual.
@@ -416,7 +416,7 @@ Como um amigo desenhando enquanto explica. Rostos expressivos, linhas pretas e p
 
 <a id="b2"></a>
 
-### B2: Desenho à Mão Colorido
+### B2: Desenho à mão colorido
 
 Por que a mente faz mais barulho quando você tenta dormir? Inspirado no [@PsychToonsHQ](https://www.youtube.com/@PsychToonsHQ) do YouTube (**200 mil inscritos**), o papel acolhedor e as cores suaves transformam insônia, procrastinação e distração em histórias familiares demais.
 
@@ -429,8 +429,8 @@ Por que a mente faz mais barulho quando você tenta dormir? Inspirado no [@Psych
     <th width="50%" align="center">Exemplo 2: Você desbloqueou o celular — e esqueceu por quê</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Desenho à Mão Colorido: um quarto tranquilo, um barquinho de papel no rio e uma hora de dormir mais calma" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Desenho à Mão Colorido: uma distração ao checar o celular, com narração, legendas marfim e cenários ilustrados" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 Desenho à mão colorido: um quarto tranquilo, um barquinho de papel no rio e uma hora de dormir mais calma" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b2-colorful-phone-weather.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-phone-weather.gif" alt="B2 Desenho à mão colorido: uma distração ao checar o celular, com narração, legendas marfim e cenários ilustrados" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Pensamentos antes de dormir · Cortes de cenário · Movimentos suaves</td>
@@ -473,7 +473,7 @@ Como encontrar uma transmissão curiosa de madrugada. Inspirados no [@Bradikinin
 
 ### B4: Suspense de sobrevivência
 
-Uma contagem regressiva. Uma ligação de madrugada. Uma regra que você nunca deve quebrar. Inspirados no [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives) do YouTube (**100 mil inscritos conquistados em 3 semanas**), lugares comuns viram armadilhas. Cabeças redondas brancas, luvas brancas e contrastes fortes colocam personagens simples em um mundo inquietante.
+Uma contagem regressiva. Uma ligação de madrugada. Uma regra que você nunca deve quebrar. Em um universo inspirado no [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives) do YouTube (**100 mil inscritos conquistados em 3 semanas**), lugares comuns viram armadilhas. Cabeças redondas brancas, luvas brancas e contrastes fortes colocam personagens simples em um mundo inquietante.
 
 - **O visual**: Aberturas em meia-sombra, closes perturbadores e ameaças que saem do escuro. Expressões, luz e objetos mudam para criar tensão sem explicar cada imagem.
 - **O som**: Brian prende a atenção desde a abertura. Uma ambiência baixa e contínua sustenta a tensão; efeitos ligados à história revelam o perigo sem encobrir a voz.
@@ -507,7 +507,7 @@ Transforme seu avatar favorito no apresentador do canal; o uso de personagens co
 
 - **O visual**: Textura de papel em tons quentes, apresentador marcante e palavras em preto e vermelho. Peso exagerado, rebotes e objetos que se transformam convertem explicações em metáforas visuais.
 - **O som**: Narração clara conduz a história, com boca, expressões e legendas acompanhando a voz. Os efeitos sonoros marcam as ações, e a música leve não compete com a fala.
-- **Ideal para**: Vídeos explicativos, psicologia do dia a dia, observações, cultura pop e comentários bem-humorados.
+- **Para contar**: Vídeos explicativos, psicologia do dia a dia, observações, cultura pop e comentários bem-humorados.
 
 <table width="100%">
   <tr>
@@ -561,7 +561,7 @@ Expressões de meme, traços soltos à mão e cores suaves transformam história
 <!-- b7:section:start -->
 <a id="b7"></a>
 
-### B7: Teatro Pixel
+### B7: Teatro pixel
 
 Pequenos pixels, grandes consequências. Personagens brancos transformam escolhas do dia a dia em pequenos mundos de jogo, onde um botão apertado, uma chance perdida ou um simples “tanto faz” pode mudar tudo.
 
@@ -571,12 +571,12 @@ Pequenos pixels, grandes consequências. Personagens brancos transformam escolha
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">Exemplo 1: o que acontece quando você só diz “tanto faz”?</th>
-    <th width="50%" align="center">Exemplo 2: não acelere a sua vida</th>
+    <th width="50%" align="center">Exemplo 1: O que acontece quando você só diz “tanto faz”?</th>
+    <th width="50%" align="center">Exemplo 2: Não acelere a sua vida</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Exemplo 1: o que acontece quando você só diz “tanto faz”?" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Exemplo 2: não acelere a sua vida" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Exemplo 1: O que acontece quando você só diz “tanto faz”?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Exemplo 2: Não acelere a sua vida" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Animação de personagens em pixel art · Música e efeitos com clima de videogame</td>
@@ -708,12 +708,12 @@ Você não precisa escrever código por conta própria nem comprar uma GPU de po
 
 - [x] **1,000 Stars**: lançamento do modo Model Engine + 5 estilos visuais principais
 - [x] **3,000 Stars**: lançamento do modo Code Engine, do roteiro ao vídeo pronto
-- [x] **6,000 Stars**: Mais de 10 novos estilos visuais de alta qualidade já disponíveis
+- [x] **6,000 Stars**: mais de 10 novos estilos visuais de alta qualidade já disponíveis
 - [ ] **🔥 10,000 Stars**:
   - Mais de 1,000 prompts de roteiros para YouTube compartilhados pelos modos A e B
   - [Biblioteca de áudio B](skills/directing-stickman-videos/references/b-audio-library.md): 774 SFX/transições + 31 músicas + 85 jingles curtos, com sugestões por estilo B/cena, exportação offline, licenças por item e créditos obrigatórios
 - [ ] **20,000 Stars**:
-  - lançamento do Stickman AI Studio — da ideia ao vídeo pronto, no piloto automático
+  - Lançamento do Stickman AI Studio — da ideia ao vídeo pronto, no piloto automático
   - Mais surpresas vêm por aí — vamos descobrir juntos
 
 <div align="center">
@@ -752,7 +752,7 @@ Tem uma ideia de estilo ou quer ganhar destaque? Entre na nossa [comunidade do T
 
 ## 📄 Licença
 
-Este projeto usa a [licença MIT](https://github.com/kaomei/stickman-video-director/blob/main/LICENSE): você pode usar, modificar, distribuir e utilizar comercialmente sem pagar pela Skill. Ao distribuir o projeto ou partes substanciais dele, mantenha os avisos de direitos autorais e de licença.
+Este projeto usa a [licença MIT](https://github.com/kaomei/stickman-video-director/blob/main/LICENSE): você pode usar, modificar, distribuir e utilizar comercialmente sem pagar pelo Skill. Ao distribuir o projeto ou partes substanciais dele, mantenha os avisos de direitos autorais e de licença.
 
 Músicas, efeitos sonoros e outros recursos de terceiros continuam sujeitos às próprias licenças e exigências de atribuição. Consulte os avisos dos respectivos recursos.
 
