@@ -712,9 +712,8 @@ Você não precisa escrever código por conta própria nem comprar uma GPU de po
 - [ ] **🔥 10,000 Stars**:
   - Mais de 1,000 prompts de roteiros para YouTube compartilhados pelos modos A e B
   - [Biblioteca de áudio B](skills/directing-stickman-videos/references/b-audio-library.md): já disponível — 774 efeitos e transições, 31 músicas e 85 jingles curtos, licenciados e prontos para usar
-- [ ] **15,000 Stars**:
-  - Channel Autopilot — informe o nicho do seu canal e receba, de uma vez, uma semana de vídeos prontos para publicar, com thumbnails e títulos
 - [ ] **20,000 Stars**:
+  - Channel Autopilot — informe o nicho do seu canal e receba, de uma vez, uma semana de vídeos prontos para publicar, com thumbnails e títulos
   - Lançamento do Stickman AI Studio — um app de desktop de código aberto: cole um roteiro, escolha um estilo, visualize e ajuste cada cena em uma linha do tempo visual e renderize. Sem terminal
   - Mais surpresas vêm por aí — vamos descobrir juntos
 
