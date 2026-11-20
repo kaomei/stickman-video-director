@@ -9,7 +9,10 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Transforme roteiros brutos em animações explicativas de alta retenção em minutos — em 14 estilos testados na prática, com locução, movimentos de câmera e sonoplastia inclusos.
+**Mande uma mensagem para seu agente de IA e receba um vídeo de boneco-palito pronto.**<br>
+Roteiro, locução, legendas e som · 14 estilos testados · Para Claude Code, Codex e mais
+
+💬 Uma mensagem → ✅ Aprove o roteiro e a prévia → 🎬 Vídeo pronto
 
 **Chega de sofrer no After Effects. Sem taxa de US$ 50/mês em SaaS. Poste todo dia sem esgotamento.**
 

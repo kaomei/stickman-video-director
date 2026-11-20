@@ -9,7 +9,10 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-텍스트 원고를 몇 분 만에 높은 시청 지속 시간의 애니메이션 영상으로 —— 검증된 14가지 비주얼 스타일, 나레이션, 카메라 무빙, 사운드 디자인까지 한 번에.
+**AI 에이전트에게 메시지 한 줄만 보내면, 완성된 스틱맨 영상이 돌아옵니다.**<br>
+대본·내레이션·자막·사운드까지 한 번에 · 검증된 14가지 스타일 · Claude Code, Codex 등 지원
+
+💬 메시지 한 줄 → ✅ 대본과 미리보기 확인 → 🎬 완성 영상
 
 **복잡한 모션 그래픽 작업 불필요. 매달 50달러의 SaaS 구독료도 제로. 지치지 않고 매일 업로드.**
 

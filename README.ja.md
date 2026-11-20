@@ -9,7 +9,10 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-生の原稿からわずか数分で高維持率の解説アニメへ —— 実戦検証済みの14種類の画風、ナレーション、カメラワーク、効果音まで完全自動。
+**AIエージェントにひと言送るだけで、完成した棒人間動画が届く。**<br>
+台本・音声・字幕・効果音までおまかせ · 実戦検証済みの14画風 · Claude Code・Codex 対応
+
+💬 ひと言送る → ✅ 台本とプレビューを確認 → 🎬 完成動画
 
 **面倒な動画編集・アニメ付けは不要。月額50ドルのSaaS税もゼロ。毎日投稿を、もっと楽に。**
 

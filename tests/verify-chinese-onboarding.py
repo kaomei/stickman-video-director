@@ -14,7 +14,8 @@ assert "[🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md)" in cn
 assert (root / "README.fr.md").is_file(), "French navigation must open a complete README"
 hero_copy = cn.split("</div>", 1)[0]
 assert "**用全自动火柴人动画，规模化量产你的无人出镜频道。**" in hero_copy
-assert "几分钟内，通过 14 款实操验证的画风把原始文案变成高完播率动画视频 —— 镜头调度、旁白配音与音效设计一键配齐。" in hero_copy
+assert '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 14 款实操验证的画风 · 支持 Claude Code、Codex 等' in hero_copy
+assert '💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片' in hero_copy
 assert "**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**" in hero_copy
 assert "画风持续更新，适用于" not in hero_copy, "Keep the removed niche sentence out of the hero"
 assert "*⭐ 欢迎点亮 Star，第一时间解锁最新画风与功能更新！*" in hero_copy

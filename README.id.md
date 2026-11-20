@@ -9,7 +9,10 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Ubah naskah mentah menjadi video animasi beretensi tinggi dalam hitungan menit — dari 14 gaya visual teruji, lengkap dengan voiceover, gerakan kamera dinamis, dan efek suara.
+**Kirim satu pesan ke agen AI Anda, dapatkan video stickman yang sudah jadi.**<br>
+Naskah, voiceover, subtitle & suara · 14 gaya teruji · Untuk Claude Code, Codex & lainnya
+
+💬 Satu pesan → ✅ Setujui naskah & pratinjau → 🎬 Video jadi
 
 **Tanpa ribet animasi After Effects. Tanpa pajak langganan SaaS $50/bulan. Upload tiap hari tanpa burnout.**
 

@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>
-脚本、配音、字幕与音效全包 · 14 款实操验证画风 · 支持 Claude Code、Codex 等
+脚本、配音、字幕与音效全包 · 14 款实操验证的画风 · 支持 Claude Code、Codex 等
 
 💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片
 

@@ -9,7 +9,10 @@
 [![GitHub Yıldızları](https://img.shields.io/github/stars/kaomei/stickman-video-director?style=flat-square)](https://github.com/kaomei/stickman-video-director/stargazers)
 ![MIT Lisansı](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
-Ham metinleri dakikalar içinde yüksek tutunma oranlı animasyonlu açıklamalara dönüştürün — kanıtlanmış 14 farklı stil, seslendirme, dinamik kamera ve ses efektleriyle birlikte.
+**Yapay zekâ ajanınıza tek bir mesaj gönderin, bitmiş çöp adam videonuzu alın.**<br>
+Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 14 stil · Claude Code, Codex ve dahası
+
+💬 Tek mesaj → ✅ Senaryoyu ve önizlemeyi onaylayın → 🎬 Hazır video
 
 **Karmaşık After Effects kurgularına son. Aylık 50$'lık SaaS vergisi yok. Tükenmeden her gün yayınlayın.**
 
