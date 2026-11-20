@@ -195,7 +195,7 @@ https://github.com/kaomei/stickman-video-director
 Setelah pemasangan berhasil, baca SKILL.md dan beri tahu saya bahwa Anda sudah siap.
 ```
 
-Lebih suka memakai terminal, atau instalasi kehabisan waktu? Lihat [panduan instalasi manual](skills/directing-stickman-videos/references/installation-troubleshooting.md), yang juga menjelaskan cara mengunduh folder Skill saja (sekitar sepertiga lebih sedikit unduhan).
+<sub>Pesan ini sudah cukup untuk instalasi; tidak perlu langkah lain. Jika Anda lebih suka terminal atau instalasi kehabisan waktu, Anda bisa melihat [panduan instalasi manual](skills/directing-stickman-videos/references/installation-troubleshooting.md).</sub>
 
 ### Step 2: Pilih gaya dan mode, lalu mulai dengan satu permintaan
 

@@ -195,7 +195,7 @@ https://github.com/kaomei/stickman-video-director
 安装成功后读取 SKILL.md，并告诉我你已就绪。
 ```
 
-想用终端安装，或者安装时超时？请查看[手动安装说明](skills/directing-stickman-videos/references/installation-troubleshooting.md)，里面也介绍了如何只下载 Skill 文件夹（下载量减少约三分之一）。
+<sub>一句话就能完成安装，无需其他操作。如果你更习惯用终端，或者安装时遇到超时，可以参考[手动安装说明](skills/directing-stickman-videos/references/installation-troubleshooting.md)。</sub>
 
 ### Step 2：选择画风和模式，一句话开始创作
 

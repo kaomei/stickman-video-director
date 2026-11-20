@@ -195,7 +195,7 @@ https://github.com/kaomei/stickman-video-director
 설치 후 SKILL.md를 읽고 준비가 되었다고 알려 주세요.
 ```
 
-터미널로 설치하고 싶거나 설치 중 시간이 초과되었다면 [수동 설치 가이드](skills/directing-stickman-videos/references/installation-troubleshooting.md)를 확인하세요. Skill 폴더만 내려받는 방법(다운로드 용량 약 3분의 1 감소)도 안내합니다.
+<sub>이 메시지 하나로 설치가 끝나며, 다른 작업은 필요 없습니다. 터미널이 더 편하거나 설치 중 시간이 초과되면 [수동 설치 가이드](skills/directing-stickman-videos/references/installation-troubleshooting.md)를 참고할 수 있습니다.</sub>
 
 ### Step 2: 스타일과 모드를 고르고, 한마디로 제작 시작
 
