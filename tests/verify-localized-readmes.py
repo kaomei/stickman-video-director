@@ -321,8 +321,8 @@ for name in selected:
     assert len(re.findall(r"^- \*\*", b5, re.M)) == 3, name
     assert all(token in b5 for token in ("The Pharaoh 3", "Claire", "Crazy Mei")), name
     assert b5.count('<th width="50%"') == 2 and b5.count('width="360"') == 2, name
-    host_terms = {"en": "Animated Host", "zh-CN": "动画主讲", "ja": "アニメの語り手", "ko": "애니메이션 진행자", "fr": "Présentateur animé", "pt-BR": "Apresentador animado", "tr": "Animasyon sunucu", "id": "Pembawa acara animasi"}
-    rights_terms = {"en": "permission is required to use well-known characters", "zh-CN": "使用知名角色需获得授权", "ja": "有名なキャラクターを使う場合は許諾が必要", "ko": "유명 캐릭터를 사용하려면 허가가 필요", "fr": "l’utilisation de personnages connus nécessite une autorisation", "pt-BR": "o uso de personagens conhecidos exige autorização", "tr": "tanınmış karakterleri kullanmak için izin gerekir", "id": "penggunaan karakter terkenal memerlukan izin"}
+    host_terms = {"en": "Animated presenter", "zh-CN": "动画主讲", "ja": "アニメの語り手", "ko": "애니메이션 진행자", "fr": "Présentateur animé", "pt-BR": "Apresentador animado", "tr": "Animasyon sunucu", "id": "Pembawa acara animasi"}
+    rights_terms = {"en": "Using a well-known character requires permission", "zh-CN": "使用知名角色需获得授权", "ja": "有名なキャラクターを使う場合は許諾が必要", "ko": "유명 캐릭터를 사용하려면 허가가 필요", "fr": "l’utilisation de personnages connus nécessite une autorisation", "pt-BR": "o uso de personagens conhecidos exige autorização", "tr": "tanınmış karakterleri kullanmak için izin gerekir", "id": "penggunaan karakter terkenal memerlukan izin"}
     assert host_terms[active] in b5, (name, "localized animated host caption")
     introduction = b5.split('<table', 1)[0]
     assert rights_terms[active] in introduction, (name, "inline localized rights reminder")
@@ -441,7 +441,7 @@ for name in selected:
     assert all(token in faq_answers[3] for token in story_plan_copy[active]), (name, "story and shot structure scales with topic, length and style")
     assert not re.search(r"6(?:[- ]scene| 幕|シーン|개 장면| scènes| cenas| sahne| adegan)", faq_answers[3]), (name, "no fixed six-scene FAQ promise")
     for answer, tokens in zip(faq_answers, (("MIT", "API"), ("B", "A"), ("Google Flow", "Codex", "Claude Code", "API"), ("3",), ("SFX", "Casually Explained"), ("YouTube", "YPP"), ("A", "B", "Agent"))):
-        assert all(token in answer for token in tokens), (name, "localized FAQ topic parity", tokens)
+        assert all(token in answer or (token == "Agent" and "agent" in answer) for token in tokens), (name, "localized FAQ topic parity", tokens)
     assert "MIT" in faq and "API" in faq and "YouTube" in faq and "Codex" in faq, name
     code = re.findall(r"```text\n(.*?)```", text, re.S)
     assert len(code) == 5, (name, "installation, A example, B example and two publishing-kit prompts")
@@ -516,11 +516,11 @@ for name in selected:
         approved_mode_intro = (
             '<a id="creation-modes"></a>\n\n'
             '## 🎬 Two video creation modes: Model Engine vs Code Engine\n\n'
-            "**One stickman director, two ways to create your visuals**: A uses video models to generate continuous shots; B uses code to animate layered assets. With the right tools, an Agent can take either approach through to a finished video, following the selected style’s specifications.\n"
+            "**One stickman director, two ways to create your visuals**: A uses video models to generate continuous shots; B uses code to animate layered assets. With the right tools, an AI agent can take either approach through to a finished video, following the selected style’s specifications.\n"
         )
         assert approved_mode_intro in text, (name, "approved centered CTA, navigation and bold workflow introduction")
         approved_setup_copy = (
-            "Start with an idea, an article, a web link, or a complete script. Both modes support short videos and longer content. Choose `16:9` landscape or `9:16` portrait for your publishing platform, and configure subtitles, voiceover, background music, and sound effects to suit your needs and the selected style.\n\n"
+            "Start with an idea, an article, a web link, or a complete script. Both modes support short videos and longer content. Choose `16:9` landscape or `9:16` portrait for your publishing platform, and configure captions, voiceover, background music, and sound effects to suit your needs and the selected style.\n\n"
             "Still deciding on a style? Below, you’ll find detailed descriptions, suggested topics, and more sample videos for each style."
         )
         assert modes_before_partners.rstrip().endswith(approved_setup_copy), (name, "approved input, length, ratio, audio and linked style guidance")

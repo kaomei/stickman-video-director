@@ -198,7 +198,7 @@ https://github.com/kaomei/stickman-video-director
 Após a instalação, leia SKILL.md e me avise que está pronto.
 ```
 
-<sub>Se preferir o terminal ou se a instalação exceder o tempo limite, você pode consultar o [guia de instalação manual](skills/directing-stickman-videos/references/installation-troubleshooting.md).</sub>
+Se preferir o terminal ou se a instalação exceder o tempo limite, você pode consultar o [guia de instalação manual](skills/directing-stickman-videos/references/installation-troubleshooting.md).
 
 ### Step 2: Escolha o estilo e o modo e comece a criar com uma frase
 
@@ -363,8 +363,8 @@ E se você acordasse e tudo custasse dez mil vezes menos? A inspiração visual 
 
 Um boneco de traços finos entra em cenários retrô desenhados com cuidado. Gestos elásticos, expressões marcantes e atuação contínua transformam pequenos contratempos em comédia teatral. Verde-sálvia, marfim e discretos detalhes em vermelho desbotado preservam o charme de época.
 
-- **Destaques visuais**：Rosto branco circular, duas mechas curvas e corpo de linhas finas consistentes; contornos a tinta, pintura fosca, interação com objetos e montagem expressiva.
-- **Ideal para**：Comédia absurda, fábulas do cotidiano, histórias com reviravoltas e curtas guiados pela música.
+- **Destaques visuais**: Rosto branco circular, duas mechas curvas e corpo de linhas finas consistentes; contornos a tinta, pintura fosca, interação com objetos e montagem expressiva.
+- **Ideal para**: Comédia absurda, fábulas do cotidiano, histórias com reviravoltas e curtas guiados pela música.
 
 | Exemplo 1: Perseguido por uma nuvem | Exemplo 2: Uma rua chuvosa |
 |:---:|:---:|

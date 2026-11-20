@@ -198,7 +198,7 @@ https://github.com/kaomei/stickman-video-director
 Une fois l’installation terminée, lis SKILL.md et dis-moi que tu es prêt.
 ```
 
-<sub>Si vous préférez le terminal ou si l’installation dépasse le délai imparti, vous pouvez consulter le [guide d’installation manuelle](skills/directing-stickman-videos/references/installation-troubleshooting.md).</sub>
+Si vous préférez le terminal ou si l’installation dépasse le délai imparti, vous pouvez consulter le [guide d’installation manuelle](skills/directing-stickman-videos/references/installation-troubleshooting.md).
 
 ### Step 2 : Choisir un style et un mode, puis lancer la création en une phrase
 
@@ -363,8 +363,8 @@ Et si, au réveil, tout coûtait dix mille fois moins cher ? L’inspiration vis
 
 Un personnage filiforme évolue dans des décors rétro finement dessinés. Gestes élastiques, expressions marquées et jeu continu transforment les petits incidents du quotidien en comédie théâtrale. Le vert sauge, l’ivoire et quelques touches de rouge passé conservent le charme d’époque.
 
-- **Points forts**：Visage blanc circulaire, deux mèches courbes et corps en traits fins ; contours à l’encre, peinture mate, interaction avec les accessoires et montage expressif.
-- **Idéal pour**：Comédie absurde, fables du quotidien, récits à chute et courts métrages musicaux.
+- **Points forts** : Visage blanc circulaire, deux mèches courbes et corps en traits fins ; contours à l’encre, peinture mate, interaction avec les accessoires et montage expressif.
+- **Idéal pour** : Comédie absurde, fables du quotidien, récits à chute et courts métrages musicaux.
 
 | Exemple 1 : Poursuivi par un nuage | Exemple 2 : Une rue sous la pluie |
 |:---:|:---:|

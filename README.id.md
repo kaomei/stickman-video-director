@@ -198,7 +198,7 @@ https://github.com/kaomei/stickman-video-director
 Setelah pemasangan berhasil, baca SKILL.md dan beri tahu saya bahwa Anda sudah siap.
 ```
 
-<sub>Jika Anda lebih suka terminal atau instalasi kehabisan waktu, Anda bisa melihat [panduan instalasi manual](skills/directing-stickman-videos/references/installation-troubleshooting.md).</sub>
+Jika Anda lebih suka terminal atau instalasi kehabisan waktu, Anda bisa melihat [panduan instalasi manual](skills/directing-stickman-videos/references/installation-troubleshooting.md).
 
 ### Step 2: Pilih gaya dan mode, lalu mulai dengan satu permintaan
 
@@ -363,8 +363,8 @@ Bagaimana jika saat bangun, semua barang sepuluh ribu kali lebih murah? Inspiras
 
 Figur stik bergaris tipis tampil di latar retro yang digambar dengan rinci. Gerakan lentur, ekspresi kuat, dan akting berkesinambungan mengubah kejadian sehari-hari menjadi komedi teatrikal. Warna hijau sage, gading, dan sedikit merah pudar menjaga nuansa lawas.
 
-- **Ciri visual**：Wajah bulat putih, dua helai rambut melengkung, dan tubuh garis tipis yang konsisten; kontur tinta, tekstur cat matte, interaksi properti, dan penyuntingan ekspresif.
-- **Cocok untuk**：Komedi absurd, fabel keseharian, cerita dengan kejutan, dan film pendek mengikuti musik.
+- **Ciri visual**: Wajah bulat putih, dua helai rambut melengkung, dan tubuh garis tipis yang konsisten; kontur tinta, tekstur cat matte, interaksi properti, dan penyuntingan ekspresif.
+- **Cocok untuk**: Komedi absurd, fabel keseharian, cerita dengan kejutan, dan film pendek mengikuti musik.
 
 | Contoh 1: Dikejar awan | Contoh 2: Jalanan saat hujan |
 |:---:|:---:|
