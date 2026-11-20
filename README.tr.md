@@ -702,18 +702,20 @@ Kendiniz kod yazmanız veya üst düzey bir GPU satın almanız gerekmez. A modu
 
 <a id="road-to-10000-stars--creator-ecosystem"></a>
 
-## ⭐ 20,000 Stars’a doğru ve içerik üreticisi ekosistemi
+## ⭐ 20,000 Stars’a doğru
 
-**Her yıldız bir sonraki yeniliğe güç verir!** Tek başına içerik üretenlerin aylık 50 dolarlık SaaS abonelikleri olmadan yüzlerini göstermedikleri kanallar yönetebilmesi için birlikte %100 ücretsiz, açık kaynaklı bir stüdyo kuruyoruz.
+**Her yıldız bir sonraki yeniliğe güç verir!** Tek başına içerik üretenlerin aylık 50 dolarlık SaaS abonelikleri olmadan yüzlerini göstermedikleri kanallar yönetebilmesi için birlikte ücretsiz, açık kaynaklı bir stüdyo kuruyoruz. Bir sonraki aşamanın kilidini açmak için [projeye yıldız verin](https://github.com/kaomei/stickman-video-director).
 
 - [x] **1,000 Stars**: Model Engine + 5 temel görsel stil yayımlandı
 - [x] **3,000 Stars**: Senaryodan hazır videoya kadar üreten Code Engine yayımlandı
 - [x] **6,000 Stars**: 10’dan fazla yüksek kaliteli yeni görsel stil yayımlandı
 - [ ] **🔥 10,000 Stars**:
   - A ve B modları için ortak 1,000’den fazla YouTube senaryosu istemi
-  - [B ses kütüphanesi](skills/directing-stickman-videos/references/b-audio-library.md): 774 efekt/geçiş + 31 müzik + 85 kısa jingle; B stili/sahne önerileri, çevrimdışı dışa aktarma, öğe lisansları ve gerekli atıflarla
+  - [B ses kütüphanesi](skills/directing-stickman-videos/references/b-audio-library.md): şimdiden kullanılabilir — 774 efekt/geçiş, 31 müzik ve 85 kısa jingle; lisanslı ve kullanıma hazır
+- [ ] **15,000 Stars**:
+  - Channel Autopilot — kanalınızın konusunu verin; küçük resimleri ve başlıklarıyla bir haftalık yayına hazır videoyu tek seferde alın
 - [ ] **20,000 Stars**:
-  - Stickman AI Studio’nun açılışı — fikirden tamamlanmış videoya, otomatik pilotta
+  - Stickman AI Studio’nun açılışı — açık kaynaklı bir masaüstü uygulaması: senaryoyu yapıştırın, stili seçin, her sahneyi görsel zaman çizelgesinde önizleyip düzenleyin ve render alın. Terminal gerekmez
   - Daha fazla sürpriz yolda — birlikte heyecanla bekleyelim
 
 <div align="center">

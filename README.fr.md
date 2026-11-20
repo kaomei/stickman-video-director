@@ -702,18 +702,20 @@ Vous n’avez pas besoin d’écrire du code vous-même ni d’acheter un GPU ha
 
 <a id="road-to-10000-stars--creator-ecosystem"></a>
 
-## ⭐ En route vers 20,000 Stars et un écosystème de créateurs
+## ⭐ En route vers 20,000 Stars
 
-**Chaque étoile alimente la prochaine nouveauté !** Ensemble, nous construisons un studio 100 % gratuit et open source pour aider les créateurs solo à gérer des chaînes sans montrer leur visage, sans abonnement SaaS à 50 $/mois.
+**Chaque étoile alimente la prochaine nouveauté !** Ensemble, nous construisons un studio gratuit et open source pour aider les créateurs solo à gérer des chaînes sans montrer leur visage, sans abonnement SaaS à 50 $/mois. [Ajoutez une étoile au projet](https://github.com/kaomei/stickman-video-director) pour débloquer la prochaine étape.
 
 - [x] **1,000 Stars** : lancement du mode Model Engine + 5 styles visuels de base
 - [x] **3,000 Stars** : lancement du mode Code Engine, du script à la vidéo finale
 - [x] **6,000 Stars** : plus de 10 nouveaux styles visuels de qualité déjà disponibles
 - [ ] **🔥 10,000 Stars** :
   - Plus de 1,000 prompts de scripts YouTube communs aux modes A et B
-  - [Bibliothèque audio B](skills/directing-stickman-videos/references/b-audio-library.md) : 774 effets/transitions + 31 musiques + 85 jingles courts, avec suggestions par style B/scène, export hors ligne, licences et crédits requis
+  - [Bibliothèque audio B](skills/directing-stickman-videos/references/b-audio-library.md) : déjà disponible — 774 effets et transitions, 31 musiques et 85 jingles courts, avec licences, prêts à l’emploi
+- [ ] **15,000 Stars** :
+  - Channel Autopilot — indiquez votre niche et obtenez en une seule fois une semaine de vidéos prêtes à publier, avec miniatures et titres
 - [ ] **20,000 Stars** :
-  - Lancement de Stickman AI Studio — de l’idée à la vidéo finale, en pilote automatique
+  - Lancement de Stickman AI Studio — une application de bureau open source : collez un script, choisissez un style, prévisualisez et ajustez chaque scène sur une timeline visuelle, puis lancez le rendu. Aucun terminal nécessaire
   - D’autres surprises nous attendent — découvrons-les ensemble
 
 <div align="center">

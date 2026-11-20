@@ -702,18 +702,20 @@ Anda tidak perlu menulis kode sendiri atau membeli GPU kelas atas. Mode A dapat 
 
 <a id="road-to-10000-stars--creator-ecosystem"></a>
 
-## ⭐ Menuju 20,000 Stars dan ekosistem kreator
+## ⭐ Menuju 20,000 Stars
 
-**Setiap Star mendukung rilisan berikutnya!** Bersama-sama, kita membangun studio 100% gratis dan open source untuk membantu kreator solo mengelola channel tanpa tampil di kamera, tanpa langganan SaaS seharga US$ 50/bulan.
+**Setiap Star mendukung rilisan berikutnya!** Bersama-sama, kita membangun studio gratis dan open source untuk membantu kreator solo mengelola channel tanpa tampil di kamera, tanpa langganan SaaS seharga US$ 50/bulan. [Beri Star pada proyek ini](https://github.com/kaomei/stickman-video-director) untuk membantu membuka tahap berikutnya.
 
 - [x] **1,000 Stars**: Model Engine + 5 gaya visual inti telah dirilis
 - [x] **3,000 Stars**: Code Engine untuk membuat video dari naskah hingga jadi telah dirilis
 - [x] **6,000 Stars**: Lebih dari 10 gaya visual baru berkualitas tinggi telah dirilis
 - [ ] **🔥 10,000 Stars**:
   - Koleksi 1,000+ prompt naskah YouTube untuk mode A dan B
-  - [Pustaka audio B](skills/directing-stickman-videos/references/b-audio-library.md): 774 SFX/transisi + 31 musik latar + 85 jingle singkat, dengan rekomendasi gaya/adegan B, ekspor offline, lisensi per aset dan atribusi wajib
+  - [Pustaka audio B](skills/directing-stickman-videos/references/b-audio-library.md): sudah tersedia — 774 SFX/transisi, 31 musik latar, dan 85 jingle singkat, berlisensi dan siap dipakai
+- [ ] **15,000 Stars**:
+  - Channel Autopilot — sebutkan niche channel Anda, lalu dapatkan video siap tayang untuk satu minggu, lengkap dengan thumbnail dan judul, sekaligus
 - [ ] **20,000 Stars**:
-  - Peluncuran Stickman AI Studio — dari ide hingga video siap tayang, serba otomatis
+  - Peluncuran Stickman AI Studio — aplikasi desktop open source: tempel naskah, pilih gaya, pratinjau dan sesuaikan setiap adegan di linimasa visual, lalu render. Tanpa terminal
   - Kejutan lainnya menanti — yuk, kita nantikan bersama
 
 <div align="center">

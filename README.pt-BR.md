@@ -702,18 +702,20 @@ Você não precisa escrever código por conta própria nem comprar uma GPU de po
 
 <a id="road-to-10000-stars--creator-ecosystem"></a>
 
-## ⭐ Rumo a 20,000 Stars e a um ecossistema de criadores
+## ⭐ Rumo a 20,000 Stars
 
-**Cada Star impulsiona a próxima novidade!** Juntos, estamos construindo um estúdio 100% gratuito e de código aberto para ajudar criadores solo a tocar canais sem aparecer, sem assinaturas SaaS de US$ 50/mês.
+**Cada Star impulsiona a próxima novidade!** Juntos, estamos construindo um estúdio gratuito e de código aberto para ajudar criadores solo a tocar canais sem aparecer, sem assinaturas SaaS de US$ 50/mês. [Dê uma estrela ao projeto](https://github.com/kaomei/stickman-video-director) para ajudar a desbloquear a próxima etapa.
 
 - [x] **1,000 Stars**: lançamento do modo Model Engine + 5 estilos visuais principais
 - [x] **3,000 Stars**: lançamento do modo Code Engine, do roteiro ao vídeo pronto
 - [x] **6,000 Stars**: mais de 10 novos estilos visuais de alta qualidade já disponíveis
 - [ ] **🔥 10,000 Stars**:
   - Mais de 1,000 prompts de roteiros para YouTube compartilhados pelos modos A e B
-  - [Biblioteca de áudio B](skills/directing-stickman-videos/references/b-audio-library.md): 774 SFX/transições + 31 músicas + 85 jingles curtos, com sugestões por estilo B/cena, exportação offline, licenças por item e créditos obrigatórios
+  - [Biblioteca de áudio B](skills/directing-stickman-videos/references/b-audio-library.md): já disponível — 774 efeitos e transições, 31 músicas e 85 jingles curtos, licenciados e prontos para usar
+- [ ] **15,000 Stars**:
+  - Channel Autopilot — informe o nicho do seu canal e receba, de uma vez, uma semana de vídeos prontos para publicar, com thumbnails e títulos
 - [ ] **20,000 Stars**:
-  - Lançamento do Stickman AI Studio — da ideia ao vídeo pronto, no piloto automático
+  - Lançamento do Stickman AI Studio — um app de desktop de código aberto: cole um roteiro, escolha um estilo, visualize e ajuste cada cena em uma linha do tempo visual e renderize. Sem terminal
   - Mais surpresas vêm por aí — vamos descobrir juntos
 
 <div align="center">

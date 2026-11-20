@@ -702,18 +702,20 @@ You don’t need to write code yourself or buy a high-end GPU. In Model Engine (
 
 <a id="road-to-10000-stars--creator-ecosystem"></a>
 
-## ⭐ Road to 20,000 Stars & Creator Ecosystem
+## ⭐ Road to 20,000 Stars
 
-**Every star fuels the next drop!** Together, we’re building a 100% free, open-source studio to help solo creators run faceless channels without $50/mo SaaS subscriptions.
+**Every star fuels the next drop!** Together, we’re building a free, open-source studio to help solo creators run faceless channels without $50/mo SaaS subscriptions. [Star the repo](https://github.com/kaomei/stickman-video-director) to help unlock the next milestone.
 
-- [x] **1,000 Stars**: Shipped Model Engine + 5 core visual styles
-- [x] **3,000 Stars**: Shipped Code Engine for end-to-end video generation
-- [x] **6,000 Stars**: Shipped 10+ high-quality new visual styles
+- [x] **1,000 Stars**: Model Engine + 5 core visual styles
+- [x] **3,000 Stars**: Code Engine for end-to-end video generation
+- [x] **6,000 Stars**: 10+ high-quality new visual styles
 - [ ] **🔥 10,000 Stars**:
   - 1,000+ YouTube script prompts shared by modes A and B
-  - [B audio library](skills/directing-stickman-videos/references/b-audio-library.md): 774 SFX/transitions + 31 music tracks + 85 short musical stingers, with B-style/beat recommendations, offline export, item-level licenses and required credits
+  - [B sound library](skills/directing-stickman-videos/references/b-audio-library.md) — already available: 774 sound effects and transitions, 31 music tracks and 85 short musical stingers, licensed and ready to use
+- [ ] **15,000 Stars**:
+  - Channel Autopilot — give it your niche and get a week of ready-to-publish videos, with thumbnails and titles, in one run
 - [ ] **20,000 Stars**:
-  - Launch Stickman AI Studio — from idea to finished video, on autopilot
+  - Stickman AI Studio — an open-source desktop app: paste a script, pick a style, preview and tweak every scene on a visual timeline, then render. No terminal needed.
   - More surprises ahead — let’s discover them together
 
 <div align="center">
