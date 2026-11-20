@@ -702,18 +702,20 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
 
 <a id="road-to-10000-stars--creator-ecosystem"></a>
 
-## ⭐ 20,000 Stars를 향한 여정과 크리에이터 생태계
+## ⭐ 20,000 Stars를 향한 여정
 
-**Star 하나하나가 다음 업데이트의 원동력입니다!** 월 50달러의 SaaS 구독 없이도 1인 크리에이터가 얼굴을 공개하지 않는 채널을 운영할 수 있도록, 100% 무료 오픈 소스 스튜디오를 함께 만들고 있습니다.
+**Star 하나하나가 다음 업데이트의 원동력입니다!** 월 50달러의 SaaS 구독 없이도 1인 크리에이터가 얼굴을 공개하지 않는 채널을 운영할 수 있도록, 무료 오픈 소스 스튜디오를 함께 만들고 있습니다. [프로젝트에 Star를 눌러](https://github.com/kaomei/stickman-video-director) 다음 마일스톤을 함께 열어 주세요.
 
 - [x] **1,000 Stars**: Model Engine + 5가지 핵심 스타일 출시
 - [x] **3,000 Stars**: 대본부터 완성 영상까지 자동으로 만드는 Code Engine 출시
 - [x] **6,000 Stars**: 10가지 이상의 고품질 신규 스타일 출시 완료
 - [ ] **🔥 10,000 Stars**:
   - A/B 모드 공용 YouTube 대본 프롬프트 1,000개 이상
-  - [B 오디오 라이브러리](skills/directing-stickman-videos/references/b-audio-library.md): 효과음/전환음 774개 + 배경음악 31곡 + 짧은 징글 85개. B 스타일·장면별 추천, 오프라인 내보내기, 개별 라이선스와 필수 크레딧 포함
+  - [B 오디오 라이브러리](skills/directing-stickman-videos/references/b-audio-library.md): 이미 사용 가능. 효과음/전환음 774개, 배경음악 31곡, 짧은 징글 85개를 라이선스와 함께 바로 쓸 수 있습니다
+- [ ] **15,000 Stars**:
+  - Channel Autopilot — 채널 주제만 알려 주면 썸네일과 제목까지 갖춘 게시용 영상 일주일 치를 한 번에 제작
 - [ ] **20,000 Stars**:
-  - Stickman AI Studio 출시 — 아이디어부터 완성된 영상까지, 전 과정을 자동으로
+  - Stickman AI Studio 출시 — 오픈소스 데스크톱 앱: 대본을 붙여 넣고 스타일을 고른 뒤, 비주얼 타임라인에서 장면마다 미리 보고 조정해 렌더링. 터미널 불필요
   - 더 많은 놀라움, 함께 기대해요~
 
 <div align="center">

@@ -20,7 +20,7 @@ assert "**告别繁琐动效手搓，不交每月几十刀的软件订阅税。�
 assert "画风持续更新，适用于" not in hero_copy, "Keep the removed niche sentence out of the hero"
 assert "*⭐ 欢迎点亮 Star，第一时间解锁最新画风与功能更新！*" in hero_copy
 assert "**每一颗 Star，都为下一次更新添一把火！**" in cn
-assert "100% 免费、开源的工作室" in cn
+assert "免费、开源的工作室" in cn
 assert "我是烤妹儿" not in cn, "Keep the follow CTA focused on reader value, not self-introduction"
 readable_cn = re.sub(r'<[^>]+>|\]\([^)]+\)|https?://[^\s<>)"]+', "", cn.replace("# 🎬 Stickman Video Director\n", "", 1))
 outside_faq = cn.split('<a id="faq"></a>', 1)[0] + cn.split('<!-- readme:contribute -->', 1)[1]
@@ -32,12 +32,12 @@ assert "### A · Model Engine" in cn
 assert "### B · Code Engine" in cn
 
 sections = ("## 🎬 两种视频制作模式", "## 🧭 开始使用", "## 🎨 A 模式画风一览",
-            "## 🤖 B 模式画风一览", "## ❓ 常见问题解答 (FAQ)", "## ⭐ 迈向 20,000 Stars 与创作者生态",
+            "## 🤖 B 模式画风一览", "## ❓ 常见问题解答 (FAQ)", "## ⭐ 迈向 20,000 Stars",
             "## 🔮 计划中的画风", "## 💬 社区与投稿", "## 📄 许可证")
 assert [cn.index(s) for s in sections] == sorted(cn.index(s) for s in sections)
 assert "## 接下来做什么" not in cn, "Keep the removed next-steps heading out of the footer"
 assert "## Star 增长曲线" not in cn, "Use a reader-focused footer heading; retain the chart itself"
-footer = cn.split("## ⭐ 迈向 20,000 Stars 与创作者生态", 1)[1].split("## 📄 许可证", 1)[0]
+footer = cn.split("## ⭐ 迈向 20,000 Stars", 1)[1].split("## 📄 许可证", 1)[0]
 footer_items = ("**每一颗 Star", "- [x] **1,000 Stars**", "- [x] **3,000 Stars**",
                 "- [x] **6,000 Stars**", "- [ ] **🔥 10,000 Stars**", "- [ ] **20,000 Stars**",
                 '<div align="center">', '<a id="whats-next"></a>', "## 🔮 计划中的画风",
