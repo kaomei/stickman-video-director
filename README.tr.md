@@ -750,7 +750,7 @@ Bir stil fikriniz mi var veya öne çıkmak mı istiyorsunuz? [Telegram toplulu�
 - **Stil isteyin**: görsel referans bağlantısını + ele almak istediğiniz nişi gönderin.
 - **Eserinizi tanıtalım**: bu araçla video mu yaptınız? Bu README’de ve resmî YouTube kanalımızda sergilenmesi için bağlantısını gönderin!
 
-🔔 **Günlük video iş akışları, otomasyon araçları ve kanal büyütme prosedürleri için X’te [@CrazyKaomei](https://x.com/CrazyKaomei) hesabını takip edin.**
+🔔 **Yeni eğitimler, video iş akışları, otomasyon araçları ve kanal büyütme ipuçları için X’te [@AveryRunsAI](https://x.com/AveryRunsAI) hesabını takip edin.**
 
 ## 📄 Lisans
 

@@ -750,7 +750,7 @@ Punya ide gaya atau ingin ditampilkan? Bergabunglah dengan [komunitas Telegram k
 - **Minta gaya**: kirim tautan referensi visual + niche yang ingin Anda bahas.
 - **Tampilkan karya**: sudah membuat video dengan alat ini? Kirim tautannya untuk ditampilkan di README ini dan channel YouTube resmi kami!
 
-🔔 **Ikuti [@CrazyKaomei](https://x.com/CrazyKaomei) di X untuk alur produksi video harian, alat otomatisasi, dan SOP pertumbuhan channel.**
+🔔 **Ikuti [@AveryRunsAI](https://x.com/AveryRunsAI) di X untuk tutorial terbaru, alur produksi video, alat otomatisasi, dan tips pertumbuhan channel.**
 
 ## 📄 Lisensi
 
