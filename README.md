@@ -195,7 +195,7 @@ https://github.com/kaomei/stickman-video-director
 After installation, read SKILL.md and tell me you’re ready.
 ```
 
-<sub>That one message is all you need to install; nothing else is required. If you prefer the terminal or the installation times out, you can refer to the [manual installation guide](skills/directing-stickman-videos/references/installation-troubleshooting.md).</sub>
+<sub>If you prefer the terminal or the installation times out, you can refer to the [manual installation guide](skills/directing-stickman-videos/references/installation-troubleshooting.md).</sub>
 
 ### Step 2: Choose a style and mode, then start with a prompt
 

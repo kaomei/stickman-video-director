@@ -195,7 +195,7 @@ https://github.com/kaomei/stickman-video-director
 Kurulum tamamlandığında SKILL.md dosyasını oku ve hazır olduğunu söyle.
 ```
 
-<sub>Kurulum için bu mesaj yeterlidir; başka bir şey yapmanız gerekmez. Terminali tercih ediyorsanız veya kurulum zaman aşımına uğrarsa [manuel kurulum kılavuzuna](skills/directing-stickman-videos/references/installation-troubleshooting.md) göz atabilirsiniz.</sub>
+<sub>Terminali tercih ediyorsanız veya kurulum zaman aşımına uğrarsa [manuel kurulum kılavuzuna](skills/directing-stickman-videos/references/installation-troubleshooting.md) göz atabilirsiniz.</sub>
 
 ### Step 2: Stili ve modu seçin, tek bir istekle üretime başlayın
 

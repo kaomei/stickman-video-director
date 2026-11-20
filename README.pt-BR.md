@@ -195,7 +195,7 @@ https://github.com/kaomei/stickman-video-director
 Após a instalação, leia SKILL.md e me avise que está pronto.
 ```
 
-<sub>Essa mensagem basta para a instalação; não é preciso fazer mais nada. Se preferir o terminal ou se a instalação exceder o tempo limite, você pode consultar o [guia de instalação manual](skills/directing-stickman-videos/references/installation-troubleshooting.md).</sub>
+<sub>Se preferir o terminal ou se a instalação exceder o tempo limite, você pode consultar o [guia de instalação manual](skills/directing-stickman-videos/references/installation-troubleshooting.md).</sub>
 
 ### Step 2: Escolha o estilo e o modo e comece a criar com uma frase
 
