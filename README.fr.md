@@ -659,7 +659,7 @@ Génère le kit de miniature et de publication pour cette vidéo :
 
 ### Q1. Est-ce vraiment 100 % gratuit ? Y a-t-il des frais cachés ?
 
-Oui. Stickman Video Director est 100 % gratuit et open source sous licence MIT. Vous pouvez l’utiliser librement pour vos projets personnels et commerciaux. Contrairement aux plateformes SaaS propriétaires facturées 30 à 60 $/mois, ce projet ne comporte aucun abonnement. Vous payez uniquement votre consommation d’API tierces (par exemple Google Gemini, Claude ou ElevenLabs), selon les modèles que vous choisissez de connecter.
+Oui, le Skill lui-même est gratuit : il est open source sous licence MIT, utilisable pour vos projets personnels et commerciaux, sans aucun abonnement, contrairement aux outils SaaS facturés 30 à 60 $/mois. Il n’y a pas de frais cachés, mais les services que vous connectez ont leurs propres coûts : l’abonnement de votre agent IA (comme Codex ou Claude Code), la consommation d’API tierces pour l’image ou la voix (comme Google Gemini ou ElevenLabs) et, en Model Engine (A), les crédits de génération vidéo sur des plateformes comme Google Flow.
 
 <!-- readme:platforms -->
 
@@ -689,7 +689,7 @@ Les outils IA traditionnels se contentent d’illustrer littéralement le texte.
 
 ### Q6. Puis-je monétiser ces vidéos sur YouTube et TikTok ?
 
-Oui, tout à fait. Les créateurs de chaînes sans visage s’inquiètent souvent des règles de démonétisation de YouTube concernant le « Reused Content » ou les contenus IA à faible effort. Comme Stickman Video Director écrit des arcs narratifs sur mesure, un rythme unique et des mises en scène originales, votre résultat est entièrement original. Des centaines de chaînes monétisent avec succès des récits stickman dans le cadre du YouTube Partner Program (YPP).
+Oui, les vidéos vous appartiennent : vous pouvez les publier et les monétiser. Les créateurs de chaînes sans visage s’inquiètent souvent de la règle de YouTube sur le « Reused Content ». Chaque vidéo reçoit son propre script, son rythme et sa mise en scène, sans réutiliser de séquences existantes, ce qui est justement ce que vise cette règle. L’admission au YouTube Partner Program (YPP) ou au TikTok Creator Rewards Program reste toutefois décidée par chaque plateforme, en fonction de votre chaîne dans son ensemble : ajoutez vos propres idées et votre voix, publiez régulièrement et respectez les règles de chaque plateforme sur les contenus générés par IA.
 
 ### Q7. Faut-il savoir programmer ou posséder un GPU coûteux ?
 
@@ -704,7 +704,7 @@ Vous n’avez pas besoin d’écrire du code vous-même ni d’acheter un GPU ha
 **Chaque étoile alimente la prochaine nouveauté !** Ensemble, nous construisons un studio 100 % gratuit et open source pour aider les créateurs solo à gérer des chaînes sans montrer leur visage, sans abonnement SaaS à 50 $/mois.
 
 - [x] **1,000 Stars** : lancement du mode Model Engine + 5 styles visuels de base
-- [x] **3,000 Stars** : lancement du mode Code Engine pour générer des vidéos en un clic
+- [x] **3,000 Stars** : lancement du mode Code Engine, du script à la vidéo finale
 - [x] **6,000 Stars** : Plus de 10 nouveaux styles visuels de qualité déjà disponibles
 - [ ] **🔥 10,000 Stars** :
   - Plus de 1,000 prompts de scripts YouTube communs aux modes A et B
@@ -727,7 +727,7 @@ Vous n’avez pas besoin d’écrire du code vous-même ni d’acheter un GPU ha
 
 ## 🔮 Styles visuels prévus
 
-Nous entraînons de nouveaux moteurs spécialisés pour les niches YouTube sans visage les plus demandées :
+Nous développons de nouveaux styles pour les niches YouTube sans visage les plus demandées :
 
 - **Histoire et légendes façon OverSimplified** — Petits personnages historiques, flèches de conquête et cartes de bataille satiriques
 - **Combats de stickmen et lignes de vitesse** — Combats dynamiques façon Alan Becker, arts martiaux et images d’impact

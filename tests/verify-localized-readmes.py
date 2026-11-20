@@ -410,7 +410,7 @@ for name in selected:
             ("Codex’s built-in image generation tool", "no separate image generation API", "short sample with audio"),
             ("shower thought", "3-second hook", "story and shots", "topic, target length, and chosen style"),
             ("**visual storytelling psychology**", "**The 3-Second Hook**", "**Visual Metaphors**", "**Pacing & Comic Pauses**"),
-            ("completely original", "YouTube Partner Program (YPP)"),
+            ("reused-content policy", "YouTube Partner Program (YPP)", "decided by each platform"),
             ("GPU", "online video platforms", "renders locally", "performance", "isn’t the deciding factor"),
         )
         for number, (answer, phrases) in enumerate(zip(faq_answers, required_copy), 1):
