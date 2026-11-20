@@ -195,6 +195,8 @@ https://github.com/kaomei/stickman-video-director
 Após a instalação, leia SKILL.md e me avise que está pronto.
 ```
 
+Prefere usar o terminal ou a instalação excedeu o tempo limite? Consulte o [guia de instalação manual](skills/directing-stickman-videos/references/installation-troubleshooting.md), que também mostra como baixar apenas a pasta do Skill (cerca de um terço a menos de download).
+
 ### Step 2: Escolha o estilo e o modo e comece a criar com uma frase
 
 Escolha um estilo do [modo A](#a-styles) ou do [modo B](#b-styles), copie o prompt correspondente abaixo, adapte-o às suas necessidades e envie ao seu assistente de IA:

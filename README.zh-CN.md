@@ -195,6 +195,8 @@ https://github.com/kaomei/stickman-video-director
 安装成功后读取 SKILL.md，并告诉我你已就绪。
 ```
 
+想用终端安装，或者安装时超时？请查看[手动安装说明](skills/directing-stickman-videos/references/installation-troubleshooting.md)，里面也介绍了如何只下载 Skill 文件夹（下载量减少约三分之一）。
+
 ### Step 2：选择画风和模式，一句话开始创作
 
 选好喜欢的「[A 模式](#a-styles)」或「[B 模式](#b-styles)」画风，再复制下方对应的提示词，换成自己的需求后发给 AI 助手：

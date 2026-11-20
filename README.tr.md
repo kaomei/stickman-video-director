@@ -195,6 +195,8 @@ https://github.com/kaomei/stickman-video-director
 Kurulum tamamlandığında SKILL.md dosyasını oku ve hazır olduğunu söyle.
 ```
 
+Terminali mi tercih ediyorsunuz, yoksa kurulum zaman aşımına mı uğradı? [Manuel kurulum kılavuzuna](skills/directing-stickman-videos/references/installation-troubleshooting.md) göz atın; kılavuz yalnızca Skill klasörünü indirmeyi de (yaklaşık üçte bir daha az indirme) anlatır.
+
 ### Step 2: Stili ve modu seçin, tek bir istekle üretime başlayın
 
 Beğendiğiniz bir [A modu](#a-styles) veya [B modu](#b-styles) stili seçin. Ardından aşağıdaki ilgili istemi kopyalayıp ihtiyaçlarınıza göre düzenleyerek AI asistanınıza gönderin:

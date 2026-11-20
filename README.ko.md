@@ -195,6 +195,8 @@ https://github.com/kaomei/stickman-video-director
 설치 후 SKILL.md를 읽고 준비가 되었다고 알려 주세요.
 ```
 
+터미널로 설치하고 싶거나 설치 중 시간이 초과되었다면 [수동 설치 가이드](skills/directing-stickman-videos/references/installation-troubleshooting.md)를 확인하세요. Skill 폴더만 내려받는 방법(다운로드 용량 약 3분의 1 감소)도 안내합니다.
+
 ### Step 2: 스타일과 모드를 고르고, 한마디로 제작 시작
 
 「[A 모드](#a-styles)」 또는 「[B 모드](#b-styles)」에서 마음에 드는 스타일을 고른 다음, 아래의 해당 프롬프트를 복사해 자신의 요구 사항에 맞게 바꾸고 AI 어시스턴트에게 보내세요:
