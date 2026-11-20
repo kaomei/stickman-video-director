@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Request a style or share your video / 征集画风与作品投稿
+    url: https://telegram.me/stickmanskill
+    about: Join the Telegram community to request new styles and get your video featured. / 加入 Telegram 社区征集新画风、投稿作品。
+  - name: Contributing guide / 贡献指南
+    url: https://github.com/kaomei/stickman-video-director/blob/main/CONTRIBUTING.md
+    about: How to set up, run the checks and open a pull request. / 如何搭建环境、运行检查并提交 PR。

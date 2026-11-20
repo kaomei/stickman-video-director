@@ -1,0 +1,32 @@
+name: Feature request / 功能建议
+description: Suggest an improvement to the Skill or its documentation. / 建议改进 Skill 或文档。
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English or Chinese are both fine. / 中文或英文都可以。
+        To request a new visual style or share your video, please use the Telegram community instead (link on the previous page). / 征集新画风或投稿作品，请到 Telegram 社区（链接在上一页）。
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve? / 这个建议解决什么问题？
+      description: Describe what you were trying to do. / 描述你想完成的事情。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to happen? / 你希望怎么改进？
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or workarounds / 其他方案或临时办法
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution / 参与
+      options:
+        - label: I'd like to help implement this. / 我愿意参与实现。

@@ -1,0 +1,71 @@
+name: Bug report / 问题反馈
+description: Something doesn't work, including installation problems. / 功能出错或安装失败。
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! English or Chinese are both fine. / 感谢反馈！中文或英文都可以。
+        Please don't paste API keys, tokens or other secrets. / 请不要粘贴 API 密钥等机密信息。
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where is the problem? / 问题出现在哪里？
+      options:
+        - Installation / 安装
+        - A · Model Engine (A1–A7)
+        - B · Code Engine (B1–B7)
+        - Thumbnail & Publishing Kit / 封面与发布套件
+        - README / documentation / 文档
+        - Other / 其他
+    validations:
+      required: true
+  - type: input
+    id: style
+    attributes:
+      label: Style / 画风
+      description: For example A3 or B6. Leave empty if not related to a style. / 例如 A3 或 B6，与画风无关可留空。
+  - type: input
+    id: agent
+    attributes:
+      label: AI agent and model / 使用的 AI 工具和模型
+      placeholder: e.g. Claude Code, Codex, Cursor…
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system / 操作系统
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - Other / 其他
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Skill version / Skill 版本
+      description: Release tag (for example v2026.11.18) or install date, if you know it. / 版本号或安装日期（如果知道）。
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened? / 发生了什么？
+      description: What did you ask the agent to do, and what did it do instead? / 你让 AI 做了什么，实际结果是什么？
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect? / 你期望的结果是什么？
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error messages or logs / 错误信息或日志
+      render: text
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshots or clips / 截图或视频片段
+      description: Drag files here if they help explain the problem. / 如有帮助，可以把文件拖到这里。
