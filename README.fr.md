@@ -712,9 +712,8 @@ Vous n’avez pas besoin d’écrire du code vous-même ni d’acheter un GPU ha
 - [ ] **🔥 10,000 Stars** :
   - Plus de 1,000 prompts de scripts YouTube communs aux modes A et B
   - [Bibliothèque audio B](skills/directing-stickman-videos/references/b-audio-library.md) : déjà disponible — 774 effets et transitions, 31 musiques et 85 jingles courts, avec licences, prêts à l’emploi
-- [ ] **15,000 Stars** :
-  - Channel Autopilot — indiquez votre niche et obtenez en une seule fois une semaine de vidéos prêtes à publier, avec miniatures et titres
 - [ ] **20,000 Stars** :
+  - Channel Autopilot — indiquez votre niche et obtenez en une seule fois une semaine de vidéos prêtes à publier, avec miniatures et titres
   - Lancement de Stickman AI Studio — une application de bureau open source : collez un script, choisissez un style, prévisualisez et ajustez chaque scène sur une timeline visuelle, puis lancez le rendu. Aucun terminal nécessaire
   - D’autres surprises nous attendent — découvrons-les ensemble
 

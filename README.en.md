@@ -712,9 +712,8 @@ You don’t need to write code yourself or buy a high-end GPU. In Model Engine (
 - [ ] **🔥 10,000 Stars**:
   - 1,000+ YouTube script prompts shared by modes A and B
   - [B sound library](skills/directing-stickman-videos/references/b-audio-library.md) — already available: 774 sound effects and transitions, 31 music tracks and 85 short musical stingers, licensed and ready to use
-- [ ] **15,000 Stars**:
-  - Channel Autopilot — give it your niche and get a week of ready-to-publish videos, with thumbnails and titles, in one run
 - [ ] **20,000 Stars**:
+  - Channel Autopilot — give it your niche and get a week of ready-to-publish videos, with thumbnails and titles, in one run
   - Stickman AI Studio — an open-source desktop app: paste a script, pick a style, preview and tweak every scene on a visual timeline, then render. No terminal needed.
   - More surprises ahead — let’s discover them together
 

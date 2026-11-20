@@ -712,9 +712,8 @@ Anda tidak perlu menulis kode sendiri atau membeli GPU kelas atas. Mode A dapat 
 - [ ] **🔥 10,000 Stars**:
   - Koleksi 1,000+ prompt naskah YouTube untuk mode A dan B
   - [Pustaka audio B](skills/directing-stickman-videos/references/b-audio-library.md): sudah tersedia — 774 SFX/transisi, 31 musik latar, dan 85 jingle singkat, berlisensi dan siap dipakai
-- [ ] **15,000 Stars**:
-  - Channel Autopilot — sebutkan niche channel Anda, lalu dapatkan video siap tayang untuk satu minggu, lengkap dengan thumbnail dan judul, sekaligus
 - [ ] **20,000 Stars**:
+  - Channel Autopilot — sebutkan niche channel Anda, lalu dapatkan video siap tayang untuk satu minggu, lengkap dengan thumbnail dan judul, sekaligus
   - Peluncuran Stickman AI Studio — aplikasi desktop open source: tempel naskah, pilih gaya, pratinjau dan sesuaikan setiap adegan di linimasa visual, lalu render. Tanpa terminal
   - Kejutan lainnya menanti — yuk, kita nantikan bersama
 

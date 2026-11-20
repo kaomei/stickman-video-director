@@ -712,9 +712,8 @@ Kendiniz kod yazmanız veya üst düzey bir GPU satın almanız gerekmez. A modu
 - [ ] **🔥 10,000 Stars**:
   - A ve B modları için ortak 1,000’den fazla YouTube senaryosu istemi
   - [B ses kütüphanesi](skills/directing-stickman-videos/references/b-audio-library.md): şimdiden kullanılabilir — 774 efekt/geçiş, 31 müzik ve 85 kısa jingle; lisanslı ve kullanıma hazır
-- [ ] **15,000 Stars**:
-  - Channel Autopilot — kanalınızın konusunu verin; küçük resimleri ve başlıklarıyla bir haftalık yayına hazır videoyu tek seferde alın
 - [ ] **20,000 Stars**:
+  - Channel Autopilot — kanalınızın konusunu verin; küçük resimleri ve başlıklarıyla bir haftalık yayına hazır videoyu tek seferde alın
   - Stickman AI Studio’nun açılışı — açık kaynaklı bir masaüstü uygulaması: senaryoyu yapıştırın, stili seçin, her sahneyi görsel zaman çizelgesinde önizleyip düzenleyin ve render alın. Terminal gerekmez
   - Daha fazla sürpriz yolda — birlikte heyecanla bekleyelim
 
