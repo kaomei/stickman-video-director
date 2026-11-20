@@ -254,7 +254,7 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 ## 🎨 A 模式画风一览
 
-当前 A 模式样片效果基于 [Google Flow](https://flow.google.com/) 制作，也可自行选择其它视频生成平台。<strong>交由 Agent 自动出片前，请确认账号已登录且有可用额度。</strong>
+当前 A 模式样片效果基于 [Google Flow](https://flow.google.com/) 制作，也可自行选择其他视频生成平台。<strong>交由 Agent 自动出片前，请确认账号已登录且有可用额度。</strong>
 
 按 A1、A2、A3…更新，每个画风下展示对应的动画样片。
 
@@ -299,7 +299,7 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 - **视觉亮点**：粗犷手绘、土色世界与鲜明表情；笑点藏在角色互动、反应镜头和恰到好处的停顿里。
 - **适合内容**：职场讽刺、人性观察、史前脑洞、黑色幽默、寓言与儿童英语故事。
 
-| 案例 1：人类的第一份工作是怎么来的？ | 案例 2：人类第一次发现火源 |
+| 样片 1：人类的第一份工作是怎么来的？ | 样片 2：人类第一次发现火源 |
 |:---:|:---:|
 | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@f1e7992ade7de1b31bf520cd264e375334009be9/assets/readme/previews/style-3-demo.gif" alt="人类的第一份工作是怎么来的？动态预览" width="360"> | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-3-community-fire.gif" alt="人类第一次发现火源——粉丝作品" width="360"> |
 | 史前故事 · 职场反转 | 火源主题 · 粉丝作品 |
@@ -315,7 +315,7 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 - **视觉亮点**：彩色日常场景、柔和光影与自然的小动作；镜头靠近时看见犹豫，拉远时留下一点释然。
 - **适合内容**：生活共鸣、人际关系、心理成长、习惯养成，以及温暖但不回避焦虑与疲惫的故事。
 
-| 案例 1：通勤路上的消息焦虑 | 案例 2：把时间留给自己 |
+| 样片 1：通勤路上的消息焦虑 | 样片 2：把时间留给自己 |
 |:---:|:---:|
 | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-station.gif" alt="治愈故事风：地铁站里的消息焦虑" width="360"> | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="治愈故事风：露天咖啡座的休息时刻" width="360"> |
 | 地铁站 · 行走跟拍 · 情绪近景 | 露天咖啡座 · 暖光树影 · 日常动作 |
@@ -332,7 +332,7 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 - **视觉亮点**：白色圆头、利落墨线与彩色时代场景；服饰、建筑和道具交代年代，人物反应与情节反差带出趣味。
 - **适合内容**：世界历史、文明趣事、古人日常、人物故事与轻幽默历史短片。
 
-| 案例 1：江户日本 · 武士的日常 | 案例 2：古埃及 · 猫与木乃伊 |
+| 样片 1：江户日本 · 武士的日常 | 样片 2：古埃及 · 猫与木乃伊 |
 |:---:|:---:|
 | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan.gif" alt="历史卡通风：江户武士与街巷日常" width="360"> | <img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-egypt.gif" alt="历史卡通风：古埃及神庙、黑猫与木乃伊" width="360"> |
 | 江户街巷 · 武士服饰 · 日常反差 | 彩色神庙 · 黑猫角色 · 历史趣事 |
@@ -350,7 +350,7 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 - **视觉亮点**：琥珀高光、深色剪影与有纵深的城市场景；用角色行动和克制运镜制造悬念，而不是站着解释。
 - **适合内容**：“如果”脑洞、现代寓言、心理话题、意外发现与反转故事。
 
-| 示例 1：如果所有东西都便宜一万倍？ | 示例 2：物价大崩溃时代 |
+| 样片 1：如果所有东西都便宜一万倍？ | 样片 2：物价大崩溃时代 |
 |:---:|:---:|
 | <a href="assets/readme/style-6-amber-noir-mcp.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-mcp.gif" alt="暖金暗影风：物价一夜骤降的 20 秒故事" width="360"></a> | <a href="assets/readme/style-6-amber-noir-flow.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="暖金暗影风：橙色连帽衫角色在商店外的 8 秒动画" width="360"></a> |
 | Renoise MCP 示例 · 20 秒 · Tim 旁白 | Google Flow 示例 · 8 秒 · 模型原生音频 |
@@ -377,16 +377,16 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 ### A8：待更新…
 
-新的专用导演画风正在准备中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，关注后续更新。
+新的模型引擎画风正在准备中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，关注后续更新。
 
 
 <a id="b-styles"></a>
 
 ## 🤖 B 模式画风一览
 
-当前 B 模式展示的样片均由 Codex 制作：使用内置<strong><code>gpt-image-2</code></strong>模型生成画面素材，再由代码驱动分层动画，在本地渲染成片。交由其它 Agent 自动出片前，<strong>请确认其具备文件读写与终端执行能力，且所需工具已配置完成。</strong>
+当前 B 模式展示的样片均由 Codex 制作：使用内置<strong><code>gpt-image-2</code></strong>模型生成画面素材，再由代码驱动分层动画，在本地渲染成片。交由其他 Agent 自动出片前，<strong>请确认其具备文件读写与终端执行能力，且所需工具已配置完成。</strong>
 
-按 B1、B2、B3…更新，每个画风下展示对应的完整视频样片。
+按 B1、B2、B3…更新，每个画风下展示对应的完整视频样片。样片说明中的 Bodi、Fola、Brian、Claire、The Pharaoh 3 等，是这些样片所用的配音音色名称，你可以选择任何声音。
 
 <a id="b1"></a>
 
@@ -399,12 +399,12 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">案例 1：不露脸做 YouTube</th>
-    <th width="50%" align="center">案例 2：每天发内容，为什么依旧没人看？</th>
+    <th width="50%" align="center">样片 1：不露脸做 YouTube</th>
+    <th width="50%" align="center">样片 2：每天发内容，为什么依旧没人看？</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b1-minimal-handdrawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="B1 极简线稿风案例 1：点击查看或下载不露脸的 YouTube 视频创作有声样片" width="360"></a></td>
-    <td width="50%" align="center"><a href="skills/directing-stickman-videos/assets/b1/approved-2026-10-23.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@61e202ccecf9d9926cf76e13f3284181297729b8/assets/readme/previews/b1-minimal-handdrawn-2026-10-23.gif" alt="B1 极简线稿风案例 2：点击查看或下载 Bodi 有声样片，含字幕、手绘角色与微动画" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b1-minimal-handdrawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="B1 极简线稿风样片 1：点击查看或下载不露脸的 YouTube 视频创作有声样片" width="360"></a></td>
+    <td width="50%" align="center"><a href="skills/directing-stickman-videos/assets/b1/approved-2026-10-23.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@61e202ccecf9d9926cf76e13f3284181297729b8/assets/readme/previews/b1-minimal-handdrawn-2026-10-23.gif" alt="B1 极简线稿风样片 2：点击查看或下载 Bodi 有声样片，含字幕、手绘角色与微动画" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">手绘角色 · 重点文字 · 微动画</td>
@@ -425,8 +425,8 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">示例 1：为什么越想入睡，反而越清醒？</th>
-    <th width="50%" align="center">示例 2：手机解锁了，你却忘了要干什么</th>
+    <th width="50%" align="center">样片 1：为什么越想入睡，反而越清醒？</th>
+    <th width="50%" align="center">样片 2：手机解锁了，你却忘了要干什么</th>
   </tr>
   <tr>
     <td width="50%" align="center"><a href="assets/readme/b2-colorful-sleep.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="B2 彩色手绘风：安静的卧室、河上的纸船与放松的睡前时刻" width="360"></a></td>
@@ -452,8 +452,8 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">示例 1：如果电视在凌晨三点自己打开？</th>
-    <th width="50%" align="center">示例 2：你的狗是在认错，还是在害怕？</th>
+    <th width="50%" align="center">样片 1：如果电视在凌晨三点自己打开？</th>
+    <th width="50%" align="center">样片 2：你的狗是在认错，还是在害怕？</th>
   </tr>
   <tr>
     <td width="50%" align="center"><a href="assets/readme/b3-tv-night-signal.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="360"></a></td>
@@ -503,7 +503,7 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 ### B5：角色解说风
 
-让你喜欢的头像成为频道的主讲人，其中使用知名角色需获得授权。角色在右下角开口讲述，火柴人在左侧把观点演成小剧场——被账单拖着跑、被压力压扁，抽象知识也能有笑点和记忆点。
+让你喜欢的头像成为频道的主讲人（使用知名角色需获得授权）。角色在右下角开口讲述，火柴人在左侧把观点演成小剧场——被账单拖着跑、被压力压扁，抽象知识也能有笑点和记忆点。
 
 - **视觉亮点**：暖纸背景、个性角色与黑红重点字；夸张受力、回弹和道具变形，把每句话变成看得懂的视觉比喻。
 - **声音氛围**：清晰旁白带动讲述，口型、表情与字幕跟随语音；音效卡住动作落点，轻量配乐不抢人声。
@@ -535,8 +535,8 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 夸张的 Meme 表情、不规则手绘线条和柔和色彩，把离奇故事演成有笑点的短动画。画风灵感来自 YouTube [@RicksClips3000](https://www.youtube.com/@RicksClips3000)（**约 18 万订阅者**）。宽大的场景让人物、道具和镜头都有活动空间。
 
-- **画面质感**：轻重不一的墨线、哑光颜料和柔和光影，头部、身体与场景保持统一的手绘笔触，**竖屏效果更好**。
-- **动作运镜**：横向跟拍、前后景视差、道具交接和反应特写随剧情衔接，快慢之间留出看清动作与笑点的停顿。
+- **视觉亮点**：轻重不一的墨线、哑光颜料和柔和光影，头部、身体与场景保持统一的手绘笔触，**竖屏效果更好**。
+- **动态表现**：横向跟拍、前后景视差、道具交接和反应特写随剧情衔接，快慢之间留出看清动作与笑点的停顿。
 - **适合内容**：历史奇闻、骗局故事、荒诞喜剧，以及结尾有反转的短故事。
 
 <table width="100%">
@@ -565,8 +565,8 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 把人生选择，演成一场像素小游戏。白色火柴人在小小世界里犹豫、按下按钮、错过机会；一句“无所谓”，也可能让眼前的世界悄悄消失。
 
-- **画面质感**：清晰利落的像素颗粒、富有表情的白色角色与随场景变化的配色，不用模糊缩放或平滑矢量冒充像素画。
-- **剧情表现**：角色、道具与场景联动，结尾以主题短句、像素打字声、轻柔闪字和配乐留下余韵。
+- **视觉亮点**：清晰利落的像素颗粒、富有表情的白色角色与随场景变化的配色，不用模糊缩放或平滑矢量冒充像素画。
+- **动态表现**：角色、道具与场景联动，结尾以主题短句、像素打字声、轻柔闪字和配乐留下余韵。
 - **适合内容**：人生选择、荒诞寓言、黑色幽默，以及带游戏感的情绪与成长故事。
 
 <table width="100%">
@@ -688,7 +688,7 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 - **黄金 3 秒钩子**：将开篇第一句话重构为视觉反差或悬念冲突，瞬间抓住注意力防止观众划走；
 - **爆款视觉隐喻**：把枯燥抽象的概念转化为具象的搞笑视觉梗（例如把“精神内耗”具象化为一个疯狂自转的仓鼠轮，把“被掏空”具象化为头顶仅剩 1% 的低电量进度条）；
-- **卡点与节奏留白**：内置情绪铺垫、反转神表情与音效提示点（SFX），完美还原 Casually Explained 等顶流创作者的幽默节奏。
+- **卡点与节奏留白**：内置情绪铺垫、反转神表情与音效提示点（SFX），参考 Casually Explained 等创作者的幽默节奏。
 
 ### Q6. 生成的视频可以在 YouTube 和 TikTok 上开通收益变现吗？
 

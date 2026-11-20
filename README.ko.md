@@ -363,12 +363,12 @@ A1, A2, A3… 순서로 추가하며, 각 스타일에 해당하는 애니메이
 
 가는 선의 스틱맨이 정교한 복고풍 손그림 배경에서 움직입니다. 탄력 있는 팔다리와 풍부한 표정, 이어지는 연기로 일상의 작은 사고를 극장 애니메이션 같은 코미디로 풀어냅니다. 세이지 그린과 아이보리에 바랜 붉은색을 조금 더해 시대감을 살립니다.
 
-- **시각적 특징**: 흰 원형 얼굴, 굽은 머리카락 두 가닥, 가는 선의 몸을 유지합니다. 잉크 윤곽, 무광 붓질, 소품과의 상호작용, 표현력 있는 장면 전환을 결합합니다.
-- **추천 콘텐츠**: 부조리 코미디, 일상의 우화, 반전 이야기, 음악에 맞춘 단편.
+- **화면의 매력**: 흰 원형 얼굴, 굽은 머리카락 두 가닥, 가는 선의 몸을 유지합니다. 잉크 윤곽, 무광 붓질, 소품과의 상호작용, 표현력 있는 장면 전환을 결합합니다.
+- **잘 어울리는 이야기**: 부조리 코미디, 일상의 우화, 반전 이야기, 음악에 맞춘 단편.
 
-| 샘플 1: 구름에게 쫓기다 | 샘플 2: 비 오는 거리 |
+| 예시 1: 구름에게 쫓기다 | 예시 2: 비 오는 거리 |
 |:---:|:---:|
-| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 러버 호스 애니메이션 · 샘플 1: 구름에게 쫓기다" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · 러버 호스 애니메이션 · 샘플 2: 비 오는 거리" width="360"></a> |
+| <a href="assets/readme/style-7-rubber-hose.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 러버 호스 애니메이션 · 예시 1: 구름에게 쫓기다" width="360"></a> | <a href="assets/readme/style-7-rubber-hose-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose-2.gif" alt="A7 · 러버 호스 애니메이션 · 예시 2: 비 오는 거리" width="360"></a> |
 | 복고 손그림 거리 · 탄력 있는 캐릭터 연기 | 비 오는 분위기 · 소품 상호작용과 표정 컷 |
 
 ---
@@ -386,7 +386,7 @@ A1, A2, A3… 순서로 추가하며, 각 스타일에 해당하는 애니메이
 
 현재 B 모드의 샘플 영상은 모두 Codex로 제작했습니다. 내장된 <strong><code>gpt-image-2</code></strong> 모델로 화면 소재를 생성한 뒤, 코드로 레이어 애니메이션을 구동하고 로컬에서 영상을 렌더링합니다. 다른 Agent에게 자동 제작을 맡기기 전에 <strong>파일 읽기·쓰기와 터미널 실행이 가능하고 필요한 도구 설정이 완료되었는지 확인하세요.</strong>
 
-B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영상 샘플을 소개합니다.
+B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영상 샘플을 소개합니다. 예시 설명에 나오는 Bodi, Fola, Brian, Claire, The Pharaoh 3 등은 해당 예시에 사용한 TTS 음성 이름이며, 원하는 음성을 자유롭게 선택할 수 있습니다.
 
 <a id="b1"></a>
 
@@ -535,18 +535,18 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
 
 과장된 밈 표정, 자유로운 손그림 선, 부드러운 색으로 기묘한 이야기를 생동감 있는 짧은 애니메이션으로 만듭니다. 넓은 장면은 인물과 소품, 카메라가 움직일 공간을 제공합니다. 이 스타일은 YouTube의 [@RicksClips3000](https://www.youtube.com/@RicksClips3000)(**구독자 약 18만 명**)에서 영감을 받았습니다.
 
-- **화면**: 굵기에 변화가 있는 잉크 선, 무광 채색과 부드러운 빛으로 머리·몸·배경의 손그림 질감을 통일하며, **세로형에서 효과가 더 좋습니다**.
+- **화면의 매력**: 굵기에 변화가 있는 잉크 선, 무광 채색과 부드러운 빛으로 머리·몸·배경의 손그림 질감을 통일하며, **세로형에서 효과가 더 좋습니다**.
 - **움직임**: 가로 추적, 전경과 배경의 시차, 소품 전달과 반응 클로즈업을 이야기에 맞춰 연결하고 동작과 웃음을 읽을 여유를 둡니다.
-- **추천 소재**: 역사의 기이한 사건, 사기 이야기, 부조리 코미디와 반전 단편.
+- **잘 어울리는 이야기**: 역사의 기이한 사건, 사기 이야기, 부조리 코미디와 반전 단편.
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">샘플 1: 에펠탑을 판 남자</th>
-    <th width="50%" align="center">샘플 2: 1990년대 홍콩 · 파인애플번과 오락실</th>
+    <th width="50%" align="center">예시 1: 에펠탑을 판 남자</th>
+    <th width="50%" align="center">예시 2: 1990년대 홍콩 · 파인애플번과 오락실</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="샘플 1: 에펠탑을 판 남자" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="샘플 2: 1990년대 홍콩 · 파인애플번과 오락실" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-eiffel-16x9.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="예시 1: 에펠탑을 판 남자" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b6-dynamic-meme-hong-kong-v90-20s.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-hong-kong-v90-20s.gif" alt="예시 2: 1990년대 홍콩 · 파인애플번과 오락실" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">과장된 표정 · 손그림 캐릭터 애니메이션 · 반전 있는 이야기</td>
@@ -565,9 +565,9 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
 
 작은 픽셀로 펼치는 뜻밖의 이야기. 하얀 스틱맨이 망설이고, 버튼을 누르고, 기회를 놓칩니다. “상관없어”라는 한마디가 게임 같은 세상을 바꿔 놓을 수도 있습니다.
 
-- **비주얼**: 선명한 픽셀, 표정이 살아 있는 하얀 캐릭터, 장면마다 달라지는 색감. 흐릿한 확대나 매끈한 벡터로 픽셀 아트를 흉내 내지 않습니다.
-- **이야기 연출**: 캐릭터·소품·배경이 함께 이야기를 이끕니다. 결말에는 짧은 문장, 픽셀 타자음, 작은 움직임, 은은하게 깜빡이는 글자와 음악으로 여운을 남깁니다.
-- **추천 콘텐츠**: 선택에 따라 달라지는 이야기, 아이러니한 인생 교훈, 블랙 코미디, 게임 감성의 따뜻한 우화.
+- **화면의 매력**: 선명한 픽셀, 표정이 살아 있는 하얀 캐릭터, 장면마다 달라지는 색감. 흐릿한 확대나 매끈한 벡터로 픽셀 아트를 흉내 내지 않습니다.
+- **움직임**: 캐릭터·소품·배경이 함께 이야기를 이끕니다. 결말에는 짧은 문장, 픽셀 타자음, 작은 움직임, 은은하게 깜빡이는 글자와 음악으로 여운을 남깁니다.
+- **잘 어울리는 이야기**: 선택에 따라 달라지는 이야기, 아이러니한 인생 교훈, 블랙 코미디, 게임 감성의 따뜻한 우화.
 
 <table width="100%">
   <tr>
@@ -629,7 +629,7 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
 
 *모든 썸네일 콘셉트는 검증된 YouTube 패키징 심리학을 바탕으로 설계합니다. 강렬한 시각적 모순, 명확한 실루엣, 모바일에서도 읽기 쉬운 타이포그래피를 활용합니다.*
 
-### 키트 구성：
+### 키트 구성:
 
 - **썸네일 이미지**: 승인된 캐릭터, 화풍, 색상, 핵심 갈등에 맞춘 가로 16:9 표지 1장. 사용 가능한 이미지 도구와 필요한 비용 승인이 있으면 이미지를 직접 생성합니다.
 - **고클릭률 제목 5종**: 검색 의도, 호기심을 자극하는 정보 격차, 폭넓은 시청자 매력을 고려합니다.
@@ -637,9 +637,9 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
 - **고정 댓글 훅**: 영상과 관련된 자연스러운 대화를 이끄는 질문 1개입니다.
 - **게시 전 체크리스트**: 모바일 안전 영역, 대비, 내용의 정확성, 소재 권리 확인 상태를 점검합니다. Content-ID 통과나 수익화 자격은 보장하지 않습니다.
 
-### 실행 방법：
+### 실행 방법:
 
-최종 영상에 만족한다고 확인하면 어시스턴트가 이 선택형 마무리 팩을 제안합니다. 동의하면 계속하고, 건너뛰어도 영상 전달은 늦어지지 않습니다. 프롬프트를 복사할 필요가 없으며 직접 요청할 수도 있습니다：
+최종 영상에 만족한다고 확인하면 어시스턴트가 이 선택형 마무리 팩을 제안합니다. 동의하면 계속하고, 건너뛰어도 영상 전달은 늦어지지 않습니다. 프롬프트를 복사할 필요가 없으며 직접 요청할 수도 있습니다:
 
 ```text
 이 영상의 썸네일 & 게시 키트를 생성해 주세요:

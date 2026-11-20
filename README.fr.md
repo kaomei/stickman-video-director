@@ -148,7 +148,7 @@ Script, voix off, sous-titres et son · 14 styles éprouvés · Pour Claude Code
 <tr>
 <td align="center" valign="middle"><strong>Coût</strong></td>
 <td align="left" valign="middle">Consomme des crédits/points de génération vidéo ; les vidéos longues augmentent sensiblement le coût et le surcoût des nouvelles tentatives.</td>
-<td align="left" valign="middle">Aucun crédit de génération vidéo nécessaire ; le rendu s’effectue en local, avec votre quota Agent existant et des outils de base pour les images et la synthèse vocale.</td>
+<td align="left" valign="middle">Aucun crédit de génération vidéo nécessaire ; le rendu s’effectue en local, avec votre quota d’agent existant et des outils de base pour les images et la synthèse vocale.</td>
 </tr>
 </tbody>
 </table>
@@ -363,8 +363,8 @@ Et si, au réveil, tout coûtait dix mille fois moins cher ? L’inspiration vis
 
 Un personnage filiforme évolue dans des décors rétro finement dessinés. Gestes élastiques, expressions marquées et jeu continu transforment les petits incidents du quotidien en comédie théâtrale. Le vert sauge, l’ivoire et quelques touches de rouge passé conservent le charme d’époque.
 
-- **Points forts** : Visage blanc circulaire, deux mèches courbes et corps en traits fins ; contours à l’encre, peinture mate, interaction avec les accessoires et montage expressif.
-- **Idéal pour** : Comédie absurde, fables du quotidien, récits à chute et courts métrages musicaux.
+- **À l’écran** : Visage blanc circulaire, deux mèches courbes et corps en traits fins ; contours à l’encre, peinture mate, interaction avec les accessoires et montage expressif.
+- **Pour raconter** : Comédie absurde, fables du quotidien, récits à chute et courts métrages musicaux.
 
 | Exemple 1 : Poursuivi par un nuage | Exemple 2 : Une rue sous la pluie |
 |:---:|:---:|
@@ -386,7 +386,7 @@ De nouveaux styles spécialisés pour Model Engine sont en préparation. [Ajoute
 
 Toutes les vidéos d’exemple actuelles du mode B ont été réalisées avec Codex : le modèle intégré <strong><code>gpt-image-2</code></strong> génère les éléments visuels, puis le code anime les différentes couches et effectue le rendu local de la vidéo. Avant de confier la production automatique à un autre agent, <strong>vérifiez qu’il peut lire et écrire des fichiers, exécuter des commandes dans un terminal et que les outils nécessaires sont configurés.</strong>
 
-Les styles suivent la numérotation B1, B2, B3… Chaque fiche présente ses vidéos d’exemple complètes.
+Les styles suivent la numérotation B1, B2, B3… Chaque fiche présente ses vidéos d’exemple complètes. Les noms Bodi, Fola, Brian, Claire ou The Pharaoh 3 indiqués sous les exemples désignent les voix de synthèse utilisées pour ces vidéos ; vous pouvez choisir n’importe quelle voix.
 
 <a id="b1"></a>
 
@@ -535,9 +535,9 @@ Faites de votre avatar préféré la voix de votre chaîne ; l’utilisation de 
 
 Des expressions de meme, des traits dessinés à la main et des couleurs douces transforment les récits insolites en courts dessins animés pleins de vie. Les décors larges laissent de la place aux personnages, aux accessoires et à la caméra. Le style visuel s’inspire de la chaîne YouTube [@RicksClips3000](https://www.youtube.com/@RicksClips3000) (**environ 180 000 abonnés**).
 
-- **Image**: Des traits d’encre d’épaisseur variable, une peinture mate et une lumière douce donnent à la tête, au corps et au décor une touche dessinée à la main cohérente, **pour un meilleur rendu en format vertical**.
-- **Mouvement**: Travellings latéraux, profondeur par plans, échanges d’objets et gros plans de réaction suivent le récit, avec des pauses pour lire chaque gag.
-- **Idéal pour**: Anecdotes historiques, escroqueries, comédies absurdes et récits à chute.
+- **À l’écran**: Des traits d’encre d’épaisseur variable, une peinture mate et une lumière douce donnent à la tête, au corps et au décor une touche dessinée à la main cohérente, **pour un meilleur rendu en format vertical**.
+- **En mouvement**: Travellings latéraux, profondeur par plans, échanges d’objets et gros plans de réaction suivent le récit, avec des pauses pour lire chaque gag.
+- **Pour raconter**: Anecdotes historiques, escroqueries, comédies absurdes et récits à chute.
 
 <table width="100%">
   <tr>
@@ -565,9 +565,9 @@ Des expressions de meme, des traits dessinés à la main et des couleurs douces 
 
 De petits pixels, de grandes conséquences. Des personnages blancs transforment les choix du quotidien en petits mondes de jeu : un bouton pressé, une occasion manquée ou un simple « peu importe » peut tout changer.
 
-- **Identité visuelle**: Un pixel art net, des personnages blancs expressifs et une palette adaptée à chaque scène, sans flou ni imitation vectorielle lissée.
-- **Une histoire en mouvement**: Personnages, objets et décors font vivre le récit. Une courte réflexion finale, des frappes rétro, des mouvements subtils, un texte doucement pulsé et une musique adaptée prolongent l’émotion.
-- **Idéal pour**: Les récits à choix, les leçons de vie ironiques, l’humour noir et les fables sensibles à l’esprit jeu vidéo.
+- **À l’écran**: Un pixel art net, des personnages blancs expressifs et une palette adaptée à chaque scène, sans flou ni imitation vectorielle lissée.
+- **En mouvement**: Personnages, objets et décors font vivre le récit. Une courte réflexion finale, des frappes rétro, des mouvements subtils, un texte doucement pulsé et une musique adaptée prolongent l’émotion.
+- **Pour raconter**: Les récits à choix, les leçons de vie ironiques, l’humour noir et les fables sensibles à l’esprit jeu vidéo.
 
 <table width="100%">
   <tr>
@@ -696,7 +696,7 @@ Oui, les vidéos vous appartiennent : vous pouvez les publier et les monétiser.
 
 ### Q7. Faut-il savoir programmer ou posséder un GPU coûteux ?
 
-Vous n’avez pas besoin d’écrire du code vous-même ni d’acheter un GPU haut de gamme. Le mode A peut utiliser des plateformes vidéo en ligne ; en mode B, un Agent écrit le code et effectue le rendu localement. Les performances de votre ordinateur influencent la vitesse de production, sans être le facteur décisif.
+Vous n’avez pas besoin d’écrire du code vous-même ni d’acheter un GPU haut de gamme. Le mode A peut utiliser des plateformes vidéo en ligne ; en mode B, un agent écrit le code et effectue le rendu localement. Les performances de votre ordinateur influencent la vitesse de production, sans être le facteur décisif.
 
 <!-- readme:contribute -->
 

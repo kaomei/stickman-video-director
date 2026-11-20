@@ -109,7 +109,7 @@ Roteiro, locução, legendas e som · 14 estilos testados · Para Claude Code, C
 
 ## 🎬 Dois modos de criação de vídeo: Model Engine vs Code Engine
 
-**O mesmo diretor de vídeos stickman, duas formas de criar as imagens**: o modo A usa modelos de vídeo para gerar cenas contínuas, enquanto o modo B usa código para animar elementos visuais em camadas. Nos dois modos, um Agent pode automatizar a produção até o vídeo final, seguindo rigorosamente as regras do estilo escolhido.
+**O mesmo diretor de vídeos stickman, duas formas de criar as imagens**: o modo A usa modelos de vídeo para gerar cenas contínuas, enquanto o modo B usa código para animar elementos visuais em camadas. Nos dois modos, um agente pode automatizar a produção até o vídeo final, seguindo rigorosamente as regras do estilo escolhido.
 
 <table>
 <thead>
@@ -148,7 +148,7 @@ Roteiro, locução, legendas e som · 14 estilos testados · Para Claude Code, C
 <tr>
 <td align="center" valign="middle"><strong>Custo</strong></td>
 <td align="left" valign="middle">Consome créditos/pontos de geração dos modelos de vídeo; vídeos mais longos aumentam significativamente o custo e os gastos com novas tentativas.</td>
-<td align="left" valign="middle">Não exige créditos de modelos de vídeo; renderiza localmente usando sua cota Agent existente e ferramentas básicas de imagem e síntese de voz.</td>
+<td align="left" valign="middle">Não exige créditos de modelos de vídeo; renderiza localmente usando sua cota de agente existente e ferramentas básicas de imagem e síntese de voz.</td>
 </tr>
 </tbody>
 </table>
@@ -185,7 +185,7 @@ Ainda não escolheu um estilo? Veja abaixo a apresentação detalhada de cada um
 
 <strong>Para chegar o mais perto possível dos vídeos de exemplo, dê preferência a ferramentas de IA com boa capacidade de programação, como Codex e Claude Code.</strong>
 
-Você também pode instalar o Skill em outros Agents capazes de ler e gravar arquivos e executar comandos no terminal. Os resultados podem variar conforme o modelo, a configuração das ferramentas e a forma de execução.
+Você também pode instalar o Skill em outros agentes capazes de ler e gravar arquivos e executar comandos no terminal. Os resultados podem variar conforme o modelo, a configuração das ferramentas e a forma de execução.
 
 ### Step 1: Instale o Skill
 
@@ -218,7 +218,7 @@ Primeiro, apresente a estrutura da história, a direção sonora e o storyboard;
 após minha aprovação, forneça prompts de geração de vídeo que possam ser usados de forma independente para cada trecho.
 ```
 
-- **Produção:** Após aprovar o storyboard, você pode gerar as cenas manualmente ou deixar um Agent operar pelo navegador integrado (primeiro faça um teste em baixa resolução; com o resultado aprovado, ele continua a produção e a edição do vídeo final).
+- **Produção:** Após aprovar o storyboard, você pode gerar as cenas manualmente ou deixar um agente operar pelo navegador integrado (primeiro faça um teste em baixa resolução; com o resultado aprovado, ele continua a produção e a edição do vídeo final).
 - **Plataforma recomendada:** Recomendamos o Google Flow para se aproximar do resultado dos exemplos; para o primeiro vídeo, consulte o [tutorial detalhado no X](https://x.com/CrazyKaomei/status/2102311241046008268).
 
 <a id="autopilot-start"></a>
@@ -235,7 +235,7 @@ Primeiro, verifique o ambiente local de geração de imagens e composição de v
 após minha aprovação, conclua automaticamente a preparação dos elementos, a escrita do código e a renderização local de todo o vídeo e entregue diretamente o vídeo completo.
 ```
 
-- **Produção:** Após a aprovação do roteiro e da amostra com áudio de 20 segundos, o Agent prepara automaticamente os elementos visuais, as animações, as legendas e o áudio conforme o estilo escolhido, renderiza o vídeo completo localmente e fornece uma prévia.
+- **Produção:** Após a aprovação do roteiro e da amostra com áudio de 20 segundos, o agente prepara automaticamente os elementos visuais, as animações, as legendas e o áudio conforme o estilo escolhido, renderiza o vídeo completo localmente e fornece uma prévia.
 - **Ajustes pontuais:** Se alguma imagem ou som não agradar, peça à IA para ajustar apenas o trecho correspondente, preservando as partes já aprovadas.
 
 ### Step 3: Gere a miniatura e os textos de publicação com um único pedido
@@ -254,7 +254,7 @@ A IA gera uma miniatura no mesmo estilo, o título do vídeo, a descrição e o 
 
 ## 🎨 A · Model Engine: visão geral dos estilos
 
-Os vídeos de exemplo atuais do modo A foram produzidos com o [Google Flow](https://flow.google.com/). Você também pode escolher outra plataforma de geração de vídeo. <strong>Antes de deixar um Agent produzir o vídeo automaticamente, confirme que sua conta está conectada e tem créditos disponíveis.</strong>
+Os vídeos de exemplo atuais do modo A foram produzidos com o [Google Flow](https://flow.google.com/). Você também pode escolher outra plataforma de geração de vídeo. <strong>Antes de deixar um agente produzir o vídeo automaticamente, confirme que sua conta está conectada e tem créditos disponíveis.</strong>
 
 Os estilos seguem a numeração A1, A2, A3… Cada um apresenta seus próprios exemplos de animação.
 
@@ -363,8 +363,8 @@ E se você acordasse e tudo custasse dez mil vezes menos? A inspiração visual 
 
 Um boneco de traços finos entra em cenários retrô desenhados com cuidado. Gestos elásticos, expressões marcantes e atuação contínua transformam pequenos contratempos em comédia teatral. Verde-sálvia, marfim e discretos detalhes em vermelho desbotado preservam o charme de época.
 
-- **Destaques visuais**: Rosto branco circular, duas mechas curvas e corpo de linhas finas consistentes; contornos a tinta, pintura fosca, interação com objetos e montagem expressiva.
-- **Ideal para**: Comédia absurda, fábulas do cotidiano, histórias com reviravoltas e curtas guiados pela música.
+- **O visual**: Rosto branco circular, duas mechas curvas e corpo de linhas finas consistentes; contornos a tinta, pintura fosca, interação com objetos e montagem expressiva.
+- **Para contar**: Comédia absurda, fábulas do cotidiano, histórias com reviravoltas e curtas guiados pela música.
 
 | Exemplo 1: Perseguido por uma nuvem | Exemplo 2: Uma rua chuvosa |
 |:---:|:---:|
@@ -384,9 +384,9 @@ Novos estilos especializados para Model Engine estão em preparação. [Dê uma 
 
 ## 🤖 B · Code Engine: visão geral dos estilos
 
-Todos os vídeos de exemplo atuais do modo B foram produzidos com Codex: o modelo integrado <strong><code>gpt-image-2</code></strong> gera os elementos visuais, que são animados em camadas por código e renderizados localmente. Antes de deixar outro Agent produzir o vídeo automaticamente, <strong>confirme que ele pode ler e gravar arquivos e executar comandos no terminal, e que as ferramentas necessárias estão configuradas.</strong>
+Todos os vídeos de exemplo atuais do modo B foram produzidos com Codex: o modelo integrado <strong><code>gpt-image-2</code></strong> gera os elementos visuais, que são animados em camadas por código e renderizados localmente. Antes de deixar outro agente produzir o vídeo automaticamente, <strong>confirme que ele pode ler e gravar arquivos e executar comandos no terminal, e que as ferramentas necessárias estão configuradas.</strong>
 
-Os estilos seguem a numeração B1, B2, B3… Cada um apresenta seus próprios vídeos de exemplo completos.
+Os estilos seguem a numeração B1, B2, B3… Cada um apresenta seus próprios vídeos de exemplo completos. Nomes como Bodi, Fola, Brian, Claire e The Pharaoh 3 nas legendas dos exemplos são as vozes sintetizadas usadas nesses vídeos; você pode escolher qualquer voz.
 
 <a id="b1"></a>
 
@@ -535,9 +535,9 @@ Transforme seu avatar favorito no apresentador do canal; o uso de personagens co
 
 Expressões de meme, traços soltos à mão e cores suaves transformam histórias curiosas em animações curtas e vivas. Cenários amplos dão espaço aos personagens, objetos e movimentos de câmera. O estilo visual se inspira no canal do YouTube [@RicksClips3000](https://www.youtube.com/@RicksClips3000) (**cerca de 180 mil inscritos**).
 
-- **Visual**: Traços de tinta de espessura variável, pintura fosca e luz suave mantêm a cabeça, o corpo e o cenário no mesmo estilo desenhado à mão, **com melhor resultado no formato vertical**.
-- **Movimento**: Travellings laterais, profundidade em camadas, entrega de objetos e closes de reação acompanham a história, com pausas para entender cada gag.
-- **Ideal para**: Curiosidades históricas, golpes, comédia absurda e histórias curtas com reviravolta.
+- **O visual**: Traços de tinta de espessura variável, pintura fosca e luz suave mantêm a cabeça, o corpo e o cenário no mesmo estilo desenhado à mão, **com melhor resultado no formato vertical**.
+- **O movimento**: Travellings laterais, profundidade em camadas, entrega de objetos e closes de reação acompanham a história, com pausas para entender cada gag.
+- **Para contar**: Curiosidades históricas, golpes, comédia absurda e histórias curtas com reviravolta.
 
 <table width="100%">
   <tr>
@@ -565,9 +565,9 @@ Expressões de meme, traços soltos à mão e cores suaves transformam história
 
 Pequenos pixels, grandes consequências. Personagens brancos transformam escolhas do dia a dia em pequenos mundos de jogo, onde um botão apertado, uma chance perdida ou um simples “tanto faz” pode mudar tudo.
 
-- **Identidade visual**: Pixel art nítida, personagens brancos expressivos e paletas próprias para cada cena, sem desfoque nem imitações vetoriais suavizadas.
-- **História em movimento**: Personagens, objetos e cenários dão vida à história. Uma reflexão final, teclas retrô, movimentos sutis, texto pulsando suavemente e a trilha certa deixam uma impressão duradoura.
-- **Ideal para**: Histórias de escolhas, lições de vida irônicas, humor ácido e fábulas emocionantes com clima de videogame.
+- **O visual**: Pixel art nítida, personagens brancos expressivos e paletas próprias para cada cena, sem desfoque nem imitações vetoriais suavizadas.
+- **O movimento**: Personagens, objetos e cenários dão vida à história. Uma reflexão final, teclas retrô, movimentos sutis, texto pulsando suavemente e a trilha certa deixam uma impressão duradoura.
+- **Para contar**: Histórias de escolhas, lições de vida irônicas, humor ácido e fábulas emocionantes com clima de videogame.
 
 <table width="100%">
   <tr>
@@ -696,7 +696,7 @@ Sim, os vídeos são seus para publicar e monetizar. Uma grande preocupação de
 
 ### Q7. Preciso saber programar ou ter uma GPU cara?
 
-Você não precisa escrever código por conta própria nem comprar uma GPU de ponta. O modo A pode usar plataformas de vídeo online; no modo B, um Agent escreve o código e renderiza localmente. O desempenho do computador afeta a velocidade de produção, mas não é o fator decisivo.
+Você não precisa escrever código por conta própria nem comprar uma GPU de ponta. O modo A pode usar plataformas de vídeo online; no modo B, um agente escreve o código e renderiza localmente. O desempenho do computador afeta a velocidade de produção, mas não é o fator decisivo.
 
 <!-- readme:contribute -->
 
