@@ -232,7 +232,7 @@ table = re.search(r'<table width="100%">(.*?)</table>', b1, re.S).group(1)
 rows = re.findall(r"<tr>(.*?)</tr>", table, re.S)
 assert len(rows) == 3, "Keep two B1 short cases with a heading, preview and caption row"
 assert re.findall(r'<th width="50%" align="center">(.*?)</th>', rows[0]) == [
-    "案例 1：不露脸做 YouTube", "案例 2：每天发内容，为什么依旧没人看？"
+    "样片 1：不露脸做 YouTube", "样片 2：每天发内容，为什么依旧没人看？"
 ], "Use concise B1 case titles while preserving the original and later sample order"
 cells = re.findall(r'<td width="50%" align="center">(.*?)</td>', rows[1], re.S)
 assert len(cells) == 2, "Keep both preview columns equally sized and centered"

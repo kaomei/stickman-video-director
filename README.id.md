@@ -109,7 +109,7 @@ Naskah, voiceover, subtitle & suara · 14 gaya teruji · Untuk Claude Code, Code
 
 ## 🎬 Dua mode pembuatan video: Model Engine vs Code Engine
 
-**Satu sutradara stickman, dua cara membuat visual**: Mode A menggunakan model video untuk menghasilkan adegan yang berkesinambungan, sedangkan mode B menggerakkan aset dengan kode untuk membuat animasi berlapis. Keduanya mendukung produksi otomatis oleh Agent hingga menjadi video utuh, dengan tetap mengikuti standar gaya yang dipilih secara ketat.
+**Satu sutradara stickman, dua cara membuat visual**: Mode A menggunakan model video untuk menghasilkan adegan yang berkesinambungan, sedangkan mode B menggerakkan aset dengan kode untuk membuat animasi berlapis. Keduanya mendukung produksi otomatis oleh agen AI hingga menjadi video utuh, dengan tetap mengikuti standar gaya yang dipilih secara ketat.
 
 <table>
 <thead>
@@ -148,7 +148,7 @@ Naskah, voiceover, subtitle & suara · 14 gaya teruji · Untuk Claude Code, Code
 <tr>
 <td align="center" valign="middle"><strong>Biaya</strong></td>
 <td align="left" valign="middle">Menghabiskan kredit/poin pembuatan dari model video; video yang lebih panjang meningkatkan biaya dan beban pembuatan ulang secara signifikan.</td>
-<td align="left" valign="middle">Tidak memerlukan kredit model video; rendering dilakukan secara lokal dengan kuota Agent yang sudah Anda miliki serta alat gambar/TTS dasar.</td>
+<td align="left" valign="middle">Tidak memerlukan kredit model video; rendering dilakukan secara lokal dengan kuota agen yang sudah Anda miliki serta alat gambar/TTS dasar.</td>
 </tr>
 </tbody>
 </table>
@@ -185,7 +185,7 @@ Belum menentukan gaya? Di bawah ini tersedia penjelasan setiap gaya, topik yang 
 
 <strong>Untuk hasil yang sedekat mungkin dengan contoh yang ditampilkan, kami menyarankan alat AI dengan kemampuan pemrograman yang kuat, seperti Codex atau Claude Code.</strong>
 
-Skill ini juga dapat dipasang pada Agent lain yang mampu membaca/menulis file dan menjalankan perintah terminal. Namun, hasilnya bisa berbeda karena kemampuan model, konfigurasi alat, dan cara eksekusinya tidak sama.
+Skill ini juga dapat dipasang pada agen AI lain yang mampu membaca/menulis file dan menjalankan perintah terminal. Namun, hasilnya bisa berbeda karena kemampuan model, konfigurasi alat, dan cara eksekusinya tidak sama.
 
 ### Step 1: Pasang Skill
 
@@ -218,7 +218,7 @@ Berikan struktur cerita, arah desain suara, dan storyboard terlebih dahulu;
 setelah saya menyetujuinya, berikan prompt pembuatan video per adegan yang dapat digunakan secara mandiri.
 ```
 
-- **Alur produksi:** Setelah storyboard disetujui, Anda dapat membuat video secara manual atau meminta Agent mengoperasikan browser bawaan. Uji dahulu dengan resolusi rendah; jika hasilnya sesuai, lanjutkan produksi dan penyuntingan hingga menjadi video utuh.
+- **Alur produksi:** Setelah storyboard disetujui, Anda dapat membuat video secara manual atau meminta agen mengoperasikan browser bawaan. Uji dahulu dengan resolusi rendah; jika hasilnya sesuai, lanjutkan produksi dan penyuntingan hingga menjadi video utuh.
 - **Platform yang disarankan:** Gunakan Google Flow agar hasilnya lebih mendekati contoh. Untuk produksi pertama, lihat [tutorial lengkap di X](https://x.com/CrazyKaomei/status/2102311241046008268).
 
 <a id="autopilot-start"></a>
@@ -235,7 +235,7 @@ Periksa dahulu lingkungan pembuatan gambar dan penggabungan video lokal, lalu be
 setelah disetujui, selesaikan seluruh persiapan aset, penulisan kode, dan rendering lokal secara otomatis, lalu serahkan video utuhnya.
 ```
 
-- **Alur produksi:** Setelah naskah dan contoh 20 detik dengan suara disetujui, Agent akan menyiapkan aset, animasi, subtitle, dan suara secara otomatis sesuai gaya yang dipilih, lalu merender video utuh secara lokal dan menyediakan pratinjau.
+- **Alur produksi:** Setelah naskah dan contoh 20 detik dengan suara disetujui, agen akan menyiapkan aset, animasi, subtitle, dan suara secara otomatis sesuai gaya yang dipilih, lalu merender video utuh secara lokal dan menyediakan pratinjau.
 - **Penyesuaian bagian tertentu:** Jika visual atau suara belum sesuai, minta AI menyesuaikan bagian terkait saja sambil mempertahankan bagian yang sudah disetujui.
 
 ### Step 3: Buat thumbnail dan teks publikasi dengan satu permintaan
@@ -254,7 +254,7 @@ AI akan membuat gambar thumbnail, judul video, deskripsi, dan teks komentar ters
 
 ## 🎨 Ikhtisar A · Model Engine
 
-Contoh mode A saat ini dibuat dengan [Google Flow](https://flow.google.com/); Anda juga dapat memilih platform pembuatan video lain. <strong>Sebelum menyerahkan produksi otomatis kepada Agent, pastikan akun sudah masuk dan memiliki kuota yang tersedia.</strong>
+Contoh mode A saat ini dibuat dengan [Google Flow](https://flow.google.com/); Anda juga dapat memilih platform pembuatan video lain. <strong>Sebelum menyerahkan produksi otomatis kepada agen, pastikan akun sudah masuk dan memiliki kuota yang tersedia.</strong>
 
 Gaya diperbarui dengan penomoran A1, A2, A3… Setiap gaya menampilkan contoh animasi yang sesuai.
 
@@ -363,7 +363,7 @@ Bagaimana jika saat bangun, semua barang sepuluh ribu kali lebih murah? Inspiras
 
 Figur stik bergaris tipis tampil di latar retro yang digambar dengan rinci. Gerakan lentur, ekspresi kuat, dan akting berkesinambungan mengubah kejadian sehari-hari menjadi komedi teatrikal. Warna hijau sage, gading, dan sedikit merah pudar menjaga nuansa lawas.
 
-- **Ciri visual**: Wajah bulat putih, dua helai rambut melengkung, dan tubuh garis tipis yang konsisten; kontur tinta, tekstur cat matte, interaksi properti, dan penyuntingan ekspresif.
+- **Tampilannya**: Wajah bulat putih, dua helai rambut melengkung, dan tubuh garis tipis yang konsisten; kontur tinta, tekstur cat matte, interaksi properti, dan penyuntingan ekspresif.
 - **Cocok untuk**: Komedi absurd, fabel keseharian, cerita dengan kejutan, dan film pendek mengikuti musik.
 
 | Contoh 1: Dikejar awan | Contoh 2: Jalanan saat hujan |
@@ -384,9 +384,9 @@ Gaya Model Engine yang baru sedang disiapkan. [Beri Star pada proyek ini](#road-
 
 ## 🤖 Ikhtisar B · Code Engine
 
-Semua contoh mode B saat ini dibuat dengan Codex: model bawaan <strong><code>gpt-image-2</code></strong> menghasilkan aset visual, lalu kode menggerakkan animasi berlapis dan merender video secara lokal. Sebelum menyerahkan produksi otomatis kepada Agent lain, <strong>pastikan Agent tersebut mampu membaca/menulis file dan menjalankan perintah terminal, serta semua alat yang dibutuhkan sudah dikonfigurasi.</strong>
+Semua contoh mode B saat ini dibuat dengan Codex: model bawaan <strong><code>gpt-image-2</code></strong> menghasilkan aset visual, lalu kode menggerakkan animasi berlapis dan merender video secara lokal. Sebelum menyerahkan produksi otomatis kepada agen AI lain, <strong>pastikan agen tersebut mampu membaca/menulis file dan menjalankan perintah terminal, serta semua alat yang dibutuhkan sudah dikonfigurasi.</strong>
 
-Gaya diperbarui dengan penomoran B1, B2, B3… Setiap gaya menampilkan contoh video utuh yang sesuai.
+Gaya diperbarui dengan penomoran B1, B2, B3… Setiap gaya menampilkan contoh video utuh yang sesuai. Nama seperti Bodi, Fola, Brian, Claire, dan The Pharaoh 3 pada keterangan contoh adalah suara text-to-speech yang dipakai di video tersebut; Anda bisa memilih suara apa pun.
 
 <a id="b1"></a>
 
@@ -473,7 +473,7 @@ Seperti tak sengaja menemukan siaran aneh larut malam. Terinspirasi oleh [@Bradi
 
 ### B4: Thriller Bertahan Hidup
 
-Hitung mundur. Telepon larut malam. Aturan yang tak boleh dilanggar. Terinspirasi oleh [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives) di YouTube (**bertambah 100 ribu subscriber dalam 3 minggu**), tempat biasa berubah menjadi jebakan. Kepala putih bulat, sarung tangan putih, dan kontras tajam membawa tokoh sederhana ke dunia yang meresahkan.
+Hitung mundur. Telepon larut malam. Aturan yang tak boleh dilanggar. Dalam dunia yang terinspirasi oleh [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives) di YouTube (**bertambah 100 ribu subscriber dalam 3 minggu**), tempat biasa berubah menjadi jebakan. Kepala putih bulat, sarung tangan putih, dan kontras tajam membawa tokoh sederhana ke dunia yang meresahkan.
 
 - **Tampilannya**: Pembuka setengah berbayang, close-up mengusik, ancaman muncul dari gelap. Perubahan ekspresi, cahaya, dan benda membangun ketegangan tanpa menjelaskan setiap gambar.
 - **Suara**: Brian menarik perhatian sejak awal. Ambiens pelan yang terus mengalir menopang ketegangan; efek sesuai cerita membuat bahaya terdengar tanpa menutupi narasi.
@@ -503,10 +503,10 @@ Hitung mundur. Telepon larut malam. Aturan yang tak boleh dilanggar. Terinspiras
 
 ### B5: Penjelasan dengan Karakter
 
-Jadikan avatar favorit Anda pembawa acara di kanal Anda; penggunaan karakter terkenal memerlukan izin. Sang pembawa acara bercerita di sudut layar, sementara manusia lidi di sebelah kiri memperagakan idenya — diseret tagihan, tergencet tekanan, atau terjebak dalam lelucon visual. Konsep abstrak pun jadi lucu dan mudah diingat.
+Jadikan avatar favorit Anda pembawa acara di channel Anda; penggunaan karakter terkenal memerlukan izin. Sang pembawa acara bercerita di sudut layar, sementara manusia lidi di sebelah kiri memperagakan idenya — diseret tagihan, tergencet tekanan, atau terjebak dalam lelucon visual. Konsep abstrak pun jadi lucu dan mudah diingat.
 
-- **Tampilan**: Tekstur kertas hangat, pembawa acara yang khas, serta teks penekanan hitam dan merah. Bobot berlebihan, gerak memantul, dan properti yang berubah bentuk menjadikan penjelasan sebagai metafora visual.
-- **Suasana audio**: Narasi yang jelas memimpin cerita, dengan gerak bibir, ekspresi, dan takarir mengikuti suara. Efek suara tepat di momen aksi, sementara musik ringan tidak menutupi narasi.
+- **Tampilannya**: Tekstur kertas hangat, pembawa acara yang khas, serta teks penekanan hitam dan merah. Bobot berlebihan, gerak memantul, dan properti yang berubah bentuk menjadikan penjelasan sebagai metafora visual.
+- **Suara**: Narasi yang jelas memimpin cerita, dengan gerak bibir, ekspresi, dan takarir mengikuti suara. Efek suara tepat di momen aksi, sementara musik ringan tidak menutupi narasi.
 - **Cocok untuk**: Video penjelasan, psikologi sehari-hari, pengamatan kehidupan, budaya pop, dan komentar jenaka.
 
 <table width="100%">
@@ -535,7 +535,7 @@ Jadikan avatar favorit Anda pembawa acara di kanal Anda; penggunaan karakter ter
 
 Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut menghidupkan kisah unik menjadi animasi pendek. Gaya visualnya terinspirasi oleh [@RicksClips3000](https://www.youtube.com/@RicksClips3000) di YouTube (**sekitar 180 ribu subscriber**). Latar yang luas memberi ruang gerak bagi tokoh, properti, dan kamera.
 
-- **Visual**: Garis tinta dengan ketebalan bervariasi, cat matte, dan pencahayaan lembut menjaga keselarasan gaya gambar tangan pada kepala, tubuh, dan latar; **hasilnya lebih baik dalam format vertikal**.
+- **Tampilannya**: Garis tinta dengan ketebalan bervariasi, cat matte, dan pencahayaan lembut menjaga keselarasan gaya gambar tangan pada kepala, tubuh, dan latar; **hasilnya lebih baik dalam format vertikal**.
 - **Gerak**: Pelacakan menyamping, kedalaman berlapis, penyerahan benda, dan close-up reaksi mengikuti cerita, dengan jeda agar setiap aksi dan lelucon terbaca.
 - **Cocok untuk**: Keanehan sejarah, kisah penipuan, komedi absurd, dan cerita pendek dengan kejutan di akhir.
 
@@ -565,18 +565,18 @@ Ekspresi meme yang berlebihan, garis gambar tangan yang lepas, dan warna lembut 
 
 Piksel kecil, konsekuensi besar. Karakter stik putih mengubah pilihan sehari-hari menjadi dunia permainan kecil, tempat satu tombol, kesempatan yang terlewat, atau ucapan “terserah” bisa mengubah segalanya.
 
-- **Identitas visual**: Seni piksel yang tajam, karakter putih yang ekspresif, dan palet sesuai adegan—tanpa pembesaran buram atau tiruan vektor yang terlalu halus.
-- **Cerita lewat gerak**: Karakter, benda, dan latar menghidupkan cerita. Renungan penutup, ketikan retro, gerakan kecil, teks yang berpendar lembut, dan musik yang pas meninggalkan kesan mendalam.
+- **Tampilannya**: Seni piksel yang tajam, karakter putih yang ekspresif, dan palet sesuai adegan—tanpa pembesaran buram atau tiruan vektor yang terlalu halus.
+- **Gerak**: Karakter, benda, dan latar menghidupkan cerita. Renungan penutup, ketikan retro, gerakan kecil, teks yang berpendar lembut, dan musik yang pas meninggalkan kesan mendalam.
 - **Cocok untuk**: Cerita tentang pilihan, pelajaran hidup yang ironis, komedi gelap, dan kisah menyentuh dengan nuansa permainan.
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">Contoh 1: apa jadinya kalau kamu selalu bilang “terserah”?</th>
-    <th width="50%" align="center">Contoh 2: jangan percepat hidupmu</th>
+    <th width="50%" align="center">Contoh 1: Apa jadinya kalau kamu selalu bilang “terserah”?</th>
+    <th width="50%" align="center">Contoh 2: Jangan percepat hidupmu</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Contoh 1: apa jadinya kalau kamu selalu bilang “terserah”?" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Contoh 2: jangan percepat hidupmu" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Contoh 1: Apa jadinya kalau kamu selalu bilang “terserah”?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Contoh 2: Jangan percepat hidupmu" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Animasi karakter piksel · Musik dan efek suara bernuansa gim</td>
@@ -674,9 +674,9 @@ Ya, Skill-nya sendiri gratis: open source dengan lisensi MIT, bisa dipakai untuk
 
 ### Q3. Alat apa yang direkomendasikan? Apakah harus memakai model pembuat gambar tertentu?
 
-Agar hasilnya mendekati demo, **gunakan Google Flow untuk membuat klip di Mode A dan Codex untuk membuat video lengkap di Mode B.** Semua demo Mode B dibuat dengan Codex. Jelaskan hasil yang Anda inginkan dengan bahasa sehari-hari, lalu agen akan menulis kode dan merender video secara lokal.
+Agar hasilnya mendekati demo, **gunakan Google Flow untuk membuat klip di mode A dan Codex untuk membuat video lengkap di mode B.** Semua demo mode B dibuat dengan Codex. Jelaskan hasil yang Anda inginkan dengan bahasa sehari-hari, lalu agen akan menulis kode dan merender video secara lokal.
 
-**Anda bebas memilih model pembuat gambar.** Aset visual untuk demo Mode B dibuat dengan alat pembuat gambar bawaan Codex tanpa perlu API pembuatan gambar terpisah. Anda juga bisa memakai Claude Code atau agen lain yang dapat membaca dan menulis file serta menjalankan perintah di terminal, dengan alat pembuat gambar dan sulih suara pilihan Anda. Buat dulu cuplikan pendek dengan audio untuk memeriksa gaya visual, subtitle, dan suara sebelum mengerjakan video lengkap.
+**Anda bebas memilih model pembuat gambar.** Aset visual untuk demo mode B dibuat dengan alat pembuat gambar bawaan Codex tanpa perlu API pembuatan gambar terpisah. Anda juga bisa memakai Claude Code atau agen lain yang dapat membaca dan menulis file serta menjalankan perintah di terminal, dengan alat pembuat gambar dan sulih suara pilihan Anda. Buat dulu cuplikan pendek dengan audio untuk memeriksa gaya visual, subtitle, dan suara sebelum mengerjakan video lengkap.
 
 ### Q4. Bisakah saya membuat video tanpa naskah yang sudah jadi?
 
@@ -696,7 +696,7 @@ Ya, video ini milik Anda untuk dipublikasikan dan dimonetisasi. Salah satu kekha
 
 ### Q7. Apakah saya perlu bisa coding atau memiliki GPU mahal?
 
-Anda tidak perlu menulis kode sendiri atau membeli GPU kelas atas. Mode A dapat menggunakan platform video online; pada mode B, Agent menulis kode dan melakukan rendering secara lokal. Kinerja komputer memengaruhi kecepatan produksi, tetapi bukan faktor penentu.
+Anda tidak perlu menulis kode sendiri atau membeli GPU kelas atas. Mode A dapat menggunakan platform video online; pada mode B, agen menulis kode dan melakukan rendering secara lokal. Kinerja komputer memengaruhi kecepatan produksi, tetapi bukan faktor penentu.
 
 <!-- readme:contribute -->
 
@@ -713,7 +713,7 @@ Anda tidak perlu menulis kode sendiri atau membeli GPU kelas atas. Mode A dapat 
   - Koleksi 1,000+ prompt naskah YouTube untuk mode A dan B
   - [Pustaka audio B](skills/directing-stickman-videos/references/b-audio-library.md): 774 SFX/transisi + 31 musik latar + 85 jingle singkat, dengan rekomendasi gaya/adegan B, ekspor offline, lisensi per aset dan atribusi wajib
 - [ ] **20,000 Stars**:
-  - luncurkan Stickman AI Studio — dari ide hingga video siap tayang, serba otomatis
+  - Peluncuran Stickman AI Studio — dari ide hingga video siap tayang, serba otomatis
   - Kejutan lainnya menanti — yuk, kita nantikan bersama
 
 <div align="center">

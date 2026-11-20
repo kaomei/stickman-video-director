@@ -321,7 +321,7 @@ for name in selected:
     assert len(re.findall(r"^- \*\*", b5, re.M)) == 3, name
     assert all(token in b5 for token in ("The Pharaoh 3", "Claire", "Crazy Mei")), name
     assert b5.count('<th width="50%"') == 2 and b5.count('width="360"') == 2, name
-    host_terms = {"en": "Animated presenter", "zh-CN": "动画主讲", "ja": "アニメの語り手", "ko": "애니메이션 진행자", "fr": "Présentateur animé", "pt-BR": "Apresentador animado", "tr": "Animasyon sunucu", "id": "Pembawa acara animasi"}
+    host_terms = {"en": "Animated presenter", "zh-CN": "动画主讲", "ja": "アニメの語り手", "ko": "애니메이션 진행자", "fr": "Présentateur animé", "pt-BR": "Apresentador animado", "tr": "Animasyonlu sunucu", "id": "Pembawa acara animasi"}
     rights_terms = {"en": "Using a well-known character requires permission", "zh-CN": "使用知名角色需获得授权", "ja": "有名なキャラクターを使う場合は許諾が必要", "ko": "유명 캐릭터를 사용하려면 허가가 필요", "fr": "l’utilisation de personnages connus nécessite une autorisation", "pt-BR": "o uso de personagens conhecidos exige autorização", "tr": "tanınmış karakterleri kullanmak için izin gerekir", "id": "penggunaan karakter terkenal memerlukan izin"}
     assert host_terms[active] in b5, (name, "localized animated host caption")
     introduction = b5.split('<table', 1)[0]
@@ -341,7 +341,7 @@ for name in selected:
         "en": ["Example 1: The Man Who Sold the Eiffel Tower", "Example 2: 1990s Hong Kong · Buns and Arcades"],
         "zh-CN": ["样片 1：卖掉埃菲尔铁塔的人", "样片 2：90 年代香港 · 菠萝包与街机"],
         "ja": ["作例1：エッフェル塔を売った男", "作例2：90年代の香港 · パイナップルパンとゲームセンター"],
-        "ko": ["샘플 1: 에펠탑을 판 남자", "샘플 2: 1990년대 홍콩 · 파인애플번과 오락실"],
+        "ko": ["예시 1: 에펠탑을 판 남자", "예시 2: 1990년대 홍콩 · 파인애플번과 오락실"],
         "fr": ["Exemple 1 : L’homme qui a vendu la tour Eiffel", "Exemple 2 : Hong Kong des années 1990 · Brioches et arcade"],
         "pt-BR": ["Exemplo 1: O homem que vendeu a Torre Eiffel", "Exemplo 2: Hong Kong dos anos 1990 · Pães e fliperamas"],
         "tr": ["Örnek 1: Eyfel Kulesi’ni satan adam", "Örnek 2: 1990’lar Hong Kong’u · Çörek ve atari"],
@@ -441,7 +441,7 @@ for name in selected:
     assert all(token in faq_answers[3] for token in story_plan_copy[active]), (name, "story and shot structure scales with topic, length and style")
     assert not re.search(r"6(?:[- ]scene| 幕|シーン|개 장면| scènes| cenas| sahne| adegan)", faq_answers[3]), (name, "no fixed six-scene FAQ promise")
     for answer, tokens in zip(faq_answers, (("MIT", "API"), ("B", "A"), ("Google Flow", "Codex", "Claude Code", "API"), ("3",), ("SFX", "Casually Explained"), ("YouTube", "YPP"), ("A", "B", "Agent"))):
-        assert all(token in answer or (token == "Agent" and "agent" in answer) for token in tokens), (name, "localized FAQ topic parity", tokens)
+        assert all(token in answer or (token == "Agent" and any(term in answer for term in ("agent", "ajan", "agen", "エージェント", "에이전트"))) for token in tokens), (name, "localized FAQ topic parity", tokens)
     assert "MIT" in faq and "API" in faq and "YouTube" in faq and "Codex" in faq, name
     code = re.findall(r"```text\n(.*?)```", text, re.S)
     assert len(code) == 5, (name, "installation, A example, B example and two publishing-kit prompts")
