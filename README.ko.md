@@ -84,8 +84,8 @@
 </td>
 <!-- b6:hero:start -->
 <td width="50%" align="center">
-<strong>Dynamic Meme Animation</strong><br>
-<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+<strong>Meme Story Animation</strong><br>
+<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Meme Story Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
 </tr>
@@ -531,7 +531,7 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
 <!-- b6:section:start -->
 <a id="b6"></a>
 
-### B6: Dynamic Meme Animation
+### B6: Meme Story Animation
 
 과장된 밈 표정, 자유로운 손그림 선, 부드러운 색으로 기묘한 이야기를 생동감 있는 짧은 애니메이션으로 만듭니다. 넓은 장면은 인물과 소품, 카메라가 움직일 공간을 제공합니다. 이 스타일은 YouTube의 [@RicksClips3000](https://www.youtube.com/@RicksClips3000)(**구독자 약 18만 명**)에서 영감을 받았습니다.
 

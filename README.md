@@ -72,7 +72,7 @@ Script, voiceover, captions & sound · 14 battle-tested styles · For Claude Cod
 </td>
 <!-- b5:hero:start -->
 <td width="50%" align="center">
-<strong>Character Explainer</strong><br>
+<strong>Avatar Explainer</strong><br>
 <a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 explainer about asking for help, with a distinctive presenter and expressive stickmen" width="90%"></a>
 </td>
 <!-- b5:hero:end -->
@@ -84,8 +84,8 @@ Script, voiceover, captions & sound · 14 battle-tested styles · For Claude Cod
 </td>
 <!-- b6:hero:start -->
 <td width="50%" align="center">
-<strong>Dynamic Meme Animation</strong><br>
-<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+<strong>Meme Story Animation</strong><br>
+<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Meme Story Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
 </tr>
@@ -501,7 +501,7 @@ A countdown. A late-night call. A rule you must never break. Ordinary places bec
 <!-- b5:section:start -->
 <a id="b5"></a>
 
-### B5: Character Explainer
+### B5: Avatar Explainer
 
 Give your favorite avatar a starring role. (Using a well-known character requires permission.) Your presenter takes the mic in the corner while expressive stickmen act out the idea—dragged around by bills, flattened by pressure, or caught in a visual punchline. Even abstract ideas become something viewers can see and remember.
 
@@ -531,7 +531,7 @@ Give your favorite avatar a starring role. (Using a well-known character require
 <!-- b6:section:start -->
 <a id="b6"></a>
 
-### B6: Dynamic Meme Animation
+### B6: Meme Story Animation
 
 Expressive meme faces, loose hand-drawn lines and soft colors turn unusual stories into lively short cartoons. The style is inspired by YouTube's [@RicksClips3000](https://www.youtube.com/@RicksClips3000) (**about 180,000 subscribers**). Wide scenes give characters, props and camera moves room to play.
 

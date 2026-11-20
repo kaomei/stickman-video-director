@@ -84,8 +84,8 @@ Script, voix off, sous-titres et son · 14 styles éprouvés · Pour Claude Code
 </td>
 <!-- b6:hero:start -->
 <td width="50%" align="center">
-<strong>Dynamic Meme Animation</strong><br>
-<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+<strong>Meme Story Animation</strong><br>
+<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Meme Story Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
 </tr>
@@ -531,7 +531,7 @@ Faites de votre avatar préféré la voix de votre chaîne ; l’utilisation de 
 <!-- b6:section:start -->
 <a id="b6"></a>
 
-### B6 : Dynamic Meme Animation
+### B6 : Meme Story Animation
 
 Des expressions de meme, des traits dessinés à la main et des couleurs douces transforment les récits insolites en courts dessins animés pleins de vie. Les décors larges laissent de la place aux personnages, aux accessoires et à la caméra. Le style visuel s’inspire de la chaîne YouTube [@RicksClips3000](https://www.youtube.com/@RicksClips3000) (**environ 180 000 abonnés**).
 

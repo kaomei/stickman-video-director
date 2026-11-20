@@ -84,8 +84,8 @@ Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 14 stil · Claude Code, 
 </td>
 <!-- b6:hero:start -->
 <td width="50%" align="center">
-<strong>Dynamic Meme Animation</strong><br>
-<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Dynamic Meme Animation" width="90%"></a>
+<strong>Meme Story Animation</strong><br>
+<a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Meme Story Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
 </tr>
@@ -531,7 +531,7 @@ Sevdiğiniz avatarı kanalınızın sunucusuna dönüştürün; tanınmış kara
 <!-- b6:section:start -->
 <a id="b6"></a>
 
-### B6: Dynamic Meme Animation
+### B6: Meme Story Animation
 
 Abartılı meme ifadeleri, serbest el çizgileri ve yumuşak renkler, sıra dışı hikâyeleri canlı kısa animasyonlara dönüştürür. Görsel tarz, YouTube’daki [@RicksClips3000](https://www.youtube.com/@RicksClips3000) kanalından (**yaklaşık 180 bin abone**) ilham alır. Geniş sahneler karakterlere, nesnelere ve kameraya hareket alanı açar.
 

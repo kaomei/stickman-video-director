@@ -380,7 +380,7 @@ for name in selected:
             next_id, _, title = entries[-1]
             assert title == "Coming soon…", (name, series, "placeholder follows the latest released style")
             assert f"### {next_id}: Coming soon…\n\n{teaser}" in text, (name, series, "approved placeholder copy")
-        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Line Art"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV"), ("B4", "Survival Thriller"), ("B5", "Character Explainer"), ("B6", "Dynamic Meme Animation"), ("B7", "Pixel Theater"), ("B8", "Coming soon…")], (name, "approved B style names plus the next-style teaser")
+        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Line Art"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV"), ("B4", "Survival Thriller"), ("B5", "Avatar Explainer"), ("B6", "Meme Story Animation"), ("B7", "Pixel Theater"), ("B8", "Coming soon…")], (name, "approved B style names plus the next-style teaser")
         assert "<strong>Retro TV</strong><br>" in hero and "Retro TV Style" not in text, (name, "concise English B3 name in gallery and section")
     for variant in ("A1.1", "A1.2", "A2.1", "A2.2"):
         assert variant in text, (name, variant)
