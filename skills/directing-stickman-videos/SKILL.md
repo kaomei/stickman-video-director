@@ -1,6 +1,6 @@
 ---
 name: directing-stickman-videos
-description: "Turn topics, requirements, articles or scripts into stickman videos. Model Engine (A) delivers storyboards and standalone prompts, or uses available authorized tools to generate and finish videos; Code Engine (B, formerly Autopilot) produces narrated, captioned illustration-and-micro-animation videos through configured generation tools and a local renderer. Also guide installation handoff, first use and setup of this specific Skill."
+description: "Turn topics, requirements, articles or scripts into stickman (stick figure) animated videos: explainers, short stories and faceless YouTube, Shorts or TikTok content, in styles from minimal line art and retro TV to pixel art, rubber hose and meme animation. Model Engine (A) delivers storyboards and standalone prompts, or uses available authorized tools to generate and finish videos; Code Engine (B, formerly Autopilot) produces narrated, captioned illustration-and-micro-animation videos through configured generation tools and a local renderer. Also use for 火柴人视频 requests, and to guide installation handoff, first use and setup of this specific Skill."
 ---
 
 # Directing Stickman Videos
