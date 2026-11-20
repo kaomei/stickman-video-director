@@ -460,7 +460,7 @@ Gece yarısı ilginç bir yayına rastlamak gibi. YouTube’daki [@BradikininVid
     <td width="50%" align="center"><a href="assets/readme/b3-tv-dog.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-dog.gif" alt="Beyaz-gri karakterler ve yerel animasyonla köpek davranışı açıklaması" width="360"></a></td>
   </tr>
   <tr>
-    <td align="center">Kurgu gerilim · Sahne geçişleri · TV dokusu</td>
+    <td align="center">Kurgusal gerilim · Sahne geçişleri · TV dokusu</td>
     <td align="center">Google Gemini · Hayvan davranışları · Yerel tepkiler · Bodi anlatımı</td>
   </tr>
 </table>
@@ -519,8 +519,8 @@ Sevdiğiniz avatarı kanalınızın sunucusuna dönüştürün; tanınmış kara
     <td width="50%" align="center"><a href="assets/readme/b5-character-explainer-crazymei.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2335d82fc55fa60bb3e20296b5da835498f4abaa/assets/readme/previews/b5-character-explainer-crazymei.gif" alt="B5: Crazy Mei üç video hatasını görsel metaforlar ve fiziksel komediyle anlatıyor" width="360"></a></td>
   </tr>
   <tr>
-    <td align="center">The Pharaoh 3 seslendirme · Animasyon sunucu · Abartılı hareketler</td>
-    <td align="center">Claire seslendirme · Crazy Mei sunumu · Görsel metaforlar</td>
+    <td align="center">The Pharaoh 3 seslendirmesi · Animasyonlu sunucu · Abartılı hareketler</td>
+    <td align="center">Claire seslendirmesi · Crazy Mei sunumu · Görsel metaforlar</td>
   </tr>
 </table>
 
@@ -571,12 +571,12 @@ Küçük pikseller, büyük sonuçlar. Beyaz çöp adamlar günlük seçimleri k
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">Örnek 1: sürekli “fark etmez” dersen ne olur?</th>
-    <th width="50%" align="center">Örnek 2: hayatını hızlı ileri sarma</th>
+    <th width="50%" align="center">Örnek 1: Sürekli “fark etmez” dersen ne olur?</th>
+    <th width="50%" align="center">Örnek 2: Hayatını hızlı ileri sarma</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Örnek 1: sürekli “fark etmez” dersen ne olur?" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Örnek 2: hayatını hızlı ileri sarma" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Örnek 1: Sürekli “fark etmez” dersen ne olur?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Örnek 2: Hayatını hızlı ileri sarma" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Piksel karakter animasyonu · Oyun esintili müzik ve ses efektleri</td>
@@ -707,7 +707,7 @@ Kendiniz kod yazmanız veya üst düzey bir GPU satın almanız gerekmez. A modu
 **Her yıldız bir sonraki yeniliğe güç verir!** Tek başına içerik üretenlerin aylık 50 dolarlık SaaS abonelikleri olmadan yüzlerini göstermedikleri kanallar yönetebilmesi için birlikte %100 ücretsiz, açık kaynaklı bir stüdyo kuruyoruz.
 
 - [x] **1,000 Stars**: Model Engine + 5 temel görsel stil yayımlandı
-- [x] **3,000 Stars**: senaryodan hazır videoya kadar üreten Code Engine yayımlandı
+- [x] **3,000 Stars**: Senaryodan hazır videoya kadar üreten Code Engine yayımlandı
 - [x] **6,000 Stars**: 10’dan fazla yüksek kaliteli yeni görsel stil yayımlandı
 - [ ] **🔥 10,000 Stars**:
   - A ve B modları için ortak 1,000’den fazla YouTube senaryosu istemi

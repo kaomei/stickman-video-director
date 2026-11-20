@@ -321,7 +321,7 @@ for name in selected:
     assert len(re.findall(r"^- \*\*", b5, re.M)) == 3, name
     assert all(token in b5 for token in ("The Pharaoh 3", "Claire", "Crazy Mei")), name
     assert b5.count('<th width="50%"') == 2 and b5.count('width="360"') == 2, name
-    host_terms = {"en": "Animated presenter", "zh-CN": "动画主讲", "ja": "アニメの語り手", "ko": "애니메이션 진행자", "fr": "Présentateur animé", "pt-BR": "Apresentador animado", "tr": "Animasyon sunucu", "id": "Pembawa acara animasi"}
+    host_terms = {"en": "Animated presenter", "zh-CN": "动画主讲", "ja": "アニメの語り手", "ko": "애니메이션 진행자", "fr": "Présentateur animé", "pt-BR": "Apresentador animado", "tr": "Animasyonlu sunucu", "id": "Pembawa acara animasi"}
     rights_terms = {"en": "Using a well-known character requires permission", "zh-CN": "使用知名角色需获得授权", "ja": "有名なキャラクターを使う場合は許諾が必要", "ko": "유명 캐릭터를 사용하려면 허가가 필요", "fr": "l’utilisation de personnages connus nécessite une autorisation", "pt-BR": "o uso de personagens conhecidos exige autorização", "tr": "tanınmış karakterleri kullanmak için izin gerekir", "id": "penggunaan karakter terkenal memerlukan izin"}
     assert host_terms[active] in b5, (name, "localized animated host caption")
     introduction = b5.split('<table', 1)[0]

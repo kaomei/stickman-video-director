@@ -473,7 +473,7 @@ Seperti tak sengaja menemukan siaran aneh larut malam. Terinspirasi oleh [@Bradi
 
 ### B4: Thriller Bertahan Hidup
 
-Hitung mundur. Telepon larut malam. Aturan yang tak boleh dilanggar. Terinspirasi oleh [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives) di YouTube (**bertambah 100 ribu subscriber dalam 3 minggu**), tempat biasa berubah menjadi jebakan. Kepala putih bulat, sarung tangan putih, dan kontras tajam membawa tokoh sederhana ke dunia yang meresahkan.
+Hitung mundur. Telepon larut malam. Aturan yang tak boleh dilanggar. Dalam dunia yang terinspirasi oleh [@BeanieSurvives](https://www.youtube.com/@BeanieSurvives) di YouTube (**bertambah 100 ribu subscriber dalam 3 minggu**), tempat biasa berubah menjadi jebakan. Kepala putih bulat, sarung tangan putih, dan kontras tajam membawa tokoh sederhana ke dunia yang meresahkan.
 
 - **Tampilannya**: Pembuka setengah berbayang, close-up mengusik, ancaman muncul dari gelap. Perubahan ekspresi, cahaya, dan benda membangun ketegangan tanpa menjelaskan setiap gambar.
 - **Suara**: Brian menarik perhatian sejak awal. Ambiens pelan yang terus mengalir menopang ketegangan; efek sesuai cerita membuat bahaya terdengar tanpa menutupi narasi.
@@ -503,7 +503,7 @@ Hitung mundur. Telepon larut malam. Aturan yang tak boleh dilanggar. Terinspiras
 
 ### B5: Penjelasan dengan Karakter
 
-Jadikan avatar favorit Anda pembawa acara di kanal Anda; penggunaan karakter terkenal memerlukan izin. Sang pembawa acara bercerita di sudut layar, sementara manusia lidi di sebelah kiri memperagakan idenya — diseret tagihan, tergencet tekanan, atau terjebak dalam lelucon visual. Konsep abstrak pun jadi lucu dan mudah diingat.
+Jadikan avatar favorit Anda pembawa acara di channel Anda; penggunaan karakter terkenal memerlukan izin. Sang pembawa acara bercerita di sudut layar, sementara manusia lidi di sebelah kiri memperagakan idenya — diseret tagihan, tergencet tekanan, atau terjebak dalam lelucon visual. Konsep abstrak pun jadi lucu dan mudah diingat.
 
 - **Tampilannya**: Tekstur kertas hangat, pembawa acara yang khas, serta teks penekanan hitam dan merah. Bobot berlebihan, gerak memantul, dan properti yang berubah bentuk menjadikan penjelasan sebagai metafora visual.
 - **Suara**: Narasi yang jelas memimpin cerita, dengan gerak bibir, ekspresi, dan takarir mengikuti suara. Efek suara tepat di momen aksi, sementara musik ringan tidak menutupi narasi.
@@ -571,12 +571,12 @@ Piksel kecil, konsekuensi besar. Karakter stik putih mengubah pilihan sehari-har
 
 <table width="100%">
   <tr>
-    <th width="50%" align="center">Contoh 1: apa jadinya kalau kamu selalu bilang “terserah”?</th>
-    <th width="50%" align="center">Contoh 2: jangan percepat hidupmu</th>
+    <th width="50%" align="center">Contoh 1: Apa jadinya kalau kamu selalu bilang “terserah”?</th>
+    <th width="50%" align="center">Contoh 2: Jangan percepat hidupmu</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Contoh 1: apa jadinya kalau kamu selalu bilang “terserah”?" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Contoh 2: jangan percepat hidupmu" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-pixel-theater-opening.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="Contoh 1: Apa jadinya kalau kamu selalu bilang “terserah”?" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b7-fast-forward-excerpt.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-fast-forward-excerpt.gif" alt="Contoh 2: Jangan percepat hidupmu" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Animasi karakter piksel · Musik dan efek suara bernuansa gim</td>
@@ -674,9 +674,9 @@ Ya, Skill-nya sendiri gratis: open source dengan lisensi MIT, bisa dipakai untuk
 
 ### Q3. Alat apa yang direkomendasikan? Apakah harus memakai model pembuat gambar tertentu?
 
-Agar hasilnya mendekati demo, **gunakan Google Flow untuk membuat klip di Mode A dan Codex untuk membuat video lengkap di Mode B.** Semua demo Mode B dibuat dengan Codex. Jelaskan hasil yang Anda inginkan dengan bahasa sehari-hari, lalu agen akan menulis kode dan merender video secara lokal.
+Agar hasilnya mendekati demo, **gunakan Google Flow untuk membuat klip di mode A dan Codex untuk membuat video lengkap di mode B.** Semua demo mode B dibuat dengan Codex. Jelaskan hasil yang Anda inginkan dengan bahasa sehari-hari, lalu agen akan menulis kode dan merender video secara lokal.
 
-**Anda bebas memilih model pembuat gambar.** Aset visual untuk demo Mode B dibuat dengan alat pembuat gambar bawaan Codex tanpa perlu API pembuatan gambar terpisah. Anda juga bisa memakai Claude Code atau agen lain yang dapat membaca dan menulis file serta menjalankan perintah di terminal, dengan alat pembuat gambar dan sulih suara pilihan Anda. Buat dulu cuplikan pendek dengan audio untuk memeriksa gaya visual, subtitle, dan suara sebelum mengerjakan video lengkap.
+**Anda bebas memilih model pembuat gambar.** Aset visual untuk demo mode B dibuat dengan alat pembuat gambar bawaan Codex tanpa perlu API pembuatan gambar terpisah. Anda juga bisa memakai Claude Code atau agen lain yang dapat membaca dan menulis file serta menjalankan perintah di terminal, dengan alat pembuat gambar dan sulih suara pilihan Anda. Buat dulu cuplikan pendek dengan audio untuk memeriksa gaya visual, subtitle, dan suara sebelum mengerjakan video lengkap.
 
 ### Q4. Bisakah saya membuat video tanpa naskah yang sudah jadi?
 
@@ -713,7 +713,7 @@ Anda tidak perlu menulis kode sendiri atau membeli GPU kelas atas. Mode A dapat 
   - Koleksi 1,000+ prompt naskah YouTube untuk mode A dan B
   - [Pustaka audio B](skills/directing-stickman-videos/references/b-audio-library.md): 774 SFX/transisi + 31 musik latar + 85 jingle singkat, dengan rekomendasi gaya/adegan B, ekspor offline, lisensi per aset dan atribusi wajib
 - [ ] **20,000 Stars**:
-  - luncurkan Stickman AI Studio — dari ide hingga video siap tayang, serba otomatis
+  - Peluncuran Stickman AI Studio — dari ide hingga video siap tayang, serba otomatis
   - Kejutan lainnya menanti — yuk, kita nantikan bersama
 
 <div align="center">
