@@ -118,16 +118,27 @@ test('B4 entrypoint and guide reach packaged resources through portable links', 
   }
 });
 
+test('relocated CLI doctor reports missing dependencies before initialization', t => {
+  const installed = fixture(t);
+  const result = spawnSync(process.execPath, ['--no-global-search-paths', path.join(installed, 'scripts/autopilot.mjs'), 'doctor'], {encoding: 'utf8'});
+  assert.ifError(result.error);
+  assert.equal(result.status, 1, result.stderr);
+  assert.equal(result.stderr, '');
+  const {checks} = JSON.parse(result.stdout);
+  assert.equal(checks.sharp, false);
+  assert.equal(checks.canvas, false);
+});
+
 test('relocated CLI initializes B4 with Brian and its independent audio buses', t => {
   const installed = fixture(t);
   const project = path.join(path.dirname(installed), 'b4-project');
-  const result = spawnSync(process.execPath, [path.join(installed, 'scripts/autopilot.mjs'), 'init', project, '--style', 'B4'], {encoding: 'utf8'});
+  const result = spawnSync(process.execPath, ['--no-global-search-paths', path.join(installed, 'scripts/autopilot.mjs'), 'init', project, '--style', 'B4'], {encoding: 'utf8'});
   assert.equal(result.status, 0, result.stderr);
   const data = JSON.parse(fs.readFileSync(path.join(project, 'project.json'), 'utf8'));
   assert.equal(data.style, 'B4');
   assert.deepEqual(data.voice, {path: 'narration.wav', lead: 0, tail: 0, name: 'Brian', id: 'nPczCjzI2devNBz1zQrb'});
   for (const bus of ['ambience', 'dialogue', 'audio_cuts']) assert.deepEqual(data[bus], []);
-  const duplicate = spawnSync(process.execPath, [path.join(installed, 'scripts/autopilot.mjs'), 'init', project, '--style', 'B4'], {encoding: 'utf8'});
+  const duplicate = spawnSync(process.execPath, ['--no-global-search-paths', path.join(installed, 'scripts/autopilot.mjs'), 'init', project, '--style', 'B4'], {encoding: 'utf8'});
   assert.notEqual(duplicate.status, 0);
   assert.match(duplicate.stderr, /will not overwrite/);
 });

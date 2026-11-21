@@ -6,6 +6,10 @@
 >
 > Older entries keep the mode names used at the time: **A · Director** is now **A · Model Engine**, and **B · Autopilot** is now **B · Code Engine**.
 
+## Unreleased
+
+- Fixed Code Engine startup so the setup check can report missing `sharp` instead of crashing, and unrelated commands no longer load B5 at startup.
+
 ## 2026-11-18 — Code Engine rendering performance (v2026.11.18)
 
 - B1–B4 load artwork only for the active shot and write generated sound effects in chunks, reducing peak memory.
