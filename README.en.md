@@ -107,7 +107,7 @@ Script, voiceover, captions & sound · 15 battle-tested styles · For Claude Cod
 <!-- a8:hero:start -->
 <td width="50%" align="center">
 <strong>Studio Ghibli Style</strong><br>
-<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli Style" width="90%"></a>
+<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli Style" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
 <td width="50%" align="center"></td>
@@ -393,7 +393,7 @@ Deep blue skies and seas, towering clouds, and sun-warmed stone walls set the sc
 
 | Demo 1: Mountain Workshop | Demo 2: Seaside Messenger |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Studio Ghibli Style · Demo 1: Mountain Workshop" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli Style · Demo 2: Seaside Messenger" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Studio Ghibli Style · Demo 1: Mountain Workshop" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli Style · Demo 2: Seaside Messenger" width="360"></a> |
 | Wide mountain views · Wind and rope work | Painted coastal streets · Cycling and catching a letter |
 
 ---

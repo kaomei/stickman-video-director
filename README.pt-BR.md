@@ -107,7 +107,7 @@ Roteiro, locução, legendas e som · 15 estilos testados · Para Claude Code, C
 <!-- a8:hero:start -->
 <td width="50%" align="center">
 <strong>Inspirado no Ghibli</strong><br>
-<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspirado no Ghibli" width="90%"></a>
+<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspirado no Ghibli" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
 <td width="50%" align="center"></td>
@@ -393,7 +393,7 @@ O azul intenso do céu e do mar, as nuvens altas e os muros de pedra aquecidos p
 
 | Amostra 1: Oficina na Montanha | Amostra 2: Mensageiro à Beira-Mar |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Inspirado no Ghibli · Amostra 1: Oficina na Montanha" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspirado no Ghibli · Amostra 2: Mensageiro à Beira-Mar" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Inspirado no Ghibli · Amostra 1: Oficina na Montanha" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspirado no Ghibli · Amostra 2: Mensageiro à Beira-Mar" width="360"></a> |
 | Vista das montanhas · Vento e movimento das cordas | Ruas litorâneas pintadas · Pedalada e carta apanhada no ar |
 
 ---

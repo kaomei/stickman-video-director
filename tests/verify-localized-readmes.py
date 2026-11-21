@@ -116,8 +116,6 @@ b6_previews = [
     for filename in ("b6-dynamic-meme-eiffel-16x9.gif", "b6-dynamic-meme-hong-kong-v90-20s.gif")
 ]
 local_previews = {
-    "assets/readme/previews/style-8-graphic-novel.gif",
-    "assets/readme/previews/style-8-graphic-novel-2.gif",
     "assets/readme/previews/b7-pixel-theater.gif",
     "assets/readme/previews/b7-fast-forward-excerpt.gif",
     "assets/readme/previews/style-7-rubber-hose.gif",
@@ -302,6 +300,17 @@ for name in selected:
     a8_videos = ["assets/readme/style-8-graphic-novel-2.mp4", "assets/readme/style-8-graphic-novel.mp4"]
     assert re.findall(r'<a href="([^"]+\.mp4)">', a8) == a8_videos, (name, "A8 approved showcase pair")
     assert all((root / video).is_file() for video in a8_videos), (name, "A8 videos exist")
+    a8_previews = images(a8)
+    a8_preview_pattern = re.escape(pinned) + r"([a-f0-9]{40})/assets/readme/previews/"
+    assert len(a8_previews) == len(a8_videos), (name, "A8 has two sample previews")
+    pins = set()
+    for preview, video in zip(a8_previews, a8_videos):
+        gif = re.escape(Path(video).with_suffix(".gif").name)
+        match = re.fullmatch(a8_preview_pattern + gif, preview)
+        assert match, (name, "A8 sample preview uses immutable CDN", preview)
+        pins.add(match[1])
+    assert len(pins) == 1, (name, "A8 previews use the same Git revision")
+    assert images(hero)[gallery_styles.index("a8")] == a8_previews[1], (name, "A8 homepage uses the sea messenger preview")
     placeholder = section(text, "a9", '<a id="b-styles"></a>')
     assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1, (name, "A9 roadmap CTA retained")
     assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A9 and B8 update links plus roadmap navigation")

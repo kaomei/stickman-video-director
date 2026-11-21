@@ -107,7 +107,7 @@
 <!-- a8:hero:start -->
 <td width="50%" align="center">
 <strong>ジブリ風</strong><br>
-<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · ジブリ風" width="90%"></a>
+<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · ジブリ風" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
 <td width="50%" align="center"></td>
@@ -393,7 +393,7 @@ A1、A2、A3…の順に追加し、各画風に対応するアニメーショ�
 
 | サンプル 1：山の工房 | サンプル 2：海辺の配達人 |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · ジブリ風 · サンプル 1：山の工房" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · ジブリ風 · サンプル 2：海辺の配達人" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · ジブリ風 · サンプル 1：山の工房" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · ジブリ風 · サンプル 2：海辺の配達人" width="360"></a> |
 | 山の遠景 · 風とロープを引く動作 | 手描きの海辺の街 · 自転車で手紙をキャッチ |
 
 ---
