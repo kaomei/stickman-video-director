@@ -107,7 +107,7 @@ Naskah, voiceover, subtitle & suara · 15 gaya teruji · Untuk Claude Code, Code
 <!-- a8:hero:start -->
 <td width="50%" align="center">
 <strong>Terinspirasi Ghibli</strong><br>
-<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Terinspirasi Ghibli" width="90%"></a>
+<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Terinspirasi Ghibli" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
 <td width="50%" align="center"></td>
@@ -393,7 +393,7 @@ Langit dan laut yang biru pekat, awan kumulus yang menjulang, serta dinding batu
 
 | Contoh 1: Bengkel Pegunungan | Contoh 2: Kurir Pesisir |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Terinspirasi Ghibli · Contoh 1: Bengkel Pegunungan" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Terinspirasi Ghibli · Contoh 2: Kurir Pesisir" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Terinspirasi Ghibli · Contoh 1: Bengkel Pegunungan" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Terinspirasi Ghibli · Contoh 2: Kurir Pesisir" width="360"></a> |
 | Pemandangan pegunungan · Angin dan tarikan tali | Jalan pesisir yang dilukis · Bersepeda dan menangkap surat |
 
 ---

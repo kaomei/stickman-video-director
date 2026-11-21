@@ -107,7 +107,7 @@ Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 15 stil · Claude Code, 
 <!-- a8:hero:start -->
 <td width="50%" align="center">
 <strong>Ghibli Esintili</strong><br>
-<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Ghibli Esintili" width="90%"></a>
+<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Ghibli Esintili" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
 <td width="50%" align="center"></td>
@@ -393,7 +393,7 @@ Masmavi gökyüzü ve deniz, yükselen kümülüs bulutları ve güneşin ısıt
 
 | Örnek 1: Dağ Atölyesi | Örnek 2: Sahil Kuryesi |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Ghibli Esintili · Örnek 1: Dağ Atölyesi" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Ghibli Esintili · Örnek 2: Sahil Kuryesi" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Ghibli Esintili · Örnek 1: Dağ Atölyesi" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Ghibli Esintili · Örnek 2: Sahil Kuryesi" width="360"></a> |
 | Geniş dağ manzarası · Rüzgâr ve ip çekme | Boyalı sahil sokakları · Bisiklet ve havada yakalanan mektup |
 
 ---

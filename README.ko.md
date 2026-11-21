@@ -107,7 +107,7 @@
 <!-- a8:hero:start -->
 <td width="50%" align="center">
 <strong>지브리풍</strong><br>
-<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 지브리풍" width="90%"></a>
+<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 지브리풍" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
 <td width="50%" align="center"></td>
@@ -393,7 +393,7 @@ A1, A2, A3… 순서로 추가하며, 각 스타일에 해당하는 애니메이
 
 | 샘플 1: 산속 공방 | 샘플 2: 해안가의 배달원 |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · 지브리풍 · 샘플 1: 산속 공방" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@defa0c3208679f3caf7fb451eb423dea70636ba2/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 지브리풍 · 샘플 2: 해안가의 배달원" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · 지브리풍 · 샘플 1: 산속 공방" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 지브리풍 · 샘플 2: 해안가의 배달원" width="360"></a> |
 | 넓은 산 풍경 · 바람과 밧줄 당기기 | 손으로 그린 해안 거리 · 자전거와 편지 잡기 |
 
 ---
