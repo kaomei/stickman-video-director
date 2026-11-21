@@ -5,7 +5,6 @@ import {spawnSync} from 'node:child_process';
 import {ROOT, STYLES, FFMPEG, FFPROBE, run, probe, loadProject, outputDir, save, json, hashFile, sha, groupWords} from './autopilot-core.mjs';
 import {BRIAN} from './b4-runtime.mjs';
 import {B4_HOOK, B4_PORTRAIT} from './b4-opening.mjs';
-import {initB5} from './character-explainer.mjs';
 import {installedWorkflow, workflowHint, checkB4InstalledSamples} from './b-style-workflow.mjs';
 import {canonicalJson} from './canonical-json.mjs';
 
@@ -41,6 +40,7 @@ async function main() {
     if (style === 'B6') { const {initB6} = await import('./b6-dynamic-meme.mjs'); const result = initB6(args[0], option('--ratio'), option('--example')); console.log(JSON.stringify({...result, next_workflow: workflowHint(style, option('--ratio'))})); return; }
     if (style === 'B5') {
       if (args.includes('--ratio')) throw new Error('B5 init has no ratio conversion; author native scene/config.json and scene code, then use workflow --style B5 --ratio 16:9 or 9:16');
+      const {initB5} = await import('./character-explainer.mjs');
       console.log(JSON.stringify({...initB5(args[0]), next_workflow: workflowHint(style)})); return;
     }
     if (!STYLES.includes(style)) throw new Error('Choose style B1, B2, B3, B4, B5 or B6');
