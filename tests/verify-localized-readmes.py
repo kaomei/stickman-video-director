@@ -29,7 +29,7 @@ assert "# 🎬 Stickman Video Director" in source
 english_hero = source.split("</div>", 1)[0]
 assert "**Scale your faceless channel with automated stickman animations.**" in english_hero
 english_intro = (
-    '**Send your AI agent one message — get back a finished stickman video.**<br>\nScript, voiceover, captions & sound · 14 battle-tested styles · For Claude Code, Codex & more',
+    '**Send your AI agent one message — get back a finished stickman video.**<br>\nScript, voiceover, captions & sound · 15 battle-tested styles · For Claude Code, Codex & more',
     '💬 One message → ✅ Approve script & preview → 🎬 Finished video',
     "**No After Effects. No $50/mo SaaS tax. Ship daily without burnout.**",
 )
@@ -39,43 +39,43 @@ assert "For your first video, see the [detailed tutorial on X](https://x.com/Cra
 # User-approved hero copy; publication and integration use their actual style counts.
 approved_localized_hero = {
     'zh-CN': ('**用全自动火柴人动画，规模化量产你的无人出镜频道。**',
-        '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 14 款实操验证的画风 · 支持 Claude Code、Codex 等',
+        '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 15 款实操验证的画风 · 支持 Claude Code、Codex 等',
         '💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片',
         '**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**',
         '[快速上手](#quick-start) · [样片展厅](#style-gallery) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)',
         '*⭐ 欢迎点亮 Star，第一时间解锁最新画风与功能更新！*'),
     'ja': ('**自動化された棒人間アニメーションで、顔出しなしチャンネルを規模化・量産へ。**',
-        '**AIエージェントにひと言送るだけで、完成した棒人間動画が届く。**<br>\n台本・音声・字幕・効果音までおまかせ · 実戦検証済みの14画風 · Claude Code・Codex 対応',
+        '**AIエージェントにひと言送るだけで、完成した棒人間動画が届く。**<br>\n台本・音声・字幕・効果音までおまかせ · 実戦検証済みの15画風 · Claude Code・Codex 対応',
         '💬 ひと言送る → ✅ 台本とプレビューを確認 → 🎬 完成動画',
         '**面倒な動画編集・アニメ付けは不要。月額50ドルのSaaS税もゼロ。毎日投稿を、もっと楽に。**',
         '[クイックスタート](#quick-start) · [ショーケース](#style-gallery) · [FAQ](#faq) · [ロードマップ](#road-to-10000-stars--creator-ecosystem) · [コミュニティ](#community)',
         '*⭐ 次のスタイル追加や新機能を見逃さないよう、ぜひ Star をお願いします！*'),
     'ko': ('**자동화된 스틱맨 애니메이션으로 얼굴 없는 유튜브 채널을 대량 양산하세요.**',
-        '**AI 에이전트에게 메시지 한 줄만 보내면, 완성된 스틱맨 영상이 돌아옵니다.**<br>\n대본·내레이션·자막·사운드까지 한 번에 · 검증된 14가지 스타일 · Claude Code, Codex 등 지원',
+        '**AI 에이전트에게 메시지 한 줄만 보내면, 완성된 스틱맨 영상이 돌아옵니다.**<br>\n대본·내레이션·자막·사운드까지 한 번에 · 검증된 15가지 스타일 · Claude Code, Codex 등 지원',
         '💬 메시지 한 줄 → ✅ 대본과 미리보기 확인 → 🎬 완성 영상',
         '**복잡한 모션 그래픽 작업 불필요. 매달 50달러의 SaaS 구독료도 제로. 지치지 않고 매일 업로드.**',
         '[빠른 시작](#quick-start) · [쇼케이스](#style-gallery) · [FAQ](#faq) · [로드맵](#road-to-10000-stars--creator-ecosystem) · [커뮤니티](#community)',
         '*⭐ 저장소를 Star하고 다음 스타일 업데이트와 새로운 기능을 가장 먼저 확인하세요.*'),
     'pt-BR': ('**Escale sua rede de canais dark com animações automatizadas de boneco-palito.**',
-        '**Mande uma mensagem para seu agente de IA e receba um vídeo de boneco-palito pronto.**<br>\nRoteiro, locução, legendas e som · 14 estilos testados · Para Claude Code, Codex e mais',
+        '**Mande uma mensagem para seu agente de IA e receba um vídeo de boneco-palito pronto.**<br>\nRoteiro, locução, legendas e som · 15 estilos testados · Para Claude Code, Codex e mais',
         '💬 Uma mensagem → ✅ Aprove o roteiro e a prévia → 🎬 Vídeo pronto',
         '**Chega de sofrer no After Effects. Sem taxa de US$ 50/mês em SaaS. Poste todo dia sem esgotamento.**',
         '[Início Rápido](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)',
         '*⭐ Deixe uma estrela no projeto para acompanhar os próximos estilos e novidades.*'),
     'fr': ("**Industrialisez votre réseau de chaînes sans visage grâce à l'animation automatisée.**",
-        '**Un seul message à votre agent IA — et votre vidéo de bonshommes bâtons est prête.**<br>\nScript, voix off, sous-titres et son · 14 styles éprouvés · Pour Claude Code, Codex et plus',
+        '**Un seul message à votre agent IA — et votre vidéo de bonshommes bâtons est prête.**<br>\nScript, voix off, sous-titres et son · 15 styles éprouvés · Pour Claude Code, Codex et plus',
         '💬 Un message → ✅ Validez le script et l’aperçu → 🎬 Vidéo terminée',
         '**Oubliez les galères sur After Effects. Fini la taxe SaaS à 50 $/mois. Publiez quotidiennement sans épuisement.**',
         '[Démarrage](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Communauté](#community)',
         '*⭐ Ajoutez une étoile au projet pour ne manquer aucun nouveau style ni mise à jour.*'),
     'tr': ('**Yüzsüz kanal ağınızı otomatik çöp adam animasyonlarıyla ölçeklendirin.**',
-        '**Yapay zekâ ajanınıza tek bir mesaj gönderin, bitmiş çöp adam videonuzu alın.**<br>\nSenaryo, seslendirme, altyazı ve ses · Kanıtlanmış 14 stil · Claude Code, Codex ve dahası',
+        '**Yapay zekâ ajanınıza tek bir mesaj gönderin, bitmiş çöp adam videonuzu alın.**<br>\nSenaryo, seslendirme, altyazı ve ses · Kanıtlanmış 15 stil · Claude Code, Codex ve dahası',
         '💬 Tek mesaj → ✅ Senaryoyu ve önizlemeyi onaylayın → 🎬 Hazır video',
         "**Karmaşık After Effects kurgularına son. Aylık 50$'lık SaaS vergisi yok. Tükenmeden her gün yayınlayın.**",
         '[Hızlı Başlangıç](#quick-start) · [Vitrin](#style-gallery) · [SSS](#faq) · [Yol Haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)',
         '*⭐ Yeni stil güncellemelerini ve özellikleri kaçırmamak için projeye Star verin.*'),
     'id': ('**Skalakan jaringan channel tanpa wajah Anda dengan animasi stickman otomatis.**',
-        '**Kirim satu pesan ke agen AI Anda, dapatkan video stickman yang sudah jadi.**<br>\nNaskah, voiceover, subtitle & suara · 14 gaya teruji · Untuk Claude Code, Codex & lainnya',
+        '**Kirim satu pesan ke agen AI Anda, dapatkan video stickman yang sudah jadi.**<br>\nNaskah, voiceover, subtitle & suara · 15 gaya teruji · Untuk Claude Code, Codex & lainnya',
         '💬 Satu pesan → ✅ Setujui naskah & pratinjau → 🎬 Video jadi',
         '**Tanpa ribet animasi After Effects. Tanpa pajak langganan SaaS $50/bulan. Upload tiap hari tanpa burnout.**',
         '[Panduan Cepat](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Komunitas](#community)',
@@ -109,13 +109,15 @@ def verify_next_style_teasers(text, name, gallery_styles, label):
         assert not re.search(r"\b\d[\d,.\s]*\s*Stars?\b", visible_teaser, re.I), (name, series, "next-style teaser has no numeric Star unlock promise")
 
 expected_images = images(cn)
-assert len(expected_images) == 52 and len(set(expected_images)) == 39
+assert len(expected_images) == 55 and len(set(expected_images)) == 41
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 b6_previews = [
     pinned + "7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/" + filename
     for filename in ("b6-dynamic-meme-eiffel-16x9.gif", "b6-dynamic-meme-hong-kong-v90-20s.gif")
 ]
-local_a6_previews = {
+local_previews = {
+    "assets/readme/previews/style-8-graphic-novel.gif",
+    "assets/readme/previews/style-8-graphic-novel-2.gif",
     "assets/readme/previews/b7-pixel-theater.gif",
     "assets/readme/previews/b7-fast-forward-excerpt.gif",
     "assets/readme/previews/style-7-rubber-hose.gif",
@@ -131,7 +133,7 @@ local_a6_previews = {
 }
 for url in expected_images:
     if "/previews/" in url:
-        assert url in local_a6_previews or re.match(re.escape(pinned) + r"[a-f0-9]{40}/assets/readme/previews/[^/]+\.gif$", url)
+        assert url in local_previews or re.match(re.escape(pinned) + r"[a-f0-9]{40}/assets/readme/previews/[^/]+\.gif$", url)
         assert (root / "assets/readme/previews" / url.rsplit("/", 1)[1]).is_file(), url
 expected_anchors = anchors(cn)
 assert len(expected_anchors) == len(set(expected_anchors))
@@ -177,7 +179,7 @@ for name in selected:
     else:
         locale = name[7:-3]
         assert tuple(hero_blocks[index] for index in (3, 5, 6, 7, 8, 9)) == approved_localized_hero[locale], (name, "exact approved localized hero copy")
-    assert "14" in hero_blocks[5], (name, "actual published style count in introduction")
+    assert "15" in hero_blocks[5], (name, "actual published style count in introduction")
     assert hero_blocks[9].startswith(("⭐ *", "*⭐ ")) and hero_blocks[9].endswith("*"), (name, "italic Star CTA")
     assert "Styles-" not in top and "img.shields.io/badge/Styles" not in top, (name, "removed Styles badge")
     active = "en" if name == "README.md" else name[7:-3]
@@ -259,8 +261,8 @@ for name in selected:
     hero = text.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
     rows = re.findall(r"<tr>(.*?)</tr>", hero, re.S)
     gallery_styles = re.findall(r'href="#([^"]+)"><img', hero)
-    assert gallery_styles == ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 'a4', 'b4', 'style-5', 'b5', 'a6', 'b6', 'a7', 'b7'], name
-    # Owner rule: A1–A7 left, B1–B6 right; final B cell stays empty. No spanning rows.
+    assert gallery_styles == ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 'a4', 'b4', 'style-5', 'b5', 'a6', 'b6', 'a7', 'b7', 'a8'], name
+    # Owner rule: A1–A8 left, B1–B7 right; final B cell stays empty. No spanning rows.
     assert len(rows) == (len(gallery_styles) + 1) // 2, name
     assert all(row.count('<td width="50%"') == 2 for row in rows), name
     assert "colspan" not in hero and "rowspan" not in hero, name
@@ -270,7 +272,7 @@ for name in selected:
     if placeholders:
         assert placeholders == [cells[-1]] and "<img" in cells[-2], name
         assert not cells[-1].strip(), (name, "last B cell is empty")
-    assert text.count('width="90%"') == 14 and text.count('width="360"') == 28, name
+    assert text.count('width="90%"') == 15 and text.count('width="360"') == 30, name
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
     card_ids = ["a5" if style == "style-5" else style for style in gallery_styles]
@@ -294,10 +296,15 @@ for name in selected:
     assert "Tested Flow workflow:" not in text and "Click either GIF" not in text, name
     assert "Veo 3.1 Fast" not in a6, (name, "operational model guidance stays in Skill")
     assert "Omni" not in a6, (name, "A6 does not inherit the legacy model")
-    assert "14" in hero_blocks[5], (name, "fourteen published A+B visual styles")
-    placeholder = section(text, "a8", '<a id="b-styles"></a>')
-    assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1, (name, "A8 roadmap CTA retained")
-    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A8 and B8 update links plus roadmap navigation")
+    assert "15" in hero_blocks[5], (name, "fifteen published A+B visual styles")
+    a8 = section(text, "a8", '<a id="a9"></a>')
+    assert len(re.findall(r"^- \*\*", a8, re.M)) == 2, (name, "A8 highlights and use cases")
+    a8_videos = ["assets/readme/style-8-graphic-novel-2.mp4", "assets/readme/style-8-graphic-novel.mp4"]
+    assert re.findall(r'<a href="([^"]+\.mp4)">', a8) == a8_videos, (name, "A8 approved showcase pair")
+    assert all((root / video).is_file() for video in a8_videos), (name, "A8 videos exist")
+    placeholder = section(text, "a9", '<a id="b-styles"></a>')
+    assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1, (name, "A9 roadmap CTA retained")
+    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A9 and B8 update links plus roadmap navigation")
     b2 = section(text, "b2", '<!-- b3:section:start -->')
     assert len(re.findall(r"^- \*\*", b2, re.M)) == 2, (name, "B2 advantages and use cases")
     assert re.findall(r'<a href="([^"]+\.mp4)">', b2) == ["assets/readme/b2-colorful-sleep.mp4", "assets/readme/b2-colorful-phone-weather.mp4"], (name, "approved B2 pair in requested order")

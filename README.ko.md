@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **AI 에이전트에게 메시지 한 줄만 보내면, 완성된 스틱맨 영상이 돌아옵니다.**<br>
-대본·내레이션·자막·사운드까지 한 번에 · 검증된 14가지 스타일 · Claude Code, Codex 등 지원
+대본·내레이션·자막·사운드까지 한 번에 · 검증된 15가지 스타일 · Claude Code, Codex 등 지원
 
 💬 메시지 한 줄 → ✅ 대본과 미리보기 확인 → 🎬 완성 영상
 
@@ -102,6 +102,15 @@
 <a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · 픽셀 시어터" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
+</tr>
+<tr>
+<!-- a8:hero:start -->
+<td width="50%" align="center">
+<strong>지브리풍</strong><br>
+<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 지브리풍" width="90%"></a>
+</td>
+<!-- a8:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -375,7 +384,23 @@ A1, A2, A3… 순서로 추가하며, 각 스타일에 해당하는 애니메이
 
 <a id="a8"></a>
 
-### A8: 곧 공개…
+### A8: 지브리풍
+
+짙푸른 하늘과 바다, 높이 솟은 뭉게구름, 햇볕에 데워진 돌담이 밝은 손그림 세계를 펼쳐 보입니다. 바닷바람이 빨래를 흔들고 길가의 차양을 들추더니, 배달원의 어깨 가방에서 편지 한 통을 날려 버립니다. 이런 일상의 작은 순간에서 모험이 시작됩니다.
+
+- **시각적 특징**: 섬세한 과슈 배경과 선명한 색면, 햇빛이 만드는 또렷한 그림자가 셀 애니메이션처럼 평면적으로 채색한 인물을 돋보이게 합니다. 스틱맨은 단순한 둥근 얼굴에 눈은 점으로, 팔다리는 가는 선으로 그립니다.
+- **추천 소재**: 여행 이야기, 일상의 작은 모험, 일터 이야기, 상상력을 더한 생활 우화.
+
+| 샘플 1: 산속 공방 | 샘플 2: 해안가의 배달원 |
+|:---:|:---:|
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · 지브리풍 · 샘플 1: 산속 공방" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 지브리풍 · 샘플 2: 해안가의 배달원" width="360"></a> |
+| 넓은 산 풍경 · 바람과 밧줄 당기기 | 손으로 그린 해안 거리 · 자전거와 편지 잡기 |
+
+---
+
+<a id="a9"></a>
+
+### A9: 곧 공개…
 
 새로운 Model Engine 특화 스타일을 준비하고 있습니다. [프로젝트에 Star를 누르고](#road-to-10000-stars--creator-ecosystem) 앞으로의 업데이트를 확인해 주세요!
 

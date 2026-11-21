@@ -10,7 +10,7 @@
 ![Licence MIT](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Un seul message à votre agent IA — et votre vidéo de bonshommes bâtons est prête.**<br>
-Script, voix off, sous-titres et son · 14 styles éprouvés · Pour Claude Code, Codex et plus
+Script, voix off, sous-titres et son · 15 styles éprouvés · Pour Claude Code, Codex et plus
 
 💬 Un message → ✅ Validez le script et l’aperçu → 🎬 Vidéo terminée
 
@@ -102,6 +102,15 @@ Script, voix off, sous-titres et son · 14 styles éprouvés · Pour Claude Code
 <a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Théâtre pixel" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
+</tr>
+<tr>
+<!-- a8:hero:start -->
+<td width="50%" align="center">
+<strong>Inspiré de Ghibli</strong><br>
+<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspiré de Ghibli" width="90%"></a>
+</td>
+<!-- a8:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -375,7 +384,23 @@ Un personnage filiforme évolue dans des décors rétro finement dessinés. Gest
 
 <a id="a8"></a>
 
-### A8 : Bientôt disponible…
+### A8 : Inspiré de Ghibli
+
+Le bleu profond du ciel et de la mer, de grands cumulus et des murs de pierre chauffés par le soleil composent un monde lumineux peint à la main. La brise marine fait onduler le linge et soulève les auvents de la rue. Lorsqu’elle emporte une lettre de la sacoche du messager, une petite aventure naît de ces détails du quotidien.
+
+- **Points forts visuels** : Des décors finement peints à la gouache, des aplats de couleurs vives et des ombres nettes mettent en valeur les personnages, aux teintes unies comme dans l’animation sur celluloïd. Les personnages bâtons gardent leur tête ronde, leurs yeux en points et leurs membres tracés d’un trait fin.
+- **Idéal pour** : Récits de voyage, petites aventures du quotidien, histoires de métiers et fables teintées de fantaisie.
+
+| Démo 1 : L’atelier de montagne | Démo 2 : Le messager du littoral |
+|:---:|:---:|
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Inspiré de Ghibli · Démo 1 : L’atelier de montagne" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspiré de Ghibli · Démo 2 : Le messager du littoral" width="360"></a> |
+| Panorama de montagne · Vent et manipulation des cordes | Ruelles côtières peintes · Vélo et lettre rattrapée |
+
+---
+
+<a id="a9"></a>
+
+### A9 : Bientôt disponible…
 
 De nouveaux styles spécialisés pour Model Engine sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour suivre les prochaines mises à jour !
 

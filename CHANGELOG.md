@@ -6,6 +6,12 @@
 >
 > Older entries keep the mode names used at the time: **A · Director** is now **A · Model Engine**, and **B · Autopilot** is now **B · Code Engine**.
 
+## 2026-11-21 — A8 Studio Ghibli Style (v2026.11.21)
+
+- Added A8 to the Model Engine, with production guidance, standalone prompts, and reference frames from the approved Flow clips.
+- Documented text-to-video for new scenes, frame handoffs for continuous shots, and checks for character integrity, motion, and visual consistency.
+- Published two showcase clips in the approved order: Mountain Workshop first, Coastal Courier second. Updated nine README files across eight languages, bringing the public gallery to 15 styles.
+
 ## 2026-11-18 — Code Engine rendering performance (v2026.11.18)
 
 - B1–B4 load artwork only for the active shot and write generated sound effects in chunks, reducing peak memory.

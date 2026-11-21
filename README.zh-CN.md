@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>
-脚本、配音、字幕与音效全包 · 14 款实操验证的画风 · 支持 Claude Code、Codex 等
+脚本、配音、字幕与音效全包 · 15 款实操验证的画风 · 支持 Claude Code、Codex 等
 
 💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片
 
@@ -102,6 +102,15 @@
 <a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · 像素剧场风" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
+</tr>
+<tr>
+<!-- a8:hero:start -->
+<td width="50%" align="center">
+<strong>吉卜力画风</strong><br>
+<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 吉卜力画风" width="90%"></a>
+</td>
+<!-- a8:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -375,7 +384,23 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 <a id="a8"></a>
 
-### A8：待更新…
+### A8：吉卜力画风
+
+湛蓝的海天、高耸的积云和晒暖的石墙，勾勒出明亮的手绘世界。海风吹动晾衣和街边棚布，也从信使的挎包里卷走一封信。一场小冒险就从这样的日常细节开始。
+
+- **视觉亮点**：细腻的水粉背景、饱满的色块和鲜明的日照阴影，衬出赛璐璐动画般的平涂人物。火柴人保留简洁的圆脸、点眼和细线四肢。
+- **适合内容**：旅途见闻、日常小冒险、职业故事，以及带一点奇想的生活寓言。
+
+| 样片 1：山地工坊 | 样片 2：海边信使 |
+|:---:|:---:|
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · 吉卜力画风 · 样片 1：山地工坊" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 吉卜力画风 · 样片 2：海边信使" width="360"></a> |
+| 山地工坊远景 · 风势与拉绳动作 | 彩绘海岸街景 · 骑行与接信 |
+
+---
+
+<a id="a9"></a>
+
+### A9：待更新…
 
 新的模型引擎画风正在准备中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，关注后续更新。
 
