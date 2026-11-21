@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Kirim satu pesan ke agen AI Anda, dapatkan video stickman yang sudah jadi.**<br>
-Naskah, voiceover, subtitle & suara · 14 gaya teruji · Untuk Claude Code, Codex & lainnya
+Naskah, voiceover, subtitle & suara · 15 gaya teruji · Untuk Claude Code, Codex & lainnya
 
 💬 Satu pesan → ✅ Setujui naskah & pratinjau → 🎬 Video jadi
 
@@ -102,6 +102,15 @@ Naskah, voiceover, subtitle & suara · 14 gaya teruji · Untuk Claude Code, Code
 <a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Teater Piksel" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
+</tr>
+<tr>
+<!-- a8:hero:start -->
+<td width="50%" align="center">
+<strong>Terinspirasi Ghibli</strong><br>
+<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Terinspirasi Ghibli" width="90%"></a>
+</td>
+<!-- a8:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -375,7 +384,23 @@ Figur stik bergaris tipis tampil di latar retro yang digambar dengan rinci. Gera
 
 <a id="a8"></a>
 
-### A8: Segera hadir…
+### A8: Terinspirasi Ghibli
+
+Langit dan laut yang biru pekat, awan kumulus yang menjulang, serta dinding batu yang dihangatkan matahari membentuk dunia cerah yang dilukis dengan tangan. Angin laut mengibaskan jemuran dan mengangkat kanopi di sepanjang jalan, lalu menerbangkan sepucuk surat dari tas selempang si kurir. Petualangan kecil pun berawal dari detail sehari-hari seperti ini.
+
+- **Ciri visual**: Latar yang dilukis dengan cat guas, bidang warna yang kaya, dan bayangan matahari yang tegas menonjolkan karakter dengan pewarnaan datar khas animasi sel. Tokoh stickman tetap sederhana dengan wajah bulat, mata berupa titik, serta lengan dan kaki dari garis tipis.
+- **Cocok untuk**: Kisah perjalanan, petualangan sehari-hari, cerita tentang pekerjaan, dan dongeng dengan sentuhan fantasi.
+
+| Contoh 1: Bengkel Pegunungan | Contoh 2: Kurir Pesisir |
+|:---:|:---:|
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Terinspirasi Ghibli · Contoh 1: Bengkel Pegunungan" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Terinspirasi Ghibli · Contoh 2: Kurir Pesisir" width="360"></a> |
+| Pemandangan pegunungan · Angin dan tarikan tali | Jalan pesisir yang dilukis · Bersepeda dan menangkap surat |
+
+---
+
+<a id="a9"></a>
+
+### A9: Segera hadir…
 
 Gaya Model Engine yang baru sedang disiapkan. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk mengikuti pembaruan selanjutnya!
 

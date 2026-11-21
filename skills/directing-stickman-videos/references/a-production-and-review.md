@@ -1,4 +1,4 @@
-# A1–A7 · Model Engine production and review
+# Model Engine production and review
 
 Use this contract with the [unified A workflow](mode-execution-boundaries.md#a-unified-workflow) and the selected style's drawing, reference, voice and acceptance rules. It carries A7's successful production method across A1–A6 without replacing their identities or making A7's character, palette, music or story universal. It applies to both prompt handoff and authorized finished-video production; ordinary chat does not need production tools to deliver a plan and prompts.
 
@@ -85,12 +85,13 @@ For a new finished film, inspect the complete final sequence at normal speed wit
 
 Repair only the affected prompt, source range, shot, cut, caption or sound section. Preserve accepted parts, frozen character/style locks and approved audio; recheck the repair and adjacent joins. Review the changed final assembly before claiming it passed. **An explicitly user-confirmed showcase or test is directly reusable as the accepted baseline; do not reopen it for duplicate analysis, regeneration or external upload.** A new story, ratio or output needs evidence for its new portions, not a copied pass from that baseline. Scope, budget and publication permissions remain those already authorized by the user.
 
-## Apply across A1–A7
+## Apply across A styles
 
 | Style | Retain its own contract while using this workflow |
 |---|---|
 | A7 | Reuse its validated fixed character/drawing blocks and reference-material route; variable scenes and timed performances remain story-specific. Keep its accepted samples. |
 | A1 | Keep the frozen minimalist figure, hollow head, current-pose limb rules and accent restrictions; preserve action/effect density without changing its identity. |
+| A8 | Start from text prompts. For continuous action in the same scene, use the last approved frame of the retained range as the next clip's start frame. See the [A8 production guide](a8-production-guide.md) for new scenes and optional character references. Verify face, anatomy, contact, cast continuity and expressive motion in the retained source footage, then check the assembled join. |
 | A2 | Keep the selected character, palette and flat/cinematic variant; adapt actions and locations without merging variants or importing A7 anatomy. |
 | A3 | Keep its prehistoric character, scene, comedy and voice rules; arrange gags and reactions by the actual story duration. |
 | A4 | Keep its character anchor, 2D scenery and intentional location changes; group generation clips independently from edited scenes. |

@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **AIエージェントにひと言送るだけで、完成した棒人間動画が届く。**<br>
-台本・音声・字幕・効果音までおまかせ · 実戦検証済みの14画風 · Claude Code・Codex 対応
+台本・音声・字幕・効果音までおまかせ · 実戦検証済みの15画風 · Claude Code・Codex 対応
 
 💬 ひと言送る → ✅ 台本とプレビューを確認 → 🎬 完成動画
 
@@ -102,6 +102,15 @@
 <a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · ピクセルシアター" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
+</tr>
+<tr>
+<!-- a8:hero:start -->
+<td width="50%" align="center">
+<strong>ジブリ風</strong><br>
+<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · ジブリ風" width="90%"></a>
+</td>
+<!-- a8:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -375,7 +384,23 @@ A1、A2、A3…の順に追加し、各画風に対応するアニメーショ�
 
 <a id="a8"></a>
 
-### A8：近日公開…
+### A8：ジブリ風
+
+鮮やかな青の空と海、そびえる積雲、日差しで温まった石壁が、明るい手描きの世界を彩ります。潮風が洗濯物を揺らし、通りの日よけを持ち上げ、配達人の肩掛けかばんから手紙を一通さらっていきます。そんな日常のひとこまから、小さな冒険が始まります。
+
+- **画面の見どころ**：ガッシュで描いたきめ細かな背景、鮮やかな色面、日差しが落とすくっきりした影に、セルアニメのようなベタ塗りの人物が映えます。棒人間は丸い顔、点で描いた目、細い線の手足でシンプルに描きます。
+- **向いている題材**：旅の話、日常の小さな冒険、仕事の物語、少し不思議な生活の寓話。
+
+| サンプル 1：山の工房 | サンプル 2：海辺の配達人 |
+|:---:|:---:|
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · ジブリ風 · サンプル 1：山の工房" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · ジブリ風 · サンプル 2：海辺の配達人" width="360"></a> |
+| 山の遠景 · 風とロープを引く動作 | 手描きの海辺の街 · 自転車で手紙をキャッチ |
+
+---
+
+<a id="a9"></a>
+
+### A9：近日公開…
 
 新しい Model Engine の特化型スタイルを準備中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、今後の更新をチェックしてください！
 

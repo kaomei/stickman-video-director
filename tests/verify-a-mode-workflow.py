@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check active A1–A7 workflow migration without rewriting historical samples.
+"""Check active A1–A8 workflow migration without rewriting historical samples.
 
 Static instruction checks are not fresh generated-video or live-agent tests.
 Use --scope a for the public-baseline A-only pending package; default scope
@@ -32,9 +32,10 @@ def require(text, terms, label):
 entry = (skill / 'SKILL.md').read_text()
 routes = ('a1-a5-direction.md', 'amber-noir.md', 'rubber-hose.md',
           'a7-prompt-contract.md', 'a7-acceptance.md',
+          'a8-production-guide.md', 'a8-summer-two-roles-prompts.md',
           'mode-execution-boundaries.md', 'a-production-and-review.md',
           'a-audio-timeline-and-review.md')
-require(entry, routes, 'A1–A7 installed entry routes')
+require(entry, routes, 'A1–A8 installed entry routes')
 direction = read('a1-a5-direction.md')
 for style in range(1, 6):
     assert f'Style {style}' in direction, f'A{style} route missing'
@@ -103,6 +104,16 @@ require(read('a6-finishing.md'), ('Independent narration', 'Puck',
 for name in ('a7-prompt-contract.md', 'a7-acceptance.md'):
     require(read(name), ('a-audio-timeline-and-review.md',), f'{name} shared audio')
 
+a8_entry = next(line for line in entry.splitlines() if line.startswith('- **A8 ·'))
+require(a8_entry, ('Start in text-to-video', 'last approved frame', 'Keep programmatic drawings out'),
+        'A8 source generation')
+a8_guide = read('a8-production-guide.md')
+require(a8_guide, ('原始素材验收', '身体连接', '穿模与接触', '多人一致性', '画风一致性',
+                   '成片验收'), 'A8 acceptance')
+for filename in ('coastal-courier-style.jpg', 'mountain-workshop-style.jpg'):
+    assert f'../assets/a8/{filename}' in a8_guide and (skill / 'assets/a8' / filename).is_file()
+assert not re.search(r'references/a(?:9|10)[-/.]', entry), 'Unreleased A styles leaked'
+
 # A-only scope is a different approved baseline, not an exemption for B edits.
 # Freeze every B reference in that baseline; unrelated B welcome naming may
 # remain released wording. Pending B7–B10 stay outside the A-only entry.
@@ -120,7 +131,7 @@ assert hashlib.sha256(b_welcome.encode()).hexdigest() == expected['b_welcome_sha
 if args.scope == 'a':
     assert not re.search(r'references/b(?:7|8|9|10)[-/.]', entry), 'Unpublished B route leaked into A-only entry'
 
-print(f'[{args.scope}] A1–A7 routes, variable source/edit timing, complete A2 identity, independent audio and B boundary passed.')
+print(f'[{args.scope}] A1–A8 routes, variable source/edit timing, complete A2 identity, independent audio and B boundary passed.')
 print('Static policy checks only; historical approved media are preserved, not regenerated or re-audited.')
 
 if args.scope == "published":

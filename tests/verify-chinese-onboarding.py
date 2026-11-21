@@ -14,7 +14,7 @@ assert "[🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md)" in cn
 assert (root / "README.fr.md").is_file(), "French navigation must open a complete README"
 hero_copy = cn.split("</div>", 1)[0]
 assert "**用全自动火柴人动画，规模化量产你的无人出镜频道。**" in hero_copy
-assert '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 14 款实操验证的画风 · 支持 Claude Code、Codex 等' in hero_copy
+assert '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 15 款实操验证的画风 · 支持 Claude Code、Codex 等' in hero_copy
 assert '💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片' in hero_copy
 assert "**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**" in hero_copy
 assert "画风持续更新，适用于" not in hero_copy, "Keep the removed niche sentence out of the hero"
@@ -148,17 +148,17 @@ for requirement in ("**出片流程：**", "确认脚本和 20 秒有声样片�
     assert requirement in autopilot_notes, requirement
 assert len(re.findall(r"^- ", autopilot_notes, re.M)) == 2
 for label in ("A1：经典黑白风", "A2：现代潮酷风", "A3：史前洞穴风",
-              "A4：治愈故事风", "A5：历史卡通风", "A6：暖金暗影风", "A7：橡皮管动画风 · Rubber Hose Animation", "A8：待更新…", "B1：极简线稿风", "B2：彩色手绘风", "B3：复古电视风", "B4：求生短剧风", "B5：角色解说风", "B6：动感 Meme 风"):
+              "A4：治愈故事风", "A5：历史卡通风", "A6：暖金暗影风", "A7：橡皮管动画风 · Rubber Hose Animation", "A8：吉卜力画风", "A9：待更新…", "B1：极简线稿风", "B2：彩色手绘风", "B3：复古电视风", "B4：求生短剧风", "B5：角色解说风", "B6：动感 Meme 风"):
     assert f"### {label}\n" in cn, label
 hero = cn.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
-style_names = ("经典黑白风", "现代潮酷风", "史前洞穴风", "治愈故事风", "历史卡通风", "暖金暗影风", "橡皮管动画风")
+style_names = ("经典黑白风", "现代潮酷风", "史前洞穴风", "治愈故事风", "历史卡通风", "暖金暗影风", "橡皮管动画风", "吉卜力画风")
 b_style_names = [name for name in re.findall(r"^### B\d+：([^\n]+)$", cn, re.M)
                  if not name.startswith("待更新")]
-assert re.findall(r"<strong>([^<]+)</strong><br>", hero) == [item for pair in zip(list(style_names), b_style_names + [None]) for item in pair if item is not None], "A1–A7 left, B1–B6 right, final right cell empty"
+assert re.findall(r"<strong>([^<]+)</strong><br>", hero) == [item for pair in zip(list(style_names), b_style_names + [None]) for item in pair if item is not None], "A1–A8 left, B1–B7 right, final right cell empty"
 assert "<strong>极简线稿风</strong><br>" in hero, "Use the approved B1 preview in the sixth cell"
 assert re.findall(r'<a href="#([^"]+)"><img', hero)[:4] == ["a1", "b1", "a2", "b2"], "Link the first four previews directly to their style details"
 assert f"{len(style_names) + len(b_style_names)} 款实操验证的画风" in hero_copy
-assert "img.shields.io/badge/Styles" not in hero_copy and "**14 种画风" not in cn
+assert "img.shields.io/badge/Styles" not in hero_copy and not re.search(r"\*\*\d+ 种画风", cn)
 assert "种视觉方案" not in cn, "Count A+B styles once, not variants as a separate metric"
 assert re.search(r'<a href="#b1"><img src="([^"]+/b1-minimal-handdrawn\.gif)"[^>]+width="90%"></a>', hero), "Use B1 example 1 in the top gallery and keep its detail-section link"
 for number, name in enumerate(style_names, 1):
@@ -203,7 +203,9 @@ for link in re.findall(r"\]\(([^)]+)\)", cn):
         assert (root / link.split("#")[0]).is_file(), link
 
 previews = sorted(set(re.findall(r'src="(?:https://cdn\.jsdelivr\.net/gh/kaomei/stickman-video-director@[0-9a-f]{40}/)?(assets/readme/previews/[^" ]+\.gif)"', cn)))
-assert len(previews) == 29, "Keep the 27 published previews and append the approved B7 pair"
+assert len(previews) == 31, "Keep the 29 published previews and append the approved A8 pair"
+for filename in ("style-8-graphic-novel.gif", "style-8-graphic-novel-2.gif"):
+    assert f"assets/readme/previews/{filename}" in previews
 assert "assets/readme/previews/b5-character-explainer.gif" in previews
 assert "assets/readme/previews/b5-character-explainer-crazymei.gif" in previews
 assert "assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" in previews
@@ -212,15 +214,18 @@ for name in ("b4-dispatch", "b4-death-clock"):
     assert f"assets/readme/previews/{name}.gif" in previews
 for a6_name in ("flow", "mcp"):
     assert f"assets/readme/previews/style-6-amber-noir-{a6_name}.gif" in previews
+preview_budgets = {
+    "assets/readme/previews/style-7-rubber-hose.gif": 5_000_000,
+    "assets/readme/previews/style-7-rubber-hose-2.gif": 5_000_000,
+    "assets/readme/previews/style-8-graphic-novel-2.gif": 8_000_000,
+}
 for preview in previews:
     file = root / preview
     header = file.read_bytes()[:10]
     assert header[:6] in (b"GIF87a", b"GIF89a")
     width, height = struct.unpack("<HH", header[6:10])
     assert width <= 640 and height <= 360
-    # Preserve the approved A7 GIFs (4.42 MB / 4.02 MB); older preview budgets stay unchanged.
-    a7_previews = {"assets/readme/previews/style-7-rubber-hose.gif", "assets/readme/previews/style-7-rubber-hose-2.gif"}
-    assert file.stat().st_size < (5_000_000 if preview in a7_previews else 4_000_000)
+    assert file.stat().st_size < preview_budgets.get(preview, 4_000_000), preview
 b1 = cn.split('<a id="b1"></a>', 1)[1].split('<a id="b2"></a>', 1)[0]
 assert "点击动图，查看或下载有声样片。" not in cn, "Owner requested no repeated GIF-click helper copy"
 assert re.search(r'src="([^"]+/b1-minimal-handdrawn\.gif)"', hero).group(1) == re.search(r'src="([^"]+/b1-minimal-handdrawn\.gif)"', b1).group(1), "Reuse the immutable B1 example 1 preview in the top gallery"

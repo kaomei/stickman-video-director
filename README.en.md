@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Send your AI agent one message — get back a finished stickman video.**<br>
-Script, voiceover, captions & sound · 14 battle-tested styles · For Claude Code, Codex & more
+Script, voiceover, captions & sound · 15 battle-tested styles · For Claude Code, Codex & more
 
 💬 One message → ✅ Approve script & preview → 🎬 Finished video
 
@@ -102,6 +102,15 @@ Script, voiceover, captions & sound · 14 battle-tested styles · For Claude Cod
 <a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Pixel Theater" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
+</tr>
+<tr>
+<!-- a8:hero:start -->
+<td width="50%" align="center">
+<strong>Studio Ghibli Style</strong><br>
+<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli Style" width="90%"></a>
+</td>
+<!-- a8:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -375,7 +384,23 @@ A fine-line stickman steps into richly drawn vintage scenery, turning everyday m
 
 <a id="a8"></a>
 
-### A8: Coming soon…
+### A8: Studio Ghibli Style
+
+Deep blue skies and seas, towering clouds, and sun-warmed stone walls set the scene for these hand-painted adventures. A sea breeze ripples the laundry and lifts the awnings. When a letter flies out of a messenger’s satchel, an ordinary ride turns into a little adventure.
+
+- **The look**: Textured gouache backgrounds, rich blocks of color, and crisp shadows frame stick figures drawn in the flat colors of traditional cel animation. Round heads, dot eyes, and thin ink-line limbs keep the figures simple.
+- **Made for**: Travel stories, everyday adventures, stories about working life, and fables with a touch of whimsy.
+
+| Demo 1: Mountain Workshop | Demo 2: Seaside Messenger |
+|:---:|:---:|
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Studio Ghibli Style · Demo 1: Mountain Workshop" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli Style · Demo 2: Seaside Messenger" width="360"></a> |
+| Wide mountain views · Wind and rope work | Painted coastal streets · Cycling and catching a letter |
+
+---
+
+<a id="a9"></a>
+
+### A9: Coming soon…
 
 New Model Engine styles are in preparation. [Star the project](#road-to-10000-stars--creator-ecosystem) to follow future updates.
 

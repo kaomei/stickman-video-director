@@ -10,7 +10,7 @@
 ![MIT Lisansı](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Yapay zekâ ajanınıza tek bir mesaj gönderin, bitmiş çöp adam videonuzu alın.**<br>
-Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 14 stil · Claude Code, Codex ve dahası
+Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 15 stil · Claude Code, Codex ve dahası
 
 💬 Tek mesaj → ✅ Senaryoyu ve önizlemeyi onaylayın → 🎬 Hazır video
 
@@ -102,6 +102,15 @@ Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 14 stil · Claude Code, 
 <a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Piksel Tiyatrosu" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
+</tr>
+<tr>
+<!-- a8:hero:start -->
+<td width="50%" align="center">
+<strong>Ghibli Esintili</strong><br>
+<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Ghibli Esintili" width="90%"></a>
+</td>
+<!-- a8:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -375,7 +384,23 @@ Uyandığınızda her şey on bin kat ucuzlamış olsa? Görsel ilham, YouTube�
 
 <a id="a8"></a>
 
-### A8: Yakında…
+### A8: Ghibli Esintili
+
+Masmavi gökyüzü ve deniz, yükselen kümülüs bulutları ve güneşin ısıttığı taş duvarlar, elle boyanmış aydınlık bir dünya kurar. Denizden esen rüzgâr çamaşırları dalgalandırır, sokaktaki tenteleri kaldırır ve kuryenin omuz çantasından bir mektubu uçurur. Küçük bir macera, gündelik hayatın bu ayrıntılarından doğar.
+
+- **Görsel özellikler**: İncelikle boyanmış guaj fonlar, doygun renk alanları ve güneşin düşürdüğü belirgin gölgeler, klasik selüloit animasyonundaki gibi düz renklerle boyanan karakterleri öne çıkarır. Çöp adamların yüzleri yuvarlaktır, gözleri noktayla, kolları ve bacakları ince çizgilerle gösterilir.
+- **Uygun içerikler**: Gezi hikâyeleri, gündelik maceralar, meslek öyküleri ve biraz hayal gücüyle anlatılan masallar.
+
+| Örnek 1: Dağ Atölyesi | Örnek 2: Sahil Kuryesi |
+|:---:|:---:|
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Ghibli Esintili · Örnek 1: Dağ Atölyesi" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Ghibli Esintili · Örnek 2: Sahil Kuryesi" width="360"></a> |
+| Geniş dağ manzarası · Rüzgâr ve ip çekme | Boyalı sahil sokakları · Bisiklet ve havada yakalanan mektup |
+
+---
+
+<a id="a9"></a>
+
+### A9: Yakında…
 
 Model Engine için yeni stiller hazırlanıyor. [Projeye yıldız verin](#road-to-10000-stars--creator-ecosystem) ve gelecek güncellemeleri takip edin!
 

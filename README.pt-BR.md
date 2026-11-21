@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Mande uma mensagem para seu agente de IA e receba um vídeo de boneco-palito pronto.**<br>
-Roteiro, locução, legendas e som · 14 estilos testados · Para Claude Code, Codex e mais
+Roteiro, locução, legendas e som · 15 estilos testados · Para Claude Code, Codex e mais
 
 💬 Uma mensagem → ✅ Aprove o roteiro e a prévia → 🎬 Vídeo pronto
 
@@ -102,6 +102,15 @@ Roteiro, locução, legendas e som · 14 estilos testados · Para Claude Code, C
 <a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · Teatro pixel" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
+</tr>
+<tr>
+<!-- a8:hero:start -->
+<td width="50%" align="center">
+<strong>Inspirado no Ghibli</strong><br>
+<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspirado no Ghibli" width="90%"></a>
+</td>
+<!-- a8:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -375,7 +384,23 @@ Um boneco de traços finos entra em cenários retrô desenhados com cuidado. Ges
 
 <a id="a8"></a>
 
-### A8: Em breve…
+### A8: Inspirado no Ghibli
+
+O azul intenso do céu e do mar, as nuvens altas e os muros de pedra aquecidos pelo sol compõem um mundo luminoso pintado à mão. A brisa do mar balança as roupas no varal e levanta os toldos da rua. Quando uma carta voa da bolsa a tiracolo do mensageiro, um detalhe do cotidiano dá início a uma pequena aventura.
+
+- **Destaques visuais**: Cenários pintados em guache com riqueza de detalhes, blocos de cor vibrantes e sombras bem definidas destacam os personagens de cores chapadas, típicos da animação em acetato. Os bonecos-palito mantêm a cabeça redonda, olhos feitos de pontinhos e braços e pernas de traço fino.
+- **Ideal para**: Histórias de viagem, pequenas aventuras do cotidiano, histórias sobre profissões e fábulas com um toque de fantasia.
+
+| Amostra 1: Oficina na Montanha | Amostra 2: Mensageiro à Beira-Mar |
+|:---:|:---:|
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Inspirado no Ghibli · Amostra 1: Oficina na Montanha" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspirado no Ghibli · Amostra 2: Mensageiro à Beira-Mar" width="360"></a> |
+| Vista das montanhas · Vento e movimento das cordas | Ruas litorâneas pintadas · Pedalada e carta apanhada no ar |
+
+---
+
+<a id="a9"></a>
+
+### A9: Em breve…
 
 Novos estilos especializados para Model Engine estão em preparação. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) e acompanhe as próximas atualizações!
 
