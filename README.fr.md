@@ -107,7 +107,7 @@ Script, voix off, sous-titres et son · 15 styles éprouvés · Pour Claude Code
 <!-- a8:hero:start -->
 <td width="50%" align="center">
 <strong>Inspiré de Ghibli</strong><br>
-<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspiré de Ghibli" width="90%"></a>
+<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspiré de Ghibli" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
 <td width="50%" align="center"></td>
@@ -393,7 +393,7 @@ Le bleu profond du ciel et de la mer, de grands cumulus et des murs de pierre ch
 
 | Démo 1 : L’atelier de montagne | Démo 2 : Le messager du littoral |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Inspiré de Ghibli · Démo 1 : L’atelier de montagne" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspiré de Ghibli · Démo 2 : Le messager du littoral" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Inspiré de Ghibli · Démo 1 : L’atelier de montagne" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspiré de Ghibli · Démo 2 : Le messager du littoral" width="360"></a> |
 | Panorama de montagne · Vent et manipulation des cordes | Ruelles côtières peintes · Vélo et lettre rattrapée |
 
 ---

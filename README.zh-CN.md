@@ -107,7 +107,7 @@
 <!-- a8:hero:start -->
 <td width="50%" align="center">
 <strong>吉卜力画风</strong><br>
-<a href="#a8"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 吉卜力画风" width="90%"></a>
+<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 吉卜力画风" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
 <td width="50%" align="center"></td>
@@ -393,7 +393,7 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 | 样片 1：山地工坊 | 样片 2：海边信使 |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · 吉卜力画风 · 样片 1：山地工坊" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 吉卜力画风 · 样片 2：海边信使" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · 吉卜力画风 · 样片 1：山地工坊" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 吉卜力画风 · 样片 2：海边信使" width="360"></a> |
 | 山地工坊远景 · 风势与拉绳动作 | 彩绘海岸街景 · 骑行与接信 |
 
 ---
