@@ -4,6 +4,8 @@ Use this contract only after explicit approval of the current Phase A. Follow th
 
 The filename is retained for compatibility; it does not select a model. Record the actual chosen platform/model and supported settings when known. For prompt-only handoff, label unverified settings as targets. Do not assume Omni Flash, a universal clip length, 720p or a selectable frame rate. An authorized representative trial uses the selected model’s lowest available supported resolution; final resolution and total credit cap, including repairs, are confirmed before continuous full production. Reuse valid prior approvals.
 
+Style 1 (Classic Minimalist, Light and Dark): use the [A1 default prompt structure](a1-prompt-structure.md) for character-led flat 2D action, continuity, and the final beat. Use its beat and device guidance for A1 visual action sequences.
+
 Style 3 (Prehistoric Hand-Drawn / Dark Comedy): read `prehistoric-dark-comedy.md` and apply its override rules. Repeat the full approved cast descriptions for all visible roles, white filled heads, expressive cartoon faces, hair/clothing, earthy setting and layout in every prompt. Do not apply generic face/hair/texture bans or idle bans to its deliberate reaction beats. Use story-appropriate music instead of mandatory piano. Explicitly identify intended time jumps; otherwise match adjacent states. Technical output specs are targets, not guarantees of interface capabilities.
 
 Style 4 (Cozy Storytelling / 治愈故事风): read `cozy-storytelling.md`. Repeat the full character anchor, with the approved setting for each narrative scene; add the full approved voice block only when requesting native speech. Keep an external narrator's profile in its separate synthesis plan. Make a planned location change recognizable, then connect action/prop/screen direction or a named time cut. A technical generation split does not require a new setting or another establishing shot. Do not repeat one global room layout, inherit Style 1's no-face/filled-body bans, or require hand-drawn/paper aesthetics. Keep movable-object appearance separate from initial positions and timed state changes.
@@ -26,7 +28,7 @@ State the chosen aspect ratio (`16:9` or `9:16`), target duration, selected visu
 
 ## Standalone prompt order
 
-Write every prompt in this order:
+For Style 1, use the A1 structure in the standalone prompt with continuity and first/last frame details in its timed sequence. Keep the production package above for all styles. For Styles 2–5, use this order with the selected style’s overrides:
 
 1. Output specification: source ID, approved generated duration, retained range(s) mapped to the final edited timeline, and chosen aspect ratio (`16:9` or `9:16`); state supported resolution/audio/frame-rate settings only when verified, keeping trial and final output settings distinct. If a desired runtime differs from the tool’s available duration, name the generated duration and planned trim instead of rounding the whole film
 2. Environment and background definition:

@@ -40,6 +40,8 @@ Topic approval, schedule pressure, or approval of an older draft is not approval
 
 ## Output rules
 
+For Style 1 Light and Dark, use the [A1 default prompt structure](a1-prompt-structure.md). Build visual changes from the figure’s actions and give the ending an active payoff or handoff. Choose timing and props to serve the action. The generic device-count and discussion-ending rules below do not apply to A1 visual action sequences.
+
 For Style 3, read `prehistoric-dark-comedy.md` before planning. Its casting, story rhythm, palette and continuity rules override the generic no-idle, device-count and five-stage discussion-ending rules below. Use setup → escalation → ironic payoff for narrative shorts; do not force a discussion question into a visual punchline. This is a visual storytelling style, not a claim about actual prehistory.
 
 For Style 4, read `cozy-storytelling.md` before planning and prompt assembly. Default each new planned narrative segment to a different recognizable story setting, unless the user explicitly requests one location or approves a deliberate return. Preserve characters, drawing grammar, important props, movement direction and narrator—not an identical table or background across the whole video. Name the location cuts and any time jumps in Phase A. This is full-color cartoon storytelling, not a hand-drawn/sketchbook mode and not a claim of photorealistic 3D backgrounds.

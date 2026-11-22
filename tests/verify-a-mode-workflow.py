@@ -36,6 +36,11 @@ routes = ('a1-a5-direction.md', 'amber-noir.md', 'rubber-hose.md',
           'mode-execution-boundaries.md', 'a-production-and-review.md',
           'a-audio-timeline-and-review.md')
 require(entry, routes, 'A1–A8 installed entry routes')
+a1_a5_entry = next(line for line in entry.splitlines() if ' / A1–A5:**' in line)
+require(a1_a5_entry, ('[A1 Classic prompt structure](references/a1-prompt-structure.md)',
+                     '[A4 Cozy Storytelling](references/cozy-storytelling.md)',
+                     '[A5 Historical Cartoon](references/historical-cartoon.md)'),
+        'A1, A4 and A5 style routing')
 direction = read('a1-a5-direction.md')
 for style in range(1, 6):
     assert f'Style {style}' in direction, f'A{style} route missing'
