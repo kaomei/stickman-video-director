@@ -742,6 +742,11 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
   - Stickman AI Studio 출시 — 오픈소스 데스크톱 앱: 대본을 붙여 넣고 스타일을 고른 뒤, 비주얼 타임라인에서 장면마다 미리 보고 조정해 렌더링. 터미널 불필요
   - 더 많은 놀라움, 함께 기대해요~
 
+**공개 예정 스타일**
+
+- **B9 · Whiteboard Animation** — 영감을 준 YouTube 채널 [@abettermind](https://www.youtube.com/@abettermind) (**구독자 약 4만 명**)
+- **B10 · Slice of Life**
+
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
   <picture>

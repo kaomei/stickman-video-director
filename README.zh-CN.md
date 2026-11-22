@@ -742,6 +742,11 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
   - 推出 Stickman AI 视频工作台——开源桌面应用：粘贴脚本、选择画风，在可视化时间线上预览和调整每个镜头，然后渲染成片，无需使用终端
   - 更多惊喜，一起期待吧～
 
+**后续画风预告**
+
+- **B9 · 白板图解风（Whiteboard Animation）** — 画风灵感来自 YouTube [@abettermind](https://www.youtube.com/@abettermind)（**约 4 万订阅者**）
+- **B10 · 生活哲思风（Slice of Life）**
+
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
   <picture>

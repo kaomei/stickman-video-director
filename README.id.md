@@ -742,6 +742,11 @@ Anda tidak perlu menulis kode sendiri atau membeli GPU kelas atas. Mode A dapat 
   - Peluncuran Stickman AI Studio — aplikasi desktop open source: tempel naskah, pilih gaya, pratinjau dan sesuaikan setiap adegan di linimasa visual, lalu render. Tanpa terminal
   - Kejutan lainnya menanti — yuk, kita nantikan bersama
 
+**Gaya yang akan hadir**
+
+- **B9 · Whiteboard Animation** — Terinspirasi kanal YouTube [@abettermind](https://www.youtube.com/@abettermind) (**sekitar 40 ribu subscriber**)
+- **B10 · Slice of Life**
+
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
   <picture>

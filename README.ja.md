@@ -742,6 +742,11 @@ Memeらしい大げさな表情、ラフな手描き線、柔らかな色彩で�
   - Stickman AI Studioを公開 — オープンソースのデスクトップアプリ。台本を貼り付けて画風を選び、ビジュアルタイムラインで各シーンをプレビュー・調整してレンダリング。ターミナル不要
   - これからのサプライズも、一緒に楽しみにしましょう～
 
+**今後公開予定のスタイル**
+
+- **B9 · Whiteboard Animation** — [@abettermind](https://www.youtube.com/@abettermind)（**登録者約4万人**）に着想を得ています
+- **B10 · Slice of Life**
+
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
   <picture>
