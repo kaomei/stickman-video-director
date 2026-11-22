@@ -227,7 +227,7 @@ Berikan struktur cerita, arah desain suara, dan storyboard terlebih dahulu;
 setelah saya menyetujuinya, berikan prompt pembuatan video per adegan yang dapat digunakan secara mandiri.
 ```
 
-- **Alur produksi:** Setelah storyboard disetujui, Anda dapat membuat video secara manual atau meminta agen mengoperasikan browser bawaan. Uji dahulu dengan resolusi rendah; jika hasilnya sesuai, lanjutkan produksi dan penyuntingan hingga menjadi video utuh.
+- **Alur produksi:** Setelah storyboard disetujui, Anda dapat membuat video secara manual atau meminta agen mengoperasikan browser bawaan. Uji dahulu dengan resolusi rendah; jika hasilnya sesuai, lanjutkan produksi dan penyuntingan hingga menjadi video utuh. Klip yang dihasilkan adalah bahan untuk penyuntingan, bukan berarti satu klip harus menjadi satu shot utuh dalam video akhir. Tentukan durasinya sesuai cerita dan kemampuan model, lalu pangkas, bagi, dan gabungkan klip saat menyunting.
 - **Platform yang disarankan:** Gunakan Google Flow agar hasilnya lebih mendekati contoh. Untuk produksi pertama, lihat [tutorial lengkap di X](https://x.com/CrazyKaomei/status/2102311241046008268).
 
 <a id="autopilot-start"></a>

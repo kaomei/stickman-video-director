@@ -227,7 +227,7 @@ Model Engine(A 모드)을 사용해 다음 주제/원고를 스틱맨 영상으�
 제가 승인한 후, 장면별로 독립적으로 사용할 수 있는 영상 생성 프롬프트를 제공해 주세요.
 ```
 
-- **제작 과정:** 스토리보드 승인 후 직접 생성하거나, 에이전트가 내장 브라우저로 조작하도록 할 수 있습니다. 먼저 저해상도로 테스트하고, 결과가 만족스러우면 제작과 편집을 이어갑니다.
+- **제작 과정:** 스토리보드 승인 후 직접 생성하거나, 에이전트가 내장 브라우저로 조작하도록 할 수 있습니다. 먼저 저해상도로 테스트하고, 결과가 만족스러우면 제작과 편집을 이어갑니다. 생성한 클립은 편집에 사용할 영상 소스이므로 완성본의 한 쇼트와 일대일로 대응할 필요는 없습니다. 이야기와 모델의 기능에 맞춰 길이를 정하고, 편집 과정에서 필요한 부분을 잘라 나누거나 이어 붙입니다.
 - **추천 플랫폼:** 샘플과 비슷한 결과를 원한다면 Google Flow를 권장합니다. 처음 제작할 때는 [X 상세 튜토리얼](https://x.com/CrazyKaomei/status/2102311241046008268)을 참고하세요.
 
 <a id="autopilot-start"></a>
@@ -391,9 +391,9 @@ A1, A2, A3… 순서로 추가하며, 각 스타일에 해당하는 애니메이
 - **시각적 특징**: 섬세한 과슈 배경과 선명한 색면, 햇빛이 만드는 또렷한 그림자가 셀 애니메이션처럼 평면적으로 채색한 인물을 돋보이게 합니다. 스틱맨은 단순한 둥근 얼굴에 눈은 점으로, 팔다리는 가는 선으로 그립니다.
 - **추천 소재**: 여행 이야기, 일상의 작은 모험, 일터 이야기, 상상력을 더한 생활 우화.
 
-| 샘플 1: 산속 공방 | 샘플 2: 해안가의 배달원 |
+| 예시 1: 산속 공방 | 예시 2: 해안가의 배달원 |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · 지브리풍 · 샘플 1: 산속 공방" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 지브리풍 · 샘플 2: 해안가의 배달원" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · 지브리풍 · 예시 1: 산속 공방" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 지브리풍 · 예시 2: 해안가의 배달원" width="360"></a> |
 | 넓은 산 풍경 · 바람과 밧줄 당기기 | 손으로 그린 해안 거리 · 자전거와 편지 잡기 |
 
 ---

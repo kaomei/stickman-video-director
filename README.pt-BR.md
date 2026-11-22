@@ -227,7 +227,7 @@ Primeiro, apresente a estrutura da história, a direção sonora e o storyboard;
 após minha aprovação, forneça prompts de geração de vídeo que possam ser usados de forma independente para cada trecho.
 ```
 
-- **Produção:** Após aprovar o storyboard, você pode gerar as cenas manualmente ou deixar um agente operar pelo navegador integrado (primeiro faça um teste em baixa resolução; com o resultado aprovado, ele continua a produção e a edição do vídeo final).
+- **Produção:** Após aprovar o storyboard, você pode gerar as cenas manualmente ou deixar um agente operar pelo navegador integrado (primeiro faça um teste em baixa resolução; com o resultado aprovado, ele continua a produção e a edição do vídeo final). Um clipe gerado é material para edição, não necessariamente um único plano do vídeo final. A duração depende da história e dos recursos do modelo; depois, os clipes podem ser aparados, divididos e combinados na edição.
 - **Plataforma recomendada:** Recomendamos o Google Flow para se aproximar do resultado dos exemplos; para o primeiro vídeo, consulte o [tutorial detalhado no X](https://x.com/CrazyKaomei/status/2102311241046008268).
 
 <a id="autopilot-start"></a>
@@ -391,9 +391,9 @@ O azul intenso do céu e do mar, as nuvens altas e os muros de pedra aquecidos p
 - **Destaques visuais**: Cenários pintados em guache com riqueza de detalhes, blocos de cor vibrantes e sombras bem definidas destacam os personagens de cores chapadas, típicos da animação em acetato. Os bonecos-palito mantêm a cabeça redonda, olhos feitos de pontinhos e braços e pernas de traço fino.
 - **Ideal para**: Histórias de viagem, pequenas aventuras do cotidiano, histórias sobre profissões e fábulas com um toque de fantasia.
 
-| Amostra 1: Oficina na Montanha | Amostra 2: Mensageiro à Beira-Mar |
+| Exemplo 1: Oficina na Montanha | Exemplo 2: Mensageiro à Beira-Mar |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Inspirado no Ghibli · Amostra 1: Oficina na Montanha" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspirado no Ghibli · Amostra 2: Mensageiro à Beira-Mar" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Inspirado no Ghibli · Exemplo 1: Oficina na Montanha" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspirado no Ghibli · Exemplo 2: Mensageiro à Beira-Mar" width="360"></a> |
 | Vista das montanhas · Vento e movimento das cordas | Ruas litorâneas pintadas · Pedalada e carta apanhada no ar |
 
 ---
