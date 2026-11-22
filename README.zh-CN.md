@@ -25,66 +25,66 @@
 <table width="100%">
 <tr>
 <td width="50%" align="center">
-<strong>经典黑白风</strong><br>
+<b>A1-</b><strong>经典黑白风</strong><br>
 <a href="#a1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/dark-theme-demo.gif" alt="经典黑白风火柴人动画：黑底白线、动态科普" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>极简线稿风</strong><br>
+<b>B1-</b><strong>极简线稿风</strong><br>
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="极简线稿风火柴人视频：生动角色、重点文字与微动画" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>现代潮酷风</strong><br>
+<b>A2-</b><strong>现代潮酷风</strong><br>
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="现代潮酷风火柴人动画：红帽角色、科技光效" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>彩色手绘风</strong><br>
+<b>B2-</b><strong>彩色手绘风</strong><br>
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="彩色手绘风：安静的卧室与沿河漂走的念头" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>史前洞穴风</strong><br>
+<b>A3-</b><strong>史前洞穴风</strong><br>
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@f1e7992ade7de1b31bf520cd264e375334009be9/assets/readme/previews/style-3-demo.gif" alt="史前洞穴风火柴人动画：洞穴故事、反转短片" width="90%"></a>
 </td>
 <!-- b3:hero:start -->
 <td width="50%" align="center">
-<strong>复古电视风</strong><br>
+<b>B3-</b><strong>复古电视风</strong><br>
 <a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="复古电视风凌晨三点电视悬疑短片，圆润白色角色" width="90%"></a>
 </td>
 <!-- b3:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>治愈故事风</strong><br>
+<b>A4-</b><strong>治愈故事风</strong><br>
 <a href="#a4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="治愈故事风火柴人动画：彩色场景、生活共鸣" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>求生短剧风</strong><br>
+<b>B4-</b><strong>求生短剧风</strong><br>
 <a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · 求生短剧风" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>历史卡通风</strong><br>
+<b>A5-</b><strong>历史卡通风</strong><br>
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="历史卡通风火柴人动画：江户日本的武士故事" width="90%"></a>
 </td>
 <!-- b5:hero:start -->
 <td width="50%" align="center">
-<strong>角色解说风</strong><br>
+<b>B5-</b><strong>角色解说风</strong><br>
 <a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 角色解说：为什么不愿开口求助，个性主讲人与火柴人小剧场" width="90%"></a>
 </td>
 <!-- b5:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>暖金暗影风</strong><br>
+<b>A6-</b><strong>暖金暗影风</strong><br>
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="暖金暗影风火柴人动画：暖光与深邃暗影中的城市，主角身穿橙色连帽衫" width="90%"></a>
 </td>
 <!-- b6:hero:start -->
 <td width="50%" align="center">
-<strong>动感 Meme 风</strong><br>
+<b>B6-</b><strong>动感 Meme 风</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · 动感 Meme 风" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
@@ -92,7 +92,7 @@
 <tr>
 <!-- a7:hero:start -->
 <td width="50%" align="center">
-<strong>橡皮管动画风</strong><br>
+<b>A7-</b><strong>橡皮管动画风</strong><br>
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · 橡皮管动画风" width="90%"></a>
 </td>
 <!-- a7:hero:end -->
@@ -106,7 +106,7 @@
 <tr>
 <!-- a8:hero:start -->
 <td width="50%" align="center">
-<strong>吉卜力画风</strong><br>
+<b>A8-</b><strong>吉卜力画风</strong><br>
 <a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 吉卜力画风" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
