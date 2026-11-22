@@ -25,66 +25,66 @@ Roteiro, locução, legendas e som · 15 estilos testados · Para Claude Code, C
 <table width="100%">
 <tr>
 <td width="50%" align="center">
-<strong>Preto e branco clássico</strong><br>
+<b>A1-</b><strong>Preto e branco clássico</strong><br>
 <a href="#a1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/dark-theme-demo.gif" alt="Animação clássica com bonecos de palito brancos sobre fundo preto" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Traço minimalista</strong><br>
+<b>B1-</b><strong>Traço minimalista</strong><br>
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Vídeo em desenho à mão minimalista com bonecos expressivos, texto em destaque e microanimações" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>Pop moderno</strong><br>
+<b>A2-</b><strong>Pop moderno</strong><br>
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="Boneco de palito de gorro vermelho em cenário tecnológico moderno" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Desenho à mão colorido</strong><br>
+<b>B2-</b><strong>Desenho à mão colorido</strong><br>
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Vídeo de bonecos de palito em desenho colorido: um quarto tranquilo e um pensamento seguindo o rio" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>Cavernas pré-históricas</strong><br>
+<b>A3-</b><strong>Cavernas pré-históricas</strong><br>
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@f1e7992ade7de1b31bf520cd264e375334009be9/assets/readme/previews/style-3-demo.gif" alt="História pré-histórica com bonecos de palito e uma virada cômica" width="90%"></a>
 </td>
 <!-- b3:hero:start -->
 <td width="50%" align="center">
-<strong>Estilo TV retrô</strong><br>
+<b>B3-</b><strong>Estilo TV retrô</strong><br>
 <a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="Mistério fictício da TV às 3 da manhã com personagens brancos arredondados" width="90%"></a>
 </td>
 <!-- b3:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>Histórias acolhedoras</strong><br>
+<b>A4-</b><strong>Histórias acolhedoras</strong><br>
 <a href="#a4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="Personagens expressivos em um cenário cotidiano colorido" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Suspense de sobrevivência</strong><br>
+<b>B4-</b><strong>Suspense de sobrevivência</strong><br>
 <a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Suspense de sobrevivência" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>Cartoon histórico</strong><br>
+<b>A5-</b><strong>Cartoon histórico</strong><br>
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="Animação histórica com bonecos de palito no Japão do período Edo" width="90%"></a>
 </td>
 <!-- b5:hero:start -->
 <td width="50%" align="center">
-<strong>Explicação com personagem</strong><br>
+<b>B5-</b><strong>Explicação com personagem</strong><br>
 <a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 sobre pedir ajuda, com apresentador animado e bonecos-palito expressivos" width="90%"></a>
 </td>
 <!-- b5:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>Amber Noir</strong><br>
+<b>A6-</b><strong>Amber Noir</strong><br>
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Animação stickman Amber Noir: personagem de moletom laranja em uma cidade com luz quente e sombras profundas" width="90%"></a>
 </td>
 <!-- b6:hero:start -->
 <td width="50%" align="center">
-<strong>Meme Story Animation</strong><br>
+<b>B6-</b><strong>Meme Story Animation</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Meme Story Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
@@ -92,7 +92,7 @@ Roteiro, locução, legendas e som · 15 estilos testados · Para Claude Code, C
 <tr>
 <!-- a7:hero:start -->
 <td width="50%" align="center">
-<strong>Rubber Hose Animation</strong><br>
+<b>A7-</b><strong>Rubber Hose Animation</strong><br>
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
 </td>
 <!-- a7:hero:end -->
@@ -106,7 +106,7 @@ Roteiro, locução, legendas e som · 15 estilos testados · Para Claude Code, C
 <tr>
 <!-- a8:hero:start -->
 <td width="50%" align="center">
-<strong>Inspirado no Ghibli</strong><br>
+<b>A8-</b><strong>Inspirado no Ghibli</strong><br>
 <a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspirado no Ghibli" width="90%"></a>
 </td>
 <!-- a8:hero:end -->

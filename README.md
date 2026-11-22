@@ -25,66 +25,66 @@ Script, voiceover, captions & sound · 15 battle-tested styles · For Claude Cod
 <table width="100%">
 <tr>
 <td width="50%" align="center">
-<strong>Classic Black & White</strong><br>
+<b>A1-</b><strong>Classic Black & White</strong><br>
 <a href="#a1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/dark-theme-demo.gif" alt="Classic black-and-white stickman animation: white lines on black for dynamic explainers" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Minimal Line Art</strong><br>
+<b>B1-</b><strong>Minimal Line Art</strong><br>
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="Minimal hand-drawn stickman video: expressive characters, key text, and subtle animation" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>Modern Pop</strong><br>
+<b>A2-</b><strong>Modern Pop</strong><br>
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="Modern pop stickman animation: red-beanie character with tech lighting" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Colorful Hand-Drawn</strong><br>
+<b>B2-</b><strong>Colorful Hand-Drawn</strong><br>
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="Colorful hand-drawn stickman video: a quiet bedroom and a thought drifting along a river" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>Prehistoric Cave</strong><br>
+<b>A3-</b><strong>Prehistoric Cave</strong><br>
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@f1e7992ade7de1b31bf520cd264e375334009be9/assets/readme/previews/style-3-demo.gif" alt="Prehistoric cave stickman animation: short cave stories with a twist" width="90%"></a>
 </td>
 <!-- b3:hero:start -->
 <td width="50%" align="center">
-<strong>Retro TV</strong><br>
+<b>B3-</b><strong>Retro TV</strong><br>
 <a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="retro TV-style fictional 3 AM television mystery with rounded white characters" width="90%"></a>
 </td>
 <!-- b3:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>Cozy Storytelling</strong><br>
+<b>A4-</b><strong>Cozy Storytelling</strong><br>
 <a href="#a4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="Cozy stickman storytelling: colorful everyday scenes and relatable moments" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>Survival Thriller</strong><br>
+<b>B4-</b><strong>Survival Thriller</strong><br>
 <a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · Survival Thriller" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>Historical Cartoon</strong><br>
+<b>A5-</b><strong>Historical Cartoon</strong><br>
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="Historical stickman cartoon: a samurai story in Edo Japan" width="90%"></a>
 </td>
 <!-- b5:hero:start -->
 <td width="50%" align="center">
-<strong>Avatar Explainer</strong><br>
+<b>B5-</b><strong>Avatar Explainer</strong><br>
 <a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5 explainer about asking for help, with a distinctive presenter and expressive stickmen" width="90%"></a>
 </td>
 <!-- b5:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>Amber Noir</strong><br>
+<b>A6-</b><strong>Amber Noir</strong><br>
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noir stickman animation: an orange-hoodie character in a warm-lit city with deep shadows" width="90%"></a>
 </td>
 <!-- b6:hero:start -->
 <td width="50%" align="center">
-<strong>Meme Story Animation</strong><br>
+<b>B6-</b><strong>Meme Story Animation</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Meme Story Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
@@ -92,7 +92,7 @@ Script, voiceover, captions & sound · 15 battle-tested styles · For Claude Cod
 <tr>
 <!-- a7:hero:start -->
 <td width="50%" align="center">
-<strong>Rubber Hose Animation</strong><br>
+<b>A7-</b><strong>Rubber Hose Animation</strong><br>
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · Rubber Hose Animation" width="90%"></a>
 </td>
 <!-- a7:hero:end -->
@@ -106,7 +106,7 @@ Script, voiceover, captions & sound · 15 battle-tested styles · For Claude Cod
 <tr>
 <!-- a8:hero:start -->
 <td width="50%" align="center">
-<strong>Studio Ghibli Style</strong><br>
+<b>A8-</b><strong>Studio Ghibli</strong><br>
 <a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli Style" width="90%"></a>
 </td>
 <!-- a8:hero:end -->

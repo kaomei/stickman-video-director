@@ -25,66 +25,66 @@
 <table width="100%">
 <tr>
 <td width="50%" align="center">
-<strong>クラシック白黒</strong><br>
+<b>A1-</b><strong>クラシック白黒</strong><br>
 <a href="#a1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/dark-theme-demo.gif" alt="クラシック白黒の棒人間アニメ：黒背景と白い線で伝える解説動画" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>ミニマル線画</strong><br>
+<b>B1-</b><strong>ミニマル線画</strong><br>
 <a href="#b1"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@fa0a68d1ccf9fd057230abab2af832f768debe86/assets/readme/previews/b1-minimal-handdrawn.gif" alt="ミニマル線画の棒人間動画：表情豊かなキャラクター、強調テキスト、部分アニメーション" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>モダンポップ</strong><br>
+<b>A2-</b><strong>モダンポップ</strong><br>
 <a href="#a2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-2a-demo.gif" alt="モダンポップの棒人間アニメ：赤いニット帽のキャラクターとテック系の光" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>カラフル手描き</strong><br>
+<b>B2-</b><strong>カラフル手描き</strong><br>
 <a href="#b2"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b2-colorful-sleep.gif" alt="カラフル手描きの棒人間動画：静かな寝室と川を流れる思い" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>原始時代・洞窟スタイル</strong><br>
+<b>A3-</b><strong>原始時代・洞窟スタイル</strong><br>
 <a href="#a3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@f1e7992ade7de1b31bf520cd264e375334009be9/assets/readme/previews/style-3-demo.gif" alt="原始時代の棒人間アニメ：洞窟を舞台にした意外なオチのある物語" width="90%"></a>
 </td>
 <!-- b3:hero:start -->
 <td width="50%" align="center">
-<strong>レトロテレビ風</strong><br>
+<b>B3-</b><strong>レトロテレビ風</strong><br>
 <a href="#b3"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b3-tv-night-signal.gif" alt="丸みのある白いキャラクターで描く午前3時のテレビ怪談" width="90%"></a>
 </td>
 <!-- b3:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>ほっとする日常ストーリー</strong><br>
+<b>A4-</b><strong>ほっとする日常ストーリー</strong><br>
 <a href="#a4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-4-cozy-cafe.gif" alt="日常を描く棒人間アニメ：彩りのある風景と共感できる小さな出来事" width="90%"></a>
 </td>
 <td width="50%" align="center">
-<strong>サバイバル・スリラー</strong><br>
+<b>B4-</b><strong>サバイバル・スリラー</strong><br>
 <a href="#b4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@eb24085d20aea0efe37c0862cfcd0516b57dadf7/assets/readme/previews/b4-dispatch.gif" alt="B4 · サバイバル・スリラー" width="90%"></a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>歴史カートゥーン</strong><br>
+<b>A5-</b><strong>歴史カートゥーン</strong><br>
 <a href="#style-5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@2697fac5e0466f44098148a52c9648697521b3d6/assets/readme/previews/style-5-japan-hero.gif" alt="歴史カートゥーンの棒人間アニメ：江戸時代の武士の物語" width="90%"></a>
 </td>
 <!-- b5:hero:start -->
 <td width="50%" align="center">
-<strong>キャラクター解説</strong><br>
+<b>B5-</b><strong>キャラクター解説</strong><br>
 <a href="#b5"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@e8e3ed7d67b15f2feac4daf021dc17a55af9e606/assets/readme/previews/b5-character-explainer.gif" alt="B5の助けを求める心理の解説。アニメの語り手と表情豊かな棒人間" width="90%"></a>
 </td>
 <!-- b5:hero:end -->
 </tr>
 <tr>
 <td width="50%" align="center">
-<strong>Amber Noir</strong><br>
+<b>A6-</b><strong>Amber Noir</strong><br>
 <a href="#a6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@828b865b37cbff61464b9c00e04bce79f79b3b5c/assets/readme/previews/style-6-amber-noir-flow.gif" alt="Amber Noirの棒人間アニメーション：暖かな街灯と深い影の街、オレンジのパーカーのキャラクター" width="90%"></a>
 </td>
 <!-- b6:hero:start -->
 <td width="50%" align="center">
-<strong>Meme Story Animation</strong><br>
+<b>B6-</b><strong>Meme Story Animation</strong><br>
 <a href="#b6"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/b6-dynamic-meme-eiffel-16x9.gif" alt="B6 · Meme Story Animation" width="90%"></a>
 </td>
 <!-- b6:hero:end -->
@@ -92,7 +92,7 @@
 <tr>
 <!-- a7:hero:start -->
 <td width="50%" align="center">
-<strong>ラバーホース・アニメーション</strong><br>
+<b>A7-</b><strong>ラバーホース・アニメーション</strong><br>
 <a href="#a7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@4e621f1f91abe012715df94fc44897d5a61777b0/assets/readme/previews/style-7-rubber-hose.gif" alt="A7 · ラバーホース・アニメーション" width="90%"></a>
 </td>
 <!-- a7:hero:end -->
@@ -106,7 +106,7 @@
 <tr>
 <!-- a8:hero:start -->
 <td width="50%" align="center">
-<strong>ジブリ風</strong><br>
+<b>A8-</b><strong>ジブリ風</strong><br>
 <a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · ジブリ風" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
