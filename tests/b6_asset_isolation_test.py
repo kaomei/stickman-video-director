@@ -8,7 +8,7 @@ from types import SimpleNamespace
 import hashlib, importlib.util, json, shutil, subprocess, sys, tempfile, unittest
 from PIL import Image
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[1] / 'skills/directing-stickman-videos'
 spec=importlib.util.spec_from_file_location('b6_isolation_runtime',ROOT/'scripts/b6_production.py')
 runtime=importlib.util.module_from_spec(spec);spec.loader.exec_module(runtime)
 

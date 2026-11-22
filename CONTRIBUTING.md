@@ -71,6 +71,7 @@ bash tests/verify-readmes.sh && bash tests/verify-classic-character.sh
 Runtime tests:
 
 ```bash
+python3 tests/b6_asset_isolation_test.py
 cd skills/directing-stickman-videos && npm test
 ```
 
