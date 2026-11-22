@@ -6,6 +6,11 @@
 >
 > Older entries keep the mode names used at the time: **A · Director** is now **A · Model Engine**, and **B · Autopilot** is now **B · Code Engine**.
 
+## 2026-11-22 — Installation fixes (v2026.11.22)
+
+- Code Engine diagnostics report missing `sharp` and `canvas` dependencies on a fresh checkout.
+- Moved developer test fixtures and original audio source-page captures out of the Skill install directory. The installed audio library still includes license records and credits for offline use.
+
 ## 2026-11-21 — A8 Studio Ghibli Style (v2026.11.21)
 
 - Added A8 to the Model Engine, with production guidance, standalone prompts, and reference frames from the approved Flow clips.

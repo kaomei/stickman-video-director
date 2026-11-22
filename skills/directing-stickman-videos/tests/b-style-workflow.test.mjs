@@ -22,6 +22,21 @@ function temporary(t) {
   t.after(() => fs.rmSync(dir, {recursive: true, force: true}));
   return dir;
 }
+
+test('doctor reports missing native dependencies before npm install', t => {
+  const dir = temporary(t);
+  const scripts = path.join(dir, 'scripts');
+  fs.cpSync(path.join(ROOT, 'scripts'), scripts, {recursive: true});
+  const result = spawnSync(process.execPath, [path.join(scripts, 'autopilot.mjs'), 'doctor'], {
+    cwd: dir, encoding: 'utf8', timeout: 30000, env: {...process.env, NODE_PATH: ''}
+  });
+  assert.equal(result.status, 1, result.error?.message || result.stderr);
+  const {checks} = JSON.parse(result.stdout);
+  assert.equal(checks.node, true);
+  assert.equal(checks.sharp, false);
+  assert.equal(checks.canvas, false);
+});
+
 function cli(cwd, ...args) {
   return spawnSync(process.execPath, [CLI, ...args], {
     cwd, encoding: 'utf8', timeout: 30000, maxBuffer: 1024 * 1024,
