@@ -98,7 +98,7 @@
 <!-- a7:hero:end -->
 <!-- b7:hero:start -->
 <td width="50%" align="center">
-<strong>픽셀 시어터</strong><br>
+<b>B7-</b><strong>픽셀 시어터</strong><br>
 <a href="#b7"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@d3eab432397d65e7cb72c83f2f35f11216cd5af8/assets/readme/previews/b7-pixel-theater.gif" alt="B7 · 픽셀 시어터" width="90%"></a>
 </td>
 <!-- b7:hero:end -->
