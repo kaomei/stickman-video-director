@@ -742,6 +742,11 @@ Kendiniz kod yazmanız veya üst düzey bir GPU satın almanız gerekmez. A modu
   - Stickman AI Studio’nun açılışı — açık kaynaklı bir masaüstü uygulaması: senaryoyu yapıştırın, stili seçin, her sahneyi görsel zaman çizelgesinde önizleyip düzenleyin ve render alın. Terminal gerekmez
   - Daha fazla sürpriz yolda — birlikte heyecanla bekleyelim
 
+**Yakında gelecek stiller**
+
+- **B9 · Whiteboard Animation** — İlham kaynağı olan YouTube kanalı [@abettermind](https://www.youtube.com/@abettermind) (**yaklaşık 40 bin abone**)
+- **B10 · Slice of Life**
+
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
   <picture>

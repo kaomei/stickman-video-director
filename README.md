@@ -742,6 +742,11 @@ You don’t need to write code yourself or buy a high-end GPU. In Model Engine (
   - Stickman AI Studio — an open-source desktop app: paste a script, pick a style, preview and tweak every scene on a visual timeline, then render. No terminal needed.
   - More surprises ahead — let’s discover them together
 
+**Upcoming styles**
+
+- **B9 · Whiteboard Animation** — Inspired by YouTube channel [@abettermind](https://www.youtube.com/@abettermind) (**about 40K subscribers**)
+- **B10 · Slice of Life**
+
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
   <picture>
