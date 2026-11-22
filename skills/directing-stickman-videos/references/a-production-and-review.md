@@ -53,6 +53,12 @@ Change locations, props, acting, framing and transitions to express the new stor
 
 Configure captions, narration, lyrics, music, SFX and ambience from the approved project brief and style defaults. Record enabled and intentionally omitted elements explicitly. A showcase song, lyrics or voice is not automatically required or licensed for the next project. Keep semantic subtitle phrasing, actual speech timing, readable typography and the selected style's text rules in every language.
 
+### Reference images and first frames
+
+- **New scene from text.** Repeat the full approved character and style anchors in the standalone prompt, then describe the new setting, opening composition and action. Use text alone where the selected style supports it. Follow any style-specific reference requirements.
+- **Drawing or character reference.** Choose an approved still that clearly shows the traits to carry over. Tell the model which traits to retain, such as proportions, line weight or background treatment, and describe the new scene separately. Attach the image through the platform’s reference input when available, and record the image and its role in the generation plan. If only a start-frame input is available, use it only when the image is also the intended opening composition.
+- **First-frame conditioning.** For a direct continuation, take the last approved frame that will remain in the edit and attach it as the next clip’s first frame. Specify the carried pose, grip, prop state, camera axis and screen direction, plus the motion that should continue. When a first frame is used to open a new scene, choose an approved image showing that scene’s intended opening state. Use an end-frame input only when a deliberate arrival pose or composition is needed and the tool supports it. Check the generated opening and the actual cut for continuity.
+
 ## Continuous execution and recovery
 
 After the existing storyboard, representative-test and production-setting gates are satisfied, continue all authorized stages without per-clip reminders. Reuse equivalent approvals and accepted assets. Save a checkpoint at each completed batch, material change or blocker, including:
