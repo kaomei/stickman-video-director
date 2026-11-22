@@ -227,7 +227,7 @@ Propose d’abord la structure du récit, la direction sonore et un storyboard ;
 après mon approbation, fournis des prompts de génération vidéo utilisables indépendamment pour chaque séquence.
 ```
 
-- **Production :** Après validation du storyboard, générez les plans vous-même ou laissez un agent utiliser son navigateur intégré (testez d’abord en basse résolution ; une fois le résultat approuvé, il poursuit la production et le montage).
+- **Production :** Après validation du storyboard, générez les plans vous-même ou laissez un agent utiliser son navigateur intégré (testez d’abord en basse résolution ; une fois le résultat approuvé, il poursuit la production et le montage). Une séquence générée est un matériau de montage, pas nécessairement un seul plan du film final. Sa durée dépend du récit et des capacités du modèle ; elle peut ensuite être raccourcie, découpée ou assemblée avec d’autres séquences au montage.
 - **Plateforme recommandée :** Google Flow est recommandé pour se rapprocher du rendu des exemples ; pour votre première vidéo, consultez le [tutoriel détaillé sur X](https://x.com/CrazyKaomei/status/2102311241046008268).
 
 <a id="autopilot-start"></a>
@@ -391,9 +391,9 @@ Le bleu profond du ciel et de la mer, de grands cumulus et des murs de pierre ch
 - **Points forts visuels** : Des décors finement peints à la gouache, des aplats de couleurs vives et des ombres nettes mettent en valeur les personnages, aux teintes unies comme dans l’animation sur celluloïd. Les personnages bâtons gardent leur tête ronde, leurs yeux en points et leurs membres tracés d’un trait fin.
 - **Idéal pour** : Récits de voyage, petites aventures du quotidien, histoires de métiers et fables teintées de fantaisie.
 
-| Démo 1 : L’atelier de montagne | Démo 2 : Le messager du littoral |
+| Exemple 1 : L’atelier de montagne | Exemple 2 : Le messager du littoral |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Inspiré de Ghibli · Démo 1 : L’atelier de montagne" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspiré de Ghibli · Démo 2 : Le messager du littoral" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Inspiré de Ghibli · Exemple 1 : L’atelier de montagne" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspiré de Ghibli · Exemple 2 : Le messager du littoral" width="360"></a> |
 | Panorama de montagne · Vent et manipulation des cordes | Ruelles côtières peintes · Vélo et lettre rattrapée |
 
 ---

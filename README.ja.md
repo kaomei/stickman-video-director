@@ -227,7 +227,7 @@ Model Engine（Aモード）を使って、次のテーマ／文章を棒人間�
 私が承認した後、各シーンを単独で生成できる動画生成プロンプトを提供してください。
 ```
 
-- **制作の流れ：** 絵コンテの承認後は、自分で生成することも、エージェントに内蔵ブラウザで操作してもらうこともできます。まず低解像度で試作し、仕上がりに納得してから制作と編集を続けます。
+- **制作の流れ：** 絵コンテの承認後は、自分で生成することも、エージェントに内蔵ブラウザで操作してもらうこともできます。まず低解像度で試作し、仕上がりに納得してから制作と編集を続けます。 生成したクリップは編集用の素材であり、完成動画のワンショットと一対一で対応する必要はありません。長さは物語とモデルの機能に合わせ、編集時に切り分けたり、つなぎ合わせたりします。
 - **推奨プラットフォーム：** サンプルに近い仕上がりを目指すならGoogle Flowをおすすめします。初めての制作には[Xの詳しいチュートリアル](https://x.com/CrazyKaomei/status/2102311241046008268)も参考にしてください。
 
 <a id="autopilot-start"></a>
@@ -391,9 +391,9 @@ A1、A2、A3…の順に追加し、各画風に対応するアニメーショ�
 - **画面の見どころ**：ガッシュで描いたきめ細かな背景、鮮やかな色面、日差しが落とすくっきりした影に、セルアニメのようなベタ塗りの人物が映えます。棒人間は丸い顔、点で描いた目、細い線の手足でシンプルに描きます。
 - **向いている題材**：旅の話、日常の小さな冒険、仕事の物語、少し不思議な生活の寓話。
 
-| サンプル 1：山の工房 | サンプル 2：海辺の配達人 |
+| 作例1：山の工房 | 作例2：海辺の配達人 |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · ジブリ風 · サンプル 1：山の工房" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · ジブリ風 · サンプル 2：海辺の配達人" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · ジブリ風 · 作例1：山の工房" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · ジブリ風 · 作例2：海辺の配達人" width="360"></a> |
 | 山の遠景 · 風とロープを引く動作 | 手描きの海辺の街 · 自転車で手紙をキャッチ |
 
 ---

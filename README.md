@@ -107,7 +107,7 @@ Script, voiceover, captions & sound · 15 battle-tested styles · For Claude Cod
 <!-- a8:hero:start -->
 <td width="50%" align="center">
 <b>A8-</b><strong>Studio Ghibli</strong><br>
-<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli Style" width="90%"></a>
+<a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
 <td width="50%" align="center"></td>
@@ -227,7 +227,7 @@ First, give me a story outline, an audio plan, and a storyboard.
 After I approve them, provide self-contained video generation prompts for each scene.
 ```
 
-- **Production workflow:** After approving the storyboard, you can generate the clips manually or ask your agent to generate them using its browser tools. Start with a low-resolution test. Once you approve the result, your agent can handle the remaining clips and assemble the full video, adding captions and audio as needed.
+- **Production workflow:** After approving the storyboard, you can generate the clips manually or ask your agent to generate them using its browser tools. Start with a low-resolution test. Once you approve the result, your agent can handle the remaining clips and assemble the full video, adding captions and audio as needed. A generated clip is source footage, not necessarily one finished shot. Choose its length to suit the story and the model’s capabilities, then trim, split, and combine clips in the edit.
 - **Recommended platform:** Use Google Flow to get closer to the sample results. For your first video, see the [detailed tutorial on X](https://x.com/CrazyKaomei/status/2102311241046008268).
 
 <a id="autopilot-start"></a>
@@ -384,16 +384,16 @@ A fine-line stickman steps into richly drawn vintage scenery, turning everyday m
 
 <a id="a8"></a>
 
-### A8: Studio Ghibli Style
+### A8: Studio Ghibli
 
 Deep blue skies and seas, towering clouds, and sun-warmed stone walls set the scene for these hand-painted adventures. A sea breeze ripples the laundry and lifts the awnings. When a letter flies out of a messenger’s satchel, an ordinary ride turns into a little adventure.
 
 - **The look**: Textured gouache backgrounds, rich blocks of color, and crisp shadows frame stick figures drawn in the flat colors of traditional cel animation. Round heads, dot eyes, and thin ink-line limbs keep the figures simple.
 - **Made for**: Travel stories, everyday adventures, stories about working life, and fables with a touch of whimsy.
 
-| Demo 1: Mountain Workshop | Demo 2: Seaside Messenger |
+| Example 1: Mountain Workshop | Example 2: Seaside Messenger |
 |:---:|:---:|
-| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Studio Ghibli Style · Demo 1: Mountain Workshop" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli Style · Demo 2: Seaside Messenger" width="360"></a> |
+| <a href="assets/readme/style-8-graphic-novel-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel-2.gif" alt="A8 · Studio Ghibli · Example 1: Mountain Workshop" width="360"></a> | <a href="assets/readme/style-8-graphic-novel.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli · Example 2: Seaside Messenger" width="360"></a> |
 | Wide mountain views · Wind and rope work | Painted coastal streets · Cycling and catching a letter |
 
 ---

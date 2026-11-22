@@ -227,7 +227,7 @@ Gereksinimler: Yatay 16:9, A3 “Tarih Öncesi Mağara” stili; önce 30 saniye
 onayımdan sonra her sahne için bağımsız kullanılabilen video üretim istemlerini ver.
 ```
 
-- **Üretim akışı:** Çekim planını onayladıktan sonra videoları kendiniz üretebilir veya ajanın yerleşik tarayıcıyı kullanmasını isteyebilirsiniz. Önce düşük çözünürlükte bir deneme yapılır; sonuçtan memnun kaldığınızda üretim ve kurgu tamamlanır.
+- **Üretim akışı:** Çekim planını onayladıktan sonra videoları kendiniz üretebilir veya ajanın yerleşik tarayıcıyı kullanmasını isteyebilirsiniz. Önce düşük çözünürlükte bir deneme yapılır; sonuçtan memnun kaldığınızda üretim ve kurgu tamamlanır. Üretilen klip kurgu için kaynak görüntüdür; bitmiş videodaki tek bir planla bire bir eşleşmesi gerekmez. Süresini hikâyeye ve modelin olanaklarına göre belirleyin, ardından klipleri kurguda kırpın, bölün ve birleştirin.
 - **Önerilen platform:** Örneklere yaklaşmak için Google Flow önerilir. İlk üretiminizde [X'teki ayrıntılı rehbere](https://x.com/CrazyKaomei/status/2102311241046008268) bakabilirsiniz.
 
 <a id="autopilot-start"></a>
