@@ -16,7 +16,7 @@
 
 **面倒な動画編集・アニメ付けは不要。月額50ドルのSaaS税もゼロ。毎日投稿を、もっと楽に。**
 
-[クイックスタート](#quick-start) · [ショーケース](#style-gallery) · [FAQ](#faq) · [ロードマップ](#road-to-10000-stars--creator-ecosystem) · [コミュニティ](#community)
+[クイックスタート](#quick-start) · [Xのガイド](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [ロードマップ](#road-to-10000-stars--creator-ecosystem) · [コミュニティ](#community)
 
 *⭐ 次のスタイル追加や新機能を見逃さないよう、ぜひ Star をお願いします！*
 

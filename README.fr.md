@@ -16,7 +16,7 @@ Script, voix off, sous-titres et son · 15 styles éprouvés · Pour Claude Code
 
 **Oubliez les galères sur After Effects. Fini la taxe SaaS à 50 $/mois. Publiez quotidiennement sans épuisement.**
 
-[Démarrage](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Communauté](#community)
+[Démarrage](#quick-start) · [Guide sur X](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Communauté](#community)
 
 *⭐ Ajoutez une étoile au projet pour ne manquer aucun nouveau style ni mise à jour.*
 

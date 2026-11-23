@@ -16,7 +16,7 @@ Roteiro, locução, legendas e som · 15 estilos testados · Para Claude Code, C
 
 **Chega de sofrer no After Effects. Sem taxa de US$ 50/mês em SaaS. Poste todo dia sem esgotamento.**
 
-[Início Rápido](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)
+[Início Rápido](#quick-start) · [Guia no X](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)
 
 *⭐ Deixe uma estrela no projeto para acompanhar os próximos estilos e novidades.*
 

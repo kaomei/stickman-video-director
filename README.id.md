@@ -16,7 +16,7 @@ Naskah, voiceover, subtitle & suara · 15 gaya teruji · Untuk Claude Code, Code
 
 **Tanpa ribet animasi After Effects. Tanpa pajak langganan SaaS $50/bulan. Upload tiap hari tanpa burnout.**
 
-[Panduan Cepat](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Komunitas](#community)
+[Panduan Cepat](#quick-start) · [Panduan di X](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Komunitas](#community)
 
 *⭐ Berikan Star pada repositori ini untuk mendapatkan rilis gaya dan fitur terbaru.*
 

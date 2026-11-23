@@ -16,7 +16,7 @@ Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 15 stil · Claude Code, 
 
 **Karmaşık After Effects kurgularına son. Aylık 50$'lık SaaS vergisi yok. Tükenmeden her gün yayınlayın.**
 
-[Hızlı Başlangıç](#quick-start) · [Vitrin](#style-gallery) · [SSS](#faq) · [Yol Haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)
+[Hızlı Başlangıç](#quick-start) · [X’te Rehber](https://x.com/AveryRunsAI/status/2124444676937621723) · [SSS](#faq) · [Yol Haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)
 
 *⭐ Yeni stil güncellemelerini ve özellikleri kaçırmamak için projeye Star verin.*
 

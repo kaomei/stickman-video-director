@@ -16,7 +16,7 @@ Script, voiceover, captions & sound · 15 battle-tested styles · For Claude Cod
 
 **No After Effects. No $50/mo SaaS tax. Ship daily without burnout.**
 
-[Quickstart](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)
+[Quickstart](#quick-start) · [X Guide](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)
 
 ⭐ *Star the project to catch the next style drop and feature unlocks.*
 
