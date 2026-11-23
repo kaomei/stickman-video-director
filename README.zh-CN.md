@@ -16,7 +16,7 @@
 
 **告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**
 
-[快速上手](#quick-start) · [样片展厅](#style-gallery) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)
+[快速上手](#quick-start) · [X 教程](https://x.com/AveryRunsAI/status/2124444676937621723) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)
 
 *⭐ 欢迎点亮 Star，第一时间解锁最新画风与功能更新！*
 
