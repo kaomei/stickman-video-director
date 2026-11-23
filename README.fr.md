@@ -742,11 +742,6 @@ Vous n’avez pas besoin d’écrire du code vous-même ni d’acheter un GPU ha
   - Lancement de Stickman AI Studio — une application de bureau open source : collez un script, choisissez un style, prévisualisez et ajustez chaque scène sur une timeline visuelle, puis lancez le rendu. Aucun terminal nécessaire
   - D’autres surprises nous attendent — découvrons-les ensemble
 
-**Styles à venir**
-
-- **B9 · Whiteboard Animation** — Inspiré de la chaîne YouTube [@abettermind](https://www.youtube.com/@abettermind) (**environ 40 000 abonnés**)
-- **B10 · Slice of Life**
-
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
   <picture>

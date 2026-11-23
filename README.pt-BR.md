@@ -742,11 +742,6 @@ Você não precisa escrever código por conta própria nem comprar uma GPU de po
   - Lançamento do Stickman AI Studio — um app de desktop de código aberto: cole um roteiro, escolha um estilo, visualize e ajuste cada cena em uma linha do tempo visual e renderize. Sem terminal
   - Mais surpresas vêm por aí — vamos descobrir juntos
 
-**Próximos estilos**
-
-- **B9 · Whiteboard Animation** — Inspiração no canal do YouTube [@abettermind](https://www.youtube.com/@abettermind) (**cerca de 40 mil inscritos**)
-- **B10 · Slice of Life**
-
 <div align="center">
 <a href="https://www.star-history.com/?repos=kaomei%2Fstickman-video-director&amp;type=date">
   <picture>
