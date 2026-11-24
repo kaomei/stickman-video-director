@@ -1,0 +1,522 @@
+{
+  "schema_version": 1,
+  "scope": "Approved Midas R3 sample-only choreography. Not a story generator or proof that a new story is visually accepted.",
+  "source_project": "b8-midas-20s-20261112",
+  "approved_reference": {
+    "path": "output/v6-full-r3/midas-b8-r3-full-v1.mp4",
+    "sha256": "30a056a2c8c6aead01a0ef295eefaa475781f4421265df32e28d177a3dbc15de",
+    "duration_s": 20,
+    "resolution": [
+      1280,
+      720
+    ],
+    "fps": 60
+  },
+  "source_scripts": [
+    {
+      "path": "render_v6_full_r3.py",
+      "sha256": "bbb5ea9fc74c1ca70042144ea4e06c1977c08d86fde4199ef5549bde5c834f06"
+    },
+    {
+      "path": "render_v6_short_r3.py",
+      "sha256": "82bc1f42dca2f1b92ceec37bdaff6b66aff61e3dc0feaaf09fc6eae1b28cf0b0"
+    },
+    {
+      "path": "mix_v6_full_r3.py",
+      "sha256": "bebeb52b7623921a5bf9059c3f86382b42922cca9712cc4e8d2d2b373f3a692c"
+    }
+  ],
+  "no_font_binaries": true,
+  "audio_policy": "Existing full master, aligned full narration and raw Myrrdin recording copied exactly; no revoice, no speed changes, no paid calls. Audio rights status retained, not expanded.",
+  "files": [
+    {
+      "path": "backgrounds/garden.png",
+      "sha256": "2607eb659a01d4ad470a3c4a6d4cb996052624e3fed3bc52b3c442aff1dc3b65",
+      "source": "assets/v2/garden.png",
+      "source_sha256": "2607eb659a01d4ad470a3c4a6d4cb996052624e3fed3bc52b3c442aff1dc3b65",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "backgrounds/path.png",
+      "sha256": "db20ae709a56c473ace917c70456d43d1b0632cb854eeb8b930ba13db810eadb",
+      "source": "assets/v2/path.png",
+      "source_sha256": "db20ae709a56c473ace917c70456d43d1b0632cb854eeb8b930ba13db810eadb",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "backgrounds/palace.png",
+      "sha256": "b0066998fb8d87c7a516a2cdab4d5014243f9dc55ff26ae8c45306f5ed05ccce",
+      "source": "assets/palace.png",
+      "source_sha256": "b0066998fb8d87c7a516a2cdab4d5014243f9dc55ff26ae8c45306f5ed05ccce",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "backgrounds/hall.png",
+      "sha256": "a8c3d97988616ac84d85b8914400d26b3cc56d2e058808048285dd41f04b86ff",
+      "source": "assets/v4/banquet-hall.png",
+      "source_sha256": "a8c3d97988616ac84d85b8914400d26b3cc56d2e058808048285dd41f04b86ff",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "backgrounds/court.png",
+      "sha256": "8012ab80f2a7ed27e6b8e0febc7607ff9abd6b447b667022678e4ac0331c7a30",
+      "source": "assets/v4/courtyard.png",
+      "source_sha256": "8012ab80f2a7ed27e6b8e0febc7607ff9abd6b447b667022678e4ac0331c7a30",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "backgrounds/bread.png",
+      "sha256": "48625dcf698b7a9e1c26bc6c9ef82464512bc305ad1a4942cee9fd77e24a2afc",
+      "source": "assets/v6-full-r3/bread-clean-background-v1.png",
+      "source_sha256": "48625dcf698b7a9e1c26bc6c9ef82464512bc305ad1a4942cee9fd77e24a2afc",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "backgrounds/table.png",
+      "sha256": "f617d6287bf54ada6ac4997c28d8984ad6eb19d6d6bdd570ea75f3c6ba419448",
+      "source": "assets/v6-full-r3/table-clean-background-v1.png",
+      "source_sha256": "f617d6287bf54ada6ac4997c28d8984ad6eb19d6d6bdd570ea75f3c6ba419448",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/stone-hand.png",
+      "sha256": "63cd4244d27e13312153b58cd926242446c157bacea51715189b514b59aa740a",
+      "source": "assets/v6-full-r3/layers/stone-hand.png",
+      "source_sha256": "63cd4244d27e13312153b58cd926242446c157bacea51715189b514b59aa740a",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/stone-normal.png",
+      "sha256": "dc98e7dc0479a10b8177939c37f9237ea3007dba0ca130203f3e4de6d9054668",
+      "source": "assets/v6-full-r3/layers/stone-normal.png",
+      "source_sha256": "dc98e7dc0479a10b8177939c37f9237ea3007dba0ca130203f3e4de6d9054668",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/stone-gold-registered.png",
+      "sha256": "5bf7edcf9e34a738a4740c58a21544737d4cb6a4fac81f79b0508ad396ce1f8d",
+      "source": "assets/v6-full-r3/layers/stone-gold-registered.png",
+      "source_sha256": "5bf7edcf9e34a738a4740c58a21544737d4cb6a4fac81f79b0508ad396ce1f8d",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/bread-hand.png",
+      "sha256": "f907b800b5c9fb8bedddd0c908a902f3ddc580fa2d53ca7633c4f307fd2dfd92",
+      "source": "assets/v6-full-r3/layers/bread-hand.png",
+      "source_sha256": "f907b800b5c9fb8bedddd0c908a902f3ddc580fa2d53ca7633c4f307fd2dfd92",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/bread-normal.png",
+      "sha256": "077ec444d7683d9e1c6e86225ea62697969dbdca9a24113a2c37ee21cc1a5877",
+      "source": "assets/v6-full-r3/layers/bread-normal.png",
+      "source_sha256": "077ec444d7683d9e1c6e86225ea62697969dbdca9a24113a2c37ee21cc1a5877",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/bread-gold-registered.png",
+      "sha256": "484b131f46edb39e80daf45ea9c46c75ea8b503aa540a4c7e3408b39cebcdb64",
+      "source": "assets/v6-full-r3/layers/bread-gold-registered.png",
+      "source_sha256": "484b131f46edb39e80daf45ea9c46c75ea8b503aa540a4c7e3408b39cebcdb64",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/plate.png",
+      "sha256": "4df898b71e591718efd0d44c7fef6421b72462a720305962a09cec58ba92bfa5",
+      "source": "assets/v6-full-r3/layers/plate.png",
+      "source_sha256": "4df898b71e591718efd0d44c7fef6421b72462a720305962a09cec58ba92bfa5",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/worried-bust.png",
+      "sha256": "513e3e48025a4b64af8f1c5caee15161ade02636a527f82f6acc3f4cdaf31bdd",
+      "source": "assets/v6-full-r3/layers/worried-bust.png",
+      "source_sha256": "513e3e48025a4b64af8f1c5caee15161ade02636a527f82f6acc3f4cdaf31bdd",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/grapes.png",
+      "sha256": "762b6575e246d3963892b57b54dd0b9b1d5b4e0fce160988002e7d53872f2495",
+      "source": "assets/v6-full-r3/layers/grapes.png",
+      "source_sha256": "762b6575e246d3963892b57b54dd0b9b1d5b4e0fce160988002e7d53872f2495",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/wine-neutral.png",
+      "sha256": "9f2e3be643c8dbeabcc2a2d7bcbb1cd9bb51955dfc941690deb5406adfc5a6df",
+      "source": "assets/v6-full-r3/layers/wine-neutral.png",
+      "source_sha256": "9f2e3be643c8dbeabcc2a2d7bcbb1cd9bb51955dfc941690deb5406adfc5a6df",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/wine-surprise.png",
+      "sha256": "0dd113df6481829601664c42938639e07489e322b2f365b44812b88513c8e538",
+      "source": "assets/v6-full-r3/layers/wine-surprise.png",
+      "source_sha256": "0dd113df6481829601664c42938639e07489e322b2f365b44812b88513c8e538",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/wine-red-unit.png",
+      "sha256": "79f2037fe0cdaa64f74d53e6ec81dd118a628ac4ef60e51a0eaa56d632ea0959",
+      "source": "assets/v6-full-r3/layers/wine-red-unit.png",
+      "source_sha256": "79f2037fe0cdaa64f74d53e6ec81dd118a628ac4ef60e51a0eaa56d632ea0959",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/wine-gold-unit.png",
+      "sha256": "1f2d7af46c7265fbe6ce39ff50dc0dc3578a8d185d6c8057a51521abfcf076de",
+      "source": "assets/v6-full-r3/layers/wine-gold-unit.png",
+      "source_sha256": "1f2d7af46c7265fbe6ce39ff50dc0dc3578a8d185d6c8057a51521abfcf076de",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/cup-gold.png",
+      "sha256": "05fd1049ba6b86087f78a1ec0ed29191b46a23f8cc8a80b7feb9ab7a8615c36e",
+      "source": "assets/v6-full-r3/layers/cup-gold.png",
+      "source_sha256": "05fd1049ba6b86087f78a1ec0ed29191b46a23f8cc8a80b7feb9ab7a8615c36e",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/react-standing.png",
+      "sha256": "59427a1db77ba7c4cb5d169ddffd4405b90686da2b053463460cdda35be9e122",
+      "source": "assets/v6-full-r3/layers/react-standing.png",
+      "source_sha256": "59427a1db77ba7c4cb5d169ddffd4405b90686da2b053463460cdda35be9e122",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/table-grip.png",
+      "sha256": "2d4239ab45901e53d5a35f32621e0fc6f133e16c51e7811b6f83d503f615daba",
+      "source": "assets/v6-full-r3/layers/table-grip.png",
+      "source_sha256": "2d4239ab45901e53d5a35f32621e0fc6f133e16c51e7811b6f83d503f615daba",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/table-hover.png",
+      "sha256": "41a60405b134963204185117b597f5db2970628c781e279e1da10aa9c4bc6b1c",
+      "source": "assets/v6-full-r3/layers/table-hover.png",
+      "source_sha256": "41a60405b134963204185117b597f5db2970628c781e279e1da10aa9c4bc6b1c",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/table-palm.png",
+      "sha256": "2ca07ec29e3ba0e063bf40614f817dd0b39daa84a007c1ffb14b51fd1987c3ae",
+      "source": "assets/v6-full-r3/layers/table-palm.png",
+      "source_sha256": "2ca07ec29e3ba0e063bf40614f817dd0b39daa84a007c1ffb14b51fd1987c3ae",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/proud-bust.png",
+      "sha256": "a2f5d6a5e1ac0526d809ea780b2cba96ef9c2759a1f589548d941c0019d7b793",
+      "source": "assets/v6-full-r3/layers/proud-bust.png",
+      "source_sha256": "a2f5d6a5e1ac0526d809ea780b2cba96ef9c2759a1f589548d941c0019d7b793",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/dejected-bust.png",
+      "sha256": "bd1668ed52cc6d21e6861f8728dc3eca4cba857f06a8ad63b7cb62291746a3d6",
+      "source": "assets/v6-full-r3/layers/dejected-bust.png",
+      "source_sha256": "bd1668ed52cc6d21e6861f8728dc3eca4cba857f06a8ad63b7cb62291746a3d6",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/dinner-standing.png",
+      "sha256": "2125a7c49591dcb94c6707b3ce797bdbd79fa1a3e584d37b2869f472ca63e94a",
+      "source": "assets/v6-full-r3/layers/dinner-standing.png",
+      "source_sha256": "2125a7c49591dcb94c6707b3ce797bdbd79fa1a3e584d37b2869f472ca63e94a",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/rear-standing.png",
+      "sha256": "b32f25c91216b85974c09b32fc10ccd09429b7346e3335e5c0ba95fa34c65fc5",
+      "source": "assets/v6-full-r3/layers/rear-standing.png",
+      "source_sha256": "b32f25c91216b85974c09b32fc10ccd09429b7346e3335e5c0ba95fa34c65fc5",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/table-original.png",
+      "sha256": "5d1a46c6d74e9e967241464f801a1449099d57a0b72d01ed6770200568ab7d45",
+      "source": "assets/v6-full-r3/layers/table-original.png",
+      "source_sha256": "5d1a46c6d74e9e967241464f801a1449099d57a0b72d01ed6770200568ab7d45",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/cup-red-original.png",
+      "sha256": "d910c32c3cb2563979d26b8ab24f7c7e6e6e5df75a12e9e66ee2bf6c1cb1cb5a",
+      "source": "assets/v6-full-r3/layers/cup-red-original.png",
+      "source_sha256": "d910c32c3cb2563979d26b8ab24f7c7e6e6e5df75a12e9e66ee2bf6c1cb1cb5a",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "layers/wine-flow-material.png",
+      "sha256": "f119b576e692c18816359ef205c66979c530f038858bb98530ee63defadff784",
+      "source": "assets/v6-full-r3/layers/wine-flow-material.png",
+      "source_sha256": "f119b576e692c18816359ef205c66979c530f038858bb98530ee63defadff784",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "intro/twig-green.png",
+      "sha256": "dab6714bd4b240cb5749120e9082562ad394d7e92b660a34e290ce64ab176bac",
+      "source": "assets/v6-short-r3/twig-green.png",
+      "source_sha256": "dab6714bd4b240cb5749120e9082562ad394d7e92b660a34e290ce64ab176bac",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "intro/twig-gold.png",
+      "sha256": "12c5c4de1d5463683488c3e90e4c1b3272e7f64b007bd21ac6994e1f818c3b73",
+      "source": "assets/v6-short-r3/twig-gold.png",
+      "source_sha256": "12c5c4de1d5463683488c3e90e4c1b3272e7f64b007bd21ac6994e1f818c3b73",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "intro/hand-forearm.png",
+      "sha256": "bc9d04358aeeef25ca20f68fe4224637d036eaa4a3c22ab468456b29d0662748",
+      "source": "assets/v6-short-r3/hand-forearm.png",
+      "source_sha256": "bc9d04358aeeef25ca20f68fe4224637d036eaa4a3c22ab468456b29d0662748",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "intro/standing.png",
+      "sha256": "e7d82ad1aca62e13669a1d472264a62482709d26aecef3a2f1351556f2d52463",
+      "source": "assets/v6-short-r3/standing.png",
+      "source_sha256": "e7d82ad1aca62e13669a1d472264a62482709d26aecef3a2f1351556f2d52463",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "intro/surprised-bust.png",
+      "sha256": "9b64227845135601a23d29092cfd3d81d81fc0fbba9a5a5bf9a5f72ee0b401a9",
+      "source": "assets/v6-short-r3/surprised-bust.png",
+      "source_sha256": "9b64227845135601a23d29092cfd3d81d81fc0fbba9a5a5bf9a5f72ee0b401a9",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "intro/pleased-bust.png",
+      "sha256": "7a4c08c405d8b652a6533a7c8e89df6f0dadae339f8efc7c49f6f3d407bcce87",
+      "source": "assets/v6-short-r3/pleased-bust.png",
+      "source_sha256": "7a4c08c405d8b652a6533a7c8e89df6f0dadae339f8efc7c49f6f3d407bcce87",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "foreground/door-left.png",
+      "sha256": "be3c16d036847a8c216c124482abbac8c55e802a14aac98b45d9272f8040cf69",
+      "source": "preproduction-v6-20261113/keyposes-followup-r3-v1/scene-reactions-r3-v3.png",
+      "source_sha256": "5414ff822ab3c3da1a6592619fb15cd32a6321425a0c550d27f76313bf2bce2a",
+      "operation": "crop",
+      "box": [
+        843,
+        5,
+        932,
+        466
+      ]
+    },
+    {
+      "path": "foreground/door-right.png",
+      "sha256": "de0b5f8d52720f18fa6a7ff6dbb157aded8d02c17ff058b52e80e3b3426d0af9",
+      "source": "preproduction-v6-20261113/keyposes-followup-r3-v1/scene-reactions-r3-v3.png",
+      "source_sha256": "5414ff822ab3c3da1a6592619fb15cd32a6321425a0c550d27f76313bf2bce2a",
+      "operation": "crop",
+      "box": [
+        1588,
+        5,
+        1668,
+        466
+      ]
+    },
+    {
+      "path": "audio/master.wav",
+      "sha256": "49efaf6bc89ca22f509993c032b0239bf9e625649a32043e01c06fd0930a6d75",
+      "source": "audio/v6-full-r3/master.wav",
+      "source_sha256": "49efaf6bc89ca22f509993c032b0239bf9e625649a32043e01c06fd0930a6d75",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "audio/narration-unchanged.wav",
+      "sha256": "7d9f75e2e60dc7d62e5485770d1a78355a1b17e0356b1ebc2c5f02783638b789",
+      "source": "audio/stems/narration.wav",
+      "source_sha256": "7d9f75e2e60dc7d62e5485770d1a78355a1b17e0356b1ebc2c5f02783638b789",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "audio/myrrdin-original.mp3",
+      "sha256": "14236c47856fb34ae2e380684b232dce5e72e6127de3dc28d593727f43b0de52",
+      "source": "audio/myrrdin-raw.mp3",
+      "source_sha256": "14236c47856fb34ae2e380684b232dce5e72e6127de3dc28d593727f43b0de52",
+      "operation": "exact_copy"
+    },
+    {
+      "path": "captions/00-stroke.png",
+      "sha256": "3dd8bd3f1624d3cd174a395c7028c31c6523e9a51f7ffae91cd2b66320c1a7b3",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "King Midas turned everything he touched into gold.",
+      "stroke_width": 1
+    },
+    {
+      "path": "captions/00-fill.png",
+      "sha256": "9ecab752115e5e9fc98d3e09b6f76bb3b57c27f6610df0d8fe24f5555d4ba8cf",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "King Midas turned everything he touched into gold.",
+      "stroke_width": 0
+    },
+    {
+      "path": "captions/01-stroke.png",
+      "sha256": "fda584411051e4a7721a77ae0970e42d4deb2e728a9dca2da102334ceb73e634",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "A branch.",
+      "stroke_width": 1
+    },
+    {
+      "path": "captions/01-fill.png",
+      "sha256": "74987ef3295a11f41ae9d77a1197a9896e09cac95c88b10b498970084439d89f",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "A branch.",
+      "stroke_width": 0
+    },
+    {
+      "path": "captions/02-stroke.png",
+      "sha256": "d948f700ec51c46ae06cb79c929b383ab6ea926ec0f1ea51a5be706952352a0b",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "A stone.",
+      "stroke_width": 1
+    },
+    {
+      "path": "captions/02-fill.png",
+      "sha256": "3819cfc778bfea23beebe97359a0a74939806a719ef06c6a73304a249f3a3c2d",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "A stone.",
+      "stroke_width": 0
+    },
+    {
+      "path": "captions/03-stroke.png",
+      "sha256": "5489fa210c4e91d30016845757480f43f0a54b9214d2cefbaa19fb9174b44366",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "He thought it was a blessing.",
+      "stroke_width": 1
+    },
+    {
+      "path": "captions/03-fill.png",
+      "sha256": "90ca777d9e235f215ddf374fe853d476633567773c0527da76318e25ec0c21a6",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "He thought it was a blessing.",
+      "stroke_width": 0
+    },
+    {
+      "path": "captions/04-stroke.png",
+      "sha256": "34d64ca4cab6bdc49d20e33b68de3db1a3ecc1125921f890c5f1eb57d367565d",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "Then came dinner.",
+      "stroke_width": 1
+    },
+    {
+      "path": "captions/04-fill.png",
+      "sha256": "4b4b0701ac4bbd09256a60ba4f2c28c82e2fad3429a85635493fa8be17e9157c",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "Then came dinner.",
+      "stroke_width": 0
+    },
+    {
+      "path": "captions/05-stroke.png",
+      "sha256": "3c8b1640a0155e9493c9f05ec6b34bbb3afaf093fc9be1f28253c13d01c6bb75",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "The bread hardened.",
+      "stroke_width": 1
+    },
+    {
+      "path": "captions/05-fill.png",
+      "sha256": "5517308bb6b398841ece36f17b1f07078c67dce696435cfd8b7943dd79ba11b1",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "The bread hardened.",
+      "stroke_width": 0
+    },
+    {
+      "path": "captions/06-stroke.png",
+      "sha256": "621d66a25f9d3832bf7a08fbfbe943a645b34a8b04214c97f77c37b89512739b",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "The wine turned to metal.",
+      "stroke_width": 1
+    },
+    {
+      "path": "captions/06-fill.png",
+      "sha256": "083eb46e62e51b8f02596b49ea8a943e8f78926ad3c736fbb3e46c7eabf48ce8",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "The wine turned to metal.",
+      "stroke_width": 0
+    },
+    {
+      "path": "captions/07-stroke.png",
+      "sha256": "b7e43f9af0a26254489be0269df87056654a4b6f99f751dee4b9283b9d56a6db",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "He had all the gold in the world...",
+      "stroke_width": 1
+    },
+    {
+      "path": "captions/07-fill.png",
+      "sha256": "82ff445c186e10df8d540e588a5aca31ed5bc4de495253f6f8118e4f9db5dd9b",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "He had all the gold in the world...",
+      "stroke_width": 0
+    },
+    {
+      "path": "captions/08-stroke.png",
+      "sha256": "219351d4cec464ca98f632f52fa500e61ba3f89a1ec9fc8bb790da2626fb2e9c",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "and nothing he could eat.",
+      "stroke_width": 1
+    },
+    {
+      "path": "captions/08-fill.png",
+      "sha256": "aaff85c9b9f40d826ee0cd1da92014951f341adf17f3332dc997b1daecd7b0a3",
+      "operation": "rasterized_existing_caption_glyph_mask",
+      "font_family": "Georgia",
+      "font_size": 34,
+      "text": "and nothing he could eat.",
+      "stroke_width": 0
+    }
+  ],
+  "runtime_files": [
+    {
+      "path": "scripts/b8_midas_replay.py",
+      "sha256": "e183d7192b0e59b786e1bccb97cf20293ad9489d10511dbcacf07b28048cb8dc"
+    },
+    {
+      "path": "scripts/b8_portable.py",
+      "sha256": "037b0b40de6fa1243774aed55ef9790d3fa962a98343c8e9eff45a67c699996e"
+    },
+    {
+      "path": "scripts/_b8_midas_intro.py",
+      "sha256": "78041997d21f31253b675414d5ca5d815a2eee309f841bda022256becdc6e12e"
+    }
+  ]
+}

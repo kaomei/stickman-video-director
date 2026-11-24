@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "style": "B8",
+  "title": "Hermes delivers a warning",
+  "width": 128,
+  "height": 72,
+  "fps": 5,
+  "duration": 2,
+  "checkpoint": "checkpoint.json",
+  "drawing_family": {
+    "baseline": "approved-midas-r3-v1",
+    "anchor": "Expressive 2D cartoon in the attached approved B8 drawing family: dark-brown contours, grouped cel shading with painterly texture, simplified thin limbs, compact rounded cartoon hands and naturally narrow wrists. Match drawing density, stylization and lighting grammar across the cast. Hands and face share the same degree of simplification. Preserve the separately specified identity, skin tone, hair, costume and accessories. Draw the complete palm-wrist-forearm or whole held-object pose as one naturally connected illustrated unit; no photorealistic hands, extra limbs, new cuffs or stretched arms.",
+    "references": [
+      "references/character-style-board.jpg",
+      "references/contact-sequence-board.jpg"
+    ]
+  },
+  "script": "A warning.",
+  "narration": null,
+  "audio_master": null,
+  "captions": [],
+  "caption_style": {
+    "font": "assets/fonts/NotoSans.ttf",
+    "font_sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d",
+    "size": 8,
+    "color": [
+      255,
+      255,
+      255
+    ],
+    "stroke_color": [
+      35,
+      24,
+      15
+    ],
+    "stroke_width": 1,
+    "y": 65,
+    "max_width": 120
+  },
+  "story_rules": [],
+  "characters": [
+    {
+      "id": "messenger",
+      "identity": {
+        "hair": "black",
+        "costume": "short blue tunic"
+      },
+      "regions": {
+        "hand": "compact warm brown, narrow wrist"
+      }
+    },
+    {
+      "id": "guardian",
+      "identity": {
+        "hair": "grey",
+        "costume": "green cloak"
+      },
+      "regions": {
+        "hand": "compact pale, narrow wrist"
+      }
+    }
+  ],
+  "assets": {
+    "world": {
+      "path": "assets/world.png",
+      "sha256": "3972d3ee70d71195ae97abce4fe3af6cd3ab09c0a0bbaca884a7f7b87041dd46",
+      "kind": "background"
+    },
+    "messenger": {
+      "path": "assets/messenger.png",
+      "sha256": "3475e0451cb3946ec90fd2bf6119e865c2882a3958df824d070aae58f247bc3e",
+      "kind": "cel",
+      "character_id": "messenger",
+      "whole_pose": true,
+      "review": {
+        "status": "unreviewed",
+        "notes": "Replace synthetic marker with actual illustrated B8 pose and inspect before acceptance."
+      }
+    },
+    "guardian": {
+      "path": "assets/guardian.png",
+      "sha256": "c9355a02f87abba4f1bbe025c8051b7242756e6f736ad31113421c34018405a2",
+      "kind": "cel",
+      "character_id": "guardian",
+      "whole_pose": true,
+      "review": {
+        "status": "unreviewed",
+        "notes": "Replace synthetic marker with actual illustrated B8 pose and inspect before acceptance."
+      }
+    },
+    "seal": {
+      "path": "assets/seal.png",
+      "sha256": "bc76a3b1942378275fc083f88fb2881188eca9b35392f769640b174d42d646a9",
+      "kind": "prop"
+    },
+    "seal-glow": {
+      "path": "assets/seal-glow.png",
+      "sha256": "3d3d261f63c564bf832a428844cda0cbe2306952f60f262eb9ed1c1c08c31d39",
+      "kind": "prop"
+    },
+    "mask": {
+      "path": "assets/mask.png",
+      "sha256": "4e421edf6d5f73c5ef84090f69a59df6824c33f2a18daac90f2e2efc16cb75f5",
+      "kind": "mask"
+    }
+  },
+  "shots": [
+    {
+      "id": "s1",
+      "start": 0,
+      "end": 1,
+      "scene": "gate",
+      "framing": "two-shot",
+      "information_change": "warning delivered",
+      "camera_motivation": "fixed to read action",
+      "action": "offer sealed warning",
+      "reaction": "receive and look toward gate",
+      "contact_audit": "Both hands support seal; no other bare contacts.",
+      "characters": [
+        "messenger",
+        "guardian"
+      ],
+      "contacts": [],
+      "layers": [
+        {
+          "id": "world",
+          "asset": "world",
+          "x": 64,
+          "y": 36,
+          "width": 128,
+          "z": 0,
+          "depth": 0
+        },
+        {
+          "id": "messenger",
+          "asset": "messenger",
+          "x": 32,
+          "y": 40,
+          "width": 24,
+          "z": 2,
+          "depth": 1,
+          "keyframes": [
+            {
+              "time": 0,
+              "x": 28
+            },
+            {
+              "time": 1,
+              "x": 32
+            }
+          ]
+        },
+        {
+          "id": "guardian",
+          "asset": "guardian",
+          "x": 86,
+          "y": 40,
+          "width": 24,
+          "z": 1,
+          "depth": 1
+        }
+      ],
+      "proposal_composition_asset": "world"
+    },
+    {
+      "id": "s2",
+      "start": 1,
+      "end": 2,
+      "scene": "courtyard",
+      "framing": "reaction detail",
+      "information_change": "guardian understands",
+      "camera_motivation": "fixed to read action",
+      "action": "offer sealed warning",
+      "reaction": "receive and look toward gate",
+      "contact_audit": "Both hands support seal; no other bare contacts.",
+      "characters": [
+        "messenger",
+        "guardian"
+      ],
+      "contacts": [],
+      "layers": [
+        {
+          "id": "world",
+          "asset": "world",
+          "x": 64,
+          "y": 36,
+          "width": 128,
+          "z": 0,
+          "depth": 0
+        },
+        {
+          "id": "messenger",
+          "asset": "messenger",
+          "x": 32,
+          "y": 40,
+          "width": 24,
+          "z": 2,
+          "depth": 1,
+          "keyframes": [
+            {
+              "time": 0,
+              "x": 28
+            },
+            {
+              "time": 1,
+              "x": 32
+            }
+          ]
+        },
+        {
+          "id": "guardian",
+          "asset": "guardian",
+          "x": 86,
+          "y": 40,
+          "width": 24,
+          "z": 1,
+          "depth": 1
+        }
+      ],
+      "proposal_composition_asset": "world"
+    }
+  ],
+  "fixture_scope": "Synthetic markers for API/approval behavior only; not B8 artwork or a visually accepted new story."
+}

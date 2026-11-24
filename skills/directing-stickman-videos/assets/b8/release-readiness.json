@@ -1,0 +1,101 @@
+{
+  "schema": "pending-style-release-readiness/1",
+  "style": "B8",
+  "status": "not_checked",
+  "registered_at": "2026-11-14T12:30:50.430389+00:00",
+  "blocking_items": [
+    "New output-bound native/common review, full normal-speed picture coverage and final encoded listening evidence are not completed; historical approvals retain only their recorded scope."
+  ],
+  "references": [
+    {
+      "id": "midas-r3-v1",
+      "output": {
+        "file": "skills/directing-stickman-videos/assets/b8/approved-midas-r3-v1/midas-b8-r3-full-v1.mp4",
+        "sha256": "30a056a2c8c6aead01a0ef295eefaa475781f4421265df32e28d177a3dbc15de",
+        "duration": 20.0,
+        "width": 1280,
+        "height": 720
+      },
+      "ratio": "16:9",
+      "approval_scope": "Recorded exact-version visual feedback only; independent listening is not inferred.",
+      "native_review": {
+        "file": "",
+        "sha256": ""
+      },
+      "common_completeness": {
+        "file": "",
+        "sha256": ""
+      },
+      "playback": {
+        "status": "not_checked",
+        "output_sha256": "30a056a2c8c6aead01a0ef295eefaa475781f4421265df32e28d177a3dbc15de",
+        "normal_speed": false,
+        "reviewer": "",
+        "method": "",
+        "ranges": [],
+        "observations": [],
+        "evidence": []
+      },
+      "listening": {
+        "status": "not_checked",
+        "output_sha256": "30a056a2c8c6aead01a0ef295eefaa475781f4421265df32e28d177a3dbc15de",
+        "normal_speed": false,
+        "reviewer": "",
+        "method": "",
+        "ranges": [],
+        "observations": [],
+        "evidence": [],
+        "source": "final_encoded_output"
+      }
+    },
+    {
+      "id": "midas-portrait-v5",
+      "output": {
+        "file": "skills/directing-stickman-videos/assets/b8/approved-midas-r3-v1/midas-b8-portrait-v5.mp4",
+        "sha256": "87f6a4297ed4cdd487620cdd8384bf40bfa1ddf6cb870ab3e4a4919b8873e6f9",
+        "duration": 20.0,
+        "width": 720,
+        "height": 1280
+      },
+      "ratio": "9:16",
+      "approval_scope": "Recorded exact-version visual feedback only; independent listening is not inferred.",
+      "native_review": {
+        "file": "",
+        "sha256": ""
+      },
+      "common_completeness": {
+        "file": "",
+        "sha256": ""
+      },
+      "playback": {
+        "status": "not_checked",
+        "output_sha256": "87f6a4297ed4cdd487620cdd8384bf40bfa1ddf6cb870ab3e4a4919b8873e6f9",
+        "normal_speed": false,
+        "reviewer": "",
+        "method": "",
+        "ranges": [],
+        "observations": [],
+        "evidence": []
+      },
+      "listening": {
+        "status": "not_checked",
+        "output_sha256": "87f6a4297ed4cdd487620cdd8384bf40bfa1ddf6cb870ab3e4a4919b8873e6f9",
+        "normal_speed": false,
+        "reviewer": "",
+        "method": "",
+        "ranges": [],
+        "observations": [],
+        "evidence": [],
+        "source": "final_encoded_output"
+      }
+    }
+  ],
+  "note": "Local technical synchronization only. Original samples and historical feedback are preserved. This registration is not a new perceptual approval, license clearance or publication authorization.",
+  "completion_instructions": [
+    "Run the installed style's native review workflow on each exact reference/output; record its real checks with complete evidence. Do not replace historical approval wording.",
+    "Create a final_delivery b-delivery-completeness report that binds the same native review in its style acceptance index. Every caption, meaningful SFX, audible BGM, mix and actual-use license must be checked by the current candidate checker.",
+    "Save native_review/common_completeness as repository-relative file/SHA256 pointers. Use repository-relative file/SHA256 pointers for nested evidence; update fingerprints from leaves upward.",
+    "Record playback/listening at normal speed across the complete exact duration, with actual reviewer/method, concrete observations and hash-bound evidence. Contact sheets, decode checks and source-wave analysis do not replace full playback/listening.",
+    "Only after every actual gate is passed, set status=ready and blocking_items=[]. Publisher reruns the current checker before any journal or external write. A later explicit user publish request is still required."
+  ]
+}

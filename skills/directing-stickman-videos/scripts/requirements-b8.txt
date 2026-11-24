@@ -1,0 +1,5 @@
+# Tested on Python 3.9.6. A separate environment keeps other B routes unchanged.
+# FFmpeg and FFprobe with libx264 must also be installed; doctor verifies availability.
+Pillow==11.3.0
+numpy==2.0.2
+scipy==1.13.1

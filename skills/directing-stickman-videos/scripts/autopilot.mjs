@@ -11,6 +11,16 @@ import {canonicalJson} from './canonical-json.mjs';
 const [command, ...args] = process.argv.slice(2);
 const option = (flag, fallback) => args.includes(flag) ? args[args.indexOf(flag) + 1] : fallback;
 async function main() {
+  // B8 owns drawn-cel production; never alias it to the generic still-image painter.
+  const b8Commands=['doctor','init','proposal','keyposes','prompts','validate','approve','preview','render','deliver','demo'];
+  let b8Project=false;
+  if (args[0] && ['proposal','keyposes','prompts','validate','approve','preview','render','deliver'].includes(command)) {
+    const candidate=path.resolve(args[0]);
+    if (fs.existsSync(candidate)) { const file=fs.statSync(candidate).isDirectory()?path.join(candidate,'project.json'):candidate; if(fs.existsSync(file)) b8Project=json(file).style==='B8'; }
+  }
+  if ((option('--style')==='B8' && b8Commands.includes(command)) || b8Project) {
+    const {runB8}=await import('./b8-workflow.mjs');process.exitCode=runB8(command,args);return;
+  }
   if (command === 'workflow') {
     console.log(JSON.stringify(installedWorkflow({style: option('--style'), ratio: option('--ratio', '16:9'), project: option('--project')}), null, 2));
   } else if (command === 'doctor') {

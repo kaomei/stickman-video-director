@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **AIエージェントにひと言送るだけで、完成した棒人間動画が届く。**<br>
-台本・音声・字幕・効果音までおまかせ · 実戦検証済みの15画風 · Claude Code・Codex 対応
+台本・音声・字幕・効果音までおまかせ · 実戦検証済みの16画風 · Claude Code・Codex 対応
 
 💬 ひと言送る → ✅ 台本とプレビューを確認 → 🎬 完成動画
 
@@ -110,7 +110,12 @@
 <a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · ジブリ風" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b8:hero:start -->
+<td width="50%" align="center">
+<b>B8-</b><strong>ギリシャ神話</strong><br>
+<a href="#b8"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · ギリシャ神話" width="90%"></a>
+</td>
+<!-- b8:hero:end -->
 </tr>
 </table>
 
@@ -611,9 +616,39 @@ Memeらしい大げさな表情、ラフな手描き線、柔らかな色彩で�
 
 <!-- b7:section:end -->
 
+<!-- b8:section:start -->
 <a id="b8"></a>
 
-### B8：近日公開…
+### B8: ギリシャ神話
+
+古代神話に、新しい舞台を。画風はYouTubeの[@HeyHistorically](https://www.youtube.com/@HeyHistorically)（**登録者約165万人**）に着想を得ています。枝が黄金に変わり、夕食が危機へと変わる。神殿、庭園、宮殿を舞台に、神の力、人間の欲望、運命の代償を目に見える物語として描きます。
+
+- **映像の特徴**：表情豊かな白い顔、神々の個性的な姿、くっきりとしたセル調の光と影で、奥行きのある神話世界を表現。
+- **物語を動かす演出**：キャラクター・小道具・背景を独立したレイヤーで動かし、細かな動作、奥行きを生かした見せ方、意図のあるカメラワークで物語を進めます。
+- **おすすめの題材**：ギリシャ神話、伝説、権力・運命・選択をめぐるショートストーリー。
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">制作例 1：ミダス王と黄金の手</th>
+    <th width="50%" align="center">制作例 2：夜明けのない王国</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="制作例 1：ミダス王と黄金の手" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="assets/readme/previews/b8-greek-mythology.gif" alt="制作例 2：夜明けのない王国" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Myrrdin のナレーション · キャラクターアニメーション · 物語に合わせた効果音</td>
+    <td align="center">キャラクターボイス · 奥行きを見せる演出 · 物語に合わせた効果音</td>
+  </tr>
+</table>
+
+<!-- b8:section:end -->
+
+---
+
+<a id="b9"></a>
+
+### B9: 近日公開…
 
 新しい Code Engine の画風とコードアニメーションを準備中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、今後の更新をチェックしてください！
 
