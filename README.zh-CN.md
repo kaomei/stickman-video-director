@@ -113,7 +113,7 @@
 <!-- b8:hero:start -->
 <td width="50%" align="center">
 <b>B8-</b><strong>希腊神话风</strong><br>
-<a href="#b8"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · 希腊神话风" width="90%"></a>
+<a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · 希腊神话风" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
 </tr>
@@ -633,8 +633,8 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
     <th width="50%" align="center">样片 2：无昼之国</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="样片 1：迈达斯点金术" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="assets/readme/previews/b8-greek-mythology.gif" alt="样片 2：无昼之国" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="样片 1：迈达斯点金术" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-greek-mythology.gif" alt="样片 2：无昼之国" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Myrrdin 旁白 · 卡通人物动画 · 剧情音效</td>

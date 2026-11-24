@@ -113,7 +113,7 @@ Script, voix off, sous-titres et son · 16 styles éprouvés · Pour Claude Code
 <!-- b8:hero:start -->
 <td width="50%" align="center">
 <b>B8-</b><strong>Mythologie grecque</strong><br>
-<a href="#b8"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Mythologie grecque" width="90%"></a>
+<a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Mythologie grecque" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
 </tr>
@@ -633,8 +633,8 @@ Une branche se change en or, et le dîner tourne à la crise. Le style visuel s�
     <th width="50%" align="center">Démo 2 : Le royaume sans aube</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Démo 1 : Midas et le toucher d’or" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="assets/readme/previews/b8-greek-mythology.gif" alt="Démo 2 : Le royaume sans aube" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Démo 1 : Midas et le toucher d’or" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-greek-mythology.gif" alt="Démo 2 : Le royaume sans aube" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Voix off Myrrdin · Animation de personnages de dessin animé · Bruitages au service du récit</td>
