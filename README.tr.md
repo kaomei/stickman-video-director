@@ -113,7 +113,7 @@ Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 16 stil · Claude Code, 
 <!-- b8:hero:start -->
 <td width="50%" align="center">
 <b>B8-</b><strong>Yunan Mitolojisi</strong><br>
-<a href="#b8"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Yunan Mitolojisi" width="90%"></a>
+<a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Yunan Mitolojisi" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
 </tr>
@@ -633,8 +633,8 @@ Bir dal altına dönüşür, akşam yemeği ise bir krize. Görsel stil, YouTube
     <th width="50%" align="center">Örnek 2: Şafaksız Krallık</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Örnek 1: Midas ve Altın Dokunuş" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="assets/readme/previews/b8-greek-mythology.gif" alt="Örnek 2: Şafaksız Krallık" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Örnek 1: Midas ve Altın Dokunuş" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-greek-mythology.gif" alt="Örnek 2: Şafaksız Krallık" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Myrrdin anlatımı · Çizgi film karakter animasyonu · Hikâyeye eşlik eden ses efektleri</td>

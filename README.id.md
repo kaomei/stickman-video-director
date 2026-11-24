@@ -113,7 +113,7 @@ Naskah, voiceover, subtitle & suara · 16 gaya teruji · Untuk Claude Code, Code
 <!-- b8:hero:start -->
 <td width="50%" align="center">
 <b>B8-</b><strong>Mitologi Yunani</strong><br>
-<a href="#b8"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Mitologi Yunani" width="90%"></a>
+<a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Mitologi Yunani" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
 </tr>
@@ -633,8 +633,8 @@ Sebuah ranting berubah menjadi emas, lalu makan malam berubah menjadi krisis. Ga
     <th width="50%" align="center">Contoh 2: Kerajaan Tanpa Fajar</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Contoh 1: Midas dan Sentuhan Emas" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="assets/readme/previews/b8-greek-mythology.gif" alt="Contoh 2: Kerajaan Tanpa Fajar" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Contoh 1: Midas dan Sentuhan Emas" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-greek-mythology.gif" alt="Contoh 2: Kerajaan Tanpa Fajar" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Narasi Myrrdin · Animasi karakter kartun · Efek suara pendukung cerita</td>
