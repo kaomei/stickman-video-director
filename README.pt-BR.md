@@ -633,8 +633,8 @@ Um galho vira ouro, e o jantar se transforma em uma crise. O estilo visual é in
     <th width="50%" align="center">Exemplo 2: O reino sem amanhecer</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Exemplo 1: Midas e o toque de ouro" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-greek-mythology.gif" alt="Exemplo 2: O reino sem amanhecer" width="360"></a></td>
+    <td width="50%" align="center"><a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.24/b8-midas-approved-r3-v1.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Exemplo 1: Midas e o toque de ouro" width="360"></a></td>
+    <td width="50%" align="center"><a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.24/b8-kingdom-without-dawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-greek-mythology.gif" alt="Exemplo 2: O reino sem amanhecer" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Narração de Myrrdin · Animação de personagens em estilo cartoon · Efeitos sonoros a serviço da história</td>

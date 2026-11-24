@@ -633,8 +633,8 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
     <th width="50%" align="center">예시 2: 새벽이 없는 왕국</th>
   </tr>
   <tr>
-    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="예시 1: 미다스와 황금의 손길" width="360"></a></td>
-    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-greek-mythology.gif" alt="예시 2: 새벽이 없는 왕국" width="360"></a></td>
+    <td width="50%" align="center"><a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.24/b8-midas-approved-r3-v1.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="예시 1: 미다스와 황금의 손길" width="360"></a></td>
+    <td width="50%" align="center"><a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.24/b8-kingdom-without-dawn.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-greek-mythology.gif" alt="예시 2: 새벽이 없는 왕국" width="360"></a></td>
   </tr>
   <tr>
     <td align="center">Myrrdin 내레이션 · 만화풍 캐릭터 애니메이션 · 이야기에 맞춘 효과음</td>
