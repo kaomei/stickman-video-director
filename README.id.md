@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Kirim satu pesan ke agen AI Anda, dapatkan video stickman yang sudah jadi.**<br>
-Naskah, voiceover, subtitle & suara · 15 gaya teruji · Untuk Claude Code, Codex & lainnya
+Naskah, voiceover, subtitle & suara · 16 gaya teruji · Untuk Claude Code, Codex & lainnya
 
 💬 Satu pesan → ✅ Setujui naskah & pratinjau → 🎬 Video jadi
 
@@ -110,7 +110,12 @@ Naskah, voiceover, subtitle & suara · 15 gaya teruji · Untuk Claude Code, Code
 <a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Terinspirasi Ghibli" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b8:hero:start -->
+<td width="50%" align="center">
+<b>B8-</b><strong>Mitologi Yunani</strong><br>
+<a href="#b8"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Mitologi Yunani" width="90%"></a>
+</td>
+<!-- b8:hero:end -->
 </tr>
 </table>
 
@@ -611,9 +616,39 @@ Piksel kecil, konsekuensi besar. Karakter stik putih mengubah pilihan sehari-har
 
 <!-- b7:section:end -->
 
+<!-- b8:section:start -->
 <a id="b8"></a>
 
-### B8: Segera hadir…
+### B8: Mitologi Yunani
+
+Sebuah ranting berubah menjadi emas, lalu makan malam berubah menjadi krisis. Gaya visualnya terinspirasi dari [@HeyHistorically](https://www.youtube.com/@HeyHistorically) di YouTube (**sekitar 1,65 juta subscriber**). Di kuil, halaman, dan istana, kekuatan para dewa, hasrat manusia, dan harga takdir menjadi kisah yang terlihat hidup di depan mata.
+
+- **Identitas visual**: Wajah putih yang ekspresif, tampilan dewa yang khas, serta cahaya dan bayangan cel shading yang tegas membangun dunia mitologi yang berdimensi.
+- **Cerita dalam gerak**: Karakter, properti, dan latar bergerak pada layer terpisah. Gerakan kecil, pengungkapan kedalaman ruang, dan kamera yang terarah membawa cerita maju.
+- **Cocok untuk**: Mitos Yunani, legenda, serta cerita pendek tentang kekuasaan, takdir, dan pilihan sulit.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Contoh 1: Midas dan Sentuhan Emas</th>
+    <th width="50%" align="center">Contoh 2: Kerajaan Tanpa Fajar</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Contoh 1: Midas dan Sentuhan Emas" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="assets/readme/previews/b8-greek-mythology.gif" alt="Contoh 2: Kerajaan Tanpa Fajar" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Narasi Myrrdin · Animasi karakter kartun · Efek suara pendukung cerita</td>
+    <td align="center">Suara karakter · Pengungkapan ruang lewat kedalaman gambar · Efek suara pendukung cerita</td>
+  </tr>
+</table>
+
+<!-- b8:section:end -->
+
+---
+
+<a id="b9"></a>
+
+### B9: Segera hadir…
 
 Gaya Code Engine dan animasi berbasis kode yang baru sedang disiapkan. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk mengikuti pembaruan selanjutnya!
 

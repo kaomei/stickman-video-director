@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>
-脚本、配音、字幕与音效全包 · 15 款实操验证的画风 · 支持 Claude Code、Codex 等
+脚本、配音、字幕与音效全包 · 16 款实操验证的画风 · 支持 Claude Code、Codex 等
 
 💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片
 
@@ -110,7 +110,12 @@
 <a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 吉卜力画风" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b8:hero:start -->
+<td width="50%" align="center">
+<b>B8-</b><strong>希腊神话风</strong><br>
+<a href="#b8"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · 希腊神话风" width="90%"></a>
+</td>
+<!-- b8:hero:end -->
 </tr>
 </table>
 
@@ -611,9 +616,39 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 <!-- b7:section:end -->
 
+<!-- b8:section:start -->
 <a id="b8"></a>
 
-### B8：待更新…
+### B8：希腊神话风
+
+一截树枝化成黄金，一顿晚餐却变成了危机。画风灵感来自 YouTube [@HeyHistorically](https://www.youtube.com/@HeyHistorically)（**约 165 万订阅者**）。走进神庙、庭院与王宫，让诸神的力量、凡人的贪念和命运的代价，化成看得见的故事。
+
+- **画面质感**：统一的二维卡通人物、富有笔触的场景与暖金光影，服饰、建筑和道具带出古老神话的气息。
+- **剧情表现**：自然的触碰、物体变化与人物反应接续发生；远景、近景和细节特写随着情节切换，让神力的惊喜与代价逐步显现。
+- **适合内容**：希腊神话、传奇故事，以及围绕权力、命运与选择展开的叙事短片。
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">样片 1：迈达斯点金术</th>
+    <th width="50%" align="center">样片 2：无昼之国</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="样片 1：迈达斯点金术" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="assets/readme/previews/b8-greek-mythology.gif" alt="样片 2：无昼之国" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Myrrdin 旁白 · 卡通人物动画 · 剧情音效</td>
+    <td align="center">角色配音 · 纵深揭示 · 剧情音效</td>
+  </tr>
+</table>
+
+<!-- b8:section:end -->
+
+---
+
+<a id="b9"></a>
+
+### B9：待更新…
 
 新的代码引擎画风与代码动画正在准备中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，关注后续更新。
 

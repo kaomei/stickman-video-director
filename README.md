@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Send your AI agent one message — get back a finished stickman video.**<br>
-Script, voiceover, captions & sound · 15 battle-tested styles · For Claude Code, Codex & more
+Script, voiceover, captions & sound · 16 battle-tested styles · For Claude Code, Codex & more
 
 💬 One message → ✅ Approve script & preview → 🎬 Finished video
 
@@ -110,7 +110,12 @@ Script, voiceover, captions & sound · 15 battle-tested styles · For Claude Cod
 <a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Studio Ghibli" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b8:hero:start -->
+<td width="50%" align="center">
+<b>B8-</b><strong>Greek Mythology</strong><br>
+<a href="#b8"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Greek Mythology" width="90%"></a>
+</td>
+<!-- b8:hero:end -->
 </tr>
 </table>
 
@@ -611,9 +616,39 @@ Small pixels, big consequences. A white stick-figure cast turns everyday choices
 
 <!-- b7:section:end -->
 
+<!-- b8:section:start -->
 <a id="b8"></a>
 
-### B8: Coming soon…
+### B8: Greek Mythology
+
+A branch turns to gold, and dinner becomes a crisis. The visual style is inspired by YouTube's [@HeyHistorically](https://www.youtube.com/@HeyHistorically) (**about 1.65M subscribers**). Step into temples, courtyards, and palaces, where divine power, human desire, and the price of fate become stories you can see unfold.
+
+- **Visual identity**: A consistent 2D cartoon cast, painterly settings, and warm golden light. Costumes, architecture, and props bring the world of ancient myth to life.
+- **Story in motion**: Natural touches lead to visible changes and character reactions. Wide shots, close-ups, and small details follow the story as the wonder of divine power gives way to its cost.
+- **Best for**: Greek myths, legends, and short stories about power, fate, and difficult choices.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Example 1: Midas and the Golden Touch</th>
+    <th width="50%" align="center">Example 2: Kingdom Without Dawn</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Example 1: Midas and the Golden Touch" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="assets/readme/previews/b8-greek-mythology.gif" alt="Example 2: Kingdom Without Dawn" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Myrrdin narration · Cartoon character animation · Story-driven SFX</td>
+    <td align="center">Character voices · Depth reveals · Story-driven SFX</td>
+  </tr>
+</table>
+
+<!-- b8:section:end -->
+
+---
+
+<a id="b9"></a>
+
+### B9: Coming soon…
 
 New Code Engine styles and procedural animations are in preparation. [Star the project](#road-to-10000-stars--creator-ecosystem) to follow future updates.
 

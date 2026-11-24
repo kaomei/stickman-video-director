@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **AI 에이전트에게 메시지 한 줄만 보내면, 완성된 스틱맨 영상이 돌아옵니다.**<br>
-대본·내레이션·자막·사운드까지 한 번에 · 검증된 15가지 스타일 · Claude Code, Codex 등 지원
+대본·내레이션·자막·사운드까지 한 번에 · 검증된 16가지 스타일 · Claude Code, Codex 등 지원
 
 💬 메시지 한 줄 → ✅ 대본과 미리보기 확인 → 🎬 완성 영상
 
@@ -110,7 +110,12 @@
 <a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · 지브리풍" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b8:hero:start -->
+<td width="50%" align="center">
+<b>B8-</b><strong>그리스 신화</strong><br>
+<a href="#b8"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · 그리스 신화" width="90%"></a>
+</td>
+<!-- b8:hero:end -->
 </tr>
 </table>
 
@@ -611,9 +616,39 @@ B1, B2, B3… 순서로 추가하며, 각 스타일에 해당하는 완성 영�
 
 <!-- b7:section:end -->
 
+<!-- b8:section:start -->
 <a id="b8"></a>
 
-### B8: 곧 공개…
+### B8: 그리스 신화
+
+나뭇가지가 황금으로 변하고, 저녁 식사는 위기가 됩니다. 이 화풍은 YouTube [@HeyHistorically](https://www.youtube.com/@HeyHistorically)(**구독자 약 165만 명**)에서 영감을 받았습니다. 신전과 정원, 궁전을 배경으로 신의 힘과 인간의 욕망, 운명의 대가를 눈앞에서 펼쳐지는 이야기로 만듭니다.
+
+- **화면의 특징**: 표정이 풍부한 하얀 얼굴, 개성 뚜렷한 신들의 모습, 선명한 셀 셰이딩 명암으로 깊이 있는 신화 세계를 만듭니다.
+- **이야기를 움직이는 연출**: 캐릭터·소품·배경을 독립 레이어로 나누고, 부분 동작과 공간의 깊이를 드러내는 연출, 목적 있는 카메라 움직임으로 이야기를 이끕니다.
+- **추천 콘텐츠**: 그리스 신화, 전설, 권력·운명·선택을 다루는 짧은 이야기.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">예시 1: 미다스와 황금의 손길</th>
+    <th width="50%" align="center">예시 2: 새벽이 없는 왕국</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="예시 1: 미다스와 황금의 손길" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="assets/readme/previews/b8-greek-mythology.gif" alt="예시 2: 새벽이 없는 왕국" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Myrrdin 내레이션 · 만화풍 캐릭터 애니메이션 · 이야기에 맞춘 효과음</td>
+    <td align="center">캐릭터 보이스 · 공간의 깊이를 살린 연출 · 이야기에 맞춘 효과음</td>
+  </tr>
+</table>
+
+<!-- b8:section:end -->
+
+---
+
+<a id="b9"></a>
+
+### B9: 곧 공개…
 
 새로운 Code Engine 스타일과 코드 애니메이션을 준비하고 있습니다. [프로젝트에 Star를 누르고](#road-to-10000-stars--creator-ecosystem) 앞으로의 업데이트를 확인해 주세요!
 

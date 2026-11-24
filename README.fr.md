@@ -10,7 +10,7 @@
 ![Licence MIT](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Un seul message à votre agent IA — et votre vidéo de bonshommes bâtons est prête.**<br>
-Script, voix off, sous-titres et son · 15 styles éprouvés · Pour Claude Code, Codex et plus
+Script, voix off, sous-titres et son · 16 styles éprouvés · Pour Claude Code, Codex et plus
 
 💬 Un message → ✅ Validez le script et l’aperçu → 🎬 Vidéo terminée
 
@@ -110,7 +110,12 @@ Script, voix off, sous-titres et son · 15 styles éprouvés · Pour Claude Code
 <a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Inspiré de Ghibli" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b8:hero:start -->
+<td width="50%" align="center">
+<b>B8-</b><strong>Mythologie grecque</strong><br>
+<a href="#b8"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Mythologie grecque" width="90%"></a>
+</td>
+<!-- b8:hero:end -->
 </tr>
 </table>
 
@@ -611,9 +616,39 @@ De petits pixels, de grandes conséquences. Des personnages blancs transforment 
 
 <!-- b7:section:end -->
 
+<!-- b8:section:start -->
 <a id="b8"></a>
 
-### B8 : Bientôt disponible…
+### B8 : Mythologie grecque
+
+Une branche se change en or, et le dîner tourne à la crise. Le style visuel s’inspire de [@HeyHistorically](https://www.youtube.com/@HeyHistorically) sur YouTube (**environ 1,65 million d’abonnés**). Entre temples, cours et palais, la puissance des dieux, les désirs humains et le prix du destin deviennent des histoires qui prennent vie sous vos yeux.
+
+- **Identité visuelle** : Des visages blancs expressifs, des dieux aux silhouettes distinctes et des ombres franches en cel-shading donnent du relief au monde mythologique.
+- **Le récit en mouvement** : Personnages, accessoires et décors sont animés sur des calques indépendants, avec des gestes ciblés, des révélations en profondeur et des mouvements de caméra motivés par le récit.
+- **Idéal pour** : Les mythes grecs, les légendes et les récits courts autour du pouvoir, du destin et des choix difficiles.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Démo 1 : Midas et le toucher d’or</th>
+    <th width="50%" align="center">Démo 2 : Le royaume sans aube</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Démo 1 : Midas et le toucher d’or" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="assets/readme/previews/b8-greek-mythology.gif" alt="Démo 2 : Le royaume sans aube" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Voix off Myrrdin · Animation de personnages de dessin animé · Bruitages au service du récit</td>
+    <td align="center">Voix des personnages · Jeux de profondeur · Bruitages au service du récit</td>
+  </tr>
+</table>
+
+<!-- b8:section:end -->
+
+---
+
+<a id="b9"></a>
+
+### B9 : Bientôt disponible…
 
 De nouveaux styles Code Engine et de nouvelles animations par code sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour suivre les prochaines mises à jour !
 

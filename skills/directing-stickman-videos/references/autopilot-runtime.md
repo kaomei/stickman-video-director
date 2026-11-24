@@ -2,6 +2,8 @@
 
 Run from this installed Skill's directory. No second Skill or repository is needed.
 
+**B8 local route:** read [B8](b8-greek-mythology.md) and its [approved default standard](b8-approved-standard.md) before applying this shared guide. Use the [installed B8 workflow](b8-installed-workflow.md) and dedicated CLI dispatch; keep shared source, audio, semantic-caption, cost, review and delivery gates.
+
 ```bash
 npm ci
 node scripts/autopilot.mjs doctor

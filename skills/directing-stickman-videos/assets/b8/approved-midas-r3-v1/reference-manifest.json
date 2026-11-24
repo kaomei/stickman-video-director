@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "style": "B8",
+  "reference_scope": "visual_baseline",
+  "baseline_id": "approved-midas-r3-v1",
+  "duration_seconds": 20,
+  "user_visual_feedback": {
+    "date": "2026-11-13",
+    "quote": "哇，这个效果好多了，所以不要让我一遍遍说嘛，这个才应该是标准",
+    "scope": "Visual effect and drawing family of this exact trial; no inferred listening approval, new-story production or publication authorization."
+  },
+  "limits": [
+    "This pack is a visual reference, not a portable renderer or auto-rig.",
+    "The Midas examples do not validate a new multi-character cast, another story or all future portrait films.",
+    "Reference soundtrack is not authorization to reuse narration in a new story."
+  ],
+  "files": [
+    {
+      "path": "midas-b8-r3-full-v1.mp4",
+      "role": "motion_reference",
+      "sha256": "30a056a2c8c6aead01a0ef295eefaa475781f4421265df32e28d177a3dbc15de"
+    },
+    {
+      "path": "shot-language-board.jpg",
+      "role": "shot_language_board",
+      "sha256": "0023dda373e7dbaa72aeee5b3e27d87c81917b85bdebb468f84d276b71ccfed4"
+    },
+    {
+      "path": "contact-sequence-board.jpg",
+      "role": "contact_sequence_board",
+      "sha256": "1c90f97a773e041cc43d49fbc3c1f61541e20cc0b9d3148c788992cae92e219c"
+    },
+    {
+      "path": "standing.png",
+      "role": "character_reference",
+      "sha256": "e7d82ad1aca62e13669a1d472264a62482709d26aecef3a2f1351556f2d52463"
+    },
+    {
+      "path": "hand-forearm.png",
+      "role": "character_reference",
+      "sha256": "bc9d04358aeeef25ca20f68fe4224637d036eaa4a3c22ab468456b29d0662748"
+    },
+    {
+      "path": "wine-neutral.png",
+      "role": "character_reference",
+      "sha256": "9f2e3be643c8dbeabcc2a2d7bcbb1cd9bb51955dfc941690deb5406adfc5a6df"
+    },
+    {
+      "path": "wine-surprise.png",
+      "role": "character_reference",
+      "sha256": "0dd113df6481829601664c42938639e07489e322b2f365b44812b88513c8e538"
+    },
+    {
+      "path": "character-style-board.jpg",
+      "role": "character_style_board",
+      "sha256": "0cde56fd778bc4fec4063352aeaae7ee8ad98a56d3985cb6659f7fa2d4470183"
+    },
+    {
+      "path": "midas-b8-portrait-v5.mp4",
+      "role": "portrait_motion_reference",
+      "sha256": "87f6a4297ed4cdd487620cdd8384bf40bfa1ddf6cb870ab3e4a4919b8873e6f9"
+    },
+    {
+      "path": "portrait-opening-contact-board.jpg",
+      "role": "portrait_opening_contact_board",
+      "sha256": "0e00cb26c3b070b15d1233fd1d75145c9e4d8406af9ed7a73e5ceaa6eb8e30ca"
+    },
+    {
+      "path": "portrait-fullbody-board.jpg",
+      "role": "portrait_fullbody_continuity_board",
+      "sha256": "d28bd7e6eec7d09120b4f2294c1c8c92985f5657b3a3436197a0bf59414a85d9"
+    },
+    {
+      "path": "portrait-arm-direction-board.jpg",
+      "role": "portrait_arm_direction_board",
+      "sha256": "f54e721711141d980dda20b72b9a67b322ac477369fecda363dabd4bf4829187"
+    }
+  ],
+  "portrait_visual_feedback": {
+    "date": "2026-11-13",
+    "quote": "这次好多了",
+    "version": "midas-b8-portrait-v5.mp4",
+    "sha256": "87f6a4297ed4cdd487620cdd8384bf40bfa1ddf6cb870ab3e4a4919b8873e6f9",
+    "scope": "Positive visual feedback for this exact Midas portrait V5 version only. No inferred acceptance of Kingdom Without Dawn, independent listening, future multi-character films or publication."
+  },
+  "portrait_qa_boards": {
+    "source": "midas-b8-portrait-v5.mp4",
+    "source_sha256": "87f6a4297ed4cdd487620cdd8384bf40bfa1ddf6cb870ab3e4a4919b8873e6f9",
+    "fullbody_times_seconds": [
+      6.65,
+      6.85,
+      7.05,
+      15.8,
+      15.975,
+      16.15
+    ],
+    "arm_direction_times_seconds": [
+      10.6333,
+      11.15,
+      11.6,
+      12.2
+    ],
+    "method": "Frames extracted from the actual encoded V5 film with ffmpeg, resized and arranged as QA boards; no image generation or video rerender."
+  }
+}

@@ -10,7 +10,7 @@
 ![MIT Lisansı](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Yapay zekâ ajanınıza tek bir mesaj gönderin, bitmiş çöp adam videonuzu alın.**<br>
-Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 15 stil · Claude Code, Codex ve dahası
+Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 16 stil · Claude Code, Codex ve dahası
 
 💬 Tek mesaj → ✅ Senaryoyu ve önizlemeyi onaylayın → 🎬 Hazır video
 
@@ -110,7 +110,12 @@ Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 15 stil · Claude Code, 
 <a href="#a8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@1aadddbe9ed1c2f3230738dfcb5468f0a91c0687/assets/readme/previews/style-8-graphic-novel.gif" alt="A8 · Ghibli Esintili" width="90%"></a>
 </td>
 <!-- a8:hero:end -->
-<td width="50%" align="center"></td>
+<!-- b8:hero:start -->
+<td width="50%" align="center">
+<b>B8-</b><strong>Yunan Mitolojisi</strong><br>
+<a href="#b8"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Yunan Mitolojisi" width="90%"></a>
+</td>
+<!-- b8:hero:end -->
 </tr>
 </table>
 
@@ -611,9 +616,39 @@ Küçük pikseller, büyük sonuçlar. Beyaz çöp adamlar günlük seçimleri k
 
 <!-- b7:section:end -->
 
+<!-- b8:section:start -->
 <a id="b8"></a>
 
-### B8: Yakında…
+### B8: Yunan Mitolojisi
+
+Bir dal altına dönüşür, akşam yemeği ise bir krize. Görsel stil, YouTube’daki [@HeyHistorically](https://www.youtube.com/@HeyHistorically) kanalından (**yaklaşık 1,65 milyon abone**) ilham alır. Tapınaklarda, avlularda ve saraylarda tanrıların gücü, insan arzuları ve kaderin bedeli gözlerinizin önünde gelişen hikâyelere dönüşür.
+
+- **Görsel kimlik**: İfadeli beyaz yüzler, birbirinden ayırt edilen tanrılar ve belirgin cel-shading ışık-gölge düzeni, mitolojik dünyaya derinlik katar.
+- **Hareketle anlatım**: Karakterler, nesneler ve dekor bağımsız katmanlarda hareket eder; küçük jestler, derinliği açığa çıkaran sahneler ve amaca yönelik kamera hareketleri hikâyeyi ilerletir.
+- **Uygun içerikler**: Yunan mitleri, efsaneler ve güç, kader ile zor seçimler üzerine kısa hikâyeler.
+
+<table width="100%">
+  <tr>
+    <th width="50%" align="center">Örnek 1: Midas ve Altın Dokunuş</th>
+    <th width="50%" align="center">Örnek 2: Şafaksız Krallık</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/readme/b8-midas-approved-r3-v1.mp4"><img src="assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="Örnek 1: Midas ve Altın Dokunuş" width="360"></a></td>
+    <td width="50%" align="center"><a href="assets/readme/b8-kingdom-without-dawn.mp4"><img src="assets/readme/previews/b8-greek-mythology.gif" alt="Örnek 2: Şafaksız Krallık" width="360"></a></td>
+  </tr>
+  <tr>
+    <td align="center">Myrrdin anlatımı · Çizgi film karakter animasyonu · Hikâyeye eşlik eden ses efektleri</td>
+    <td align="center">Karakter seslendirmeleri · Derinliği ortaya çıkaran sahneler · Hikâyeye eşlik eden ses efektleri</td>
+  </tr>
+</table>
+
+<!-- b8:section:end -->
+
+---
+
+<a id="b9"></a>
+
+### B9: Yakında…
 
 Yeni Code Engine stilleri ve kod tabanlı animasyonlar hazırlanıyor. [Projeye yıldız verin](#road-to-10000-stars--creator-ecosystem) ve gelecek güncellemeleri takip edin!
 

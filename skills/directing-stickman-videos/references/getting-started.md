@@ -2,6 +2,8 @@
 
 ## Installation handoff and first invocation
 
+**B8 local selection:** when the user names [B8 · 希腊神画风](b8-greek-mythology.md), honor it directly and load its [approved default standard](b8-approved-standard.md) plus bundled drawing/motion references. Do not send the user back to a catalog, ask them to restate the drawing style, or fall back to B1. B8 remains local only and unpublished; its [installed workflow](b8-installed-workflow.md) provides shared `init --style B8`, a dedicated whole-cel renderer, a portable approved replay, drawing prompts and proposal/keypose boards. Author and review story-specific artwork; bundled examples do not approve a new story. Confirm the story/cast/shot proposal, reusing known choices and valid approvals. This does not change any other style.
+
 If installation fails while cloning the repository, follow [installation troubleshooting](installation-troubleshooting.md) before continuing the handoff.
 
 A standalone Skill is loaded when invoked; its files do not provide a universal post-install execution hook. When the assistant performs installation, verify it and then read the installed `SKILL.md` and present the introduction in that same conversation. If the user installed through a terminal or another host, present it on the first invocation. Do not add an npm install hook, background task, second Skill or plugin just to display a welcome. Say "installed" only after installation has actually been verified.
