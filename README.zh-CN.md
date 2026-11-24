@@ -228,7 +228,7 @@ https://github.com/kaomei/stickman-video-director
 ```
 
 - **出片流程：** 分镜确认后，可自行手动生成，也可让 Agent 通过内置浏览器操作（先用低分辨率试片，满意后再连续制作并剪辑成片）。 生成片段可按剧情需要拆剪、拼接，无需与成片镜头一一对应。
-- **推荐平台：** 推荐使用 Google Flow，便于接近样片效果；首次制作可参考 [X 详细教程](https://x.com/CrazyKaomei/status/2102311241046008268)。
+- **推荐平台：** 推荐使用 Google Flow，便于接近样片效果；首次制作可参考 [X 详细教程](https://x.com/AveryRunsAI/status/2124444676937621723?a=ONRkcoLggSVni_b78rQ&s=20)。
 
 <a id="autopilot-start"></a>
 

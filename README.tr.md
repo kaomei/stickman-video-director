@@ -228,7 +228,7 @@ onayımdan sonra her sahne için bağımsız kullanılabilen video üretim istem
 ```
 
 - **Üretim akışı:** Çekim planını onayladıktan sonra videoları kendiniz üretebilir veya ajanın yerleşik tarayıcıyı kullanmasını isteyebilirsiniz. Önce düşük çözünürlükte bir deneme yapılır; sonuçtan memnun kaldığınızda üretim ve kurgu tamamlanır. Üretilen klip kurgu için kaynak görüntüdür; bitmiş videodaki tek bir planla bire bir eşleşmesi gerekmez. Süresini hikâyeye ve modelin olanaklarına göre belirleyin, ardından klipleri kurguda kırpın, bölün ve birleştirin.
-- **Önerilen platform:** Örneklere yaklaşmak için Google Flow önerilir. İlk üretiminizde [X'teki ayrıntılı rehbere](https://x.com/CrazyKaomei/status/2102311241046008268) bakabilirsiniz.
+- **Önerilen platform:** Örneklere yaklaşmak için Google Flow önerilir. İlk üretiminizde [X'teki ayrıntılı rehbere](https://x.com/AveryRunsAI/status/2124444676937621723?a=ONRkcoLggSVni_b78rQ&s=20) bakabilirsiniz.
 
 <a id="autopilot-start"></a>
 
