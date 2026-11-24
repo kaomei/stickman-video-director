@@ -228,7 +228,7 @@ après mon approbation, fournis des prompts de génération vidéo utilisables i
 ```
 
 - **Production :** Après validation du storyboard, générez les plans vous-même ou laissez un agent utiliser son navigateur intégré (testez d’abord en basse résolution ; une fois le résultat approuvé, il poursuit la production et le montage). Une séquence générée est un matériau de montage, pas nécessairement un seul plan du film final. Sa durée dépend du récit et des capacités du modèle ; elle peut ensuite être raccourcie, découpée ou assemblée avec d’autres séquences au montage.
-- **Plateforme recommandée :** Google Flow est recommandé pour se rapprocher du rendu des exemples ; pour votre première vidéo, consultez le [tutoriel détaillé sur X](https://x.com/CrazyKaomei/status/2102311241046008268).
+- **Plateforme recommandée :** Google Flow est recommandé pour se rapprocher du rendu des exemples ; pour votre première vidéo, consultez le [tutoriel détaillé sur X](https://x.com/AveryRunsAI/status/2124444676937621723?a=ONRkcoLggSVni_b78rQ&s=20).
 
 <a id="autopilot-start"></a>
 

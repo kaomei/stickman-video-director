@@ -228,7 +228,7 @@ After I approve them, provide self-contained video generation prompts for each s
 ```
 
 - **Production workflow:** After approving the storyboard, you can generate the clips manually or ask your agent to generate them using its browser tools. Start with a low-resolution test. Once you approve the result, your agent can handle the remaining clips and assemble the full video, adding captions and audio as needed. A generated clip is source footage, not necessarily one finished shot. Choose its length to suit the story and the model’s capabilities, then trim, split, and combine clips in the edit.
-- **Recommended platform:** Use Google Flow to get closer to the sample results. For your first video, see the [detailed tutorial on X](https://x.com/CrazyKaomei/status/2102311241046008268).
+- **Recommended platform:** Use Google Flow to get closer to the sample results. For your first video, see the [detailed tutorial on X](https://x.com/AveryRunsAI/status/2124444676937621723?a=ONRkcoLggSVni_b78rQ&s=20).
 
 <a id="autopilot-start"></a>
 

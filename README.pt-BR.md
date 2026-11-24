@@ -228,7 +228,7 @@ após minha aprovação, forneça prompts de geração de vídeo que possam ser 
 ```
 
 - **Produção:** Após aprovar o storyboard, você pode gerar as cenas manualmente ou deixar um agente operar pelo navegador integrado (primeiro faça um teste em baixa resolução; com o resultado aprovado, ele continua a produção e a edição do vídeo final). Um clipe gerado é material para edição, não necessariamente um único plano do vídeo final. A duração depende da história e dos recursos do modelo; depois, os clipes podem ser aparados, divididos e combinados na edição.
-- **Plataforma recomendada:** Recomendamos o Google Flow para se aproximar do resultado dos exemplos; para o primeiro vídeo, consulte o [tutorial detalhado no X](https://x.com/CrazyKaomei/status/2102311241046008268).
+- **Plataforma recomendada:** Recomendamos o Google Flow para se aproximar do resultado dos exemplos; para o primeiro vídeo, consulte o [tutorial detalhado no X](https://x.com/AveryRunsAI/status/2124444676937621723?a=ONRkcoLggSVni_b78rQ&s=20).
 
 <a id="autopilot-start"></a>
 
