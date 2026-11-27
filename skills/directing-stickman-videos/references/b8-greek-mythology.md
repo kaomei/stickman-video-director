@@ -1,6 +1,6 @@
 # B8 · 希腊神画风
 
-Locally installed, unpublished style module inside `directing-stickman-videos`, not another Skill installation. B7 remains Pixel Theater and is unchanged. Use this contract for B8 planning, code animation, revision and review. Selecting B8 also selects the [approved default standard and bundled visual references](b8-approved-standard.md) and [visual quality gates](b8-visual-quality-gates.md); inspect the actual landscape/portrait references before planning, without asking the user to choose this drawing style again. Read [Autopilot](autopilot.md), the [mode boundaries](mode-execution-boundaries.md) and [common production QA](autopilot-production-qa.md) as well.
+B8 is included in the `directing-stickman-videos` Skill. Use this contract for B8 planning, code animation, revision and review. Selecting B8 also selects the [approved default standard and bundled visual references](b8-approved-standard.md) and [visual quality gates](b8-visual-quality-gates.md); inspect the actual landscape/portrait references before planning, without asking the user to choose this drawing style again. Read [Autopilot](autopilot.md), the [mode boundaries](mode-execution-boundaries.md) and [common production QA](autopilot-production-qa.md) as well.
 
 Visual inspiration: [@HeyHistorically and the dated public channel data](b8-inspiration-source.md).
 
@@ -11,7 +11,7 @@ Visual inspiration: [@HeyHistorically and the dated public channel data](b8-insp
 - 宙斯当前眼睛标准为黑眼形内一点小白点，沿用确认的眼睛素材，不自动改成彩色眼睛、空洞纯黑或统一愤怒眉。其他角色按各自身份与当下情绪表演，不复制宙斯面部模板。
 - 按目标画幅原生构图。9:16 从提案和姿势阶段单独设计每镜可见动作、接触/结果与全身或近景意图，检查首中尾及最大位移；全身保留头冠、双脚、地面关系与字幕安全区，近景不得露出半身 cel 的平底。横屏批准不自动覆盖竖屏，不能用居中裁切代替构图审阅。实际竖屏参考为附包 Midas V5 与其开场/全身/手臂方向板。
 - 开工先查项目 checkpoint、角色/场景清单、实际移动参考及已确认音轨。参考视频看色彩、笔触和时间中的表现，不能只凭一帧猜运动。本 Skill 已附带获认可试片、人物画风板与接触/逐镜参考，见默认标准；另含[可移植执行流程](b8-installed-workflow.md)、独立认可样片复现与新故事分层运行时。先核验基准包再查看实际图像/运动；缺少当前故事的角色、视角或渲染入口时明确记录，先完成不受影响的计划，不冒充已复现。
-- 本地安装已支持 `doctor/init --style B8` 与专用 B8 制作命令；不代表新版已经公开发布。不得借此生成后续全片、付费重录、发布 GitHub 或改动 B7；授权按当前请求执行。
+- Skill 提供 `doctor/init --style B8` 与专用 B8 制作命令。不得借此生成后续全片、付费重录、发布 GitHub 或改动 B7；授权按当前请求执行。
 
 ## 先审分镜导演提案板
 
@@ -23,7 +23,7 @@ Visual inspiration: [@HeyHistorically and the dated public channel data](b8-insp
 
 已存在工程继续沿用实际 checkpoint 和有效素材/代码；不为安装测试重建用户工程。新故事入口自带画风参考、绘图任务、逐镜表、接触审计和批准指纹绑定。完整绘制的 cels、道具状态、局部材质与相机为实际执行对象；复杂动作先设计接触细节、结果与反应，不生成关节式胳膊。
 
-`proposal`、`keyposes`、`preview`、`render` 报告自动导出逐镜 `quality_review`，所需项从 pending 开始，覆盖全角色共同画风、目标画幅构图、关键姿势/视频的身体左右与手臂方向，以及视频空间运动。按[视觉检查规范](b8-visual-quality-gates.md)实际查看后，记录审阅者、镜号/时间与具体说明、绑定报告 artifacts 的 SHA-256 证据；视频检查引用实际编码 MP4。现有 `approve` 检查记录后才写入新批准并冻结独立报告快照，pending/failed 先修，不新增用户审批阶段；后续补审原报告不撤销未改变范围的有效历史批准。交付前执行 `node scripts/autopilot.mjs validate PROJECT --review REPORT` 作只读终检。它核对文件、指纹和记录，并阻断显式 visual/technical/listening failed；不识别画面好坏，也不能将回放、听审或用户验收的 pending 改称通过。
+`proposal`、`keyposes`、`preview`、`render` 报告自动导出逐镜 `quality_review`，所需项从 pending 开始，覆盖全角色共同画风、目标画幅构图、逐镜信息推进与运镜、关键姿势和视频的身体左右与手臂方向，以及实际视频的空间运动。全片另外检查画面因果和结尾回收。按[视觉检查规范](b8-visual-quality-gates.md)实际查看后，记录审阅者、镜号/时间与具体说明、绑定报告 artifacts 的 SHA-256 证据；视频检查引用实际编码 MP4。现有 `approve` 检查记录后才写入新批准并冻结独立报告快照，pending/failed 先修，不新增用户审批阶段；后续补审原报告不撤销未改变范围的有效历史批准。交付前执行 `node scripts/autopilot.mjs validate PROJECT --review REPORT` 作只读终检。它核对文件、指纹和记录，并阻断显式 visual/technical/listening failed；不识别画面好坏，也不能将回放、听审或用户验收的 pending 改称通过。
 
 `demo --style B8 --output ...` 可在不读原工程的情况下从附带素材重新渲染获认可 Midas 20 秒，沿用原完整声音 1x。它是具体样片复现，不能作为新故事、多角色或竖屏已验收的证据。新故事仍由代理按实际参考绘图和调度，不是套用 Midas 镜头/角色。
 
@@ -33,11 +33,17 @@ Visual inspiration: [@HeyHistorically and the dated public channel data](b8-insp
 
 静帧/抽样技术检查、完整正常速度回放、实际听音和用户验收分开记录；缺失的验收保持 `pending`。仅在三项实际验收均有证据后使用 `--require-acceptance`，不能为让门槛通过而改状态。旧工程按固定时间切换遮挡顺序时，记录为时间编排例外并核对切换前后帧，不能写成已经验证空间触发；规范审查不自动授权重做已保留成片。
 
-## 全段执行，不只做开头
+## Video structure
 
-同一标准覆盖**本次获授权的完整时长**，包括开头、正文、转折、反应和结尾。20 秒样片覆盖这 20 秒；样片认可不等于其余全片已制作、已验收或获准开工。后续获准扩展时，所有新增镜头同样执行，不能回退成配字幕的静图轮播；不能只精修开头或结尾，而让正文退回同轴静图推拉。
+先确定观众在结尾要亲眼看懂的后果，再倒推开头要埋下什么、正文要交代哪些空间和因果。以下结构覆盖本次获准制作的全段。镜数、景别和时长按故事与实际语音安排，各段可以合在同一镜，也可以分镜。20 秒样片按其完整范围执行，后续扩展的镜头也适用同一标准。
 
-丰富度来自**信息变化、空间关系、素材/状态切换与节奏**，不是四肢动作数量。没有走路剧情就不做走路；移动可用整张角色 cel 的有限位移、轻微重心变化、视线、表情及衣发滞后，不强制两腿交替。也不让所有层永远飘动。严肃、史诗感需要停顿、尺度与后果，不靠持续抖动或特效堆砌。
+1. **开头提出一个能看懂的问题。** 用主角的选择、异常状态或关键物件开场，给足一眼辨认的空间线索。让观众先明白该看哪里、接下来想知道什么。
+2. **正文逐镜推进。** 用共同地标或清楚的画面方向，交代人物、关键道具和受影响目标的空间关系。每次切镜或运镜新增一条可见信息，例如揭示目标、读清一次反应，或看见局部动作对全场的影响。在同一地点也可用景别、视角和前景揭示推进。人物可以在下一镜已站定，只保留会改变局势或空间关系的移动。
+3. **关键动作拍清接触与首个变化。** 稳定取景，让手、握点和道具的变化可见。有决定性的物理触发时，在同一镜头看清接触、操作及触发点的首个可见变化。跨切接住人物和道具的位置、受力或持有状态、视线、运动方向和动作阶段。环境推进遵守同一空间坐标，近层移开后仍有完整底图。
+4. **追踪影响如何抵达目标。** 作用从一个位置传到另一个位置时，用同一画面方向或共同地标接住路径。让观众先认出目标原来的状态，再看见影响抵达后目标才发生变化。可以跟随道具、光或环境变化推进。
+5. **结尾兑现开头的问题，再停稳。** 用同一空间关系让观众看清局势已经怎样改变，再按故事需要用结果的余动或人物反应收尾。留足辨认时间。有情绪作用的停顿可以保留；末段持续推拉同一画面、只剩旁白交代后果，需重新编排。
+
+每镜确定一个主导观看目标。运镜跟随有意义的动作、转移注意或揭示空间，读清后收住。按需要交替环境全景、接触细节、人物反应与结果。沿用 B 模式通用的 2.5 秒主体信息停滞检查。有实质动作、揭示或反应的长镜可以持续。单纯缩放、漂移、换字幕或叠特效无法补足停滞。
 
 ## Per-shot ledger
 
