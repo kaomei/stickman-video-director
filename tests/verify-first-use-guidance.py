@@ -83,12 +83,35 @@ for target in ("assets/a7/reference-manifest.json", "assets/a7/validated-workflo
 assert len(entry.encode()) <= 20000, "Keep the new workflow detail in references"
 assert "(references/mode-execution-boundaries.md)" in entry and boundaries.is_file()
 assert "Before planning" in entry
-assert "Published B choices are B1, B2, B3, B4, B5 and B6" in guide_text
+assert "(references/style-selection.md)" in entry
+assert "(style-selection.md)" in guide_text
+picker = (skill / "references/style-selection.md").read_text()
+for engine in ("a", "b"):
+    for language in ("en", "zh-CN"):
+        chart = f"assets/style-previews/{engine}.{language}.jpg"
+        assert f"(../{chart})" in picker, f"Missing style chart route: {chart}"
+        assert (skill / chart).stat().st_size > 0, f"Empty style chart: {chart}"
+choices = re.findall(r"^\| ([AB]\d+)" + r" \| ([^|]+)" * 6 + r" \|$", picker, re.M)
+assert [style for style, *_ in choices] == [
+    *(f"A{i}" for i in range(1, 9)),
+    *(f"B{i}" for i in range(1, 9)),
+]
+for style, english, chinese, *guidance in choices:
+    assert all(field.strip() for field in guidance), style
+    thumbnail = skill / "assets/style-previews" / f"{style.lower()}.jpg"
+    assert thumbnail.is_file() and thumbnail.stat().st_size > 0, style
+    for filename, separator, title in (
+        ("README.en.md", ": ", english),
+        ("README.zh-CN.md", "：", chinese),
+    ):
+        assert f"### {style}{separator}{title.strip()}" in (root / filename).read_text().splitlines(), style
 assert "scripts/character-explainer.mjs" in guide_text
 assert "B1–B4 use the bundled manifest runtime" in guide_text
 assert "not an accepted `style: B4` CLI value" not in guide_text
 assert "B4 and B5 remain local development only" not in guide_text
 assert "Only B1 is currently available" not in guide_text
+assert "B8 remains local only" not in guide_text
+assert "[B8 · 希腊神话风](b8-greek-mythology.md)" in guide_text
 frontmatter = entry.split("---\n", 2)[1]
 name = re.search(r"^name: (.+)$", frontmatter, re.M).group(1)
 description = json.loads(re.search(r"^description: (.+)$", frontmatter, re.M).group(1))
@@ -124,7 +147,7 @@ assert {language: filename for language, filename, _ in catalog_rows} == expecte
 for language, filename, url in catalog_rows:
     assert url == f"https://github.com/kaomei/stickman-video-director/blob/main/{filename}", language
     readme = (root / filename).read_text()
-    for catalog in ("a-styles", "b-styles"):
+    for catalog in ("style-gallery", "a-styles", "b-styles"):
         assert f'<a id="{catalog}"></a>' in readme, (language, catalog)
 for requirement in ("en-GB", "fr-CA", "pt-PT", "Do not use the host locale instead of a clear conversation language",
                     "An explicit request to view a particular README edition", "For an unsupported language",

@@ -2,7 +2,7 @@
 
 ## Installation handoff and first invocation
 
-**B8 local selection:** when the user names [B8 · 希腊神画风](b8-greek-mythology.md), honor it directly and load its [approved default standard](b8-approved-standard.md) plus bundled drawing/motion references. Do not send the user back to a catalog, ask them to restate the drawing style, or fall back to B1. B8 remains local only and unpublished; its [installed workflow](b8-installed-workflow.md) provides shared `init --style B8`, a dedicated whole-cel renderer, a portable approved replay, drawing prompts and proposal/keypose boards. Author and review story-specific artwork; bundled examples do not approve a new story. Confirm the story/cast/shot proposal, reusing known choices and valid approvals. This does not change any other style.
+**B8 selection:** when the user names [B8 · 希腊神话风](b8-greek-mythology.md), honor it directly and load its [approved default standard](b8-approved-standard.md) plus bundled drawing/motion references. Do not send the user back to a catalog, ask them to restate the drawing style, or fall back to B1. Its [installed workflow](b8-installed-workflow.md) provides shared `init --style B8`, a dedicated whole-cel renderer, a portable approved replay, drawing prompts and proposal/keypose boards. Author and review story-specific artwork; bundled examples do not approve a new story. Confirm the story/cast/shot proposal, reusing known choices and valid approvals. This does not change any other style.
 
 If installation fails while cloning the repository, follow [installation troubleshooting](installation-troubleshooting.md) before continuing the handoff.
 
@@ -10,13 +10,13 @@ A standalone Skill is loaded when invoked; its files do not provide a universal 
 
 Maintain one shared guide, not separate onboarding editions for each README language. Follow an explicit guidance-language request first, otherwise use the user's current conversation language. If that is unclear, use the host/application or local language setting when it is already available; do not scan unrelated settings to infer it. If neither gives a clear language, ask one brief language question. Translate the explanation and examples naturally; keep commands, paths, service/voice identifiers and A/B style codes intact. Guidance language is independent of narration/subtitle language: a Chinese conversation can request an English video, and English-default narration must not force English onboarding. Do not infer guidance language from the README edition or source article alone.
 
-Give a readable quick-start, not just a greeting or two mode names. Show it once in the current conversation, not before every task. Do not write global user settings or an installed-Skill marker to remember it. When resuming, inspect the existing checkpoint and outputs instead of replaying onboarding or production.
+Show the first-use guidance once in the current conversation. Do not write global user settings or an installed-Skill marker to remember it. When resuming, inspect the existing checkpoint and outputs instead of replaying onboarding or production.
 
 ### A practical first-use explanation
 
-With no brief yet, use short headings like a README quick-start. Explain the actual deliverable, suitable content/duration, tools to prepare, production sequence and a copyable request. Distinguish what the assistant does from what the user needs to do. Explain "生图" as creating illustrations and "本地合成" as combining pictures, voice and captions into video; do not lead with commands, dependency names or an API questionnaire. Treat durations as recommendations, not enforced limits.
+With no brief yet, briefly acknowledge readiness and invite the user to share a topic, article, link, or script. Give the short A/B introduction and tool recommendations from the [chat style picker](style-selection.md) if the user needs help choosing. When the user brings a creation brief without a selected style, show the picker with previews and suitable topics. When a style is already known, continue directly. Point to the public README catalogs for full video samples. Use the longer walkthrough below only on request.
 
-Proactively show where to choose a style: link the public GitHub catalogs shown below, explain that the user can watch samples and reply with a style code such as A3 or B1. Do not wait for "where do I choose?" or substitute an installed reference-file path for the public catalog. With no mode selected, show both links; with a known mode but no style, show only its relevant link. If a style is already supplied, acknowledge it and continue without requiring another catalog visit or selection. Published B choices are B1, B2, B3, B4, B5 and B6. B5 · Avatar Explainer has its own code-authored route: read [B5](b5-character-explainer.md), initialize with `--style B5`, and use `scripts/character-explainer.mjs` for frame rendering and encoding. B1–B4 use the bundled manifest runtime with their own visuals, voices and audio contracts. Offer B4 from the public catalog, initialize it explicitly with `--style B4`, and keep project media outside the installed Skill. Do not offer unpublished experiments as ready choices. B6 · Meme Story Animation uses the [installed production workflow](b6-installed-production.md) and dedicated painted-world code renderer: initialize with `--style B6 --ratio 16:9|9:16|both`, then author and inspect its native plans, art, bindings, sound and animation. The agent handles this work; a successful initializer or V90 replay is not a new finished film. Portrait works best; use Sample 1 portrait V44 and its [35-item acceptance matrix](b6-sample-1-acceptance.md) as the strict standard. Reuse known ratio/voice choices; still-art/speech generation follows existing authorization.
+B5 · Avatar Explainer has its own code-authored route: read [B5](b5-character-explainer.md), initialize with `--style B5`, and use `scripts/character-explainer.mjs` for frame rendering and encoding. B1–B4 use the bundled manifest runtime with their own visuals, voices and audio contracts. Offer B4 from the public catalog, initialize it explicitly with `--style B4`, and keep project media outside the installed Skill. Do not offer unpublished experiments as ready choices. B6 · Meme Story Animation uses the [installed production workflow](b6-installed-production.md) and dedicated painted-world code renderer: initialize with `--style B6 --ratio 16:9|9:16|both`, then author and inspect its native plans, art, bindings, sound and animation. The agent handles this work; a successful initializer or V90 replay is not a new finished film. Portrait works best; use Sample 1 portrait V44 and its [35-item acceptance matrix](b6-sample-1-acceptance.md) as the strict standard. Reuse known ratio/voice choices; still-art/speech generation follows existing authorization.
 
 ### Choose the public catalog language
 
@@ -33,9 +33,9 @@ Resolve the guidance language using the priority above, then select its README f
 | tr | Turkish | [README.tr.md](https://github.com/kaomei/stickman-video-director/blob/main/README.tr.md) |
 | id | Indonesian | [README.id.md](https://github.com/kaomei/stickman-video-director/blob/main/README.id.md) |
 
-Append `#a-styles` for the Model Engine catalog and `#b-styles` for the Autopilot catalog; these anchors are shared by every listed edition. Localize the visible link labels as well as choosing the right destination. For an unsupported language, keep the guidance and link labels in that language but use `README.en.md` for the catalog. Do not invent a translated filename or anchor, or silently fall back to Chinese.
+Append `#a-styles` for the Model Engine catalog and `#b-styles` for the Code Engine catalog; these anchors are shared by every listed edition. Localize the visible link labels as well as choosing the right destination. For an unsupported language, keep the guidance and link labels in that language but use `README.en.md` for the catalog. Do not invent a translated filename or anchor, or silently fall back to Chinese.
 
-For example, English guidance links to [Model Engine styles and samples](https://github.com/kaomei/stickman-video-director/blob/main/README.en.md#a-styles) and [Autopilot styles and samples](https://github.com/kaomei/stickman-video-director/blob/main/README.en.md#b-styles), even on a Chinese-language host. The Chinese welcome below uses the Chinese edition because its guidance is Chinese; do not copy its destinations unchanged into other languages.
+For example, English guidance links to [Model Engine styles and samples](https://github.com/kaomei/stickman-video-director/blob/main/README.en.md#a-styles) and [Code Engine styles and samples](https://github.com/kaomei/stickman-video-director/blob/main/README.en.md#b-styles), even on a Chinese-language host. The Chinese welcome below uses the Chinese edition because its guidance is Chinese; do not copy its destinations unchanged into other languages.
 
 Adapt this Chinese example to the actual environment and installation status:
 
@@ -43,7 +43,7 @@ Adapt this Chinese example to the actual environment and installation status:
 
 给我一个话题、需求、文章链接或故事脚本，就可以开始。**不用先写好完整文案**，我会帮你整理内容，再按你选的模式往下做。一次安装即可使用下面两种模式。
 
-**画风在这里选择：**[模型引擎画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#a-styles) · [全自动模式画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#b-styles)。打开看样片，选好后把画风编号（如 **A3** 或 **B1**）告诉我即可，不用下载画风包或重新安装。
+告诉我你想做什么，我会在聊天里展示画风和各自适合的题材。选好后回复编号（如 **A3** 或 **B1**）即可。想看完整样片，可以打开[模型引擎画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#a-styles)或[代码引擎画风一览](https://github.com/kaomei/stickman-video-director/blob/main/README.zh-CN.md#b-styles)。
 
 #### A · Model Engine（模型引擎）：分镜与提示词，或由 Agent 连续制作
 
@@ -93,7 +93,7 @@ Adapt this Chinese example to the actual environment and installation status:
 
 ### Adapt instead of replaying the README
 
-If the user's deliverable or mode is already clear, acknowledge it in one sentence, explain only the relevant mode's output/preparation/next stage, and continue with its first incomplete stage. Do not send the full two-mode tutorial to a user who already gave a complete brief or asked to skip it. Do not make the user choose A/B again, paste their source again, or answer questions already resolved. If the brief is complete, proceed rather than waiting for "start". Installation alone is not authorization for paid generation or full production.
+If the user has a creation brief but has not chosen a style, use the [chat style picker](style-selection.md) in place of the full welcome. If the style is already clear, acknowledge it in one sentence and continue with its first incomplete stage. Do not send the full two-mode tutorial to a user who already gave a complete brief or asked to skip it. Do not make the user choose A/B again, paste their source again, or answer questions already resolved. If the brief is complete, proceed rather than waiting for "start". Installation alone is not authorization for paid generation or full production.
 
 ## Progress at each substantive stage
 
