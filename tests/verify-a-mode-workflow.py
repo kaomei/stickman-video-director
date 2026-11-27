@@ -129,15 +129,20 @@ actual_names = sorted(p.name for p in refs.iterdir() if p.is_file()
 assert actual_names == sorted(expected['files']), f'{args.scope}: B reference inventory changed'
 for name, digest in expected['files'].items():
     assert hashlib.sha256((refs / name).read_bytes()).hexdigest() == digest, f'B scope boundary changed: {name}'
-guide = read('getting-started.md')
-welcome = guide.split('### 欢迎使用火柴人视频 Skill\n', 1)[1].split('### Adapt instead of replaying the README', 1)[0]
-b_welcome = '#### B' + welcome.split('#### B', 1)[1]
-assert hashlib.sha256(b_welcome.encode()).hexdigest() == expected['b_welcome_sha256'], 'B scope boundary changed: welcome'
+if args.scope == 'published':
+    b_intro = [line for line in read('style-selection.md').splitlines()
+               if line.startswith('- **B · Code Engine')]
+    assert len(b_intro) == 2, 'B must have both chat introductions'
+    assert hashlib.sha256('\n'.join(b_intro).encode()).hexdigest() == expected['b_engine_intro_sha256'], 'B scope boundary changed: engine introduction'
+    assert re.search(r'references/b8[-/.]', entry), 'Published B8 route is missing'
+    assert not re.search(r'references/b(?:9|10)[-/.]', entry), 'Unreleased B styles leaked'
+else:
+    guide = read('getting-started.md')
+    welcome = guide.split('### 欢迎使用火柴人视频 Skill\n', 1)[1].split('### Adapt instead of replaying the README', 1)[0]
+    b_welcome = '#### B' + welcome.split('#### B', 1)[1]
+    assert hashlib.sha256(b_welcome.encode()).hexdigest() == expected['b_welcome_sha256'], 'B scope boundary changed: welcome'
 if args.scope == 'a':
     assert not re.search(r'references/b(?:7|8|9|10)[-/.]', entry), 'Unpublished B route leaked into A-only entry'
 
 print(f'[{args.scope}] A1–A8 routes, variable source/edit timing, complete A2 identity, independent audio and B boundary passed.')
 print('Static policy checks only; historical approved media are preserved, not regenerated or re-audited.')
-
-if args.scope == "published":
-    assert not re.search(r"references/b(?:8|9|10)[-/.]", entry), "Unreleased B styles leaked"

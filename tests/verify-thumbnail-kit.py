@@ -100,8 +100,8 @@ for locale, roadmap in roadmap_labels.items():
     assert all(token in prompt[0] for token in ('16:9', '1', '5', 'YouTube')), filename
     assert all(token in localized for token in ('YouTube Studio', 'SEO', 'Content-ID', 'TikTok')), filename
     nav = next(line for line in text.splitlines() if '](#quick-start)' in line and '](#faq)' in line)
-    targets = re.findall(r'\]\((#[^)]+)\)', nav)
-    assert targets == ['#quick-start', '#style-gallery', '#faq', '#road-to-10000-stars--creator-ecosystem', '#community'], (filename, targets)
+    targets = re.findall(r'\]\(([^)]+)\)', nav)
+    assert targets == ['#quick-start', 'https://x.com/AveryRunsAI/status/2124444676937621723', '#faq', '#road-to-10000-stars--creator-ecosystem', '#community'], (filename, targets)
     assert f'[{roadmap}](#road-to-10000-stars--creator-ecosystem)' in nav and nav.endswith('](#community)'), filename
     if locale != 'en':
         assert 'Your video is only as good as the click.' not in localized, filename

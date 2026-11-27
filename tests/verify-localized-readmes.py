@@ -29,56 +29,56 @@ assert "# 🎬 Stickman Video Director" in source
 english_hero = source.split("</div>", 1)[0]
 assert "**Scale your faceless channel with automated stickman animations.**" in english_hero
 english_intro = (
-    '**Send your AI agent one message — get back a finished stickman video.**<br>\nScript, voiceover, captions & sound · 15 battle-tested styles · For Claude Code, Codex & more',
+    '**Send your AI agent one message — get back a finished stickman video.**<br>\nScript, voiceover, captions & sound · 16 battle-tested styles · For Claude Code, Codex & more',
     '💬 One message → ✅ Approve script & preview → 🎬 Finished video',
     "**No After Effects. No $50/mo SaaS tax. Ship daily without burnout.**",
 )
 assert "\n\n".join(english_intro) in english_hero, "Approved English introduction and bold formatting"
-assert "For your first video, see the [detailed tutorial on X](https://x.com/CrazyKaomei/status/2102311241046008268)." in source, "Approved first-video walkthrough copy and unchanged X thread link"
+assert "For your first video, see the [detailed tutorial on X](https://x.com/AveryRunsAI/status/2124444676937621723?a=ONRkcoLggSVni_b78rQ&s=20)." in source, "Approved first-video walkthrough copy and unchanged X thread link"
 
 # User-approved hero copy; publication and integration use their actual style counts.
 approved_localized_hero = {
     'zh-CN': ('**用全自动火柴人动画，规模化量产你的无人出镜频道。**',
-        '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 15 款实操验证的画风 · 支持 Claude Code、Codex 等',
+        '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 16 款实操验证的画风 · 支持 Claude Code、Codex 等',
         '💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片',
         '**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**',
-        '[快速上手](#quick-start) · [样片展厅](#style-gallery) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)',
+        '[快速上手](#quick-start) · [X 教程](https://x.com/AveryRunsAI/status/2124444676937621723) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)',
         '*⭐ 欢迎点亮 Star，第一时间解锁最新画风与功能更新！*'),
     'ja': ('**自動化された棒人間アニメーションで、顔出しなしチャンネルを規模化・量産へ。**',
-        '**AIエージェントにひと言送るだけで、完成した棒人間動画が届く。**<br>\n台本・音声・字幕・効果音までおまかせ · 実戦検証済みの15画風 · Claude Code・Codex 対応',
+        '**AIエージェントにひと言送るだけで、完成した棒人間動画が届く。**<br>\n台本・音声・字幕・効果音までおまかせ · 実戦検証済みの16画風 · Claude Code・Codex 対応',
         '💬 ひと言送る → ✅ 台本とプレビューを確認 → 🎬 完成動画',
         '**面倒な動画編集・アニメ付けは不要。月額50ドルのSaaS税もゼロ。毎日投稿を、もっと楽に。**',
-        '[クイックスタート](#quick-start) · [ショーケース](#style-gallery) · [FAQ](#faq) · [ロードマップ](#road-to-10000-stars--creator-ecosystem) · [コミュニティ](#community)',
+        '[クイックスタート](#quick-start) · [Xのガイド](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [ロードマップ](#road-to-10000-stars--creator-ecosystem) · [コミュニティ](#community)',
         '*⭐ 次のスタイル追加や新機能を見逃さないよう、ぜひ Star をお願いします！*'),
     'ko': ('**자동화된 스틱맨 애니메이션으로 얼굴 없는 유튜브 채널을 대량 양산하세요.**',
-        '**AI 에이전트에게 메시지 한 줄만 보내면, 완성된 스틱맨 영상이 돌아옵니다.**<br>\n대본·내레이션·자막·사운드까지 한 번에 · 검증된 15가지 스타일 · Claude Code, Codex 등 지원',
+        '**AI 에이전트에게 메시지 한 줄만 보내면, 완성된 스틱맨 영상이 돌아옵니다.**<br>\n대본·내레이션·자막·사운드까지 한 번에 · 검증된 16가지 스타일 · Claude Code, Codex 등 지원',
         '💬 메시지 한 줄 → ✅ 대본과 미리보기 확인 → 🎬 완성 영상',
         '**복잡한 모션 그래픽 작업 불필요. 매달 50달러의 SaaS 구독료도 제로. 지치지 않고 매일 업로드.**',
-        '[빠른 시작](#quick-start) · [쇼케이스](#style-gallery) · [FAQ](#faq) · [로드맵](#road-to-10000-stars--creator-ecosystem) · [커뮤니티](#community)',
+        '[빠른 시작](#quick-start) · [X 가이드](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [로드맵](#road-to-10000-stars--creator-ecosystem) · [커뮤니티](#community)',
         '*⭐ 저장소를 Star하고 다음 스타일 업데이트와 새로운 기능을 가장 먼저 확인하세요.*'),
     'pt-BR': ('**Escale sua rede de canais dark com animações automatizadas de boneco-palito.**',
-        '**Mande uma mensagem para seu agente de IA e receba um vídeo de boneco-palito pronto.**<br>\nRoteiro, locução, legendas e som · 15 estilos testados · Para Claude Code, Codex e mais',
+        '**Mande uma mensagem para seu agente de IA e receba um vídeo de boneco-palito pronto.**<br>\nRoteiro, locução, legendas e som · 16 estilos testados · Para Claude Code, Codex e mais',
         '💬 Uma mensagem → ✅ Aprove o roteiro e a prévia → 🎬 Vídeo pronto',
         '**Chega de sofrer no After Effects. Sem taxa de US$ 50/mês em SaaS. Poste todo dia sem esgotamento.**',
-        '[Início Rápido](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)',
+        '[Início Rápido](#quick-start) · [Guia no X](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)',
         '*⭐ Deixe uma estrela no projeto para acompanhar os próximos estilos e novidades.*'),
     'fr': ("**Industrialisez votre réseau de chaînes sans visage grâce à l'animation automatisée.**",
-        '**Un seul message à votre agent IA — et votre vidéo de bonshommes bâtons est prête.**<br>\nScript, voix off, sous-titres et son · 15 styles éprouvés · Pour Claude Code, Codex et plus',
+        '**Un seul message à votre agent IA — et votre vidéo de bonshommes bâtons est prête.**<br>\nScript, voix off, sous-titres et son · 16 styles éprouvés · Pour Claude Code, Codex et plus',
         '💬 Un message → ✅ Validez le script et l’aperçu → 🎬 Vidéo terminée',
         '**Oubliez les galères sur After Effects. Fini la taxe SaaS à 50 $/mois. Publiez quotidiennement sans épuisement.**',
-        '[Démarrage](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Communauté](#community)',
+        '[Démarrage](#quick-start) · [Guide sur X](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Communauté](#community)',
         '*⭐ Ajoutez une étoile au projet pour ne manquer aucun nouveau style ni mise à jour.*'),
     'tr': ('**Yüzsüz kanal ağınızı otomatik çöp adam animasyonlarıyla ölçeklendirin.**',
-        '**Yapay zekâ ajanınıza tek bir mesaj gönderin, bitmiş çöp adam videonuzu alın.**<br>\nSenaryo, seslendirme, altyazı ve ses · Kanıtlanmış 15 stil · Claude Code, Codex ve dahası',
+        '**Yapay zekâ ajanınıza tek bir mesaj gönderin, bitmiş çöp adam videonuzu alın.**<br>\nSenaryo, seslendirme, altyazı ve ses · Kanıtlanmış 16 stil · Claude Code, Codex ve dahası',
         '💬 Tek mesaj → ✅ Senaryoyu ve önizlemeyi onaylayın → 🎬 Hazır video',
         "**Karmaşık After Effects kurgularına son. Aylık 50$'lık SaaS vergisi yok. Tükenmeden her gün yayınlayın.**",
-        '[Hızlı Başlangıç](#quick-start) · [Vitrin](#style-gallery) · [SSS](#faq) · [Yol Haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)',
+        '[Hızlı Başlangıç](#quick-start) · [X’te Rehber](https://x.com/AveryRunsAI/status/2124444676937621723) · [SSS](#faq) · [Yol Haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)',
         '*⭐ Yeni stil güncellemelerini ve özellikleri kaçırmamak için projeye Star verin.*'),
     'id': ('**Skalakan jaringan channel tanpa wajah Anda dengan animasi stickman otomatis.**',
-        '**Kirim satu pesan ke agen AI Anda, dapatkan video stickman yang sudah jadi.**<br>\nNaskah, voiceover, subtitle & suara · 15 gaya teruji · Untuk Claude Code, Codex & lainnya',
+        '**Kirim satu pesan ke agen AI Anda, dapatkan video stickman yang sudah jadi.**<br>\nNaskah, voiceover, subtitle & suara · 16 gaya teruji · Untuk Claude Code, Codex & lainnya',
         '💬 Satu pesan → ✅ Setujui naskah & pratinjau → 🎬 Video jadi',
         '**Tanpa ribet animasi After Effects. Tanpa pajak langganan SaaS $50/bulan. Upload tiap hari tanpa burnout.**',
-        '[Panduan Cepat](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Komunitas](#community)',
+        '[Panduan Cepat](#quick-start) · [Panduan di X](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Komunitas](#community)',
         '*⭐ Berikan Star pada repositori ini untuk mendapatkan rilis gaya dan fitur terbaru.*'),
 }
 
@@ -109,7 +109,7 @@ def verify_next_style_teasers(text, name, gallery_styles, label):
         assert not re.search(r"\b\d[\d,.\s]*\s*Stars?\b", visible_teaser, re.I), (name, series, "next-style teaser has no numeric Star unlock promise")
 
 expected_images = images(cn)
-assert len(expected_images) == 55 and len(set(expected_images)) == 41
+assert len(expected_images) == 58 and len(set(expected_images)) == 43
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 b6_previews = [
     pinned + "7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/" + filename
@@ -152,7 +152,8 @@ shared_links = (
     "https://telegram.me/CrazyKaomei",
     "https://github.com/kaomei/stickman-video-director/blob/main/LICENSE",
     "https://github.com/leksautomate",
-    "https://x.com/CrazyKaomei/status/2102311241046008268",
+    "https://x.com/AveryRunsAI/status/2124444676937621723",
+    "https://x.com/AveryRunsAI/status/2124444676937621723?a=ONRkcoLggSVni_b78rQ&s=20",
     "https://x.com/AveryRunsAI",
     "https://flow.google.com/",
     "https://telegram.me/stickmanskill",
@@ -173,11 +174,11 @@ for name in selected:
     assert "🎬" not in subtitle, (name, "concise localized subtitle")
     if is_english:
         assert tuple(hero_blocks[5:8]) == english_intro, (name, "approved English introduction")
-        assert hero_blocks[8] == '[Quickstart](#quick-start) · [Showcase](#style-gallery) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)', (name, "approved English navigation labels")
+        assert hero_blocks[8] == '[Quickstart](#quick-start) · [X Guide](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Community](#community)', (name, "approved English navigation labels")
     else:
         locale = name[7:-3]
         assert tuple(hero_blocks[index] for index in (3, 5, 6, 7, 8, 9)) == approved_localized_hero[locale], (name, "exact approved localized hero copy")
-    assert "15" in hero_blocks[5], (name, "actual published style count in introduction")
+    assert "16" in hero_blocks[5], (name, "actual published style count in introduction")
     assert hero_blocks[9].startswith(("⭐ *", "*⭐ ")) and hero_blocks[9].endswith("*"), (name, "italic Star CTA")
     assert "Styles-" not in top and "img.shields.io/badge/Styles" not in top, (name, "removed Styles badge")
     active = "en" if name == "README.md" else name[7:-3]
@@ -198,8 +199,8 @@ for name in selected:
     assert '<a id="road-to-10000-stars--creator-ecosystem"></a>' in text, (name, "preserve the published roadmap deep link")
     for link in shared_links:
         assert link in text, (name, link)
-    tutorial = next(line for line in text.splitlines() if "https://x.com/CrazyKaomei/status/2102311241046008268" in line)
-    assert re.search(r"\[[^\]]*X[^\]]*\]\(https://x\.com/CrazyKaomei/status/2102311241046008268\)", tutorial), (name, "walkthrough explicitly identifies X in the link text")
+    tutorial = next(line for line in text.splitlines() if "https://x.com/AveryRunsAI/status/2124444676937621723?a=ONRkcoLggSVni_b78rQ&s=20" in line)
+    assert re.search(r"\[[^\]]*X[^\]]*\]\(" + re.escape("https://x.com/AveryRunsAI/status/2124444676937621723?a=ONRkcoLggSVni_b78rQ&s=20") + r"\)", tutorial), (name, "walkthrough explicitly identifies X in the link text")
     ecosystem = text.split("<!-- readme:contribute -->", 1)[1]
     ecosystem_sections = re.split(r"^## ", ecosystem, flags=re.M)
     assert len(ecosystem_sections) == 5, (name, "roadmap, planned styles, community, license use H2")
@@ -259,8 +260,8 @@ for name in selected:
     hero = text.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
     rows = re.findall(r"<tr>(.*?)</tr>", hero, re.S)
     gallery_styles = re.findall(r'href="#([^"]+)"><img', hero)
-    assert gallery_styles == ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 'a4', 'b4', 'style-5', 'b5', 'a6', 'b6', 'a7', 'b7', 'a8'], name
-    # Owner rule: A1–A8 left, B1–B7 right; final B cell stays empty. No spanning rows.
+    assert gallery_styles == ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 'a4', 'b4', 'style-5', 'b5', 'a6', 'b6', 'a7', 'b7', 'a8', 'b8'], name
+    # Keep A styles on the left and B styles on the right, with no spanning rows.
     assert len(rows) == (len(gallery_styles) + 1) // 2, name
     assert all(row.count('<td width="50%"') == 2 for row in rows), name
     assert "colspan" not in hero and "rowspan" not in hero, name
@@ -270,7 +271,7 @@ for name in selected:
     if placeholders:
         assert placeholders == [cells[-1]] and "<img" in cells[-2], name
         assert not cells[-1].strip(), (name, "last B cell is empty")
-    assert text.count('width="90%"') == 15 and text.count('width="360"') == 30, name
+    assert text.count('width="90%"') == 16 and text.count('width="360"') == 32, name
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
     card_ids = ["a5" if style == "style-5" else style for style in gallery_styles]
@@ -294,7 +295,7 @@ for name in selected:
     assert "Tested Flow workflow:" not in text and "Click either GIF" not in text, name
     assert "Veo 3.1 Fast" not in a6, (name, "operational model guidance stays in Skill")
     assert "Omni" not in a6, (name, "A6 does not inherit the legacy model")
-    assert "15" in hero_blocks[5], (name, "fifteen published A+B visual styles")
+    assert "16" in hero_blocks[5], (name, "sixteen published A+B visual styles")
     a8 = section(text, "a8", '<a id="a9"></a>')
     assert len(re.findall(r"^- \*\*", a8, re.M)) == 2, (name, "A8 highlights and use cases")
     a8_videos = ["assets/readme/style-8-graphic-novel-2.mp4", "assets/readme/style-8-graphic-novel.mp4"]
@@ -313,7 +314,24 @@ for name in selected:
     assert images(hero)[gallery_styles.index("a8")] == a8_previews[1], (name, "A8 homepage uses the sea messenger preview")
     placeholder = section(text, "a9", '<a id="b-styles"></a>')
     assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1, (name, "A9 roadmap CTA retained")
-    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A9 and B8 update links plus roadmap navigation")
+    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A9 and B9 update links plus roadmap navigation")
+    b8 = section(text, "b8", '<a id="b9"></a>')
+    b8_preview_names = ("b8-midas-approved-r3-v1.gif", "b8-greek-mythology.gif")
+    b8_previews = images(b8)
+    b8_preview_pattern = re.escape(pinned) + r"([a-f0-9]{40})/assets/readme/previews/"
+    assert len(b8_previews) == len(b8_preview_names), (name, "B8 approved showcase pair")
+    b8_pins = set()
+    for preview, gif in zip(b8_previews, b8_preview_names):
+        match = re.fullmatch(b8_preview_pattern + re.escape(gif), preview)
+        assert match and (root / "assets/readme/previews" / gif).is_file(), (name, preview)
+        b8_pins.add(match[1])
+    assert len(b8_pins) == 1, (name, "B8 previews use the same Git revision")
+    assert images(hero)[gallery_styles.index("b8")] == b8_previews[0], (name, "B8 homepage uses the Midas preview")
+    b8_release = "https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.24/"
+    assert re.findall(r'<a href="([^"]+\.mp4)">', b8) == [
+        b8_release + "b8-midas-approved-r3-v1.mp4",
+        b8_release + "b8-kingdom-without-dawn.mp4",
+    ], (name, "B8 approved video links")
     b2 = section(text, "b2", '<!-- b3:section:start -->')
     assert len(re.findall(r"^- \*\*", b2, re.M)) == 2, (name, "B2 advantages and use cases")
     assert re.findall(r'<a href="([^"]+\.mp4)">', b2) == ["assets/readme/b2-colorful-sleep.mp4", "assets/readme/b2-colorful-phone-weather.mp4"], (name, "approved B2 pair in requested order")
@@ -396,7 +414,7 @@ for name in selected:
             next_id, _, title = entries[-1]
             assert title == "Coming soon…", (name, series, "placeholder follows the latest released style")
             assert f"### {next_id}: Coming soon…\n\n{teaser}" in text, (name, series, "approved placeholder copy")
-        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Line Art"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV"), ("B4", "Survival Thriller"), ("B5", "Avatar Explainer"), ("B6", "Meme Story Animation"), ("B7", "Pixel Theater"), ("B8", "Coming soon…")], (name, "approved B style names plus the next-style teaser")
+        assert re.findall(r"^### (B\d+): (.+)$", text, re.M) == [("B1", "Minimal Line Art"), ("B2", "Colorful Hand-Drawn"), ("B3", "Retro TV"), ("B4", "Survival Thriller"), ("B5", "Avatar Explainer"), ("B6", "Meme Story Animation"), ("B7", "Pixel Theater"), ("B8", "Greek Mythology"), ("B9", "Coming soon…")], (name, "approved B style names plus the next-style teaser")
         assert "<strong>Retro TV</strong><br>" in hero and "Retro TV Style" not in text, (name, "concise English B3 name in gallery and section")
     for variant in ("A1.1", "A1.2", "A2.1", "A2.2"):
         assert variant in text, (name, variant)
@@ -519,8 +537,8 @@ for name in selected:
     assert "20" in cells[4][2][2], (name, "B workflow retains sample approval")
     assert all("•" not in row[1][2] for row in cells[1:]), (name, "concise comparison cells")
     assert '](#' not in comparison, (name, "no redundant navigation row inside comparison")
-    shortcut_line = next(line for line in text.splitlines() if '](#style-gallery)' in line)
-    assert re.findall(r'\]\((#[^)]+)\)', shortcut_line) == ['#quick-start', '#style-gallery', '#faq', '#road-to-10000-stars--creator-ecosystem', '#community'], (name, "single styles shortcut and community after roadmap")
+    shortcut_line = next(line for line in text.splitlines() if '](#quick-start)' in line and '](#faq)' in line)
+    assert re.findall(r'\]\(([^)]+)\)', shortcut_line) == ['#quick-start', 'https://x.com/AveryRunsAI/status/2124444676937621723', '#faq', '#road-to-10000-stars--creator-ecosystem', '#community'], (name, "single styles shortcut and community after roadmap")
     assert text.index('<a id="style-gallery"></a>') < text.index('<a id="a-styles"></a>') < text.index('<a id="b-styles"></a>'), (name, "gallery lands at A before B")
     assert text.index('<a id="community"></a>') < text.index('## 💬 '), (name, "community shortcut lands at footer heading")
     setup = modes_before_partners.split("</table>", 1)[1]
