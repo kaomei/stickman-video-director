@@ -1,0 +1,28 @@
+# Enforce LF line endings for text/manifest/script files so SHA-256 asset checks
+# remain consistent on Windows checkouts regardless of core.autocrlf.
+* text=auto eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+*.ts text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.svg text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.mp4 binary
+*.mp3 binary
+*.wav binary
+*.ttf binary
+*.otf binary
+*.woff2 binary
