@@ -1,7 +1,7 @@
 """Recorded B8 visual-review gates; never an automated anatomy or aesthetic test."""
 import pathlib
 
-VERSION = 1
+VERSION = 2
 
 
 def scope(plan, shots):
@@ -25,13 +25,30 @@ def template(plan, shots, stage):
         'cast_style': 'Compare all visible identities with the shared B8 cast board: contours, head/body proportions, face/hand simplification, skin and costume continuity.',
         'composition': ('Native 9:16 composition; ' if portrait else 'Authored landscape composition; ') + 'honor the intended full-body/detail framing throughout the path. Full-body shots include crown/head to feet; intentional close-ups keep contact/result readable and caption-safe.',
         'arm_direction': 'Check character-relative left/right, natural wrist/elbow return to the body, grip/thumb direction, sleeve/skin and occlusion across contact and cuts; explain when no arm is visible.',
-        'spatial_motion': 'Inspect actual encoded motion and stops: common camera/ground registration, feet/shadow/ground props, hand-object support and motivated background/leaf movement. A stable hold is valid.',
+        'spatial_motion': (
+            'Inspect actual encoded motion and stops: common camera/ground registration, feet and shadows, '
+            'hand-object support and motivated background movement. Reject unintended patch edges around the feet, '
+            'overlays hiding foot contact and supports out of perspective. Record the affected time. A stable hold is valid.'
+        ),
+        'shot_language': (
+            'Record this shot’s time range, what changes for the viewer, and how the framing, cut or camera '
+            'makes that change readable. Check that the final beat visibly resolves the setup before settling. '
+            'Reject idle reframing, filler walking, cutout seams and stretched limbs.'
+        ),
+        'causal_readability': (
+            'Watch the entire encoded film at normal speed with sound muted. Record the times and visible evidence '
+            'for the setup, decisive contact and first visible change at the source in the same shot, and the payoff. '
+            'If an effect travels, track its direction or landmark and show the target reacting only after it arrives. '
+            'Reject a hidden contact, premature reaction or missing link supplied by narration.'
+        ),
     }
     cast, assets = scope(plan, shots)
     rows = [{'check': 'cast_style', 'shot_id': '__cast__', 'character_ids': cast, 'asset_ids': assets}]
     for shot in shots:
-        for check in ['composition'] + (['arm_direction'] if stage != 'proposal' else []) + (['spatial_motion'] if stage in ('sample', 'film') else []):
+        for check in ['composition', 'shot_language'] + (['arm_direction'] if stage != 'proposal' else []) + (['spatial_motion'] if stage in ('sample', 'film') else []):
             rows.append({'check': check, 'shot_id': str(shot['id'])})
+    if stage == 'film':
+        rows.append({'check': 'causal_readability', 'shot_id': '__film__'})
     for row in rows:
         row.update(status='pending', reviewer='', notes='', evidence=[], criteria=criteria[row['check']])
     return {'version': VERSION, 'stage': stage, 'width': plan['width'], 'height': plan['height'],

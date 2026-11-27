@@ -243,5 +243,30 @@ class WorkflowTest(unittest.TestCase):
   self.assertEqual(review['items'][0]['asset_ids'],['guardian','messenger'])
   self.assertEqual(review['items'][0]['character_ids'],['guardian','messenger'])
   checks={row['check'] for row in review['items']}
-  self.assertEqual(checks,{'cast_style','composition','arm_direction','spatial_motion'})
+  self.assertEqual(checks,{'cast_style','composition','shot_language','arm_direction','spatial_motion'})
+ def test_review_requires_shot_language_and_film_causality(self):
+  for stage in ('proposal','keyposes','sample','film'):
+   with self.subTest(stage=stage):
+    review=flow.visual.template(self.d,self.d['shots'],stage)
+    shot_rows=[row for row in review['items'] if row['check']=='shot_language']
+    self.assertEqual([row['shot_id'] for row in shot_rows],['s1','s2'])
+    causal_rows=[row for row in review['items'] if row['check']=='causal_readability']
+    self.assertEqual([row['shot_id'] for row in causal_rows],['__film__'] if stage=='film' else [])
+  for row in review['items']:
+   row.update(status='accepted',reviewer='test fixture',notes='Synthetic review marker',
+              evidence=[{'path':'board.png','sha256':'board'}])
+  board={'path':'board.png','sha256':'board'}
+  film={'path':'film.mp4','sha256':'film'}
+  errors=flow.visual.errors(review,self.d,self.d['shots'],'film',[board,film])
+  self.assertIn('causal_readability/__film__: actual encoded video evidence required',errors)
+  for row in review['items']:
+   row['evidence']=[film]
+  causal_rows[0]['status']='not_applicable'
+  errors=flow.visual.errors(review,self.d,self.d['shots'],'film',[film])
+  self.assertIn('causal_readability/__film__: this check must be inspected, not marked N/A',errors)
+  causal_rows[0]['status']='accepted'
+  self.assertEqual(flow.visual.errors(review,self.d,self.d['shots'],'film',[film]),[])
+  review['items'].remove(shot_rows[0])
+  self.assertIn('shot_language/s1: missing/duplicate quality review',
+                flow.visual.errors(review,self.d,self.d['shots'],'film',[film]))
 if __name__=='__main__':unittest.main()
