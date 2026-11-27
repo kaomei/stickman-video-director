@@ -11,6 +11,11 @@ anchor = ref.split("```text\n", 1)[1].split("```", 1)[0]
 # Exact CHARACTER/FACE/PALMS/EXPOSED LIMBS from the owner-selected prompt.
 # Fingerprint verifies source preservation, not reliable generated anatomy.
 assert hashlib.sha256(anchor.encode()).hexdigest() == "f7f8161688c3c17a4379eaf5e4d64d7c0888f7e4b94ef59b7beb3dcafc785a8e"
+before_sample, sample_and_rest = ref.split("## Sample 1 text-only prompt structure\n", 1)
+sample, after_sample = sample_and_rest.split("\n## ", 1)
+sample_prompt = sample.split("```text\n", 1)[1].split("```", 1)[0]
+assert hashlib.sha256(sample_prompt.encode()).hexdigest() == "fe8c8da2c310be48ab8b38ad0094b44e06f35df057f9df4decc07aa5448bc452"
+assert "no nose, and thin black stick limbs" not in before_sample + after_sample
 for token in (
     "https://github.com/leksautomate", "/pull/41",
     "repeat its **full description**", "two visible non-color differences",
@@ -35,7 +40,7 @@ for token in (
     "Users can knowingly choose text-only", "not evidence of reliable text-only generation",
     "rather than offering that advice only when asked", "only list specific reference files when the user actually supplies them",
     "generate their own front/side/back", "This is advice only",
-    "do not supply or automatically generate reference images",
+    "Do not supply or automatically generate reference images",
     "This connection rule is A5-only",
     "continuous white jaw–short-neck–garment connection and any beard/collar overlap",
     "A background-colored gap fails",
@@ -62,7 +67,7 @@ for obsolete in (
     "NO THUMBS",
     "The base of the head may meet or overlap the garment neckline directly",
     "a short collar connection or fully concealed neck is acceptable",
-    "No separate neck is exposed", "no nose, and thin black stick limbs",
+    "No separate neck is exposed",
     "The lower edge of the white round head physically touches",
     "about 1.5-2 wrist-stroke widths", "Keep palm length below one sixth",
     "Reference images remain optional when requested and supported",
@@ -73,6 +78,9 @@ for filename in (
     "references/storyboard-template.md", "references/omni-flash-prompt-contract.md",
 ):
     assert "historical-cartoon.md" in (skill / filename).read_text(), filename
+
+for filename in ("references/getting-started.md", "references/omni-flash-prompt-contract.md"):
+    assert "historical-cartoon.md#sample-1-text-only-prompt-structure" in (skill / filename).read_text(), filename
 
 for filename in (
     "references/a1-a5-direction.md", "references/style-catalog.md", "references/omni-flash-prompt-contract.md",

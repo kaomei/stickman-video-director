@@ -14,7 +14,7 @@ assert "[🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md)" in cn
 assert (root / "README.fr.md").is_file(), "French navigation must open a complete README"
 hero_copy = cn.split("</div>", 1)[0]
 assert "**用全自动火柴人动画，规模化量产你的无人出镜频道。**" in hero_copy
-assert '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 15 款实操验证的画风 · 支持 Claude Code、Codex 等' in hero_copy
+assert '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 16 款实操验证的画风 · 支持 Claude Code、Codex 等' in hero_copy
 assert '💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片' in hero_copy
 assert "**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**" in hero_copy
 assert "画风持续更新，适用于" not in hero_copy, "Keep the removed niche sentence out of the hero"
@@ -88,14 +88,14 @@ assert "填写话题、粘贴文案，或直接描述你的想法" in director_e
 assert "人类的第一份工作是怎么来的" not in director_example, "Use a fill-in template rather than a hard-coded topic"
 assert "也可以直接贴已有文案或文章" not in cn
 assert "[查看画风一览 ↓]" not in cn, "Do not restore the removed per-mode shortcut links"
-assert "[样片展厅](#style-gallery)" in cn, "Use one localized style shortcut landing at A then B"
+assert "[X 教程](https://x.com/AveryRunsAI/status/2124444676937621723)" in cn, "Link the approved X guide from the opening navigation"
 navigation = next(line for line in cn.splitlines() if line.startswith("[快速上手](#quick-start)"))
 assert navigation.endswith("[常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)"), "Community follows the roadmap shortcut"
 assert "[最近更新]" not in navigation, "Keep the removed updates shortcut out of the navigation"
 assert '<a id="recent-updates"></a>' not in cn, "Do not restore the removed updates anchor"
 assert "## 最近更新" not in cn, "Do not restore the removed updates section"
 assert "完整制作教程" not in navigation
-assert "[X 详细教程](https://x.com/CrazyKaomei/status/2102311241046008268)" in director_start, "Keep the visual X walkthrough with step-by-step video demos in the Director instructions"
+assert "[X 详细教程](https://x.com/AveryRunsAI/status/2124444676937621723?a=ONRkcoLggSVni_b78rQ&s=20)" in director_start, "Keep the visual X walkthrough with step-by-step video demos in the Director instructions"
 assert "## 使用小贴士" not in cn
 faq = cn.split('<a id="faq"></a>', 1)[1].split('<!-- readme:contribute -->', 1)[0]
 faq_questions = (
@@ -148,13 +148,14 @@ for requirement in ("**出片流程：**", "确认脚本和 20 秒有声样片�
     assert requirement in autopilot_notes, requirement
 assert len(re.findall(r"^- ", autopilot_notes, re.M)) == 2
 for label in ("A1：经典黑白风", "A2：现代潮酷风", "A3：史前洞穴风",
-              "A4：治愈故事风", "A5：历史卡通风", "A6：暖金暗影风", "A7：橡皮管动画风 · Rubber Hose Animation", "A8：吉卜力画风", "A9：待更新…", "B1：极简线稿风", "B2：彩色手绘风", "B3：复古电视风", "B4：求生短剧风", "B5：角色解说风", "B6：动感 Meme 风"):
+              "A4：治愈故事风", "A5：历史卡通风", "A6：暖金暗影风", "A7：橡皮管动画风", "A8：吉卜力画风", "A9：待更新…", "B1：极简线稿风", "B2：彩色手绘风", "B3：复古电视风", "B4：求生短剧风", "B5：角色解说风", "B6：动感 Meme 风", "B7：像素剧场风", "B8：希腊神话风", "B9：待更新…"):
     assert f"### {label}\n" in cn, label
 hero = cn.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
 style_names = ("经典黑白风", "现代潮酷风", "史前洞穴风", "治愈故事风", "历史卡通风", "暖金暗影风", "橡皮管动画风", "吉卜力画风")
 b_style_names = [name for name in re.findall(r"^### B\d+：([^\n]+)$", cn, re.M)
                  if not name.startswith("待更新")]
-assert re.findall(r"<strong>([^<]+)</strong><br>", hero) == [item for pair in zip(list(style_names), b_style_names + [None]) for item in pair if item is not None], "A1–A8 left, B1–B7 right, final right cell empty"
+assert len(style_names) == len(b_style_names) == 8
+assert re.findall(r"<strong>([^<]+)</strong><br>", hero) == [item for pair in zip(style_names, b_style_names) for item in pair], "A1–A8 left, B1–B8 right"
 assert "<strong>极简线稿风</strong><br>" in hero, "Use the approved B1 preview in the sixth cell"
 assert re.findall(r'<a href="#([^"]+)"><img', hero)[:4] == ["a1", "b1", "a2", "b2"], "Link the first four previews directly to their style details"
 assert f"{len(style_names) + len(b_style_names)} 款实操验证的画风" in hero_copy
@@ -162,7 +163,7 @@ assert "img.shields.io/badge/Styles" not in hero_copy and not re.search(r"\*\*\d
 assert "种视觉方案" not in cn, "Count A+B styles once, not variants as a separate metric"
 assert re.search(r'<a href="#b1"><img src="([^"]+/b1-minimal-handdrawn\.gif)"[^>]+width="90%"></a>', hero), "Use B1 example 1 in the top gallery and keep its detail-section link"
 for number, name in enumerate(style_names, 1):
-    detail_name = name + (" · Rubber Hose Animation" if number == 7 else "")
+    detail_name = name
     assert f"### A{number}：{detail_name}\n" in cn, "Keep preview and detail names aligned"
 assert "史前黑色幽默" not in cn and "史前手绘 / 黑色幽默" not in cn
 assert "采用风格 A3「史前洞穴风」" in director_example
@@ -203,8 +204,8 @@ for link in re.findall(r"\]\(([^)]+)\)", cn):
         assert (root / link.split("#")[0]).is_file(), link
 
 previews = sorted(set(re.findall(r'src="(?:https://cdn\.jsdelivr\.net/gh/kaomei/stickman-video-director@[0-9a-f]{40}/)?(assets/readme/previews/[^" ]+\.gif)"', cn)))
-assert len(previews) == 31, "Keep the 29 published previews and append the approved A8 pair"
-for filename in ("style-8-graphic-novel.gif", "style-8-graphic-novel-2.gif"):
+assert len(previews) == 33, "Keep the 31 previously published previews and append the B8 pair"
+for filename in ("style-8-graphic-novel.gif", "style-8-graphic-novel-2.gif", "b8-midas-approved-r3-v1.gif", "b8-greek-mythology.gif"):
     assert f"assets/readme/previews/{filename}" in previews
 assert "assets/readme/previews/b5-character-explainer.gif" in previews
 assert "assets/readme/previews/b5-character-explainer-crazymei.gif" in previews

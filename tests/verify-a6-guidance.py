@@ -14,12 +14,11 @@ a6 = reference.read_text()
 assert "(references/amber-noir.md)" in entry
 assert "when selected, before planning" in entry
 assert "bypass the A1–A5 direction reference while following the shared A workflow" in entry
-assert "applies only to A1–A5" in entry and "A6/A7 keep dedicated style references" in entry
-assert "applies to A1–A7, never to B" in entry
+assert "applies only to A1–A5" in entry and "A6–A8 keep dedicated style references" in entry
+assert "applies to A1–A8. Follow each B style's own" in entry
 assert "(amber-noir.md)" in guide
-welcome = guide.split("### 欢迎使用火柴人视频 Skill\n", 1)[1].split(
-    "### Adapt instead of replaying the README", 1
-)[0]
+picker = (skill / "references/style-selection.md").read_text()
+welcome = picker.split("## Engine introductions", 1)[1].split("## A · Model Engine", 1)[0]
 assert "Renoise" not in welcome and "Veo 3.1 Fast" not in welcome
 
 for text in (

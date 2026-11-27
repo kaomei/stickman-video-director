@@ -6,6 +6,13 @@
 >
 > Older entries keep the mode names used at the time: **A · Director** is now **A · Model Engine**, and **B · Autopilot** is now **B · Code Engine**.
 
+## 2026-11-27 — A5 and A6 guidance (v2026.11.27.2)
+
+- A5 uses the approved first sample's character design and adapts clothing, props, and settings to each period.
+- A6 uses the showcase as a style reference. Build a new opening frame from the script when needed, then generate the shot from that frame.
+- The chat style picker recognizes the former B5 name Character Explainer and the former B6 name Dynamic Meme Animation.
+- Updated workflow and README checks to match the current public documentation and gallery.
+
 ## 2026-11-22 — Installation fixes (v2026.11.22)
 
 - Code Engine diagnostics report missing `sharp` and `canvas` dependencies on a fresh checkout.

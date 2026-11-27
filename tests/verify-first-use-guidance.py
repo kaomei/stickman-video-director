@@ -247,3 +247,10 @@ print("Optional A references and proactive, non-blocking A5 guidance passed; vis
 print("Independent B-style settings, defaults precedence and unchanged demo-voice policy passed.")
 print("Eight-language catalog destinations, shared anchors and English fallback instruction checks passed.")
 print("Static checks only; fresh-host conversational acceptance remains a separate test.")
+
+# Old public names still bypass the picker and route directly to the same IDs.
+for name, current in (
+    ("Character Explainer", "B5 Avatar Explainer"),
+    ("Dynamic Meme Animation", "B6 Meme Story Animation"),
+):
+    assert f"**{name}** as **{current}**" in (skill / "references/style-selection.md").read_text()

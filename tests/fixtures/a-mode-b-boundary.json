@@ -126,10 +126,10 @@
     },
     "published": {
       "files": {
-        "autopilot-production-qa.md": "8b7c5ba9346a89df8e3b81001a5a2ccab21fd27a6150be73204698b73d83c26c",
-        "autopilot-runtime.md": "0566eb959a598199eb62e88a24f12a47c248465f1d6f63ea298fd2cc1ced975e",
+        "autopilot-production-qa.md": "dd35333ddf2de2aa78646996d59dcf1048e97ad7478642ff2a1f33f644d8f660",
+        "autopilot-runtime.md": "b2c956cf4a6040eda0204c765992f10266bf5790fe71ae15bd067c7fc43f6511",
         "autopilot-sound-system.md": "84a2a380512e446f4d45ecced8806b8aa707bc4b61a7dc4f4e5d8774a0523367",
-        "autopilot.md": "9bbfbeb516a1f7accf1a5b6f6ed3fbc1e6969ff40f630628262e27b04a6ccea7",
+        "autopilot.md": "f355fdab306d006426b692eecdc0ace3929038f9e92cb4db17d3cf3517323087",
         "b-audio-library.md": "4a3d57c0050e407feea93c2ab5f642f10b5cf954fd0f71ed6e26208db908dcdd",
         "b-delivery-completeness.md": "ecef311ee8c21938be4bf2cee3cf5030ea8ed58c0dd8f598821d0ef1e0e7f0f5",
         "b-style-installed-workflow.md": "6ca35d16083d9db542060ec6e70e0f6972233507d9e4abe02f008f2567e5e57b",
@@ -176,10 +176,17 @@
         "b6-sample-1-acceptance.md": "c9f77bf938a2d3e1a9fd95742e2a652f33061b85797bc228724ac9ca23a380aa",
         "b7-native-portrait.md": "c499f3058c5d04edfa8a03e9fb140d0471b47e0c6bbd24b690408f2ad8e74c37",
         "b7-pixel-theater.md": "8c3cd6fdb3a197ccf2b805044f0e52981795c57e6c6e7f4ce05f01eca3c4e8be",
-        "b7-review.md": "8bead166303e0b3847a982a1f50fff99b069c02ed61abd9f42ebd74d591a1f2a"
+        "b7-review.md": "8bead166303e0b3847a982a1f50fff99b069c02ed61abd9f42ebd74d591a1f2a",
+        "b8-approved-standard.md": "1a271be874073c47062c5e3b0da7d4eb3f26a5e6bd560e9f24826bbabc778450",
+        "b8-director-proposal-board.md": "41122711b5db9dfbdc1885313dc71a632680233f54ccaa94987116e954c64379",
+        "b8-greek-mythology.md": "353ae07123c280a1a8a4a548a09c5e0ba2cb3efd8cc2593c6a8b7915bf5be4f2",
+        "b8-inspiration-source.md": "f86dcbf4d62ee6a80f17e5fc8bc80193d968aaa43208336107c2eb55991684a7",
+        "b8-installed-workflow.md": "e3000a50648495c9cb5b4858afa37ec3a2a16fce2ae5df85b8e5ef4d171346e4",
+        "b8-local-delivery.md": "9987394d82f61d0fbc39cbfc6453969e3ea71a88360fd67cf70fa1815cedecb4",
+        "b8-visual-quality-gates.md": "83d6a24a1ddfd9c671662b513f3b9e431d8322c70c704eeadf027adfb35d1b79"
       },
-      "b_welcome_sha256": "cd4490bf31b5b837201f094cb77e786b578deb638e59761be769ff359b7a97fa",
-      "source": "Published A1–A7/B1–B7 integration; B1–B6 baseline preserved, reviewed B7 routing additions only."
+      "source": "Published A1–A7/B1–B7 integration; B1–B6 baseline preserved, reviewed B7 routing additions only.",
+      "b_engine_intro_sha256": "c1708175517460159912ce70518fd57c84b21390129677d6d25e11d90b115b92"
     }
   }
 }
