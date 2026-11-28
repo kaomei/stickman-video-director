@@ -119,7 +119,7 @@ These are stage handoffs, not per-command logs or recurring reminders. When no u
 
 For sound planning, apply the [independent A audio timeline and listening contract](a-audio-timeline-and-review.md); for joins, apply [action and camera continuity](a-production-and-review.md#action-and-camera-continuity), including insert entry and return.
 
-All A1–A8 styles follow the [shared A workflow](mode-execution-boundaries.md#a-unified-workflow) and [production/review contract](a-production-and-review.md). Within that workflow, use the selected style's visual, prompt and acceptance rules. A6 has [its own production guidance](amber-noir.md), and A7 has [production](rubber-hose.md), [frozen prompts](a7-prompt-contract.md) and [acceptance](a7-acceptance.md); sample lyrics remain optional. A8 has [character consistency and source-footage checks](a8-production-guide.md). Do not ask users to choose a delivery route upfront or replay the generic welcome after selection.
+All A1–A9 styles follow the [shared A workflow](mode-execution-boundaries.md#a-unified-workflow) and [production/review contract](a-production-and-review.md). Within that workflow, use the selected style's visual, prompt and acceptance rules. A6 has [its own production guidance](amber-noir.md), and A7 has [production](rubber-hose.md), [frozen prompts](a7-prompt-contract.md) and [acceptance](a7-acceptance.md); sample lyrics remain optional. A8 has [character consistency and source-footage checks](a8-production-guide.md). A9 has [Voxel Sandbox production and acceptance](a9-voxel-sandbox.md). Do not ask users to choose a delivery route upfront or replay the generic welcome after selection.
 
 | Stage | What to explain / next action |
 |---|---|

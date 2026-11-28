@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>
-脚本、配音、字幕与音效全包 · 16 款实操验证的画风 · 支持 Claude Code、Codex 等
+脚本、配音、字幕与音效全包 · 17 款实操验证的画风 · 支持 Claude Code、Codex 等
 
 💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片
 
@@ -116,6 +116,15 @@
 <a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · 希腊神话风" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
+</tr>
+<tr>
+<!-- a9:hero:start -->
+<td width="50%" align="center">
+<b>A9-</b><strong>方块沙盒风</strong><br>
+<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · 方块沙盒风" width="90%"></a>
+</td>
+<!-- a9:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -405,10 +414,17 @@ AI 将为你一键生成匹配画风的封面图、视频标题、简介和置�
 
 <a id="a9"></a>
 
-### A9：待更新…
+### A9：方块沙盒风
 
-新的模型引擎画风正在准备中。[为项目点个 Star](#road-to-10000-stars--creator-ecosystem)，关注后续更新。
+方头火柴人穿过积木搭成的世界。跑跳和操作机关串起故事，每次互动都能在画面里看到结果。
 
+- **视觉亮点**：白色立方体头、两点方眼和细黑四肢；从发光蘑菇林到暖色屋顶，场景随任务变化。
+- **适合内容**：短篇冒险、搭建解谜、救援和有明确任务目标的游戏故事。
+
+| 样片 1：屋顶风车 | 样片 2：蘑菇林点灯 |
+|:---:|:---:|
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · 方块沙盒风 · 样片 1：屋顶风车" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · 方块沙盒风 · 样片 2：蘑菇林点灯" width="360"></a> |
+| 暖色屋顶 · 手摇风车引水浇花 | 发光蘑菇林 · 能量方块点亮小路 |
 
 <a id="b-styles"></a>
 

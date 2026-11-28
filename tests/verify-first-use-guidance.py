@@ -41,7 +41,8 @@ a_routes = (direction, boundaries, production,
             skill / "references/a7-prompt-contract.md",
             skill / "references/a7-acceptance.md",
             skill / "references/a8-production-guide.md",
-            skill / "references/a8-summer-two-roles-prompts.md")
+            skill / "references/a8-summer-two-roles-prompts.md",
+            skill / "references/a9-voxel-sandbox.md")
 for source in (skill / "SKILL.md", guide, *a_routes):
     assert source.is_file(), f"Missing installed A contract: {source}"
     for target in re.findall(r"\]\(([^)#]+\.(?:md|json))(?:#[^)]*)?\)", source.read_text()):
@@ -51,10 +52,10 @@ for source in (skill / "SKILL.md", guide, *a_routes):
             if linked.suffix == ".json":
                 json.loads(linked.read_text())
 
-# Routing changes must not collapse A1–A8 into one style or import B's renderer.
+# Routing changes must not collapse A1–A9 into one style or import B's renderer.
 for target in ("a1-a5-direction.md", "amber-noir.md", "rubber-hose.md",
                "a7-prompt-contract.md", "a7-acceptance.md",
-               "a8-production-guide.md", "a8-summer-two-roles-prompts.md"):
+               "a8-production-guide.md", "a8-summer-two-roles-prompts.md", "a9-voxel-sandbox.md"):
     assert f"(references/{target})" in entry, f"Missing A style route: {target}"
 for source in (entry, guide_text, direction_text):
     assert "(references/mode-execution-boundaries.md#a-unified-workflow)" in source or \
@@ -93,7 +94,7 @@ for engine in ("a", "b"):
         assert (skill / chart).stat().st_size > 0, f"Empty style chart: {chart}"
 choices = re.findall(r"^\| ([AB]\d+)" + r" \| ([^|]+)" * 6 + r" \|$", picker, re.M)
 assert [style for style, *_ in choices] == [
-    *(f"A{i}" for i in range(1, 9)),
+    *(f"A{i}" for i in range(1, 10)),
     *(f"B{i}" for i in range(1, 9)),
 ]
 for style, english, chinese, *guidance in choices:
@@ -183,7 +184,7 @@ assert "稳定男声默认" not in welcome, "Do not misstate A's source-appropri
 a_handoff = section(guide_text, "## A · Model Engine（模型引擎） handoffs")
 stages = re.findall(r"^\| (Brief|Proposal|Prompt package|Optional trial|Full production) \|", a_handoff, re.M)
 assert stages == ["Brief", "Proposal", "Prompt package", "Optional trial", "Full production"]
-for requirement in ("All A1–A8 styles follow", "sample lyrics remain optional",
+for requirement in ("All A1–A9 styles follow", "sample lyrics remain optional",
                     "Do not ask users to choose a delivery route upfront",
                     "Do not round it to a fixed clip multiple",
                     "topic approval is not storyboard approval",
@@ -241,7 +242,7 @@ assert "Google Gemini **Bodi**" in b1 and "Google Gemini **Sadaltager**" in b1
 assert "Voice reference only" in b1 and "rather than requiring Gemini" in b1
 assert "native rate and default treatment" in b1
 assert "showcase voices are references, not mandatory providers or voices" in guide_text
-print("Unified A onboarding, A1–A8 style routes, reference/package integrity and single-Skill identity passed.")
+print("Unified A onboarding, A1–A9 style routes, reference/package integrity and single-Skill identity passed.")
 print("Prompt-only delivery, authorized Flow trial, runtime/edit mapping, recovery and scoped repair guidance passed.")
 print("Optional A references and proactive, non-blocking A5 guidance passed; visual/voice byte protection remains in verify-ab-preservation.py.")
 print("Independent B-style settings, defaults precedence and unchanged demo-voice policy passed.")

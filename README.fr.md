@@ -10,7 +10,7 @@
 ![Licence MIT](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Un seul message à votre agent IA — et votre vidéo de bonshommes bâtons est prête.**<br>
-Script, voix off, sous-titres et son · 16 styles éprouvés · Pour Claude Code, Codex et plus
+Script, voix off, sous-titres et son · 17 styles éprouvés · Pour Claude Code, Codex et plus
 
 💬 Un message → ✅ Validez le script et l’aperçu → 🎬 Vidéo terminée
 
@@ -116,6 +116,15 @@ Script, voix off, sous-titres et son · 16 styles éprouvés · Pour Claude Code
 <a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Mythologie grecque" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
+</tr>
+<tr>
+<!-- a9:hero:start -->
+<td width="50%" align="center">
+<b>A9-</b><strong>Bac à sable voxel</strong><br>
+<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Bac à sable voxel" width="90%"></a>
+</td>
+<!-- a9:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -405,10 +414,17 @@ Le bleu profond du ciel et de la mer, de grands cumulus et des murs de pierre ch
 
 <a id="a9"></a>
 
-### A9 : Bientôt disponible…
+### A9 : Bac à sable voxel
 
-De nouveaux styles spécialisés pour Model Engine sont en préparation. [Ajoutez une étoile au projet](#road-to-10000-stars--creator-ecosystem) pour suivre les prochaines mises à jour !
+Un bonhomme à tête cubique court, saute et actionne des mécanismes dans un monde fait de blocs. Chaque action produit un effet visible.
 
+- **À l’écran** Une tête cubique blanche, deux yeux carrés et des membres noirs et fins, dans des décors qui vont d’un bois de champignons lumineux à des toits baignés de soleil.
+- **Idéal pour** : Petites aventures, énigmes de construction, sauvetages et récits de jeu à objectif clair.
+
+| Exemple 1 : Le moulin sur le toit | Exemple 2 : Lumière dans le bois aux champignons |
+|:---:|:---:|
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Bac à sable voxel · Exemple 1 : Le moulin sur le toit" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Bac à sable voxel · Exemple 2 : Lumière dans le bois aux champignons" width="360"></a> |
+| Toits au coucher du soleil · Une manivelle amène l’eau jusqu’aux fleurs | Champignons lumineux · Un bloc d’énergie éclaire le chemin |
 
 <a id="b-styles"></a>
 

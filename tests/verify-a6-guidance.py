@@ -14,8 +14,11 @@ a6 = reference.read_text()
 assert "(references/amber-noir.md)" in entry
 assert "when selected, before planning" in entry
 assert "bypass the A1–A5 direction reference while following the shared A workflow" in entry
-assert "applies only to A1–A5" in entry and "A6–A8 keep dedicated style references" in entry
-assert "applies to A1–A8. Follow each B style's own" in entry
+boundaries = (skill / "references/mode-execution-boundaries.md").read_text()
+assert "applies only to A1–A5" in boundaries
+assert "A6–A9 retain their dedicated style references" in boundaries
+assert "The unified A workflow applies to A1–A9" in boundaries
+assert "the selected B-style reference" in boundaries
 assert "(amber-noir.md)" in guide
 picker = (skill / "references/style-selection.md").read_text()
 welcome = picker.split("## Engine introductions", 1)[1].split("## A · Model Engine", 1)[0]

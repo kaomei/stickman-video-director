@@ -10,7 +10,7 @@
 ![MIT Lisansı](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Yapay zekâ ajanınıza tek bir mesaj gönderin, bitmiş çöp adam videonuzu alın.**<br>
-Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 16 stil · Claude Code, Codex ve dahası
+Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 17 stil · Claude Code, Codex ve dahası
 
 💬 Tek mesaj → ✅ Senaryoyu ve önizlemeyi onaylayın → 🎬 Hazır video
 
@@ -116,6 +116,15 @@ Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 16 stil · Claude Code, 
 <a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Yunan Mitolojisi" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
+</tr>
+<tr>
+<!-- a9:hero:start -->
+<td width="50%" align="center">
+<b>A9-</b><strong>Voksel Sandbox</strong><br>
+<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voksel Sandbox" width="90%"></a>
+</td>
+<!-- a9:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -405,10 +414,17 @@ Masmavi gökyüzü ve deniz, yükselen kümülüs bulutları ve güneşin ısıt
 
 <a id="a9"></a>
 
-### A9: Yakında…
+### A9: Voksel Sandbox
 
-Model Engine için yeni stiller hazırlanıyor. [Projeye yıldız verin](#road-to-10000-stars--creator-ecosystem) ve gelecek güncellemeleri takip edin!
+Küp kafalı bir çöp adam bloklardan oluşan dünyada koşar, zıplar ve düzenekleri çalıştırır. Her hareketin sonucu ekranda görülür.
 
+- **Görsel özellikler**: Beyaz küp kafa, iki kare göz ve ince siyah uzuvlar. Mekânlar ışıldayan bir mantar korusundan güneşli çatılara uzanır.
+- **Uygun içerikler**: Kısa maceralar, inşa bulmacaları, kurtarma öyküleri ve net hedefli oyun tarzı hikâyeler.
+
+| Örnek 1: Çatıdaki Yel Değirmeni | Örnek 2: Mantar Korusunda Işıklar Yanıyor |
+|:---:|:---:|
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Voksel Sandbox · Örnek 1: Çatıdaki Yel Değirmeni" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voksel Sandbox · Örnek 2: Mantar Korusunda Işıklar Yanıyor" width="360"></a> |
+| Gün batımında çatılar · Krank kolu çiçeklere su taşıyor | Parlayan mantar korusu · Enerji bloğu yolu aydınlatıyor |
 
 <a id="b-styles"></a>
 

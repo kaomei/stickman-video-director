@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check active A1–A8 workflow migration without rewriting historical samples.
+"""Check active A-mode workflow migration without rewriting historical samples.
 
 Static instruction checks are not fresh generated-video or live-agent tests.
 Use --scope a for the public-baseline A-only pending package; default scope
@@ -117,7 +117,12 @@ require(a8_guide, ('原始素材验收', '身体连接', '穿模与接触', '多
                    '成片验收'), 'A8 acceptance')
 for filename in ('coastal-courier-style.jpg', 'mountain-workshop-style.jpg'):
     assert f'../assets/a8/{filename}' in a8_guide and (skill / 'assets/a8' / filename).is_file()
-assert not re.search(r'references/a(?:9|10)[-/.]', entry), 'Unreleased A styles leaked'
+assert not re.search(r'references/a10[-/.]', entry), 'Unreleased A10 route leaked'
+if args.scope == 'a':
+    assert 'references/a9-voxel-sandbox.md' not in entry, 'A9 route leaked into the A1–A8 baseline'
+else:
+    require(entry, ('references/a9-voxel-sandbox.md',), 'A9 installed entry route')
+    require(read('a9-voxel-sandbox.md'), ('Two action blocks',), 'A9 prompt structure')
 
 # A-only scope is a different approved baseline, not an exemption for B edits.
 # Freeze every B reference in that baseline; unrelated B welcome naming may
@@ -144,5 +149,5 @@ else:
 if args.scope == 'a':
     assert not re.search(r'references/b(?:7|8|9|10)[-/.]', entry), 'Unpublished B route leaked into A-only entry'
 
-print(f'[{args.scope}] A1–A8 routes, variable source/edit timing, complete A2 identity, independent audio and B boundary passed.')
+print(f'[{args.scope}] A style routes, variable source/edit timing, complete A2 identity, independent audio and B boundary passed.')
 print('Static policy checks only; historical approved media are preserved, not regenerated or re-audited.')
