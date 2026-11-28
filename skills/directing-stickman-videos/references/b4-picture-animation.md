@@ -81,7 +81,12 @@ A real independent human or agent, different from `picture_motion.author_id`, mu
 
 `full_playback.viewed_ranges` must cover the complete submitted scope and its concrete observations reference `source-video`. Review the beginning, body, ending and cross-section reuse in one continuous run; a contact sheet cannot establish long-film stability. Portrait additionally requires actual **1× playback at 320–480 logical display pixels wide**, preserving aspect ratio, with the generated `portrait_viewing` record and timed observations. Record the player/platform, target display and any unavailable physical-device check honestly; a full-resolution still or landscape preview cannot supply it.
 
-Unknown/missing/failed criteria, blocking issues, incomplete full-playback coverage or stale artifacts keep picture acceptance pending. Correct affected shots, regenerate their current evidence and review again. Fingerprints establish which files were reviewed; recorded identities and observations do not authenticate that somebody actually watched.
+Unknown/missing/failed criteria, blocking issues, incomplete full-playback coverage or stale artifacts keep picture acceptance pending. Correct affected shots, regenerate their current evidence and review again.
+
+**Bounded repair loop (prevent infinite re-render/token burn):**
+- **Batch fixes per pass:** combine all picture and typography issues found in a review pass into one edit-and-rebuild cycle instead of re-rendering the whole MP4 after each single-shot tweak.
+- **Lock valid images during QA:** do **not** regenerate valid story-matched images during QA; fix timing, framing, layering, or motion in code first. Regenerate an image only when it is visibly broken, off-story, or fails `story_asset_origin` / `anatomy_contact`, with at most **1 automatic regeneration per shot** unless the user approves more.
+- **Hard cap of 2 automatic repair passes per stage (`preview` / `final`):** prioritize blocking defects first. If non-blocking issues remain after 2 repair passes—or if two consecutive passes do not clearly improve the output—**stop looping immediately**, deliver the current MP4 with a concise list of remaining findings, and let the user decide whether to polish further or accept as-is. Fingerprints establish which files were reviewed; recorded identities and observations do not authenticate that somebody actually watched.
 
 After genuine independent **picture and text** reviews and actual user sample approval:
 
