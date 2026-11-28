@@ -121,7 +121,7 @@ Senaryo, seslendirme, altyazı ve ses · Kanıtlanmış 17 stil · Claude Code, 
 <!-- a9:hero:start -->
 <td width="50%" align="center">
 <b>A9-</b><strong>Voksel Sandbox</strong><br>
-<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voksel Sandbox" width="90%"></a>
+<a href="#a9"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voksel Sandbox" width="90%"></a>
 </td>
 <!-- a9:hero:end -->
 <td width="50%" align="center"></td>
@@ -423,7 +423,7 @@ Küp kafalı bir çöp adam bloklardan oluşan dünyada koşar, zıplar ve düze
 
 | Örnek 1: Çatıdaki Yel Değirmeni | Örnek 2: Mantar Korusunda Işıklar Yanıyor |
 |:---:|:---:|
-| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Voksel Sandbox · Örnek 1: Çatıdaki Yel Değirmeni" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voksel Sandbox · Örnek 2: Mantar Korusunda Işıklar Yanıyor" width="360"></a> |
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Voksel Sandbox · Örnek 1: Çatıdaki Yel Değirmeni" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voksel Sandbox · Örnek 2: Mantar Korusunda Işıklar Yanıyor" width="360"></a> |
 | Gün batımında çatılar · Krank kolu çiçeklere su taşıyor | Parlayan mantar korusu · Enerji bloğu yolu aydınlatıyor |
 
 <a id="b-styles"></a>

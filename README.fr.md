@@ -121,7 +121,7 @@ Script, voix off, sous-titres et son · 17 styles éprouvés · Pour Claude Code
 <!-- a9:hero:start -->
 <td width="50%" align="center">
 <b>A9-</b><strong>Bac à sable voxel</strong><br>
-<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Bac à sable voxel" width="90%"></a>
+<a href="#a9"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Bac à sable voxel" width="90%"></a>
 </td>
 <!-- a9:hero:end -->
 <td width="50%" align="center"></td>
@@ -423,7 +423,7 @@ Un bonhomme à tête cubique court, saute et actionne des mécanismes dans un mo
 
 | Exemple 1 : Le moulin sur le toit | Exemple 2 : Lumière dans le bois aux champignons |
 |:---:|:---:|
-| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Bac à sable voxel · Exemple 1 : Le moulin sur le toit" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Bac à sable voxel · Exemple 2 : Lumière dans le bois aux champignons" width="360"></a> |
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Bac à sable voxel · Exemple 1 : Le moulin sur le toit" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Bac à sable voxel · Exemple 2 : Lumière dans le bois aux champignons" width="360"></a> |
 | Toits au coucher du soleil · Une manivelle amène l’eau jusqu’aux fleurs | Champignons lumineux · Un bloc d’énergie éclaire le chemin |
 
 <a id="b-styles"></a>

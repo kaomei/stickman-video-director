@@ -119,8 +119,6 @@ b6_previews = [
     for filename in ("b6-dynamic-meme-eiffel-16x9.gif", "b6-dynamic-meme-hong-kong-v90-20s.gif")
 ]
 local_previews = {
-    "assets/readme/previews/style-9-voxel-sandbox.gif",
-    "assets/readme/previews/style-9-voxel-sandbox-2.gif",
     "assets/readme/previews/b7-pixel-theater.gif",
     "assets/readme/previews/b7-fast-forward-excerpt.gif",
     "assets/readme/previews/style-7-rubber-hose.gif",
@@ -321,9 +319,16 @@ for name in selected:
     a9_names = ["style-9-voxel-sandbox-2", "style-9-voxel-sandbox"]
     a9_release = "https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/"
     assert re.findall(r'<a href="([^"]+\.mp4)">', a9) == [a9_release + stem + ".mp4" for stem in a9_names], name
-    assert images(a9) == ["assets/readme/previews/" + stem + ".gif" for stem in a9_names], name
+    a9_previews = images(a9)
+    assert len(a9_previews) == len(a9_names), (name, "A9 approved showcase pair")
+    a9_pins = set()
+    for preview, stem in zip(a9_previews, a9_names):
+        match = re.fullmatch(a8_preview_pattern + re.escape(stem + ".gif"), preview)
+        assert match, (name, "A9 sample preview uses immutable CDN", preview)
+        a9_pins.add(match[1])
+    assert len(a9_pins) == 1, (name, "A9 previews use the same Git revision")
     assert all((root / "assets/readme" / (stem + ".mp4")).is_file() for stem in a9_names), name
-    assert images(hero)[gallery_styles.index("a9")] == images(a9)[1], (name, "A9 homepage uses the mushroom grove")
+    assert images(hero)[gallery_styles.index("a9")] == a9_previews[1], (name, "A9 homepage uses the mushroom grove")
     assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 2, (name, "B9 update link plus roadmap navigation")
     b8 = section(text, "b8", '<a id="b9"></a>')
     b8_preview_names = ("b8-midas-approved-r3-v1.gif", "b8-greek-mythology.gif")
