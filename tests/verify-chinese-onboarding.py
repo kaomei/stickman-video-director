@@ -221,8 +221,6 @@ preview_budgets = {
     "assets/readme/previews/style-7-rubber-hose.gif": 5_000_000,
     "assets/readme/previews/style-7-rubber-hose-2.gif": 5_000_000,
     "assets/readme/previews/style-8-graphic-novel-2.gif": 8_000_000,
-    "assets/readme/previews/style-9-voxel-sandbox.gif": 6_500_000,
-    "assets/readme/previews/style-9-voxel-sandbox-2.gif": 6_500_000,
 }
 for preview in previews:
     file = root / preview

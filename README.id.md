@@ -121,7 +121,7 @@ Naskah, voiceover, subtitle & suara · 17 gaya teruji · Untuk Claude Code, Code
 <!-- a9:hero:start -->
 <td width="50%" align="center">
 <b>A9-</b><strong>Dunia Sandbox Voxel</strong><br>
-<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Dunia Sandbox Voxel" width="90%"></a>
+<a href="#a9"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Dunia Sandbox Voxel" width="90%"></a>
 </td>
 <!-- a9:hero:end -->
 <td width="50%" align="center"></td>
@@ -423,7 +423,7 @@ Tokoh berkepala kubus berlari, melompat, dan mengoperasikan mekanisme di dunia y
 
 | Contoh 1: Kincir Angin di Atap | Contoh 2: Menyalakan Lampu di Hutan Jamur |
 |:---:|:---:|
-| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Dunia Sandbox Voxel · Contoh 1: Kincir Angin di Atap" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Dunia Sandbox Voxel · Contoh 2: Menyalakan Lampu di Hutan Jamur" width="360"></a> |
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Dunia Sandbox Voxel · Contoh 1: Kincir Angin di Atap" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Dunia Sandbox Voxel · Contoh 2: Menyalakan Lampu di Hutan Jamur" width="360"></a> |
 | Atap saat senja · Engkol mengalirkan air ke petak bunga | Hutan jamur bercahaya · Blok energi menerangi jalan |
 
 <a id="b-styles"></a>

@@ -121,7 +121,7 @@
 <!-- a9:hero:start -->
 <td width="50%" align="center">
 <b>A9-</b><strong>복셀 샌드박스</strong><br>
-<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · 복셀 샌드박스" width="90%"></a>
+<a href="#a9"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · 복셀 샌드박스" width="90%"></a>
 </td>
 <!-- a9:hero:end -->
 <td width="50%" align="center"></td>
@@ -423,7 +423,7 @@ A1, A2, A3… 순서로 추가하며, 각 스타일에 해당하는 애니메이
 
 | 샘플 1: 옥상 풍차 | 샘플 2: 버섯 숲에 불을 켜다 |
 |:---:|:---:|
-| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · 복셀 샌드박스 · 샘플 1: 옥상 풍차" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · 복셀 샌드박스 · 샘플 2: 버섯 숲에 불을 켜다" width="360"></a> |
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · 복셀 샌드박스 · 샘플 1: 옥상 풍차" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · 복셀 샌드박스 · 샘플 2: 버섯 숲에 불을 켜다" width="360"></a> |
 | 노을빛 옥상 · 손잡이를 돌려 화단에 물을 댄다 | 빛나는 버섯 숲 · 에너지 블록이 길을 밝힌다 |
 
 <a id="b-styles"></a>

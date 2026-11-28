@@ -121,7 +121,7 @@ Script, voiceover, captions & sound · 17 battle-tested styles · For Claude Cod
 <!-- a9:hero:start -->
 <td width="50%" align="center">
 <b>A9-</b><strong>Voxel Sandbox</strong><br>
-<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voxel Sandbox" width="90%"></a>
+<a href="#a9"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voxel Sandbox" width="90%"></a>
 </td>
 <!-- a9:hero:end -->
 <td width="50%" align="center"></td>
@@ -423,7 +423,7 @@ A cube-headed stick figure runs, jumps and operates mechanisms in a world built 
 
 | Example 1: The Rooftop Windmill | Example 2: Lighting the Mushroom Grove |
 |:---:|:---:|
-| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Voxel Sandbox · Example 1: The Rooftop Windmill" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voxel Sandbox · Example 2: Lighting the Mushroom Grove" width="360"></a> |
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Voxel Sandbox · Example 1: The Rooftop Windmill" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voxel Sandbox · Example 2: Lighting the Mushroom Grove" width="360"></a> |
 | Sunset rooftops · A hand crank brings water to the flowerbed | Glowing mushroom grove · Power block and a trail of light |
 
 <a id="b-styles"></a>

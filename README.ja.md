@@ -121,7 +121,7 @@
 <!-- a9:hero:start -->
 <td width="50%" align="center">
 <b>A9-</b><strong>ボクセルサンドボックス風</strong><br>
-<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · ボクセルサンドボックス風" width="90%"></a>
+<a href="#a9"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · ボクセルサンドボックス風" width="90%"></a>
 </td>
 <!-- a9:hero:end -->
 <td width="50%" align="center"></td>
@@ -423,7 +423,7 @@ A1、A2、A3…の順に追加し、各画風に対応するアニメーショ�
 
 | サンプル 1：屋上の風車 | サンプル 2：キノコの森に灯をともす |
 |:---:|:---:|
-| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · ボクセルサンドボックス風 · サンプル 1：屋上の風車" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · ボクセルサンドボックス風 · サンプル 2：キノコの森に灯をともす" width="360"></a> |
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · ボクセルサンドボックス風 · サンプル 1：屋上の風車" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@3a5c7e3f133629d24a6abe4f051adf3cef9aefe1/assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · ボクセルサンドボックス風 · サンプル 2：キノコの森に灯をともす" width="360"></a> |
 | 夕暮れの屋上 · ハンドルを回して花壇に水を送る | 光るキノコの森 · エネルギーブロックで道を照らす |
 
 <a id="b-styles"></a>
