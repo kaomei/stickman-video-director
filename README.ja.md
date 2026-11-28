@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **AIエージェントにひと言送るだけで、完成した棒人間動画が届く。**<br>
-台本・音声・字幕・効果音までおまかせ · 実戦検証済みの16画風 · Claude Code・Codex 対応
+台本・音声・字幕・効果音までおまかせ · 実戦検証済みの17画風 · Claude Code・Codex 対応
 
 💬 ひと言送る → ✅ 台本とプレビューを確認 → 🎬 完成動画
 
@@ -116,6 +116,15 @@
 <a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · ギリシャ神話" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
+</tr>
+<tr>
+<!-- a9:hero:start -->
+<td width="50%" align="center">
+<b>A9-</b><strong>ボクセルサンドボックス風</strong><br>
+<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · ボクセルサンドボックス風" width="90%"></a>
+</td>
+<!-- a9:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -405,10 +414,17 @@ A1、A2、A3…の順に追加し、各画風に対応するアニメーショ�
 
 <a id="a9"></a>
 
-### A9：近日公開…
+### A9：ボクセルサンドボックス風
 
-新しい Model Engine の特化型スタイルを準備中です。[プロジェクトに Star を付けて](#road-to-10000-stars--creator-ecosystem)、今後の更新をチェックしてください！
+四角い頭の棒人間が、ブロックでできた世界を走り、跳び、仕掛けを動かします。アクションの結果まで画面で見せます。
 
+- **映像の特徴**：白い立方体の頭、四角い目が二つ、細い黒の手足。舞台は光るキノコの森から日差しが差す屋上まで。
+- **向いている題材**：短い冒険、組み立てパズル、救出劇、目的が明確なゲーム風の物語。
+
+| サンプル 1：屋上の風車 | サンプル 2：キノコの森に灯をともす |
+|:---:|:---:|
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · ボクセルサンドボックス風 · サンプル 1：屋上の風車" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · ボクセルサンドボックス風 · サンプル 2：キノコの森に灯をともす" width="360"></a> |
+| 夕暮れの屋上 · ハンドルを回して花壇に水を送る | 光るキノコの森 · エネルギーブロックで道を照らす |
 
 <a id="b-styles"></a>
 

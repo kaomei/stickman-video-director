@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Send your AI agent one message — get back a finished stickman video.**<br>
-Script, voiceover, captions & sound · 16 battle-tested styles · For Claude Code, Codex & more
+Script, voiceover, captions & sound · 17 battle-tested styles · For Claude Code, Codex & more
 
 💬 One message → ✅ Approve script & preview → 🎬 Finished video
 
@@ -116,6 +116,15 @@ Script, voiceover, captions & sound · 16 battle-tested styles · For Claude Cod
 <a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Greek Mythology" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
+</tr>
+<tr>
+<!-- a9:hero:start -->
+<td width="50%" align="center">
+<b>A9-</b><strong>Voxel Sandbox</strong><br>
+<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voxel Sandbox" width="90%"></a>
+</td>
+<!-- a9:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -405,10 +414,17 @@ Deep blue skies and seas, towering clouds, and sun-warmed stone walls set the sc
 
 <a id="a9"></a>
 
-### A9: Coming soon…
+### A9: Voxel Sandbox
 
-New Model Engine styles are in preparation. [Star the project](#road-to-10000-stars--creator-ecosystem) to follow future updates.
+A cube-headed stick figure runs, jumps and operates mechanisms in a world built from blocks. Each interaction has a visible payoff.
 
+- **The look**: A white cube head, two square eyes and slim black limbs, with settings ranging from a glowing mushroom grove to sunlit rooftops.
+- **Made for**: Short adventures, building puzzles, rescues and game-like stories with a clear objective.
+
+| Example 1: The Rooftop Windmill | Example 2: Lighting the Mushroom Grove |
+|:---:|:---:|
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Voxel Sandbox · Example 1: The Rooftop Windmill" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Voxel Sandbox · Example 2: Lighting the Mushroom Grove" width="360"></a> |
+| Sunset rooftops · A hand crank brings water to the flowerbed | Glowing mushroom grove · Power block and a trail of light |
 
 <a id="b-styles"></a>
 

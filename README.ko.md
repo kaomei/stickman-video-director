@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **AI 에이전트에게 메시지 한 줄만 보내면, 완성된 스틱맨 영상이 돌아옵니다.**<br>
-대본·내레이션·자막·사운드까지 한 번에 · 검증된 16가지 스타일 · Claude Code, Codex 등 지원
+대본·내레이션·자막·사운드까지 한 번에 · 검증된 17가지 스타일 · Claude Code, Codex 등 지원
 
 💬 메시지 한 줄 → ✅ 대본과 미리보기 확인 → 🎬 완성 영상
 
@@ -116,6 +116,15 @@
 <a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · 그리스 신화" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
+</tr>
+<tr>
+<!-- a9:hero:start -->
+<td width="50%" align="center">
+<b>A9-</b><strong>복셀 샌드박스</strong><br>
+<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · 복셀 샌드박스" width="90%"></a>
+</td>
+<!-- a9:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -405,10 +414,17 @@ A1, A2, A3… 순서로 추가하며, 각 스타일에 해당하는 애니메이
 
 <a id="a9"></a>
 
-### A9: 곧 공개…
+### A9: 복셀 샌드박스
 
-새로운 Model Engine 특화 스타일을 준비하고 있습니다. [프로젝트에 Star를 누르고](#road-to-10000-stars--creator-ecosystem) 앞으로의 업데이트를 확인해 주세요!
+네모난 머리의 스틱맨이 블록으로 이루어진 세계를 달리고, 뛰어오르고, 장치를 작동시킵니다. 각 행동의 결과가 화면에 드러납니다.
 
+- **시각적 특징**: 하얀 정육면체 머리, 네모난 눈 두 개, 가느다란 검은 팔다리. 빛나는 버섯 숲부터 햇살이 비치는 옥상까지 다양한 배경을 담습니다.
+- **어울리는 소재**: 짧은 모험, 조립 퍼즐, 구조 이야기, 목표가 뚜렷한 게임풍 이야기.
+
+| 샘플 1: 옥상 풍차 | 샘플 2: 버섯 숲에 불을 켜다 |
+|:---:|:---:|
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · 복셀 샌드박스 · 샘플 1: 옥상 풍차" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · 복셀 샌드박스 · 샘플 2: 버섯 숲에 불을 켜다" width="360"></a> |
+| 노을빛 옥상 · 손잡이를 돌려 화단에 물을 댄다 | 빛나는 버섯 숲 · 에너지 블록이 길을 밝힌다 |
 
 <a id="b-styles"></a>
 

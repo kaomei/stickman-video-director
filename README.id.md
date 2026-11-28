@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Kirim satu pesan ke agen AI Anda, dapatkan video stickman yang sudah jadi.**<br>
-Naskah, voiceover, subtitle & suara · 16 gaya teruji · Untuk Claude Code, Codex & lainnya
+Naskah, voiceover, subtitle & suara · 17 gaya teruji · Untuk Claude Code, Codex & lainnya
 
 💬 Satu pesan → ✅ Setujui naskah & pratinjau → 🎬 Video jadi
 
@@ -116,6 +116,15 @@ Naskah, voiceover, subtitle & suara · 16 gaya teruji · Untuk Claude Code, Code
 <a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Mitologi Yunani" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
+</tr>
+<tr>
+<!-- a9:hero:start -->
+<td width="50%" align="center">
+<b>A9-</b><strong>Dunia Sandbox Voxel</strong><br>
+<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Dunia Sandbox Voxel" width="90%"></a>
+</td>
+<!-- a9:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -405,10 +414,17 @@ Langit dan laut yang biru pekat, awan kumulus yang menjulang, serta dinding batu
 
 <a id="a9"></a>
 
-### A9: Segera hadir…
+### A9: Dunia Sandbox Voxel
 
-Gaya Model Engine yang baru sedang disiapkan. [Beri Star pada proyek ini](#road-to-10000-stars--creator-ecosystem) untuk mengikuti pembaruan selanjutnya!
+Tokoh berkepala kubus berlari, melompat, dan mengoperasikan mekanisme di dunia yang tersusun dari balok. Hasil setiap aksi terlihat di layar.
 
+- **Ciri visual**: Kepala kubus putih, dua mata persegi, dan lengan serta kaki hitam yang ramping, dengan latar dari hutan jamur bercahaya hingga atap yang disinari matahari.
+- **Cocok untuk**: Petualangan pendek, teka-teki membangun, penyelamatan, dan cerita ala gim dengan tujuan jelas.
+
+| Contoh 1: Kincir Angin di Atap | Contoh 2: Menyalakan Lampu di Hutan Jamur |
+|:---:|:---:|
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Dunia Sandbox Voxel · Contoh 1: Kincir Angin di Atap" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Dunia Sandbox Voxel · Contoh 2: Menyalakan Lampu di Hutan Jamur" width="360"></a> |
+| Atap saat senja · Engkol mengalirkan air ke petak bunga | Hutan jamur bercahaya · Blok energi menerangi jalan |
 
 <a id="b-styles"></a>
 

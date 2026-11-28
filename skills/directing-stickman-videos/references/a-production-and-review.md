@@ -98,6 +98,7 @@ Repair only the affected prompt, source range, shot, cut, caption or sound secti
 | A7 | Reuse its validated fixed character/drawing blocks and reference-material route; variable scenes and timed performances remain story-specific. Keep its accepted samples. |
 | A1 | Keep the frozen minimalist figure, hollow head, current-pose limb rules and accent restrictions; preserve action/effect density without changing its identity. |
 | A8 | Start from text prompts. For continuous action in the same scene, use the last approved frame of the retained range as the next clip's start frame. See the [A8 production guide](a8-production-guide.md) for new scenes and optional character references. Verify face, anatomy, contact, cast continuity and expressive motion in the retained source footage, then check the assembled join. |
+| A9 | Use the [Voxel Sandbox production and acceptance rules](a9-voxel-sandbox.md). Retain the approved gameplay shot variety and pace, inspect the full film for face and cast continuity, and require each critical mechanism to read in one uninterrupted shot. |
 | A2 | Keep the selected character, palette and flat/cinematic variant; adapt actions and locations without merging variants or importing A7 anatomy. |
 | A3 | Keep its prehistoric character, scene, comedy and voice rules; arrange gags and reactions by the actual story duration. |
 | A4 | Keep its character anchor, 2D scenery and intentional location changes; group generation clips independently from edited scenes. |

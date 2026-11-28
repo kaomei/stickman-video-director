@@ -14,7 +14,7 @@ assert "[🇰🇷 한국어](README.ko.md) · [🇫🇷 FR](README.fr.md)" in cn
 assert (root / "README.fr.md").is_file(), "French navigation must open a complete README"
 hero_copy = cn.split("</div>", 1)[0]
 assert "**用全自动火柴人动画，规模化量产你的无人出镜频道。**" in hero_copy
-assert '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 16 款实操验证的画风 · 支持 Claude Code、Codex 等' in hero_copy
+assert '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 17 款实操验证的画风 · 支持 Claude Code、Codex 等' in hero_copy
 assert '💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片' in hero_copy
 assert "**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**" in hero_copy
 assert "画风持续更新，适用于" not in hero_copy, "Keep the removed niche sentence out of the hero"
@@ -148,14 +148,14 @@ for requirement in ("**出片流程：**", "确认脚本和 20 秒有声样片�
     assert requirement in autopilot_notes, requirement
 assert len(re.findall(r"^- ", autopilot_notes, re.M)) == 2
 for label in ("A1：经典黑白风", "A2：现代潮酷风", "A3：史前洞穴风",
-              "A4：治愈故事风", "A5：历史卡通风", "A6：暖金暗影风", "A7：橡皮管动画风", "A8：吉卜力画风", "A9：待更新…", "B1：极简线稿风", "B2：彩色手绘风", "B3：复古电视风", "B4：求生短剧风", "B5：角色解说风", "B6：动感 Meme 风", "B7：像素剧场风", "B8：希腊神话风", "B9：待更新…"):
+              "A4：治愈故事风", "A5：历史卡通风", "A6：暖金暗影风", "A7：橡皮管动画风", "A8：吉卜力画风", "A9：方块沙盒风", "B1：极简线稿风", "B2：彩色手绘风", "B3：复古电视风", "B4：求生短剧风", "B5：角色解说风", "B6：动感 Meme 风", "B7：像素剧场风", "B8：希腊神话风", "B9：待更新…"):
     assert f"### {label}\n" in cn, label
 hero = cn.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
-style_names = ("经典黑白风", "现代潮酷风", "史前洞穴风", "治愈故事风", "历史卡通风", "暖金暗影风", "橡皮管动画风", "吉卜力画风")
+style_names = ("经典黑白风", "现代潮酷风", "史前洞穴风", "治愈故事风", "历史卡通风", "暖金暗影风", "橡皮管动画风", "吉卜力画风", "方块沙盒风")
 b_style_names = [name for name in re.findall(r"^### B\d+：([^\n]+)$", cn, re.M)
                  if not name.startswith("待更新")]
-assert len(style_names) == len(b_style_names) == 8
-assert re.findall(r"<strong>([^<]+)</strong><br>", hero) == [item for pair in zip(style_names, b_style_names) for item in pair], "A1–A8 left, B1–B8 right"
+assert len(style_names) == 9 and len(b_style_names) == 8
+assert re.findall(r"<strong>([^<]+)</strong><br>", hero) == [item for pair in zip(style_names, b_style_names) for item in pair] + [style_names[-1]], "A1–A9 left, B1–B8 right"
 assert "<strong>极简线稿风</strong><br>" in hero, "Use the approved B1 preview in the sixth cell"
 assert re.findall(r'<a href="#([^"]+)"><img', hero)[:4] == ["a1", "b1", "a2", "b2"], "Link the first four previews directly to their style details"
 assert f"{len(style_names) + len(b_style_names)} 款实操验证的画风" in hero_copy
@@ -204,7 +204,9 @@ for link in re.findall(r"\]\(([^)]+)\)", cn):
         assert (root / link.split("#")[0]).is_file(), link
 
 previews = sorted(set(re.findall(r'src="(?:https://cdn\.jsdelivr\.net/gh/kaomei/stickman-video-director@[0-9a-f]{40}/)?(assets/readme/previews/[^" ]+\.gif)"', cn)))
-assert len(previews) == 33, "Keep the 31 previously published previews and append the B8 pair"
+assert len(previews) == 35, "Keep the previously published previews and append the A9 pair"
+for stem in ("style-9-voxel-sandbox", "style-9-voxel-sandbox-2"):
+    assert f"assets/readme/previews/{stem}.gif" in previews
 for filename in ("style-8-graphic-novel.gif", "style-8-graphic-novel-2.gif", "b8-midas-approved-r3-v1.gif", "b8-greek-mythology.gif"):
     assert f"assets/readme/previews/{filename}" in previews
 assert "assets/readme/previews/b5-character-explainer.gif" in previews
@@ -219,6 +221,8 @@ preview_budgets = {
     "assets/readme/previews/style-7-rubber-hose.gif": 5_000_000,
     "assets/readme/previews/style-7-rubber-hose-2.gif": 5_000_000,
     "assets/readme/previews/style-8-graphic-novel-2.gif": 8_000_000,
+    "assets/readme/previews/style-9-voxel-sandbox.gif": 6_500_000,
+    "assets/readme/previews/style-9-voxel-sandbox-2.gif": 6_500_000,
 }
 for preview in previews:
     file = root / preview

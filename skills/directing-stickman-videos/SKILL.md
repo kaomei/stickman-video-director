@@ -32,7 +32,7 @@ B6 works best in **portrait (9:16)**. **Sample 1's portrait Eiffel V44 is the st
 
 - **B7 · Pixel Theater:** read [B7](references/b7-pixel-theater.md), inspect both bundled approved full audiovisual references, then use reviewed project-local code with the bundled pixel/ending helpers. For 9:16, also read the [native portrait and short-caption contract](references/b7-native-portrait.md) and inspect its approved internal 10-second reference. Apply the [B7 evidence and actual-film review gate](references/b7-review.md). B7 is not a shared-manifest style or an image-generation fallback; preserve pixel geometry, causal contact/action, semantic captions and story-led sound.
 
-A and B share installation. The [A1–A5 direction](references/a1-a5-direction.md) applies only to A1–A5, and A6–A8 keep dedicated style references. The [unified A workflow](references/mode-execution-boundaries.md#a-unified-workflow) applies to A1–A8. Follow each B style's own production, visuals, captions, voice, pacing and SFX rules. Preserve unrelated styles.
+A and B share installation. Use the [unified A workflow](references/mode-execution-boundaries.md#a-unified-workflow) for A1–A9. **A9 · 方块沙盒风 / Voxel Sandbox:** read [production and acceptance](references/a9-voxel-sandbox.md) first. Follow each B style's visuals, captions, voice, pacing and SFX rules. Preserve unrelated styles.
 
 B1–B6: read the [installed workflow](references/b-style-installed-workflow.md) and run its style/ratio query before production.
 

@@ -29,7 +29,7 @@ assert "# 🎬 Stickman Video Director" in source
 english_hero = source.split("</div>", 1)[0]
 assert "**Scale your faceless channel with automated stickman animations.**" in english_hero
 english_intro = (
-    '**Send your AI agent one message — get back a finished stickman video.**<br>\nScript, voiceover, captions & sound · 16 battle-tested styles · For Claude Code, Codex & more',
+    '**Send your AI agent one message — get back a finished stickman video.**<br>\nScript, voiceover, captions & sound · 17 battle-tested styles · For Claude Code, Codex & more',
     '💬 One message → ✅ Approve script & preview → 🎬 Finished video',
     "**No After Effects. No $50/mo SaaS tax. Ship daily without burnout.**",
 )
@@ -39,43 +39,43 @@ assert "For your first video, see the [detailed tutorial on X](https://x.com/Ave
 # User-approved hero copy; publication and integration use their actual style counts.
 approved_localized_hero = {
     'zh-CN': ('**用全自动火柴人动画，规模化量产你的无人出镜频道。**',
-        '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 16 款实操验证的画风 · 支持 Claude Code、Codex 等',
+        '**发一句话给 AI Agent，拿回一条完整的火柴人视频。**<br>\n脚本、配音、字幕与音效全包 · 17 款实操验证的画风 · 支持 Claude Code、Codex 等',
         '💬 发一句话 → ✅ 确认脚本和预览 → 🎬 拿到成片',
         '**告别繁琐动效手搓，不交每月几十刀的软件订阅税。日更内容，轻松无压力。**',
         '[快速上手](#quick-start) · [X 教程](https://x.com/AveryRunsAI/status/2124444676937621723) · [常见问题](#faq) · [路线图](#road-to-10000-stars--creator-ecosystem) · [交流社区](#community)',
         '*⭐ 欢迎点亮 Star，第一时间解锁最新画风与功能更新！*'),
     'ja': ('**自動化された棒人間アニメーションで、顔出しなしチャンネルを規模化・量産へ。**',
-        '**AIエージェントにひと言送るだけで、完成した棒人間動画が届く。**<br>\n台本・音声・字幕・効果音までおまかせ · 実戦検証済みの16画風 · Claude Code・Codex 対応',
+        '**AIエージェントにひと言送るだけで、完成した棒人間動画が届く。**<br>\n台本・音声・字幕・効果音までおまかせ · 実戦検証済みの17画風 · Claude Code・Codex 対応',
         '💬 ひと言送る → ✅ 台本とプレビューを確認 → 🎬 完成動画',
         '**面倒な動画編集・アニメ付けは不要。月額50ドルのSaaS税もゼロ。毎日投稿を、もっと楽に。**',
         '[クイックスタート](#quick-start) · [Xのガイド](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [ロードマップ](#road-to-10000-stars--creator-ecosystem) · [コミュニティ](#community)',
         '*⭐ 次のスタイル追加や新機能を見逃さないよう、ぜひ Star をお願いします！*'),
     'ko': ('**자동화된 스틱맨 애니메이션으로 얼굴 없는 유튜브 채널을 대량 양산하세요.**',
-        '**AI 에이전트에게 메시지 한 줄만 보내면, 완성된 스틱맨 영상이 돌아옵니다.**<br>\n대본·내레이션·자막·사운드까지 한 번에 · 검증된 16가지 스타일 · Claude Code, Codex 등 지원',
+        '**AI 에이전트에게 메시지 한 줄만 보내면, 완성된 스틱맨 영상이 돌아옵니다.**<br>\n대본·내레이션·자막·사운드까지 한 번에 · 검증된 17가지 스타일 · Claude Code, Codex 등 지원',
         '💬 메시지 한 줄 → ✅ 대본과 미리보기 확인 → 🎬 완성 영상',
         '**복잡한 모션 그래픽 작업 불필요. 매달 50달러의 SaaS 구독료도 제로. 지치지 않고 매일 업로드.**',
         '[빠른 시작](#quick-start) · [X 가이드](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [로드맵](#road-to-10000-stars--creator-ecosystem) · [커뮤니티](#community)',
         '*⭐ 저장소를 Star하고 다음 스타일 업데이트와 새로운 기능을 가장 먼저 확인하세요.*'),
     'pt-BR': ('**Escale sua rede de canais dark com animações automatizadas de boneco-palito.**',
-        '**Mande uma mensagem para seu agente de IA e receba um vídeo de boneco-palito pronto.**<br>\nRoteiro, locução, legendas e som · 16 estilos testados · Para Claude Code, Codex e mais',
+        '**Mande uma mensagem para seu agente de IA e receba um vídeo de boneco-palito pronto.**<br>\nRoteiro, locução, legendas e som · 17 estilos testados · Para Claude Code, Codex e mais',
         '💬 Uma mensagem → ✅ Aprove o roteiro e a prévia → 🎬 Vídeo pronto',
         '**Chega de sofrer no After Effects. Sem taxa de US$ 50/mês em SaaS. Poste todo dia sem esgotamento.**',
         '[Início Rápido](#quick-start) · [Guia no X](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Comunidade](#community)',
         '*⭐ Deixe uma estrela no projeto para acompanhar os próximos estilos e novidades.*'),
     'fr': ("**Industrialisez votre réseau de chaînes sans visage grâce à l'animation automatisée.**",
-        '**Un seul message à votre agent IA — et votre vidéo de bonshommes bâtons est prête.**<br>\nScript, voix off, sous-titres et son · 16 styles éprouvés · Pour Claude Code, Codex et plus',
+        '**Un seul message à votre agent IA — et votre vidéo de bonshommes bâtons est prête.**<br>\nScript, voix off, sous-titres et son · 17 styles éprouvés · Pour Claude Code, Codex et plus',
         '💬 Un message → ✅ Validez le script et l’aperçu → 🎬 Vidéo terminée',
         '**Oubliez les galères sur After Effects. Fini la taxe SaaS à 50 $/mois. Publiez quotidiennement sans épuisement.**',
         '[Démarrage](#quick-start) · [Guide sur X](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Communauté](#community)',
         '*⭐ Ajoutez une étoile au projet pour ne manquer aucun nouveau style ni mise à jour.*'),
     'tr': ('**Yüzsüz kanal ağınızı otomatik çöp adam animasyonlarıyla ölçeklendirin.**',
-        '**Yapay zekâ ajanınıza tek bir mesaj gönderin, bitmiş çöp adam videonuzu alın.**<br>\nSenaryo, seslendirme, altyazı ve ses · Kanıtlanmış 16 stil · Claude Code, Codex ve dahası',
+        '**Yapay zekâ ajanınıza tek bir mesaj gönderin, bitmiş çöp adam videonuzu alın.**<br>\nSenaryo, seslendirme, altyazı ve ses · Kanıtlanmış 17 stil · Claude Code, Codex ve dahası',
         '💬 Tek mesaj → ✅ Senaryoyu ve önizlemeyi onaylayın → 🎬 Hazır video',
         "**Karmaşık After Effects kurgularına son. Aylık 50$'lık SaaS vergisi yok. Tükenmeden her gün yayınlayın.**",
         '[Hızlı Başlangıç](#quick-start) · [X’te Rehber](https://x.com/AveryRunsAI/status/2124444676937621723) · [SSS](#faq) · [Yol Haritası](#road-to-10000-stars--creator-ecosystem) · [Topluluk](#community)',
         '*⭐ Yeni stil güncellemelerini ve özellikleri kaçırmamak için projeye Star verin.*'),
     'id': ('**Skalakan jaringan channel tanpa wajah Anda dengan animasi stickman otomatis.**',
-        '**Kirim satu pesan ke agen AI Anda, dapatkan video stickman yang sudah jadi.**<br>\nNaskah, voiceover, subtitle & suara · 16 gaya teruji · Untuk Claude Code, Codex & lainnya',
+        '**Kirim satu pesan ke agen AI Anda, dapatkan video stickman yang sudah jadi.**<br>\nNaskah, voiceover, subtitle & suara · 17 gaya teruji · Untuk Claude Code, Codex & lainnya',
         '💬 Satu pesan → ✅ Setujui naskah & pratinjau → 🎬 Video jadi',
         '**Tanpa ribet animasi After Effects. Tanpa pajak langganan SaaS $50/bulan. Upload tiap hari tanpa burnout.**',
         '[Panduan Cepat](#quick-start) · [Panduan di X](https://x.com/AveryRunsAI/status/2124444676937621723) · [FAQ](#faq) · [Roadmap](#road-to-10000-stars--creator-ecosystem) · [Komunitas](#community)',
@@ -92,13 +92,16 @@ def section(text, start, end):
     return text.split(f'<a id="{start}"></a>', 1)[1].split(end, 1)[0]
 
 def verify_next_style_teasers(text, name, gallery_styles, label):
-    """Each series ends with one localized teaser after its published cards."""
+    """The B series ends with one localized teaser after its published cards."""
     card_ids = ["a5" if style == "style-5" else style for style in gallery_styles]
     for series in ("A", "B"):
         published = sorted(int(style[1:]) for style in card_ids if style[0] == series.lower())
         assert published == list(range(1, len(published) + 1)), (name, series, "published cards are sequential")
         next_number = len(published) + 1
         entries = list(re.finditer(rf"^### {series}(\d+)\s*[:：]\s*(.+)$", text, re.M))
+        if series == "A":
+            assert [int(entry[1]) for entry in entries] == published, (name, "A catalog matches published styles")
+            continue
         assert [int(entry[1]) for entry in entries] == list(range(1, next_number + 1)), (name, series, "retain and advance the next-style teaser")
         assert [entry[2] for entry in entries].count(label) == 1 and entries[-1][2] == label, (name, series, "one localized Coming Soon teaser at the end")
         assert f'<a id="{series.lower()}{next_number}"></a>' in text, (name, series, "next-style teaser anchor")
@@ -109,13 +112,15 @@ def verify_next_style_teasers(text, name, gallery_styles, label):
         assert not re.search(r"\b\d[\d,.\s]*\s*Stars?\b", visible_teaser, re.I), (name, series, "next-style teaser has no numeric Star unlock promise")
 
 expected_images = images(cn)
-assert len(expected_images) == 58 and len(set(expected_images)) == 43
+assert len(expected_images) == 61 and len(set(expected_images)) == 45
 pinned = "https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@"
 b6_previews = [
     pinned + "7d611fb27f103aebc38a656d29edc1b1181cbd62/assets/readme/previews/" + filename
     for filename in ("b6-dynamic-meme-eiffel-16x9.gif", "b6-dynamic-meme-hong-kong-v90-20s.gif")
 ]
 local_previews = {
+    "assets/readme/previews/style-9-voxel-sandbox.gif",
+    "assets/readme/previews/style-9-voxel-sandbox-2.gif",
     "assets/readme/previews/b7-pixel-theater.gif",
     "assets/readme/previews/b7-fast-forward-excerpt.gif",
     "assets/readme/previews/style-7-rubber-hose.gif",
@@ -178,7 +183,7 @@ for name in selected:
     else:
         locale = name[7:-3]
         assert tuple(hero_blocks[index] for index in (3, 5, 6, 7, 8, 9)) == approved_localized_hero[locale], (name, "exact approved localized hero copy")
-    assert "16" in hero_blocks[5], (name, "actual published style count in introduction")
+    assert "17" in hero_blocks[5], (name, "actual published style count in introduction")
     assert hero_blocks[9].startswith(("⭐ *", "*⭐ ")) and hero_blocks[9].endswith("*"), (name, "italic Star CTA")
     assert "Styles-" not in top and "img.shields.io/badge/Styles" not in top, (name, "removed Styles badge")
     active = "en" if name == "README.md" else name[7:-3]
@@ -260,7 +265,7 @@ for name in selected:
     hero = text.split('<table width="100%">', 1)[1].split("</table>", 1)[0]
     rows = re.findall(r"<tr>(.*?)</tr>", hero, re.S)
     gallery_styles = re.findall(r'href="#([^"]+)"><img', hero)
-    assert gallery_styles == ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 'a4', 'b4', 'style-5', 'b5', 'a6', 'b6', 'a7', 'b7', 'a8', 'b8'], name
+    assert gallery_styles == ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 'a4', 'b4', 'style-5', 'b5', 'a6', 'b6', 'a7', 'b7', 'a8', 'b8', 'a9'], name
     # Keep A styles on the left and B styles on the right, with no spanning rows.
     assert len(rows) == (len(gallery_styles) + 1) // 2, name
     assert all(row.count('<td width="50%"') == 2 for row in rows), name
@@ -271,16 +276,16 @@ for name in selected:
     if placeholders:
         assert placeholders == [cells[-1]] and "<img" in cells[-2], name
         assert not cells[-1].strip(), (name, "last B cell is empty")
-    assert text.count('width="90%"') == 16 and text.count('width="360"') == 32, name
+    assert text.count('width="90%"') == 17 and text.count('width="360"') == 34, name
     # French typography separates a heading label from its colon with a space.
     style_ids = re.findall(r"^### ([AB]\d+)\s*[:：]", text, re.M)
     card_ids = ["a5" if style == "style-5" else style for style in gallery_styles]
     expected_style_ids = [
         f"{series}{number}"
         for series in ("A", "B")
-        for number in range(1, sum(style.startswith(series.lower()) for style in card_ids) + 2)
+        for number in range(1, sum(style.startswith(series.lower()) for style in card_ids) + (2 if series == "B" else 1))
     ]
-    assert style_ids == expected_style_ids, (name, "published style catalog plus one next-style teaser per series")
+    assert style_ids == expected_style_ids, (name, "published style catalog and B teaser")
     teaser_labels = {"en": "Coming soon…", "zh-CN": "待更新…", "ja": "近日公開…", "ko": "곧 공개…", "fr": "Bientôt disponible…", "pt-BR": "Em breve…", "tr": "Yakında…", "id": "Segera hadir…"}
     verify_next_style_teasers(text, name, gallery_styles, teaser_labels[active])
     a7 = section(text, "a7", '<a id="a8"></a>')
@@ -295,7 +300,7 @@ for name in selected:
     assert "Tested Flow workflow:" not in text and "Click either GIF" not in text, name
     assert "Veo 3.1 Fast" not in a6, (name, "operational model guidance stays in Skill")
     assert "Omni" not in a6, (name, "A6 does not inherit the legacy model")
-    assert "16" in hero_blocks[5], (name, "sixteen published A+B visual styles")
+    assert "17" in hero_blocks[5], (name, "seventeen published A+B visual styles")
     a8 = section(text, "a8", '<a id="a9"></a>')
     assert len(re.findall(r"^- \*\*", a8, re.M)) == 2, (name, "A8 highlights and use cases")
     a8_videos = ["assets/readme/style-8-graphic-novel-2.mp4", "assets/readme/style-8-graphic-novel.mp4"]
@@ -312,9 +317,14 @@ for name in selected:
         pins.add(match[1])
     assert len(pins) == 1, (name, "A8 previews use the same Git revision")
     assert images(hero)[gallery_styles.index("a8")] == a8_previews[1], (name, "A8 homepage uses the sea messenger preview")
-    placeholder = section(text, "a9", '<a id="b-styles"></a>')
-    assert placeholder.count("](#road-to-10000-stars--creator-ecosystem)") == 1, (name, "A9 roadmap CTA retained")
-    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 3, (name, "A9 and B9 update links plus roadmap navigation")
+    a9 = section(text, "a9", '<a id="b-styles"></a>')
+    a9_names = ["style-9-voxel-sandbox-2", "style-9-voxel-sandbox"]
+    a9_release = "https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/"
+    assert re.findall(r'<a href="([^"]+\.mp4)">', a9) == [a9_release + stem + ".mp4" for stem in a9_names], name
+    assert images(a9) == ["assets/readme/previews/" + stem + ".gif" for stem in a9_names], name
+    assert all((root / "assets/readme" / (stem + ".mp4")).is_file() for stem in a9_names), name
+    assert images(hero)[gallery_styles.index("a9")] == images(a9)[1], (name, "A9 homepage uses the mushroom grove")
+    assert text.count("](#road-to-10000-stars--creator-ecosystem)") == 2, (name, "B9 update link plus roadmap navigation")
     b8 = section(text, "b8", '<a id="b9"></a>')
     b8_preview_names = ("b8-midas-approved-r3-v1.gif", "b8-greek-mythology.gif")
     b8_previews = images(b8)
@@ -402,8 +412,8 @@ for name in selected:
     for video in b6_videos:
         assert (root / video).is_file(), (name, video)
     if is_english:
+        assert [int(number) for number in re.findall(r"^### A(\d+): ", text, re.M)] == list(range(1, 10)), name
         teasers = {
-            "A": "New Model Engine styles are in preparation. [Star the project](#road-to-10000-stars--creator-ecosystem) to follow future updates.",
             "B": "New Code Engine styles and procedural animations are in preparation. [Star the project](#road-to-10000-stars--creator-ecosystem) to follow future updates.",
         }
         for series, teaser in teasers.items():

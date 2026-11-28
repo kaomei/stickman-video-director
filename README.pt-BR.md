@@ -10,7 +10,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 **Mande uma mensagem para seu agente de IA e receba um vídeo de boneco-palito pronto.**<br>
-Roteiro, locução, legendas e som · 16 estilos testados · Para Claude Code, Codex e mais
+Roteiro, locução, legendas e som · 17 estilos testados · Para Claude Code, Codex e mais
 
 💬 Uma mensagem → ✅ Aprove o roteiro e a prévia → 🎬 Vídeo pronto
 
@@ -116,6 +116,15 @@ Roteiro, locução, legendas e som · 16 estilos testados · Para Claude Code, C
 <a href="#b8"><img src="https://cdn.jsdelivr.net/gh/kaomei/stickman-video-director@03c70a26eee910b44eff4c7dc95939a536ce6cf8/assets/readme/previews/b8-midas-approved-r3-v1.gif" alt="B8 · Mitologia Grega" width="90%"></a>
 </td>
 <!-- b8:hero:end -->
+</tr>
+<tr>
+<!-- a9:hero:start -->
+<td width="50%" align="center">
+<b>A9-</b><strong>Sandbox Voxel</strong><br>
+<a href="#a9"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Sandbox Voxel" width="90%"></a>
+</td>
+<!-- a9:hero:end -->
+<td width="50%" align="center"></td>
 </tr>
 </table>
 
@@ -405,10 +414,17 @@ O azul intenso do céu e do mar, as nuvens altas e os muros de pedra aquecidos p
 
 <a id="a9"></a>
 
-### A9: Em breve…
+### A9: Sandbox Voxel
 
-Novos estilos especializados para Model Engine estão em preparação. [Dê uma estrela ao projeto](#road-to-10000-stars--creator-ecosystem) e acompanhe as próximas atualizações!
+Um boneco palito de cabeça cúbica corre, salta e aciona mecanismos em um mundo feito de blocos. O resultado de cada ação aparece na tela.
 
+- **Visual**: Cabeça cúbica branca, dois olhos quadrados e membros pretos e finos, em cenários que vão de um bosque de cogumelos luminosos a telhados ensolarados.
+- **Ideal para**: Aventuras curtas, quebra-cabeças de construção, resgates e histórias de jogo com objetivo claro.
+
+| Exemplo 1: O moinho no telhado | Exemplo 2: A luz do bosque de cogumelos |
+|:---:|:---:|
+| <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox-2.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox-2.gif" alt="A9 · Sandbox Voxel · Exemplo 1: O moinho no telhado" width="360"></a> | <a href="https://github.com/kaomei/stickman-video-director/releases/download/v2026.11.28/style-9-voxel-sandbox.mp4"><img src="assets/readme/previews/style-9-voxel-sandbox.gif" alt="A9 · Sandbox Voxel · Exemplo 2: A luz do bosque de cogumelos" width="360"></a> |
+| Telhados ao pôr do sol · Uma manivela leva água ao canteiro | Bosque de cogumelos luminosos · Um bloco de energia ilumina o caminho |
 
 <a id="b-styles"></a>
 
